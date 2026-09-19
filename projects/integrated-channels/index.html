@@ -3,318 +3,1329 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>Integrated Channels Suite | Manoj Pant</title>
+<title>Integrated Channels Suite | Manoj Pant</title>
 
-    <meta name="description"
-          content="Integrated Channels Suite - Digital Banking Platform case study by Manoj Pant.">
+<meta name="description"
+      content="Integrated Channels Suite — Digital Banking Platform case study by Manoj Pant, Senior Product Manager.">
 
-    <style>
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* =========================================================
+   GLOBAL
+========================================================= */
 
-        html {
-            scroll-behavior: smooth;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f7f8fa;
-            color: #172033;
-            line-height: 1.7;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
 
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-        }
+    background: #f6f7f9;
+    color: #172033;
+    line-height: 1.7;
+}
 
-        /* NAVIGATION */
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        nav {
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+img {
+    max-width: 100%;
+    display: block;
+}
 
-        .nav-inner {
-            height: 68px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
 
-        .logo {
-            font-size: 20px;
-            font-weight: 700;
-        }
 
-        .back-link {
-            font-size: 14px;
-            color: #667085;
-        }
+/* =========================================================
+   TOP NAV
+========================================================= */
 
-        .back-link:hover {
-            color: #b58b43;
-        }
+.top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-        /* HERO */
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(12px);
 
-        .hero {
-            background: #172033;
-            color: white;
-            padding: 90px 0;
-        }
+    border-bottom: 1px solid #e5e7eb;
+}
 
-        .eyebrow {
-            color: #d0a75f;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-        }
+.nav-inner {
+    height: 68px;
 
-        h1 {
-            font-size: 52px;
-            line-height: 1.1;
-            max-width: 850px;
-            margin-bottom: 20px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .hero-subtitle {
-            font-size: 21px;
-            color: #dbe2ec;
-            max-width: 800px;
-            margin-bottom: 30px;
-        }
+.logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
 
-        .meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+.back-link {
+    font-size: 14px;
+    color: #667085;
+    transition: .2s;
+}
 
-        .meta span {
-            border: 1px solid rgba(255,255,255,0.25);
-            border-radius: 30px;
-            padding: 8px 15px;
-            font-size: 13px;
-            color: #e5e7eb;
-        }
+.back-link:hover {
+    color: #b48532;
+}
 
-        /* CONTENT */
 
-        main {
-            padding: 70px 0;
-        }
+/* =========================================================
+   HERO
+========================================================= */
 
-        .section {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 14px;
-            padding: 35px;
-            margin-bottom: 25px;
-        }
+.hero {
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(197,153,72,.18),
+            transparent 32%
+        ),
+        #121a2c;
 
-        .section-label {
-            color: #b58b43;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
+    color: white;
 
-        h2 {
-            font-size: 29px;
-            color: #111827;
-            margin-bottom: 16px;
-        }
+    padding: 95px 0 80px;
+}
 
-        .section p {
-            color: #596579;
-            margin-bottom: 15px;
-        }
+.eyebrow {
+    display: inline-block;
 
-        /* OVERVIEW GRID */
+    color: #d4a958;
 
-        .overview-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
+    font-size: 12px;
+    font-weight: 800;
 
-        .overview-card {
-            background: #f7f8fa;
-            border-radius: 10px;
-            padding: 20px;
-        }
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
 
-        .overview-card strong {
-            display: block;
-            font-size: 15px;
-            margin-bottom: 5px;
-            color: #172033;
-        }
+    margin-bottom: 18px;
+}
 
-        .overview-card span {
-            font-size: 13px;
-            color: #667085;
-        }
+.hero-grid {
+    display: grid;
 
-        /* CAPABILITIES */
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(340px, .85fr);
 
-        .capability-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
+    gap: 70px;
 
-        .capability {
-            padding: 20px;
-            background: #f7f8fa;
-            border-radius: 10px;
-            border-left: 4px solid #c9a76a;
-        }
+    align-items: center;
+}
 
-        .capability h3 {
-            font-size: 17px;
-            margin-bottom: 6px;
-        }
+.hero h1 {
+    font-size: clamp(44px, 6vw, 72px);
 
-        .capability p {
-            margin: 0;
-            font-size: 14px;
-        }
+    line-height: 1.02;
 
-        /* FLOW */
+    letter-spacing: -2px;
 
-        .flow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 25px;
-        }
+    margin-bottom: 24px;
+}
 
-        .flow-step {
-            background: #172033;
-            color: white;
-            padding: 13px 18px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-        }
+.hero-subtitle {
+    font-size: 22px;
 
-        .arrow {
-            color: #b58b43;
-            font-size: 22px;
-            font-weight: bold;
-        }
+    color: #dbe3ef;
 
-        /* OUTCOMES */
+    max-width: 720px;
 
-        .outcomes {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
+    margin-bottom: 30px;
+}
 
-        .outcome {
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 25px;
-        }
+.hero-description {
+    color: #aebbd0;
 
-        .outcome strong {
-            display: block;
-            font-size: 32px;
-            color: #b58b43;
-            margin-bottom: 5px;
-        }
+    max-width: 720px;
 
-        .outcome span {
-            color: #667085;
-            font-size: 14px;
-        }
+    font-size: 16px;
 
-        /* TAGS */
+    margin-bottom: 30px;
+}
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 9px;
-            margin-top: 20px;
-        }
+.hero-tags {
+    display: flex;
 
-        .tag {
-            background: #f1f3f5;
-            color: #475467;
-            padding: 7px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-        }
+    flex-wrap: wrap;
 
-        /* FOOTER */
+    gap: 9px;
+}
 
-        footer {
-            background: #101623;
-            color: #94a3b8;
-            text-align: center;
-            padding: 25px;
-            font-size: 13px;
-        }
+.hero-tag {
+    padding: 8px 13px;
 
-        /* MOBILE */
+    border: 1px solid
+        rgba(255,255,255,.18);
 
-        @media (max-width: 800px) {
+    border-radius: 999px;
 
-            h1 {
-                font-size: 40px;
-            }
+    font-size: 12px;
 
-            .overview-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+    color: #e8edf5;
+}
 
-            .capability-grid,
-            .outcomes {
-                grid-template-columns: 1fr;
-            }
 
-        }
+/* =========================================================
+   HERO VISUAL
+========================================================= */
 
-        @media (max-width: 550px) {
+.hero-visual {
+    position: relative;
 
-            .overview-grid {
-                grid-template-columns: 1fr;
-            }
+    min-height: 330px;
 
-            .section {
-                padding: 25px;
-            }
+    border: 1px solid
+        rgba(255,255,255,.13);
 
-        }
+    border-radius: 22px;
 
-    </style>
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.025)
+        );
+
+    padding: 28px;
+
+    overflow: hidden;
+}
+
+.hero-visual-label {
+    font-size: 11px;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+
+    color: #9caac0;
+
+    margin-bottom: 20px;
+}
+
+.platform-core {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d2a453,
+            #9d6e20
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    box-shadow:
+        0 0 0 18px rgba(210,164,83,.08),
+        0 0 60px rgba(210,164,83,.25);
+}
+
+.orbit {
+    position: absolute;
+
+    border: 1px dashed
+        rgba(255,255,255,.15);
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+.orbit.one {
+    width: 240px;
+    height: 240px;
+}
+
+.orbit.two {
+    width: 320px;
+    height: 320px;
+}
+
+.node {
+    position: absolute;
+
+    padding: 8px 10px;
+
+    border-radius: 7px;
+
+    background: rgba(255,255,255,.08);
+
+    border: 1px solid
+        rgba(255,255,255,.12);
+
+    color: #dce4ef;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+.node.n1 { top: 24px; left: 30px; }
+.node.n2 { top: 55px; right: 25px; }
+.node.n3 { bottom: 30px; left: 24px; }
+.node.n4 { bottom: 24px; right: 30px; }
+
+
+/* =========================================================
+   METRIC STRIP
+========================================================= */
+
+.metrics {
+    margin-top: -1px;
+
+    background: white;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.metric-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+}
+
+.metric {
+    padding: 28px 24px;
+
+    border-right: 1px solid #e5e7eb;
+}
+
+.metric:last-child {
+    border-right: 0;
+}
+
+.metric-value {
+    font-size: 32px;
+
+    font-weight: 800;
+
+    color: #172033;
+
+    margin-bottom: 2px;
+}
+
+.metric-label {
+    font-size: 12px;
+
+    color: #667085;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   PAGE LAYOUT
+========================================================= */
+
+.page {
+    padding: 65px 0;
+}
+
+.content-layout {
+    display: grid;
+
+    grid-template-columns:
+        210px
+        minmax(0, 1fr);
+
+    gap: 50px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   SIDE NAV
+========================================================= */
+
+.side-nav {
+    position: sticky;
+
+    top: 92px;
+}
+
+.side-title {
+    font-size: 11px;
+
+    color: #98a2b3;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+}
+
+.side-nav a {
+    display: block;
+
+    padding: 8px 12px;
+
+    margin-bottom: 3px;
+
+    border-left: 2px solid transparent;
+
+    color: #667085;
+
+    font-size: 13px;
+
+    transition: .2s;
+}
+
+.side-nav a:hover {
+    color: #172033;
+
+    border-left-color: #c69a4a;
+
+    background: #fff;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    padding: 42px;
+
+    margin-bottom: 28px;
+
+    box-shadow:
+        0 8px 30px rgba(15,23,42,.035);
+}
+
+.section-number {
+    color: #b48532;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+}
+
+.section h2 {
+    font-size: 31px;
+
+    letter-spacing: -.6px;
+
+    line-height: 1.2;
+
+    margin-bottom: 17px;
+}
+
+.section h3 {
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.section p {
+    color: #596579;
+
+    font-size: 15px;
+
+    margin-bottom: 16px;
+}
+
+.section-intro {
+    max-width: 850px;
+
+    font-size: 16px !important;
+
+    color: #475467 !important;
+}
+
+
+/* =========================================================
+   CHALLENGE CARDS
+========================================================= */
+
+.challenge-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin-top: 28px;
+}
+
+.challenge {
+    background: #f8fafc;
+
+    border-radius: 13px;
+
+    padding: 22px;
+
+    border: 1px solid #edf0f3;
+}
+
+.challenge-number {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 8px;
+
+    background: #172033;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    margin-bottom: 17px;
+}
+
+.challenge p {
+    font-size: 13px;
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   APP ECOSYSTEM
+========================================================= */
+
+.app-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 13px;
+
+    margin-top: 28px;
+}
+
+.app-card {
+    padding: 19px;
+
+    background: #fafbfc;
+
+    border: 1px solid #e7eaf0;
+
+    border-radius: 13px;
+
+    transition:
+        transform .2s,
+        box-shadow .2s,
+        border-color .2s;
+}
+
+.app-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #d4b06e;
+
+    box-shadow:
+        0 12px 25px rgba(15,23,42,.07);
+}
+
+.app-number {
+    font-size: 11px;
+
+    color: #b48532;
+
+    font-weight: 800;
+
+    margin-bottom: 5px;
+}
+
+.app-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 7px;
+}
+
+.app-card p {
+    font-size: 12px;
+
+    margin-bottom: 0;
+
+    color: #697586;
+}
+
+
+/* =========================================================
+   ECOSYSTEM VISUAL
+========================================================= */
+
+.ecosystem {
+    margin-top: 32px;
+
+    background: #111a2d;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    color: white;
+
+    overflow-x: auto;
+}
+
+.ecosystem-title {
+    color: #d5ad62;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.8px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    margin-bottom: 24px;
+}
+
+.eco-flow {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        70px
+        1.25fr
+        70px
+        1fr;
+
+    align-items: center;
+
+    min-width: 720px;
+}
+
+.eco-box {
+    padding: 22px;
+
+    border-radius: 12px;
+
+    border: 1px solid
+        rgba(255,255,255,.13);
+
+    background:
+        rgba(255,255,255,.045);
+}
+
+.eco-box strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 15px;
+}
+
+.eco-box span {
+    color: #aebbd0;
+
+    font-size: 12px;
+}
+
+.eco-arrow {
+    text-align: center;
+
+    color: #d4a958;
+
+    font-size: 26px;
+}
+
+
+/* =========================================================
+   ARCHITECTURE
+========================================================= */
+
+.architecture {
+    background: #f8fafc;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    margin-top: 25px;
+
+    border: 1px solid #e7eaf0;
+}
+
+.arch-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        40px
+        1fr
+        40px
+        1fr;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+.arch-box {
+    min-height: 75px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 15px;
+
+    border-radius: 11px;
+
+    background: white;
+
+    border: 1px solid #dde2e8;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.arch-box.highlight {
+    background: #172033;
+
+    color: white;
+
+    border-color: #172033;
+}
+
+.arch-arrow {
+    text-align: center;
+
+    color: #b48532;
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+.arch-caption {
+    text-align: center;
+
+    color: #7a8698;
+
+    font-size: 12px;
+
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   WORKFLOW
+========================================================= */
+
+.workflow {
+    display: flex;
+
+    align-items: stretch;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding: 10px 0 15px;
+
+    margin-top: 25px;
+}
+
+.workflow-step {
+    min-width: 145px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e7ed;
+
+    border-radius: 11px;
+
+    padding: 18px;
+
+    position: relative;
+}
+
+.workflow-step strong {
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+.workflow-step span {
+    display: block;
+
+    font-size: 11px;
+
+    color: #667085;
+}
+
+.workflow-arrow {
+    display: flex;
+
+    align-items: center;
+
+    color: #b48532;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PM ROLE
+========================================================= */
+
+.role-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+
+    margin-top: 25px;
+}
+
+.role-card {
+    padding: 22px;
+
+    border-radius: 13px;
+
+    background: #fafbfc;
+
+    border: 1px solid #e7eaf0;
+}
+
+.role-card .role-icon {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 9px;
+
+    background: #f0e8d8;
+
+    color: #9a6b20;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+
+    margin-bottom: 14px;
+}
+
+.role-card p {
+    font-size: 13px;
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   DOCUMENTATION
+========================================================= */
+
+.doc-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.doc {
+    padding: 16px;
+
+    border-radius: 10px;
+
+    background: #172033;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   TECH STACK
+========================================================= */
+
+.tech-groups {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+
+    margin-top: 25px;
+}
+
+.tech-group {
+    border: 1px solid #e5e7eb;
+
+    border-radius: 13px;
+
+    padding: 21px;
+}
+
+.tech-group h3 {
+    font-size: 15px;
+
+    margin-bottom: 13px;
+}
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.tag {
+    background: #f1f3f6;
+
+    color: #475467;
+
+    border-radius: 999px;
+
+    padding: 6px 10px;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   INTEGRATIONS
+========================================================= */
+
+.integration-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.integration {
+    padding: 20px;
+
+    background: #f8fafc;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e9ef;
+}
+
+.integration strong {
+    display: block;
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.integration span {
+    color: #667085;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   DECISIONS
+========================================================= */
+
+.decision-table {
+    margin-top: 25px;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 13px;
+}
+
+th {
+    text-align: left;
+
+    background: #172033;
+
+    color: white;
+
+    padding: 13px;
+}
+
+td {
+    padding: 14px;
+
+    border-bottom: 1px solid #e7eaf0;
+
+    color: #596579;
+
+    vertical-align: top;
+}
+
+td:first-child {
+    font-weight: 700;
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   IMPACT
+========================================================= */
+
+.impact {
+    background:
+        linear-gradient(
+            135deg,
+            #172033,
+            #202d47
+        );
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 38px;
+
+    margin-top: 25px;
+}
+
+.impact-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+.impact-card {
+    padding: 22px;
+
+    background: rgba(255,255,255,.055);
+
+    border: 1px solid
+        rgba(255,255,255,.1);
+
+    border-radius: 13px;
+}
+
+.impact-number {
+    font-size: 38px;
+
+    font-weight: 800;
+
+    color: #d4a958;
+
+    margin-bottom: 4px;
+}
+
+.impact-card span {
+    color: #bdc9da;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   LEARNINGS
+========================================================= */
+
+.learning-list {
+    display: grid;
+
+    gap: 12px;
+
+    margin-top: 24px;
+}
+
+.learning {
+    display: grid;
+
+    grid-template-columns:
+        32px
+        1fr;
+
+    gap: 13px;
+
+    align-items: start;
+
+    padding: 16px;
+
+    background: #f8fafc;
+
+    border-radius: 11px;
+}
+
+.learning-number {
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #172033;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+.learning p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   CONFIDENTIALITY
+========================================================= */
+
+.note {
+    border-left: 4px solid #c89a49;
+
+    background: #fffaf0;
+
+    padding: 18px 20px;
+
+    border-radius: 0 10px 10px 0;
+
+    color: #665333;
+
+    font-size: 13px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #101827;
+
+    color: #8996aa;
+
+    text-align: center;
+
+    padding: 30px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width: 950px) {
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .side-nav {
+        position: relative;
+        top: auto;
+
+        display: flex;
+
+        overflow-x: auto;
+
+        gap: 5px;
+
+        padding-bottom: 10px;
+    }
+
+    .side-title {
+        display: none;
+    }
+
+    .side-nav a {
+        white-space: nowrap;
+
+        border-left: 0;
+
+        border-bottom: 2px solid transparent;
+    }
+
+    .side-nav a:hover {
+        border-left: 0;
+
+        border-bottom-color: #c69a4a;
+    }
+
+    .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .challenge-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .integration-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width: 700px) {
+
+    .hero {
+        padding: 65px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .metric-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .metric {
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .section {
+        padding: 27px;
+    }
+
+    .app-grid,
+    .role-grid,
+    .tech-groups,
+    .integration-grid,
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .doc-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .arch-row {
+        grid-template-columns: 1fr;
+    }
+
+    .arch-arrow {
+        transform: rotate(90deg);
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -322,622 +1333,1911 @@
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- ======================================================
+     NAVIGATION
+====================================================== -->
 
-<nav>
+<nav class="top-nav">
 
-    <div class="container nav-inner">
+<div class="container nav-inner">
 
-        <div class="logo">
-            MANOJ PANT
-        </div>
-
-        <a class="back-link"
-           href="../../index.html">
-
-            ← Back to Portfolio
-
-        </a>
-
+    <div class="logo">
+        MANOJ PANT
     </div>
+
+    <a href="../../index.html"
+       class="back-link">
+
+        ← Back to Portfolio
+
+    </a>
+
+</div>
 
 </nav>
 
 
-<!-- HERO -->
+<!-- ======================================================
+     HERO
+====================================================== -->
 
 <header class="hero">
 
-    <div class="container">
+<div class="container hero-grid">
 
-        <div class="eyebrow">
-            Product Case Study · M2P Solutions
-        </div>
 
-        <h1>
-            Integrated Channels Suite
-        </h1>
+<div>
 
-        <p class="hero-subtitle">
-            Digital Banking Platform
-        </p>
+    <div class="eyebrow">
+        Product Case Study · M2P Solutions
+    </div>
 
-        <div class="meta">
+    <h1>
+        Integrated Channels Suite
+    </h1>
 
-            <span>
-                Senior Product Manager
-            </span>
+    <div class="hero-subtitle">
+        A multi-module digital banking platform
+        connecting critical banking, lending,
+        payments, compliance and operational workflows.
+    </div>
 
-            <span>
-                Dec 2024 – Mar 2026
-            </span>
+    <p class="hero-description">
 
-            <span>
-                FinTech
-            </span>
+        Product vision, platform strategy and end-to-end
+        delivery for an enterprise ecosystem spanning
+        12+ banking applications, API integrations,
+        configurable workflows and scalable deployments.
 
-            <span>
-                Enterprise Platform
-            </span>
+    </p>
 
-        </div>
+    <div class="hero-tags">
+
+        <span class="hero-tag">
+            Senior Product Manager
+        </span>
+
+        <span class="hero-tag">
+            Dec 2024 – Mar 2026
+        </span>
+
+        <span class="hero-tag">
+            Digital Banking
+        </span>
+
+        <span class="hero-tag">
+            Enterprise SaaS
+        </span>
+
+        <span class="hero-tag">
+            API-first
+        </span>
+
+        <span class="hero-tag">
+            Workflow Automation
+        </span>
 
     </div>
+
+</div>
+
+
+<!-- VISUAL -->
+
+<div class="hero-visual">
+
+    <div class="hero-visual-label">
+        Platform Ecosystem
+    </div>
+
+    <div class="orbit one"></div>
+
+    <div class="orbit two"></div>
+
+    <div class="platform-core">
+        INTEGRATED<br>
+        CHANNELS
+    </div>
+
+    <div class="node n1">
+        Banking
+    </div>
+
+    <div class="node n2">
+        Lending
+    </div>
+
+    <div class="node n3">
+        Payments
+    </div>
+
+    <div class="node n4">
+        Compliance
+    </div>
+
+</div>
+
+</div>
 
 </header>
 
 
-<!-- MAIN CONTENT -->
+<!-- ======================================================
+     METRICS
+====================================================== -->
 
-<main>
+<section class="metrics">
 
-    <div class="container">
+<div class="container metric-grid">
+
+    <div class="metric">
+
+        <div class="metric-value">
+            12+
+        </div>
+
+        <div class="metric-label">
+            Enterprise applications
+        </div>
+
+    </div>
 
 
-        <!-- OVERVIEW -->
+    <div class="metric">
 
-        <section class="section">
+        <div class="metric-value">
+            20%
+        </div>
 
-            <div class="section-label">
-                01 · Overview
+        <div class="metric-label">
+            Integration complexity reduction
+        </div>
+
+    </div>
+
+
+    <div class="metric">
+
+        <div class="metric-value">
+            API
+        </div>
+
+        <div class="metric-label">
+            First architecture
+        </div>
+
+    </div>
+
+
+    <div class="metric">
+
+        <div class="metric-value">
+            360°
+        </div>
+
+        <div class="metric-label">
+            Banking workflow coverage
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     CONTENT
+====================================================== -->
+
+<main class="page">
+
+<div class="container content-layout">
+
+
+<!-- SIDE NAV -->
+
+<aside class="side-nav">
+
+    <div class="side-title">
+        Case Study
+    </div>
+
+    <a href="#overview">
+        Overview
+    </a>
+
+    <a href="#challenge">
+        Challenge
+    </a>
+
+    <a href="#ecosystem">
+        Ecosystem
+    </a>
+
+    <a href="#architecture">
+        Architecture
+    </a>
+
+    <a href="#workflow">
+        Workflow
+    </a>
+
+    <a href="#role">
+        My Role
+    </a>
+
+    <a href="#requirements">
+        Requirements
+    </a>
+
+    <a href="#technology">
+        Technology
+    </a>
+
+    <a href="#integrations">
+        Integrations
+    </a>
+
+    <a href="#decisions">
+        Decisions
+    </a>
+
+    <a href="#impact">
+        Impact
+    </a>
+
+    <a href="#learnings">
+        Learnings
+    </a>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<div>
+
+
+<!-- ======================================================
+     01 OVERVIEW
+====================================================== -->
+
+<section class="section"
+         id="overview">
+
+    <div class="section-number">
+        01 · Product Overview
+    </div>
+
+    <h2>
+        Bringing fragmented banking operations
+        into a connected product ecosystem
+    </h2>
+
+    <p class="section-intro">
+
+        Integrated Channels Suite was designed as a
+        multi-module digital banking platform that
+        brought together multiple enterprise applications
+        through APIs, configurable workflows and
+        scalable deployment capabilities.
+
+    </p>
+
+    <p>
+
+        Instead of treating banking applications as
+        isolated systems, the platform approach focused
+        on interoperability across lending, cards,
+        reconciliation, compliance, treasury,
+        documentation, asset management and other
+        operational functions.
+
+    </p>
+
+    <div class="note">
+
+        <strong>Product perspective:</strong>
+        The core product challenge was not simply
+        building individual applications. It was creating
+        a connected operating layer that could reduce
+        integration friction while preserving modularity,
+        security and enterprise controls.
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     02 CHALLENGE
+====================================================== -->
+
+<section class="section"
+         id="challenge">
+
+    <div class="section-number">
+        02 · Business Challenge
+    </div>
+
+    <h2>
+        The problem: fragmented systems create
+        fragmented operations
+    </h2>
+
+    <p>
+
+        Banking operations span multiple specialised
+        systems. Lending teams need loan origination
+        and servicing. Finance teams need reconciliation
+        and treasury. Compliance teams need AML/KYC.
+        Operations teams need audit, documents and
+        asset management.
+
+    </p>
+
+    <p>
+
+        When these capabilities operate independently,
+        organisations can face duplicated processes,
+        disconnected data, manual handoffs and higher
+        integration effort.
+
+    </p>
+
+
+    <div class="challenge-grid">
+
+
+        <div class="challenge">
+
+            <div class="challenge-number">
+                01
             </div>
 
-            <h2>
-                Building a scalable digital banking platform
-            </h2>
+            <h3>
+                Fragmented applications
+            </h3>
 
             <p>
-                Integrated Channels Suite was a multi-module banking
-                platform designed to bring multiple enterprise
-                applications together through configurable workflows,
-                secure integrations and scalable deployment capabilities.
+                Multiple business functions required
+                specialised applications with different
+                workflows and data requirements.
             </p>
 
-            <div class="overview-grid">
-
-                <div class="overview-card">
-
-                    <strong>
-                        Platform Type
-                    </strong>
-
-                    <span>
-                        Digital Banking
-                    </span>
-
-                </div>
+        </div>
 
 
-                <div class="overview-card">
+        <div class="challenge">
 
-                    <strong>
-                        Applications
-                    </strong>
-
-                    <span>
-                        12+ enterprise applications
-                    </span>
-
-                </div>
-
-
-                <div class="overview-card">
-
-                    <strong>
-                        Architecture
-                    </strong>
-
-                    <span>
-                        API-first
-                    </span>
-
-                </div>
-
-
-                <div class="overview-card">
-
-                    <strong>
-                        Focus
-                    </strong>
-
-                    <span>
-                        Integration & workflow automation
-                    </span>
-
-                </div>
-
+            <div class="challenge-number">
+                02
             </div>
 
-        </section>
-
-
-        <!-- BUSINESS CHALLENGE -->
-
-        <section class="section">
-
-            <div class="section-label">
-                02 · Business Challenge
-            </div>
-
-            <h2>
-                Simplifying fragmented enterprise operations
-            </h2>
+            <h3>
+                Integration complexity
+            </h3>
 
             <p>
-                Enterprise banking operations can involve multiple
-                applications, workflows and integrations. The product
-                initiative focused on simplifying these fragmented
-                operations through a scalable platform approach.
+                Enterprise applications needed secure
+                and reliable interoperability instead
+                of isolated point-to-point processes.
             </p>
+
+        </div>
+
+
+        <div class="challenge">
+
+            <div class="challenge-number">
+                03
+            </div>
+
+            <h3>
+                Configurable operations
+            </h3>
 
             <p>
-                The product needed to support secure integrations,
-                configurable workflows, transaction processing and
-                scalable deployments across enterprise environments.
+                Banking institutions require workflows
+                that can adapt to products, roles,
+                controls and operating models.
             </p>
 
-        </section>
+        </div>
+
+    </div>
+
+</section>
 
 
-        <!-- PRODUCT OBJECTIVE -->
+<!-- ======================================================
+     03 PRODUCT ECOSYSTEM
+====================================================== -->
 
-        <section class="section">
+<section class="section"
+         id="ecosystem">
 
-            <div class="section-label">
-                03 · Product Objective
-            </div>
+    <div class="section-number">
+        03 · Product Ecosystem
+    </div>
 
-            <h2>
-                Create a modular and scalable platform ecosystem
-            </h2>
+    <h2>
+        12+ applications across the banking operating model
+    </h2>
+
+    <p class="section-intro">
+
+        The suite covered a broad operational landscape.
+        Each module addressed a specific banking capability
+        while contributing to the larger connected ecosystem.
+
+    </p>
+
+
+    <div class="app-grid">
+
+
+        <div class="app-card">
+
+            <div class="app-number">01</div>
+
+            <h3>Audit</h3>
 
             <p>
-                The objective was to define a platform architecture and
-                product capabilities that could support multiple banking
-                applications while improving interoperability and
-                reducing integration complexity.
+                Supports internal, compliance,
+                statutory and operations audit workflows.
             </p>
 
-        </section>
+        </div>
 
 
-        <!-- MY ROLE -->
+        <div class="app-card">
 
-        <section class="section">
+            <div class="app-number">02</div>
 
-            <div class="section-label">
-                04 · My Product Role
-            </div>
-
-            <h2>
-                Product strategy through delivery
-            </h2>
-
-            <div class="capability-grid">
-
-                <div class="capability">
-
-                    <h3>
-                        Product Vision & Strategy
-                    </h3>
-
-                    <p>
-                        Owned product vision, strategy and roadmap
-                        for the platform.
-                    </p>
-
-                </div>
-
-
-                <div class="capability">
-
-                    <h3>
-                        Product Discovery
-                    </h3>
-
-                    <p>
-                        Translated customer needs and business priorities
-                        into scalable product capabilities.
-                    </p>
-
-                </div>
-
-
-                <div class="capability">
-
-                    <h3>
-                        Product Requirements
-                    </h3>
-
-                    <p>
-                        Defined PRDs, BRDs, FSDs, API specifications,
-                        DFDs, ER models, process flows and
-                        acceptance criteria.
-                    </p>
-
-                </div>
-
-
-                <div class="capability">
-
-                    <h3>
-                        Cross-Functional Leadership
-                    </h3>
-
-                    <p>
-                        Worked across Product, Engineering, Business,
-                        UX, Sales, Marketing and Delivery teams.
-                    </p>
-
-                </div>
-
-
-                <div class="capability">
-
-                    <h3>
-                        Architecture Collaboration
-                    </h3>
-
-                    <p>
-                        Led product requirements around API-first,
-                        cloud-ready, microservices-based and
-                        multi-tenant environments.
-                    </p>
-
-                </div>
-
-
-                <div class="capability">
-
-                    <h3>
-                        Delivery & Release
-                    </h3>
-
-                    <p>
-                        Supported prioritization, Agile execution,
-                        UAT, release readiness, deployment and
-                        continuous enhancement.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PRODUCT SCOPE -->
-
-        <section class="section">
-
-            <div class="section-label">
-                05 · Product Scope
-            </div>
-
-            <h2>
-                A multi-application enterprise ecosystem
-            </h2>
+            <h3>FAM</h3>
 
             <p>
-                The platform covered capabilities across banking,
-                payments, lending and automation, connecting multiple
-                enterprise applications through configurable workflows
-                and integrations.
+                Fixed Asset Management for asset
+                tracking, depreciation and lifecycle control.
             </p>
 
-            <div class="tags">
-
-                <span class="tag">
-                    Digital Banking
-                </span>
-
-                <span class="tag">
-                    Payments
-                </span>
-
-                <span class="tag">
-                    Lending
-                </span>
-
-                <span class="tag">
-                    Workflow Automation
-                </span>
-
-                <span class="tag">
-                    API Integration
-                </span>
-
-                <span class="tag">
-                    Transaction Processing
-                </span>
-
-                <span class="tag">
-                    Enterprise SaaS
-                </span>
-
-                <span class="tag">
-                    Multi-Tenant Platform
-                </span>
-
-            </div>
-
-        </section>
+        </div>
 
 
-        <!-- PRODUCT APPROACH -->
+        <div class="app-card">
 
-        <section class="section">
+            <div class="app-number">03</div>
 
-            <div class="section-label">
-                06 · Product Approach
-            </div>
-
-            <h2>
-                From requirements to scalable product capabilities
-            </h2>
-
-            <div class="flow">
-
-                <div class="flow-step">
-                    Customer Needs
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Product Discovery
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Requirements
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Architecture
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Agile Delivery
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    UAT & Release
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ARCHITECTURE -->
-
-        <section class="section">
-
-            <div class="section-label">
-                07 · Platform Architecture
-            </div>
-
-            <h2>
-                API-first and modular architecture
-            </h2>
+            <h3>GST</h3>
 
             <p>
-                The platform was designed around API-first integration,
-                modular workflows, cloud-ready deployment and
-                microservices-based architecture to support
-                interoperability and scalability.
+                Tracks purchased assets/products,
+                GST calculations, warranty and insurance data.
             </p>
 
-            <div class="flow">
-
-                <div class="flow-step">
-                    Enterprise Applications
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    APIs & Integrations
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Platform Services
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Configurable Workflows
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Banking Operations
-                </div>
-
-            </div>
-
-        </section>
+        </div>
 
 
-        <!-- INTEGRATIONS -->
+        <div class="app-card">
 
-        <section class="section">
+            <div class="app-number">04</div>
 
-            <div class="section-label">
-                08 · Enterprise Integrations
-            </div>
-
-            <h2>
-                Connecting banking ecosystems
-            </h2>
+            <h3>LOS – LMS</h3>
 
             <p>
-                The platform supported integrations across banking,
-                payments, lending and regulatory ecosystems. The
-                documented product scope included CBS, NPCI,
-                Credit Bureaus, GST and CKYC/CERSAI ecosystems.
+                Supports loan initiation through
+                maker-checker-sanctioner workflows
+                across multiple loan products.
             </p>
 
-            <div class="tags">
-
-                <span class="tag">
-                    CBS
-                </span>
-
-                <span class="tag">
-                    NPCI
-                </span>
-
-                <span class="tag">
-                    Credit Bureaus
-                </span>
-
-                <span class="tag">
-                    GST
-                </span>
-
-                <span class="tag">
-                    CKYC
-                </span>
-
-                <span class="tag">
-                    CERSAI
-                </span>
-
-            </div>
-
-        </section>
+        </div>
 
 
-        <!-- OUTCOMES -->
+        <div class="app-card">
 
-        <section class="section">
+            <div class="app-number">05</div>
 
-            <div class="section-label">
-                09 · Outcomes
-            </div>
-
-            <h2>
-                Measurable product impact
-            </h2>
-
-            <div class="outcomes">
-
-                <div class="outcome">
-
-                    <strong>
-                        20%
-                    </strong>
-
-                    <span>
-                        Reduction in integration complexity
-                    </span>
-
-                </div>
-
-
-                <div class="outcome">
-
-                    <strong>
-                        12+
-                    </strong>
-
-                    <span>
-                        Enterprise applications integrated
-                    </span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- LEARNINGS -->
-
-        <section class="section">
-
-            <div class="section-label">
-                10 · Product Perspective
-            </div>
-
-            <h2>
-                What this project demonstrates
-            </h2>
+            <h3>CMS</h3>
 
             <p>
-                This project demonstrates product management across
-                complex enterprise environments where product strategy,
-                customer requirements, technical architecture,
-                integrations and delivery need to work together.
+                Manages personalised and instant cards
+                across RuPay, Visa and Mastercard programmes.
             </p>
+
+        </div>
+
+
+        <div class="app-card">
+
+            <div class="app-number">06</div>
+
+            <h3>Shares</h3>
 
             <p>
-                It also demonstrates the ability to translate business
-                requirements into scalable platform capabilities while
-                working across multiple technical and business
-                stakeholders.
+                Supports share portfolios, dividend
+                calculations, approvals and board reporting.
             </p>
 
-        </section>
+        </div>
+
+
+        <div class="app-card">
+
+            <div class="app-number">07</div>
+
+            <h3>PM Schemes</h3>
+
+            <p>
+                Supports management of government-launched
+                financial schemes.
+            </p>
+
+        </div>
+
+
+        <div class="app-card">
+
+            <div class="app-number">08</div>
+
+            <h3>CIBIL</h3>
+
+            <p>
+                Retrieves credit information through
+                APIs connected with credit authorities.
+            </p>
+
+        </div>
+
+
+        <div class="app-card">
+
+            <div class="app-number">09</div>
+
+            <h3>Reconciliation</h3>
+
+            <p>
+                Supports reconciliation across AEPS,
+                UPI, Switch, ATM and other transaction flows.
+            </p>
+
+        </div>
+
+
+        <div class="app-card">
+
+            <div class="app-number">10</div>
+
+            <h3>AML – KYC</h3>
+
+            <p>
+                Tracks and flags payment activity against
+                applicable rules and supports regulatory reporting.
+            </p>
+
+        </div>
+
+
+        <div class="app-card">
+
+            <div class="app-number">11</div>
+
+            <h3>Treasury</h3>
+
+            <p>
+                Supports treasury operations including
+                beginning-of-day and end-of-day activities.
+            </p>
+
+        </div>
+
+
+        <div class="app-card">
+
+            <div class="app-number">12</div>
+
+            <h3>DMS & CKYC</h3>
+
+            <p>
+                Manages customer documents, verification
+                APIs and CKYC information workflows.
+            </p>
+
+        </div>
 
 
     </div>
 
+
+    <!-- ECOSYSTEM VISUAL -->
+
+    <div class="ecosystem">
+
+        <div class="ecosystem-title">
+            Connected Banking Operating Model
+        </div>
+
+        <div class="eco-flow">
+
+
+            <div class="eco-box">
+
+                <strong>
+                    Banking Functions
+                </strong>
+
+                <span>
+                    Lending · Cards · Treasury ·
+                    Finance · Compliance
+                </span>
+
+            </div>
+
+
+            <div class="eco-arrow">
+                →
+            </div>
+
+
+            <div class="eco-box">
+
+                <strong>
+                    Integrated Channels
+                </strong>
+
+                <span>
+                    APIs · Workflow orchestration ·
+                    Business rules · Transaction processing
+                </span>
+
+            </div>
+
+
+            <div class="eco-arrow">
+                →
+            </div>
+
+
+            <div class="eco-box">
+
+                <strong>
+                    External Ecosystem
+                </strong>
+
+                <span>
+                    CBS · NPCI · CIBIL · GST ·
+                    CKYC / CERSAI
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     04 ARCHITECTURE
+====================================================== -->
+
+<section class="section"
+         id="architecture">
+
+    <div class="section-number">
+        04 · Platform Architecture
+    </div>
+
+    <h2>
+        API-first architecture built around modularity
+    </h2>
+
+    <p class="section-intro">
+
+        The product architecture was shaped around
+        API-first integration, modular capabilities,
+        cloud-ready deployments, microservices-oriented
+        design and multi-tenant scalability.
+
+    </p>
+
+
+    <div class="architecture">
+
+
+        <div class="arch-row">
+
+            <div class="arch-box">
+                Banking Applications
+            </div>
+
+            <div class="arch-arrow">
+                →
+            </div>
+
+            <div class="arch-box highlight">
+                API & Integration Layer
+            </div>
+
+            <div class="arch-arrow">
+                →
+            </div>
+
+            <div class="arch-box">
+                External Financial Ecosystem
+            </div>
+
+        </div>
+
+
+        <div class="arch-row">
+
+            <div class="arch-box">
+                User & Role Workflows
+            </div>
+
+            <div class="arch-arrow">
+                →
+            </div>
+
+            <div class="arch-box highlight">
+                Business Rules & Workflow Engine
+            </div>
+
+            <div class="arch-arrow">
+                →
+            </div>
+
+            <div class="arch-box">
+                Transaction Processing
+            </div>
+
+        </div>
+
+
+        <div class="arch-row">
+
+            <div class="arch-box">
+                Data & Documents
+            </div>
+
+            <div class="arch-arrow">
+                →
+            </div>
+
+            <div class="arch-box highlight">
+                Secure Platform Services
+            </div>
+
+            <div class="arch-arrow">
+                →
+            </div>
+
+            <div class="arch-box">
+                Reporting & Controls
+            </div>
+
+        </div>
+
+
+        <div class="arch-caption">
+
+            Conceptual product architecture shown for
+            portfolio purposes; it does not expose
+            confidential production implementation details.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     05 WORKFLOW
+====================================================== -->
+
+<section class="section"
+         id="workflow">
+
+    <div class="section-number">
+        05 · Product Workflow
+    </div>
+
+    <h2>
+        From business requirement to production capability
+    </h2>
+
+    <p>
+
+        My product workflow connected business discovery
+        with technical design and delivery governance,
+        ensuring that requirements were translated into
+        implementable and testable product capabilities.
+
+    </p>
+
+
+    <div class="workflow">
+
+
+        <div class="workflow-step">
+
+            <strong>
+                Business Need
+            </strong>
+
+            <span>
+                Problem, stakeholder need
+                and operating context
+            </span>
+
+        </div>
+
+
+        <div class="workflow-arrow">
+            →
+        </div>
+
+
+        <div class="workflow-step">
+
+            <strong>
+                Discovery
+            </strong>
+
+            <span>
+                Requirements,
+                process analysis
+            </span>
+
+        </div>
+
+
+        <div class="workflow-arrow">
+            →
+        </div>
+
+
+        <div class="workflow-step">
+
+            <strong>
+                Product Definition
+            </strong>
+
+            <span>
+                Scope, user journeys,
+                acceptance criteria
+            </span>
+
+        </div>
+
+
+        <div class="workflow-arrow">
+            →
+        </div>
+
+
+        <div class="workflow-step">
+
+            <strong>
+                Technical Design
+            </strong>
+
+            <span>
+                APIs, DFDs, ER models,
+                architecture
+            </span>
+
+        </div>
+
+
+        <div class="workflow-arrow">
+            →
+        </div>
+
+
+        <div class="workflow-step">
+
+            <strong>
+                Agile Delivery
+            </strong>
+
+            <span>
+                Backlog, engineering,
+                QA and UAT
+            </span>
+
+        </div>
+
+
+        <div class="workflow-arrow">
+            →
+        </div>
+
+
+        <div class="workflow-step">
+
+            <strong>
+                Release
+            </strong>
+
+            <span>
+                Deployment, adoption
+                and enhancement
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     06 MY ROLE
+====================================================== -->
+
+<section class="section"
+         id="role">
+
+    <div class="section-number">
+        06 · My Product Management Role
+    </div>
+
+    <h2>
+        Product ownership across strategy,
+        architecture and delivery
+    </h2>
+
+    <p class="section-intro">
+
+        I operated across product strategy and technical
+        execution, translating business requirements into
+        scalable product capabilities and coordinating
+        delivery across cross-functional teams.
+
+    </p>
+
+
+    <div class="role-grid">
+
+
+        <div class="role-card">
+
+            <div class="role-icon">
+                01
+            </div>
+
+            <h3>
+                Product Vision & Strategy
+            </h3>
+
+            <p>
+                Owned product vision, strategy and roadmap
+                for the multi-module enterprise platform.
+            </p>
+
+        </div>
+
+
+        <div class="role-card">
+
+            <div class="role-icon">
+                02
+            </div>
+
+            <h3>
+                Product Discovery
+            </h3>
+
+            <p>
+                Translated business priorities and customer
+                requirements into prioritised capabilities
+                and product scope.
+            </p>
+
+        </div>
+
+
+        <div class="role-card">
+
+            <div class="role-icon">
+                03
+            </div>
+
+            <h3>
+                Platform Design
+            </h3>
+
+            <p>
+                Worked across API-first architecture,
+                modular workflows, integrations and
+                scalable deployment considerations.
+            </p>
+
+        </div>
+
+
+        <div class="role-card">
+
+            <div class="role-icon">
+                04
+            </div>
+
+            <h3>
+                Requirements Engineering
+            </h3>
+
+            <p>
+                Converted business needs into detailed
+                product and functional requirements for
+                engineering and QA teams.
+            </p>
+
+        </div>
+
+
+        <div class="role-card">
+
+            <div class="role-icon">
+                05
+            </div>
+
+            <h3>
+                Cross-Functional Leadership
+            </h3>
+
+            <p>
+                Coordinated Product, Engineering, Business,
+                UX, Sales, Marketing and Delivery stakeholders.
+            </p>
+
+        </div>
+
+
+        <div class="role-card">
+
+            <div class="role-icon">
+                06
+            </div>
+
+            <h3>
+                Delivery & Release
+            </h3>
+
+            <p>
+                Supported backlog prioritisation, Agile
+                execution, UAT, release readiness,
+                deployment and continuous enhancement.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     07 REQUIREMENTS
+====================================================== -->
+
+<section class="section"
+         id="requirements">
+
+    <div class="section-number">
+        07 · Product & Technical Documentation
+    </div>
+
+    <h2>
+        Turning business requirements into
+        engineering-ready specifications
+    </h2>
+
+    <p>
+
+        A major part of the product role involved creating
+        structured artefacts that allowed Business,
+        Product, Engineering and QA teams to work from
+        the same understanding.
+
+    </p>
+
+
+    <div class="doc-grid">
+
+        <div class="doc">
+            PRD
+        </div>
+
+        <div class="doc">
+            BRD
+        </div>
+
+        <div class="doc">
+            FSD
+        </div>
+
+        <div class="doc">
+            API Specifications
+        </div>
+
+        <div class="doc">
+            DFD
+        </div>
+
+        <div class="doc">
+            ER Models
+        </div>
+
+        <div class="doc">
+            Process Flows
+        </div>
+
+        <div class="doc">
+            Acceptance Criteria
+        </div>
+
+        <div class="doc">
+            User Stories
+        </div>
+
+        <div class="doc">
+            UAT Requirements
+        </div>
+
+        <div class="doc">
+            User Manuals
+        </div>
+
+        <div class="doc">
+            Product Documentation
+        </div>
+
+    </div>
+
+
+    <div class="note">
+
+        <strong>Why this matters:</strong>
+        In enterprise products, good product management
+        is not only about defining "what to build".
+        It also requires creating enough functional and
+        technical clarity for teams to build, test,
+        deploy and support the capability consistently.
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     08 TECHNOLOGY
+====================================================== -->
+
+<section class="section"
+         id="technology">
+
+    <div class="section-number">
+        08 · Technology & Product Toolkit
+    </div>
+
+    <h2>
+        Technology-aware product management
+    </h2>
+
+    <p>
+
+        The product required close collaboration with
+        engineering around architecture, integrations,
+        data flows, workflows and enterprise controls.
+
+    </p>
+
+
+    <div class="tech-groups">
+
+
+        <div class="tech-group">
+
+            <h3>
+                Architecture
+            </h3>
+
+            <div class="tags">
+
+                <span class="tag">
+                    API-first Architecture
+                </span>
+
+                <span class="tag">
+                    Microservices
+                </span>
+
+                <span class="tag">
+                    Cloud-ready Platforms
+                </span>
+
+                <span class="tag">
+                    Multi-tenant Architecture
+                </span>
+
+                <span class="tag">
+                    Modular Architecture
+                </span>
+
+                <span class="tag">
+                    Platform Scalability
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="tech-group">
+
+            <h3>
+                Data & Analytics
+            </h3>
+
+            <div class="tags">
+
+                <span class="tag">
+                    SQL
+                </span>
+
+                <span class="tag">
+                    Power BI
+                </span>
+
+                <span class="tag">
+                    Data Modelling
+                </span>
+
+                <span class="tag">
+                    KPI Frameworks
+                </span>
+
+                <span class="tag">
+                    Product Analytics
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="tech-group">
+
+            <h3>
+                Product Design & Documentation
+            </h3>
+
+            <div class="tags">
+
+                <span class="tag">
+                    Figma
+                </span>
+
+                <span class="tag">
+                    draw.io
+                </span>
+
+                <span class="tag">
+                    Lucidchart
+                </span>
+
+                <span class="tag">
+                    MS Visio
+                </span>
+
+                <span class="tag">
+                    DFD
+                </span>
+
+                <span class="tag">
+                    ER Modelling
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="tech-group">
+
+            <h3>
+                Delivery
+            </h3>
+
+            <div class="tags">
+
+                <span class="tag">
+                    Agile / Scrum
+                </span>
+
+                <span class="tag">
+                    Backlog Management
+                </span>
+
+                <span class="tag">
+                    UAT
+                </span>
+
+                <span class="tag">
+                    Release Management
+                </span>
+
+                <span class="tag">
+                    Stakeholder Management
+                </span>
+
+                <span class="tag">
+                    API Integrations
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     09 INTEGRATIONS
+====================================================== -->
+
+<section class="section"
+         id="integrations">
+
+    <div class="section-number">
+        09 · Enterprise Integrations
+    </div>
+
+    <h2>
+        Connecting the platform with financial ecosystems
+    </h2>
+
+    <p>
+
+        The platform included integrations and workflows
+        spanning banking, payments, lending, credit,
+        taxation and identity ecosystems.
+
+    </p>
+
+
+    <div class="integration-grid">
+
+
+        <div class="integration">
+
+            <strong>
+                CBS
+            </strong>
+
+            <span>
+                Core banking ecosystem integration
+            </span>
+
+        </div>
+
+
+        <div class="integration">
+
+            <strong>
+                NPCI
+            </strong>
+
+            <span>
+                Payment and card ecosystem connectivity
+            </span>
+
+        </div>
+
+
+        <div class="integration">
+
+            <strong>
+                CIBIL
+            </strong>
+
+            <span>
+                Credit information retrieval through APIs
+            </span>
+
+        </div>
+
+
+        <div class="integration">
+
+            <strong>
+                GST
+            </strong>
+
+            <span>
+                Tax-related product and asset workflows
+            </span>
+
+        </div>
+
+
+        <div class="integration">
+
+            <strong>
+                CKYC
+            </strong>
+
+            <span>
+                Customer KYC information workflows
+            </span>
+
+        </div>
+
+
+        <div class="integration">
+
+            <strong>
+                CERSAI
+            </strong>
+
+            <span>
+                Regulated ecosystem integration context
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     10 SECURITY
+====================================================== -->
+
+<section class="section">
+
+    <div class="section-number">
+        10 · Security, Controls & Compliance
+    </div>
+
+    <h2>
+        Designing for regulated financial environments
+    </h2>
+
+    <p>
+
+        Product decisions in financial systems must account
+        for more than usability. They also need to consider
+        access controls, auditability, regulatory workflows,
+        secure data processing and controlled operational
+        processes.
+
+    </p>
+
+
+    <div class="challenge-grid">
+
+
+        <div class="challenge">
+
+            <div class="challenge-number">
+                A
+            </div>
+
+            <h3>
+                Role-based controls
+            </h3>
+
+            <p>
+                Maker-checker-sanctioner workflows were
+                relevant across controlled banking operations.
+            </p>
+
+        </div>
+
+
+        <div class="challenge">
+
+            <div class="challenge-number">
+                B
+            </div>
+
+            <h3>
+                Auditability
+            </h3>
+
+            <p>
+                Audit and regulatory workflows required
+                traceability and structured operational controls.
+            </p>
+
+        </div>
+
+
+        <div class="challenge">
+
+            <div class="challenge-number">
+                C
+            </div>
+
+            <h3>
+                Secure data handling
+            </h3>
+
+            <p>
+                Customer, transaction and document workflows
+                required controlled access and secure processing.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     11 PRODUCT DECISIONS
+====================================================== -->
+
+<section class="section"
+         id="decisions">
+
+    <div class="section-number">
+        11 · Product Decisions
+    </div>
+
+    <h2>
+        Product thinking behind the platform
+    </h2>
+
+    <p>
+
+        The following decisions represent the product
+        principles behind the platform approach.
+
+    </p>
+
+
+    <div class="decision-table">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Product Question
+                    </th>
+
+                    <th>
+                        Direction
+                    </th>
+
+                    <th>
+                        Why it mattered
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+                <tr>
+
+                    <td>
+                        How should applications integrate?
+                    </td>
+
+                    <td>
+                        API-first integration
+                    </td>
+
+                    <td>
+                        Reduced dependency on tightly coupled
+                        point-to-point integration patterns.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        How should workflows adapt?
+                    </td>
+
+                    <td>
+                        Configurable workflows
+                    </td>
+
+                    <td>
+                        Banking institutions can have different
+                        operating models and approval processes.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        How should the platform scale?
+                    </td>
+
+                    <td>
+                        Modular and cloud-ready architecture
+                    </td>
+
+                    <td>
+                        Supports expansion without treating
+                        every capability as an isolated product.
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        How should enterprise delivery work?
+                    </td>
+
+                    <td>
+                        Structured requirements + Agile delivery
+                    </td>
+
+                    <td>
+                        Creates traceability from business need
+                        through engineering, QA and UAT.
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     12 IMPACT
+====================================================== -->
+
+<section class="section"
+         id="impact">
+
+    <div class="section-number">
+        12 · Product Impact
+    </div>
+
+    <h2>
+        From fragmented integrations to
+        a more connected platform model
+    </h2>
+
+    <p>
+
+        The platform approach improved interoperability
+        and scalability while reducing the complexity
+        involved in connecting multiple enterprise
+        applications.
+
+    </p>
+
+
+    <div class="impact">
+
+
+        <div class="impact-grid">
+
+
+            <div class="impact-card">
+
+                <div class="impact-number">
+                    20%
+                </div>
+
+                <span>
+                    Reduction in integration complexity
+                </span>
+
+            </div>
+
+
+            <div class="impact-card">
+
+                <div class="impact-number">
+                    12+
+                </div>
+
+                <span>
+                    Enterprise applications within
+                    the integrated ecosystem
+                </span>
+
+            </div>
+
+
+            <div class="impact-card">
+
+                <div class="impact-number">
+                    01
+                </div>
+
+                <span>
+                    Connected platform approach across
+                    multiple banking functions
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="note">
+
+        <strong>Impact note:</strong>
+        The 20% figure represents the documented reduction
+        in integration complexity for the project. Other
+        improvements such as scalability, interoperability
+        and operational efficiency are documented
+        qualitatively rather than assigned unsupported
+        percentages.
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     13 LEARNINGS
+====================================================== -->
+
+<section class="section"
+         id="learnings">
+
+    <div class="section-number">
+        13 · Product Learnings
+    </div>
+
+    <h2>
+        What this project taught me about
+        enterprise product management
+    </h2>
+
+
+    <div class="learning-list">
+
+
+        <div class="learning">
+
+            <div class="learning-number">
+                01
+            </div>
+
+            <p>
+                <strong>
+                    Platform thinking beats feature thinking
+                </strong><br>
+
+                When multiple applications serve connected
+                business processes, the product strategy
+                needs to consider the ecosystem rather than
+                isolated features.
+            </p>
+
+        </div>
+
+
+        <div class="learning">
+
+            <div class="learning-number">
+                02
+            </div>
+
+            <p>
+                <strong>
+                    Architecture is a product concern
+                </strong><br>
+
+                API strategy, modularity, scalability and
+                integration patterns directly influence
+                customer experience and delivery economics.
+            </p>
+
+        </div>
+
+
+        <div class="learning">
+
+            <div class="learning-number">
+                03
+            </div>
+
+            <p>
+                <strong>
+                    Enterprise workflows require precision
+                </strong><br>
+
+                Roles, approvals, exceptions, controls,
+                auditability and operational processes need
+                to be represented explicitly in product design.
+            </p>
+
+        </div>
+
+
+        <div class="learning">
+
+            <div class="learning-number">
+                04
+            </div>
+
+            <p>
+                <strong>
+                    Documentation is a product capability
+                </strong><br>
+
+                Strong PRDs, BRDs, FSDs, API specifications,
+                DFDs and acceptance criteria reduce ambiguity
+                between business and engineering teams.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="note">
+
+        <strong>Portfolio disclosure:</strong>
+        This case study intentionally presents a
+        conceptual architecture and product view.
+        Confidential client information, production
+        credentials, proprietary source code and
+        sensitive implementation details are not exposed.
+
+    </div>
+
+</section>
+
+
+</div>
+
+</div>
+
 </main>
 
 
-<!-- FOOTER -->
+<!-- ======================================================
+     FOOTER
+====================================================== -->
 
 <footer>
 
