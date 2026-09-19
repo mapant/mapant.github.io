@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Integrated Channels Suite | Manoj Pant</title>
+
+    <meta name="description"
+          content="Integrated Channels Suite - Digital Banking Platform case study by Manoj Pant.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f8fa;
+            color: #172033;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-inner {
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .back-link {
+            font-size: 14px;
+            color: #667085;
+        }
+
+        .back-link:hover {
+            color: #b58b43;
+        }
+
+        /* HERO */
+
+        .hero {
+            background: #172033;
+            color: white;
+            padding: 90px 0;
+        }
+
+        .eyebrow {
+            color: #d0a75f;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: 52px;
+            line-height: 1.1;
+            max-width: 850px;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 21px;
+            color: #dbe2ec;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .meta span {
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 30px;
+            padding: 8px 15px;
+            font-size: 13px;
+            color: #e5e7eb;
+        }
+
+        /* CONTENT */
+
+        main {
+            padding: 70px 0;
+        }
+
+        .section {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 35px;
+            margin-bottom: 25px;
+        }
+
+        .section-label {
+            color: #b58b43;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 29px;
+            color: #111827;
+            margin-bottom: 16px;
+        }
+
+        .section p {
+            color: #596579;
+            margin-bottom: 15px;
+        }
+
+        /* OVERVIEW GRID */
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .overview-card {
+            background: #f7f8fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .overview-card strong {
+            display: block;
+            font-size: 15px;
+            margin-bottom: 5px;
+            color: #172033;
+        }
+
+        .overview-card span {
+            font-size: 13px;
+            color: #667085;
+        }
+
+        /* CAPABILITIES */
+
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .capability {
+            padding: 20px;
+            background: #f7f8fa;
+            border-radius: 10px;
+            border-left: 4px solid #c9a76a;
+        }
+
+        .capability h3 {
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+
+        .capability p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* FLOW */
+
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .flow-step {
+            background: #172033;
+            color: white;
+            padding: 13px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .arrow {
+            color: #b58b43;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* OUTCOMES */
+
+        .outcomes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .outcome {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .outcome strong {
+            display: block;
+            font-size: 32px;
+            color: #b58b43;
+            margin-bottom: 5px;
+        }
+
+        .outcome span {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* TAGS */
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: #f1f3f5;
+            color: #475467;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #101623;
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .overview-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .capability-grid,
+            .outcomes {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="container nav-inner">
+
+        <div class="logo">
+            MANOJ PANT
+        </div>
+
+        <a class="back-link"
+           href="../../index.html">
+
+            ← Back to Portfolio
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            Product Case Study · M2P Solutions
+        </div>
+
+        <h1>
+            Integrated Channels Suite
+        </h1>
+
+        <p class="hero-subtitle">
+            Digital Banking Platform
+        </p>
+
+        <div class="meta">
+
+            <span>
+                Senior Product Manager
+            </span>
+
+            <span>
+                Dec 2024 – Mar 2026
+            </span>
+
+            <span>
+                FinTech
+            </span>
+
+            <span>
+                Enterprise Platform
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- MAIN CONTENT -->
+
+<main>
+
+    <div class="container">
+
+
+        <!-- OVERVIEW -->
+
+        <section class="section">
+
+            <div class="section-label">
+                01 · Overview
+            </div>
+
+            <h2>
+                Building a scalable digital banking platform
+            </h2>
+
+            <p>
+                Integrated Channels Suite was a multi-module banking
+                platform designed to bring multiple enterprise
+                applications together through configurable workflows,
+                secure integrations and scalable deployment capabilities.
+            </p>
+
+            <div class="overview-grid">
+
+                <div class="overview-card">
+
+                    <strong>
+                        Platform Type
+                    </strong>
+
+                    <span>
+                        Digital Banking
+                    </span>
+
+                </div>
+
+
+                <div class="overview-card">
+
+                    <strong>
+                        Applications
+                    </strong>
+
+                    <span>
+                        12+ enterprise applications
+                    </span>
+
+                </div>
+
+
+                <div class="overview-card">
+
+                    <strong>
+                        Architecture
+                    </strong>
+
+                    <span>
+                        API-first
+                    </span>
+
+                </div>
+
+
+                <div class="overview-card">
+
+                    <strong>
+                        Focus
+                    </strong>
+
+                    <span>
+                        Integration & workflow automation
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BUSINESS CHALLENGE -->
+
+        <section class="section">
+
+            <div class="section-label">
+                02 · Business Challenge
+            </div>
+
+            <h2>
+                Simplifying fragmented enterprise operations
+            </h2>
+
+            <p>
+                Enterprise banking operations can involve multiple
+                applications, workflows and integrations. The product
+                initiative focused on simplifying these fragmented
+                operations through a scalable platform approach.
+            </p>
+
+            <p>
+                The product needed to support secure integrations,
+                configurable workflows, transaction processing and
+                scalable deployments across enterprise environments.
+            </p>
+
+        </section>
+
+
+        <!-- PRODUCT OBJECTIVE -->
+
+        <section class="section">
+
+            <div class="section-label">
+                03 · Product Objective
+            </div>
+
+            <h2>
+                Create a modular and scalable platform ecosystem
+            </h2>
+
+            <p>
+                The objective was to define a platform architecture and
+                product capabilities that could support multiple banking
+                applications while improving interoperability and
+                reducing integration complexity.
+            </p>
+
+        </section>
+
+
+        <!-- MY ROLE -->
+
+        <section class="section">
+
+            <div class="section-label">
+                04 · My Product Role
+            </div>
+
+            <h2>
+                Product strategy through delivery
+            </h2>
+
+            <div class="capability-grid">
+
+                <div class="capability">
+
+                    <h3>
+                        Product Vision & Strategy
+                    </h3>
+
+                    <p>
+                        Owned product vision, strategy and roadmap
+                        for the platform.
+                    </p>
+
+                </div>
+
+
+                <div class="capability">
+
+                    <h3>
+                        Product Discovery
+                    </h3>
+
+                    <p>
+                        Translated customer needs and business priorities
+                        into scalable product capabilities.
+                    </p>
+
+                </div>
+
+
+                <div class="capability">
+
+                    <h3>
+                        Product Requirements
+                    </h3>
+
+                    <p>
+                        Defined PRDs, BRDs, FSDs, API specifications,
+                        DFDs, ER models, process flows and
+                        acceptance criteria.
+                    </p>
+
+                </div>
+
+
+                <div class="capability">
+
+                    <h3>
+                        Cross-Functional Leadership
+                    </h3>
+
+                    <p>
+                        Worked across Product, Engineering, Business,
+                        UX, Sales, Marketing and Delivery teams.
+                    </p>
+
+                </div>
+
+
+                <div class="capability">
+
+                    <h3>
+                        Architecture Collaboration
+                    </h3>
+
+                    <p>
+                        Led product requirements around API-first,
+                        cloud-ready, microservices-based and
+                        multi-tenant environments.
+                    </p>
+
+                </div>
+
+
+                <div class="capability">
+
+                    <h3>
+                        Delivery & Release
+                    </h3>
+
+                    <p>
+                        Supported prioritization, Agile execution,
+                        UAT, release readiness, deployment and
+                        continuous enhancement.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCT SCOPE -->
+
+        <section class="section">
+
+            <div class="section-label">
+                05 · Product Scope
+            </div>
+
+            <h2>
+                A multi-application enterprise ecosystem
+            </h2>
+
+            <p>
+                The platform covered capabilities across banking,
+                payments, lending and automation, connecting multiple
+                enterprise applications through configurable workflows
+                and integrations.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    Digital Banking
+                </span>
+
+                <span class="tag">
+                    Payments
+                </span>
+
+                <span class="tag">
+                    Lending
+                </span>
+
+                <span class="tag">
+                    Workflow Automation
+                </span>
+
+                <span class="tag">
+                    API Integration
+                </span>
+
+                <span class="tag">
+                    Transaction Processing
+                </span>
+
+                <span class="tag">
+                    Enterprise SaaS
+                </span>
+
+                <span class="tag">
+                    Multi-Tenant Platform
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCT APPROACH -->
+
+        <section class="section">
+
+            <div class="section-label">
+                06 · Product Approach
+            </div>
+
+            <h2>
+                From requirements to scalable product capabilities
+            </h2>
+
+            <div class="flow">
+
+                <div class="flow-step">
+                    Customer Needs
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Product Discovery
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Requirements
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Architecture
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Agile Delivery
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    UAT & Release
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARCHITECTURE -->
+
+        <section class="section">
+
+            <div class="section-label">
+                07 · Platform Architecture
+            </div>
+
+            <h2>
+                API-first and modular architecture
+            </h2>
+
+            <p>
+                The platform was designed around API-first integration,
+                modular workflows, cloud-ready deployment and
+                microservices-based architecture to support
+                interoperability and scalability.
+            </p>
+
+            <div class="flow">
+
+                <div class="flow-step">
+                    Enterprise Applications
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    APIs & Integrations
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Platform Services
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Configurable Workflows
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+                <div class="flow-step">
+                    Banking Operations
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTEGRATIONS -->
+
+        <section class="section">
+
+            <div class="section-label">
+                08 · Enterprise Integrations
+            </div>
+
+            <h2>
+                Connecting banking ecosystems
+            </h2>
+
+            <p>
+                The platform supported integrations across banking,
+                payments, lending and regulatory ecosystems. The
+                documented product scope included CBS, NPCI,
+                Credit Bureaus, GST and CKYC/CERSAI ecosystems.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    CBS
+                </span>
+
+                <span class="tag">
+                    NPCI
+                </span>
+
+                <span class="tag">
+                    Credit Bureaus
+                </span>
+
+                <span class="tag">
+                    GST
+                </span>
+
+                <span class="tag">
+                    CKYC
+                </span>
+
+                <span class="tag">
+                    CERSAI
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- OUTCOMES -->
+
+        <section class="section">
+
+            <div class="section-label">
+                09 · Outcomes
+            </div>
+
+            <h2>
+                Measurable product impact
+            </h2>
+
+            <div class="outcomes">
+
+                <div class="outcome">
+
+                    <strong>
+                        20%
+                    </strong>
+
+                    <span>
+                        Reduction in integration complexity
+                    </span>
+
+                </div>
+
+
+                <div class="outcome">
+
+                    <strong>
+                        12+
+                    </strong>
+
+                    <span>
+                        Enterprise applications integrated
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LEARNINGS -->
+
+        <section class="section">
+
+            <div class="section-label">
+                10 · Product Perspective
+            </div>
+
+            <h2>
+                What this project demonstrates
+            </h2>
+
+            <p>
+                This project demonstrates product management across
+                complex enterprise environments where product strategy,
+                customer requirements, technical architecture,
+                integrations and delivery need to work together.
+            </p>
+
+            <p>
+                It also demonstrates the ability to translate business
+                requirements into scalable platform capabilities while
+                working across multiple technical and business
+                stakeholders.
+            </p>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Manoj Pant · Senior Product Manager
+
+</footer>
+
+
+</body>
+
+</html>
