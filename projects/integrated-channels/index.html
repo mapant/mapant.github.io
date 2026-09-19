@@ -369,6 +369,77 @@ footer{background:#0F1724;color:#98A6B8;text-align:center;padding:28px;font-size
 }
 .to-top.show{display:grid}
 
+
+/* ---------- corrected SaaS portfolio model ---------- */
+.saas-banner{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.saas-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;position:relative;overflow:hidden}
+.saas-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold)}
+.saas-card strong{display:block;font-size:14px;margin-bottom:4px}
+.saas-card span{display:block;font-size:11px;color:var(--muted)}
+
+.module-highlight{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.module-box{background:var(--soft);border:1px solid var(--line);border-radius:15px;padding:19px}
+.module-box h3{font-size:14px;margin-bottom:7px}
+.module-box p{font-size:11.5px;margin-bottom:8px}
+.module-list{display:grid;gap:6px}
+.module-list div{font-size:11px;color:var(--muted);padding-left:14px;position:relative}
+.module-list div:before{content:"";position:absolute;left:0;top:.67em;width:5px;height:5px;border-radius:50%;background:var(--gold-2)}
+.module-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}
+.module-tag{font-size:9.5px;padding:5px 8px;border-radius:999px;background:#fff;border:1px solid #E1E6EC;color:#536175}
+
+.application-portfolio{margin-top:27px}
+.portfolio-group{border:1px solid var(--line);border-radius:17px;background:#fff;margin-bottom:14px;overflow:hidden}
+.group-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:19px 20px 13px;background:linear-gradient(180deg,#fff,#FBFCFD);border-bottom:1px solid #ECEFF2}
+.group-head h3{margin:0;font-size:17px}.group-head span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1.1px;font-weight:850}
+.group-sub{padding:0 20px 15px;color:var(--muted);font-size:11px}
+.app-grid-premium{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;padding:0 20px 20px}
+.p-app{background:var(--soft);border:1px solid #E7EAF0;border-radius:14px;padding:17px;transition:.18s;display:flex;flex-direction:column;min-height:200px}
+.p-app:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);border-color:#D9BD80}
+.p-app-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.p-app-no{width:31px;height:31px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:10px;font-weight:900}
+.p-app-cat{font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:.85px;color:#8A96A8}
+.p-app h4{font-size:15px;margin-bottom:6px}
+.p-app .what{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--gold);font-weight:850;margin-bottom:5px}
+.p-app p{font-size:11px;line-height:1.5;margin-bottom:10px}
+.p-app-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.p-app-tags{display:flex;flex-wrap:wrap;gap:5px}
+.p-app-tag{font-size:9px;background:#fff;border:1px solid #E2E6EB;color:#596579;padding:4px 6px;border-radius:999px}
+.p-app-link{color:var(--ink);font-size:10px;font-weight:850;white-space:nowrap}.p-app-link:hover{color:var(--gold)}
+
+.module-section{scroll-margin-top:105px}
+.module-hero{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:20px}
+.module-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;background:var(--gold-soft);color:#7C5C27;font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:.9px}
+.module-code{font-size:10px;color:#98A2B3;font-weight:850;letter-spacing:1px}
+.module-kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.module-kpi{background:var(--soft);border:1px solid var(--line);border-radius:11px;padding:13px}.module-kpi strong{display:block;font-size:14px;margin-bottom:3px}.module-kpi span{font-size:10px;color:var(--muted)}
+
+/* conceptual interface links */
+.mock-sidebar a{display:block;color:#B9C4D3;padding:7px 8px;border-radius:7px;font-size:9.5px;margin-bottom:3px}
+.mock-sidebar a:hover,.mock-sidebar a.selected{background:rgba(255,255,255,.08);color:#fff}
+
+/* modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(10,18,31,.62);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:20px;z-index:2000}
+.modal-overlay.open{display:flex}
+.modal{width:min(760px,100%);max-height:88vh;overflow:auto;background:#fff;border-radius:20px;box-shadow:0 30px 90px rgba(0,0,0,.25)}
+.modal-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:24px 25px 15px;border-bottom:1px solid var(--line)}
+.modal-top h3{font-size:22px;margin:0 0 3px}.modal-top span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:850}
+.modal-close{border:0;background:var(--soft);width:34px;height:34px;border-radius:9px;cursor:pointer;font-size:18px;color:var(--muted)}
+.modal-close:hover{background:#ECEFF3;color:var(--ink)}
+.modal-body{padding:23px 25px 28px}.modal-body p{font-size:13px;color:#596579}.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:17px}
+.modal-card{background:var(--soft);border:1px solid #E6EAF0;border-radius:12px;padding:15px}.modal-card strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--gold);margin-bottom:7px}.modal-card p{font-size:11px;margin:0}
+.modal-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:15px}.modal-tag{padding:6px 8px;background:#fff;border:1px solid #E1E6EC;border-radius:999px;font-size:9px;color:#526072}
+
+/* ---------- responsive additions ---------- */
+@media(max-width:920px){
+  .saas-banner,.module-highlight{grid-template-columns:1fr}
+  .app-grid-premium{grid-template-columns:repeat(2,1fr)}
+  .module-kpi-row{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  .app-grid-premium,.modal-grid{grid-template-columns:1fr}
+  .module-hero{flex-direction:column}
+}
+
 /* responsive */
 @media(max-width:1050px){
   .content-layout{grid-template-columns:1fr}
@@ -502,47 +573,55 @@ footer{background:#0F1724;color:#98A6B8;text-align:center;padding:28px;font-size
   <div class="container content-layout">
 
     <aside class="side-nav" id="sideNav">
-      <div class="side-title">Case Study</div>
-      <a href="#overview">Overview</a>
-      <a href="#challenge">Challenge</a>
-      <a href="#ecosystem">Application Ecosystem</a>
-      <a href="#workflow">Product Workflow</a>
-      <a href="#architecture">Architecture</a>
-      <a href="#ui">Conceptual UI</a>
-      <a href="#role">My PM Role</a>
-      <a href="#requirements">Requirements</a>
-      <a href="#technology">Technology</a>
-      <a href="#integrations">Integrations</a>
-      <a href="#controls">Controls</a>
-      <a href="#decisions">Decisions</a>
-      <a href="#impact">Impact</a>
-      <a href="#learnings">Learnings</a>
+      <div class="side-title">Application navigator</div>
+      <a href="#overview">Overview <span class="small-dot"></span></a>
+      <a href="#lending">Lending <span class="small-dot"></span></a>
+      <a href="#cards">Cards <span class="small-dot"></span></a>
+      <a href="#reconciliation">Reconciliation <span class="small-dot"></span></a>
+      <a href="#aml">AML / KYC <span class="small-dot"></span></a>
+      <a href="#treasury">Treasury <span class="small-dot"></span></a>
+      <a href="#documents">Documents <span class="small-dot"></span></a>
+      <a href="#audit">Audit <span class="small-dot"></span></a>
+      <div style="height:1px;background:var(--line);margin:8px 13px"></div>
+      <a href="#ecosystem">All Applications <span class="small-dot"></span></a>
+      <a href="#workflow">Product Lifecycle <span class="small-dot"></span></a>
+      <a href="#architecture">Architecture <span class="small-dot"></span></a>
+      <a href="#ui">Product Interface <span class="small-dot"></span></a>
+      <a href="#role">My PM Role <span class="small-dot"></span></a>
+      <a href="#requirements">Requirements <span class="small-dot"></span></a>
+      <a href="#technology">Technology <span class="small-dot"></span></a>
+      <a href="#integrations">Integrations <span class="small-dot"></span></a>
+      <a href="#impact">Impact <span class="small-dot"></span></a>
     </aside>
 
     <div class="main-col">
 
       <!-- overview -->
-      <section class="card" id="overview">
-        <div class="section-kicker">01 · Overview</div>
-        <h2>One connected product layer across a fragmented banking estate</h2>
+      <section class="card module-section" id="overview">
+        <div class="section-kicker">01 · Product Overview</div>
+        <h2>Bank-focused SaaS applications that could work independently or integrate with the existing bank ecosystem</h2>
         <p class="lead">
-          Integrated Channels Suite was positioned as a multi-module digital
-          banking platform connecting specialised applications through
-          configurable workflows, secure integrations and scalable deployment
-          capabilities.
+          Integrated Channels Suite was a scalable SaaS product portfolio built for banks. The applications were designed to solve specific operational and functional problems independently, while remaining integration-ready through APIs and optional CBS connectivity.
         </p>
         <p>
-          The platform brought together functional areas such as lending,
-          card management, reconciliation, AML/KYC, treasury, audit,
-          fixed-asset management, taxation, shares, government schemes,
-          credit information and document/CKYC operations.
+          The key product model was flexibility: a bank could adopt one application for a specific requirement, use several applications together, or integrate an application with its existing systems. Data could be ingested and exchanged through APIs rather than requiring a full replacement of the bank's existing core environment.
         </p>
 
-        <div class="callout">
-          <strong>PM lens:</strong> The product challenge was larger than
-          building individual modules. The value came from creating a coherent,
-          reusable platform model that allowed those capabilities to work
-          together with less integration friction.
+        <div class="saas-banner">
+          <div class="saas-card"><strong>Individually deployable</strong><span>Each application addressed a distinct banking use case and could be adopted independently.</span></div>
+          <div class="saas-card"><strong>API-ready</strong><span>Applications could ingest or exchange data through APIs with surrounding enterprise systems.</span></div>
+          <div class="saas-card"><strong>CBS compatible</strong><span>Applications could integrate with the bank's Core Banking System where the use case required it.</span></div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info"><strong>Target customer</strong><span>Banks and regulated banking institutions</span></div>
+          <div class="info"><strong>Business model</strong><span>Scalable SaaS-based applications</span></div>
+          <div class="info"><strong>Adoption</strong><span>Individual app or multiple applications</span></div>
+          <div class="info"><strong>Integration</strong><span>APIs, data ingestion and CBS connectivity</span></div>
+        </div>
+
+        <div class="note">
+          <strong>Product principle:</strong> The suite should not be understood as one monolithic application in which every module is permanently connected. Each application delivered standalone value; integrations were enabled when a bank needed cross-system data or process continuity.
         </div>
       </section>
 
@@ -587,165 +666,184 @@ footer{background:#0F1724;color:#98A6B8;text-align:center;padding:28px;font-size
         </div>
       </section>
 
-      <!-- ecosystem -->
-      <section class="card" id="ecosystem">
-        <div class="section-kicker">03 · Application Ecosystem</div>
-        <h2>12 application domains, one connected product model</h2>
+      <!-- application portfolio -->
+      <section class="card module-section" id="ecosystem">
+        <div class="section-kicker">02 · Application Portfolio</div>
+        <h2>12 banking applications — each with a clear business purpose</h2>
         <p class="lead">
-          The suite covered 12 documented application areas. The cards below
-          give the one-line business meaning of each module so a non-technical
-          recruiter can understand the platform quickly.
+          The suite covered 12 documented applications. The experience below is designed so a recruiter can understand the business purpose first, then drill into the relevant application or use the navigation on the left to move directly to the detailed sections.
         </p>
 
-        <div class="app-toolbar" role="tablist" aria-label="Application filters">
-          <button class="filter-btn active" data-filter="all">All 12</button>
-          <button class="filter-btn" data-filter="governance">Governance</button>
-          <button class="filter-btn" data-filter="lending">Lending</button>
-          <button class="filter-btn" data-filter="payments">Cards & Payments</button>
-          <button class="filter-btn" data-filter="finance">Finance & Operations</button>
-          <button class="filter-btn" data-filter="risk">Risk & Identity</button>
-        </div>
+        <div class="application-portfolio">
 
-        <div class="app-grid" id="appGrid">
+          <div class="portfolio-group">
+            <div class="group-head"><h3>Lending & Risk</h3><span>Decision · Credit · Risk</span></div>
+            <div class="group-sub">Applications supporting lending workflows, credit information and financial-crime / KYC controls.</div>
+            <div class="app-grid-premium">
 
-          <article class="app-card" data-category="governance">
-            <div class="app-top"><span class="app-no">01</span><span class="app-cat">Governance</span></div>
-            <div class="app-body">
-              <h3>Audit</h3>
-              <p>Supports internal, compliance, statutory and operations audit workflows for banking teams.</p>
+              <article class="p-app" data-category="lending">
+                <div class="p-app-top"><div class="p-app-no">04</div><div class="p-app-cat">Lending</div></div>
+                <div class="what">What it does</div>
+                <h4>LOS – LMS</h4>
+                <p>Supports loan initiation across multiple products with maker, checker and sanctioner roles, from loan-detail entry through sanction.</p>
+                <div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Loan workflow</span><span class="p-app-tag">Approvals</span></div><a class="p-app-link" href="#lending">View details →</a></div>
+              </article>
+
+              <article class="p-app" data-category="risk">
+                <div class="p-app-top"><div class="p-app-no">08</div><div class="p-app-cat">Risk & Identity</div></div>
+                <div class="what">What it does</div>
+                <h4>CIBIL</h4>
+                <p>Retrieves credit information by connecting to credit-authority APIs so bureau data can feed credit-related workflows.</p>
+                <div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Credit data</span><span class="p-app-tag">API</span></div><a class="p-app-link" href="#cibil-detail">View details →</a></div>
+              </article>
+
+              <article class="p-app" data-category="risk">
+                <div class="p-app-top"><div class="p-app-no">10</div><div class="p-app-cat">Risk & Compliance</div></div>
+                <div class="what">What it does</div>
+                <h4>AML – KYC</h4>
+                <p>Tracks payment activity, applies configured rules to flag relevant activity and supports compliance-oriented reporting.</p>
+                <div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">AML</span><span class="p-app-tag">KYC</span></div><a class="p-app-link" href="#aml">View details →</a></div>
+              </article>
             </div>
-          </article>
+          </div>
 
-          <article class="app-card" data-category="finance">
-            <div class="app-top"><span class="app-no">02</span><span class="app-cat">Finance & Ops</span></div>
-            <div class="app-body">
-              <h3>FAM</h3>
-              <p>Fixed Asset Management for asset tracking, depreciation and lifecycle control.</p>
+          <div class="portfolio-group">
+            <div class="group-head"><h3>Cards & Transaction Control</h3><span>Payments · Cards · Finance Control</span></div>
+            <div class="group-sub">Applications supporting cards, transaction matching and operational financial controls.</div>
+            <div class="app-grid-premium">
+
+              <article class="p-app" data-category="cards">
+                <div class="p-app-top"><div class="p-app-no">05</div><div class="p-app-cat">Cards</div></div>
+                <div class="what">What it does</div>
+                <h4>CMS</h4>
+                <p>Manages personalised and instant cards across RuPay, Visa and Mastercard programme contexts, including NBIN-series management.</p>
+                <div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Card lifecycle</span><span class="p-app-tag">NPCI</span></div><a class="p-app-link" href="#cards">View details →</a></div>
+              </article>
+
+              <article class="p-app" data-category="payments">
+                <div class="p-app-top"><div class="p-app-no">09</div><div class="p-app-cat">Payments</div></div>
+                <div class="what">What it does</div>
+                <h4>Reconciliation</h4>
+                <p>Manages reconciliation across AEPS, UPI, Switch, ATM and other transaction flows to identify matched and unmatched records.</p>
+                <div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">AEPS</span><span class="p-app-tag">UPI</span></div><a class="p-app-link" href="#reconciliation">View details →</a></div>
+              </article>
+
             </div>
-          </article>
+          </div>
 
-          <article class="app-card" data-category="finance">
-            <div class="app-top"><span class="app-no">03</span><span class="app-cat">Finance & Ops</span></div>
-            <div class="app-body">
-              <h3>GST</h3>
-              <p>Tracks purchased assets/products, GST calculations, warranty and insurance information.</p>
+          <div class="portfolio-group">
+            <div class="group-head"><h3>Finance, Governance & Operations</h3><span>Operations · Treasury · Compliance</span></div>
+            <div class="group-sub">Applications digitising recurring banking operations, governance and financial administration.</div>
+            <div class="app-grid-premium">
+
+              <article class="p-app" data-category="finance"><div class="p-app-top"><div class="p-app-no">02</div><div class="p-app-cat">Finance & Ops</div></div><div class="what">What it does</div><h4>FAM</h4><p>Manages fixed assets, depreciation and asset lifecycle information for the bank.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Assets</span><span class="p-app-tag">Depreciation</span></div><a class="p-app-link" href="#fam-detail">View details →</a></div></article>
+              <article class="p-app" data-category="finance"><div class="p-app-top"><div class="p-app-no">03</div><div class="p-app-cat">Finance & Ops</div></div><div class="what">What it does</div><h4>GST</h4><p>Maintains purchased asset/product information, calculates GST and stores warranty / insurance context.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">GST</span><span class="p-app-tag">Assets</span></div><a class="p-app-link" href="#gst-detail">View details →</a></div></article>
+              <article class="p-app" data-category="finance"><div class="p-app-top"><div class="p-app-no">06</div><div class="p-app-cat">Finance & Ops</div></div><div class="what">What it does</div><h4>Shares</h4><p>Supports share portfolios, dividend calculation, maker-checker workflows and board-report preparation.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Portfolio</span><span class="p-app-tag">Dividend</span></div><a class="p-app-link" href="#shares-detail">View details →</a></div></article>
+              <article class="p-app" data-category="finance"><div class="p-app-top"><div class="p-app-no">07</div><div class="p-app-cat">Finance & Ops</div></div><div class="what">What it does</div><h4>PM Schemes</h4><p>Supports banking-side management of government-launched financial schemes.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Schemes</span><span class="p-app-tag">Operations</span></div><a class="p-app-link" href="#pm-detail">View details →</a></div></article>
+              <article class="p-app" data-category="finance"><div class="p-app-top"><div class="p-app-no">11</div><div class="p-app-cat">Finance & Ops</div></div><div class="what">What it does</div><h4>Treasury</h4><p>Supports treasury-related banking tasks including beginning-of-day and end-of-day activities.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">BOD</span><span class="p-app-tag">EOD</span></div><a class="p-app-link" href="#treasury">View details →</a></div></article>
+              <article class="p-app" data-category="governance"><div class="p-app-top"><div class="p-app-no">01</div><div class="p-app-cat">Governance</div></div><div class="what">What it does</div><h4>Audit</h4><p>Supports internal, compliance, statutory and operations audit workflows used by banks.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Audit</span><span class="p-app-tag">Governance</span></div><a class="p-app-link" href="#audit">View details →</a></div></article>
+              <article class="p-app" data-category="risk"><div class="p-app-top"><div class="p-app-no">12</div><div class="p-app-cat">Risk & Identity</div></div><div class="what">What it does</div><h4>DMS & CKYC</h4><p>Manages customer documents and information with verification APIs and CKYC information workflows.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">DMS</span><span class="p-app-tag">CKYC</span></div><a class="p-app-link" href="#documents">View details →</a></div></article>
             </div>
-          </article>
-
-          <article class="app-card" data-category="lending">
-            <div class="app-top"><span class="app-no">04</span><span class="app-cat">Lending</span></div>
-            <div class="app-body">
-              <h3>LOS – LMS</h3>
-              <p>Supports loan initiation through maker-checker-sanctioner workflows across multiple loan products.</p>
-            </div>
-          </article>
-
-          <article class="app-card" data-category="payments">
-            <div class="app-top"><span class="app-no">05</span><span class="app-cat">Cards</span></div>
-            <div class="app-body">
-              <h3>CMS</h3>
-              <p>Manages personalised and instant cards across RuPay, Visa and Mastercard programmes.</p>
-            </div>
-          </article>
-
-          <article class="app-card" data-category="finance">
-            <div class="app-top"><span class="app-no">06</span><span class="app-cat">Finance & Ops</span></div>
-            <div class="app-body">
-              <h3>Shares</h3>
-              <p>Supports share portfolios, dividend calculations, approvals and board-report preparation.</p>
-            </div>
-          </article>
-
-          <article class="app-card" data-category="finance">
-            <div class="app-top"><span class="app-no">07</span><span class="app-cat">Finance & Ops</span></div>
-            <div class="app-body">
-              <h3>PM Schemes</h3>
-              <p>Supports management of government-launched financial schemes.</p>
-            </div>
-          </article>
-
-          <article class="app-card" data-category="risk">
-            <div class="app-top"><span class="app-no">08</span><span class="app-cat">Risk & Identity</span></div>
-            <div class="app-body">
-              <h3>CIBIL</h3>
-              <p>Retrieves credit information through APIs connected with credit authorities.</p>
-            </div>
-          </article>
-
-          <article class="app-card" data-category="payments">
-            <div class="app-top"><span class="app-no">09</span><span class="app-cat">Payments</span></div>
-            <div class="app-body">
-              <h3>Reconciliation</h3>
-              <p>Supports reconciliation across AEPS, UPI, Switch, ATM and other transaction flows.</p>
-            </div>
-          </article>
-
-          <article class="app-card" data-category="risk">
-            <div class="app-top"><span class="app-no">10</span><span class="app-cat">Risk & Compliance</span></div>
-            <div class="app-body">
-              <h3>AML – KYC</h3>
-              <p>Tracks and flags payment activity against applicable rules and supports regulatory reporting.</p>
-            </div>
-          </article>
-
-          <article class="app-card" data-category="finance">
-            <div class="app-top"><span class="app-no">11</span><span class="app-cat">Finance & Ops</span></div>
-            <div class="app-body">
-              <h3>Treasury</h3>
-              <p>Supports treasury operations including beginning-of-day and end-of-day activities.</p>
-            </div>
-          </article>
-
-          <article class="app-card" data-category="risk">
-            <div class="app-top"><span class="app-no">12</span><span class="app-cat">Risk & Identity</span></div>
-            <div class="app-body">
-              <h3>DMS & CKYC</h3>
-              <p>Manages customer documents, verification APIs and CKYC information workflows.</p>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="muted-note">
-          Application descriptions are based on the project/application reference material provided for this portfolio.
-        </div>
-
-        <div class="module-map">
-          <div class="map-inner">
-
-            <div class="map-col">
-              <div class="map-box">
-                <strong>Banking operations</strong>
-                <span>Audit · Treasury · FAM · GST · Shares</span>
-              </div>
-              <div class="map-box">
-                <strong>Lending & credit</strong>
-                <span>LOS-LMS · CIBIL</span>
-              </div>
-            </div>
-
-            <div class="map-arrow">→</div>
-
-            <div class="map-core">
-              <strong>Integrated Channels</strong>
-              <span>API-first integration · configurable workflows · modular capabilities · enterprise delivery</span>
-            </div>
-
-            <div class="map-arrow">→</div>
-
-            <div class="map-col">
-              <div class="map-box">
-                <strong>Controls & identity</strong>
-                <span>AML-KYC · DMS & CKYC · Reconciliation</span>
-              </div>
-              <div class="map-box">
-                <strong>Cards & schemes</strong>
-                <span>CMS · PM Schemes</span>
-              </div>
-            </div>
-
           </div>
         </div>
+
+        <div class="note">
+          <strong>Architecture implication:</strong> Individual application value and ecosystem integration are two separate product dimensions. A bank could adopt a focused application first and add API/CBS connectivity only where the operating model required it.
+        </div>
+      </section>
+
+      <!-- application details: these are directly addressable from the navigator -->
+      <section class="card module-section" id="lending">
+        <div class="module-hero"><div><div class="module-badge">Lending application</div><h2>LOS – LMS: controlled loan origination and servicing workflow</h2></div><div class="module-code">APP 04</div></div>
+        <p class="lead">Supports multiple loan products and a maker → checker → sanctioner workflow, translating a bank's lending process into a structured digital journey.</p>
+        <div class="module-highlight">
+          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Vehicle, education, gold, staff, personal and home loan use cases</div><div>Loan details entry through approval / sanction</div><div>Maker, checker and sanctioner roles</div><div>Structured workflow states and controlled handoffs</div></div></div>
+          <div class="module-box"><h3>PM focus</h3><div class="module-list"><div>Translate policy and approval authority into workflows</div><div>Define validations, states and exception handling</div><div>Define API/CBS integration requirements where required</div><div>Coordinate business, engineering, QA and UAT</div></div></div>
+        </div>
+        <div class="module-kpi-row"><div class="module-kpi"><strong>Multiple products</strong><span>One platform workflow can support several loan types.</span></div><div class="module-kpi"><strong>3-role control</strong><span>Maker → checker → sanctioner approval pattern.</span></div><div class="module-kpi"><strong>API-ready</strong><span>Can exchange required information with surrounding systems.</span></div></div>
+      </section>
+
+      <section class="card module-section" id="cards">
+        <div class="module-hero"><div><div class="module-badge">Cards application</div><h2>CMS: card programme and lifecycle management</h2></div><div class="module-code">APP 05</div></div>
+        <p class="lead">Manages personalised and instant cards across RuPay, Visa and Mastercard programme contexts, giving banks an operational application for card-related lifecycle activities.</p>
+        <div class="module-highlight">
+          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Personalised and instant card management</div><div>RuPay, Visa and Mastercard programme context</div><div>NBIN-series based management</div><div>Structured operational records</div></div></div>
+          <div class="module-box"><h3>Integration context</h3><div class="module-list"><div>API-based integration with surrounding bank systems</div><div>NPCI ecosystem context for card programmes</div><div>Data exchange without requiring the application to replace the bank's wider core</div></div></div>
+        </div>
+      </section>
+
+      <section class="card module-section" id="reconciliation">
+        <div class="module-hero"><div><div class="module-badge">Payments control application</div><h2>Reconciliation: matching financial records across transaction flows</h2></div><div class="module-code">APP 09</div></div>
+        <p class="lead">Provides a structured operational layer for reconciling transaction records across AEPS, UPI, Switch, ATM and other payment flows.</p>
+        <div class="module-highlight">
+          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Transaction record matching</div><div>Matched vs unmatched visibility</div><div>Exception investigation and operational handling</div><div>Multiple payment-flow reconciliation contexts</div></div></div>
+          <div class="module-box"><h3>Why it matters</h3><div class="module-list"><div>Financial systems can produce different records for the same movement</div><div>Reconciliation helps establish operational consistency</div><div>API ingestion can reduce spreadsheet-driven data movement</div></div></div>
+        </div>
+      </section>
+
+      <section class="card module-section" id="aml">
+        <div class="module-hero"><div><div class="module-badge">Risk & compliance application</div><h2>AML – KYC: monitoring, flagging and compliance reporting</h2></div><div class="module-code">APP 10</div></div>
+        <p class="lead">Tracks payment activity, flags activity against applicable rules and supports structured compliance-reporting workflows within the bank.</p>
+        <div class="module-highlight">
+          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Payment-activity tracking</div><div>Rule-based flagging</div><div>Compliance-oriented reports</div><div>Operational review of flagged activity</div></div></div>
+          <div class="module-box"><h3>Product/control thinking</h3><div class="module-list"><div>Rules become product behaviour, not only policy documents</div><div>Actions require role-aware workflow and traceability</div><div>Exception handling and audit evidence need to be considered in the design</div></div></div>
+        </div>
+      </section>
+
+      <section class="card module-section" id="treasury">
+        <div class="module-hero"><div><div class="module-badge">Finance operations application</div><h2>Treasury: structured BOD / EOD banking operations</h2></div><div class="module-code">APP 11</div></div>
+        <p class="lead">Supports treasury-related banking tasks, including recurring beginning-of-day and end-of-day operational activities.</p>
+        <div class="module-highlight">
+          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Beginning-of-day workflows</div><div>End-of-day workflows</div><div>Operational task control</div><div>Integration-ready information exchange</div></div></div>
+          <div class="module-box"><h3>Product value</h3><div class="module-list"><div>Turns recurring treasury tasks into structured digital processes</div><div>Provides consistent operational records</div><div>Creates a clearer handoff point for surrounding systems</div></div></div>
+        </div>
+      </section>
+
+      <section class="card module-section" id="documents">
+        <div class="module-hero"><div><div class="module-badge">Document & identity application</div><h2>DMS & CKYC: document management, verification and CKYC workflows</h2></div><div class="module-code">APP 12</div></div>
+        <p class="lead">Manages customer OVD documents and user information, uses APIs to verify document authenticity and retrieves CKYC information for downstream banking processes.</p>
+        <div class="module-highlight">
+          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Customer document capture and management</div><div>Verification through APIs</div><div>Secure document-storage context</div><div>CKYC number / information retrieval</div></div></div>
+          <div class="module-box"><h3>Product value</h3><div class="module-list"><div>Centralises document and identity information</div><div>Reduces manual verification handoffs</div><div>Allows downstream applications to consume verified inputs through APIs</div></div></div>
+        </div>
+      </section>
+
+      <section class="card module-section" id="audit">
+        <div class="module-hero"><div><div class="module-badge">Governance application</div><h2>Audit: digitising internal and regulated audit workflows</h2></div><div class="module-code">APP 01</div></div>
+        <p class="lead">Supports the bank's internal, compliance, statutory and operations audit activities through structured digital workflows.</p>
+        <div class="module-highlight">
+          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Internal audit</div><div>Compliance audit</div><div>Statutory audit</div><div>Operations audit</div></div></div>
+          <div class="module-box"><h3>Product value</h3><div class="module-list"><div>Standardises audit operations</div><div>Creates structured records and traceability</div><div>Supports review and governance processes across banking functions</div></div></div>
+        </div>
+      </section>
+
+      <section class="card module-section" id="fam-detail">
+        <div class="module-hero"><div><div class="module-badge">Finance & operations</div><h2>FAM: fixed asset management and depreciation</h2></div><div class="module-code">APP 02</div></div>
+        <p class="lead">Tracks bank-owned assets and supports depreciation and lifecycle management.</p>
+        <div class="module-list"><div>Asset register and lifecycle tracking</div><div>Depreciation calculation</div><div>Asset-level operational information</div><div>Warranty / insurance context where maintained</div></div>
+      </section>
+
+      <section class="card module-section" id="gst-detail">
+        <div class="module-hero"><div><div class="module-badge">Finance & operations</div><h2>GST: purchased asset/product and tax information</h2></div><div class="module-code">APP 03</div></div>
+        <p class="lead">Maintains purchased asset/product information and GST calculations, with warranty, insurance and reporting context.</p>
+        <div class="module-list"><div>Purchased asset / product records</div><div>GST calculation</div><div>Warranty and insurance information</div><div>GST reporting context including GSTR-1B extraction</div></div>
+      </section>
+
+      <section class="card module-section" id="shares-detail">
+        <div class="module-hero"><div><div class="module-badge">Finance & governance</div><h2>Shares: portfolio, dividend and approval management</h2></div><div class="module-code">APP 06</div></div>
+        <p class="lead">Supports share-related activities for banks or financial institutions, including portfolios, dividend calculation, approval workflows and board reporting.</p>
+        <div class="module-list"><div>Share portfolio management</div><div>Dividend calculations</div><div>Maker-checker workflow</div><div>Board-meeting reporting</div></div>
+      </section>
+
+      <section class="card module-section" id="pm-detail">
+        <div class="module-hero"><div><div class="module-badge">Finance & operations</div><h2>PM Schemes: management of government-launched financial schemes</h2></div><div class="module-code">APP 07</div></div>
+        <p class="lead">Supports bank-side operational management of government-launched financial schemes.</p>
+      </section>
+
+      <section class="card module-section" id="cibil-detail">
+        <div class="module-hero"><div><div class="module-badge">Credit information</div><h2>CIBIL: API-connected credit information retrieval</h2></div><div class="module-code">APP 08</div></div>
+        <p class="lead">Fetches credit information through API connections with credit authorities so the information can be consumed by the relevant credit workflows.</p>
+        <div class="module-list"><div>Credit-information retrieval</div><div>External API connectivity</div><div>Structured input into lending / credit processes</div></div>
       </section>
 
       <!-- workflow -->
@@ -753,9 +851,7 @@ footer{background:#0F1724;color:#98A6B8;text-align:center;padding:28px;font-size
         <div class="section-kicker">04 · Product Workflow</div>
         <h2>How I approached the product lifecycle</h2>
         <p class="lead">
-          The project followed an end-to-end product flow from business need
-          and customer requirements through definition, technical alignment,
-          Agile execution, UAT and release.
+          The product lifecycle moved from bank/business need and customer requirements through structured product definition, technical alignment, Agile execution, UAT, release and continuous enhancement.
         </p>
 
         <div class="workflow">
@@ -781,13 +877,13 @@ footer{background:#0F1724;color:#98A6B8;text-align:center;padding:28px;font-size
         <div class="arch-shell">
           <div class="arch-row">
             <div class="arch-box">
-              <strong>Banking & operational applications</strong>
-              <span>12+ domain modules and user workflows</span>
+              <strong>Individual SaaS applications</strong>
+              <span>Each app solves a specific banking use case</span>
             </div>
             <div class="arch-arrow">→</div>
             <div class="arch-box core">
-              <strong>Integration & workflow layer</strong>
-              <span>API-first interfaces · workflow coordination · business rules</span>
+              <strong>API / integration layer</strong>
+              <span>Data exchange · API contracts · configurable workflows</span>
             </div>
             <div class="arch-arrow">→</div>
             <div class="arch-box">
@@ -846,14 +942,14 @@ footer{background:#0F1724;color:#98A6B8;text-align:center;padding:28px;font-size
           <div class="app-window">
             <div class="mock-sidebar">
               <div class="mock-brand">INTEGRATED CHANNELS</div>
-              <div class="mock-side-item selected">Overview</div>
-              <div class="mock-side-item">Lending</div>
-              <div class="mock-side-item">Cards</div>
-              <div class="mock-side-item">Reconciliation</div>
-              <div class="mock-side-item">AML / KYC</div>
-              <div class="mock-side-item">Treasury</div>
-              <div class="mock-side-item">Documents</div>
-              <div class="mock-side-item">Audit</div>
+              <a href="#overview" class="selected">Overview</a>
+              <a href="#lending">Lending</a>
+              <a href="#cards">Cards</a>
+              <a href="#reconciliation">Reconciliation</a>
+              <a href="#aml">AML / KYC</a>
+              <a href="#treasury">Treasury</a>
+              <a href="#documents">Documents</a>
+              <a href="#audit">Audit</a>
             </div>
 
             <div class="mock-content">
@@ -864,9 +960,9 @@ footer{background:#0F1724;color:#98A6B8;text-align:center;padding:28px;font-size
 
               <div class="mock-kpis">
                 <div class="mock-kpi"><strong>12</strong><span>Modules</span></div>
-                <div class="mock-kpi"><strong>98%</strong><span>Illustrative status</span></div>
-                <div class="mock-kpi"><strong>24</strong><span>Open actions</span></div>
-                <div class="mock-kpi"><strong>07</strong><span>Exceptions</span></div>
+                <div class="mock-kpi"><strong>API</strong><span>Integration ready</span></div>
+                <div class="mock-kpi"><strong>CBS</strong><span>Optional integration</span></div>
+                <div class="mock-kpi"><strong>1 → N</strong><span>Independent apps</span></div>
               </div>
 
               <div class="mock-panels">
@@ -1304,6 +1400,23 @@ footer{background:#0F1724;color:#98A6B8;text-align:center;padding:28px;font-size
   </div>
 </main>
 
+
+<div class="modal-overlay" id="appModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-top">
+      <div><span id="modalCategory">Application</span><h3 id="modalTitle">Application</h3></div>
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <p id="modalDescription"></p>
+      <div class="modal-grid">
+        <div class="modal-card"><strong>Primary use case</strong><p id="modalUseCase"></p></div>
+        <div class="modal-card"><strong>Integration context</strong><p id="modalIntegration"></p></div>
+      </div>
+      <div class="modal-tags" id="modalTags"></div>
+    </div>
+  </div>
+</div>
 <footer>
   © 2026 Manoj Pant · Senior Product Manager · Integrated Channels Suite Case Study
 </footer>
@@ -1311,9 +1424,69 @@ footer{background:#0F1724;color:#98A6B8;text-align:center;padding:28px;font-size
 <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
 <script>
+/* application detail modal data */
+const appData = {
+  audit: {category:"Governance", title:"Audit", description:"Supports internal, compliance, statutory and operations audit workflows for banking teams.", useCase:"Digitise controlled audit operations and maintain structured audit records.", integration:"Can exchange relevant data with surrounding bank systems through APIs where required.", tags:["Internal audit","Compliance audit","Statutory audit","Operations audit"]},
+  fam: {category:"Finance & Operations", title:"FAM", description:"Fixed Asset Management for asset records, depreciation and lifecycle tracking.", useCase:"Manage bank-owned assets and their depreciation and lifecycle information.", integration:"Can integrate with bank data sources and finance-related workflows through APIs where required.", tags:["Assets","Depreciation","Lifecycle"]},
+  gst: {category:"Finance & Operations", title:"GST", description:"Maintains purchased asset/product information, GST calculations, warranty and insurance context.", useCase:"Track tax-related information connected to purchased bank assets/products.", integration:"Can exchange product and tax information with relevant enterprise data sources through APIs.", tags:["GST","Asset purchase","Reporting"]},
+  lending: {category:"Lending", title:"LOS – LMS", description:"Supports multiple loan products and a maker-checker-sanctioner workflow from loan-details entry through sanction.", useCase:"Digitise controlled loan initiation and approval across product-specific lending workflows.", integration:"Can exchange required loan/customer data with CBS and other systems through APIs where required.", tags:["Loan workflow","Maker-checker","Sanction"]},
+  cards: {category:"Cards", title:"CMS", description:"Manages personalised and instant cards across RuPay, Visa and Mastercard programme contexts.", useCase:"Operate card-management processes in a structured application environment.", integration:"Supports API-based integration with surrounding banking and card ecosystem systems.", tags:["RuPay","Visa","Mastercard","NPCI"]},
+  shares: {category:"Finance & Governance", title:"Shares", description:"Supports share portfolios, dividend calculations, approval workflows and board-report preparation.", useCase:"Digitise share-related financial and governance operations.", integration:"Can exchange relevant portfolio and reporting data with surrounding enterprise systems.", tags:["Portfolio","Dividend","Maker-checker"]},
+  schemes: {category:"Finance & Operations", title:"PM Schemes", description:"Supports bank-side management of government-launched financial schemes.", useCase:"Provide structured workflows for administering relevant government schemes.", integration:"Can exchange scheme-related data with surrounding bank systems through APIs where required.", tags:["Government schemes","Operations"]},
+  cibil: {category:"Credit Information", title:"CIBIL", description:"Retrieves credit information through API connectivity with credit authorities.", useCase:"Feed bureau information into relevant credit and lending workflows.", integration:"API connection with credit-authority services.", tags:["Credit data","API","Bureau"]},
+  recon: {category:"Payments Control", title:"Reconciliation", description:"Supports reconciliation across AEPS, UPI, Switch, ATM and other transaction flows.", useCase:"Match records, identify exceptions and support investigation of transaction differences.", integration:"Consumes transaction records from relevant rails, systems and data sources through APIs/files as applicable.", tags:["AEPS","UPI","Switch","ATM"]},
+  aml: {category:"Risk & Compliance", title:"AML – KYC", description:"Tracks and flags payment activity against applicable rules and supports compliance reporting.", useCase:"Digitise monitoring, review and regulatory-reporting workflows for relevant banking activity.", integration:"Can consume payment/customer data and exchange reporting information through APIs and enterprise integrations.", tags:["AML","KYC","Monitoring","Reporting"]},
+  treasury: {category:"Finance Operations", title:"Treasury", description:"Supports treasury-related tasks including beginning-of-day and end-of-day activities.", useCase:"Structure recurring treasury operating processes in a controlled application.", integration:"Can exchange relevant operational data with the bank's surrounding financial systems.", tags:["BOD","EOD","Treasury"]},
+  documents: {category:"Documents & Identity", title:"DMS & CKYC", description:"Manages customer documents and user information with verification APIs and CKYC workflows.", useCase:"Capture, verify and manage customer documents and identity information.", integration:"Uses verification and CKYC APIs and can exchange verified data with downstream bank systems.", tags:["DMS","CKYC","OVD","API verification"]}
+};
+
+const modal = document.getElementById("appModal");
+const modalClose = document.getElementById("modalClose");
+const modalTitle = document.getElementById("modalTitle");
+const modalCategory = document.getElementById("modalCategory");
+const modalDescription = document.getElementById("modalDescription");
+const modalUseCase = document.getElementById("modalUseCase");
+const modalIntegration = document.getElementById("modalIntegration");
+const modalTags = document.getElementById("modalTags");
+
+function openAppModal(key){
+  const item = appData[key];
+  if(!item) return;
+  modalCategory.textContent = item.category;
+  modalTitle.textContent = item.title;
+  modalDescription.textContent = item.description;
+  modalUseCase.textContent = item.useCase;
+  modalIntegration.textContent = item.integration;
+  modalTags.innerHTML = item.tags.map(tag => `<span class="modal-tag">${tag}</span>`).join("");
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden","false");
+}
+function closeAppModal(){
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden","true");
+}
+modalClose.addEventListener("click", closeAppModal);
+modal.addEventListener("click", e => { if(e.target === modal) closeAppModal(); });
+document.addEventListener("keydown", e => { if(e.key === "Escape") closeAppModal(); });
+
+document.querySelectorAll(".p-app").forEach(card => {
+  const link = card.querySelector(".p-app-link");
+  if(!link) return;
+  const href = link.getAttribute("href") || "";
+  const key = href === "#audit" ? "audit" : href === "#lending" ? "lending" : href === "#cards" ? "cards" : href === "#reconciliation" ? "recon" : href === "#aml" ? "aml" : href === "#treasury" ? "treasury" : href === "#documents" ? "documents" : href === "#fam-detail" ? "fam" : href === "#gst-detail" ? "gst" : href === "#shares-detail" ? "shares" : href === "#pm-detail" ? "schemes" : href === "#cibil-detail" ? "cibil" : null;
+  if(key){
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute("href"));
+      if(target){ target.scrollIntoView({behavior:"smooth", block:"start"}); }
+      openAppModal(key);
+    });
+  }
+});
+
 /* application filters */
 const filterButtons = document.querySelectorAll(".filter-btn");
-const appCards = document.querySelectorAll(".app-card");
+const appCards = document.querySelectorAll(".app-card, .p-app");
 
 filterButtons.forEach(btn => {
   btn.addEventListener("click", () => {
@@ -1330,7 +1503,7 @@ filterButtons.forEach(btn => {
 });
 
 /* scroll-aware section navigation */
-const sections = [...document.querySelectorAll(".main-col > section")];
+const sections = [...document.querySelectorAll(".module-section")];
 const navLinks = [...document.querySelectorAll(".side-nav a")];
 
 const observer = new IntersectionObserver(
