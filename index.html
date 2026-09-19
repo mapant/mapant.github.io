@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Integrated Channels Suite | Manoj Pant</title>
+    <title>Manoj Pant | Senior Product Manager</title>
 
     <meta name="description"
-          content="Integrated Channels Suite - Digital Banking Platform case study by Manoj Pant.">
+          content="Manoj Pant - Senior Product Manager portfolio showcasing product strategy, enterprise platforms, AI, data analytics and digital products.">
 
     <style>
 
@@ -29,7 +25,7 @@
             font-family: Arial, Helvetica, sans-serif;
             background: #f7f8fa;
             color: #172033;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         a {
@@ -39,7 +35,7 @@
 
         .container {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1150px;
             margin: auto;
         }
 
@@ -54,37 +50,46 @@
         }
 
         .nav-inner {
-            height: 68px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         .logo {
-            font-size: 20px;
+            font-size: 21px;
             font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
-        .back-link {
+        .nav-links {
+            display: flex;
+            gap: 28px;
             font-size: 14px;
-            color: #667085;
+            color: #4b5563;
         }
 
-        .back-link:hover {
+        .nav-links a:hover {
             color: #b58b43;
         }
 
         /* HERO */
 
         .hero {
-            background: #172033;
-            color: white;
-            padding: 90px 0;
+            background: white;
+            padding: 100px 0 90px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 70px;
+            align-items: center;
         }
 
         .eyebrow {
-            color: #d0a75f;
-            font-size: 13px;
+            color: #b58b43;
+            font-size: 14px;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -92,185 +97,274 @@
         }
 
         h1 {
-            font-size: 52px;
-            line-height: 1.1;
-            max-width: 850px;
+            font-size: 58px;
+            line-height: 1.05;
             margin-bottom: 20px;
+            color: #111827;
         }
 
-        .hero-subtitle {
-            font-size: 21px;
-            color: #dbe2ec;
-            max-width: 800px;
+        .hero-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 22px;
+        }
+
+        .hero-description {
+            font-size: 17px;
+            color: #5b6472;
+            max-width: 720px;
             margin-bottom: 30px;
         }
 
-        .meta {
+        .buttons {
             display: flex;
+            gap: 14px;
             flex-wrap: wrap;
-            gap: 12px;
         }
 
-        .meta span {
-            border: 1px solid rgba(255,255,255,0.25);
-            border-radius: 30px;
-            padding: 8px 15px;
-            font-size: 13px;
-            color: #e5e7eb;
+        .button {
+            padding: 12px 20px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid #d1d5db;
         }
 
-        /* CONTENT */
-
-        main {
-            padding: 70px 0;
+        .button-primary {
+            background: #172033;
+            color: white;
+            border-color: #172033;
         }
 
-        .section {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 14px;
+        .button-primary:hover {
+            background: #2d3748;
+        }
+
+        .button-secondary:hover {
+            background: #f3f4f6;
+        }
+
+        /* HERO CARD */
+
+        .profile-card {
+            background: #172033;
+            color: white;
+            border-radius: 18px;
             padding: 35px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .profile-card h3 {
+            font-size: 20px;
             margin-bottom: 25px;
+        }
+
+        .profile-stat {
+            border-top: 1px solid rgba(255,255,255,0.18);
+            padding: 18px 0;
+        }
+
+        .profile-stat strong {
+            display: block;
+            font-size: 25px;
+        }
+
+        .profile-stat span {
+            font-size: 13px;
+            color: #cbd5e1;
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 85px 0;
         }
 
         .section-label {
             color: #b58b43;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
-        h2 {
-            font-size: 29px;
+        .section-title {
+            font-size: 38px;
             color: #111827;
             margin-bottom: 16px;
         }
 
-        .section p {
-            color: #596579;
-            margin-bottom: 15px;
+        .section-intro {
+            max-width: 750px;
+            color: #667085;
+            margin-bottom: 45px;
         }
 
-        /* OVERVIEW GRID */
+        /* JOURNEY */
 
-        .overview-grid {
+        .journey {
+            background: #f7f8fa;
+        }
+
+        .journey-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            gap: 18px;
         }
 
-        .overview-card {
-            background: #f7f8fa;
-            border-radius: 10px;
-            padding: 20px;
+        .journey-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
         }
 
-        .overview-card strong {
-            display: block;
-            font-size: 15px;
-            margin-bottom: 5px;
-            color: #172033;
-        }
-
-        .overview-card span {
+        .journey-card .year {
+            color: #b58b43;
             font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .journey-card h3 {
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .journey-card p {
             color: #667085;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background: white;
+        }
+
+        .project-group {
+            margin-bottom: 55px;
+        }
+
+        .company-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .company-heading h3 {
+            font-size: 22px;
+        }
+
+        .company-heading span {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            border: 1px solid #e3e6eb;
+            border-radius: 13px;
+            padding: 27px;
+            background: #ffffff;
+            transition: 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            border-color: #c9a76a;
+        }
+
+        .project-number {
+            color: #b58b43;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .project-card h4 {
+            font-size: 19px;
+            margin-bottom: 12px;
+            line-height: 1.35;
+        }
+
+        .project-card p {
+            color: #667085;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            font-size: 13px;
+            font-weight: 700;
+            color: #172033;
         }
 
         /* CAPABILITIES */
 
+        .capabilities {
+            background: #f7f8fa;
+        }
+
         .capability-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
         }
 
         .capability {
-            padding: 20px;
-            background: #f7f8fa;
-            border-radius: 10px;
-            border-left: 4px solid #c9a76a;
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
         }
 
         .capability h3 {
             font-size: 17px;
-            margin-bottom: 6px;
+            margin-bottom: 12px;
         }
 
         .capability p {
-            margin: 0;
-            font-size: 14px;
-        }
-
-        /* FLOW */
-
-        .flow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 25px;
-        }
-
-        .flow-step {
-            background: #172033;
-            color: white;
-            padding: 13px 18px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .arrow {
-            color: #b58b43;
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        /* OUTCOMES */
-
-        .outcomes {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
-
-        .outcome {
-            border: 1px solid #e5e7eb;
-            border-radius: 10px;
-            padding: 25px;
-        }
-
-        .outcome strong {
-            display: block;
-            font-size: 32px;
-            color: #b58b43;
-            margin-bottom: 5px;
-        }
-
-        .outcome span {
             color: #667085;
             font-size: 14px;
         }
 
-        /* TAGS */
+        /* CONTACT */
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 9px;
-            margin-top: 20px;
+        .contact {
+            background: #172033;
+            color: white;
         }
 
-        .tag {
-            background: #f1f3f5;
-            color: #475467;
-            padding: 7px 12px;
-            border-radius: 20px;
-            font-size: 12px;
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: white;
+            border-bottom: 1px solid #b58b43;
+            padding-bottom: 3px;
         }
 
         /* FOOTER */
@@ -279,271 +373,599 @@
             background: #101623;
             color: #94a3b8;
             text-align: center;
-            padding: 25px;
+            padding: 22px;
             font-size: 13px;
         }
 
         /* MOBILE */
 
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-grid,
+            .capability-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 46px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .journey-grid,
+            .project-grid,
+            .capability-grid {
+                grid-template-columns: 1fr;
+            }
 
             h1 {
                 font-size: 40px;
             }
 
-            .overview-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .hero {
+                padding: 70px 0;
             }
-
-            .capability-grid,
-            .outcomes {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-        @media (max-width: 550px) {
-
-            .overview-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section {
-                padding: 25px;
-            }
-
         }
 
     </style>
-
 </head>
-
 
 <body>
 
+    <!-- NAVIGATION -->
 
-<!-- NAVIGATION -->
+    <nav>
+        <div class="container nav-inner">
 
-<nav>
+            <div class="logo">
+                MANOJ PANT
+            </div>
 
-    <div class="container nav-inner">
-
-        <div class="logo">
-            MANOJ PANT
-        </div>
-
-        <a class="back-link"
-           href="../../index.html">
-
-            ← Back to Portfolio
-
-        </a>
-
-    </div>
-
-</nav>
-
-
-<!-- HERO -->
-
-<header class="hero">
-
-    <div class="container">
-
-        <div class="eyebrow">
-            Product Case Study · M2P Solutions
-        </div>
-
-        <h1>
-            Integrated Channels Suite
-        </h1>
-
-        <p class="hero-subtitle">
-            Digital Banking Platform
-        </p>
-
-        <div class="meta">
-
-            <span>
-                Senior Product Manager
-            </span>
-
-            <span>
-                Dec 2024 – Mar 2026
-            </span>
-
-            <span>
-                FinTech
-            </span>
-
-            <span>
-                Enterprise Platform
-            </span>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#journey">Journey</a>
+                <a href="#projects">Projects</a>
+                <a href="#capabilities">Capabilities</a>
+                <a href="#contact">Contact</a>
+            </div>
 
         </div>
-
-    </div>
-
-</header>
+    </nav>
 
 
-<!-- MAIN CONTENT -->
+    <!-- HERO -->
 
-<main>
+    <header class="hero">
 
-    <div class="container">
+        <div class="container hero-grid">
 
+            <div>
 
-        <!-- OVERVIEW -->
-
-        <section class="section">
-
-            <div class="section-label">
-                01 · Overview
-            </div>
-
-            <h2>
-                Building a scalable digital banking platform
-            </h2>
-
-            <p>
-                Integrated Channels Suite was a multi-module banking
-                platform designed to bring multiple enterprise
-                applications together through configurable workflows,
-                secure integrations and scalable deployment capabilities.
-            </p>
-
-            <div class="overview-grid">
-
-                <div class="overview-card">
-
-                    <strong>
-                        Platform Type
-                    </strong>
-
-                    <span>
-                        Digital Banking
-                    </span>
-
+                <div class="eyebrow">
+                    Senior Product Manager
                 </div>
 
+                <h1>
+                    Building enterprise products from problem to impact.
+                </h1>
 
-                <div class="overview-card">
-
-                    <strong>
-                        Applications
-                    </strong>
-
-                    <span>
-                        12+ enterprise applications
-                    </span>
-
+                <div class="hero-title">
+                    Product Strategy · Enterprise Platforms · AI · Data & Analytics
                 </div>
 
+                <p class="hero-description">
+                    Senior Product Manager with 10+ years of experience across
+                    FinTech, Telecom, HealthTech and Enterprise IT, building
+                    digital platforms, workflow automation, AI-enabled products
+                    and data-driven solutions.
+                </p>
 
-                <div class="overview-card">
+                <div class="buttons">
 
-                    <strong>
-                        Architecture
-                    </strong>
+                    <a class="button button-primary" href="#projects">
+                        Explore My Product Work
+                    </a>
 
-                    <span>
-                        API-first
-                    </span>
-
-                </div>
-
-
-                <div class="overview-card">
-
-                    <strong>
-                        Focus
-                    </strong>
-
-                    <span>
-                        Integration & workflow automation
-                    </span>
+                    <a class="button button-secondary"
+                       href="mailto:manoj.pant.pm@outlook.com">
+                        Contact Me
+                    </a>
 
                 </div>
 
             </div>
 
-        </section>
 
+            <div class="profile-card">
 
-        <!-- BUSINESS CHALLENGE -->
+                <h3>
+                    Product Profile
+                </h3>
 
-        <section class="section">
+                <div class="profile-stat">
+                    <strong>10+</strong>
+                    <span>Years of professional experience</span>
+                </div>
 
-            <div class="section-label">
-                02 · Business Challenge
+                <div class="profile-stat">
+                    <strong>4</strong>
+                    <span>Industry domains</span>
+                </div>
+
+                <div class="profile-stat">
+                    <strong>8</strong>
+                    <span>Featured product & analytics projects</span>
+                </div>
+
+                <div class="profile-stat">
+                    <strong>0 → 1</strong>
+                    <span>Product discovery, validation & launch experience</span>
+                </div>
+
             </div>
 
-            <h2>
-                Simplifying fragmented enterprise operations
-            </h2>
+        </div>
 
-            <p>
-                Enterprise banking operations can involve multiple
-                applications, workflows and integrations. The product
-                initiative focused on simplifying these fragmented
-                operations through a scalable platform approach.
-            </p>
-
-            <p>
-                The product needed to support secure integrations,
-                configurable workflows, transaction processing and
-                scalable deployments across enterprise environments.
-            </p>
-
-        </section>
+    </header>
 
 
-        <!-- PRODUCT OBJECTIVE -->
+    <!-- ABOUT -->
 
-        <section class="section">
+    <section id="about">
+
+        <div class="container">
 
             <div class="section-label">
-                03 · Product Objective
+                About
             </div>
 
-            <h2>
-                Create a modular and scalable platform ecosystem
+            <h2 class="section-title">
+                From analytics and business analysis to product leadership.
             </h2>
 
-            <p>
-                The objective was to define a platform architecture and
-                product capabilities that could support multiple banking
-                applications while improving interoperability and
-                reducing integration complexity.
+            <p class="section-intro">
+                My product journey combines data-driven decision making,
+                business analysis, technical understanding and end-to-end
+                product delivery. I work across product strategy, discovery,
+                requirements, architecture collaboration, Agile delivery,
+                analytics and continuous product improvement.
             </p>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- MY ROLE -->
+    <!-- PRODUCT JOURNEY -->
 
-        <section class="section">
+    <section class="journey" id="journey">
+
+        <div class="container">
 
             <div class="section-label">
-                04 · My Product Role
+                Product Journey
             </div>
 
-            <h2>
-                Product strategy through delivery
+            <h2 class="section-title">
+                A career built across data, technology and products.
             </h2>
+
+            <p class="section-intro">
+                My career evolved from enterprise analytics and reporting
+                into business analysis and then product management.
+            </p>
+
+
+            <div class="journey-grid">
+
+                <div class="journey-card">
+
+                    <div class="year">
+                        2016 – 2023
+                    </div>
+
+                    <h3>
+                        Nokia Networks
+                    </h3>
+
+                    <p>
+                        Reporting Analyst → Business Analyst.
+                        Power BI, Tableau, SQL, requirements,
+                        business cases, KPI frameworks and telecom
+                        enterprise programs.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-card">
+
+                    <div class="year">
+                        2023 – 2024
+                    </div>
+
+                    <h3>
+                        Ayu Health
+                    </h3>
+
+                    <p>
+                        Product Management across healthcare workflows,
+                        provider products, CRM, automation and
+                        0→1 product development.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-card">
+
+                    <div class="year">
+                        2024
+                    </div>
+
+                    <h3>
+                        Phoneme Solutions
+                    </h3>
+
+                    <p>
+                        Product requirements, workflow optimization,
+                        CRM-enabled healthcare claims and
+                        AI-powered OCR enhancements.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-card">
+
+                    <div class="year">
+                        2024 – 2026
+                    </div>
+
+                    <h3>
+                        M2P Solutions
+                    </h3>
+
+                    <p>
+                        Senior Product Manager across enterprise
+                        banking, payments, lending, automation,
+                        AI and scalable digital platforms.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects" id="projects">
+
+        <div class="container">
+
+            <div class="section-label">
+                Selected Product Work
+            </div>
+
+            <h2 class="section-title">
+                Product & platform case studies
+            </h2>
+
+            <p class="section-intro">
+                Selected work spanning enterprise SaaS, digital banking,
+                payments, healthcare, telecom analytics and workflow
+                automation.
+            </p>
+
+
+            <!-- M2P -->
+
+            <div class="project-group">
+
+                <div class="company-heading">
+
+                    <h3>
+                        M2P Solutions
+                    </h3>
+
+                    <span>
+                        FinTech · Enterprise Platforms
+                    </span>
+
+                </div>
+
+
+                <div class="project-grid">
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 01
+                        </div>
+
+                        <h4>
+                            Integrated Channels Suite
+                        </h4>
+
+                        <p>
+                            Digital banking platform integrating
+                            12+ enterprise applications using
+                            API-first architecture and configurable
+                            workflows.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 02
+                        </div>
+
+                        <h4>
+                            Pulse – Workforce Management Platform
+                        </h4>
+
+                        <p>
+                            Internal workforce platform covering
+                            attendance, timesheets, task allocation,
+                            performance and productivity.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 03
+                        </div>
+
+                        <h4>
+                            UPI-Based Payments & Collections
+                        </h4>
+
+                        <p>
+                            0→1 UPI collections platform covering
+                            payment allocation, transaction workflows
+                            and automated reconciliation.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AYU -->
+
+            <div class="project-group">
+
+                <div class="company-heading">
+
+                    <h3>
+                        Ayu Health
+                    </h3>
+
+                    <span>
+                        HealthTech · Digital Healthcare
+                    </span>
+
+                </div>
+
+
+                <div class="project-grid">
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 04
+                        </div>
+
+                        <h4>
+                            Ayu DocConnect
+                        </h4>
+
+                        <p>
+                            Doctor workflow and engagement platform
+                            covering onboarding, engagement,
+                            treatment operations and workflow
+                            coordination.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 05
+                        </div>
+
+                        <h4>
+                            Prior Authorization & Patient Care
+                        </h4>
+
+                        <p>
+                            Structured healthcare workflows covering
+                            authorization, insurance, TPA approvals,
+                            documentation and patient care.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOKIA -->
+
+            <div class="project-group">
+
+                <div class="company-heading">
+
+                    <h3>
+                        Nokia Networks
+                    </h3>
+
+                    <span>
+                        Telecom · Analytics · Enterprise Programs
+                    </span>
+
+                </div>
+
+
+                <div class="project-grid">
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 06
+                        </div>
+
+                        <h4>
+                            Telecom Cost Optimization
+                        </h4>
+
+                        <p>
+                            KPI-driven cost optimization initiative
+                            improving utilization visibility,
+                            reporting and operational efficiency.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 07
+                        </div>
+
+                        <h4>
+                            Enterprise Reporting & Insights
+                        </h4>
+
+                        <p>
+                            Power BI and Tableau reporting platform
+                            providing KPI tracking, reporting
+                            automation and operational insights.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 08
+                        </div>
+
+                        <h4>
+                            Network Rollout Financial Tracking
+                        </h4>
+
+                        <p>
+                            Financial tracking platform combining
+                            operational and financial data to monitor
+                            costs, budgets, milestones and variances.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CAPABILITIES -->
+
+    <section class="capabilities" id="capabilities">
+
+        <div class="container">
+
+            <div class="section-label">
+                Capabilities
+            </div>
+
+            <h2 class="section-title">
+                What I bring to product teams
+            </h2>
+
+            <p class="section-intro">
+                A combination of product strategy, technical understanding,
+                analytics and enterprise delivery.
+            </p>
+
 
             <div class="capability-grid">
 
                 <div class="capability">
 
                     <h3>
-                        Product Vision & Strategy
+                        Product Strategy
                     </h3>
 
                     <p>
-                        Owned product vision, strategy and roadmap
-                        for the platform.
+                        Vision, product strategy, roadmaps,
+                        discovery, market research and
+                        competitive analysis.
                     </p>
 
                 </div>
@@ -552,12 +974,13 @@
                 <div class="capability">
 
                     <h3>
-                        Product Discovery
+                        Product Delivery
                     </h3>
 
                     <p>
-                        Translated customer needs and business priorities
-                        into scalable product capabilities.
+                        PRDs, BRDs, user stories, prioritization,
+                        Agile delivery, UAT, releases and
+                        stakeholder management.
                     </p>
 
                 </div>
@@ -566,13 +989,13 @@
                 <div class="capability">
 
                     <h3>
-                        Product Requirements
+                        Technology & Architecture
                     </h3>
 
                     <p>
-                        Defined PRDs, BRDs, FSDs, API specifications,
-                        DFDs, ER models, process flows and
-                        acceptance criteria.
+                        API-first architecture, microservices,
+                        integrations, data flows, cloud-ready
+                        platforms and scalable workflows.
                     </p>
 
                 </div>
@@ -581,371 +1004,69 @@
                 <div class="capability">
 
                     <h3>
-                        Cross-Functional Leadership
+                        AI & Data
                     </h3>
 
                     <p>
-                        Worked across Product, Engineering, Business,
-                        UX, Sales, Marketing and Delivery teams.
-                    </p>
-
-                </div>
-
-
-                <div class="capability">
-
-                    <h3>
-                        Architecture Collaboration
-                    </h3>
-
-                    <p>
-                        Led product requirements around API-first,
-                        cloud-ready, microservices-based and
-                        multi-tenant environments.
-                    </p>
-
-                </div>
-
-
-                <div class="capability">
-
-                    <h3>
-                        Delivery & Release
-                    </h3>
-
-                    <p>
-                        Supported prioritization, Agile execution,
-                        UAT, release readiness, deployment and
-                        continuous enhancement.
+                        AI/GenAI use cases, rapid prototyping,
+                        product analytics, SQL, Power BI,
+                        Tableau and data strategy.
                     </p>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- PRODUCT SCOPE -->
+    <!-- CONTACT -->
 
-        <section class="section">
+    <section class="contact" id="contact">
+
+        <div class="container">
 
             <div class="section-label">
-                05 · Product Scope
+                Contact
             </div>
 
-            <h2>
-                A multi-application enterprise ecosystem
+            <h2 class="section-title">
+                Let's connect.
             </h2>
 
             <p>
-                The platform covered capabilities across banking,
-                payments, lending and automation, connecting multiple
-                enterprise applications through configurable workflows
-                and integrations.
+                I'm interested in Product Management opportunities
+                involving enterprise platforms, digital products,
+                AI, data and technology-led transformation.
             </p>
 
-            <div class="tags">
+            <div class="contact-links">
 
-                <span class="tag">
-                    Digital Banking
-                </span>
+                <a href="mailto:manoj.pant.pm@outlook.com">
+                    Email
+                </a>
 
-                <span class="tag">
-                    Payments
-                </span>
-
-                <span class="tag">
-                    Lending
-                </span>
-
-                <span class="tag">
-                    Workflow Automation
-                </span>
-
-                <span class="tag">
-                    API Integration
-                </span>
-
-                <span class="tag">
-                    Transaction Processing
-                </span>
-
-                <span class="tag">
-                    Enterprise SaaS
-                </span>
-
-                <span class="tag">
-                    Multi-Tenant Platform
-                </span>
+                <a href="https://www.linkedin.com/in/manoj-pant-35129495/"
+                   target="_blank">
+                    LinkedIn
+                </a>
 
             </div>
 
-        </section>
+        </div>
 
+    </section>
 
-        <!-- PRODUCT APPROACH -->
 
-        <section class="section">
+    <!-- FOOTER -->
 
-            <div class="section-label">
-                06 · Product Approach
-            </div>
+    <footer>
 
-            <h2>
-                From requirements to scalable product capabilities
-            </h2>
+        © 2026 Manoj Pant · Senior Product Manager Portfolio
 
-            <div class="flow">
-
-                <div class="flow-step">
-                    Customer Needs
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Product Discovery
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Requirements
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Architecture
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Agile Delivery
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    UAT & Release
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ARCHITECTURE -->
-
-        <section class="section">
-
-            <div class="section-label">
-                07 · Platform Architecture
-            </div>
-
-            <h2>
-                API-first and modular architecture
-            </h2>
-
-            <p>
-                The platform was designed around API-first integration,
-                modular workflows, cloud-ready deployment and
-                microservices-based architecture to support
-                interoperability and scalability.
-            </p>
-
-            <div class="flow">
-
-                <div class="flow-step">
-                    Enterprise Applications
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    APIs & Integrations
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Platform Services
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Configurable Workflows
-                </div>
-
-                <div class="arrow">
-                    →
-                </div>
-
-                <div class="flow-step">
-                    Banking Operations
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- INTEGRATIONS -->
-
-        <section class="section">
-
-            <div class="section-label">
-                08 · Enterprise Integrations
-            </div>
-
-            <h2>
-                Connecting banking ecosystems
-            </h2>
-
-            <p>
-                The platform supported integrations across banking,
-                payments, lending and regulatory ecosystems. The
-                documented product scope included CBS, NPCI,
-                Credit Bureaus, GST and CKYC/CERSAI ecosystems.
-            </p>
-
-            <div class="tags">
-
-                <span class="tag">
-                    CBS
-                </span>
-
-                <span class="tag">
-                    NPCI
-                </span>
-
-                <span class="tag">
-                    Credit Bureaus
-                </span>
-
-                <span class="tag">
-                    GST
-                </span>
-
-                <span class="tag">
-                    CKYC
-                </span>
-
-                <span class="tag">
-                    CERSAI
-                </span>
-
-            </div>
-
-        </section>
-
-
-        <!-- OUTCOMES -->
-
-        <section class="section">
-
-            <div class="section-label">
-                09 · Outcomes
-            </div>
-
-            <h2>
-                Measurable product impact
-            </h2>
-
-            <div class="outcomes">
-
-                <div class="outcome">
-
-                    <strong>
-                        20%
-                    </strong>
-
-                    <span>
-                        Reduction in integration complexity
-                    </span>
-
-                </div>
-
-
-                <div class="outcome">
-
-                    <strong>
-                        12+
-                    </strong>
-
-                    <span>
-                        Enterprise applications integrated
-                    </span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- LEARNINGS -->
-
-        <section class="section">
-
-            <div class="section-label">
-                10 · Product Perspective
-            </div>
-
-            <h2>
-                What this project demonstrates
-            </h2>
-
-            <p>
-                This project demonstrates product management across
-                complex enterprise environments where product strategy,
-                customer requirements, technical architecture,
-                integrations and delivery need to work together.
-            </p>
-
-            <p>
-                It also demonstrates the ability to translate business
-                requirements into scalable platform capabilities while
-                working across multiple technical and business
-                stakeholders.
-            </p>
-
-        </section>
-
-
-    </div>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    © 2026 Manoj Pant · Senior Product Manager
-
-</footer>
-
+    </footer>
 
 </body>
-
 </html>
