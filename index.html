@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manoj Pant | Senior Product Manager</title>
+
+    <meta name="description"
+          content="Manoj Pant - Senior Product Manager portfolio showcasing product strategy, enterprise platforms, AI, data analytics and digital products.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f8fa;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-inner {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        .nav-links a:hover {
+            color: #b58b43;
+        }
+
+        /* HERO */
+
+        .hero {
+            background: white;
+            padding: 100px 0 90px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: #b58b43;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: 58px;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .hero-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 22px;
+        }
+
+        .hero-description {
+            font-size: 17px;
+            color: #5b6472;
+            max-width: 720px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 12px 20px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid #d1d5db;
+        }
+
+        .button-primary {
+            background: #172033;
+            color: white;
+            border-color: #172033;
+        }
+
+        .button-primary:hover {
+            background: #2d3748;
+        }
+
+        .button-secondary:hover {
+            background: #f3f4f6;
+        }
+
+        /* HERO CARD */
+
+        .profile-card {
+            background: #172033;
+            color: white;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .profile-card h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .profile-stat {
+            border-top: 1px solid rgba(255,255,255,0.18);
+            padding: 18px 0;
+        }
+
+        .profile-stat strong {
+            display: block;
+            font-size: 25px;
+        }
+
+        .profile-stat span {
+            font-size: 13px;
+            color: #cbd5e1;
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 85px 0;
+        }
+
+        .section-label {
+            color: #b58b43;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 38px;
+            color: #111827;
+            margin-bottom: 16px;
+        }
+
+        .section-intro {
+            max-width: 750px;
+            color: #667085;
+            margin-bottom: 45px;
+        }
+
+        /* JOURNEY */
+
+        .journey {
+            background: #f7f8fa;
+        }
+
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .journey-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .journey-card .year {
+            color: #b58b43;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .journey-card h3 {
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .journey-card p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background: white;
+        }
+
+        .project-group {
+            margin-bottom: 55px;
+        }
+
+        .company-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .company-heading h3 {
+            font-size: 22px;
+        }
+
+        .company-heading span {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            border: 1px solid #e3e6eb;
+            border-radius: 13px;
+            padding: 27px;
+            background: #ffffff;
+            transition: 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            border-color: #c9a76a;
+        }
+
+        .project-number {
+            color: #b58b43;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .project-card h4 {
+            font-size: 19px;
+            margin-bottom: 12px;
+            line-height: 1.35;
+        }
+
+        .project-card p {
+            color: #667085;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            font-size: 13px;
+            font-weight: 700;
+            color: #172033;
+        }
+
+        /* CAPABILITIES */
+
+        .capabilities {
+            background: #f7f8fa;
+        }
+
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .capability {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .capability h3 {
+            font-size: 17px;
+            margin-bottom: 12px;
+        }
+
+        .capability p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #172033;
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: white;
+            border-bottom: 1px solid #b58b43;
+            padding-bottom: 3px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #101623;
+            color: #94a3b8;
+            text-align: center;
+            padding: 22px;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-grid,
+            .capability-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 46px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .journey-grid,
+            .project-grid,
+            .capability-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="container nav-inner">
+
+            <div class="logo">
+                MANOJ PANT
+            </div>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#journey">Journey</a>
+                <a href="#projects">Projects</a>
+                <a href="#capabilities">Capabilities</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="container hero-grid">
+
+            <div>
+
+                <div class="eyebrow">
+                    Senior Product Manager
+                </div>
+
+                <h1>
+                    Building enterprise products from problem to impact.
+                </h1>
+
+                <div class="hero-title">
+                    Product Strategy · Enterprise Platforms · AI · Data & Analytics
+                </div>
+
+                <p class="hero-description">
+                    Senior Product Manager with 10+ years of experience across
+                    FinTech, Telecom, HealthTech and Enterprise IT, building
+                    digital platforms, workflow automation, AI-enabled products
+                    and data-driven solutions.
+                </p>
+
+                <div class="buttons">
+
+                    <a class="button button-primary" href="#projects">
+                        Explore My Product Work
+                    </a>
+
+                    <a class="button button-secondary"
+                       href="mailto:manoj.pant.pm@outlook.com">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-card">
+
+                <h3>
+                    Product Profile
+                </h3>
+
+                <div class="profile-stat">
+                    <strong>10+</strong>
+                    <span>Years of professional experience</span>
+                </div>
+
+                <div class="profile-stat">
+                    <strong>4</strong>
+                    <span>Industry domains</span>
+                </div>
+
+                <div class="profile-stat">
+                    <strong>8</strong>
+                    <span>Featured product & analytics projects</span>
+                </div>
+
+                <div class="profile-stat">
+                    <strong>0 → 1</strong>
+                    <span>Product discovery, validation & launch experience</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-label">
+                About
+            </div>
+
+            <h2 class="section-title">
+                From analytics and business analysis to product leadership.
+            </h2>
+
+            <p class="section-intro">
+                My product journey combines data-driven decision making,
+                business analysis, technical understanding and end-to-end
+                product delivery. I work across product strategy, discovery,
+                requirements, architecture collaboration, Agile delivery,
+                analytics and continuous product improvement.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCT JOURNEY -->
+
+    <section class="journey" id="journey">
+
+        <div class="container">
+
+            <div class="section-label">
+                Product Journey
+            </div>
+
+            <h2 class="section-title">
+                A career built across data, technology and products.
+            </h2>
+
+            <p class="section-intro">
+                My career evolved from enterprise analytics and reporting
+                into business analysis and then product management.
+            </p>
+
+
+            <div class="journey-grid">
+
+                <div class="journey-card">
+
+                    <div class="year">
+                        2016 – 2023
+                    </div>
+
+                    <h3>
+                        Nokia Networks
+                    </h3>
+
+                    <p>
+                        Reporting Analyst → Business Analyst.
+                        Power BI, Tableau, SQL, requirements,
+                        business cases, KPI frameworks and telecom
+                        enterprise programs.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-card">
+
+                    <div class="year">
+                        2023 – 2024
+                    </div>
+
+                    <h3>
+                        Ayu Health
+                    </h3>
+
+                    <p>
+                        Product Management across healthcare workflows,
+                        provider products, CRM, automation and
+                        0→1 product development.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-card">
+
+                    <div class="year">
+                        2024
+                    </div>
+
+                    <h3>
+                        Phoneme Solutions
+                    </h3>
+
+                    <p>
+                        Product requirements, workflow optimization,
+                        CRM-enabled healthcare claims and
+                        AI-powered OCR enhancements.
+                    </p>
+
+                </div>
+
+
+                <div class="journey-card">
+
+                    <div class="year">
+                        2024 – 2026
+                    </div>
+
+                    <h3>
+                        M2P Solutions
+                    </h3>
+
+                    <p>
+                        Senior Product Manager across enterprise
+                        banking, payments, lending, automation,
+                        AI and scalable digital platforms.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects" id="projects">
+
+        <div class="container">
+
+            <div class="section-label">
+                Selected Product Work
+            </div>
+
+            <h2 class="section-title">
+                Product & platform case studies
+            </h2>
+
+            <p class="section-intro">
+                Selected work spanning enterprise SaaS, digital banking,
+                payments, healthcare, telecom analytics and workflow
+                automation.
+            </p>
+
+
+            <!-- M2P -->
+
+            <div class="project-group">
+
+                <div class="company-heading">
+
+                    <h3>
+                        M2P Solutions
+                    </h3>
+
+                    <span>
+                        FinTech · Enterprise Platforms
+                    </span>
+
+                </div>
+
+
+                <div class="project-grid">
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 01
+                        </div>
+
+                        <h4>
+                            Integrated Channels Suite
+                        </h4>
+
+                        <p>
+                            Digital banking platform integrating
+                            12+ enterprise applications using
+                            API-first architecture and configurable
+                            workflows.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 02
+                        </div>
+
+                        <h4>
+                            Pulse – Workforce Management Platform
+                        </h4>
+
+                        <p>
+                            Internal workforce platform covering
+                            attendance, timesheets, task allocation,
+                            performance and productivity.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 03
+                        </div>
+
+                        <h4>
+                            UPI-Based Payments & Collections
+                        </h4>
+
+                        <p>
+                            0→1 UPI collections platform covering
+                            payment allocation, transaction workflows
+                            and automated reconciliation.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AYU -->
+
+            <div class="project-group">
+
+                <div class="company-heading">
+
+                    <h3>
+                        Ayu Health
+                    </h3>
+
+                    <span>
+                        HealthTech · Digital Healthcare
+                    </span>
+
+                </div>
+
+
+                <div class="project-grid">
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 04
+                        </div>
+
+                        <h4>
+                            Ayu DocConnect
+                        </h4>
+
+                        <p>
+                            Doctor workflow and engagement platform
+                            covering onboarding, engagement,
+                            treatment operations and workflow
+                            coordination.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 05
+                        </div>
+
+                        <h4>
+                            Prior Authorization & Patient Care
+                        </h4>
+
+                        <p>
+                            Structured healthcare workflows covering
+                            authorization, insurance, TPA approvals,
+                            documentation and patient care.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOKIA -->
+
+            <div class="project-group">
+
+                <div class="company-heading">
+
+                    <h3>
+                        Nokia Networks
+                    </h3>
+
+                    <span>
+                        Telecom · Analytics · Enterprise Programs
+                    </span>
+
+                </div>
+
+
+                <div class="project-grid">
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 06
+                        </div>
+
+                        <h4>
+                            Telecom Cost Optimization
+                        </h4>
+
+                        <p>
+                            KPI-driven cost optimization initiative
+                            improving utilization visibility,
+                            reporting and operational efficiency.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 07
+                        </div>
+
+                        <h4>
+                            Enterprise Reporting & Insights
+                        </h4>
+
+                        <p>
+                            Power BI and Tableau reporting platform
+                            providing KPI tracking, reporting
+                            automation and operational insights.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-card">
+
+                        <div class="project-number">
+                            PROJECT 08
+                        </div>
+
+                        <h4>
+                            Network Rollout Financial Tracking
+                        </h4>
+
+                        <p>
+                            Financial tracking platform combining
+                            operational and financial data to monitor
+                            costs, budgets, milestones and variances.
+                        </p>
+
+                        <span class="project-link">
+                            Case study coming →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CAPABILITIES -->
+
+    <section class="capabilities" id="capabilities">
+
+        <div class="container">
+
+            <div class="section-label">
+                Capabilities
+            </div>
+
+            <h2 class="section-title">
+                What I bring to product teams
+            </h2>
+
+            <p class="section-intro">
+                A combination of product strategy, technical understanding,
+                analytics and enterprise delivery.
+            </p>
+
+
+            <div class="capability-grid">
+
+                <div class="capability">
+
+                    <h3>
+                        Product Strategy
+                    </h3>
+
+                    <p>
+                        Vision, product strategy, roadmaps,
+                        discovery, market research and
+                        competitive analysis.
+                    </p>
+
+                </div>
+
+
+                <div class="capability">
+
+                    <h3>
+                        Product Delivery
+                    </h3>
+
+                    <p>
+                        PRDs, BRDs, user stories, prioritization,
+                        Agile delivery, UAT, releases and
+                        stakeholder management.
+                    </p>
+
+                </div>
+
+
+                <div class="capability">
+
+                    <h3>
+                        Technology & Architecture
+                    </h3>
+
+                    <p>
+                        API-first architecture, microservices,
+                        integrations, data flows, cloud-ready
+                        platforms and scalable workflows.
+                    </p>
+
+                </div>
+
+
+                <div class="capability">
+
+                    <h3>
+                        AI & Data
+                    </h3>
+
+                    <p>
+                        AI/GenAI use cases, rapid prototyping,
+                        product analytics, SQL, Power BI,
+                        Tableau and data strategy.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="container">
+
+            <div class="section-label">
+                Contact
+            </div>
+
+            <h2 class="section-title">
+                Let's connect.
+            </h2>
+
+            <p>
+                I'm interested in Product Management opportunities
+                involving enterprise platforms, digital products,
+                AI, data and technology-led transformation.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="mailto:manoj.pant.pm@outlook.com">
+                    Email
+                </a>
+
+                <a href="https://www.linkedin.com/in/manoj-pant-35129495/"
+                   target="_blank">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Manoj Pant · Senior Product Manager Portfolio
+
+    </footer>
+
+</body>
+</html>
