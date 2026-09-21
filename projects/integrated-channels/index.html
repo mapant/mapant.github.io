@@ -1,1540 +1,321 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Integrated Channels Suite | Manoj Pant</title>
-<meta name="description" content="Integrated Channels Suite — Digital Banking Platform case study by Manoj Pant, Senior Product Manager.">
-
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Integrated Channels Suite — Manoj Pant | Senior Product Manager</title>
+<meta name="description" content="My product-management case study of the Integrated Channels Suite: a 12-application digital banking platform built from scratch across lending, payments, compliance, operations and financial control.">
 <style>
 :root{
-  --ink:#101828;
-  --navy:#162033;
-  --navy-2:#202c43;
-  --muted:#667085;
-  --muted-2:#98A2B3;
-  --line:#E4E7EC;
-  --surface:#FFFFFF;
-  --surface-2:#F8FAFC;
-  --gold:#B88A3B;
-  --gold-2:#D3A65A;
-  --gold-soft:#FBF7EE;
-  --green:#138A63;
-  --green-soft:#ECFDF3;
-  --blue:#2367D1;
-  --blue-soft:#EEF4FF;
-  --purple:#6846C7;
-  --purple-soft:#F4F0FF;
-  --red:#B42318;
-  --red-soft:#FEF3F2;
-  --shadow:0 16px 50px rgba(16,24,40,.07);
-  --shadow-soft:0 8px 24px rgba(16,24,40,.05);
-  --radius:20px;
+--ink:#15213b;--ink2:#35415c;--muted:#69758c;--line:#e5e9f1;--bg:#f7f8fc;--white:#fff;
+--blue:#536de8;--blue2:#eef2ff;--lav:#f1edff;--mint:#eaf8f3;--peach:#fff1e5;--sky:#eaf5ff;--rose:#fff0f5;--yellow:#fff8df;
+--shadow:0 18px 55px rgba(31,45,77,.09);--shadow2:0 9px 28px rgba(31,45,77,.07);--max:1480px;
+--sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"SFMono-Regular",Consolas,monospace
 }
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55}button,input{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+.progress{position:fixed;left:0;top:0;height:3px;background:linear-gradient(90deg,#5d75ee,#a98cf4,#69cdb0);width:0;z-index:1000}
+header{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.head{height:76px;display:flex;align-items:center;gap:22px}.brand{display:flex;align-items:center;gap:11px;flex:none}.logo{width:43px;height:43px;border-radius:14px;background:linear-gradient(135deg,#5e78f1,#9a85f4);color:#fff;display:grid;place-items:center;font-weight:950;box-shadow:0 8px 20px #6f80e933}.brand b{font-size:15px}.brand small{display:block;color:#77839a;font-size:9px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+nav{display:flex;align-items:center;gap:2px;flex:1;justify-content:center;overflow:auto;scrollbar-width:none}nav a{font-size:10px;font-weight:850;color:#626e85;padding:9px 9px;border-radius:10px;white-space:nowrap}nav a:hover,nav a.active{background:#f0f3fb;color:var(--ink)}
+.head-actions{display:flex;gap:7px}.btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:12px;padding:10px 13px;font-size:10px;font-weight:900;display:inline-flex;align-items:center;gap:7px;justify-content:center}.btn.primary{background:#1d2b48;color:#fff;border-color:#1d2b48}.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow2)}
+.hero{padding:38px 0 18px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:#eaedff;right:-250px;top:-330px;z-index:-1}.hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:#edf9f4;left:-240px;bottom:-260px;z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:28px;align-items:center}.kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;background:#edf1ff;border:1px solid #dbe2ff;color:#5268c7;border-radius:999px;font-size:10px;font-weight:950;letter-spacing:.1em;text-transform:uppercase}.kicker i{width:7px;height:7px;background:#647cf2;border-radius:50%}
+h1{font-size:clamp(45px,5.3vw,72px);letter-spacing:-.065em;line-height:.96;margin:18px 0}.lead{font-size:19px;color:#58657d;line-height:1.7;max-width:780px}.lead strong{color:var(--ink)}.hero-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}.safe{font-size:9px;color:#8a94a7;margin-top:14px;max-width:770px}
+.hero-visual{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:30px;padding:16px;box-shadow:var(--shadow)}.window{height:28px;display:flex;align-items:center;justify-content:space-between;padding:0 7px 8px}.dots{display:flex;gap:6px}.dots i{width:8px;height:8px;border-radius:50%;background:#d9dfea}.window span{font-size:9px;color:#7c879b;font-weight:950;letter-spacing:.08em}
+.map{height:370px;border-radius:23px;border:1px solid #e1e6ef;background:linear-gradient(145deg,#fafbff,#eef3fb);position:relative;overflow:hidden}.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:230px;height:128px;border:1px solid #dce3ee;background:#fff;border-radius:25px;box-shadow:0 20px 45px #263b6518;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:4;padding:17px}.core b{font-size:17px;letter-spacing:-.03em}.core span{font-size:9px;color:#77839a;margin-top:5px}.node{position:absolute;width:150px;min-height:75px;border:1px solid #dce3ee;background:#fff;border-radius:17px;box-shadow:0 10px 26px #263b6512;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;text-align:center;z-index:4;transition:.2s}.node:hover{transform:translateY(-3px);box-shadow:0 16px 34px #263b6520}.node b{font-size:11px}.node span{font-size:8px;color:#7d889d;margin-top:3px}.n1{left:7%;top:9%}.n2{left:calc(50% - 75px);top:5%}.n3{right:7%;top:9%}.n4{left:6%;bottom:8%}.n5{left:calc(50% - 75px);bottom:4%}.n6{right:6%;bottom:8%}.line{position:absolute;height:2px;background:#ccd6e8;left:50%;top:50%;transform-origin:left;width:32%;z-index:1}.l1{transform:rotate(208deg)}.l2{transform:rotate(270deg);width:25%}.l3{transform:rotate(332deg)}.l4{transform:rotate(152deg)}.l5{transform:rotate(90deg);width:25%}.l6{transform:rotate(28deg)}
+.quick{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-top:14px}.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 15px;box-shadow:var(--shadow2)}.stat strong{display:block;font-size:24px;letter-spacing:-.04em}.stat span{font-size:9px;color:var(--muted);font-weight:750}
+.section{padding:44px 0}.section.white{background:#fff}.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:18px}.section-head h2{font-size:38px;letter-spacing:-.05em;line-height:1.06;margin:5px 0 0}.section-head p{font-size:12px;color:var(--muted);max-width:720px;margin:0}.eyebrow{font-size:9px;color:#71809b;font-weight:950;letter-spacing:.14em;text-transform:uppercase}
+.story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:14px}.story{border:1px solid var(--line);border-radius:22px;padding:22px;background:#fff;box-shadow:var(--shadow2)}.story h3{font-size:20px;margin:6px 0 8px}.story p{font-size:11px;color:#66738a;margin:0}.story ul{font-size:10px;color:#647087;padding-left:17px}.story li{margin:6px 0}.story-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}.story-step{border:1px solid #e7ebf2;background:#fafbfe;border-radius:14px;padding:12px}.story-step b{font-size:10px}.story-step span{font-size:8px;color:#7d889c;display:block;margin-top:4px}
+.strategy{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.strategy-card{border:1px solid var(--line);border-radius:20px;background:#fff;padding:19px;min-height:175px;position:relative;overflow:hidden}.strategy-card:after{content:"";position:absolute;width:100px;height:100px;border-radius:50%;right:-40px;bottom:-45px;background:var(--tone);opacity:.2}.strategy-card .num{font-size:27px;font-weight:950;color:#6c80dd}.strategy-card h3{font-size:15px;margin:8px 0 6px}.strategy-card p{font-size:10px;color:#68758b;margin:0}.decision{margin-top:13px;border:1px solid var(--line);border-radius:22px;background:#fff;padding:20px}.decision-row{display:grid;grid-template-columns:repeat(9,1fr);gap:6px;margin-top:12px}.decision-step{padding:10px 7px;border:1px solid #e8ebf2;border-radius:12px;background:#fafbfe;text-align:center;font-size:8px;font-weight:850;color:#627087;position:relative}.decision-step:not(:last-child):after{content:"→";position:absolute;right:-8px;top:31%;color:#a3aec0;z-index:2}
+.ownership{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.own{border:1px solid var(--line);border-radius:18px;background:#fff;padding:17px;min-height:155px}.own h3{font-size:13px;margin:8px 0 5px}.own p{font-size:9px;color:var(--muted);margin:0}.own ul{padding-left:15px;font-size:9px;color:#637087}.pill{display:inline-flex;padding:5px 8px;border-radius:999px;background:#f0f3f8;color:#66738a;font-size:8px;font-weight:950}
+.stack-layout{display:grid;grid-template-columns:1.12fr .88fr;gap:14px}.arch{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow2)}.arch svg{width:100%;height:455px;border:1px solid #e7ebf2;background:#fbfcff;border-radius:17px}.stack{display:grid;grid-template-columns:1fr 1fr;gap:9px}.stack-card{border:1px solid var(--line);border-radius:15px;padding:14px;background:#fff}.stack-card h3{font-size:11px;margin:0 0 8px}.chips{display:flex;flex-wrap:wrap;gap:5px}.chip{padding:5px 7px;background:#f3f5f9;border-radius:8px;font-size:8px;font-weight:850;color:#5e6b82}
+.integrations{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px}.integration-cols{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:9px}.icol{display:flex;flex-direction:column;gap:7px}.inode{border:1px solid #e4e8f0;background:#fafbfe;border-radius:12px;padding:10px;text-align:center;font-size:9px;font-weight:850;color:#617087}.inode.center{background:#eef2ff;border-color:#dbe2ff;min-height:100px;display:flex;flex-direction:column;justify-content:center}.inode.center b{font-size:13px}.inode.center span{font-size:8px;color:#78839a;margin-top:4px}.arrow{text-align:center;font-size:18px;color:#9aa6b9}.api-lifecycle{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px}.api-step{border:1px solid #e7ebf2;border-radius:13px;padding:11px;background:#fff;min-height:95px}.api-step b{font-size:9px}.api-step span{font-size:8px;color:#7b879b;display:block;margin-top:4px}
+.timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.time{border:1px solid var(--line);background:#fff;border-radius:17px;padding:15px;min-height:155px;position:relative}.time.active{background:#f1edff;border-color:#e0d8ff}.time b{font-size:9px;color:#6578d2}.time h3{font-size:12px;margin:7px 0}.time p,.time li{font-size:8.5px;color:#6b778c}.time ul{padding-left:14px}.time:not(:last-child):after{content:"→";position:absolute;right:-11px;top:45%;color:#a4aec1;font-weight:950;z-index:3}
+.implementation{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:14px}.impl{border:1px solid var(--line);border-radius:17px;background:#fff;padding:16px}.impl h3{font-size:12px;margin:7px 0}.impl p{font-size:9px;color:var(--muted);margin:0}.impl ul{font-size:8.5px;color:#657188;padding-left:14px}
+.toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:16px}.search{flex:1;min-width:260px;border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 14px;outline:none;font-size:11px}.search:focus{border-color:#9aaaf8;box-shadow:0 0 0 4px #edf0ff}.filters{display:flex;gap:5px;overflow:auto}.filter{border:1px solid var(--line);background:#fff;color:#657188;border-radius:9px;padding:8px 9px;font-size:8.5px;font-weight:900;white-space:nowrap}.filter.active{background:#1d2b48;color:#fff;border-color:#1d2b48}
+.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.app-card{text-align:left;border:1px solid var(--line);border-radius:20px;background:#fff;padding:18px;box-shadow:var(--shadow2);position:relative;overflow:hidden;transition:.22s;color:var(--ink)}.app-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--app)}.app-card:hover{transform:translateY(-4px);box-shadow:0 20px 45px #1f2d4d1b;border-color:#d1d9e6}.app-top{display:flex;align-items:center;gap:8px}.app-index{width:31px;height:31px;border-radius:10px;background:color-mix(in srgb,var(--app) 28%,white);display:grid;place-items:center;font-size:9px;font-weight:950}.app-domain{font-size:8px;color:#78839a;font-weight:950;text-transform:uppercase;letter-spacing:.08em}.app-go{margin-left:auto;color:#8d97aa}.app-card h3{font-size:18px;margin:14px 0 6px}.app-card p{font-size:10px;color:#68758a;min-height:47px;margin:0}.mini-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}.mini-tags span{font-size:7.5px;font-weight:850;color:#637087;background:#f4f6f9;padding:5px 6px;border-radius:7px}.app-foot{border-top:1px solid #edf0f4;margin-top:13px;padding-top:11px;display:flex;justify-content:space-between;font-size:8.5px;color:#7a8599}.app-foot b{color:#5d71cf}
+.impact{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.impact-card{border:1px solid var(--line);border-radius:18px;padding:18px;background:#fff}.impact-card strong{font-size:30px;letter-spacing:-.04em}.impact-card b{display:block;font-size:11px;margin-top:4px}.impact-card span{font-size:8.5px;color:#748096;display:block;margin-top:4px}.impact-model{display:grid;grid-template-columns:1.1fr .9fr;gap:13px;margin-top:13px}.impact-panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:19px}.impact-panel h3{font-size:17px;margin:5px 0}.impact-panel p{font-size:10px;color:var(--muted)}.bars{height:190px;display:flex;align-items:end;gap:14px;border-bottom:1px solid #e7ebf2;padding:15px 5px 0}.barcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:end;height:100%;gap:5px}.bar{width:min(45px,72%);border-radius:9px 9px 3px 3px;background:linear-gradient(180deg,#8295f8,#c7cff9)}.barcol span{font-size:7.5px;color:#7c879a;text-align:center}
+.comps{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.comp{border:1px solid var(--line);border-radius:15px;background:#fff;padding:13px}.comp b{font-size:10px}.comp span{display:block;font-size:8px;color:#78849a;margin-top:3px}.learn{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:13px}.lesson{border:1px solid var(--line);border-radius:17px;background:#fff;padding:17px;min-height:125px}.lesson strong{font-size:21px;color:#7385dc}.lesson h3{font-size:12px;margin:6px 0}.lesson p{font-size:9px;color:var(--muted);margin:0}
+.contact{background:#1e2b47;color:#fff;border-radius:27px;padding:22px;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}.contact h2{font-size:35px;letter-spacing:-.05em;margin:6px 0 8px}.contact p{font-size:10px;color:#c8d1e0}.contact-actions{display:grid;gap:7px}.contact-actions a,.contact-actions button{border:0;background:#fff;color:#1e2b47;border-radius:12px;padding:12px 13px;font-size:10px;font-weight:900;display:flex;justify-content:space-between}
+footer{padding:28px 0 50px;background:#fff;border-top:1px solid var(--line)}footer .wrap{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;flex-wrap:wrap}footer small{font-size:8px;color:#7b8699}
+.drawer-backdrop{position:fixed;inset:0;background:#101a2b88;backdrop-filter:blur(6px);z-index:200;display:none}.drawer-backdrop.open{display:block}.drawer{position:absolute;right:0;top:0;bottom:0;width:min(960px,94vw);background:#f7f8fc;box-shadow:-25px 0 80px #0d162c33;overflow:auto}.drawer-head{position:sticky;top:0;z-index:4;background:#fff;border-bottom:1px solid var(--line);padding:17px 20px;display:flex;align-items:center;justify-content:space-between}.drawer-title{display:flex;gap:10px;align-items:center}.drawer-badge{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:950}.drawer-title h2{font-size:20px;margin:0}.drawer-title small{display:block;font-size:8px;color:#7b879b}.close{width:36px;height:36px;border-radius:11px;border:1px solid var(--line);background:#fff;font-weight:950}.drawer-body{padding:19px}.dhero{display:grid;grid-template-columns:1.15fr .85fr;gap:10px}.dcard{border:1px solid var(--line);border-radius:17px;background:#fff;padding:16px}.dcard h3{font-size:14px;margin:5px 0}.dcard p{font-size:9px;color:var(--muted);margin:0}.list2{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px}.list2 div{border:1px solid #e8ebf2;background:#fafbfe;border-radius:9px;padding:7px;font-size:8px;color:#607087;font-weight:750}.dsection{margin-top:12px}.dsection-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:7px}.dsection-head h3{font-size:13px;margin:0}.dsection-head span{font-size:7.5px;color:#8993a5}.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.fstep{border:1px solid var(--line);border-radius:11px;background:#fff;padding:9px;min-height:82px}.fstep b{font-size:8px}.fstep span{display:block;font-size:7.5px;color:#7c879a;margin-top:4px}.report{border:1px solid var(--line);border-radius:15px;background:#fff;padding:13px}.report-head{display:flex;justify-content:space-between;font-size:9px;font-weight:900;margin-bottom:8px}.report-head span{font-size:7px;color:#8993a5}table{width:100%;border-collapse:collapse;font-size:8px}th,td{padding:7px;border-bottom:1px solid #edf0f4;text-align:left}th{font-size:7px;text-transform:uppercase;letter-spacing:.06em;color:#7a8598}.api{background:#18243d;color:#e0e7f4;border-radius:14px;padding:13px;font:9px/1.55 var(--mono);overflow:auto}.method{color:#98e1bf;font-weight:950}.error{border:1px solid #efd8d8;background:#fff7f7;border-radius:11px;padding:10px;margin-top:7px}.error b{font-size:8.5px;color:#a95c5c}.error p{font-size:8px;color:#896d6d;margin:3px 0 0}.journey-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.journey-card{border:1px solid var(--line);border-radius:11px;background:#fff;padding:10px}.journey-card b{font-size:8px}.journey-card span{font-size:7.5px;color:#7d889b;display:block;margin-top:3px}
+.hidden{display:none!important}.reveal{opacity:0;transform:translateY(10px);transition:.45s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:1150px){nav a{font-size:9px;padding:8px 5px}.hero-grid,.stack-layout,.impact-model,.contact{grid-template-columns:1fr}.strategy,.ownership,.comps{grid-template-columns:repeat(2,1fr)}.app-grid{grid-template-columns:repeat(2,1fr)}.timeline{grid-template-columns:repeat(3,1fr)}.time:nth-child(3n):after{display:none}.implementation{grid-template-columns:repeat(2,1fr)}.decision-row{grid-template-columns:repeat(3,1fr)}.decision-step:nth-child(3n):after{display:none}}
+@media(max-width:760px){.wrap{width:calc(100% - 26px)}.head{height:66px;gap:8px}.brand small{display:none}.head-actions .btn:first-child{display:none}nav{justify-content:flex-start}.hero{padding-top:38px}h1{font-size:46px}.lead{font-size:15px}.quick,.strategy,.ownership,.impact,.comps,.learn,.app-grid,.story-grid{grid-template-columns:1fr}.story-flow,.implementation,.stack{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.time:after{display:none!important}.integration-cols{grid-template-columns:1fr}.api-lifecycle{grid-template-columns:1fr 1fr}.decision-row{grid-template-columns:1fr 1fr}.decision-step:after{display:none!important}.dhero{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.list2,.journey-grid{grid-template-columns:1fr 1fr}.drawer{width:100vw}.section-head{display:block}.section-head p{margin-top:9px}.section-head h2{font-size:31px}.map{height:340px}.node{width:125px}.n1,.n4{left:3%}.n3,.n6{right:3%}}
+@media print{@page{size:A4 portrait;margin:11mm}body{background:#fff}.progress,header,.hero-actions,.toolbar,.drawer-backdrop,.contact-modal{display:none!important}.section,.hero{padding:18px 0;break-inside:avoid}.wrap{width:100%}.hero-grid,.stack-layout,.impact-model,.contact{grid-template-columns:1fr 1fr}.quick{grid-template-columns:repeat(5,1fr)}.strategy,.ownership,.comps{grid-template-columns:repeat(2,1fr)}.app-grid{grid-template-columns:repeat(2,1fr)}.app-card,.story,.arch,.impact-card,.dcard{box-shadow:none;break-inside:avoid}.reveal{opacity:1;transform:none}h1{font-size:42px}.section-head h2{font-size:24px}.map{height:320px}}
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:var(--surface-2);
-  color:var(--ink);
-  line-height:1.65;
-}
-a{text-decoration:none;color:inherit}
-button,input{font:inherit}
-.container{width:min(1220px,92%);margin:auto}
-
-/* top navigation */
-.site-nav{
-  position:sticky;top:0;z-index:1000;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(228,231,236,.92);
-}
-.nav-inner{
-  min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px;
-}
-.brand{
-  display:flex;align-items:center;gap:12px;font-size:17px;font-weight:800;letter-spacing:.4px;
-}
-.brand-mark{
-  width:34px;height:34px;border-radius:10px;background:var(--navy);
-  color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800;
-}
-.back{
-  color:var(--muted);font-size:14px;font-weight:650;
-  padding:10px 14px;border-radius:10px;transition:.2s;
-}
-.back:hover{background:var(--surface-2);color:var(--ink)}
-
-/* hero */
-.hero{
-  position:relative;overflow:hidden;color:#fff;background:var(--navy);
-}
-.hero:before{
-  content:"";position:absolute;inset:auto -10% -35% auto;width:620px;height:620px;
-  background:radial-gradient(circle,rgba(211,166,90,.22),transparent 64%);
-  pointer-events:none;
-}
-.hero:after{
-  content:"";position:absolute;inset:0;
-  background:
-    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px),
-    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px);
-  background-size:48px 48px;
-  mask-image:linear-gradient(to bottom,rgba(0,0,0,.45),transparent 85%);
-  pointer-events:none;
-}
-.hero-grid{
-  position:relative;z-index:1;
-  display:grid;grid-template-columns:minmax(0,1.2fr) minmax(360px,.8fr);
-  gap:70px;align-items:center;padding:92px 0 78px;
-}
-.eyebrow{
-  color:#DAB56E;font-size:12px;font-weight:800;letter-spacing:2.2px;
-  text-transform:uppercase;margin-bottom:18px;
-}
-.hero h1{
-  font-size:clamp(46px,6.5vw,78px);line-height:1.02;letter-spacing:-2.6px;margin-bottom:18px;
-}
-.hero-sub{
-  font-size:23px;line-height:1.35;color:#E5E7EB;max-width:760px;margin-bottom:22px;
-}
-.hero-copy{
-  font-size:16px;color:#B9C4D4;max-width:790px;margin-bottom:28px;
-}
-.hero-meta{display:flex;flex-wrap:wrap;gap:9px}
-.pill{
-  display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid rgba(255,255,255,.15);
-  background:rgba(255,255,255,.045);border-radius:999px;font-size:12px;color:#F4F6F8;
-}
-.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  border-radius:11px;padding:12px 16px;font-size:13px;font-weight:750;
-  border:1px solid var(--line);transition:.2s;cursor:pointer;
-}
-.btn-light{background:#fff;color:var(--ink);border-color:#fff}
-.btn-ghost{background:rgba(255,255,255,.03);color:#fff;border-color:rgba(255,255,255,.18)}
-.btn:hover{transform:translateY(-1px)}
-
-/* visual platform map */
-.hero-visual{
-  min-height:370px;border:1px solid rgba(255,255,255,.14);
-  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
-  border-radius:24px;padding:26px;position:relative;overflow:hidden;
-}
-.visual-caption{
-  color:#AAB6C9;text-transform:uppercase;letter-spacing:1.7px;font-size:10px;font-weight:800;
-}
-.platform-orbit{position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);border:1px dashed rgba(255,255,255,.12);border-radius:50%}
-.o1{width:215px;height:215px}.o2{width:305px;height:305px}
-.core{
-  position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);
-  width:138px;height:138px;border-radius:50%;
-  background:linear-gradient(145deg,#D8B06A,#9D712D);display:grid;place-items:center;text-align:center;
-  font-size:15px;font-weight:850;box-shadow:0 0 0 16px rgba(216,176,106,.08),0 0 65px rgba(216,176,106,.20);
-}
-.vnode{
-  position:absolute;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);
-  color:#DDE5F0;padding:8px 10px;border-radius:8px;font-size:10px;white-space:nowrap;
-}
-.vn1{left:20px;top:72px}.vn2{right:24px;top:92px}.vn3{left:18px;bottom:62px}.vn4{right:30px;bottom:48px}.vn5{left:50%;top:20px;transform:translateX(-50%)}
-.connector{position:absolute;height:1px;background:rgba(216,176,106,.27);transform-origin:left center}
-.c1{width:130px;left:105px;top:115px;transform:rotate(14deg)}
-.c2{width:132px;right:107px;top:128px;transform:rotate(163deg)}
-.c3{width:140px;left:103px;bottom:103px;transform:rotate(-12deg)}
-.c4{width:141px;right:107px;bottom:103px;transform:rotate(192deg)}
-
-/* metrics */
-.metrics{background:#fff;border-bottom:1px solid var(--line)}
-.metric-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.metric{padding:27px 24px;border-right:1px solid var(--line)}
-.metric:last-child{border-right:none}
-.metric-value{font-size:32px;font-weight:850;line-height:1.1;margin-bottom:6px}
-.metric-label{font-size:11px;font-weight:750;color:var(--muted);text-transform:uppercase;letter-spacing:1.1px}
-.metric-note{font-size:12px;color:var(--muted);margin-top:5px}
-
-/* layout */
-.page{padding:65px 0 90px}
-.content-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;align-items:start}
-.side-nav{position:sticky;top:96px}
-.side-title{font-size:10px;font-weight:850;color:var(--muted-2);letter-spacing:1.6px;text-transform:uppercase;margin:0 0 10px 12px}
-.side-nav a{
-  display:block;padding:8px 12px;margin-bottom:2px;border-left:2px solid transparent;border-radius:0 8px 8px 0;
-  color:var(--muted);font-size:12.5px;font-weight:650;transition:.18s;
-}
-.side-nav a:hover,.side-nav a.active{color:var(--ink);background:#fff;border-left-color:var(--gold)}
-.main-col{min-width:0}
-
-/* sections */
-.card{
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:42px;margin-bottom:24px;
-  box-shadow:var(--shadow-soft);
-}
-.section-kicker{font-size:10px;font-weight:850;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.card h2{font-size:30px;line-height:1.18;letter-spacing:-.7px;margin-bottom:15px}
-.lead{font-size:16px;color:#475467;max-width:930px}
-.card p{color:#596579;font-size:14.5px;margin-bottom:14px}
-.muted-note{font-size:12px;color:var(--muted);margin-top:12px}
-
-/* callout */
-.callout{
-  margin-top:22px;padding:18px 20px;border-radius:13px;background:var(--gold-soft);border:1px solid #F0E3C5;
-  color:#684F25;font-size:13px;
-}
-.callout strong{color:#4B391D}
-
-/* problem cards */
-.three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
-.problem-card{padding:20px;border:1px solid #E8EBF0;border-radius:14px;background:var(--surface-2)}
-.problem-icon{
-  width:34px;height:34px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;
-  font-size:11px;font-weight:850;margin-bottom:14px;
-}
-.problem-card h3{font-size:16px;margin-bottom:6px}.problem-card p{font-size:12.5px;margin-bottom:0}
-
-/* outcomes */
-.outcomes{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-top:24px}
-.outcome-feature{
-  padding:28px;border-radius:16px;background:linear-gradient(135deg,#172033,#24324B);color:#fff;
-}
-.outcome-feature .big{font-size:56px;font-weight:900;line-height:1;margin-bottom:10px;color:#D7AD63}
-.outcome-feature p{color:#CED7E3;font-size:13px;margin-bottom:0}
-.outcome-stack{display:grid;gap:12px}
-.outcome-small{padding:20px;border:1px solid var(--line);border-radius:13px;background:var(--surface-2)}
-.outcome-small strong{display:block;font-size:15px;margin-bottom:4px}.outcome-small span{display:block;color:var(--muted);font-size:12px}
-
-/* application ecosystem */
-.app-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 16px}
-.filter-btn{
-  border:1px solid var(--line);background:#fff;color:var(--muted);padding:8px 11px;border-radius:999px;
-  font-size:11px;font-weight:750;cursor:pointer;transition:.18s;
-}
-.filter-btn.active,.filter-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
-.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.app-card{
-  border:1px solid #E7EAF0;border-radius:14px;background:var(--surface-2);overflow:hidden;transition:.18s;
-}
-.app-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft);border-color:#D9C08E}
-.app-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:17px 17px 6px}
-.app-no{font-size:10px;color:var(--gold);font-weight:850;letter-spacing:1.4px}
-.app-cat{font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:1px;color:#8A95A5}
-.app-body{padding:0 17px 17px}.app-body h3{font-size:16px;margin-bottom:6px}.app-body p{font-size:12px;line-height:1.55;margin:0}
-.app-card.hidden{display:none}
-
-/* module map */
-.module-map{
-  position:relative;overflow-x:auto;padding:14px 0 6px;margin-top:22px;
-}
-.map-inner{min-width:850px;display:grid;grid-template-columns:1fr 130px 1.2fr 130px 1fr;align-items:center;gap:10px}
-.map-col{display:grid;gap:10px}
-.map-box{
-  background:#fff;border:1px solid #DEE3EA;border-radius:12px;padding:14px;
-}
-.map-box strong{display:block;font-size:13px;margin-bottom:4px}.map-box span{font-size:11px;color:var(--muted)}
-.map-core{
-  padding:28px 17px;border-radius:16px;background:var(--navy);color:#fff;text-align:center;
-  border:1px solid #2B3B57;box-shadow:0 15px 35px rgba(22,32,51,.13);
-}
-.map-core strong{display:block;font-size:16px;margin-bottom:7px}.map-core span{font-size:11px;color:#C6D1DF}
-.map-arrow{text-align:center;color:var(--gold);font-size:28px;font-weight:850}
-
-/* workflow */
-.workflow{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:25px}
-.w-step{
-  position:relative;padding:18px 15px;border:1px solid #E2E7ED;border-radius:12px;background:var(--surface-2);
-}
-.w-num{font-size:10px;color:var(--gold);font-weight:850;letter-spacing:1px;margin-bottom:6px}
-.w-step strong{display:block;font-size:13px;margin-bottom:4px}.w-step span{font-size:11px;color:var(--muted)}
-.w-arrow{display:none}
-
-/* architecture */
-.arch-shell{margin-top:24px;border:1px solid #E4E9F0;background:#F8FAFC;border-radius:16px;padding:18px}
-.arch-row{
-  display:grid;grid-template-columns:1fr 38px 1.25fr 38px 1fr;align-items:center;gap:8px;margin-bottom:10px;
-}
-.arch-row:last-child{margin-bottom:0}
-.arch-box{
-  min-height:80px;border:1px solid #DCE2E9;background:#fff;border-radius:12px;padding:14px;
-  display:flex;flex-direction:column;justify-content:center;text-align:center;
-}
-.arch-box strong{font-size:13px}.arch-box span{font-size:10px;color:var(--muted);margin-top:3px}
-.arch-box.core{position:static;transform:none;width:auto;height:auto;border-radius:12px;background:var(--navy);box-shadow:none;color:#fff}
-.arch-box.core span{color:#C7D2E1}
-.arch-arrow{text-align:center;font-size:21px;color:var(--gold);font-weight:850}
-.arch-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px;color:var(--muted);font-size:11px}
-
-/* conceptual UI preview */
-.ui-preview{margin-top:26px;border-radius:16px;border:1px solid #DDE3EA;background:#F5F7FA;overflow:hidden;box-shadow:var(--shadow)}
-.browser-bar{height:38px;background:#fff;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;padding:0 14px;gap:7px}
-.dot{width:8px;height:8px;border-radius:50%;background:#CBD5E1}
-.browser-title{margin-left:8px;font-size:10px;color:#98A2B3}
-.app-window{display:grid;grid-template-columns:180px 1fr;min-height:340px}
-.mock-sidebar{background:#162033;color:#DCE4EF;padding:18px 14px}
-.mock-brand{font-weight:800;font-size:12px;margin-bottom:22px}
-.mock-side-item{padding:7px 8px;border-radius:7px;font-size:10px;margin-bottom:4px;color:#B7C2D2}
-.mock-side-item.selected{background:rgba(255,255,255,.08);color:#fff}
-.mock-content{padding:22px}
-.mock-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.mock-head strong{font-size:16px}.mock-head span{font-size:10px;color:#98A2B3}
-.mock-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:14px}
-.mock-kpi{background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:12px}
-.mock-kpi strong{display:block;font-size:16px}.mock-kpi span{font-size:9px;color:#98A2B3}
-.mock-panels{display:grid;grid-template-columns:1.3fr .7fr;gap:10px}
-.mock-panel{background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:14px}
-.mock-panel h4{font-size:11px;margin-bottom:12px}
-.bar-chart{display:flex;align-items:flex-end;gap:7px;height:100px}
-.bar{width:18px;background:#D4A85F;border-radius:4px 4px 0 0}
-.mini-list{display:grid;gap:8px}.mini-row{display:flex;justify-content:space-between;gap:10px;font-size:9px;padding-bottom:7px;border-bottom:1px solid #F0F2F4}
-.mini-row:last-child{border-bottom:0}
-.mock-note{font-size:10px;color:var(--muted);margin-top:12px}
-
-/* PM role */
-.role-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
-.role-card{padding:20px;border:1px solid #E6E9EE;border-radius:14px;background:#fff}
-.role-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.role-icon{width:33px;height:33px;border-radius:9px;background:var(--gold-soft);color:#8A6224;display:grid;place-items:center;font-size:10px;font-weight:850}
-.role-card h3{font-size:15px}.role-card p{font-size:12px;margin:0}
-
-/* docs & tech */
-.doc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:22px}
-.doc-item{
-  background:var(--navy);color:#fff;border-radius:10px;padding:15px;text-align:center;font-size:11px;font-weight:800;
-}
-.tech-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:22px}
-.tech-card{border:1px solid #E6E9EE;border-radius:14px;padding:20px;background:var(--surface-2)}
-.tech-card h3{font-size:14px;margin-bottom:11px}
-.tags{display:flex;flex-wrap:wrap;gap:7px}
-.tag{padding:6px 9px;border-radius:999px;background:#fff;border:1px solid #E1E6EC;font-size:10px;color:#526072}
-.tech-note{font-size:11px;color:var(--muted);margin-top:15px}
-
-/* integrations */
-.integration-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:23px}
-.integration{border:1px solid #E6E9EE;border-radius:13px;padding:18px;background:var(--surface-2)}
-.integration-icon{
-  width:31px;height:31px;border-radius:9px;background:var(--blue-soft);color:var(--blue);
-  display:grid;place-items:center;font-weight:850;font-size:10px;margin-bottom:12px;
-}
-.integration h3{font-size:14px;margin-bottom:4px}.integration p{font-size:11px;margin:0}
-
-/* controls */
-.control-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:23px}
-.control{
-  border:1px solid #E6E9EE;border-radius:13px;padding:18px;background:var(--surface-2);
-}
-.control h3{font-size:14px;margin-bottom:5px}.control p{font-size:11px;margin:0}
-.badge-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
-.badge{padding:7px 10px;border-radius:999px;font-size:10px;font-weight:750}
-.badge.green{background:var(--green-soft);color:#067647}
-.badge.blue{background:var(--blue-soft);color:#175CD3}
-.badge.purple{background:var(--purple-soft);color:#5925DC}
-.badge.red{background:var(--red-soft);color:#B42318}
-
-/* decisions table */
-.table-wrap{overflow-x:auto;margin-top:24px}
-table{width:100%;border-collapse:collapse;min-width:760px;font-size:12px}
-th{background:var(--navy);color:#fff;padding:13px;text-align:left;font-size:10px;letter-spacing:.8px;text-transform:uppercase}
-td{padding:14px;border-bottom:1px solid #E8ECF0;color:#596579;vertical-align:top}
-td:first-child{color:var(--ink);font-weight:750}
-
-/* impact */
-.impact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-top:24px}
-.impact-main{padding:30px;border-radius:16px;background:linear-gradient(135deg,#172033,#273650);color:#fff}
-.impact-main .number{font-size:66px;line-height:1;font-weight:900;color:#D5AB60;margin-bottom:8px}
-.impact-main h3{font-size:20px;margin-bottom:7px}.impact-main p{color:#D0D9E5;font-size:12px;margin:0}
-.impact-side{display:grid;gap:12px}
-.impact-side-card{border:1px solid #E4E8ED;background:var(--surface-2);border-radius:13px;padding:19px}
-.impact-side-card strong{display:block;font-size:14px;margin-bottom:4px}.impact-side-card span{font-size:11px;color:var(--muted)}
-
-/* learnings */
-.learning-list{display:grid;gap:10px;margin-top:22px}
-.learning{display:grid;grid-template-columns:30px 1fr;gap:12px;padding:16px;background:var(--surface-2);border:1px solid #E7EAF0;border-radius:11px}
-.learning-num{width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:10px;font-weight:850}
-.learning h3{font-size:13px;margin-bottom:3px}.learning p{font-size:11.5px;margin:0}
-
-/* disclosure */
-.disclosure{
-  background:#FFFDF8;border:1px solid #F0E5CC;border-radius:14px;padding:19px;margin-top:22px;
-  color:#6B5736;font-size:11.5px;
-}
-
-/* footer */
-footer{background:#0F1724;color:#98A6B8;text-align:center;padding:28px;font-size:11px}
-
-/* floating top */
-.to-top{
-  position:fixed;right:22px;bottom:22px;width:42px;height:42px;border:none;border-radius:50%;
-  background:var(--navy);color:#fff;display:none;place-items:center;cursor:pointer;box-shadow:0 12px 28px rgba(16,24,40,.2);
-}
-.to-top.show{display:grid}
-
-
-/* ---------- corrected SaaS portfolio model ---------- */
-.saas-banner{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.saas-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;position:relative;overflow:hidden}
-.saas-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold)}
-.saas-card strong{display:block;font-size:14px;margin-bottom:4px}
-.saas-card span{display:block;font-size:11px;color:var(--muted)}
-
-.module-highlight{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.module-box{background:var(--soft);border:1px solid var(--line);border-radius:15px;padding:19px}
-.module-box h3{font-size:14px;margin-bottom:7px}
-.module-box p{font-size:11.5px;margin-bottom:8px}
-.module-list{display:grid;gap:6px}
-.module-list div{font-size:11px;color:var(--muted);padding-left:14px;position:relative}
-.module-list div:before{content:"";position:absolute;left:0;top:.67em;width:5px;height:5px;border-radius:50%;background:var(--gold-2)}
-.module-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}
-.module-tag{font-size:9.5px;padding:5px 8px;border-radius:999px;background:#fff;border:1px solid #E1E6EC;color:#536175}
-
-.application-portfolio{margin-top:27px}
-.portfolio-group{border:1px solid var(--line);border-radius:17px;background:#fff;margin-bottom:14px;overflow:hidden}
-.group-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:19px 20px 13px;background:linear-gradient(180deg,#fff,#FBFCFD);border-bottom:1px solid #ECEFF2}
-.group-head h3{margin:0;font-size:17px}.group-head span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1.1px;font-weight:850}
-.group-sub{padding:0 20px 15px;color:var(--muted);font-size:11px}
-.app-grid-premium{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;padding:0 20px 20px}
-.p-app{background:var(--soft);border:1px solid #E7EAF0;border-radius:14px;padding:17px;transition:.18s;display:flex;flex-direction:column;min-height:200px}
-.p-app:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);border-color:#D9BD80}
-.p-app-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.p-app-no{width:31px;height:31px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:10px;font-weight:900}
-.p-app-cat{font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:.85px;color:#8A96A8}
-.p-app h4{font-size:15px;margin-bottom:6px}
-.p-app .what{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--gold);font-weight:850;margin-bottom:5px}
-.p-app p{font-size:11px;line-height:1.5;margin-bottom:10px}
-.p-app-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px}
-.p-app-tags{display:flex;flex-wrap:wrap;gap:5px}
-.p-app-tag{font-size:9px;background:#fff;border:1px solid #E2E6EB;color:#596579;padding:4px 6px;border-radius:999px}
-.p-app-link{color:var(--ink);font-size:10px;font-weight:850;white-space:nowrap}.p-app-link:hover{color:var(--gold)}
-
-.module-section{scroll-margin-top:105px}
-.module-hero{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:20px}
-.module-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;background:var(--gold-soft);color:#7C5C27;font-size:9px;font-weight:850;text-transform:uppercase;letter-spacing:.9px}
-.module-code{font-size:10px;color:#98A2B3;font-weight:850;letter-spacing:1px}
-.module-kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
-.module-kpi{background:var(--soft);border:1px solid var(--line);border-radius:11px;padding:13px}.module-kpi strong{display:block;font-size:14px;margin-bottom:3px}.module-kpi span{font-size:10px;color:var(--muted)}
-
-/* conceptual interface links */
-.mock-sidebar a{display:block;color:#B9C4D3;padding:7px 8px;border-radius:7px;font-size:9.5px;margin-bottom:3px}
-.mock-sidebar a:hover,.mock-sidebar a.selected{background:rgba(255,255,255,.08);color:#fff}
-
-/* modal */
-.modal-overlay{position:fixed;inset:0;background:rgba(10,18,31,.62);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:20px;z-index:2000}
-.modal-overlay.open{display:flex}
-.modal{width:min(760px,100%);max-height:88vh;overflow:auto;background:#fff;border-radius:20px;box-shadow:0 30px 90px rgba(0,0,0,.25)}
-.modal-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:24px 25px 15px;border-bottom:1px solid var(--line)}
-.modal-top h3{font-size:22px;margin:0 0 3px}.modal-top span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:850}
-.modal-close{border:0;background:var(--soft);width:34px;height:34px;border-radius:9px;cursor:pointer;font-size:18px;color:var(--muted)}
-.modal-close:hover{background:#ECEFF3;color:var(--ink)}
-.modal-body{padding:23px 25px 28px}.modal-body p{font-size:13px;color:#596579}.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:17px}
-.modal-card{background:var(--soft);border:1px solid #E6EAF0;border-radius:12px;padding:15px}.modal-card strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--gold);margin-bottom:7px}.modal-card p{font-size:11px;margin:0}
-.modal-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:15px}.modal-tag{padding:6px 8px;background:#fff;border:1px solid #E1E6EC;border-radius:999px;font-size:9px;color:#526072}
-
-/* ---------- responsive additions ---------- */
-@media(max-width:920px){
-  .saas-banner,.module-highlight{grid-template-columns:1fr}
-  .app-grid-premium{grid-template-columns:repeat(2,1fr)}
-  .module-kpi-row{grid-template-columns:1fr}
-}
-@media(max-width:700px){
-  .app-grid-premium,.modal-grid{grid-template-columns:1fr}
-  .module-hero{flex-direction:column}
-}
-
-/* responsive */
-@media(max-width:1050px){
-  .content-layout{grid-template-columns:1fr}
-  .side-nav{
-    position:sticky;top:70px;z-index:50;background:rgba(246,247,249,.96);backdrop-filter:blur(10px);
-    display:flex;gap:5px;overflow-x:auto;padding:8px 0;margin-bottom:16px
-  }
-  .side-title{display:none}
-  .side-nav a{white-space:nowrap;border-left:0;border-bottom:2px solid transparent;border-radius:0;padding:8px 10px}
-  .side-nav a:hover,.side-nav a.active{border-bottom-color:var(--gold);border-left:0}
-  .hero-grid{grid-template-columns:1fr}
-}
-@media(max-width:900px){
-  .metric-grid{grid-template-columns:repeat(2,1fr)}
-  .metric:nth-child(2){border-right:none}
-  .three-grid,.app-grid,.integration-grid,.control-grid{grid-template-columns:repeat(2,1fr)}
-  .workflow{grid-template-columns:repeat(3,1fr)}
-  .impact-grid,.outcomes{grid-template-columns:1fr}
-  .doc-grid{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:700px){
-  .hero-grid{padding:65px 0 55px}
-  .hero h1{letter-spacing:-1.4px}
-  .hero-sub{font-size:19px}
-  .card{padding:27px}
-  .three-grid,.app-grid,.role-grid,.tech-grid,.integration-grid,.control-grid{grid-template-columns:1fr}
-  .workflow{grid-template-columns:1fr}
-  .doc-grid{grid-template-columns:repeat(2,1fr)}
-  .app-window{grid-template-columns:1fr}
-  .mock-sidebar{display:none}
-  .mock-kpis{grid-template-columns:repeat(2,1fr)}
-  .mock-panels{grid-template-columns:1fr}
-}
-</style>
+.contact-mini{display:flex;gap:9px;align-items:center;margin-top:14px;font-size:10px;color:#d3dbe8}.contact-mini b{color:#fff}
+.contact-dialog{width:min(620px,calc(100% - 28px));background:#fff;border-radius:20px;padding:20px;box-shadow:0 30px 100px #0b142b55}
+.contact-dialog-head{display:flex;justify-content:space-between;align-items:start}.contact-dialog h3{font-size:22px;margin:4px 0}.contact-note{font-size:9px;color:#758198;background:#f7f8fb;border:1px solid #e8ebf1;border-radius:10px;padding:10px}.contact-dialog label{display:block;font-size:9px;font-weight:850;color:#56637b;margin-top:9px}.contact-dialog input,.contact-dialog textarea{display:block;width:100%;margin-top:5px;border:1px solid #dfe4ec;border-radius:10px;padding:10px;outline:none;font-size:10px;color:var(--ink);background:#fff}.contact-dialog input:focus,.contact-dialog textarea:focus{border-color:#8ea0f3;box-shadow:0 0 0 3px #edf0ff}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.contact-dialog-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:13px}
+.contact-modal{position:fixed;inset:0;background:#101a2b88;backdrop-filter:blur(7px);z-index:300;display:none;align-items:center;justify-content:center}.contact-modal.open{display:flex}
+@media(max-width:760px){.form-grid{grid-template-columns:1fr}.contact-dialog{padding:15px}}
+@media print{.contact-modal{display:none!important}}
+.source-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.source-links a{font-size:8px;color:#657188;background:#f4f6f9;border:1px solid #e6eaf0;border-radius:8px;padding:5px 7px}\n</style>
 </head>
-
 <body>
-
-<nav class="site-nav">
-  <div class="container nav-inner">
-    <a class="brand" href="../../index.html">
-      <span class="brand-mark">MP</span>
-      <span>MANOJ PANT</span>
-    </a>
-    <a class="back" href="../../index.html">← Back to Portfolio</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="container hero-grid">
-
-    <div>
-      <div class="eyebrow">Flagship Product Case Study · M2P Solutions</div>
-
-      <h1>Integrated Channels Suite</h1>
-
-      <div class="hero-sub">
-        Digital banking platform connecting critical banking,
-        lending, payments, compliance and operational workflows.
-      </div>
-
-      <p class="hero-copy">
-        A multi-module enterprise platform that brought together 12+ banking
-        applications through API-first integration, configurable workflows,
-        modular capabilities and scalable deployment patterns.
-      </p>
-
-      <div class="hero-meta">
-        <span class="pill">Senior Product Manager</span>
-        <span class="pill">Dec 2024 – Mar 2026</span>
-        <span class="pill">Digital Banking</span>
-        <span class="pill">Enterprise SaaS</span>
-        <span class="pill">API-first</span>
-        <span class="pill">Workflow Automation</span>
-      </div>
-
-      <div class="hero-actions">
-        <a class="btn btn-light" href="#ecosystem">Explore Platform</a>
-        <a class="btn btn-ghost" href="#role">My Product Role ↓</a>
-      </div>
-    </div>
-
-    <div class="hero-visual" aria-label="Conceptual platform ecosystem visual">
-      <div class="visual-caption">Conceptual platform ecosystem</div>
-      <div class="platform-orbit o1"></div>
-      <div class="platform-orbit o2"></div>
-
-      <div class="connector c1"></div>
-      <div class="connector c2"></div>
-      <div class="connector c3"></div>
-      <div class="connector c4"></div>
-
-      <div class="core">INTEGRATED<br>CHANNELS</div>
-
-      <div class="vnode vn1">Lending</div>
-      <div class="vnode vn2">Payments</div>
-      <div class="vnode vn3">Compliance</div>
-      <div class="vnode vn4">Operations</div>
-      <div class="vnode vn5">Banking</div>
-    </div>
-
-  </div>
-</header>
-
-<section class="metrics">
-  <div class="container metric-grid">
-    <div class="metric">
-      <div class="metric-value">12+</div>
-      <div class="metric-label">Enterprise applications</div>
-      <div class="metric-note">Across banking and operations</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">20%</div>
-      <div class="metric-label">Integration complexity</div>
-      <div class="metric-note">Documented reduction</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">API</div>
-      <div class="metric-label">First architecture</div>
-      <div class="metric-note">Integration-led platform design</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">0 → N</div>
-      <div class="metric-label">Reusable capabilities</div>
-      <div class="metric-note">Modular enterprise approach</div>
-    </div>
-  </div>
-</section>
-
-<main class="page">
-  <div class="container content-layout">
-
-    <aside class="side-nav" id="sideNav">
-      <div class="side-title">Application navigator</div>
-      <a href="#overview">Overview <span class="small-dot"></span></a>
-      <a href="#lending">Lending <span class="small-dot"></span></a>
-      <a href="#cards">Cards <span class="small-dot"></span></a>
-      <a href="#reconciliation">Reconciliation <span class="small-dot"></span></a>
-      <a href="#aml">AML / KYC <span class="small-dot"></span></a>
-      <a href="#treasury">Treasury <span class="small-dot"></span></a>
-      <a href="#documents">Documents <span class="small-dot"></span></a>
-      <a href="#audit">Audit <span class="small-dot"></span></a>
-      <div style="height:1px;background:var(--line);margin:8px 13px"></div>
-      <a href="#ecosystem">All Applications <span class="small-dot"></span></a>
-      <a href="#workflow">Product Lifecycle <span class="small-dot"></span></a>
-      <a href="#architecture">Architecture <span class="small-dot"></span></a>
-      <a href="#ui">Product Interface <span class="small-dot"></span></a>
-      <a href="#role">My PM Role <span class="small-dot"></span></a>
-      <a href="#requirements">Requirements <span class="small-dot"></span></a>
-      <a href="#technology">Technology <span class="small-dot"></span></a>
-      <a href="#integrations">Integrations <span class="small-dot"></span></a>
-      <a href="#impact">Impact <span class="small-dot"></span></a>
-    </aside>
-
-    <div class="main-col">
-
-      <!-- overview -->
-      <section class="card module-section" id="overview">
-        <div class="section-kicker">01 · Product Overview</div>
-        <h2>Bank-focused SaaS applications that could work independently or integrate with the existing bank ecosystem</h2>
-        <p class="lead">
-          Integrated Channels Suite was a scalable SaaS product portfolio built for banks. The applications were designed to solve specific operational and functional problems independently, while remaining integration-ready through APIs and optional CBS connectivity.
-        </p>
-        <p>
-          The key product model was flexibility: a bank could adopt one application for a specific requirement, use several applications together, or integrate an application with its existing systems. Data could be ingested and exchanged through APIs rather than requiring a full replacement of the bank's existing core environment.
-        </p>
-
-        <div class="saas-banner">
-          <div class="saas-card"><strong>Individually deployable</strong><span>Each application addressed a distinct banking use case and could be adopted independently.</span></div>
-          <div class="saas-card"><strong>API-ready</strong><span>Applications could ingest or exchange data through APIs with surrounding enterprise systems.</span></div>
-          <div class="saas-card"><strong>CBS compatible</strong><span>Applications could integrate with the bank's Core Banking System where the use case required it.</span></div>
-        </div>
-
-        <div class="info-grid">
-          <div class="info"><strong>Target customer</strong><span>Banks and regulated banking institutions</span></div>
-          <div class="info"><strong>Business model</strong><span>Scalable SaaS-based applications</span></div>
-          <div class="info"><strong>Adoption</strong><span>Individual app or multiple applications</span></div>
-          <div class="info"><strong>Integration</strong><span>APIs, data ingestion and CBS connectivity</span></div>
-        </div>
-
-        <div class="note">
-          <strong>Product principle:</strong> The suite should not be understood as one monolithic application in which every module is permanently connected. Each application delivered standalone value; integrations were enabled when a bank needed cross-system data or process continuity.
-        </div>
-      </section>
-
-      <!-- challenge -->
-      <section class="card" id="challenge">
-        <div class="section-kicker">02 · Product Challenge</div>
-        <h2>Why an integrated platform approach mattered</h2>
-        <p class="lead">
-          In a regulated banking environment, different teams operate across
-          different systems, controls and approval paths. The product needed
-          to reduce the friction created by this fragmentation without losing
-          modularity or governance.
-        </p>
-
-        <div class="three-grid">
-          <article class="problem-card">
-            <div class="problem-icon">01</div>
-            <h3>Fragmented capabilities</h3>
-            <p>
-              Specialised banking functions naturally live in different
-              application domains and workflows.
-            </p>
-          </article>
-
-          <article class="problem-card">
-            <div class="problem-icon">02</div>
-            <h3>Integration dependency</h3>
-            <p>
-              Cross-system journeys require APIs, workflow coordination,
-              validation and reliable handoffs.
-            </p>
-          </article>
-
-          <article class="problem-card">
-            <div class="problem-icon">03</div>
-            <h3>Controlled operations</h3>
-            <p>
-              Financial workflows need role controls, auditability,
-              validation and traceability built into product design.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- application portfolio -->
-      <section class="card module-section" id="ecosystem">
-        <div class="section-kicker">02 · Application Portfolio</div>
-        <h2>12 banking applications — each with a clear business purpose</h2>
-        <p class="lead">
-          The suite covered 12 documented applications. The experience below is designed so a recruiter can understand the business purpose first, then drill into the relevant application or use the navigation on the left to move directly to the detailed sections.
-        </p>
-
-        <div class="application-portfolio">
-
-          <div class="portfolio-group">
-            <div class="group-head"><h3>Lending & Risk</h3><span>Decision · Credit · Risk</span></div>
-            <div class="group-sub">Applications supporting lending workflows, credit information and financial-crime / KYC controls.</div>
-            <div class="app-grid-premium">
-
-              <article class="p-app" data-category="lending">
-                <div class="p-app-top"><div class="p-app-no">04</div><div class="p-app-cat">Lending</div></div>
-                <div class="what">What it does</div>
-                <h4>LOS – LMS</h4>
-                <p>Supports loan initiation across multiple products with maker, checker and sanctioner roles, from loan-detail entry through sanction.</p>
-                <div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Loan workflow</span><span class="p-app-tag">Approvals</span></div><a class="p-app-link" href="#lending">View details →</a></div>
-              </article>
-
-              <article class="p-app" data-category="risk">
-                <div class="p-app-top"><div class="p-app-no">08</div><div class="p-app-cat">Risk & Identity</div></div>
-                <div class="what">What it does</div>
-                <h4>CIBIL</h4>
-                <p>Retrieves credit information by connecting to credit-authority APIs so bureau data can feed credit-related workflows.</p>
-                <div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Credit data</span><span class="p-app-tag">API</span></div><a class="p-app-link" href="#cibil-detail">View details →</a></div>
-              </article>
-
-              <article class="p-app" data-category="risk">
-                <div class="p-app-top"><div class="p-app-no">10</div><div class="p-app-cat">Risk & Compliance</div></div>
-                <div class="what">What it does</div>
-                <h4>AML – KYC</h4>
-                <p>Tracks payment activity, applies configured rules to flag relevant activity and supports compliance-oriented reporting.</p>
-                <div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">AML</span><span class="p-app-tag">KYC</span></div><a class="p-app-link" href="#aml">View details →</a></div>
-              </article>
-            </div>
-          </div>
-
-          <div class="portfolio-group">
-            <div class="group-head"><h3>Cards & Transaction Control</h3><span>Payments · Cards · Finance Control</span></div>
-            <div class="group-sub">Applications supporting cards, transaction matching and operational financial controls.</div>
-            <div class="app-grid-premium">
-
-              <article class="p-app" data-category="cards">
-                <div class="p-app-top"><div class="p-app-no">05</div><div class="p-app-cat">Cards</div></div>
-                <div class="what">What it does</div>
-                <h4>CMS</h4>
-                <p>Manages personalised and instant cards across RuPay, Visa and Mastercard programme contexts, including NBIN-series management.</p>
-                <div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Card lifecycle</span><span class="p-app-tag">NPCI</span></div><a class="p-app-link" href="#cards">View details →</a></div>
-              </article>
-
-              <article class="p-app" data-category="payments">
-                <div class="p-app-top"><div class="p-app-no">09</div><div class="p-app-cat">Payments</div></div>
-                <div class="what">What it does</div>
-                <h4>Reconciliation</h4>
-                <p>Manages reconciliation across AEPS, UPI, Switch, ATM and other transaction flows to identify matched and unmatched records.</p>
-                <div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">AEPS</span><span class="p-app-tag">UPI</span></div><a class="p-app-link" href="#reconciliation">View details →</a></div>
-              </article>
-
-            </div>
-          </div>
-
-          <div class="portfolio-group">
-            <div class="group-head"><h3>Finance, Governance & Operations</h3><span>Operations · Treasury · Compliance</span></div>
-            <div class="group-sub">Applications digitising recurring banking operations, governance and financial administration.</div>
-            <div class="app-grid-premium">
-
-              <article class="p-app" data-category="finance"><div class="p-app-top"><div class="p-app-no">02</div><div class="p-app-cat">Finance & Ops</div></div><div class="what">What it does</div><h4>FAM</h4><p>Manages fixed assets, depreciation and asset lifecycle information for the bank.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Assets</span><span class="p-app-tag">Depreciation</span></div><a class="p-app-link" href="#fam-detail">View details →</a></div></article>
-              <article class="p-app" data-category="finance"><div class="p-app-top"><div class="p-app-no">03</div><div class="p-app-cat">Finance & Ops</div></div><div class="what">What it does</div><h4>GST</h4><p>Maintains purchased asset/product information, calculates GST and stores warranty / insurance context.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">GST</span><span class="p-app-tag">Assets</span></div><a class="p-app-link" href="#gst-detail">View details →</a></div></article>
-              <article class="p-app" data-category="finance"><div class="p-app-top"><div class="p-app-no">06</div><div class="p-app-cat">Finance & Ops</div></div><div class="what">What it does</div><h4>Shares</h4><p>Supports share portfolios, dividend calculation, maker-checker workflows and board-report preparation.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Portfolio</span><span class="p-app-tag">Dividend</span></div><a class="p-app-link" href="#shares-detail">View details →</a></div></article>
-              <article class="p-app" data-category="finance"><div class="p-app-top"><div class="p-app-no">07</div><div class="p-app-cat">Finance & Ops</div></div><div class="what">What it does</div><h4>PM Schemes</h4><p>Supports banking-side management of government-launched financial schemes.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Schemes</span><span class="p-app-tag">Operations</span></div><a class="p-app-link" href="#pm-detail">View details →</a></div></article>
-              <article class="p-app" data-category="finance"><div class="p-app-top"><div class="p-app-no">11</div><div class="p-app-cat">Finance & Ops</div></div><div class="what">What it does</div><h4>Treasury</h4><p>Supports treasury-related banking tasks including beginning-of-day and end-of-day activities.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">BOD</span><span class="p-app-tag">EOD</span></div><a class="p-app-link" href="#treasury">View details →</a></div></article>
-              <article class="p-app" data-category="governance"><div class="p-app-top"><div class="p-app-no">01</div><div class="p-app-cat">Governance</div></div><div class="what">What it does</div><h4>Audit</h4><p>Supports internal, compliance, statutory and operations audit workflows used by banks.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">Audit</span><span class="p-app-tag">Governance</span></div><a class="p-app-link" href="#audit">View details →</a></div></article>
-              <article class="p-app" data-category="risk"><div class="p-app-top"><div class="p-app-no">12</div><div class="p-app-cat">Risk & Identity</div></div><div class="what">What it does</div><h4>DMS & CKYC</h4><p>Manages customer documents and information with verification APIs and CKYC information workflows.</p><div class="p-app-foot"><div class="p-app-tags"><span class="p-app-tag">DMS</span><span class="p-app-tag">CKYC</span></div><a class="p-app-link" href="#documents">View details →</a></div></article>
-            </div>
-          </div>
-        </div>
-
-        <div class="note">
-          <strong>Architecture implication:</strong> Individual application value and ecosystem integration are two separate product dimensions. A bank could adopt a focused application first and add API/CBS connectivity only where the operating model required it.
-        </div>
-      </section>
-
-      <!-- application details: these are directly addressable from the navigator -->
-      <section class="card module-section" id="lending">
-        <div class="module-hero"><div><div class="module-badge">Lending application</div><h2>LOS – LMS: controlled loan origination and servicing workflow</h2></div><div class="module-code">APP 04</div></div>
-        <p class="lead">Supports multiple loan products and a maker → checker → sanctioner workflow, translating a bank's lending process into a structured digital journey.</p>
-        <div class="module-highlight">
-          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Vehicle, education, gold, staff, personal and home loan use cases</div><div>Loan details entry through approval / sanction</div><div>Maker, checker and sanctioner roles</div><div>Structured workflow states and controlled handoffs</div></div></div>
-          <div class="module-box"><h3>PM focus</h3><div class="module-list"><div>Translate policy and approval authority into workflows</div><div>Define validations, states and exception handling</div><div>Define API/CBS integration requirements where required</div><div>Coordinate business, engineering, QA and UAT</div></div></div>
-        </div>
-        <div class="module-kpi-row"><div class="module-kpi"><strong>Multiple products</strong><span>One platform workflow can support several loan types.</span></div><div class="module-kpi"><strong>3-role control</strong><span>Maker → checker → sanctioner approval pattern.</span></div><div class="module-kpi"><strong>API-ready</strong><span>Can exchange required information with surrounding systems.</span></div></div>
-      </section>
-
-      <section class="card module-section" id="cards">
-        <div class="module-hero"><div><div class="module-badge">Cards application</div><h2>CMS: card programme and lifecycle management</h2></div><div class="module-code">APP 05</div></div>
-        <p class="lead">Manages personalised and instant cards across RuPay, Visa and Mastercard programme contexts, giving banks an operational application for card-related lifecycle activities.</p>
-        <div class="module-highlight">
-          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Personalised and instant card management</div><div>RuPay, Visa and Mastercard programme context</div><div>NBIN-series based management</div><div>Structured operational records</div></div></div>
-          <div class="module-box"><h3>Integration context</h3><div class="module-list"><div>API-based integration with surrounding bank systems</div><div>NPCI ecosystem context for card programmes</div><div>Data exchange without requiring the application to replace the bank's wider core</div></div></div>
-        </div>
-      </section>
-
-      <section class="card module-section" id="reconciliation">
-        <div class="module-hero"><div><div class="module-badge">Payments control application</div><h2>Reconciliation: matching financial records across transaction flows</h2></div><div class="module-code">APP 09</div></div>
-        <p class="lead">Provides a structured operational layer for reconciling transaction records across AEPS, UPI, Switch, ATM and other payment flows.</p>
-        <div class="module-highlight">
-          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Transaction record matching</div><div>Matched vs unmatched visibility</div><div>Exception investigation and operational handling</div><div>Multiple payment-flow reconciliation contexts</div></div></div>
-          <div class="module-box"><h3>Why it matters</h3><div class="module-list"><div>Financial systems can produce different records for the same movement</div><div>Reconciliation helps establish operational consistency</div><div>API ingestion can reduce spreadsheet-driven data movement</div></div></div>
-        </div>
-      </section>
-
-      <section class="card module-section" id="aml">
-        <div class="module-hero"><div><div class="module-badge">Risk & compliance application</div><h2>AML – KYC: monitoring, flagging and compliance reporting</h2></div><div class="module-code">APP 10</div></div>
-        <p class="lead">Tracks payment activity, flags activity against applicable rules and supports structured compliance-reporting workflows within the bank.</p>
-        <div class="module-highlight">
-          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Payment-activity tracking</div><div>Rule-based flagging</div><div>Compliance-oriented reports</div><div>Operational review of flagged activity</div></div></div>
-          <div class="module-box"><h3>Product/control thinking</h3><div class="module-list"><div>Rules become product behaviour, not only policy documents</div><div>Actions require role-aware workflow and traceability</div><div>Exception handling and audit evidence need to be considered in the design</div></div></div>
-        </div>
-      </section>
-
-      <section class="card module-section" id="treasury">
-        <div class="module-hero"><div><div class="module-badge">Finance operations application</div><h2>Treasury: structured BOD / EOD banking operations</h2></div><div class="module-code">APP 11</div></div>
-        <p class="lead">Supports treasury-related banking tasks, including recurring beginning-of-day and end-of-day operational activities.</p>
-        <div class="module-highlight">
-          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Beginning-of-day workflows</div><div>End-of-day workflows</div><div>Operational task control</div><div>Integration-ready information exchange</div></div></div>
-          <div class="module-box"><h3>Product value</h3><div class="module-list"><div>Turns recurring treasury tasks into structured digital processes</div><div>Provides consistent operational records</div><div>Creates a clearer handoff point for surrounding systems</div></div></div>
-        </div>
-      </section>
-
-      <section class="card module-section" id="documents">
-        <div class="module-hero"><div><div class="module-badge">Document & identity application</div><h2>DMS & CKYC: document management, verification and CKYC workflows</h2></div><div class="module-code">APP 12</div></div>
-        <p class="lead">Manages customer OVD documents and user information, uses APIs to verify document authenticity and retrieves CKYC information for downstream banking processes.</p>
-        <div class="module-highlight">
-          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Customer document capture and management</div><div>Verification through APIs</div><div>Secure document-storage context</div><div>CKYC number / information retrieval</div></div></div>
-          <div class="module-box"><h3>Product value</h3><div class="module-list"><div>Centralises document and identity information</div><div>Reduces manual verification handoffs</div><div>Allows downstream applications to consume verified inputs through APIs</div></div></div>
-        </div>
-      </section>
-
-      <section class="card module-section" id="audit">
-        <div class="module-hero"><div><div class="module-badge">Governance application</div><h2>Audit: digitising internal and regulated audit workflows</h2></div><div class="module-code">APP 01</div></div>
-        <p class="lead">Supports the bank's internal, compliance, statutory and operations audit activities through structured digital workflows.</p>
-        <div class="module-highlight">
-          <div class="module-box"><h3>Core capabilities</h3><div class="module-list"><div>Internal audit</div><div>Compliance audit</div><div>Statutory audit</div><div>Operations audit</div></div></div>
-          <div class="module-box"><h3>Product value</h3><div class="module-list"><div>Standardises audit operations</div><div>Creates structured records and traceability</div><div>Supports review and governance processes across banking functions</div></div></div>
-        </div>
-      </section>
-
-      <section class="card module-section" id="fam-detail">
-        <div class="module-hero"><div><div class="module-badge">Finance & operations</div><h2>FAM: fixed asset management and depreciation</h2></div><div class="module-code">APP 02</div></div>
-        <p class="lead">Tracks bank-owned assets and supports depreciation and lifecycle management.</p>
-        <div class="module-list"><div>Asset register and lifecycle tracking</div><div>Depreciation calculation</div><div>Asset-level operational information</div><div>Warranty / insurance context where maintained</div></div>
-      </section>
-
-      <section class="card module-section" id="gst-detail">
-        <div class="module-hero"><div><div class="module-badge">Finance & operations</div><h2>GST: purchased asset/product and tax information</h2></div><div class="module-code">APP 03</div></div>
-        <p class="lead">Maintains purchased asset/product information and GST calculations, with warranty, insurance and reporting context.</p>
-        <div class="module-list"><div>Purchased asset / product records</div><div>GST calculation</div><div>Warranty and insurance information</div><div>GST reporting context including GSTR-1B extraction</div></div>
-      </section>
-
-      <section class="card module-section" id="shares-detail">
-        <div class="module-hero"><div><div class="module-badge">Finance & governance</div><h2>Shares: portfolio, dividend and approval management</h2></div><div class="module-code">APP 06</div></div>
-        <p class="lead">Supports share-related activities for banks or financial institutions, including portfolios, dividend calculation, approval workflows and board reporting.</p>
-        <div class="module-list"><div>Share portfolio management</div><div>Dividend calculations</div><div>Maker-checker workflow</div><div>Board-meeting reporting</div></div>
-      </section>
-
-      <section class="card module-section" id="pm-detail">
-        <div class="module-hero"><div><div class="module-badge">Finance & operations</div><h2>PM Schemes: management of government-launched financial schemes</h2></div><div class="module-code">APP 07</div></div>
-        <p class="lead">Supports bank-side operational management of government-launched financial schemes.</p>
-      </section>
-
-      <section class="card module-section" id="cibil-detail">
-        <div class="module-hero"><div><div class="module-badge">Credit information</div><h2>CIBIL: API-connected credit information retrieval</h2></div><div class="module-code">APP 08</div></div>
-        <p class="lead">Fetches credit information through API connections with credit authorities so the information can be consumed by the relevant credit workflows.</p>
-        <div class="module-list"><div>Credit-information retrieval</div><div>External API connectivity</div><div>Structured input into lending / credit processes</div></div>
-      </section>
-
-      <!-- workflow -->
-      <section class="card" id="workflow">
-        <div class="section-kicker">04 · Product Workflow</div>
-        <h2>How I approached the product lifecycle</h2>
-        <p class="lead">
-          The product lifecycle moved from bank/business need and customer requirements through structured product definition, technical alignment, Agile execution, UAT, release and continuous enhancement.
-        </p>
-
-        <div class="workflow">
-          <div class="w-step"><div class="w-num">01</div><strong>Business need</strong><span>Problem, context and stakeholder objectives</span></div>
-          <div class="w-step"><div class="w-num">02</div><strong>Discovery</strong><span>Requirements, workflows and customer inputs</span></div>
-          <div class="w-step"><div class="w-num">03</div><strong>Definition</strong><span>Scope, user stories and acceptance criteria</span></div>
-          <div class="w-step"><div class="w-num">04</div><strong>Technical alignment</strong><span>APIs, DFDs, ER models and architecture</span></div>
-          <div class="w-step"><div class="w-num">05</div><strong>Agile delivery</strong><span>Backlog, prioritisation, engineering and QA</span></div>
-          <div class="w-step"><div class="w-num">06</div><strong>UAT & release</strong><span>Validation, readiness, deployment and enhancement</span></div>
-        </div>
-      </section>
-
-      <!-- architecture -->
-      <section class="card" id="architecture">
-        <div class="section-kicker">05 · Architecture</div>
-        <h2>Architecture thinking: connect capabilities without creating tighter coupling</h2>
-        <p class="lead">
-          The product work was shaped around API-first integration, modular
-          capabilities, configurable workflows, cloud-ready deployment and
-          microservices-oriented architecture.
-        </p>
-
-        <div class="arch-shell">
-          <div class="arch-row">
-            <div class="arch-box">
-              <strong>Individual SaaS applications</strong>
-              <span>Each app solves a specific banking use case</span>
-            </div>
-            <div class="arch-arrow">→</div>
-            <div class="arch-box core">
-              <strong>API / integration layer</strong>
-              <span>Data exchange · API contracts · configurable workflows</span>
-            </div>
-            <div class="arch-arrow">→</div>
-            <div class="arch-box">
-              <strong>External ecosystem</strong>
-              <span>CBS · NPCI · credit · tax · CKYC/CERSAI contexts</span>
-            </div>
-          </div>
-
-          <div class="arch-row">
-            <div class="arch-box">
-              <strong>Identity & access</strong>
-              <span>Role-aware operations and controlled access</span>
-            </div>
-            <div class="arch-arrow">→</div>
-            <div class="arch-box core">
-              <strong>Platform services</strong>
-              <span>Modularity · secure processing · scalable deployment</span>
-            </div>
-            <div class="arch-arrow">→</div>
-            <div class="arch-box">
-              <strong>Data & control plane</strong>
-              <span>Audit · reconciliation · reporting · document flows</span>
-            </div>
-          </div>
-
-          <div class="arch-legend">
-            <span>● Experience / applications</span>
-            <span>● Orchestration & integration</span>
-            <span>● External / regulated dependencies</span>
-            <span>● Controls & operations</span>
-          </div>
-        </div>
-
-        <div class="callout">
-          <strong>Important:</strong> This is a portfolio-safe conceptual architecture,
-          not a reproduction of confidential production architecture or internal infrastructure.
-        </div>
-      </section>
-
-      <!-- conceptual UI -->
-      <section class="card" id="ui">
-        <div class="section-kicker">06 · Product Interface</div>
-        <h2>What a connected operations experience can look like</h2>
-        <p class="lead">
-          The portfolio intentionally uses a conceptual UI preview rather than
-          presenting an invented screen as an actual production screenshot.
-          Actual screenshots can be added later where they are safe to publish.
-        </p>
-
-        <div class="ui-preview">
-          <div class="browser-bar">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="browser-title">Integrated Channels · Operations Workspace</span>
-          </div>
-
-          <div class="app-window">
-            <div class="mock-sidebar">
-              <div class="mock-brand">INTEGRATED CHANNELS</div>
-              <a href="#overview" class="selected">Overview</a>
-              <a href="#lending">Lending</a>
-              <a href="#cards">Cards</a>
-              <a href="#reconciliation">Reconciliation</a>
-              <a href="#aml">AML / KYC</a>
-              <a href="#treasury">Treasury</a>
-              <a href="#documents">Documents</a>
-              <a href="#audit">Audit</a>
-            </div>
-
-            <div class="mock-content">
-              <div class="mock-head">
-                <strong>Operations Overview</strong>
-                <span>Conceptual product view</span>
-              </div>
-
-              <div class="mock-kpis">
-                <div class="mock-kpi"><strong>12</strong><span>Modules</span></div>
-                <div class="mock-kpi"><strong>API</strong><span>Integration ready</span></div>
-                <div class="mock-kpi"><strong>CBS</strong><span>Optional integration</span></div>
-                <div class="mock-kpi"><strong>1 → N</strong><span>Independent apps</span></div>
-              </div>
-
-              <div class="mock-panels">
-                <div class="mock-panel">
-                  <h4>Workflow activity</h4>
-                  <div class="bar-chart">
-                    <span class="bar" style="height:44%"></span>
-                    <span class="bar" style="height:61%"></span>
-                    <span class="bar" style="height:52%"></span>
-                    <span class="bar" style="height:78%"></span>
-                    <span class="bar" style="height:67%"></span>
-                    <span class="bar" style="height:88%"></span>
-                    <span class="bar" style="height:73%"></span>
-                    <span class="bar" style="height:94%"></span>
-                  </div>
-                </div>
-
-                <div class="mock-panel">
-                  <h4>Priority queue</h4>
-                  <div class="mini-list">
-                    <div class="mini-row"><span>Reconciliation</span><strong>08</strong></div>
-                    <div class="mini-row"><span>KYC review</span><strong>05</strong></div>
-                    <div class="mini-row"><span>Loan approval</span><strong>06</strong></div>
-                    <div class="mini-row"><span>Audit tasks</span><strong>05</strong></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mock-note">Conceptual illustration — not a production screenshot.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PM role -->
-      <section class="card" id="role">
-        <div class="section-kicker">07 · My Product Management Role</div>
-        <h2>Where I operated across the product lifecycle</h2>
-        <p class="lead">
-          The role combined product strategy, discovery, requirements,
-          technical alignment, cross-functional leadership and delivery.
-        </p>
-
-        <div class="role-grid">
-
-          <article class="role-card">
-            <div class="role-head"><div class="role-icon">01</div><h3>Product vision & strategy</h3></div>
-            <p>Owned product vision, strategy and roadmap for the multi-module platform ecosystem.</p>
-          </article>
-
-          <article class="role-card">
-            <div class="role-head"><div class="role-icon">02</div><h3>Discovery & prioritisation</h3></div>
-            <p>Translated customer needs and business priorities into product scope, capabilities and backlog priorities.</p>
-          </article>
-
-          <article class="role-card">
-            <div class="role-head"><div class="role-icon">03</div><h3>Technical product definition</h3></div>
-            <p>Worked across APIs, workflows, DFDs, ER models, architecture and acceptance criteria.</p>
-          </article>
-
-          <article class="role-card">
-            <div class="role-head"><div class="role-icon">04</div><h3>Cross-functional leadership</h3></div>
-            <p>Aligned Product, Engineering, Business, UX, Sales, Marketing and Delivery stakeholders.</p>
-          </article>
-
-          <article class="role-card">
-            <div class="role-head"><div class="role-icon">05</div><h3>Agile execution & UAT</h3></div>
-            <p>Supported backlog management, Agile/Scrum execution, UAT, release readiness and continuous enhancement.</p>
-          </article>
-
-          <article class="role-card">
-            <div class="role-head"><div class="role-icon">06</div><h3>Platform & integration thinking</h3></div>
-            <p>Balanced modularity, interoperability, secure processing and scalability across enterprise workflows.</p>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- requirements -->
-      <section class="card" id="requirements">
-        <div class="section-kicker">08 · Product Documentation</div>
-        <h2>Turning business requirements into buildable product specifications</h2>
-        <p class="lead">
-          A major part of the role was making business intent explicit enough
-          for engineering, QA and business stakeholders to execute consistently.
-        </p>
-
-        <div class="doc-grid">
-          <div class="doc-item">PRD</div>
-          <div class="doc-item">BRD</div>
-          <div class="doc-item">FSD</div>
-          <div class="doc-item">API Specifications</div>
-          <div class="doc-item">DFD</div>
-          <div class="doc-item">ER Models</div>
-          <div class="doc-item">Process Flows</div>
-          <div class="doc-item">User Stories</div>
-          <div class="doc-item">Acceptance Criteria</div>
-          <div class="doc-item">UAT Requirements</div>
-          <div class="doc-item">User Manuals</div>
-          <div class="doc-item">Product Documentation</div>
-        </div>
-
-        <div class="callout">
-          <strong>Why this matters:</strong> In enterprise software,
-          documentation is part of product delivery. It reduces ambiguity
-          between business goals, technical implementation and testable outcomes.
-        </div>
-      </section>
-
-      <!-- technology -->
-      <section class="card" id="technology">
-        <div class="section-kicker">09 · Technology & Product Toolkit</div>
-        <h2>Technology-aware product management</h2>
-        <p class="lead">
-          The product work sat at the intersection of business process,
-          enterprise architecture, APIs, data, workflow and Agile delivery.
-        </p>
-
-        <div class="tech-grid">
-
-          <article class="tech-card">
-            <h3>Architecture & platform</h3>
-            <div class="tags">
-              <span class="tag">API-first architecture</span>
-              <span class="tag">Microservices</span>
-              <span class="tag">Cloud-ready platforms</span>
-              <span class="tag">Multi-tenant architecture</span>
-              <span class="tag">Modular architecture</span>
-              <span class="tag">Platform scalability</span>
-            </div>
-          </article>
-
-          <article class="tech-card">
-            <h3>Product & delivery</h3>
-            <div class="tags">
-              <span class="tag">Agile / Scrum</span>
-              <span class="tag">Jira</span>
-              <span class="tag">Figma</span>
-              <span class="tag">UAT</span>
-              <span class="tag">Release management</span>
-              <span class="tag">Stakeholder management</span>
-            </div>
-          </article>
-
-          <article class="tech-card">
-            <h3>Data & analytics</h3>
-            <div class="tags">
-              <span class="tag">SQL</span>
-              <span class="tag">Power BI</span>
-              <span class="tag">Data modelling</span>
-              <span class="tag">KPI frameworks</span>
-              <span class="tag">Product analytics</span>
-            </div>
-          </article>
-
-          <article class="tech-card">
-            <h3>Product design & architecture artefacts</h3>
-            <div class="tags">
-              <span class="tag">draw.io</span>
-              <span class="tag">Lucidchart</span>
-              <span class="tag">MS Visio</span>
-              <span class="tag">DFD</span>
-              <span class="tag">ER modelling</span>
-              <span class="tag">Process flows</span>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="tech-note">
-          Technology references reflect the documented product/technical toolkit
-          associated with the role; they do not imply that every item was a
-          runtime dependency of every module.
-        </div>
-      </section>
-
-      <!-- integrations -->
-      <section class="card" id="integrations">
-        <div class="section-kicker">10 · Enterprise Integrations</div>
-        <h2>Where the platform connected to the wider financial ecosystem</h2>
-        <p class="lead">
-          The project scope included integration contexts across core banking,
-          payment networks, credit information, taxation and identity/KYC ecosystems.
-        </p>
-
-        <div class="integration-grid">
-
-          <article class="integration">
-            <div class="integration-icon">CBS</div>
-            <h3>Core Banking</h3>
-            <p>Integration context for core banking operations and financial system-of-record processes.</p>
-          </article>
-
-          <article class="integration">
-            <div class="integration-icon">NPCI</div>
-            <h3>Payment ecosystem</h3>
-            <p>Relevant for payment and card-related workflows across supported programmes.</p>
-          </article>
-
-          <article class="integration">
-            <div class="integration-icon">CIB</div>
-            <h3>Credit bureaus</h3>
-            <p>Credit-information retrieval through API-based connections with credit authorities.</p>
-          </article>
-
-          <article class="integration">
-            <div class="integration-icon">GST</div>
-            <h3>Tax ecosystem</h3>
-            <p>Tax-related asset and product workflows, including GST information and reporting context.</p>
-          </article>
-
-          <article class="integration">
-            <div class="integration-icon">KYC</div>
-            <h3>CKYC</h3>
-            <p>Customer identity and KYC information workflows supported through APIs.</p>
-          </article>
-
-          <article class="integration">
-            <div class="integration-icon">DOC</div>
-            <h3>CERSAI / document ecosystem</h3>
-            <p>Document verification and regulated document-storage workflows in the identity domain.</p>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- controls -->
-      <section class="card" id="controls">
-        <div class="section-kicker">11 · Controls & Compliance Context</div>
-        <h2>Product design for a regulated environment</h2>
-        <p class="lead">
-          Financial products require operational controls to be part of the
-          workflow itself. This case study therefore treats governance and
-          control points as product requirements, not an afterthought.
-        </p>
-
-        <div class="control-grid">
-          <article class="control">
-            <h3>Role-based operations</h3>
-            <p>Maker-checker-sanctioner concepts support controlled activities where multi-step approval is required.</p>
-          </article>
-
-          <article class="control">
-            <h3>Auditability</h3>
-            <p>Audit workflows and traceability help answer who performed an action, when and under which process.</p>
-          </article>
-
-          <article class="control">
-            <h3>Secure data handling</h3>
-            <p>Identity, transaction and document flows require controlled access and secure processing.</p>
-          </article>
-        </div>
-
-        <div class="badge-row">
-          <span class="badge green">Access control</span>
-          <span class="badge blue">Auditability</span>
-          <span class="badge purple">KYC / AML</span>
-          <span class="badge red">Transaction controls</span>
-          <span class="badge green">Exception management</span>
-        </div>
-
-        <div class="callout">
-          <strong>Product principle:</strong> In regulated financial systems,
-          compliance changes the actual workflow, data requirements, controls
-          and release process. It is therefore part of product architecture.
-        </div>
-      </section>
-
-      <!-- decisions -->
-      <section class="card" id="decisions">
-        <div class="section-kicker">12 · Product Decisions</div>
-        <h2>The product thinking behind the platform</h2>
-        <p class="lead">
-          These are the core design choices that connect business objectives
-          with platform architecture and delivery.
-        </p>
-
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Product question</th>
-                <th>Direction</th>
-                <th>Why it mattered</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>How should multiple applications connect?</td>
-                <td>API-first integration</td>
-                <td>Promotes interoperable capabilities and reduces unnecessary coupling between domain applications.</td>
-              </tr>
-              <tr>
-                <td>How should different bank workflows be supported?</td>
-                <td>Configurable workflows</td>
-                <td>Allows business processes, approvals and operating rules to adapt across enterprise contexts.</td>
-              </tr>
-              <tr>
-                <td>How should the platform scale?</td>
-                <td>Modular, cloud-ready architecture</td>
-                <td>Supports capability expansion without turning each enhancement into a separate point solution.</td>
-              </tr>
-              <tr>
-                <td>How should product and engineering stay aligned?</td>
-                <td>Structured documentation + Agile delivery</td>
-                <td>Connects business intent to buildable requirements, testing, UAT and release decisions.</td>
-              </tr>
-              <tr>
-                <td>How should regulated processes behave?</td>
-                <td>Controls inside workflows</td>
-                <td>Moves governance from a manual checklist into the operational product experience.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- impact -->
-      <section class="card" id="impact">
-        <div class="section-kicker">13 · Impact</div>
-        <h2>Measured impact, without overstating what can be disclosed</h2>
-        <p class="lead">
-          The documented project outcome was a reduction in integration
-          complexity, with qualitative gains in interoperability, scalability
-          and operational efficiency.
-        </p>
-
-        <div class="impact-grid">
-          <div class="impact-main">
-            <div class="number">20%</div>
-            <h3>Reduction in integration complexity</h3>
-            <p>
-              Documented project outcome from the platform's modular,
-              API-first and integration-led approach.
-            </p>
-          </div>
-
-          <div class="impact-side">
-            <div class="impact-side-card">
-              <strong>12+ applications</strong>
-              <span>A connected enterprise application ecosystem spanning multiple banking functions.</span>
-            </div>
-            <div class="impact-side-card">
-              <strong>Improved interoperability</strong>
-              <span>More consistent cross-system connectivity and workflow coordination.</span>
-            </div>
-            <div class="impact-side-card">
-              <strong>Improved scalability</strong>
-              <span>Modular and cloud-ready platform direction designed to support expansion.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="disclosure">
-          <strong>Measurement discipline:</strong> Only the 20% integration-complexity
-          reduction is shown as a quantified project outcome here. Other benefits
-          are presented qualitatively because no separate project-level percentage
-          was provided for them.
-        </div>
-      </section>
-
-      <!-- learnings -->
-      <section class="card" id="learnings">
-        <div class="section-kicker">14 · Product Learnings</div>
-        <h2>What this project demonstrates about my PM approach</h2>
-
-        <div class="learning-list">
-
-          <article class="learning">
-            <div class="learning-num">01</div>
-            <div>
-              <h3>Platform thinking beats point-solution thinking</h3>
-              <p>
-                When capabilities participate in the same business journey,
-                the product must consider the ecosystem, not only individual features.
-              </p>
-            </div>
-          </article>
-
-          <article class="learning">
-            <div class="learning-num">02</div>
-            <div>
-              <h3>Architecture is part of product strategy</h3>
-              <p>
-                API design, modularity, workflows and integration choices
-                directly affect scalability, usability and delivery complexity.
-              </p>
-            </div>
-          </article>
-
-          <article class="learning">
-            <div class="learning-num">03</div>
-            <div>
-              <h3>Enterprise workflow design needs precision</h3>
-              <p>
-                Roles, approvals, exceptions, validations and auditability
-                must be explicit in the product definition.
-              </p>
-            </div>
-          </article>
-
-          <article class="learning">
-            <div class="learning-num">04</div>
-            <div>
-              <h3>Good documentation is a delivery accelerator</h3>
-              <p>
-                Clear PRDs, BRDs, FSDs, API specifications and diagrams reduce
-                ambiguity between business, engineering and QA.
-              </p>
-            </div>
-          </article>
-
-          <article class="learning">
-            <div class="learning-num">05</div>
-            <div>
-              <h3>Regulation must shape the product, not just the policy</h3>
-              <p>
-                In financial systems, security, KYC/AML, access and audit controls
-                become part of the real operating workflow.
-              </p>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="disclosure">
-          <strong>Portfolio disclosure:</strong> This case study presents a
-          public-safe, conceptual product view. Confidential client information,
-          proprietary source code, production credentials and internal
-          implementation details are intentionally excluded.
-        </div>
-      </section>
-
-    </div>
-  </div>
+<div class="progress" id="progress"></div>
+<header><div class="wrap head">
+<a href="#overview" class="brand" aria-label="Integrated Channels Suite overview"><span class="logo">MP</span><span><b>Manoj Pant</b><small>Senior Product Manager · Product Portfolio</small></span></a>
+<nav id="nav"><a href="#overview">Overview</a><a href="#challenge">Challenge</a><a href="#strategy">Strategy</a><a href="#ownership">PM Scope</a><a href="#architecture">Architecture</a><a href="#delivery">Delivery</a><a href="#products">12 Products</a><a href="#impact">Impact</a><a href="#learnings">Learnings</a><a href="#contact">Contact</a></nav>
+<div class="head-actions"><button class="btn" onclick="window.print()">Save PDF</button><a class="btn primary" href="#products">Explore suite →</a></div>
+</div></header>
+
+<main>
+<section class="hero" id="overview"><div class="wrap" style="padding-top:8px"><a href="../../index.html" style="font-size:9px;font-weight:850;color:#738097">← Product Portfolio</a></div><div class="wrap">
+<div class="hero-grid">
+<div class="reveal"><span class="kicker"><i></i> Banking platform · end-to-end product ownership</span>
+<h1>Integrated<br>Channels Suite</h1>
+<p class="lead">I led product management for a <strong>12-application banking ecosystem built from scratch</strong>, spanning lending, cards, payments, reconciliation, compliance, treasury, audit, assets, GST, shares, government schemes, credit bureau connectivity and document/KYC workflows.</p>
+<div class="hero-actions"><a class="btn primary" href="#challenge">Start the case study ↓</a><a class="btn" href="#products">Explore 12 products ↗</a><a class="btn" href="#architecture">See ecosystem architecture</a></div>
+<div class="story" style="margin-top:14px;padding:13px 15px;background:#fff"><span class="eyebrow">My role</span><p style="font-size:10px;color:#5f6c83;margin:4px 0 0">I led product strategy, discovery, requirements, solution design, Agile execution, stakeholder alignment, validation, implementation readiness and adoption for the suite, working across business, engineering, QA, compliance and bank stakeholders.</p></div><p class="safe">Confidential bank screenshots and proprietary production data are intentionally excluded. Product screens, reports, workflows, API examples and architecture visuals are original portfolio-safe reconstructions.</p></div>
+<div class="hero-visual reveal"><div class="window"><div class="dots"><i></i><i></i><i></i></div><span>INTEGRATED CHANNELS · PRODUCT ECOSYSTEM</span></div>
+<div class="map">
+<div class="core"><b>Integrated Channels Suite</b><span>12 applications · common platform patterns · configurable workflows</span></div>
+<button class="node n1" data-open="los-lms"><b>LOS–LMS</b><span>Lending & Credit</span></button><button class="node n2" data-open="dms-ckyc"><b>DMS & CKYC</b><span>Documents & KYC</span></button><button class="node n3" data-open="aml-kyc"><b>AML–KYC</b><span>Compliance</span></button><button class="node n4" data-open="reconciliation"><b>Reconciliation</b><span>Payments</span></button><button class="node n5" data-open="cms"><b>CMS</b><span>Cards</span></button><button class="node n6" data-open="treasury"><b>Treasury</b><span>Financial Control</span></button>
+<div class="line l1"></div><div class="line l2"></div><div class="line l3"></div><div class="line l4"></div><div class="line l5"></div><div class="line l6"></div>
+</div></div></div>
+<div class="quick reveal"><div class="stat"><strong>12</strong><span>applications built from scratch</span></div><div class="stat"><strong>6 + 6</strong><span>two development phases</span></div><div class="stat"><strong>100+</strong><span>bank deployments · project claim</span></div><div class="stat"><strong>2-week</strong><span>Agile sprint cadence</span></div><div class="stat"><strong>25%</strong><span>manual compliance effort reduction · AML/KYC</span></div></div>
+</div></section>
+
+<section class="section white" id="challenge"><div class="wrap">
+<div class="section-head"><div><span class="eyebrow">01 · Product Context</span><h2>The problem was bigger than building 12 applications</h2></div><p>Banks already operated within complex technology environments. The product therefore had to support domain-specific workflows while remaining configurable, integration-ready, migration-aware, controlled and implementable at client sites.</p></div>
+<div class="story-grid">
+<div class="story reveal"><span class="eyebrow">The product challenge</span><h3>One platform had to serve very different banking jobs.</h3><p>Lending, AML, cards, reconciliation, treasury and audit do not share the same users or workflows. The product challenge was to find the reusable platform patterns without flattening the domain complexity.</p><ul><li>Existing bank applications meant coexistence and integration mattered from day one.</li><li>Client-specific workflows required configuration rather than a rigid one-size-fits-all product.</li><li>Regulated processes required roles, validations, approvals, evidence, traceability and reporting.</li><li>Legacy data required field mapping, transformation, validation and post-migration checks.</li><li>Deployment success required training, documentation and L1/L2 support readiness.</li></ul></div>
+<div class="story reveal" style="background:var(--lav)"><span class="eyebrow">Product thesis</span><h3>Standardise the platform. Configure the institution. Integrate the ecosystem.</h3><p>The suite was approached as a common product foundation with modular domain applications—not as 12 disconnected projects.</p>
+<div class="story-flow"><div class="story-step"><b>Standardise</b><span>Roles, controls, workflow patterns, reporting conventions.</span></div><div class="story-step"><b>Configure</b><span>Institution-specific business rules and journeys.</span></div><div class="story-step"><b>Integrate</b><span>Bank systems, payment rails and external services.</span></div><div class="story-step"><b>Adopt</b><span>Migration, deployment, training and support.</span></div></div></div>
+</div></div></section>
+
+<section class="section" id="strategy"><div class="wrap">
+<div class="section-head"><div><span class="eyebrow">02 · Product Strategy</span><h2>From application list to a reusable banking product ecosystem</h2></div><p>The strategy connected platform architecture, domain product design, implementation realities and client adoption. Each decision was intended to reduce repeated effort while preserving the flexibility banks needed.</p></div>
+<div class="strategy reveal">
+<div class="strategy-card" style="--tone:#9b8cf5"><div class="num">01</div><h3>Common platform foundation</h3><p>Define reusable roles, permissions, workflow states, validations, reporting patterns and auditability before multiplying application complexity.</p></div>
+<div class="strategy-card" style="--tone:#73cbb4"><div class="num">02</div><h3>Configurable institution model</h3><p>Separate reusable product behaviour from bank-specific configuration so workflows can adapt without turning every implementation into a new product.</p></div>
+<div class="strategy-card" style="--tone:#7eb5ed"><div class="num">03</div><h3>Integration-first product design</h3><p>Identify systems of record, API contracts, authentication, failures, retries, reconciliation and hand-offs while journeys are being designed.</p></div>
+<div class="strategy-card" style="--tone:#efb785"><div class="num">04</div><h3>Controls by design</h3><p>Translate business and regulatory requirements into roles, maker-checker patterns, approval states, validations, evidence and reports.</p></div>
+<div class="strategy-card" style="--tone:#f49dbd"><div class="num">05</div><h3>Migration-aware product design</h3><p>Treat existing data as part of the product problem: assess, map, transform, validate, migrate and verify after migration.</p></div>
+<div class="strategy-card" style="--tone:#9dcbed"><div class="num">06</div><h3>Two-phase roadmap</h3><p>Develop the first six applications during the initial six months, then select and build the remaining six using the foundation and learnings from phase one.</p></div>
+<div class="strategy-card" style="--tone:#a8d7a8"><div class="num">07</div><h3>Feedback-led refinement</h3><p>Use progressive product demos, bank feedback, QA and UAT to refine workflows, reports, exceptions and implementation readiness.</p></div>
+<div class="strategy-card" style="--tone:#b6a7f0"><div class="num">08</div><h3>Adoption as product outcome</h3><p>Carry product ownership through manuals, training, L1/L2 enablement, deployment readiness, production feedback and enhancement backlog.</p></div>
+</div>
+<div class="decision reveal"><span class="eyebrow">Decision framework used across applications</span><div class="decision-row"><div class="decision-step">Problem</div><div class="decision-step">User / Role</div><div class="decision-step">Journey</div><div class="decision-step">Business Rule</div><div class="decision-step">Data</div><div class="decision-step">Integration</div><div class="decision-step">Exception</div><div class="decision-step">Report</div><div class="decision-step">Outcome</div></div></div>
+</div></section>
+
+<section class="section white" id="ownership"><div class="wrap">
+<div class="section-head"><div><span class="eyebrow">03 · Product Management Scope</span><h2>End-to-end product leadership across strategy, build and adoption</h2></div><p>The work extended beyond backlog management. It connected business discovery, product definition, technical solutioning, engineering execution, client validation, implementation and post-release enablement.</p></div>
+<div class="ownership reveal">
+<div class="own"><span class="pill">Strategy</span><h3>Vision, roadmap & prioritisation</h3><p>Shaped the suite direction and phased roadmap.</p><ul><li>Product vision</li><li>6+6 sequencing</li><li>Dependencies</li><li>Prioritisation</li></ul></div>
+<div class="own" style="background:var(--lav)"><span class="pill">Discovery</span><h3>Problem & requirement discovery</h3><p>Worked with SMEs, banks and compliance teams before development.</p><ul><li>Elicitation</li><li>Process mapping</li><li>Use cases</li><li>Edge cases</li></ul></div>
+<div class="own" style="background:var(--mint)"><span class="pill">Definition</span><h3>Product documentation</h3><p>Converted needs into executable product artefacts.</p><ul><li>BRD / FRD / FSD</li><li>API specs</li><li>Acceptance criteria</li><li>User manuals</li></ul></div>
+<div class="own" style="background:var(--peach)"><span class="pill">Design</span><h3>UX & solution design</h3><p>Made workflows and architecture understandable across teams.</p><ul><li>Figma</li><li>DFD</li><li>ER mapping</li><li>Architecture diagrams</li></ul></div>
+<div class="own" style="background:var(--sky)"><span class="pill">Delivery</span><h3>Agile product execution</h3><p>Led backlog and sprint execution with engineering.</p><ul><li>Epics / stories</li><li>Refinement</li><li>2-week sprints</li><li>Daily sessions</li></ul></div>
+<div class="own" style="background:var(--rose)"><span class="pill">Quality</span><h3>Validation & release readiness</h3><p>Connected product intent to QA and client acceptance.</p><ul><li>Feature testing</li><li>Edge cases</li><li>UAT</li><li>VAPT readiness</li></ul></div>
+<div class="own"><span class="pill">Implementation</span><h3>Migration & deployment</h3><p>Supported implementation at bank/client sites.</p><ul><li>Field mapping</li><li>Migration validation</li><li>Integration readiness</li><li>Production checks</li></ul></div>
+<div class="own" style="background:var(--lav)"><span class="pill">Adoption</span><h3>Training & support enablement</h3><p>Prepared teams to operate and support the product.</p><ul><li>Core-team training</li><li>Manuals / FAQs</li><li>L1/L2 enablement</li><li>Feedback backlog</li></ul></div>
+</div></div></section>
+
+<section class="section" id="architecture"><div class="wrap">
+<div class="section-head"><div><span class="eyebrow">04 · Product Architecture & Technology</span><h2>Technology mapped to the banking problem it solved</h2></div><p>The architecture is presented as a product system: experience and workflow, domain applications, integration contracts, data/reporting and cross-cutting controls.</p></div>
+<div class="stack-layout">
+<div class="arch reveal"><span class="eyebrow">Conceptual platform architecture</span>
+<svg viewBox="0 0 1000 455" role="img" aria-label="Integrated Channels Suite product architecture">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto"><path d="M0 0 L8 3.5 L0 7z" fill="#9ca8bb"/></marker></defs>
+<rect x="30" y="165" width="155" height="105" rx="18" fill="#eef2ff" stroke="#dbe2ff"/><text x="108" y="195" text-anchor="middle" font-size="13" font-weight="900" fill="#46526b">Bank users</text><text x="108" y="216" text-anchor="middle" font-size="9" fill="#758198">Branch · Ops · Credit</text><text x="108" y="232" text-anchor="middle" font-size="9" fill="#758198">Compliance · Finance</text><text x="108" y="248" text-anchor="middle" font-size="9" fill="#758198">Management</text>
+<rect x="230" y="35" width="500" height="385" rx="25" fill="#fff" stroke="#dce3ee"/><text x="480" y="66" text-anchor="middle" font-size="14" font-weight="950" fill="#33405a">Integrated Channels Suite</text>
+<rect x="255" y="90" width="450" height="62" rx="14" fill="#f2efff" stroke="#e2dcff"/><text x="480" y="116" text-anchor="middle" font-size="11" font-weight="900" fill="#4e5b74">Experience & workflow layer</text><text x="480" y="134" text-anchor="middle" font-size="9" fill="#78839a">Frappe forms · roles · permissions · workflow states · configuration</text>
+<rect x="255" y="169" width="450" height="82" rx="14" fill="#edf9f5" stroke="#d7eee5"/><text x="480" y="194" text-anchor="middle" font-size="11" font-weight="900" fill="#4e5b74">12 domain applications</text><text x="480" y="214" text-anchor="middle" font-size="8.5" fill="#78839a">LOS–LMS · CMS · Reconciliation · AML–KYC · Treasury · Audit</text><text x="480" y="231" text-anchor="middle" font-size="8.5" fill="#78839a">FAM · GST · Shares · PM Schemes · CIBIL · DMS & CKYC</text>
+<rect x="255" y="268" width="212" height="75" rx="14" fill="#edf6ff" stroke="#d9e9fa"/><text x="361" y="294" text-anchor="middle" font-size="10" font-weight="900" fill="#4e5b74">API / integration layer</text><text x="361" y="313" text-anchor="middle" font-size="8.5" fill="#78839a">contracts · validation · status</text><text x="361" y="329" text-anchor="middle" font-size="8.5" fill="#78839a">errors · retries · hand-offs</text>
+<rect x="493" y="268" width="212" height="75" rx="14" fill="#fff4e9" stroke="#f0dfca"/><text x="599" y="294" text-anchor="middle" font-size="10" font-weight="900" fill="#4e5b74">Data & reporting layer</text><text x="599" y="313" text-anchor="middle" font-size="8.5" fill="#78839a">SQL · reports · migration</text><text x="599" y="329" text-anchor="middle" font-size="8.5" fill="#78839a">Power BI / management views</text>
+<rect x="255" y="360" width="450" height="40" rx="12" fill="#fff0f5" stroke="#f1dce5"/><text x="480" y="385" text-anchor="middle" font-size="9.5" font-weight="900" fill="#4e5b74">Cross-cutting controls · maker-checker · auditability · QA · UAT · VAPT · deployment readiness</text>
+<rect x="775" y="55" width="195" height="350" rx="22" fill="#fff" stroke="#dce3ee"/><text x="873" y="83" text-anchor="middle" font-size="12" font-weight="950" fill="#33405a">Fintech ecosystem</text>
+<g font-size="9" fill="#647087" font-weight="800"><rect x="795" y="105" width="155" height="34" rx="9" fill="#f7f8fb"/><text x="873" y="126" text-anchor="middle">CBS / bank systems</text><rect x="795" y="149" width="155" height="34" rx="9" fill="#f7f8fb"/><text x="873" y="170" text-anchor="middle">NPCI · UPI · AEPS</text><rect x="795" y="193" width="155" height="34" rx="9" fill="#f7f8fb"/><text x="873" y="214" text-anchor="middle">ATM / Switch</text><rect x="795" y="237" width="155" height="34" rx="9" fill="#f7f8fb"/><text x="873" y="258" text-anchor="middle">CIBIL · CKYC · GST</text><rect x="795" y="281" width="155" height="34" rx="9" fill="#f7f8fb"/><text x="873" y="302" text-anchor="middle">RuPay · Visa · Mastercard</text><rect x="795" y="325" width="155" height="34" rx="9" fill="#f7f8fb"/><text x="873" y="346" text-anchor="middle">Other client systems</text></g>
+<line x1="185" y1="218" x2="230" y2="218" stroke="#9ca8bb" stroke-width="2" marker-end="url(#a)"/><line x1="730" y1="218" x2="775" y2="218" stroke="#9ca8bb" stroke-width="2" marker-end="url(#a)"/>
+</svg><p class="safe">Conceptual portfolio architecture, not a reproduction of confidential client architecture.</p></div>
+<div class="arch reveal"><span class="eyebrow">Stack by product requirement</span><h3 style="font-size:19px;margin:6px 0 13px">Tools were selected and used within specific product responsibilities</h3>
+<div class="stack">
+<div class="stack-card" style="background:var(--lav)"><h3>Application platform</h3><div class="chips"><span class="chip">Frappe Framework</span><span class="chip">Modular applications</span><span class="chip">Configurable workflows</span></div></div>
+<div class="stack-card" style="background:var(--mint)"><h3>API & integration</h3><div class="chips"><span class="chip">API-first</span><span class="chip">REST/API connectivity</span><span class="chip">API specifications</span><span class="chip">Integration mapping</span></div></div>
+<div class="stack-card" style="background:var(--sky)"><h3>Data & analytics</h3><div class="chips"><span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip">DFD</span><span class="chip">ER mapping</span></div></div>
+<div class="stack-card" style="background:var(--peach)"><h3>Product design</h3><div class="chips"><span class="chip">Figma</span><span class="chip">Use cases</span><span class="chip">Architecture diagrams</span></div></div>
+<div class="stack-card"><h3>Delivery</h3><div class="chips"><span class="chip">JIRA</span><span class="chip">Epics</span><span class="chip">Stories</span><span class="chip">Acceptance criteria</span></div></div>
+<div class="stack-card"><h3>Documentation</h3><div class="chips"><span class="chip">draw.io</span><span class="chip">Visio</span><span class="chip">Lucidchart</span><span class="chip">Canva</span></div></div>
+<div class="stack-card" style="background:var(--rose)"><h3>Quality & security</h3><div class="chips"><span class="chip">QA</span><span class="chip">UAT</span><span class="chip">Edge cases</span><span class="chip">VAPT readiness</span></div></div>
+<div class="stack-card"><h3>Implementation</h3><div class="chips"><span class="chip">Data migration</span><span class="chip">On-prem / bank-site</span><span class="chip">Production validation</span></div></div>
+</div></div></div>
+<div class="integrations reveal"><div class="section-head" style="margin-bottom:12px"><div><span class="eyebrow">Integration design</span><h3 style="margin:5px 0 0;font-size:18px">Mapped to the fintech ecosystem, not treated as a generic API box</h3></div></div>
+<div class="integration-cols"><div class="icol"><div class="inode">Branch / Operations</div><div class="inode">Lending / Credit</div><div class="inode">Compliance</div><div class="inode">Finance / Treasury</div><div class="inode">Management</div></div>
+<div class="icol"><div class="inode center"><b>Integrated Channels Suite</b><span>Domain workflows + controls + reports + configuration</span></div><div class="arrow">↕</div><div class="inode">API contracts · authentication · request/response · validation · error handling · status · reconciliation</div></div>
+<div class="icol"><div class="inode">CBS / internal bank systems</div><div class="inode">NPCI · UPI · AEPS · ATM / Switch</div><div class="inode">CIBIL · CKYC · GST</div><div class="inode">RuPay · Visa · Mastercard</div><div class="inode">Other client / third-party systems</div></div></div>
+<div class="api-lifecycle"><div class="api-step"><b>01 · Discover</b><span>System of record and business dependency.</span></div><div class="api-step"><b>02 · Contract</b><span>Fields, request, response, status and ownership.</span></div><div class="api-step"><b>03 · Validate</b><span>Mandatory data and business rules.</span></div><div class="api-step"><b>04 · Fail safely</b><span>Timeout, duplicate, rejection and retry.</span></div><div class="api-step"><b>05 · Reconcile</b><span>Reference, amount/status and exceptions.</span></div><div class="api-step"><b>06 · Observe</b><span>Reports, audit trail and operational ownership.</span></div></div>
+</div></div></section>
+
+<section class="section white" id="delivery"><div class="wrap">
+<div class="section-head"><div><span class="eyebrow">05 · Product Operating Model</span><h2>From zero-to-one foundation to implementation and adoption</h2></div><p>All 12 applications were built from scratch. The first six were developed during the initial six months; the remaining six were selected and built after month six.</p></div>
+<div class="timeline reveal">
+<div class="time"><b>01 · DISCOVER</b><h3>Domain & client discovery</h3><p>Understand processes, users, compliance requirements, existing systems and desired outcomes.</p><ul><li>SME / bank discussions</li><li>Use cases</li><li>Problem definition</li></ul></div>
+<div class="time active"><b>02 · MONTHS 0–6</b><h3>Foundation + first six</h3><p>Build the common product foundation and first six applications from scratch.</p><ul><li>UX / architecture</li><li>Backlog / sprints</li><li>Progressive demos</li></ul></div>
+<div class="time"><b>03 · VALIDATE</b><h3>Learn & harden</h3><p>Use QA, demos, feedback and UAT to strengthen common patterns and implementation readiness.</p><ul><li>Edge cases</li><li>Reports</li><li>Integration behaviour</li></ul></div>
+<div class="time active"><b>04 · AFTER MONTH 6</b><h3>Remaining six</h3><p>Select and build the remaining applications using the foundation and lessons from phase one.</p><ul><li>Reuse patterns</li><li>New domains</li><li>Client validation</li></ul></div>
+<div class="time"><b>05 · IMPLEMENT</b><h3>Secure, migrate & deploy</h3><p>Prepare integration, migration, VAPT, environments and production deployment.</p><ul><li>Field mapping</li><li>VAPT</li><li>Bank-site deployment</li></ul></div>
+<div class="time"><b>06 · ADOPT</b><h3>Train, support & improve</h3><p>Enable core users and L1/L2 teams and feed production learning into the roadmap.</p><ul><li>Manuals</li><li>Training</li><li>Enhancement backlog</li></ul></div>
+</div>
+<div class="implementation reveal">
+<div class="impl" style="background:var(--lav)"><span class="pill">Requirements</span><h3>Implementation discovery</h3><p>Understand current applications, source data, client-specific workflow and infrastructure dependencies.</p><ul><li>As-is / to-be</li><li>Gap analysis</li><li>Dependency map</li></ul></div>
+<div class="impl" style="background:var(--mint)"><span class="pill">Integration</span><h3>Interface readiness</h3><p>Confirm upstream/downstream systems, API contracts, auth, failure paths and test connectivity.</p><ul><li>API mapping</li><li>Error states</li><li>Reconciliation</li></ul></div>
+<div class="impl" style="background:var(--peach)"><span class="pill">Migration</span><h3>Data transition</h3><p>Assess, map, transform, validate, migrate and perform post-migration checks.</p><ul><li>Field mapping</li><li>Validation</li><li>Reconciliation</li></ul></div>
+<div class="impl" style="background:var(--sky)"><span class="pill">Quality</span><h3>QA → UAT → VAPT</h3><p>Validate feature behaviour, edge cases, client acceptance and security readiness before production.</p><ul><li>Acceptance criteria</li><li>UAT scenarios</li><li>VAPT closure</li></ul></div>
+<div class="impl"><span class="pill">Deployment</span><h3>Production readiness</h3><p>Coordinate environment, configuration, integrations, migration and bank-site/on-prem deployment.</p><ul><li>Readiness checklist</li><li>Production validation</li><li>Issue tracking</li></ul></div>
+<div class="impl" style="background:var(--rose)"><span class="pill">Adoption</span><h3>Core-user enablement</h3><p>Use demos, manuals, use cases and FAQs to help bank teams operate the platform.</p><ul><li>Training</li><li>User manuals</li><li>Product demos</li></ul></div>
+<div class="impl"><span class="pill">Support</span><h3>L1/L2 readiness</h3><p>Train support teams on use cases, common issues, query handling, impact and possible downtime.</p><ul><li>Triage</li><li>Common issues</li><li>Escalation context</li></ul></div>
+<div class="impl" style="background:var(--yellow)"><span class="pill">Governance</span><h3>Leadership visibility</h3><p>Provide progress, timeline, feedback, risk, dependency and readiness updates to senior stakeholders.</p><ul><li>Roadmap status</li><li>Risks / blockers</li><li>Client feedback</li></ul></div>
+</div></div></section>
+
+<section class="section" id="products"><div class="wrap">
+<div class="section-head"><div><span class="eyebrow">06 · Product Explorer</span><h2>Go inside each of the 12 banking applications</h2></div><p>The main case study stays readable. Every product opens an in-depth workspace with its purpose, problem, users, capabilities, workflow, integration landscape, sample reporting, API thinking, exception design and PM contribution.</p></div>
+<div class="toolbar"><input class="search" id="search" placeholder="Search product, capability, domain…" aria-label="Search products"><div class="filters" id="filters"><button class="filter active" data-filter="All">All 12</button><button class="filter" data-filter="Lending & Credit">Lending</button><button class="filter" data-filter="Payments & Cards">Payments & Cards</button><button class="filter" data-filter="Compliance">Compliance</button><button class="filter" data-filter="Financial Control">Financial Control</button><button class="filter" data-filter="Governance & Control">Governance</button><button class="filter" data-filter="Operations">Operations</button></div></div>
+<div class="app-grid" id="appGrid"><button class="app-card" data-open="audit" data-cat="Governance & Control" data-search="audit governance &amp; control internal, compliance, statutory and operations audit management. internal audit compliance audit statutory audit operations audit findings &amp; action tracking audit reporting" style="--app:#b7a6ff">
+<div class="app-top"><span class="app-index">01</span><span class="app-domain">Governance &amp; Control</span><span class="app-go">↗</span></div>
+<h3>Audit</h3><p>Internal, compliance, statutory and operations audit management.</p><div class="mini-tags"><span>Internal Audit</span><span>Compliance Audit</span><span>Statutory Audit</span></div>
+<div class="app-foot"><span>Open product workspace</span><b>Explore →</b></div></button><button class="app-card" data-open="fam" data-cat="Financial Control" data-search="fam financial control fixed assets management for physical assets across the institution. asset registration asset categorisation assignment / tracking depreciation asset history operational reporting" style="--app:#8bd8c5">
+<div class="app-top"><span class="app-index">02</span><span class="app-domain">Financial Control</span><span class="app-go">↗</span></div>
+<h3>FAM</h3><p>Fixed Assets Management for physical assets across the institution.</p><div class="mini-tags"><span>Asset registration</span><span>Asset categorisation</span><span>Assignment / tracking</span></div>
+<div class="app-foot"><span>Open product workspace</span><b>Explore →</b></div></button><button class="app-card" data-open="gst" data-cat="Financial Control" data-search="gst financial control gst-related purchase, calculation, warranty, insurance and reporting workflows. purchase capture gst calculation warranty tracking insurance tracking gstr1b-related extraction reporting" style="--app:#ffd39a">
+<div class="app-top"><span class="app-index">03</span><span class="app-domain">Financial Control</span><span class="app-go">↗</span></div>
+<h3>GST</h3><p>GST-related purchase, calculation, warranty, insurance and reporting workflows.</p><div class="mini-tags"><span>Purchase capture</span><span>GST calculation</span><span>Warranty tracking</span></div>
+<div class="app-foot"><span>Open product workspace</span><b>Explore →</b></div></button><button class="app-card" data-open="los-lms" data-cat="Lending & Credit" data-search="los–lms lending &amp; credit loan origination and loan management workflows across multiple loan products. vehicle loans education loans gold loans staff loans personal loans home loans maker-checker-sanctioner disbursement repayment schedule configuration" style="--app:#83b9ff">
+<div class="app-top"><span class="app-index">04</span><span class="app-domain">Lending &amp; Credit</span><span class="app-go">↗</span></div>
+<h3>LOS–LMS</h3><p>Loan origination and loan management workflows across multiple loan products.</p><div class="mini-tags"><span>Vehicle loans</span><span>Education loans</span><span>Gold loans</span></div>
+<div class="app-foot"><span>Open product workspace</span><b>Explore →</b></div></button><button class="app-card" data-open="cms" data-cat="Payments & Cards" data-search="cms payments &amp; cards card management covering personalised and instant cards across major card networks. personalised cards instant cards card product setup rupay visa mastercard nbin-related issuance context operational reporting" style="--app:#ff9fc5">
+<div class="app-top"><span class="app-index">05</span><span class="app-domain">Payments &amp; Cards</span><span class="app-go">↗</span></div>
+<h3>CMS</h3><p>Card management covering personalised and instant cards across major card networks.</p><div class="mini-tags"><span>Personalised cards</span><span>Instant cards</span><span>Card product setup</span></div>
+<div class="app-foot"><span>Open product workspace</span><b>Explore →</b></div></button><button class="app-card" data-open="shares" data-cat="Financial Control" data-search="shares financial control share and portfolio management with dividend calculation and governance reporting. share management portfolio management dividend calculation maker-checker board meeting reports operational reporting" style="--app:#a7d8ff">
+<div class="app-top"><span class="app-index">06</span><span class="app-domain">Financial Control</span><span class="app-go">↗</span></div>
+<h3>Shares</h3><p>Share and portfolio management with dividend calculation and governance reporting.</p><div class="mini-tags"><span>Share management</span><span>Portfolio management</span><span>Dividend calculation</span></div>
+<div class="app-foot"><span>Open product workspace</span><b>Explore →</b></div></button><button class="app-card" data-open="pm-schemes" data-cat="Operations" data-search="pm schemes operations management of government-launched schemes through configurable operational workflows. scheme master eligibility / workflow configuration operational tracking status monitoring reports user controls" style="--app:#9fe3a9">
+<div class="app-top"><span class="app-index">07</span><span class="app-domain">Operations</span><span class="app-go">↗</span></div>
+<h3>PM Schemes</h3><p>Management of government-launched schemes through configurable operational workflows.</p><div class="mini-tags"><span>Scheme master</span><span>Eligibility / workflow configuration</span><span>Operational tracking</span></div>
+<div class="app-foot"><span>Open product workspace</span><b>Explore →</b></div></button><button class="app-card" data-open="cibil" data-cat="Lending & Credit" data-search="cibil lending &amp; credit credit-information retrieval through api connectivity for lending workflows. credit information request api connectivity response capture status tracking exception handling los hand-off" style="--app:#86c8ff">
+<div class="app-top"><span class="app-index">08</span><span class="app-domain">Lending &amp; Credit</span><span class="app-go">↗</span></div>
+<h3>CIBIL</h3><p>Credit-information retrieval through API connectivity for lending workflows.</p><div class="mini-tags"><span>Credit information request</span><span>API connectivity</span><span>Response capture</span></div>
+<div class="app-foot"><span>Open product workspace</span><b>Explore →</b></div></button><button class="app-card" data-open="reconciliation" data-cat="Payments & Cards" data-search="reconciliation payments &amp; cards transaction reconciliation across aeps, upi, switch, atm and other transaction streams. transaction ingestion matching / reconciliation exception identification status tracking operational reporting settlement-oriented views" style="--app:#f4c78e">
+<div class="app-top"><span class="app-index">09</span><span class="app-domain">Payments &amp; Cards</span><span class="app-go">↗</span></div>
+<h3>Reconciliation</h3><p>Transaction reconciliation across AEPS, UPI, Switch, ATM and other transaction streams.</p><div class="mini-tags"><span>Transaction ingestion</span><span>Matching / reconciliation</span><span>Exception identification</span></div>
+<div class="app-foot"><span>Open product workspace</span><b>Explore →</b></div></button><button class="app-card" data-open="aml-kyc" data-cat="Compliance" data-search="aml–kyc compliance transaction monitoring, rule-based flagging and compliance reporting. transaction monitoring rule-based flagging risk / alert workflow ctr reporting str reporting ntr reporting kyc controls compliance dashboards" style="--app:#ffb2a6">
+<div class="app-top"><span class="app-index">10</span><span class="app-domain">Compliance</span><span class="app-go">↗</span></div>
+<h3>AML–KYC</h3><p>Transaction monitoring, rule-based flagging and compliance reporting.</p><div class="mini-tags"><span>Transaction monitoring</span><span>Rule-based flagging</span><span>Risk / alert workflow</span></div>
+<div class="app-foot"><span>Open product workspace</span><b>Explore →</b></div></button><button class="app-card" data-open="treasury" data-cat="Financial Control" data-search="treasury financial control treasury operational workflows supporting bod and eod activities. bod activities eod activities operational checklist status tracking exception visibility reporting" style="--app:#9ed7ff">
+<div class="app-top"><span class="app-index">11</span><span class="app-domain">Financial Control</span><span class="app-go">↗</span></div>
+<h3>Treasury</h3><p>Treasury operational workflows supporting BOD and EOD activities.</p><div class="mini-tags"><span>BOD activities</span><span>EOD activities</span><span>Operational checklist</span></div>
+<div class="app-foot"><span>Open product workspace</span><b>Explore →</b></div></button><button class="app-card" data-open="dms-ckyc" data-cat="Compliance" data-search="dms &amp; ckyc compliance document management and ckyc workflows covering ovd, verification, secure storage and ckyc retrieval. ovd capture customer information document authenticity verification secure storage ckyc number retrieval document status" style="--app:#c2b0ff">
+<div class="app-top"><span class="app-index">12</span><span class="app-domain">Compliance</span><span class="app-go">↗</span></div>
+<h3>DMS &amp; CKYC</h3><p>Document management and CKYC workflows covering OVD, verification, secure storage and CKYC retrieval.</p><div class="mini-tags"><span>OVD capture</span><span>Customer information</span><span>Document authenticity verification</span></div>
+<div class="app-foot"><span>Open product workspace</span><b>Explore →</b></div></button></div><div id="empty" class="story hidden" style="text-align:center;margin-top:10px"><p>No matching product found.</p></div>
+</div></section>
+
+<section class="section white" id="impact"><div class="wrap">
+<div class="section-head"><div><span class="eyebrow">07 · Outcomes & Evidence</span><h2>Product impact across platform, delivery and client adoption</h2></div><p>Measured evidence is shown only where figures were provided. Broader impact is described as product outcomes rather than fabricated KPIs.</p></div>
+<div class="impact reveal"><div class="impact-card" style="background:var(--lav)"><strong>12</strong><b>Applications built from scratch</b><span>A single suite across multiple banking domains.</span></div><div class="impact-card" style="background:var(--mint)"><strong>6 + 6</strong><b>Two-phase product build</b><span>First six in the initial six months, then remaining six.</span></div><div class="impact-card" style="background:var(--sky)"><strong>100+</strong><b>Bank deployments</b><span>Portfolio/project claim supplied for this case study.</span></div><div class="impact-card" style="background:var(--peach)"><strong>25%</strong><b>Manual compliance effort reduction</b><span>Stated AML/KYC automation outcome.</span></div></div>
+<div class="impact-model">
+<div class="impact-panel reveal"><span class="eyebrow">Ecosystem effect</span><h3>Impact came from reusable product decisions, not isolated features</h3><p><b>Common platform patterns</b> reduced repeated definition across applications. <b>Configurable workflows</b> supported institution-specific operating models. <b>Integration-first design</b> acknowledged existing bank systems. <b>Migration-aware implementation</b> supported transition from legacy applications. <b>Training and support enablement</b> extended product ownership into adoption.</p>
+<div class="story-flow"><div class="story-step"><b>Standardise</b><span>Reusable platform patterns.</span></div><div class="story-step"><b>Configure</b><span>Bank-specific variation.</span></div><div class="story-step"><b>Integrate</b><span>Existing financial ecosystem.</span></div><div class="story-step"><b>Adopt</b><span>Migration, deployment, training.</span></div></div></div>
+<div class="impact-panel reveal"><span class="eyebrow">Evidence snapshot</span><div class="bars"><div class="barcol"><div class="bar" style="height:82%"></div><span>12 apps</span></div><div class="barcol"><div class="bar" style="height:42%"></div><span>2 phases</span></div><div class="barcol"><div class="bar" style="height:95%"></div><span>100+ banks*</span></div><div class="barcol"><div class="bar" style="height:35%"></div><span>2-week sprint</span></div><div class="barcol"><div class="bar" style="height:25%"></div><span>25% effort ↓</span></div></div><p class="safe">Bar heights are illustrative; these metrics use different units and are not a common-scale comparison.</p></div>
+</div></div></section>
+
+<section class="section" id="learnings"><div class="wrap">
+<div class="section-head"><div><span class="eyebrow">08 · Product Leadership</span><h2>Competencies demonstrated and lessons carried forward</h2></div><p>The case study demonstrates strategic product thinking, technical depth, enterprise execution, stakeholder leadership and adoption ownership.</p></div>
+<div class="comps reveal">
+<div class="comp"><b>Product vision & strategy</b><span>Platform direction across 12 domains.</span></div><div class="comp"><b>Roadmap & prioritisation</b><span>Two-phase sequencing and dependencies.</span></div><div class="comp"><b>Enterprise discovery</b><span>SMEs, banks, compliance and operations.</span></div><div class="comp"><b>Requirements leadership</b><span>BRD, FRD, FSD, use cases, acceptance.</span></div><div class="comp"><b>Technical product management</b><span>Architecture, DFD, ER, API and integrations.</span></div><div class="comp"><b>UX / prototyping</b><span>Figma and journey communication.</span></div><div class="comp"><b>Agile product delivery</b><span>Epics, stories, refinement and sprints.</span></div><div class="comp"><b>Quality ownership</b><span>QA, UAT, edge cases and VAPT readiness.</span></div><div class="comp"><b>Implementation leadership</b><span>Migration, deployment and production readiness.</span></div><div class="comp"><b>Stakeholder management</b><span>Client, engineering, QA, compliance, leadership.</span></div><div class="comp"><b>Adoption & enablement</b><span>Training, manuals and L1/L2 support.</span></div><div class="comp"><b>Outcome orientation</b><span>Connect product decisions to operational effect.</span></div>
+</div>
+<div class="learn reveal"><div class="lesson" style="background:var(--lav)"><strong>01</strong><h3>Platform thinking creates leverage</h3><p>Reusable roles, workflows, controls and reporting patterns can accelerate multiple domain products while preserving configurability.</p></div><div class="lesson" style="background:var(--mint)"><strong>02</strong><h3>Integration is part of the UX</h3><p>Timeouts, invalid data, duplicates, retries, failure ownership and recovery paths must be designed as product behaviour.</p></div><div class="lesson" style="background:var(--peach)"><strong>03</strong><h3>Controls are product features</h3><p>In regulated workflows, who acted, under which role, with what evidence and what output is central to the product.</p></div><div class="lesson" style="background:var(--sky)"><strong>04</strong><h3>Enterprise UX is clarity</h3><p>Users need to see current state, owner, next action, exception reason and downstream effect without ambiguity.</p></div><div class="lesson" style="background:var(--rose)"><strong>05</strong><h3>Implementation belongs in product</h3><p>A feature is not truly successful if migration, integration, deployment, training or support prevents adoption.</p></div><div class="lesson"><strong>06</strong><h3>Senior PM impact is cross-system</h3><p>End-to-end ownership connects strategy, technology, teams, client constraints, quality, release and measurable outcomes.</p></div></div>
+<div class="story reveal" style="margin-top:13px"><span class="eyebrow">STAR case-study narrative</span><div class="story-flow"><div class="story-step"><b>Situation</b><span>12 banking domains, existing systems and regulated workflows.</span></div><div class="story-step"><b>Task</b><span>Build a configurable suite from scratch across two phases.</span></div><div class="story-step"><b>Action</b><span>Strategy through design, build, QA/UAT, migration and adoption.</span></div><div class="story-step"><b>Result</b><span>12 applications, 6+6 phases, 100+ deployment claim and AML/KYC impact.</span></div></div><p class="safe">STAR is used as a portfolio/interview communication structure, not represented as the organisation's formal methodology.</p></div>
+</div></section>
+
+<section class="section white" id="contact"><div class="wrap">
+<div class="contact">
+<div>
+<span class="eyebrow" style="color:#aeb9cc">Let's connect</span>
+<h2>Have a product, platform or transformation challenge?</h2>
+<p>I’m open to conversations around enterprise product management, digital platforms, banking/fintech products, product strategy, technical product management and zero-to-one product development.</p>
+<div class="contact-mini">
+<span>📩 Prefer email?</span><b>Write to me directly</b>
+</div>
+</div>
+<div class="contact-actions">
+<a href="https://www.linkedin.com/in/manoj-pant-35129495/" target="_blank" rel="noopener noreferrer">💼 LinkedIn <span>↗</span></a>
+<a href="mailto:manoj.pant.pm@outlook.com?subject=Product%20Portfolio%20-%20Integrated%20Channels%20Suite&body=Hi%20Manoj%2C%0A%0AI%20reviewed%20your%20Integrated%20Channels%20Suite%20case%20study%20and%20would%20like%20to%20connect.%0A%0A">✉️ Email Manoj <span>↗</span></a>
+<button type="button" onclick="openContactForm()">📝 Write to Me <span>↗</span></button>
+<button type="button" onclick="window.print()">📄 Save as PDF <span>↓</span></button>
+<a href="../../index.html">↩️ Back to Product Portfolio <span>↗</span></a>
+</div>
+</div>
+</div></section>
 </main>
 
+<footer><div class="wrap"><div><b style="font-size:11px">Manoj Pant · Senior Product Manager</b><small style="display:block">Integrated Channels Suite · Product Management Case Study</small></div><small>Portfolio-safe reconstruction · confidential client information excluded · Product-space references: RBI / NPCI / CKYC / CIBIL / GST / Frappe official documentation</small></div><div class="source-links"><a href="https://www.rbi.org.in/" target="_blank" rel="noopener">RBI</a><a href="https://www.npci.org.in/product/upi" target="_blank" rel="noopener">NPCI / UPI</a><a href="https://www.cibil.com/" target="_blank" rel="noopener">CIBIL</a><a href="https://www.gst.gov.in/" target="_blank" rel="noopener">GST</a><a href="https://frappe.io/framework" target="_blank" rel="noopener">Frappe Framework</a></div></footer>
 
-<div class="modal-overlay" id="appModal" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-top">
-      <div><span id="modalCategory">Application</span><h3 id="modalTitle">Application</h3></div>
-      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
-    </div>
-    <div class="modal-body">
-      <p id="modalDescription"></p>
-      <div class="modal-grid">
-        <div class="modal-card"><strong>Primary use case</strong><p id="modalUseCase"></p></div>
-        <div class="modal-card"><strong>Integration context</strong><p id="modalIntegration"></p></div>
-      </div>
-      <div class="modal-tags" id="modalTags"></div>
-    </div>
+
+<div class="contact-modal" id="contactModal" aria-hidden="true">
+  <div class="contact-dialog">
+    <div class="contact-dialog-head"><div><span class="eyebrow">Direct message</span><h3>Write to Manoj</h3></div><button class="close" type="button" onclick="closeContactForm()">×</button></div>
+    <p class="contact-note">Your message will open in your email client addressed to <b>manoj.pant.pm@outlook.com</b>.</p>
+    <form id="contactForm">
+      <div class="form-grid"><label>Name<input id="cname" required placeholder="Your name"></label><label>Email<input id="cemail" type="email" required placeholder="you@company.com"></label></div>
+      <label>Subject<input id="csubject" required value="Product Portfolio — Integrated Channels Suite"></label>
+      <label>Message<textarea id="cmessage" required rows="6" placeholder="Tell me what you would like to discuss…"></textarea></label>
+      <div class="contact-dialog-actions"><button type="button" class="btn" onclick="closeContactForm()">Cancel</button><button class="btn primary" type="submit">✉️ Open Email</button></div>
+    </form>
   </div>
 </div>
-<footer>
-  © 2026 Manoj Pant · Senior Product Manager · Integrated Channels Suite Case Study
-</footer>
-
-<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+<div class="drawer-backdrop" id="backdrop" aria-hidden="true"><aside class="drawer" id="drawer"><div class="drawer-head"><div class="drawer-title"><span class="drawer-badge" id="dbadge">A</span><div><h2 id="dname">Application</h2><small id="dcat">Domain</small></div></div><button class="close" id="close">×</button></div><div class="drawer-body" id="dbody"></div></aside></div>
 
 <script>
-/* application detail modal data */
-const appData = {
-  audit: {category:"Governance", title:"Audit", description:"Supports internal, compliance, statutory and operations audit workflows for banking teams.", useCase:"Digitise controlled audit operations and maintain structured audit records.", integration:"Can exchange relevant data with surrounding bank systems through APIs where required.", tags:["Internal audit","Compliance audit","Statutory audit","Operations audit"]},
-  fam: {category:"Finance & Operations", title:"FAM", description:"Fixed Asset Management for asset records, depreciation and lifecycle tracking.", useCase:"Manage bank-owned assets and their depreciation and lifecycle information.", integration:"Can integrate with bank data sources and finance-related workflows through APIs where required.", tags:["Assets","Depreciation","Lifecycle"]},
-  gst: {category:"Finance & Operations", title:"GST", description:"Maintains purchased asset/product information, GST calculations, warranty and insurance context.", useCase:"Track tax-related information connected to purchased bank assets/products.", integration:"Can exchange product and tax information with relevant enterprise data sources through APIs.", tags:["GST","Asset purchase","Reporting"]},
-  lending: {category:"Lending", title:"LOS – LMS", description:"Supports multiple loan products and a maker-checker-sanctioner workflow from loan-details entry through sanction.", useCase:"Digitise controlled loan initiation and approval across product-specific lending workflows.", integration:"Can exchange required loan/customer data with CBS and other systems through APIs where required.", tags:["Loan workflow","Maker-checker","Sanction"]},
-  cards: {category:"Cards", title:"CMS", description:"Manages personalised and instant cards across RuPay, Visa and Mastercard programme contexts.", useCase:"Operate card-management processes in a structured application environment.", integration:"Supports API-based integration with surrounding banking and card ecosystem systems.", tags:["RuPay","Visa","Mastercard","NPCI"]},
-  shares: {category:"Finance & Governance", title:"Shares", description:"Supports share portfolios, dividend calculations, approval workflows and board-report preparation.", useCase:"Digitise share-related financial and governance operations.", integration:"Can exchange relevant portfolio and reporting data with surrounding enterprise systems.", tags:["Portfolio","Dividend","Maker-checker"]},
-  schemes: {category:"Finance & Operations", title:"PM Schemes", description:"Supports bank-side management of government-launched financial schemes.", useCase:"Provide structured workflows for administering relevant government schemes.", integration:"Can exchange scheme-related data with surrounding bank systems through APIs where required.", tags:["Government schemes","Operations"]},
-  cibil: {category:"Credit Information", title:"CIBIL", description:"Retrieves credit information through API connectivity with credit authorities.", useCase:"Feed bureau information into relevant credit and lending workflows.", integration:"API connection with credit-authority services.", tags:["Credit data","API","Bureau"]},
-  recon: {category:"Payments Control", title:"Reconciliation", description:"Supports reconciliation across AEPS, UPI, Switch, ATM and other transaction flows.", useCase:"Match records, identify exceptions and support investigation of transaction differences.", integration:"Consumes transaction records from relevant rails, systems and data sources through APIs/files as applicable.", tags:["AEPS","UPI","Switch","ATM"]},
-  aml: {category:"Risk & Compliance", title:"AML – KYC", description:"Tracks and flags payment activity against applicable rules and supports compliance reporting.", useCase:"Digitise monitoring, review and regulatory-reporting workflows for relevant banking activity.", integration:"Can consume payment/customer data and exchange reporting information through APIs and enterprise integrations.", tags:["AML","KYC","Monitoring","Reporting"]},
-  treasury: {category:"Finance Operations", title:"Treasury", description:"Supports treasury-related tasks including beginning-of-day and end-of-day activities.", useCase:"Structure recurring treasury operating processes in a controlled application.", integration:"Can exchange relevant operational data with the bank's surrounding financial systems.", tags:["BOD","EOD","Treasury"]},
-  documents: {category:"Documents & Identity", title:"DMS & CKYC", description:"Manages customer documents and user information with verification APIs and CKYC workflows.", useCase:"Capture, verify and manage customer documents and identity information.", integration:"Uses verification and CKYC APIs and can exchange verified data with downstream bank systems.", tags:["DMS","CKYC","OVD","API verification"]}
-};
-
-const modal = document.getElementById("appModal");
-const modalClose = document.getElementById("modalClose");
-const modalTitle = document.getElementById("modalTitle");
-const modalCategory = document.getElementById("modalCategory");
-const modalDescription = document.getElementById("modalDescription");
-const modalUseCase = document.getElementById("modalUseCase");
-const modalIntegration = document.getElementById("modalIntegration");
-const modalTags = document.getElementById("modalTags");
-
-function openAppModal(key){
-  const item = appData[key];
-  if(!item) return;
-  modalCategory.textContent = item.category;
-  modalTitle.textContent = item.title;
-  modalDescription.textContent = item.description;
-  modalUseCase.textContent = item.useCase;
-  modalIntegration.textContent = item.integration;
-  modalTags.innerHTML = item.tags.map(tag => `<span class="modal-tag">${tag}</span>`).join("");
-  modal.classList.add("open");
-  modal.setAttribute("aria-hidden","false");
+const APPS=[{"id": "audit", "name": "Audit", "category": "Governance & Control", "color": "#b7a6ff", "purpose": "Internal, compliance, statutory and operations audit management.", "problem": "Structured planning, evidence, observations, ownership, closure and management visibility.", "capabilities": ["Internal Audit", "Compliance Audit", "Statutory Audit", "Operations Audit", "Findings & action tracking", "Audit reporting"], "users": ["Auditor", "Audit Manager", "Business Owner", "Approver", "Leadership"], "integrations": ["Source / core systems", "Document repository", "Reporting layer"], "workflow": ["Audit plan", "Scope & evidence", "Observation", "Action owner", "Closure", "Management view"], "reports": ["Audit status", "Open findings", "Closure ageing", "Management report"], "pm": ["Discovery & requirement elicitation", "Workflow and role design", "BRD / FRD / FSD", "Acceptance criteria", "Reporting requirements", "UAT & client demo"], "api": "/api/v1/audit/findings", "error": "Finding cannot be closed until mandatory evidence and owner response are captured.", "learning": "Control-heavy products require explicit ownership, evidence and exception paths—not only happy-path screens."}, {"id": "fam", "name": "FAM", "category": "Financial Control", "color": "#8bd8c5", "purpose": "Fixed Assets Management for physical assets across the institution.", "problem": "A structured asset register with lifecycle visibility, categorisation, assignment, tracking and depreciation.", "capabilities": ["Asset registration", "Asset categorisation", "Assignment / tracking", "Depreciation", "Asset history", "Operational reporting"], "users": ["Asset Manager", "Branch / Operations", "Finance", "Approver", "Auditor"], "integrations": ["Finance / accounting data", "GST-related information", "Document repository"], "workflow": ["Register asset", "Classify", "Assign", "Track", "Depreciate", "Report"], "reports": ["Asset register", "Depreciation", "Asset movement", "Category-wise inventory"], "pm": ["Domain modelling", "Data-field definition", "Validation rules", "Role matrix", "Report specification", "Client feedback"], "api": "/api/v1/assets/{asset_id}", "error": "Asset assignment blocked: destination branch and custodian are required.", "learning": "Operational modules become reliable when master data, lifecycle state and ownership are designed together."}, {"id": "gst", "name": "GST", "category": "Financial Control", "color": "#ffd39a", "purpose": "GST-related purchase, calculation, warranty, insurance and reporting workflows.", "problem": "Tax and purchase information needs traceability from source transaction through calculation and reporting.", "capabilities": ["Purchase capture", "GST calculation", "Warranty tracking", "Insurance tracking", "GSTR1B-related extraction", "Reporting"], "users": ["Finance User", "Operations User", "Approver", "Auditor"], "integrations": ["GST portal / external source where applicable", "Finance systems", "FAM"], "workflow": ["Purchase", "Capture tax data", "Validate", "Track warranty / insurance", "Extract", "Report"], "reports": ["GST summary", "Purchase register", "Warranty ageing", "Insurance register"], "pm": ["Requirement elicitation", "Integration mapping", "Validation rules", "Report design", "UAT scenarios"], "api": "/api/v1/gst/transactions", "error": "Tax calculation requires valid tax category and transaction jurisdiction.", "learning": "Financial-control products need traceability from the originating transaction to the reporting output."}, {"id": "los-lms", "name": "LOS–LMS", "category": "Lending & Credit", "color": "#83b9ff", "purpose": "Loan origination and loan management workflows across multiple loan products.", "problem": "Different loan products need common lending controls while retaining product-specific configuration and approval flows.", "capabilities": ["Vehicle loans", "Education loans", "Gold loans", "Staff loans", "Personal loans", "Home loans", "Maker-checker-sanctioner", "Disbursement", "Repayment schedule configuration"], "users": ["Maker", "Checker", "Sanctioner", "Credit", "Operations", "Admin"], "integrations": ["CIBIL", "DMS & CKYC", "Core banking / bank systems", "Payment / collection systems"], "workflow": ["Application", "Checks", "Credit decision", "Sanction", "Disbursement", "Repayment"], "reports": ["Application funnel", "Approval status", "Disbursement status", "Workflow ageing"], "pm": ["Product strategy", "Journey & workflow design", "API / integration requirements", "Business rules", "UAT scenario design", "Client demos"], "api": "/api/v1/loans/applications", "error": "Sanction action unavailable: checker approval is pending.", "learning": "A reusable lending platform needs configurable product rules without losing the controls that make credit workflows auditable."}, {"id": "cms", "name": "CMS", "category": "Payments & Cards", "color": "#ff9fc5", "purpose": "Card management covering personalised and instant cards across major card networks.", "problem": "Card operations require network-aware product configuration, issuance workflows and operational visibility.", "capabilities": ["Personalised cards", "Instant cards", "Card product setup", "RuPay", "Visa", "Mastercard", "NBIN-related issuance context", "Operational reporting"], "users": ["Card Operations", "Maker", "Checker", "Branch User", "Admin"], "integrations": ["NPCI / card ecosystem", "RuPay", "Visa", "Mastercard", "Core banking"], "workflow": ["Request", "Validate", "Network route", "Issue", "Track", "Report"], "reports": ["Issuance status", "Card product summary", "Pending actions", "Operations dashboard"], "pm": ["Integration readiness", "Configuration design", "Exception handling", "API requirements", "Client demos", "UAT"], "api": "/api/v1/cards/requests", "error": "Card request cannot progress: network/product mapping is incomplete.", "learning": "Network-dependent products need configuration, dependency visibility and failure handling as first-class product concerns."}, {"id": "shares", "name": "Shares", "category": "Financial Control", "color": "#a7d8ff", "purpose": "Share and portfolio management with dividend calculation and governance reporting.", "problem": "Share operations need controlled updates, calculations, approvals and reliable management outputs.", "capabilities": ["Share management", "Portfolio management", "Dividend calculation", "Maker-checker", "Board meeting reports", "Operational reporting"], "users": ["Share Manager", "Maker", "Checker", "Finance", "Management"], "integrations": ["Core / finance data", "Document repository", "Reporting layer"], "workflow": ["Capture holding", "Validate", "Calculate", "Approve", "Report", "Board view"], "reports": ["Portfolio summary", "Dividend report", "Shareholding report", "Board meeting pack"], "pm": ["Business-rule mapping", "Workflow controls", "Report specification", "Data validation", "UAT"], "api": "/api/v1/shares/portfolio", "error": "Dividend calculation requires an approved shareholding snapshot.", "learning": "When outputs feed governance forums, calculation integrity and approval lineage become product features."}, {"id": "pm-schemes", "name": "PM Schemes", "category": "Operations", "color": "#9fe3a9", "purpose": "Management of government-launched schemes through configurable operational workflows.", "problem": "Scheme processes evolve and need configurable operational journeys, controls and reporting.", "capabilities": ["Scheme master", "Eligibility / workflow configuration", "Operational tracking", "Status monitoring", "Reports", "User controls"], "users": ["Scheme Operations", "Maker", "Checker", "Branch User", "Admin"], "integrations": ["Bank systems", "Customer / account data", "Reporting layer"], "workflow": ["Scheme setup", "Capture", "Validate", "Process", "Track", "Report"], "reports": ["Scheme status", "Application / beneficiary view", "Pending actions", "Management summary"], "pm": ["Configuration strategy", "Workflow design", "Stakeholder alignment", "Training", "Feedback-driven enhancement"], "api": "/api/v1/schemes", "error": "Scheme processing blocked: mandatory scheme parameters are incomplete.", "learning": "Configuration reduces the need to rebuild the product every time an operational programme changes."}, {"id": "cibil", "name": "CIBIL", "category": "Lending & Credit", "color": "#86c8ff", "purpose": "Credit-information retrieval through API connectivity for lending workflows.", "problem": "Credit decisions depend on timely external credit information and a reliable exception path when the dependency fails.", "capabilities": ["Credit information request", "API connectivity", "Response capture", "Status tracking", "Exception handling", "LOS hand-off"], "users": ["Credit User", "Maker", "Operations", "Admin"], "integrations": ["CIBIL API", "LOS–LMS", "Customer / application data"], "workflow": ["Loan application", "Request credit info", "API response", "Validate", "Attach to decision", "Continue"], "reports": ["Request status", "Response success / failure", "Pending requests", "Credit workflow view"], "pm": ["API requirement definition", "Failure-state design", "Integration testing", "UAT", "Operational readiness"], "api": "/api/v1/credit/cibil/request", "error": "Credit bureau response unavailable. Retry and manual exception handling are required.", "learning": "An integration is not complete when the happy-path API works; timeout, retry, status and recovery are product requirements."}, {"id": "reconciliation", "name": "Reconciliation", "category": "Payments & Cards", "color": "#f4c78e", "purpose": "Transaction reconciliation across AEPS, UPI, Switch, ATM and other transaction streams.", "problem": "Identify matched and unmatched records, manage exceptions and close reconciliation cycles.", "capabilities": ["Transaction ingestion", "Matching / reconciliation", "Exception identification", "Status tracking", "Operational reporting", "Settlement-oriented views"], "users": ["Reconciliation User", "Operations", "Maker", "Checker", "Finance"], "integrations": ["AEPS", "UPI", "Switch", "ATM", "Bank transaction systems"], "workflow": ["Ingest", "Normalise", "Match", "Exception", "Resolve", "Close"], "reports": ["Matched / unmatched", "Exception ageing", "Stream-wise summary", "Daily reconciliation"], "pm": ["Data-flow mapping", "Exception design", "Operational dashboards", "Integration readiness", "UAT"], "api": "/api/v1/reconciliation/transactions", "error": "Record remains unreconciled: source reference and settlement amount differ.", "learning": "Reconciliation is fundamentally an exception-management product; the unresolved queue is as important as the matched count."}, {"id": "aml-kyc", "name": "AML–KYC", "category": "Compliance", "color": "#ffb2a6", "purpose": "Transaction monitoring, rule-based flagging and compliance reporting.", "problem": "Compliance teams need to identify relevant activity, investigate exceptions and produce required reporting with traceability.", "capabilities": ["Transaction monitoring", "Rule-based flagging", "Risk / alert workflow", "CTR reporting", "STR reporting", "NTR reporting", "KYC controls", "Compliance dashboards"], "users": ["Compliance User", "AML Analyst", "Maker", "Checker", "Compliance Manager"], "integrations": ["Transaction sources", "KYC / CKYC", "Bank systems", "Reporting interfaces"], "workflow": ["Transaction", "Rules", "Alert", "Review", "Decision", "Report"], "reports": ["Alerts", "Case ageing", "CTR", "STR", "NTR", "Compliance summary"], "pm": ["Regulatory requirement translation", "Rule / workflow design", "Reporting", "Stakeholder governance", "UAT", "Operational training"], "api": "/api/v1/aml/alerts", "error": "Alert cannot be closed: review disposition and mandatory evidence are missing.", "learning": "Compliance products need traceability: why something was flagged, who reviewed it, what evidence was used and what was reported."}, {"id": "treasury", "name": "Treasury", "category": "Financial Control", "color": "#9ed7ff", "purpose": "Treasury operational workflows supporting BOD and EOD activities.", "problem": "Time-bound treasury activities need clear state transitions, dependencies, controls and closure visibility.", "capabilities": ["BOD activities", "EOD activities", "Operational checklist", "Status tracking", "Exception visibility", "Reporting"], "users": ["Treasury User", "Maker", "Checker", "Treasury Manager", "Admin"], "integrations": ["Core banking / finance systems", "Transaction data", "Reporting layer"], "workflow": ["BOD start", "Validate inputs", "Execute", "Check", "EOD close", "Report"], "reports": ["BOD checklist", "EOD status", "Pending actions", "Treasury summary"], "pm": ["Operational workflow design", "Dependency mapping", "Exception paths", "Release readiness", "Client feedback"], "api": "/api/v1/treasury/eod", "error": "EOD close blocked: a mandatory reconciliation / validation task is still open.", "learning": "Time-bound operational products need strong guardrails before a cycle can be closed."}, {"id": "dms-ckyc", "name": "DMS & CKYC", "category": "Compliance", "color": "#c2b0ff", "purpose": "Document management and CKYC workflows covering OVD, verification, secure storage and CKYC retrieval.", "problem": "KYC processes require complete customer information, authentic documents, controlled access and reliable retrieval.", "capabilities": ["OVD capture", "Customer information", "Document authenticity verification", "Secure storage", "CKYC number retrieval", "Document status"], "users": ["KYC User", "Maker", "Checker", "Compliance", "Admin"], "integrations": ["CKYC", "Customer / account systems", "LOS–LMS", "Document services"], "workflow": ["Capture", "Validate", "Verify", "Store", "Retrieve CKYC", "Share status"], "reports": ["KYC status", "Document completeness", "Verification exceptions", "CKYC lookup status"], "pm": ["Data model", "API integration", "Security considerations", "Edge-case design", "UAT", "Training"], "api": "/api/v1/ckyc/search", "error": "Document rejected: authenticity or mandatory metadata validation failed.", "learning": "Document products need lifecycle, metadata, permissions and verification—not simply file upload."}];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const backdrop=document.getElementById('backdrop');
+function openApp(id,push=true){
+ const a=APPS.find(x=>x.id===id);if(!a)return;
+ document.getElementById('dbadge').textContent=a.name[0];document.getElementById('dbadge').style.background=a.color+'55';
+ document.getElementById('dname').textContent=a.name;document.getElementById('dcat').textContent=a.category+' · Integrated Channels Suite';
+ const capabilities=a.capabilities.map(x=>'<div>'+esc(x)+'</div>').join('');
+ const users=a.users.map(x=>'<div>'+esc(x)+'</div>').join('');
+ const integrations=a.integrations.map(x=>'<div>'+esc(x)+'</div>').join('');
+ const pm=a.pm.map(x=>'<div>'+esc(x)+'</div>').join('');
+ const workflow=a.workflow.map((x,i)=>'<div class="fstep"><b>'+String(i+1).padStart(2,'0')+' · '+esc(x)+'</b><span>State · owner · validation · next action</span></div>').join('');
+ const rows=a.reports.map((x,i)=>'<tr><td>'+esc(x)+'</td><td>'+['Operational monitoring','Management visibility','Exception management','Control / compliance'][i%4]+'</td><td>'+(i%2?'On demand':'Cycle / daily')+'</td></tr>').join('');
+ const api=esc(JSON.stringify({reference_id:"IC-DEMO-001",application:a.name,source_system:"BANK-SOURCE",idempotency_key:"synthetic-key",metadata:{channel:"operations",suite:"integrated-channels"}},null,2));
+ document.getElementById('dbody').innerHTML=`
+ <div class="dhero">
+  <div class="dcard" style="background:var(--lav)"><span class="eyebrow">Product brief</span><h3>${esc(a.purpose)}</h3><p><b>Problem:</b> ${esc(a.problem)}</p><div class="dsection"><div class="dsection-head"><h3>Core capabilities</h3><span>${a.capabilities.length} capabilities</span></div><div class="list2">${capabilities}</div></div></div>
+  <div class="dcard" style="background:var(--mint)"><span class="eyebrow">Users & ecosystem</span><div class="dsection-head"><h3>Primary users</h3></div><div class="list2">${users}</div><div class="dsection"><div class="dsection-head"><h3>Integration landscape</h3></div><div class="list2">${integrations}</div></div></div>
+ </div>
+ <div class="dsection"><div class="dsection-head"><h3>End-to-end workflow</h3><span>Conceptual product journey</span></div><div class="flow">${workflow}</div></div>
+ <div class="dsection"><div class="dsection-head"><h3>Product design lens</h3><span>What had to be designed beyond screens</span></div><div class="journey-grid"><div class="journey-card"><b>Roles & permissions</b><span>Who can create, review, approve, close or view.</span></div><div class="journey-card"><b>Business rules</b><span>Validations, thresholds, mandatory information and state transitions.</span></div><div class="journey-card"><b>Exceptions</b><span>Failure, retry, rejection, duplicate, incomplete and manual handling.</span></div><div class="journey-card"><b>Reporting</b><span>Operational queue, management view, auditability and closure.</span></div></div></div>
+ <div class="dsection"><div class="dsection-head"><h3>Sample reporting view</h3><span>Synthetic · no client data</span></div><div class="report"><div class="report-head"><b>${esc(a.name)} Operations Dashboard</b><span>Illustrative reporting specification</span></div><table><thead><tr><th>Report / widget</th><th>Product purpose</th><th>Cadence</th></tr></thead><tbody>${rows}</tbody></table></div></div>
+ <div class="dsection"><div class="dsection-head"><h3>API / integration thinking</h3><span>Conceptual contract</span></div><div class="api"><span class="method">POST</span> ${esc(a.api)}<br><br>${api}</div><div class="error"><b>Representative guardrail / exception</b><p>${esc(a.error)}</p></div></div>
+ <div class="dsection"><div class="dsection-head"><h3>Product management contribution</h3><span>PM responsibilities applied to this product</span></div><div class="list2">${pm}</div></div>
+ <div class="dsection"><div class="dcard" style="background:var(--peach)"><span class="eyebrow">Product learning</span><p style="font-size:10px;margin-top:5px">${esc(a.learning)}</p></div></div>
+ <div class="dsection"><div class="dcard"><span class="eyebrow">Portfolio artefacts represented</span><div class="list2"><div>Problem statement / use cases</div><div>Workflow & role model</div><div>BRD / FRD / FSD</div><div>Figma / product screens</div><div>DFD / ER / architecture</div><div>API specification</div><div>Acceptance criteria / UAT</div><div>User manual / training</div></div></div></div>`;
+ backdrop.classList.add('open');backdrop.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+ if(push)history.pushState({},'', '#app/'+id);
 }
-function closeAppModal(){
-  modal.classList.remove("open");
-  modal.setAttribute("aria-hidden","true");
-}
-modalClose.addEventListener("click", closeAppModal);
-modal.addEventListener("click", e => { if(e.target === modal) closeAppModal(); });
-document.addEventListener("keydown", e => { if(e.key === "Escape") closeAppModal(); });
+function closeApp(push=true){backdrop.classList.remove('open');backdrop.setAttribute('aria-hidden','true');document.body.style.overflow='';if(push&&location.hash.startsWith('#app/'))history.pushState({},'', '#products')}
+document.querySelectorAll('[data-open]').forEach(el=>el.addEventListener('click',()=>openApp(el.dataset.open)));
+document.getElementById('close').onclick=()=>closeApp();backdrop.addEventListener('click',e=>{if(e.target===backdrop)closeApp()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeApp()});
+const search=document.getElementById('search'),filters=[...document.querySelectorAll('.filter')];let filter='All';
+function applyFilter(){let count=0,q=search.value.toLowerCase().trim();document.querySelectorAll('.app-card').forEach(c=>{let show=(filter==='All'||c.dataset.cat===filter)&&(!q||c.dataset.search.includes(q));c.classList.toggle('hidden',!show);if(show)count++});document.getElementById('empty').classList.toggle('hidden',count>0)}
+search.oninput=applyFilter;filters.forEach(f=>f.onclick=()=>{filters.forEach(x=>x.classList.remove('active'));f.classList.add('active');filter=f.dataset.filter;applyFilter()});
+const reveal=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.07});document.querySelectorAll('.reveal').forEach(x=>reveal.observe(x));
+const sections=[...document.querySelectorAll('main section[id]')],links=[...document.querySelectorAll('nav a')];const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-30% 0px -60% 0px'});sections.forEach(s=>spy.observe(s));
+window.addEventListener('scroll',()=>{let h=document.documentElement;document.getElementById('progress').style.width=((h.scrollTop/(h.scrollHeight-h.clientHeight))*100)+'%'});
+function hash(){if(location.hash.startsWith('#app/'))openApp(location.hash.slice(5),false)}window.addEventListener('popstate',hash);hash();
 
-document.querySelectorAll(".p-app").forEach(card => {
-  const link = card.querySelector(".p-app-link");
-  if(!link) return;
-  const href = link.getAttribute("href") || "";
-  const key = href === "#audit" ? "audit" : href === "#lending" ? "lending" : href === "#cards" ? "cards" : href === "#reconciliation" ? "recon" : href === "#aml" ? "aml" : href === "#treasury" ? "treasury" : href === "#documents" ? "documents" : href === "#fam-detail" ? "fam" : href === "#gst-detail" ? "gst" : href === "#shares-detail" ? "shares" : href === "#pm-detail" ? "schemes" : href === "#cibil-detail" ? "cibil" : null;
-  if(key){
-    link.addEventListener("click", e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute("href"));
-      if(target){ target.scrollIntoView({behavior:"smooth", block:"start"}); }
-      openAppModal(key);
-    });
-  }
-});
-
-/* application filters */
-const filterButtons = document.querySelectorAll(".filter-btn");
-const appCards = document.querySelectorAll(".app-card, .p-app");
-
-filterButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const filter = btn.dataset.filter;
-
-    filterButtons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    appCards.forEach(card => {
-      const category = card.dataset.category;
-      card.classList.toggle("hidden", !(filter === "all" || category === filter));
-    });
-  });
-});
-
-/* scroll-aware section navigation */
-const sections = [...document.querySelectorAll(".module-section")];
-const navLinks = [...document.querySelectorAll(".side-nav a")];
-
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(link => {
-          link.classList.toggle(
-            "active",
-            link.getAttribute("href") === "#" + entry.target.id
-          );
-        });
-      }
-    });
-  },
-  { rootMargin: "-20% 0px -65% 0px", threshold: 0.01 }
-);
-
-sections.forEach(section => observer.observe(section));
-
-/* back-to-top */
-const toTop = document.getElementById("toTop");
-
-window.addEventListener("scroll", () => {
-  toTop.classList.toggle("show", window.scrollY > 500);
-});
-
-toTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+function openContactForm(){document.getElementById('contactModal').classList.add('open');document.getElementById('contactModal').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(()=>document.getElementById('cname').focus(),50)}
+function closeContactForm(){document.getElementById('contactModal').classList.remove('open');document.getElementById('contactModal').setAttribute('aria-hidden','true');document.body.style.overflow=''}
+document.getElementById('contactModal').addEventListener('click',e=>{if(e.target.id==='contactModal')closeContactForm()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeContactForm();closeApp(false)}});
+document.getElementById('contactForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const name=document.getElementById('cname').value.trim(), email=document.getElementById('cemail').value.trim(), subject=document.getElementById('csubject').value.trim(), msg=document.getElementById('cmessage').value.trim();
+ const body=`Hi Manoj,\n\nName: ${name}\nEmail: ${email}\n\n${msg}\n\nSent from your Integrated Channels Suite portfolio.`;
+ window.location.href='mailto:manoj.pant.pm@outlook.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
 });
 </script>
-
-</body>
-</html>
+</body></html>
