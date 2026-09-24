@@ -27,10 +27,10 @@ a{text-decoration:none;color:inherit}button,input{font:inherit}button{cursor:poi
 header{position:fixed;inset:0 0 auto;width:100%;z-index:120;background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.10);box-shadow:0 10px 24px rgba(8,28,51,.18)}
 .head{height:var(--header-h);display:grid;grid-template-columns:210px minmax(620px,1fr) 250px;gap:12px;align-items:center}
 .brand{display:flex;align-items:center;gap:12px;min-width:0}
-.brand-logo{width:42px;height:42px;border-radius:11px;object-fit:cover;border:1px solid rgba(255,255,255,.15);box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.brand-logo{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.72);background:#244f7f;box-shadow:0 4px 12px rgba(0,0,0,.18)}
 .brand-copy{min-width:0}.brand-copy b{display:block;font-size:18px;line-height:1.1;color:#fff;letter-spacing:-.02em}.brand-copy small{display:block;margin-top:5px;color:#c1d2e4;font-size:9px;line-height:1.15;font-weight:900;letter-spacing:.06em;text-transform:uppercase;white-space:normal;overflow:visible;text-overflow:clip}
-#nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:repeat(2,34px);gap:4px;align-items:center;justify-items:end;min-width:0}
-#nav a{height:34px;display:flex;align-items:center;justify-content:flex-end;border-radius:9px;color:#eaf1f7;font-size:11px;font-weight:900;white-space:nowrap;transition:.15s ease;padding:0 9px;min-width:0;text-align:right}
+#nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:repeat(2,34px);gap:2px;align-items:center;justify-items:end;justify-content:end;min-width:0}
+#nav a{height:34px;display:flex;align-items:center;justify-content:flex-end;border-radius:9px;color:#eaf1f7;font-size:11px;font-weight:900;white-space:nowrap;transition:.15s ease;padding:0 6px;min-width:0;text-align:right}
 #nav a:hover,#nav a.active{background:#234f7f;color:#fff}
 .head-actions{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:42px 42px;gap:7px}.head-actions .action-row{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:7px}.head-actions .btn{height:42px}.portfolio-top{grid-column:1/-1}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:auto;padding:10px 14px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);font-size:12px;font-weight:950;transition:.15s ease}
@@ -54,7 +54,8 @@ main{padding-top:var(--header-h)}
 .hero>.wrap{height:calc(100vh - var(--header-h));padding:16px 0 16px;display:flex;flex-direction:column;min-height:0}
 .hero-copy{display:grid;grid-template-columns:1.18fr .82fr;gap:26px;align-items:center;min-height:0;flex:1}
 .kicker{display:inline-flex;align-items:center;gap:9px;padding:7px 11px;border:1px solid #c8def7;border-radius:999px;background:var(--blue-soft);color:#17539c;font-size:11px;font-weight:950;letter-spacing:.11em;text-transform:uppercase}.kicker-m2p{width:34px;height:34px;border-radius:9px;overflow:hidden;flex:none}.kicker-m2p img{width:100%;height:100%;object-fit:contain}
-h1{font-size:clamp(56px,5.2vw,74px);line-height:.91;letter-spacing:-.065em;margin:18px 0 15px;color:#d51f2a;font-weight:950}.lead{font-size:18px;line-height:1.48;color:#42627f;margin:0}.lead strong{color:var(--ink);font-weight:900}.hero-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.safe{margin:10px 0 0;color:#7087a0;font-size:10.5px;line-height:1.35}
+h1{font-size:clamp(56px,5.2vw,74px);line-height:.91;letter-spacing:-.065em;margin:18px 0 15px;color:#d51f2a;font-weight:950}.lead{font-size:18px;line-height:1.48;color:#42627f;margin:0;text-align:justify}.lead strong{color:var(--ink);font-weight:900}.hero-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.safe{margin:10px 0 0;color:#7087a0;font-size:10.5px;line-height:1.35}
+.hero>.wrap>.safe{margin-top:12px;padding:10px 13px;border:1px solid #c7dcef;border-left:4px solid var(--blue);border-radius:10px;background:#eef5ff;color:#365d82;font-size:10.5px;line-height:1.4;text-align:justify}
 .role-card{border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:var(--shadow);padding:18px}.role-top{display:flex;align-items:center;gap:11px}.m2p-mark{width:52px;height:52px;flex:none}.m2p-mark img{width:100%;height:100%}.role-kicker{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#6d84a0;font-weight:950}.role-top h2{margin:3px 0 0;font-size:24px;line-height:1.1;color:var(--ink)}.role-list{display:grid;gap:7px;margin-top:13px}.role-list>div{padding:9px 10px;border:1px solid var(--line);border-radius:11px;background:#fff}.role-list>div:nth-child(1){background:var(--blue-soft)}.role-list>div:nth-child(2){background:var(--lav-soft)}.role-list>div:nth-child(3){background:var(--mint-soft)}.role-list>div:nth-child(4){background:var(--amber-soft)}.role-list b{display:block;color:var(--ink);font-size:12px}.role-list span{display:block;margin-top:2px;color:#54708d;font-size:10.5px;line-height:1.35}
 .quick{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:12px}.stat{background:#fff;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:13px;padding:10px 12px;min-height:66px;display:flex;flex-direction:column;justify-content:center}.stat-purple{border-top-color:var(--lav)}.stat-mint{border-top-color:var(--mint)}.stat-rose{border-top-color:var(--rose)}.stat strong{font-size:25px;line-height:1;color:var(--ink);letter-spacing:-.04em}.stat span{margin-top:4px;font-size:9.5px;line-height:1.2;color:#607891;font-weight:800}
 
@@ -136,7 +137,7 @@ footer{color:var(--ink);background:#fff;border-top:1px solid var(--line)}.footer
 <header>
   <div class="wrap head">
     <a aria-label="Integrated Channels Suite overview" class="brand" href="#overview">
-      <img alt="M2P" class="brand-logo mp-logo" src="/m2p-logo.svg" />
+      <img alt="Manoj Pant" class="brand-logo mp-logo" onerror="this.onerror=null;this.src='/profile/m2p-logo.svg';" src="/profile/profile.jpg" />
       <span class="brand-copy"><b>Manoj Pant</b><small>Senior Product Manager</small></span>
     </a>
     <nav aria-label="Case study sections" id="nav">
@@ -843,7 +844,7 @@ const APPS=[{"id": "audit", "name": "Audit", "category": "Governance & Control",
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
 const backdrop=document.getElementById('backdrop');
 const header=document.querySelector('header');
-document.querySelectorAll('img[alt="M2P"]').forEach(img=>{img.src='/m2p-logo.svg';});
+document.querySelectorAll('img[alt="M2P"]').forEach(img=>{img.src='/profile/m2p-logo.svg';});
 document.getElementById('download-pdf')?.addEventListener('click',e=>{e.preventDefault();window.print();});
 
 function openApp(id,push=true){
