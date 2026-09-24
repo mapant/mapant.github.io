@@ -4,496 +4,418 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Manoj Pant | Senior Product Manager">
     <style>
-        html { scroll-behavior: smooth; }
-        body { margin: 0; background: #f3f7fb; color: #102a4d; font-family: Inter, ui-sans-serif, system-ui, sans-serif; overflow: hidden; }
-        .portfolio-shell { scroll-behavior: smooth; }
-        .slide { height: calc(100vh - 96px); min-height: calc(100vh - 96px); scroll-margin-top: 96px; scroll-snap-align: start; overflow: hidden; display: flex; flex-direction: column; }
-        .slide-content { width: 100%; height: 100%; padding: 24px 36px; display: flex; flex-direction: column; justify-content: space-between; box-sizing: border-box; }
-        .eyebrow { letter-spacing: .22em; font-size: 11px; font-weight: 950; text-transform: uppercase; color: #2468d7; }
-        .gold { color: #b58b43; }
-        .dark { background: #172033; color: #ffffff; }
-        .soft { background: #f7f8fa; }
-        .card { background: white; border: 1px solid #e5e7eb; border-radius: 16px; box-shadow: 0 10px 25px rgba(16,45,82,.06); }
-        .dark-card { background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.13); border-radius: 16px; }
-        .metric { font-variant-numeric: tabular-nums; }
-        .nav-row a { min-height: 34px; display: flex; align-items: center; justify-content: center; text-decoration: none; }
-        @media (max-width: 900px) {
-            .slide-content { padding: 16px 20px; }
+        :root {
+            --navy: #102f55;
+            --navy-2: #163d6a;
+            --ink: #102a4d;
+            --ink-2: #365774;
+            --muted: #627c97;
+            --line: #d8e4ef;
+            --line-2: #e8eff5;
+            --bg: #f3f7fb;
+            --paper: #fff;
+            --blue: #2468d7;
+            --blue-soft: #eaf2ff;
+            --lav: #7658d9;
+            --lav-soft: #f1edff;
+            --mint: #17886f;
+            --mint-soft: #e8f7f2;
+            --amber: #be7615;
+            --amber-soft: #fff2df;
+            --rose: #bb3f76;
+            --rose-soft: #fff0f6;
+            --header-h: 96px;
+            --shadow: 0 12px 30px rgba(22,52,82,.07);
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 10px); }
+        body { margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, sans-serif; overflow: hidden; }
+        
+        /* HEADER */
+        header { position: sticky; top: 0; z-index: 100; background: var(--navy); color: #fff; border-bottom: 1px solid rgba(255,255,255,.10); box-shadow: 0 10px 24px rgba(8,28,51,.18); }
+        .head { height: var(--header-h); display: grid; grid-template-columns: 240px minmax(500px, 1fr) 260px; gap: 16px; align-items: center; width: min(1480px, calc(100% - 48px)); margin: 0 auto; }
+        .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .brand-logo { width: 40px; height: 40px; border-radius: 10px; background: #234f7f; border: 1px solid rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; font-weight: 950; color: #fff; font-size: 13px; }
+        .brand-copy b { display: block; font-size: 17px; line-height: 1.1; color: #fff; }
+        .brand-copy small { display: block; margin-top: 3px; color: #c1d2e4; font-size: 9.5px; font-weight: 900; letter-spacing: .10em; text-transform: uppercase; }
+        
+        #nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: repeat(2, 32px); gap: 6px; align-items: center; }
+        #nav a { height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #eaf1f7; font-size: 11px; font-weight: 900; text-decoration: none; transition: .15s ease; }
+        #nav a:hover, #nav a.active { background: #234f7f; color: #fff; }
+        
+        .head-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 8px 12px; border: 1px solid var(--line); border-radius: 9px; background: #fff; color: var(--ink); font-size: 11.5px; font-weight: 950; text-decoration: none; transition: .15s ease; }
+        .btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
+        .btn.portfolio-top { grid-column: 1/-1; background: #2a5c8d; color: #fff; border-color: #547ca5; }
+
+        /* MAIN SHELL & SLIDE PAGES */
+        .portfolio-shell { scroll-behavior: smooth; height: calc(100vh - var(--header-h)); overflow-y: auto; scroll-snap-type: y mandatory; }
+        .slide-page { height: calc(100vh - var(--header-h)); min-height: calc(100vh - var(--header-h)); display: flex; flex-direction: column; overflow: hidden; border-bottom: 1px solid var(--line-2); scroll-snap-align: start; }
+        .slide-page.white { background: #fff; }
+        .slide-page.soft { background: #f6f9fc; }
+        .slide-page.dark { background: var(--navy); color: #fff; }
+        .slide-page > .wrap { height: 100%; width: min(1480px, calc(100% - 48px)); margin: 0 auto; padding: 16px 0; display: flex; flex-direction: column; justify-content: center; min-height: 0; flex: 1; }
+
+        .eyebrow { font-size: 11px; line-height: 1.15; color: var(--blue); font-weight: 950; letter-spacing: .17em; text-transform: uppercase; }
+        .dark .eyebrow { color: #83b9ff; }
+        .section-head { display: grid; gap: 4px; margin-bottom: 12px; flex: none; }
+        .section-head h2 { margin: 2px 0 0; font-size: 34px; line-height: 1.03; letter-spacing: -.045em; color: var(--ink); font-weight: 950; }
+        .dark .section-head h2 { color: #fff; }
+        .section-head p { margin: 0; color: var(--ink-2); font-size: 14px; line-height: 1.4; }
+        .dark .section-head p { color: #cbd5e1; }
+
+        .card { border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: var(--shadow); padding: 16px; }
+        .dark-card { border: 1px solid rgba(255,255,255,.13); border-radius: 16px; background: rgba(255,255,255,.055); padding: 16px; }
+        
+        @media screen and (max-width: 1180px) {
+            :root { --header-h: 124px; }
+            .head { grid-template-columns: 190px minmax(400px, 1fr) 230px; }
+        }
+        @media screen and (max-width: 900px) {
+            :root { --header-h: 170px; }
             body { overflow: auto; }
-            .slide { height: auto; min-height: calc(100vh - 96px); overflow: visible; }
+            .portfolio-shell { height: auto; overflow-y: visible; scroll-snap-type: none; }
+            .slide-page { height: auto; min-height: calc(100vh - var(--header-h)); overflow: visible; }
+            .head { grid-template-columns: 1fr; height: auto; padding: 10px 0; }
+            .head-actions { width: 100%; }
         }
     </style>
 
-    <!-- HEADER / NAVIGATION ROWS -->
-    <header class="sticky top-0 z-50 h-[96px] dark text-white shadow-lg overflow-hidden">
-        <div class="w-full px-9 py-2.5">
-            <div class="flex items-center justify-between gap-4 mb-2">
-                <div>
-                    <div class="text-[18px] sm:text-[20px] font-black tracking-tight">MANOJ PANT</div>
-                    <div class="text-[10px] sm:text-[11px] text-slate-300 uppercase tracking-[.18em]">Senior Product Manager · Technical Product Management</div>
-                </div>
-                <a href="#contact" class="hidden sm:inline-flex px-4 py-2 rounded-lg border border-[#b58b43] text-[11px] font-black uppercase tracking-wider hover:bg-[#b58b43] transition">Let's Connect</a>
-            </div>
-            <div class="grid grid-cols-5 gap-1.5 text-[9px] sm:text-[10px] font-black uppercase tracking-wider">
-                <a href="#overview" class="rounded-md bg-white/10 hover:bg-[#b58b43] transition text-white">Overview</a>
-                <a href="#story" class="rounded-md bg-white/10 hover:bg-[#b58b43] transition text-white">Product Story</a>
-                <a href="#journey" class="rounded-md bg-white/10 hover:bg-[#b58b43] transition text-white">Journey</a>
-                <a href="#portfolio" class="rounded-md bg-white/10 hover:bg-[#b58b43] transition text-white">Portfolio</a>
-                <a href="#integrated" class="rounded-md bg-white/10 hover:bg-[#b58b43] transition text-white">Integrated Channels</a>
-                <a href="#lifecycle" class="rounded-md bg-white/10 hover:bg-[#b58b43] transition text-white">Lifecycle</a>
-                <a href="#architecture" class="rounded-md bg-white/10 hover:bg-[#b58b43] transition text-white">Architecture</a>
-                <a href="#casestudies" class="rounded-md bg-white/10 hover:bg-[#b58b43] transition text-white">Case Studies</a>
-                <a href="#analytics-ai" class="rounded-md bg-white/10 hover:bg-[#b58b43] transition text-white">Analytics & AI</a>
-                <a href="#contact" class="rounded-md bg-[#b58b43] text-white hover:bg-[#c59a57] transition">Contact</a>
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="head">
+            <a class="brand" href="#overview">
+                <span class="brand-logo">MP</span>
+                <span class="brand-copy"><b>Manoj Pant</b><small>Senior Product Manager</small></span>
+            </a>
+            <nav id="nav">
+                <a href="#overview">Overview</a>
+                <a href="#story">Product Story</a>
+                <a href="#journey">Journey</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#integrated">Integrated Channels</a>
+                <a href="#lifecycle">Lifecycle</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#casestudies">Case Studies</a>
+                <a href="#analytics">Analytics & AI</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="head-actions">
+                <a class="btn primary" href="mailto:manoj.pant.pm@outlook.com">Let's Connect</a>
+                <a class="btn" href="#integrated">Explore Suite →</a>
+                <a class="btn portfolio-top" href="#overview">↑ Back to Top</a>
             </div>
         </div>
     </header>
 
-    <main class="portfolio-shell snap-y snap-mandatory overflow-y-auto h-[calc(100vh-96px)] w-full">
+    <main class="portfolio-shell">
 
         <!-- SLIDE 01 — OVERVIEW -->
-        <section id="overview" class="slide dark">
-            <div class="slide-content">
-                <div class="my-auto w-full grid lg:grid-cols-[1.45fr_.75fr] gap-8 items-center">
+        <section class="slide-page white" id="overview">
+            <div class="wrap">
+                <div style="display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; align-items: center;">
                     <div>
-                        <div class="gold text-[11px] font-black eyebrow uppercase mb-3">Senior Product Manager · Enterprise Product Leadership</div>
-                        <h1 class="text-[36px] sm:text-[50px] xl:text-[60px] leading-[1.0] font-black tracking-tight">
-                            Building enterprise products from problem to measurable impact.
+                        <span class="eyebrow">Senior Product Manager · Enterprise Product Leadership</span>
+                        <h1 style="font-size: clamp(42px, 4.5vw, 64px); line-height: .95; letter-spacing: -.05em; margin: 12px 0; font-weight: 950; color: var(--ink);">
+                            Building enterprise products from problem to impact.
                         </h1>
-                        <p class="mt-4 text-[14px] sm:text-[16px] leading-relaxed text-slate-300 max-w-[1000px]">
+                        <p style="font-size: 16px; line-height: 1.45; color: var(--ink-2); margin: 0;">
                             10+ years across FinTech, Telecom, HealthTech and Enterprise IT, combining product strategy, business analysis, technical solutioning, data & analytics, workflow automation and Agile delivery.
                         </p>
-                        <div class="mt-6 flex flex-wrap gap-2">
-                            <span class="px-3 py-1.5 rounded-lg bg-white/8 border border-white/10 text-[11px] font-bold">Product Strategy</span>
-                            <span class="px-3 py-1.5 rounded-lg bg-white/8 border border-white/10 text-[11px] font-bold">Enterprise SaaS</span>
-                            <span class="px-3 py-1.5 rounded-lg bg-white/8 border border-white/10 text-[11px] font-bold">Technical PM</span>
-                            <span class="px-3 py-1.5 rounded-lg bg-white/8 border border-white/10 text-[11px] font-bold">Data & Analytics</span>
-                            <span class="px-3 py-1.5 rounded-lg bg-white/8 border border-white/10 text-[11px] font-bold">AI / Automation</span>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;">
+                            <span class="btn" style="background: var(--blue-soft); color: var(--blue); border-color: #c8def7;">Product Strategy</span>
+                            <span class="btn" style="background: var(--lav-soft); color: var(--lav); border-color: #dcd0ff;">Enterprise SaaS</span>
+                            <span class="btn" style="background: var(--mint-soft); color: var(--mint); border-color: #bfeade;">Technical PM</span>
+                            <span class="btn" style="background: var(--amber-soft); color: var(--amber); border-color: #f7dec0;">Data & Analytics</span>
                         </div>
                     </div>
-
-                    <div class="dark-card p-6">
-                        <div class="text-[11px] uppercase tracking-[.18em] text-slate-400 font-black mb-3">Product Profile</div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <div class="border-t border-white/10 pt-3">
-                                <div class="metric text-[26px] font-black">10+</div>
-                                <div class="text-[10px] uppercase tracking-wider text-slate-400">Years</div>
+                    <div class="card" style="border-top: 5px solid var(--blue);">
+                        <span class="eyebrow">Product Profile</span>
+                        <h2 style="font-size: 22px; margin: 6px 0 14px; color: var(--ink);">At a Glance</h2>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                            <div style="background: #f8fbff; padding: 12px; border-radius: 12px; border: 1px solid var(--line);">
+                                <strong style="font-size: 26px; line-height: 1; color: var(--ink);">10+</strong>
+                                <span style="display: block; font-size: 10px; color: var(--muted); font-weight: 800; margin-top: 3px; text-transform: uppercase;">Years Experience</span>
                             </div>
-                            <div class="border-t border-white/10 pt-3">
-                                <div class="metric text-[26px] font-black">4</div>
-                                <div class="text-[10px] uppercase tracking-wider text-slate-400">Industries</div>
+                            <div style="background: #f8fbff; padding: 12px; border-radius: 12px; border: 1px solid var(--line);">
+                                <strong style="font-size: 26px; line-height: 1; color: var(--ink);">4</strong>
+                                <span style="display: block; font-size: 10px; color: var(--muted); font-weight: 800; margin-top: 3px; text-transform: uppercase;">Industries</span>
                             </div>
-                            <div class="border-t border-white/10 pt-3">
-                                <div class="metric text-[26px] font-black">12+</div>
-                                <div class="text-[10px] uppercase tracking-wider text-slate-400">Enterprise Apps</div>
+                            <div style="background: #f8fbff; padding: 12px; border-radius: 12px; border: 1px solid var(--line);">
+                                <strong style="font-size: 26px; line-height: 1; color: var(--ink);">12+</strong>
+                                <span style="display: block; font-size: 10px; color: var(--muted); font-weight: 800; margin-top: 3px; text-transform: uppercase;">Enterprise Apps</span>
                             </div>
-                            <div class="border-t border-white/10 pt-3">
-                                <div class="metric text-[26px] font-black">0→1</div>
-                                <div class="text-[10px] uppercase tracking-wider text-slate-400">Products</div>
+                            <div style="background: #f8fbff; padding: 12px; border-radius: 12px; border: 1px solid var(--line);">
+                                <strong style="font-size: 26px; line-height: 1; color: var(--ink);">0→1</strong>
+                                <span style="display: block; font-size: 10px; color: var(--muted); font-weight: 800; margin-top: 3px; text-transform: uppercase;">Product Discovery</span>
                             </div>
-                        </div>
-                        <div class="mt-4 pt-3 border-t border-white/10 text-[11.5px] leading-relaxed text-slate-300">
-                            <strong class="text-white">Core strength:</strong> translating complex business problems into structured product requirements, scalable workflows, technical designs and measurable outcomes.
                         </div>
                     </div>
-                </div>
-                <div class="pt-3 border-t border-white/10 flex justify-between text-[10px] uppercase tracking-[.18em] text-slate-400">
-                    <span>01 / Overview</span><a href="#story" class="hover:text-white transition">Next: Product Story →</a>
                 </div>
             </div>
         </section>
 
         <!-- SLIDE 02 — PRODUCT STORY -->
-        <section id="story" class="slide soft">
-            <div class="slide-content">
-                <div class="my-auto w-full">
-                    <div class="gold text-[11px] font-black eyebrow uppercase">Product Story</div>
-                    <h2 class="text-[30px] sm:text-[40px] font-black text-[#111827] tracking-tight mt-1">A product career built in layers.</h2>
-                    <p class="mt-2 text-[13px] sm:text-[14px] text-slate-600 max-w-[1050px] leading-relaxed">
-                        The progression is not a jump from analytics into product management. It is a continuous build-up of analytical thinking, business analysis, technical understanding, stakeholder leadership and product ownership.
-                    </p>
-
-                    <div class="mt-5 grid md:grid-cols-4 gap-4">
-                        <div class="card p-4">
-                            <div class="gold text-[10px] font-black uppercase tracking-wider">01 · Foundation</div>
-                            <h3 class="mt-1.5 text-[17px] font-black">Data & Analytics</h3>
-                            <p class="mt-1.5 text-[11.5px] text-slate-600 leading-relaxed">SQL, Power BI, Tableau, KPI frameworks, reporting automation, data validation and operational insights.</p>
-                        </div>
-                        <div class="card p-4">
-                            <div class="gold text-[10px] font-black uppercase tracking-wider">02 · Problem Solving</div>
-                            <h3 class="mt-1.5 text-[17px] font-black">Business Analysis</h3>
-                            <p class="mt-1.5 text-[11.5px] text-slate-600 leading-relaxed">Requirement elicitation, BRD/FRD, process mapping, gap analysis, business cases and stakeholder workshops.</p>
-                        </div>
-                        <div class="card p-4">
-                            <div class="gold text-[10px] font-black uppercase tracking-wider">03 · Product Ownership</div>
-                            <h3 class="mt-1.5 text-[17px] font-black">Product Management</h3>
-                            <p class="mt-1.5 text-[11.5px] text-slate-600 leading-relaxed">Discovery, roadmap, prioritization, PRD, user stories, acceptance criteria, UAT, releases and adoption.</p>
-                        </div>
-                        <div class="card p-4">
-                            <div class="gold text-[10px] font-black uppercase tracking-wider">04 · Enterprise Leadership</div>
-                            <h3 class="mt-1.5 text-[17px] font-black">Technical PM</h3>
-                            <p class="mt-1.5 text-[11.5px] text-slate-600 leading-relaxed">APIs, integrations, DFDs, ER mapping, architecture collaboration, regulated workflows and multi-client delivery.</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 grid md:grid-cols-3 gap-3">
-                        <div class="dark p-3.5 rounded-xl text-white">
-                            <div class="text-[10px] uppercase tracking-wider text-slate-400">Think</div>
-                            <div class="mt-1 text-[14px] font-black">Data + Customer + Business</div>
-                        </div>
-                        <div class="dark p-3.5 rounded-xl text-white">
-                            <div class="text-[10px] uppercase tracking-wider text-slate-400">Design</div>
-                            <div class="mt-1 text-[14px] font-black">Workflow + Technology + Experience</div>
-                        </div>
-                        <div class="dark p-3.5 rounded-xl text-white">
-                            <div class="text-[10px] uppercase tracking-wider text-slate-400">Deliver</div>
-                            <div class="mt-1 text-[14px] font-black">Agile + Governance + Measurable Impact</div>
-                        </div>
-                    </div>
+        <section class="slide-page soft" id="story">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">02 · Product Story</span>
+                    <h2>A product career built in layers.</h2>
+                    <p>The progression is not a jump from analytics into product management, but a continuous build-up of analytical thinking, business analysis, technical understanding, and product ownership.</p>
                 </div>
-                <div class="pt-3 border-t border-gray-200 flex justify-between text-[10px] uppercase tracking-[.18em] text-slate-400">
-                    <a href="#overview" class="hover:text-slate-800 transition">← Prev</a><span>02 / Product Story</span><a href="#journey" class="hover:text-slate-800 transition">Next →</a>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                    <div class="card" style="border-left: 4px solid var(--blue);">
+                        <span class="eyebrow">01 · Foundation</span>
+                        <h3 style="font-size: 17px; margin: 6px 0 4px;">Data & Analytics</h3>
+                        <p style="font-size: 12px; color: var(--ink-2); margin: 0;">SQL, Power BI, Tableau, KPI frameworks, reporting automation, and operational insights.</p>
+                    </div>
+                    <div class="card" style="border-left: 4px solid var(--lav);">
+                        <span class="eyebrow">02 · Problem Solving</span>
+                        <h3 style="font-size: 17px; margin: 6px 0 4px;">Business Analysis</h3>
+                        <p style="font-size: 12px; color: var(--ink-2); margin: 0;">Requirement elicitation, BRD/FRD, process mapping, gap analysis, and business cases.</p>
+                    </div>
+                    <div class="card" style="border-left: 4px solid var(--mint);">
+                        <span class="eyebrow">03 · Product Ownership</span>
+                        <h3 style="font-size: 17px; margin: 6px 0 4px;">Product Management</h3>
+                        <p style="font-size: 12px; color: var(--ink-2); margin: 0;">Discovery, roadmaps, prioritization, PRDs, user stories, acceptance criteria, and UAT.</p>
+                    </div>
+                    <div class="card" style="border-left: 4px solid var(--amber);">
+                        <span class="eyebrow">04 · Enterprise Leadership</span>
+                        <h3 style="font-size: 17px; margin: 6px 0 4px;">Technical PM</h3>
+                        <p style="font-size: 12px; color: var(--ink-2); margin: 0;">APIs, integrations, DFDs, ER mapping, architecture collaboration, and regulated workflows.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 03 — JOURNEY -->
-        <section id="journey" class="slide bg-white">
-            <div class="slide-content">
-                <div class="my-auto w-full">
-                    <div class="gold text-[11px] font-black eyebrow uppercase">Career Journey</div>
-                    <h2 class="text-[30px] sm:text-[40px] font-black text-[#111827] tracking-tight mt-1">From reporting and analytics to enterprise product leadership.</h2>
-
-                    <div class="mt-5 grid md:grid-cols-4 gap-4">
-                        <article class="card p-4 border-t-4 border-t-[#b58b43]">
-                            <div class="text-[10px] font-black gold uppercase tracking-wider">2016–2019</div>
-                            <h3 class="mt-1.5 text-[18px] font-black">Nokia Networks</h3>
-                            <div class="text-[11px] font-bold text-slate-500 mt-0.5">Reporting Analyst</div>
-                            <ul class="mt-2.5 space-y-1 text-[11.5px] text-slate-600">
-                                <li>• Power BI / Tableau / SQL</li>
-                                <li>• KPI & executive reporting</li>
-                                <li>• Reporting automation</li>
-                                <li>• Operational analytics</li>
-                            </ul>
-                        </article>
-                        <article class="card p-4 border-t-4 border-t-[#b58b43]">
-                            <div class="text-[10px] font-black gold uppercase tracking-wider">2019–2023</div>
-                            <h3 class="mt-1.5 text-[18px] font-black">Nokia Networks</h3>
-                            <div class="text-[11px] font-bold text-slate-500 mt-0.5">Business Analyst</div>
-                            <ul class="mt-2.5 space-y-1 text-[11.5px] text-slate-600">
-                                <li>• BRD / FRD / process flows</li>
-                                <li>• Requirement analysis</li>
-                                <li>• Business cases & KPIs</li>
-                                <li>• Agile enterprise programs</li>
-                            </ul>
-                        </article>
-                        <article class="card p-4 border-t-4 border-t-[#b58b43]">
-                            <div class="text-[10px] font-black gold uppercase tracking-wider">2023–2024</div>
-                            <h3 class="mt-1.5 text-[18px] font-black">Ayu Health</h3>
-                            <div class="text-[11px] font-bold text-slate-500 mt-0.5">Product Manager</div>
-                            <ul class="mt-2.5 space-y-1 text-[11.5px] text-slate-600">
-                                <li>• 0→1 Ayu DocConnect</li>
-                                <li>• Doctor onboarding</li>
-                                <li>• Payout automation</li>
-                                <li>• Adoption & workflow optimization</li>
-                            </ul>
-                        </article>
-                        <article class="card p-4 border-t-4 border-t-[#b58b43]">
-                            <div class="text-[10px] font-black gold uppercase tracking-wider">2024–2026</div>
-                            <h3 class="mt-1.5 text-[18px] font-black">Phoneme → M2P</h3>
-                            <div class="text-[11px] font-bold text-slate-500 mt-0.5">Product Manager → Senior PM</div>
-                            <ul class="mt-2.5 space-y-1 text-[11.5px] text-slate-600">
-                                <li>• Enterprise platforms</li>
-                                <li>• Lending / payments / AML</li>
-                                <li>• APIs & integrations</li>
-                                <li>• Multi-client product delivery</li>
-                            </ul>
-                        </article>
-                    </div>
-
-                    <div class="mt-4 p-3.5 rounded-xl bg-[#172033] text-white flex flex-wrap items-center justify-between gap-3">
-                        <div>
-                            <span class="gold text-[10px] uppercase tracking-wider font-black">Career pattern</span>
-                            <div class="text-[14px] font-black mt-0.5">Data → Analysis → Product → Technical Product Leadership</div>
-                        </div>
-                        <div class="text-[11.5px] text-slate-300">Analytics foundation remains a product advantage.</div>
-                    </div>
+        <!-- SLIDE 03 — CAREER JOURNEY -->
+        <section class="slide-page white" id="journey">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">03 · Career Journey</span>
+                    <h2>A career built across data, technology and products.</h2>
+                    <p>From reporting and analytics to enterprise product leadership across top organizations.</p>
                 </div>
-                <div class="pt-3 border-t border-gray-200 flex justify-between text-[10px] uppercase tracking-[.18em] text-slate-400">
-                    <a href="#story" class="hover:text-slate-800 transition">← Prev</a><span>03 / Journey</span><a href="#portfolio" class="hover:text-slate-800 transition">Next →</a>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                    <div class="card" style="border-top: 4px solid var(--blue);">
+                        <span class="eyebrow">2016 – 2023</span>
+                        <h3 style="font-size: 18px; margin: 6px 0 2px;">Nokia Networks</h3>
+                        <span style="font-size: 11px; font-weight: 800; color: var(--muted);">Reporting Analyst → Business Analyst</span>
+                        <p style="font-size: 11.5px; color: var(--ink-2); margin: 8px 0 0;">Power BI, Tableau, SQL, requirements, business cases, KPI frameworks and telecom enterprise programs.</p>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--lav);">
+                        <span class="eyebrow">2023 – 2024</span>
+                        <h3 style="font-size: 18px; margin: 6px 0 2px;">Ayu Health</h3>
+                        <span style="font-size: 11px; font-weight: 800; color: var(--muted);">Product Manager</span>
+                        <p style="font-size: 11.5px; color: var(--ink-2); margin: 8px 0 0;">Product Management across healthcare workflows, provider products, CRM, automation and 0→1 product development.</p>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--mint);">
+                        <span class="eyebrow">2024</span>
+                        <h3 style="font-size: 18px; margin: 6px 0 2px;">Phoneme Solutions</h3>
+                        <span style="font-size: 11px; font-weight: 800; color: var(--muted);">Product Manager</span>
+                        <p style="font-size: 11.5px; color: var(--ink-2); margin: 8px 0 0;">Product requirements, workflow optimization, CRM-enabled healthcare claims and AI-powered OCR enhancements.</p>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--amber);">
+                        <span class="eyebrow">2024 – 2026</span>
+                        <h3 style="font-size: 18px; margin: 6px 0 2px;">M2P Solutions</h3>
+                        <span style="font-size: 11px; font-weight: 800; color: var(--muted);">Senior Product Manager</span>
+                        <p style="font-size: 11.5px; color: var(--ink-2); margin: 8px 0 0;">Senior Product Manager across enterprise banking, payments, lending, automation, AI and scalable digital platforms.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- SLIDE 04 — PORTFOLIO MAP -->
-        <section id="portfolio" class="slide soft">
-            <div class="slide-content">
-                <div class="my-auto w-full">
-                    <div class="gold text-[11px] font-black eyebrow uppercase">Product Portfolio</div>
-                    <h2 class="text-[30px] sm:text-[40px] font-black text-[#111827] mt-1">Products across enterprise platforms, healthcare and analytics.</h2>
-                    <p class="mt-1.5 text-[13.5px] text-slate-600">A portfolio view before going deep into individual case studies.</p>
-
-                    <div class="mt-5 grid lg:grid-cols-3 gap-4">
-                        <div class="dark text-white rounded-2xl p-5 flex flex-col justify-between">
-                            <div>
-                                <div class="gold text-[10px] font-black uppercase tracking-wider">FinTech · Enterprise</div>
-                                <h3 class="text-[20px] font-black mt-1.5">Integrated Channels Suite</h3>
-                                <p class="text-[11.5px] text-slate-300 mt-2 leading-relaxed">Multi-module banking ecosystem covering lending, AML/KYC, reconciliation, treasury, documents, audit and adjacent banking workflows.</p>
-                            </div>
-                            <div class="mt-4 flex flex-wrap gap-1.5">
-                                <span class="dark-card px-2 py-1 text-[10px]">LOS/LMS</span><span class="dark-card px-2 py-1 text-[10px]">AML/KYC</span><span class="dark-card px-2 py-1 text-[10px]">Reconciliation</span><span class="dark-card px-2 py-1 text-[10px]">Treasury</span>
-                            </div>
-                        </div>
-                        <div class="card p-5 flex flex-col justify-between">
-                            <div>
-                                <div class="gold text-[10px] font-black uppercase tracking-wider">HealthTech · 0→1</div>
-                                <h3 class="text-[20px] font-black mt-1.5">Ayu DocConnect</h3>
-                                <p class="text-[11.5px] text-slate-600 mt-2 leading-relaxed">Doctor onboarding, treatment workflows, engagement and payout operations across hospital networks.</p>
-                            </div>
-                            <div class="mt-4 grid grid-cols-2 gap-2">
-                                <div class="bg-slate-50 rounded-lg p-2.5"><b class="text-[16px]">40→75%</b><div class="text-[9px] uppercase text-slate-500">Adoption</div></div>
-                                <div class="bg-slate-50 rounded-lg p-2.5"><b class="text-[16px]">10→2</b><div class="text-[9px] uppercase text-slate-500">Days TAT</div></div>
-                            </div>
-                        </div>
-                        <div class="card p-5 flex flex-col justify-between">
-                            <div>
-                                <div class="gold text-[10px] font-black uppercase tracking-wider">Telecom · Analytics</div>
-                                <h3 class="text-[20px] font-black mt-1.5">Enterprise Insights</h3>
-                                <p class="text-[11.5px] text-slate-600 mt-2 leading-relaxed">Power BI, Tableau and SQL-driven reporting, KPI frameworks, financial tracking, workflow analytics and operational decision support.</p>
-                            </div>
-                            <div class="mt-4 flex flex-wrap gap-1.5">
-                                <span class="bg-slate-100 px-2 py-1 rounded text-[10px]">Power BI</span><span class="bg-slate-100 px-2 py-1 rounded text-[10px]">SQL</span><span class="bg-slate-100 px-2 py-1 rounded text-[10px]">KPIs</span><span class="bg-slate-100 px-2 py-1 rounded text-[10px]">Automation</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 grid grid-cols-2 md:grid-cols-5 gap-3">
-                        <div class="card p-3 text-center"><b class="text-[12px]">LOS–LMS</b><div class="text-[9px] text-slate-500 mt-0.5">Lending</div></div>
-                        <div class="card p-3 text-center"><b class="text-[12px]">UPI Collections</b><div class="text-[9px] text-slate-500 mt-0.5">Payments</div></div>
-                        <div class="card p-3 text-center"><b class="text-[12px]">AML/KYC</b><div class="text-[9px] text-slate-500 mt-0.5">Financial Crime</div></div>
-                        <div class="card p-3 text-center"><b class="text-[12px]">CKYC/DMS</b><div class="text-[9px] text-slate-500 mt-0.5">Onboarding</div></div>
-                        <div class="card p-3 text-center"><b class="text-[12px]">Payout Automation</b><div class="text-[9px] text-slate-500 mt-0.5">Workflow</div></div>
-                    </div>
+        <section class="slide-page soft" id="portfolio">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">04 · Selected Product Work</span>
+                    <h2>Product & platform case studies.</h2>
+                    <p>Selected work spanning enterprise SaaS, digital banking, payments, healthcare, telecom analytics and workflow automation.</p>
                 </div>
-                <div class="pt-3 border-t border-gray-200 flex justify-between text-[10px] uppercase tracking-[.18em] text-slate-400">
-                    <a href="#journey" class="hover:text-slate-800 transition">← Prev</a><span>04 / Portfolio</span><a href="#integrated" class="hover:text-slate-800 transition">Next →</a>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+                    <div class="card" style="display: flex; flex-direction: column; justify-content: between;">
+                        <div>
+                            <span class="eyebrow">FinTech · Enterprise Platforms</span>
+                            <h3 style="font-size: 20px; margin: 6px 0 8px;">Integrated Channels Suite</h3>
+                            <p style="font-size: 12.5px; color: var(--ink-2); margin: 0;">Digital banking platform integrating 12+ enterprise applications using API-first architecture and configurable workflows.</p>
+                        </div>
+                        <div style="margin-top: 16px;">
+                            <a class="btn primary" href="#integrated" style="width: 100%;">View Case Study →</a>
+                        </div>
+                    </div>
+                    <div class="card" style="display: flex; flex-direction: column; justify-content: between;">
+                        <div>
+                            <span class="eyebrow">HealthTech · 0→1 Product</span>
+                            <h3 style="font-size: 20px; margin: 6px 0 8px;">Ayu DocConnect</h3>
+                            <p style="font-size: 12.5px; color: var(--ink-2); margin: 0;">Cloud-enabled doctor workflow and engagement platform covering onboarding, treatment operations, and payout automation.</p>
+                        </div>
+                        <div style="margin-top: 16px;">
+                            <span class="btn" style="width: 100%; color: var(--muted); background: #f8fafc;">Case study overview</span>
+                        </div>
+                    </div>
+                    <div class="card" style="display: flex; flex-direction: column; justify-content: between;">
+                        <div>
+                            <span class="eyebrow">Telecom Analytics</span>
+                            <h3 style="font-size: 20px; margin: 6px 0 8px;">Enterprise Insights</h3>
+                            <p style="font-size: 12.5px; color: var(--ink-2); margin: 0;">Power BI, Tableau and SQL-driven reporting, KPI frameworks, financial tracking, and operational decision support.</p>
+                        </div>
+                        <div style="margin-top: 16px;">
+                            <span class="btn" style="width: 100%; color: var(--muted); background: #f8fafc;">Case study overview</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- SLIDE 05 — INTEGRATED CHANNELS -->
-        <section id="integrated" class="slide dark">
-            <div class="slide-content">
-                <div class="my-auto w-full">
-                    <div class="gold text-[11px] font-black eyebrow uppercase">Flagship Product · M2P</div>
-                    <div class="flex flex-wrap items-end justify-between gap-3 mt-1">
-                        <h2 class="text-[30px] sm:text-[42px] font-black tracking-tight">Integrated Channels Suite</h2>
-                        <span class="px-3 py-1.5 rounded-lg border border-[#b58b43] text-[10px] uppercase tracking-wider font-black">Enterprise Banking Platform</span>
-                    </div>
-
-                    <div class="mt-5 grid lg:grid-cols-[1.1fr_1fr] gap-5 items-center">
-                        <div>
-                            <div class="text-[11.5px] uppercase tracking-wider text-slate-400 font-black">Product challenge</div>
-                            <p class="mt-1.5 text-[14px] leading-relaxed text-slate-200">
-                                Banking organizations operate across multiple workflows, systems, regulatory controls and external integrations. The product approach was to provide configurable domain applications with shared patterns and integration-ready capabilities rather than isolated point solutions.
-                            </p>
-
-                            <div class="mt-4 grid grid-cols-3 gap-2">
-                                <div class="dark-card p-2.5"><b class="text-[16px]">12+</b><div class="text-[9px] text-slate-400 uppercase">Applications</div></div>
-                                <div class="dark-card p-2.5"><b class="text-[16px]">Banks</b><div class="text-[9px] text-slate-400 uppercase">& NBFCs</div></div>
-                                <div class="dark-card p-2.5"><b class="text-[16px]">API</b><div class="text-[9px] text-slate-400 uppercase">Integration</div></div>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-3 gap-2 text-[10px]">
-                            <div class="dark-card p-2.5"><b>LOS</b><div class="text-slate-400 mt-0.5">Origination</div></div>
-                            <div class="dark-card p-2.5"><b>LMS</b><div class="text-slate-400 mt-0.5">Management</div></div>
-                            <div class="dark-card p-2.5"><b>AML/KYC</b><div class="text-slate-400 mt-0.5">Compliance</div></div>
-                            <div class="dark-card p-2.5"><b>CKYC</b><div class="text-slate-400 mt-0.5">Identity</div></div>
-                            <div class="dark-card p-2.5"><b>DMS</b><div class="text-slate-400 mt-0.5">Documents</div></div>
-                            <div class="dark-card p-2.5"><b>Reconciliation</b><div class="text-slate-400 mt-0.5">Controls</div></div>
-                            <div class="dark-card p-2.5"><b>Treasury</b><div class="text-slate-400 mt-0.5">Liquidity</div></div>
-                            <div class="dark-card p-2.5"><b>GST</b><div class="text-slate-400 mt-0.5">Tax workflow</div></div>
-                            <div class="dark-card p-2.5"><b>Audit</b><div class="text-slate-400 mt-0.5">Governance</div></div>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 p-3.5 rounded-xl bg-white/5 border border-white/10">
-                        <div class="text-[10px] uppercase tracking-wider text-slate-400 font-black">Product proposition</div>
-                        <div class="mt-0.5 text-[14px] font-black">Configurable workflows + API-driven integrations + domain applications + enterprise governance</div>
-                    </div>
+        <section class="slide-page dark" id="integrated">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">05 · Flagship Product (M2P)</span>
+                    <h2>Integrated Channels Suite</h2>
+                    <p>Digital banking platform integrating 12+ enterprise applications using API-first architecture.</p>
                 </div>
-                <div class="pt-3 border-t border-white/10 flex justify-between text-[10px] uppercase tracking-[.18em] text-slate-400">
-                    <a href="#portfolio" class="hover:text-white transition">← Prev</a><span>05 / Integrated Channels</span><a href="#lifecycle" class="hover:text-white transition">Next →</a>
+                <div style="display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; align-items: center;">
+                    <div>
+                        <p style="font-size: 14.5px; line-height: 1.5; color: #cbd5e1; margin: 0;">
+                            Banking organizations operate across multiple workflows, systems, regulatory controls and external integrations. The product approach was to provide configurable domain applications with shared patterns and integration-ready capabilities rather than isolated point solutions.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px;">
+                            <div class="dark-card" style="padding: 12px;"><strong style="font-size: 20px;">12+</strong><span style="display: block; font-size: 9.5px; color: #94a3b8; text-transform: uppercase; margin-top: 2px;">Applications</span></div>
+                            <div class="dark-card" style="padding: 12px;"><strong style="font-size: 20px;">Banks</strong><span style="display: block; font-size: 9.5px; color: #94a3b8; text-transform: uppercase; margin-top: 2px;">& NBFCs</span></div>
+                            <div class="dark-card" style="padding: 12px;"><strong style="font-size: 20px;">API-First</strong><span style="display: block; font-size: 9.5px; color: #94a3b8; text-transform: uppercase; margin-top: 2px;">Architecture</span></div>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+                        <div class="dark-card" style="padding: 10px; text-align: center;"><b style="font-size: 12px;">LOS / LMS</b><div style="font-size: 9px; color: #94a3b8; margin-top: 2px;">Origination</div></div>
+                        <div class="dark-card" style="padding: 10px; text-align: center;"><b style="font-size: 12px;">AML / KYC</b><div style="font-size: 9px; color: #94a3b8; margin-top: 2px;">Compliance</div></div>
+                        <div class="dark-card" style="padding: 10px; text-align: center;"><b style="font-size: 12px;">Reconciliation</b><div style="font-size: 9px; color: #94a3b8; margin-top: 2px;">Controls</div></div>
+                        <div class="dark-card" style="padding: 10px; text-align: center;"><b style="font-size: 12px;">CKYC & DMS</b><div style="font-size: 9px; color: #94a3b8; margin-top: 2px;">Documents</div></div>
+                        <div class="dark-card" style="padding: 10px; text-align: center;"><b style="font-size: 12px;">Treasury</b><div style="font-size: 9px; color: #94a3b8; margin-top: 2px;">Liquidity</div></div>
+                        <div class="dark-card" style="padding: 10px; text-align: center;"><b style="font-size: 12px;">Audit</b><div style="font-size: 9px; color: #94a3b8; margin-top: 2px;">Governance</div></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 06 — PRODUCT LIFECYCLE -->
-        <section id="lifecycle" class="slide soft">
-            <div class="slide-content">
-                <div class="my-auto w-full">
-                    <div class="gold text-[11px] font-black eyebrow uppercase">Product Lifecycle</div>
-                    <h2 class="text-[30px] sm:text-[40px] font-black tracking-tight text-[#111827] mt-1">From problem discovery to production adoption.</h2>
-
-                    <div class="mt-5 grid grid-cols-2 lg:grid-cols-4 gap-3">
-                        <div class="card p-3.5"><span class="gold font-black text-[10px]">01</span><h3 class="font-black mt-0.5 text-[14px]">Discover</h3><p class="text-[11px] text-slate-600 mt-1">Stakeholder interviews, workshops, current-state mapping, pain points and objectives.</p></div>
-                        <div class="card p-3.5"><span class="gold font-black text-[10px]">02</span><h3 class="font-black mt-0.5 text-[14px]">Define</h3><p class="text-[11px] text-slate-600 mt-1">Problem statement, scope, BRD/PRD, use cases, user stories and acceptance criteria.</p></div>
-                        <div class="card p-3.5"><span class="gold font-black text-[10px]">03</span><h3 class="font-black mt-0.5 text-[14px]">Prioritize</h3><p class="text-[11px] text-slate-600 mt-1">Business value, urgency, risk, dependencies, effort and roadmap sequencing.</p></div>
-                        <div class="card p-3.5"><span class="gold font-black text-[10px]">04</span><h3 class="font-black mt-0.5 text-[14px]">Design</h3><p class="text-[11px] text-slate-600 mt-1">Figma, process flows, DFD, ER mapping, API specifications and workflow rules.</p></div>
-                        <div class="card p-3.5"><span class="gold font-black text-[10px]">05</span><h3 class="font-black mt-0.5 text-[14px]">Build</h3><p class="text-[11px] text-slate-600 mt-1">Backlog, sprint planning, engineering collaboration, QA and dependency management.</p></div>
-                        <div class="card p-3.5"><span class="gold font-black text-[10px]">06</span><h3 class="font-black mt-0.5 text-[14px]">Validate</h3><p class="text-[11px] text-slate-600 mt-1">UAT, business validation, defect triage, compliance checks and stakeholder demos.</p></div>
-                        <div class="card p-3.5"><span class="gold font-black text-[10px]">07</span><h3 class="font-black mt-0.5 text-[14px]">Launch</h3><p class="text-[11px] text-slate-600 mt-1">Deployment, migration, training, manuals, rollout planning and production readiness.</p></div>
-                        <div class="card p-3.5"><span class="gold font-black text-[10px]">08</span><h3 class="font-black mt-0.5 text-[14px]">Improve</h3><p class="text-[11px] text-slate-600 mt-1">Adoption, KPI monitoring, feedback, enhancements, operational analytics and roadmap refinement.</p></div>
-                    </div>
-
-                    <div class="mt-4 text-center text-[11px] font-black text-slate-500 uppercase tracking-wider">
-                        Discover → Define → Prioritize → Design → Build → Validate → Launch → Improve
-                    </div>
+        <!-- SLIDE 06 — LIFECYCLE -->
+        <section class="slide-page soft" id="lifecycle">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">06 · Product Lifecycle</span>
+                    <h2>From problem discovery to production adoption.</h2>
+                    <p>Rigorous operating rhythm ensuring high-quality execution at every stage.</p>
                 </div>
-                <div class="pt-3 border-t border-gray-200 flex justify-between text-[10px] uppercase tracking-[.18em] text-slate-400">
-                    <a href="#integrated" class="hover:text-slate-800 transition">← Prev</a><span>06 / Lifecycle</span><a href="#architecture" class="hover:text-slate-800 transition">Next →</a>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                    <div class="card"><span class="eyebrow">01</span><h3 style="font-size: 15px; margin: 4px 0 2px;">Discover</h3><p style="font-size: 11.5px; color: var(--ink-2); margin: 0;">Stakeholder interviews, workflows, and current-state mapping.</p></div>
+                    <div class="card"><span class="eyebrow">02</span><h3 style="font-size: 15px; margin: 4px 0 2px;">Define</h3><p style="font-size: 11.5px; color: var(--ink-2); margin: 0;">Scope definition, BRD/PRD, use cases, and acceptance criteria.</p></div>
+                    <div class="card"><span class="eyebrow">03</span><h3 style="font-size: 15px; margin: 4px 0 2px;">Prioritize</h3><p style="font-size: 11.5px; color: var(--ink-2); margin: 0;">Business value, risk, dependencies, and roadmap sequencing.</p></div>
+                    <div class="card"><span class="eyebrow">04</span><h3 style="font-size: 15px; margin: 4px 0 2px;">Design</h3><p style="font-size: 11.5px; color: var(--ink-2); margin: 0;">Figma mockups, process flows, DFD, and API specifications.</p></div>
+                    <div class="card"><span class="eyebrow">05</span><h3 style="font-size: 15px; margin: 4px 0 2px;">Build</h3><p style="font-size: 11.5px; color: var(--ink-2); margin: 0;">Backlog management, sprint planning, and QA coordination.</p></div>
+                    <div class="card"><span class="eyebrow">06</span><h3 style="font-size: 15px; margin: 4px 0 2px;">Validate</h3><p style="font-size: 11.5px; color: var(--ink-2); margin: 0;">UAT, business validation, defect triage, and compliance checks.</p></div>
+                    <div class="card"><span class="eyebrow">07</span><h3 style="font-size: 15px; margin: 4px 0 2px;">Launch</h3><p style="font-size: 11.5px; color: var(--ink-2); margin: 0;">Deployment, migration, training manuals, and rollout governance.</p></div>
+                    <div class="card"><span class="eyebrow">08</span><h3 style="font-size: 15px; margin: 4px 0 2px;">Improve</h3><p style="font-size: 11.5px; color: var(--ink-2); margin: 0;">Adoption tracking, KPI monitoring, and feedback loops.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 07 — ARCHITECTURE / TECHNICAL PM -->
-        <section id="architecture" class="slide bg-white">
-            <div class="slide-content">
-                <div class="my-auto w-full">
-                    <div class="gold text-[11px] font-black eyebrow uppercase">Technical Product Management</div>
-                    <h2 class="text-[30px] sm:text-[40px] font-black tracking-tight text-[#111827] mt-1">Translating business requirements into technical product capabilities.</h2>
-
-                    <div class="mt-5 grid lg:grid-cols-[1.25fr_.9fr] gap-5 items-center">
-                        <div class="card p-4">
-                            <div class="grid grid-cols-5 gap-2 text-center">
-                                <div class="bg-slate-50 rounded-lg p-2.5"><b class="text-[11px]">Users</b><div class="text-[9px] text-slate-500 mt-0.5">Channels</div></div>
-                                <div class="bg-slate-50 rounded-lg p-2.5"><b class="text-[11px]">Workflow</b><div class="text-[9px] text-slate-500 mt-0.5">Journey</div></div>
-                                <div class="bg-slate-50 rounded-lg p-2.5"><b class="text-[11px]">Rules</b><div class="text-[9px] text-slate-500 mt-0.5">Decisioning</div></div>
-                                <div class="bg-slate-50 rounded-lg p-2.5"><b class="text-[11px]">APIs</b><div class="text-[9px] text-slate-500 mt-0.5">Integration</div></div>
-                                <div class="bg-slate-50 rounded-lg p-2.5"><b class="text-[11px]">Data</b><div class="text-[9px] text-slate-500 mt-0.5">Audit</div></div>
-                            </div>
-                            <div class="text-center text-[#b58b43] font-black my-2">↓</div>
-                            <div class="dark rounded-xl p-3 text-white text-center">
-                                <div class="text-[11.5px] font-black">Enterprise Product Platform</div>
-                                <div class="text-[9.5px] text-slate-300 mt-0.5">Scalable workflows · configurable controls · integration-ready services</div>
-                            </div>
-                            <div class="text-center text-[#b58b43] font-black my-2">↓</div>
-                            <div class="grid grid-cols-4 gap-2 text-center text-[10px]">
-                                <div class="border rounded-lg p-2">CBS</div><div class="border rounded-lg p-2">CKYC / CERSAI</div><div class="border rounded-lg p-2">NPCI / UPI</div><div class="border rounded-lg p-2">Credit Bureaus</div>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-3">
-                            <div class="card p-3.5"><b class="text-[12px]">DFD</b><p class="text-[10px] text-slate-500 mt-0.5">Data movement and system interaction.</p></div>
-                            <div class="card p-3.5"><b class="text-[12px]">ER Mapping</b><p class="text-[10px] text-slate-500 mt-0.5">Entities, relationships and data structure.</p></div>
-                            <div class="card p-3.5"><b class="text-[12px]">API Specs</b><p class="text-[10px] text-slate-500 mt-0.5">Request/response, validation and integration behaviour.</p></div>
-                            <div class="card p-3.5"><b class="text-[12px]">Architecture</b><p class="text-[10px] text-slate-500 mt-0.5">Platform components, dependencies and deployment considerations.</p></div>
-                            <div class="card p-3.5"><b class="text-[12px]">Data Mapping</b><p class="text-[10px] text-slate-500 mt-0.5">Source, target, transformation and validation rules.</p></div>
-                            <div class="card p-3.5"><b class="text-[12px]">Exceptions</b><p class="text-[10px] text-slate-500 mt-0.5">Failure paths, retries, manual intervention and auditability.</p></div>
+        <!-- SLIDE 07 — ARCHITECTURE -->
+        <section class="slide-page white" id="architecture">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">07 · Technical PM</span>
+                    <h2>Translating business requirements into technical capabilities.</h2>
+                    <p>Connecting front-end bank channels to core processing systems and external financial rails.</p>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="card">
+                        <span class="eyebrow">System Interaction</span>
+                        <h3 style="font-size: 18px; margin: 6px 0 10px;">Data Flow & Integration</h3>
+                        <p style="font-size: 12.5px; color: var(--ink-2); line-height: 1.45; margin: 0;">
+                            Designed seamless interface boundaries between branch operational channels, modular backend workflows, and core banking systems (CBS, NPCI/UPI, CIBIL, CKYC). Ensured robust exception handling, idempotency, and automated retries.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <span class="eyebrow">Technical Artifacts</span>
+                        <h3 style="font-size: 18px; margin: 6px 0 10px;">Core Deliverables</h3>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 10px;">
+                            <div style="background: #f8fafc; padding: 8px; border-radius: 8px; border: 1px solid var(--line); font-size: 11px; font-weight: 800;">Data Flow Diagrams (DFD)</div>
+                            <div style="background: #f8fafc; padding: 8px; border-radius: 8px; border: 1px solid var(--line); font-size: 11px; font-weight: 800;">Entity-Relationship Mapping</div>
+                            <div style="background: #f8fafc; padding: 8px; border-radius: 8px; border: 1px solid var(--line); font-size: 11px; font-weight: 800;">API Request/Response Specs</div>
+                            <div style="background: #f8fafc; padding: 8px; border-radius: 8px; border: 1px solid var(--line); font-size: 11px; font-weight: 800;">Failure Path & Retry Logic</div>
                         </div>
                     </div>
-                </div>
-                <div class="pt-3 border-t border-gray-200 flex justify-between text-[10px] uppercase tracking-[.18em] text-slate-400">
-                    <a href="#lifecycle" class="hover:text-slate-800 transition">← Prev</a><span>07 / Architecture</span><a href="#casestudies" class="hover:text-slate-800 transition">Next →</a>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 08 — CASE STUDIES: LOS/LMS -->
-        <section id="casestudies" class="slide soft">
-            <div class="slide-content">
-                <div class="my-auto w-full">
-                    <div class="gold text-[11px] font-black eyebrow uppercase">Case Study 01 · Lending</div>
-                    <h2 class="text-[30px] sm:text-[40px] font-black tracking-tight text-[#111827] mt-1">LOS–LMS · Lending lifecycle platform</h2>
-
-                    <div class="mt-4 grid lg:grid-cols-4 gap-3">
-                        <div class="card p-4 lg:col-span-2">
-                            <div class="text-[10px] gold uppercase tracking-wider font-black">Problem / opportunity</div>
-                            <p class="mt-1.5 text-[11.5px] text-slate-600 leading-relaxed">Create configurable lending journeys that can support different loan products, approval structures, business rules and operational requirements without rebuilding the platform for every client.</p>
-                            <div class="mt-3 text-[10px] uppercase tracking-wider font-black text-slate-500">Loan journeys</div>
-                            <div class="mt-1.5 flex flex-wrap gap-1"><span class="bg-slate-100 px-2 py-0.5 rounded text-[10px]">Vehicle</span><span class="bg-slate-100 px-2 py-0.5 rounded text-[10px]">Education</span><span class="bg-slate-100 px-2 py-0.5 rounded text-[10px]">Gold</span><span class="bg-slate-100 px-2 py-0.5 rounded text-[10px]">Personal</span><span class="bg-slate-100 px-2 py-0.5 rounded text-[10px]">Home</span><span class="bg-slate-100 px-2 py-0.5 rounded text-[10px]">Staff</span></div>
-                        </div>
-                        <div class="card p-4"><div class="gold text-[10px] uppercase font-black">Product design</div><ul class="mt-2 text-[11px] text-slate-600 space-y-1"><li>• Configurable workflows</li><li>• Maker-checker-sanctioner</li><li>• Business rules</li><li>• Bureau / KYC integrations</li></ul></div>
-                        <div class="card p-4"><div class="gold text-[10px] uppercase font-black">PM ownership</div><ul class="mt-2 text-[11px] text-slate-600 space-y-1"><li>• Requirements</li><li>• Solution mapping</li><li>• Backlog & sprints</li><li>• UAT & rollout</li></ul></div>
-                    </div>
-
-                    <div class="mt-4 card p-3.5">
-                        <div class="grid grid-cols-5 gap-1 text-center text-[10px] font-black">
-                            <div class="bg-slate-50 rounded p-2">Application</div><div class="bg-slate-50 rounded p-2">KYC / Credit</div><div class="bg-slate-50 rounded p-2">Decision</div><div class="bg-slate-50 rounded p-2">Approval</div><div class="bg-slate-50 rounded p-2">Disbursement</div>
-                        </div>
-                        <div class="text-center text-[#b58b43] py-1 font-black">↓</div>
-                        <div class="grid grid-cols-4 gap-2 text-center text-[10px]"><div class="border rounded p-2">Repayment</div><div class="border rounded p-2">Collections</div><div class="border rounded p-2">Reconciliation</div><div class="border rounded p-2">Audit / Reporting</div></div>
-                    </div>
-
-                    <div class="mt-4 grid grid-cols-3 gap-3">
-                        <div class="dark text-white rounded-xl p-3.5"><div class="text-[10px] text-slate-400 uppercase">Reported outcome</div><div class="text-[22px] font-black mt-0.5">20%</div><div class="text-[10px] text-slate-300">onboarding-efficiency improvement</div></div>
-                        <div class="card p-3.5"><div class="text-[10px] gold uppercase font-black">Artifacts</div><div class="text-[11px] mt-1.5 text-slate-600">PRD / BRD · workflow · rules · acceptance criteria · UAT</div></div>
-                        <div class="card p-3.5"><div class="text-[10px] gold uppercase font-black">Value</div><div class="text-[11px] mt-1.5 text-slate-600">Reusable lending capability across multiple enterprise deployments.</div></div>
-                    </div>
+        <!-- SLIDE 08 — CASE STUDIES -->
+        <section class="slide-page soft" id="casestudies">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">08 · Deep Dive Case Studies</span>
+                    <h2>Detailed Execution & Impact</h2>
+                    <p>Examining lending lifecycle management and payment workflows.</p>
                 </div>
-                <div class="pt-3 border-t border-gray-200 flex justify-between text-[10px] uppercase tracking-[.18em] text-slate-400">
-                    <a href="#architecture" class="hover:text-slate-800 transition">← Prev</a><span>08 / Case Studies</span><a href="#analytics-ai" class="hover:text-slate-800 transition">Next →</a>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div class="card" style="border-top: 4px solid var(--blue);">
+                        <span class="eyebrow">Lending Platform · LOS-LMS</span>
+                        <h3 style="font-size: 18px; margin: 6px 0 6px;">Configurable Loan Journeys</h3>
+                        <p style="font-size: 12px; color: var(--ink-2); line-height: 1.4; margin: 0;">
+                            Engineered modular workflows supporting multiple loan products (Vehicle, Gold, Personal, Home, Education) with maker-checker-sanctioner controls, automated bureau checks, and 20% onboarding efficiency gains.
+                        </p>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--mint);">
+                        <span class="eyebrow">Payments · UPI Collections</span>
+                        <h3 style="font-size: 18px; margin: 6px 0 6px;">Automated Reconciliation</h3>
+                        <p style="font-size: 12px; color: var(--ink-2); line-height: 1.4; margin: 0;">
+                            Designed 0→1 UPI payment initiation, allocation rules, delinquency tracking, and automated reconciliation pipelines, achieving a 20% reduction in manual operational effort.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- SLIDE 09 — ANALYTICS & AI -->
-        <section id="analytics-ai" class="slide bg-white">
-            <div class="slide-content">
-                <div class="my-auto w-full">
-                    <div class="gold text-[11px] font-black eyebrow uppercase">Analytics & AI Integration</div>
-                    <h2 class="text-[30px] sm:text-[40px] font-black tracking-tight text-[#111827] mt-1">Data discipline and AI as a product capability.</h2>
-
-                    <div class="mt-5 grid md:grid-cols-2 gap-4">
-                        <div class="card p-5">
-                            <div class="gold text-[10px] uppercase font-black">Product Analytics</div>
-                            <h3 class="mt-1 text-[18px] font-black">Metrics that connect activity to outcomes</h3>
-                            <p class="mt-1.5 text-[11.5px] text-slate-600 leading-relaxed">Using SQL, Power BI and Tableau to evaluate adoption, onboarding completion, TAT, and manual intervention ratios across enterprise workflows.</p>
-                            <div class="mt-3 flex flex-wrap gap-1.5">
-                                <span class="bg-slate-100 px-2 py-1 rounded text-[10px]">Adoption %</span><span class="bg-slate-100 px-2 py-1 rounded text-[10px]">TAT Tracking</span><span class="bg-slate-100 px-2 py-1 rounded text-[10px]">Match Rate</span><span class="bg-slate-100 px-2 py-1 rounded text-[10px]">Error Audit</span>
-                            </div>
-                        </div>
-                        <div class="card p-5">
-                            <div class="gold text-[10px] uppercase font-black">GenAI / Automation</div>
-                            <h3 class="mt-1 text-[18px] font-black">AI for workflow velocity</h3>
-                            <p class="mt-1.5 text-[11.5px] text-slate-600 leading-relaxed">Identifying repetitive, document-heavy workflows (like OCR verification and exception analysis) where AI improves speed and accuracy with human-in-the-loop review.</p>
-                            <div class="mt-3 flex flex-wrap gap-1.5">
-                                <span class="bg-slate-100 px-2 py-1 rounded text-[10px]">OCR Extraction</span><span class="bg-slate-100 px-2 py-1 rounded text-[10px]">Exception Routing</span><span class="bg-slate-100 px-2 py-1 rounded text-[10px]">Rapid Prototyping</span>
-                            </div>
-                        </div>
-                    </div>
+        <section class="slide-page white" id="analytics">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">09 · Analytics & AI</span>
+                    <h2>Data discipline and GenAI as practical capabilities.</h2>
+                    <p>Connecting product usage metrics to measurable business outcomes.</p>
                 </div>
-                <div class="pt-3 border-t border-gray-200 flex justify-between text-[10px] uppercase tracking-[.18em] text-slate-400">
-                    <a href="#casestudies" class="hover:text-slate-800 transition">← Prev</a><span>09 / Analytics & AI</span><a href="#contact" class="hover:text-slate-800 transition">Next: Contact →</a>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="card">
+                        <span class="eyebrow">Product Analytics</span>
+                        <h3 style="font-size: 18px; margin: 6px 0 6px;">Metrics That Matter</h3>
+                        <p style="font-size: 12.5px; color: var(--ink-2); line-height: 1.45; margin: 0;">
+                            Using SQL, Power BI, and Tableau to evaluate adoption ratios, onboarding completion funnels, turnaround time (TAT), and feature engagement to guide roadmap decisions.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <span class="eyebrow">AI / GenAI Integration</span>
+                        <h3 style="font-size: 18px; margin: 6px 0 6px;">Workflow Automation</h3>
+                        <p style="font-size: 12.5px; color: var(--ink-2); line-height: 1.45; margin: 0;">
+                            Applied AI-assisted OCR document extraction and intelligent exception routing in document-heavy workflows, minimizing manual intervention while maintaining strict compliance guardrails.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- SLIDE 10 — CONTACT -->
-        <section id="contact" class="slide dark">
-            <div class="slide-content">
-                <div class="my-auto w-full">
-                    <div class="gold text-[11px] font-black eyebrow uppercase">Contact</div>
-                    <h2 class="text-[36px] sm:text-[52px] font-black tracking-tight mt-1">Let's build something meaningful.</h2>
-                    <p class="mt-3 text-[14px] sm:text-[16px] text-slate-300 max-w-[800px] leading-relaxed">
-                        Open to Product Manager, Senior Product Manager, Product Lead, Technical Product Manager and enterprise product opportunities across technology, SaaS, data, AI and digital platforms.
-                    </p>
-
-                    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                        <a href="mailto:manoj.pant.pm@outlook.com" class="dark-card p-4 hover:border-[#b58b43] transition"><div class="gold text-[10px] uppercase font-black">Email</div><div class="text-[11.5px] font-bold mt-1.5 break-all">manoj.pant.pm@outlook.com</div></a>
-                        <a href="https://www.linkedin.com/in/manoj-pant-35129495/" target="_blank" class="dark-card p-4 hover:border-[#b58b43] transition"><div class="gold text-[10px] uppercase font-black">LinkedIn</div><div class="text-[11.5px] font-bold mt-1.5">linkedin.com/in/manoj-pant-35129495</div></a>
-                        <div class="dark-card p-4"><div class="gold text-[10px] uppercase font-black">Profile</div><div class="text-[11.5px] font-bold mt-1.5">Senior Product Manager</div></div>
-                        <div class="dark-card p-4"><div class="gold text-[10px] uppercase font-black">Focus</div><div class="text-[11.5px] font-bold mt-1.5">Enterprise · SaaS · Data · AI</div></div>
-                    </div>
-
-                    <div class="mt-6 flex flex-wrap gap-2">
-                        <a href="#overview" class="px-4 py-2.5 rounded-lg bg-[#b58b43] text-white text-[11px] font-black uppercase tracking-wider hover:bg-[#c59a57] transition">Back to Overview ↑</a>
-                        <a href="#integrated" class="px-4 py-2.5 rounded-lg border border-white/20 text-[11px] font-black uppercase tracking-wider hover:bg-white/10 transition">Explore Flagship Product</a>
-                    </div>
-                </div>
-                <div class="pt-3 border-t border-white/10 flex justify-between text-[10px] uppercase tracking-[.18em] text-slate-500">
-                    <a href="#analytics-ai" class="hover:text-white transition">← Prev</a><span>10 / Contact</span><span>End of Portfolio</span>
+        <section class="slide-page dark" id="contact">
+            <div class="wrap" style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <span class="eyebrow">10 · Contact & Next Steps</span>
+                <h2 style="font-size: 42px; margin: 8px 0 12px; color: #fff;">Let's build something meaningful.</h2>
+                <p style="font-size: 15px; line-height: 1.5; color: #cbd5e1; margin: 0 auto 24px; max-width: 700px;">
+                    Open to Product Manager, Senior Product Manager, Product Lead, Technical Product Manager and enterprise product opportunities across technology, SaaS, data, AI and digital platforms.
+                </p>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <a class="btn primary" href="mailto:manoj.pant.pm@outlook.com" style="padding: 12px 20px;">Email Me Directly</a>
+                    <a class="btn" href="https://www.linkedin.com/in/manoj-pant-35129495/" target="_blank" style="padding: 12px 20px;">LinkedIn Profile →</a>
+                    <a class="btn" href="#overview" style="padding: 12px 20px; background: rgba(255,255,255,.1); color: #fff; border-color: rgba(255,255,255,.2);">Back to Top ↑</a>
                 </div>
             </div>
         </section>
