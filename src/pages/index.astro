@@ -1,232 +1,415 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const products = [
+  {
+    number: '01',
+    company: 'M2P Fintech',
+    title: 'Integrated Channels Suite',
+    description:
+      'A modular enterprise platform bringing together banking, lending, payments, compliance and operational capabilities through configurable workflows and integrations.',
+    tags: ['Banking', 'Lending', 'Payments', 'AML/KYC'],
+  },
+  {
+    number: '02',
+    company: 'Ayu Health',
+    title: 'Ayu DocConnect',
+    description:
+      'A 0→1 digital healthcare product focused on doctor acquisition, onboarding, engagement and treatment-related workflows across mobile platforms.',
+    tags: ['0→1 Product', 'Mobile', 'Provider Experience', 'Adoption'],
+  },
+  {
+    number: '03',
+    company: 'Phoneme / Ayu',
+    title: 'Provider Payout Automation',
+    description:
+      'A rules-driven workflow product for provider onboarding, payout calculations, approvals and operational processing.',
+    tags: ['Workflow Automation', 'Rules', 'Operations', 'Healthcare'],
+  },
+  {
+    number: '04',
+    company: 'Nokia Networks',
+    title: 'Telecom Cost Optimization',
+    description:
+      'A data-driven financial and operational optimization initiative using KPI frameworks, analytics, executive dashboards and workflow automation.',
+    tags: ['Analytics', 'Cost Optimization', 'KPIs', 'Automation'],
+  },
+  {
+    number: '05',
+    company: 'Nokia Networks',
+    title: 'Global Service Delivery Analytics',
+    description:
+      'Enterprise analytics and reporting designed to improve visibility into service performance, operational KPIs and global delivery operations.',
+    tags: ['Data Analytics', 'Power BI', 'KPIs', 'Enterprise Reporting'],
+  },
+];
+
+const approach = [
+  ['01', 'Discover', 'Understand users, business problems, processes and opportunities.'],
+  ['02', 'Define', 'Translate problems into product requirements, journeys and capabilities.'],
+  ['03', 'Build', 'Work with design, engineering and cross-functional teams to deliver.'],
+  ['04', 'Measure', 'Use product and business metrics to evaluate adoption and outcomes.'],
+];
+
+const capabilities = [
+  ['Product', 'Strategy · Roadmaps · Discovery · Prioritization · Agile Delivery'],
+  ['Technical', 'APIs · Integrations · Workflow Design · DFD · ER Models · Architecture Collaboration'],
+  ['Data', 'SQL · Power BI · Tableau · KPI Frameworks · Product Analytics'],
+  ['Enterprise', 'Banking · Lending · Payments · Healthcare · Telecom · Enterprise Platforms'],
+];
 ---
 
-<Layout title="Manoj Pant | Senior Product Manager & Data Analytics Portfolio">
-    <style>
-        :root{
-            --navy:#102f55; --navy-2:#163d6a; --navy-3:#214e7d;
-            --ink:#102a4d; --ink-2:#365774; --muted:#627c97; --line:#d8e4ef; --line-2:#e8eff5;
-            --bg:#f3f7fb; --paper:#fff; --blue:#2468d7; --blue-soft:#eaf2ff;
-            --lav:#7658d9; --lav-soft:#f1edff; --mint:#17886f; --mint-soft:#e8f7f2;
-            --amber:#be7615; --amber-soft:#fff2df; --rose:#bb3f76; --rose-soft:#fff0f6;
-            --teal:#167d87; --teal-soft:#e9f7f8; --radius:18px; 
-            --max:100%; 
-            --header-h:110px;
-            --shadow:0 12px 30px rgba(22,52,82,.07); --sans:Inter,ui-sans-serif,system-ui,sans-serif;
-            --mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
-        }
-        *{box-sizing:border-box}
-        html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 10px)}
-        body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.45;overflow-x:hidden}
-        body.locked{overflow:hidden}
-        a{text-decoration:none;color:inherit} button,input{font:inherit} button{cursor:pointer} svg,img{max-width:100%;display:block}
-        
-        .wrap{width:100%; padding:0 40px; margin:0 auto; max-width: 1600px;}
-        
-        .hidden{display:none!important}
-        #progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--blue),var(--lav));z-index:300}
+<Layout title="Manoj Pant | Senior Product Manager | Product Portfolio">
+  <style>
+    :global(html) {
+      scroll-behavior: smooth;
+    }
 
-        /* HEADER */
-        header{position:sticky;top:0;z-index:100;background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.10);box-shadow:0 10px 24px rgba(8,28,51,.18)}
-        .head{height:var(--header-h);display:grid;grid-template-columns:250px minmax(520px,1fr) 290px;gap:16px;align-items:center}
-        .brand{display:flex;align-items:center;gap:12px;min-width:0}
-        .brand-logo{width:42px;height:42px;border-radius:11px;background:#244f7f;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-weight:950;color:#fff;font-size:13px}
-        .brand-copy{min-width:0}.brand-copy b{display:block;font-size:18px;line-height:1.1;color:#fff;letter-spacing:-.02em}.brand-copy small{display:block;margin-top:5px;color:#c1d2e4;font-size:10px;line-height:1.15;font-weight:900;letter-spacing:.10em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-        #nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,34px);gap:8px;align-items:center}
-        #nav a{height:34px;display:flex;align-items:center;justify-content:center;border-radius:9px;color:#eaf1f7;font-size:12px;font-weight:900;white-space:nowrap;transition:.15s ease}
-        #nav a:hover,#nav a.active{background:#234f7f;color:#fff}
-        .head-actions{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:42px 42px;gap:7px}.head-actions .action-row{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:7px}.head-actions .btn{height:42px}.portfolio-top{grid-column:1/-1}
-        .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);font-size:12px;font-weight:950;transition:.15s ease}
-        .btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(10,36,65,.12)}.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}.portfolio-top{background:#2a5c8d;color:#fff;border-color:#547ca5}
-        .btn.outline{background:transparent;border:1px solid var(--blue);color:var(--blue);}.btn.outline:hover{background:var(--blue-soft);}
+    :global(body) {
+      margin: 0;
+      background: #f8fafc;
+      color: #172033;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-        /* SECTIONS & GRIDS */
-        .section{border-bottom:1px solid var(--line-2)}
-        .section.white{background:#fff}.section.bg-light{background:#f6f9fc}
-        .slide-page { padding: 50px 0; display: flex; flex-direction: column; }
-        .slide-page:last-child { border-bottom: none; }
-        
-        .eyebrow{font-size:11px;line-height:1.15;color:var(--blue);font-weight:950;letter-spacing:.17em;text-transform:uppercase; display:block; margin-bottom:8px;}
-        .section-head{margin-bottom:32px; max-width: 900px;}.section-head h2{margin:0 0 12px;font-size:36px;line-height:1.05;letter-spacing:-.03em;color:var(--ink);font-weight:950;}.section-head p{margin:0;color:var(--ink-2);font-size:16px;line-height:1.5}
+    .portfolio-scroll {
+      scroll-snap-type: y mandatory;
+    }
 
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        
-        .card { padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: var(--shadow); height: 100%; display: flex; flex-direction: column;}
-        .card h3 { font-size: 18px; margin: 0 0 12px; color: var(--ink); line-height: 1.2; }
-        .card p { font-size: 14px; margin: 0 0 16px; color: var(--ink-2); flex: 1; }
-        
-        .card.tint-blue { background: var(--blue-soft); border-color: #c8def7; }
-        .card.tint-lav { background: var(--lav-soft); border-color: #dcd4fa; }
-        .card.tint-mint { background: var(--mint-soft); border-color: #bce3d8; }
-        .card.tint-amber { background: var(--amber-soft); border-color: #f7dfbe; }
+    .portfolio-slide {
+      min-height: calc(100vh - 104px);
+      scroll-snap-align: start;
+      scroll-margin-top: 104px;
+    }
 
-        /* HERO */
-        .hero{background:linear-gradient(180deg,#f8fbff 0%,#f3f7fb 100%); padding: 60px 0;}
-        .hero-copy{display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:center;}
-        .kicker{display:inline-flex;align-items:center;gap:9px;padding:7px 11px;border:1px solid #c8def7;border-radius:999px;background:var(--blue-soft);color:#17539c;font-size:11px;font-weight:950;letter-spacing:.11em;text-transform:uppercase}
-        h1{font-size:clamp(44px,4.5vw,64px);line-height:1;letter-spacing:-.04em;margin:16px 0 16px;color:var(--ink);font-weight:950}
-        .lead{font-size:18px;line-height:1.5;color:#42627f;margin:0 0 24px;}.lead strong{color:var(--ink);font-weight:900}
-        
-        .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
-        .stat{background:#fff;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:13px;padding:16px;display:flex;flex-direction:column;justify-content:center}
-        .stat strong{font-size:28px;line-height:1;color:var(--ink);letter-spacing:-.04em}.stat span{margin-top:6px;font-size:11px;line-height:1.3;color:#607891;font-weight:800;text-transform:uppercase;letter-spacing:0.05em}
+    @media (max-width: 768px) {
+      .portfolio-slide {
+        min-height: auto;
+        scroll-snap-align: none;
+      }
+    }
+  </style>
 
-        .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-        .tag { padding: 6px 12px; background: #f0f4f8; border: 1px solid #d1dfea; border-radius: 6px; font-size: 11px; font-weight: 700; color: #4a657e; }
+  <header class="sticky top-0 z-50 h-[104px] bg-[#172033] text-white shadow-xl overflow-hidden">
+    <div class="max-w-[1500px] mx-auto px-5 sm:px-8 h-full flex flex-col justify-center gap-3">
+      <div class="flex items-center justify-between gap-6">
+        <a href="#overview" class="font-black tracking-tight text-lg sm:text-xl">
+          MP<span class="text-[#c9a76a]">.</span>
+        </a>
 
-        /* FOOTER */
-        footer{color:var(--ink);background:#fff;border-top:1px solid var(--line); padding: 60px 0; text-align: center;}
-        .footer-cta h2{margin:12px 0 14px;font-size:40px;line-height:1.1;letter-spacing:-.04em;color:var(--ink)}
-        .footer-cta p{margin:0 auto;color:var(--ink-2);font-size:16px;line-height:1.5; max-width: 600px;}
-
-        @media screen and (max-width:1024px){
-            .hero-copy { grid-template-columns: 1fr; }
-        }
-        @media screen and (max-width:768px){
-            .grid-2, .grid-3 { grid-template-columns: 1fr; }
-            .head{height:auto;grid-template-columns:1fr;gap:12px;padding:12px 0}
-            .head-actions{display:none;}
-            .wrap{padding:0 20px;}
-        }
-    </style>
-
-    <header>
-        <div class="wrap head">
-            <a aria-label="Manoj Pant Portfolio" class="brand" href="#overview">
-                <span aria-hidden="true" class="brand-logo">MP</span>
-                <span class="brand-copy"><b>Manoj Pant</b><small>Senior Product Manager</small></span>
-            </a>
-            <nav aria-label="Portfolio sections" id="nav">
-                <a href="#overview">Overview</a>
-                <a href="#portfolio">Portfolio Map</a>
-                <a href="#tech">Tech & Data</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <div class="head-actions">
-                <a class="btn primary" href="#portfolio">View Projects</a>
-            </div>
+        <div class="hidden md:flex items-center gap-3 text-[11px] uppercase tracking-[0.18em] text-slate-300">
+          <span>Manoj Pant</span>
+          <span class="text-[#c9a76a]">•</span>
+          <span>Senior Product Manager</span>
         </div>
-    </header>
+      </div>
 
-    <main>
-        <!-- HERO & OVERVIEW -->
-        <section class="hero section" id="overview">
-            <div class="wrap">
-                <div class="hero-copy">
-                    <div>
-                        <span class="kicker">Senior Product Manager</span>
-                        <h1>Building enterprise products from problem to impact.</h1>
-                        <p class="lead">Senior Product Manager with <strong>10+ years of experience</strong> across FinTech, Healthcare, Telecom and Enterprise IT, spanning Product Management, Business Analysis, Enterprise Platforms, Data & Analytics, Workflow Automation and AI-enabled product initiatives.</p>
-                        
-                        <div class="stat-grid" style="grid-template-columns: 1fr 1fr;">
-                            <div class="stat"><strong>10+</strong><span>Years Experience</span></div>
-                            <div class="stat" style="border-top-color: var(--lav);"><strong>4</strong><span>Industry Ecosystems</span></div>
-                            <div class="stat" style="border-top-color: var(--mint);"><strong>12+</strong><span>Enterprise Apps</span></div>
-                            <div class="stat" style="border-top-color: var(--amber);"><strong>0→1</strong><span>Product Development</span></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="card tint-blue">
-                            <span class="eyebrow">Documented Impact Highlights</span>
-                            <ul style="margin-top:12px;">
-                                <li style="margin-bottom:12px;"><strong>40% → 75%</strong> Doctor adoption (Ayu Health)</li>
-                                <li style="margin-bottom:12px;"><strong>10 → 2 days</strong> Payout turnaround (Provider Automation)</li>
-                                <li style="margin-bottom:12px;"><strong>20–30%</strong> Operational-efficiency improvements across Nokia & M2P initiatives</li>
-                                <li><strong>25%</strong> Enterprise OPEX reduction (Telecom Cost Optimization)</li>
-                            </ul>
-                            <a class="btn primary" href="#portfolio" style="margin-top: 24px; align-self: flex-start;">Explore the Portfolio ↓</a>
-                        </div>
-                    </div>
-                </div>
+      <nav class="grid grid-cols-5 gap-1.5 sm:gap-2 text-[9px] sm:text-[10px] font-black uppercase tracking-wider">
+        {[
+          ['overview', 'Overview'],
+          ['portfolio', 'Portfolio'],
+          ['approach', 'Product Approach'],
+          ['tech', 'Tech & Data'],
+          ['contact', 'Contact'],
+        ].map(([href, label], i) => (
+          <a
+            href={`#${href}`}
+            class={`rounded-lg px-2 sm:px-3 py-2 text-center border transition ${
+              i === 0
+                ? 'bg-[#c9a76a] text-[#172033] border-[#c9a76a]'
+                : 'border-slate-700 text-slate-200 hover:border-[#c9a76a] hover:text-white'
+            }`}
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </header>
+
+  <main class="portfolio-scroll h-[calc(100vh-104px)] overflow-y-auto bg-slate-50">
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="portfolio-slide flex items-center px-5 sm:px-8 lg:px-12 py-10 lg:py-14">
+      <div class="w-full max-w-[1500px] mx-auto">
+        <div class="grid lg:grid-cols-[1.45fr_0.8fr] gap-8 xl:gap-14 items-center">
+
+          <div>
+            <div class="text-[11px] font-black uppercase tracking-[0.2em] text-[#b58b43] mb-5">
+              Senior Product Manager
             </div>
-        </section>
 
-        <!-- PRODUCT PORTFOLIO MAP (5 PROJECTS) -->
-        <section class="slide-page white section" id="portfolio">
-            <div class="wrap">
-                <div class="section-head">
-                    <span class="eyebrow">Product Portfolio Map</span>
-                    <h2>Comprehensive product ownership across ecosystems.</h2>
-                    <p>Select a project below to explore the detailed case study, challenges, and measurable impact.</p>
-                </div>
-                
-                <div class="grid-3" style="margin-bottom: 24px;">
-                    <!-- Project 1 -->
-                    <div class="card tint-blue">
-                        <span class="eyebrow" style="color:var(--navy);">01 · M2P Fintech</span>
-                        <h3>Integrated Channels Suite</h3>
-                        <p>A modular enterprise banking platform designed to bring multiple banking, lending, compliance, and payment capabilities into an integration-ready product ecosystem.</p>
-                        <a href="/projects/integrated-channels" class="btn outline" style="margin-top:auto;">View Case Study →</a>
-                    </div>
-                    <!-- Project 2 -->
-                    <div class="card tint-mint">
-                        <span class="eyebrow" style="color:var(--teal);">02 · Ayu Health</span>
-                        <h3>Ayu DocConnect</h3>
-                        <p>0→1 product development for doctor acquisition, onboarding, engagement, and treatment lifecycles across Android and iOS platforms.</p>
-                        <a href="/projects/ayu-docconnect" class="btn outline" style="border-color:var(--teal); color:var(--teal); margin-top:auto;">View Case Study →</a>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="card tint-amber">
-                        <span class="eyebrow" style="color:var(--amber);">03 · Phoneme / Ayu</span>
-                        <h3>Provider Payout Automation</h3>
-                        <p>Rules-driven provider lifecycle and workflow automation to orchestrate complex healthcare payout calculations and approvals.</p>
-                        <a href="/projects/provider-payout" class="btn outline" style="border-color:var(--amber); color:var(--amber); margin-top:auto;">View Case Study →</a>
-                    </div>
-                </div>
+            <h1 class="text-[42px] sm:text-[56px] lg:text-[68px] xl:text-[76px] leading-[0.98] font-black tracking-[-0.04em] text-[#172033] max-w-5xl">
+              Building products that solve complex business problems.
+            </h1>
 
-                <div class="grid-2">
-                    <!-- Project 4 -->
-                    <div class="card tint-lav">
-                        <span class="eyebrow" style="color:var(--lav);">04 · Nokia Networks</span>
-                        <h3>Telecom Cost Optimization</h3>
-                        <p>KPI-driven financial and operational optimization framework utilizing analytics, executive dashboards, and workflow automation.</p>
-                        <a href="/projects/telecom-cost-optimization" class="btn outline" style="border-color:var(--lav); color:var(--lav); margin-top:auto; width:fit-content;">View Case Study →</a>
-                    </div>
-                    <!-- Project 5 -->
-                    <div class="card tint-lav">
-                        <span class="eyebrow" style="color:var(--lav);">05 · Nokia Networks</span>
-                        <h3>Global Service Delivery Analytics</h3>
-                        <p>Enterprise KPI and service performance analytics to provide visibility into global operations and reduce manual reporting efforts.</p>
-                        <a href="/projects/global-service-delivery" class="btn outline" style="border-color:var(--lav); color:var(--lav); margin-top:auto; width:fit-content;">View Case Study →</a>
-                    </div>
-                </div>
+            <p class="mt-7 text-base sm:text-lg lg:text-xl leading-relaxed text-slate-600 max-w-4xl">
+              Senior Product Manager with <strong class="text-[#172033]">10+ years of experience</strong>
+              across FinTech, Healthcare, Telecom and Enterprise IT, combining product strategy,
+              business analysis, technology, data and execution to build enterprise products.
+            </p>
+
+            <div class="flex flex-wrap gap-x-5 gap-y-2 mt-6 text-sm font-bold text-[#172033]">
+              <span>Product Strategy</span>
+              <span class="text-[#b58b43]">•</span>
+              <span>Enterprise Platforms</span>
+              <span class="text-[#b58b43]">•</span>
+              <span>Digital Products</span>
+              <span class="text-[#b58b43]">•</span>
+              <span>Data & Analytics</span>
+              <span class="text-[#b58b43]">•</span>
+              <span>Workflow Automation</span>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="wrap">
-            <div class="footer-cta" id="contact">
-                <span class="eyebrow">Closing Statement</span>
-                <h2>I build products where business complexity, technology and measurable outcomes meet.</h2>
-                <p>From enterprise analytics and business analysis to 0→1 digital products and multi-module enterprise platforms, my experience combines customer understanding, product strategy, technical product management, data-driven decision-making and execution.</p>
-                
-                <div class="tag-cloud" style="justify-content: center; margin: 32px 0;">
-                    <span class="tag" style="font-size: 13px; padding: 10px 16px; background:#fff;">Senior Product Manager</span>
-                    <span class="tag" style="font-size: 13px; padding: 10px 16px; background:#fff;">Product Lead</span>
-                    <span class="tag" style="font-size: 13px; padding: 10px 16px; background:#fff;">Data Analytics</span>
-                </div>
+            <div class="flex flex-wrap gap-3 mt-8">
+              <a href="#portfolio" class="rounded-xl bg-[#b58b43] text-white px-6 py-3.5 text-sm font-black shadow-sm hover:opacity-90 transition">
+                Explore Product Portfolio →
+              </a>
+              <a href="#approach" class="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-black text-[#172033] hover:border-[#b58b43] transition">
+                Product Approach
+              </a>
             </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 lg:gap-4">
+            {[
+              ['10+', 'Years Experience'],
+              ['12+', 'Enterprise Applications'],
+              ['4', 'Industry Ecosystems'],
+              ['0→1', 'Product Development'],
+            ].map(([value, label]) => (
+              <div class="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-sm">
+                <div class="text-3xl sm:text-4xl font-black text-[#172033]">{value}</div>
+                <div class="mt-2 text-[10px] sm:text-xs font-black uppercase tracking-wider text-slate-500">{label}</div>
+              </div>
+            ))}
+
+            <div class="col-span-2 rounded-2xl bg-[#172033] text-white p-5 sm:p-6">
+              <div class="text-[10px] font-black uppercase tracking-[0.18em] text-[#d2b06c]">
+                Product focus
+              </div>
+              <div class="mt-3 text-xl sm:text-2xl font-black leading-tight">
+                Strategy → Product → Technology → Data → Measurable Outcomes
+              </div>
+            </div>
+          </div>
+
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script is:inline>
-        const header=document.querySelector('header');
-        function getHeaderOffset(){return (header?.getBoundingClientRect().height || 0)+10;}
-        function scrollToSection(id,updateHash=true){
-            const target=document.getElementById(id); if(!target)return;
-            const top=target.getBoundingClientRect().top+window.scrollY-getHeaderOffset();
-            window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
-            if(updateHash)history.replaceState({section:id},'', '#'+id);
-        }
-        document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
-            const href=a.getAttribute('href')||'';
-            if(!href.startsWith('#')||href==='#')return;
-            const id=href.slice(1),target=document.getElementById(id); if(!target)return;
-            e.preventDefault(); scrollToSection(id,true);
-        }));
-        window.addEventListener('scroll',()=>{const h=document.documentElement,max=h.scrollHeight-h.clientHeight; document.getElementById('progress').style.width=(max>0?(h.scrollTop/max)*100:0)+'%'},{passive:true});
-    </script>
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="portfolio-slide px-5 sm:px-8 lg:px-12 py-10 lg:py-12 flex items-center">
+      <div class="w-full max-w-[1500px] mx-auto">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-7">
+          <div>
+            <div class="text-[11px] font-black uppercase tracking-[0.2em] text-[#b58b43]">
+              Selected Product Portfolio
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mt-2">
+              Products across industries and problem spaces.
+            </h2>
+          </div>
+          <p class="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
+            A focused selection of products and initiatives spanning banking, lending,
+            payments, healthcare, telecom analytics and enterprise automation.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+          {products.map((product) => (
+            <article class="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 hover:-translate-y-1 hover:shadow-xl transition">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-black uppercase tracking-[0.18em] text-[#b58b43]">
+                  {product.number} · {product.company}
+                </span>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-black mt-3 text-[#172033]">
+                {product.title}
+              </h3>
+
+              <p class="text-sm leading-relaxed text-slate-600 mt-3">
+                {product.description}
+              </p>
+
+              <div class="flex flex-wrap gap-2 mt-5">
+                {product.tags.map((tag) => (
+                  <span class="rounded-full bg-slate-100 px-3 py-1.5 text-[10px] font-black text-slate-600">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <a href="#contact" class="inline-block mt-5 text-sm font-black text-[#172033] hover:text-[#b58b43] transition">
+                View Case Study →
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section id="approach" class="portfolio-slide bg-[#172033] text-white px-5 sm:px-8 lg:px-12 py-10 lg:py-12 flex items-center">
+      <div class="w-full max-w-[1500px] mx-auto">
+        <div class="max-w-4xl">
+          <div class="text-[11px] font-black uppercase tracking-[0.2em] text-[#d2b06c]">
+            Product Management Approach
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mt-3">
+            From problem to product to measurable outcome.
+          </h2>
+          <p class="mt-5 text-base sm:text-lg leading-relaxed text-slate-300 max-w-3xl">
+            I work across the product lifecycle — understanding the problem, defining the product,
+            collaborating with technology teams, delivering the solution and measuring its impact.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4 mt-9">
+          {approach.map(([number, title, description]) => (
+            <article class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 sm:p-6">
+              <div class="text-sm font-black text-[#d2b06c]">{number}</div>
+              <h3 class="text-xl font-black mt-5">{title}</h3>
+              <p class="text-sm leading-relaxed text-slate-300 mt-3">{description}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="mt-7 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4">
+          <div class="text-xs font-black uppercase tracking-widest text-[#d2b06c]">
+            Product mindset
+          </div>
+          <div class="text-base sm:text-lg font-bold mt-2">
+            Customer problem + Business value + Technical feasibility + Measurable outcome
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH & DATA -->
+    <section id="tech" class="portfolio-slide px-5 sm:px-8 lg:px-12 py-10 lg:py-12 flex items-center">
+      <div class="w-full max-w-[1500px] mx-auto">
+        <div class="max-w-4xl">
+          <div class="text-[11px] font-black uppercase tracking-[0.2em] text-[#b58b43]">
+            Product & Technical Depth
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mt-2">
+            Where product meets technology and data.
+          </h2>
+          <p class="mt-4 text-base sm:text-lg leading-relaxed text-slate-600 max-w-3xl">
+            A product-management foundation supported by technical understanding, analytics
+            and enterprise delivery experience.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mt-8">
+          {capabilities.map(([title, content]) => (
+            <article class="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6">
+              <h3 class="text-lg font-black text-[#172033]">{title}</h3>
+              <p class="text-sm sm:text-base text-slate-600 leading-relaxed mt-2">{content}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5">
+          {[
+            ['SQL', 'Data & analysis'],
+            ['Power BI', 'Decision dashboards'],
+            ['APIs', 'Product integrations'],
+            ['Figma', 'Product prototyping'],
+          ].map(([name, label]) => (
+            <div class="rounded-xl bg-slate-100 p-4">
+              <div class="font-black text-[#172033]">{name}</div>
+              <div class="text-[10px] uppercase tracking-wide font-bold text-slate-500 mt-1">{label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section id="impact" class="portfolio-slide px-5 sm:px-8 lg:px-12 py-10 lg:py-12 flex items-center">
+      <div class="w-full max-w-[1500px] mx-auto">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8">
+          <div>
+            <div class="text-[11px] font-black uppercase tracking-[0.2em] text-[#b58b43]">
+              Selected Outcomes
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mt-2">
+              Outcomes matter more than features.
+            </h2>
+          </div>
+          <p class="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
+            A few documented outcomes from the products and initiatives represented in my experience.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            ['40% → 75%', 'Doctor adoption', 'Ayu Health'],
+            ['10 → 2 days', 'Provider payout turnaround', 'Provider Automation'],
+            ['20%', 'Operational efficiency improvement', 'Enterprise initiatives'],
+            ['25%', 'Telecom operating-cost reduction', 'Nokia Networks'],
+          ].map(([metric, label, company]) => (
+            <article class="rounded-2xl bg-[#172033] text-white p-6">
+              <div class="text-3xl sm:text-4xl font-black text-[#d2b06c]">{metric}</div>
+              <div class="mt-3 font-black text-base">{label}</div>
+              <div class="mt-2 text-xs text-slate-400 uppercase tracking-wide font-bold">{company}</div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="portfolio-slide bg-[#172033] text-white px-5 sm:px-8 lg:px-12 py-10 lg:py-12 flex items-center">
+      <div class="w-full max-w-[1500px] mx-auto">
+        <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-end">
+          <div>
+            <div class="text-[11px] font-black uppercase tracking-[0.2em] text-[#d2b06c]">
+              Senior Product Manager
+            </div>
+
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mt-3">
+              Building products where business, technology and outcomes meet.
+            </h2>
+
+            <p class="mt-6 text-base sm:text-lg leading-relaxed text-slate-300 max-w-3xl">
+              My experience spans the journey from data and business analysis to 0→1 product
+              development and enterprise platform management.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mt-6">
+              {['Product Strategy', 'Enterprise Platforms', 'Technical Product Management', 'Data & Analytics'].map((tag) => (
+                <span class="rounded-full border border-white/10 px-3 py-2 text-xs font-bold text-slate-200">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+            <div class="text-xs font-black uppercase tracking-widest text-[#d2b06c]">
+              Connect
+            </div>
+            <div class="mt-5 space-y-3">
+              <a href="mailto:manoj.pmpm@gmail.com" class="block rounded-xl border border-white/10 px-4 py-3 font-bold hover:border-[#d2b06c] transition">
+                manoj.pmpm@gmail.com
+              </a>
+              <a href="https://www.linkedin.com/in/manoj-pant-35129495/" target="_blank" rel="noreferrer" class="block rounded-xl border border-white/10 px-4 py-3 font-bold hover:border-[#d2b06c] transition">
+                LinkedIn →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <footer class="mt-10 pt-5 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-3 text-xs text-slate-500">
+          <span>© {new Date().getFullYear()} Manoj Pant</span>
+          <span>Senior Product Manager · Product Portfolio</span>
+        </footer>
+      </div>
+    </section>
+
+  </main>
 </Layout>
