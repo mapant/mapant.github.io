@@ -25,12 +25,12 @@ a{text-decoration:none;color:inherit}button,input{font:inherit}button{cursor:poi
 
 /* HEADER */
 header{position:sticky;top:0;z-index:100;background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.10);box-shadow:0 10px 24px rgba(8,28,51,.18)}
-.head{height:var(--header-h);display:grid;grid-template-columns:250px minmax(520px,1fr) 290px;gap:16px;align-items:center}
+.head{height:var(--header-h);display:grid;grid-template-columns:210px minmax(620px,1fr) 250px;gap:16px;align-items:center}
 .brand{display:flex;align-items:center;gap:12px;min-width:0}
 .brand-logo{width:42px;height:42px;border-radius:11px;background:#244f7f;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-weight:950;color:#fff;font-size:13px}
 .brand-copy{min-width:0}.brand-copy b{display:block;font-size:18px;line-height:1.1;color:#fff;letter-spacing:-.02em}.brand-copy small{display:block;margin-top:5px;color:#c1d2e4;font-size:10px;line-height:1.15;font-weight:900;letter-spacing:.10em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:repeat(2,34px);gap:8px;align-items:center}
-#nav a{height:34px;display:flex;align-items:center;justify-content:center;border-radius:99px;color:#eaf1f7;font-size:12px;font-weight:900;white-space:nowrap;transition:.15s ease}
+#nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:repeat(2,34px);gap:8px;align-items:center;min-width:0}
+#nav a{height:34px;display:flex;align-items:center;justify-content:center;border-radius:99px;color:#eaf1f7;font-size:11px;font-weight:900;white-space:nowrap;transition:.15s ease;padding:0 8px;min-width:0;text-align:center}
 #nav a:hover,#nav a.active{background:#234f7f;color:#fff}
 .head-actions{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:42px 42px;gap:7px}.head-actions .action-row{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:7px}.head-actions .btn{height:42px}.portfolio-top{grid-column:1/-1}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:auto;padding:10px 14px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);font-size:12px;font-weight:950;transition:.15s ease}
@@ -88,13 +88,16 @@ h1{font-size:clamp(56px,5.2vw,74px);line-height:.91;letter-spacing:-.065em;margi
 #products{background:#f0f5f9}.product-page-label{font-size:11px;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:#6a829d;margin-bottom:6px}.product-page .section-head{margin-bottom:12px}.product-page .section-head h2{font-size:36px}.product-page .section-head p{font-size:14px}.toolbar{display:grid;grid-template-columns:minmax(280px,1fr) auto;gap:10px;margin-bottom:12px}.search{height:42px;border:1px solid var(--line);border-radius:10px;padding:0 14px;background:#fff;color:var(--ink);outline:none;font-size:14px;}.filters{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.filter{height:40px;padding:0 12px;border:1px solid var(--line);border-radius:9px;background:#fff;color:#536d87;font-size:11px;font-weight:900}.filter.active{background:var(--navy);border-color:var(--navy);color:#fff}.app-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:12px;flex:1;min-height:0}.app-card{position:relative;display:flex;flex-direction:column;min-width:0;height:100%;padding:18px;border:1px solid var(--line);border-left:5px solid var(--app);border-radius:15px;background:#fff;box-shadow:var(--shadow);color:var(--ink);transition:.15s ease;text-align:left}.app-card:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(16,45,82,.11)}.app-top{display:grid;grid-template-columns:34px 1fr 16px;gap:10px;align-items:center}.app-index{width:34px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#eef3f7;font-size:11px;font-weight:950;color:var(--ink)}.app-domain{font-size:11px;line-height:1.15;letter-spacing:.10em;text-transform:uppercase;color:var(--blue);font-weight:900;background:var(--blue-soft);padding:4px 8px;border-radius:6px;display:inline-block;width:fit-content;}.app-go{text-align:right;font-size:16px;color:#7690aa}.app-card h3{font-size:24px;line-height:1.1;letter-spacing:-.025em;margin:14px 0 8px;color:var(--ink);font-weight:950;}.app-card p{font-size:13px;line-height:1.45;color:#57708b;margin:0}.mini-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:10px}.mini-tags span{display:inline-flex;padding:6px 10px;border:1px solid #d7e2ec;border-radius:8px;background:#f4f8fb;color:#4f6884;font-size:10px;line-height:1.1;font-weight:850}.app-foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:10px;border-top:1px solid var(--line-2);font-size:10px;color:#698098}.app-foot b{color:var(--blue)}.product-page-heading{border:1px solid var(--line);border-radius:13px;padding:14px 16px;background:#fff;margin-bottom:12px}.product-page-heading h3{margin:0;font-size:18px;color:var(--ink)}.product-page-heading p{margin:4px 0 0;font-size:12px;color:#5b7490}
 
 /* IMPACT */
-#impact .section-head{margin-bottom:14px}.impact-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.impact-card{border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:15px;background:#fff;padding:16px;box-shadow:var(--shadow)}.impact-purple{border-top-color:var(--lav)}.impact-mint{border-top-color:var(--mint)}.impact-rose{border-top-color:var(--rose)}.impact-card strong{font-size:32px;line-height:1;color:var(--ink);letter-spacing:-.04em}.impact-card b{display:block;margin-top:6px;font-size:13px;color:var(--ink)}.impact-card span{display:block;margin-top:4px;font-size:11px;color:#607993}.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:12px;margin-top:12px;flex:1;min-height:0;align-content:center;}.outcome-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:18px;height:auto;}.outcome-card:nth-child(1){background:var(--blue-soft)}.outcome-card:nth-child(2){background:var(--lav-soft)}.outcome-card:nth-child(3){background:var(--mint-soft)}.outcome-card:nth-child(4){background:var(--amber-soft)}.outcome-card:nth-child(5){background:var(--rose-soft)}.outcome-card:nth-child(6){background:var(--teal-soft)}.outcome-card .eyebrow{color:var(--blue);font-size:11.5px;font-weight:900;letter-spacing:0.1em;}.outcome-card h3{margin:6px 0 6px;font-size:17px;color:var(--ink)}.outcome-card p{margin:0;font-size:12.5px;line-height:1.4;color:#58718d}.outcome-principles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.outcome-principles b,.outcome-principles span{padding:10px 12px;border:1px solid var(--line);background:#fff;font-size:11px}.outcome-principles b{border-radius:10px 0 0 10px;color:var(--ink)}.outcome-principles span{margin-left:-8px;border-left:0;border-radius:0 10px 10px 0;color:#5c7590}
+#impact .section-head{margin-bottom:14px}.impact-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.impact-card{border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:15px;background:#fff;padding:16px;box-shadow:var(--shadow)}.impact-purple{border-top-color:var(--lav)}.impact-mint{border-top-color:var(--mint)}.impact-rose{border-top-color:var(--rose)}.impact-card strong{font-size:32px;line-height:1;color:var(--ink);letter-spacing:-.04em}.impact-card b{display:block;margin-top:6px;font-size:13px;color:var(--ink)}.impact-card span{display:block;margin-top:4px;font-size:11px;color:#607993}.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:12px;margin-top:12px;flex:1;min-height:0;align-content:center;}.outcome-card{border:1px solid var(--line);border-radius:15px;background:#fff;padding:18px;height:auto;}.outcome-card:nth-child(1){background:var(--blue-soft)}.outcome-card:nth-child(2){background:var(--lav-soft)}.outcome-card:nth-child(3){background:var(--mint-soft)}.outcome-card:nth-child(4){background:var(--amber-soft)}.outcome-card:nth-child(5){background:var(--rose-soft)}.outcome-card:nth-child(6){background:var(--teal-soft)}.outcome-card .eyebrow{color:var(--blue);font-size:11.5px;font-weight:900;letter-spacing:0.1em;}.outcome-card h3{margin:6px 0 6px;font-size:17px;color:var(--ink)}.outcome-card p{margin:0;font-size:12.5px;line-height:1.4;color:#58718d}.outcome-principles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.outcome-principles b,.outcome-principles span{padding:10px 12px;border:1px solid var(--line);background:#fff;font-size:11px;text-align:justify}.outcome-principles b{border-radius:10px 0 0 10px;color:var(--ink)}.outcome-principles span{margin-left:-8px;border-left:0;border-radius:0 10px 10px 0;color:#5c7590}
+
+/* PRODUCT METRICS */
+#product-metrics{background:#f8fafc}.metrics-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;align-items:start}.metrics-panel{border:1px solid var(--line);border-radius:18px;padding:18px;background:#fff;box-shadow:var(--shadow)}.metrics-panel:nth-child(1){background:linear-gradient(180deg,#eef5ff 0%,#fff 100%)}.metrics-panel:nth-child(2){background:linear-gradient(180deg,#f3f0ff 0%,#fff 100%)}.metrics-panel:nth-child(3){background:linear-gradient(180deg,#ebfaf4 0%,#fff 100%)}.metrics-panel h3{margin:0 0 12px;font-size:20px;letter-spacing:-.025em;color:var(--ink)}.framework-list,.metric-list{display:grid;gap:10px}.framework-card,.metric-card{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:rgba(255,255,255,.75)}.framework-card{border-left:4px solid var(--tone)}.metric-card{border-left:4px solid var(--tone)}.framework-card h4,.metric-card h4{margin:0 0 6px;font-size:14px;color:var(--ink)}.framework-card p,.metric-card p{margin:0;color:#59748d;font-size:11.5px;line-height:1.45;text-align:justify}.metric-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric-group{display:grid;gap:10px}.relationship{margin-top:12px;border:1px solid #dce7f5;border-radius:12px;padding:12px;background:#f8fbff}.relationship b{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}.relationship p{margin:0;color:#536f8d;font-size:11.5px;line-height:1.5}.relationship strong{color:var(--ink)}
 
 /* LEADERSHIP */
-#learnings{background:#edf3f8}.comps{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto auto;gap:12px;flex:none;height:auto;align-content:center;}.comp{border:1px solid var(--line);border-left:4px solid #9fb8cf;border-radius:12px;background:#fff;padding:12px 14px;min-height:0;height:fit-content;}.comp b{display:block;font-size:12.5px;color:var(--ink);font-weight:950}.comp span{display:block;margin-top:4px;font-size:10.5px;line-height:1.35;color:#607993}.learn{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:12px;margin-top:14px;flex:none;height:auto;align-content:center;}.lesson{border:1px solid #cdddef;border-left:4px solid var(--blue);border-radius:12px;padding:14px;background:var(--blue-soft);height:fit-content;}.lesson:nth-child(2),.lesson:nth-child(5){background:var(--lav-soft);border-left-color:var(--lav)}.lesson:nth-child(3),.lesson:nth-child(6){background:var(--mint-soft);border-left-color:var(--mint)}.lesson:nth-child(4){background:var(--amber-soft);border-left-color:var(--amber)}.lesson strong{display:block;font-size:22px;line-height:1;color:var(--blue)}.lesson:nth-child(2) strong,.lesson:nth-child(5) strong{color:var(--lav)}.lesson:nth-child(3) strong,.lesson:nth-child(6) strong{color:var(--mint)}.lesson:nth-child(4) strong{color:var(--amber)}.lesson h3{margin:6px 0 4px;font-size:14px;color:var(--ink)}.lesson p{margin:0;font-size:11.5px;line-height:1.35;color:#58718d}.star-card{margin-top:14px;border:1px solid #294d72;border-radius:16px;background:var(--navy);padding:14px 18px;color:#fff;flex:none;min-height:0;height:auto;}.star-card .eyebrow{color:#c8d8e7}.star-card .story-flow{margin-top:8px}.star-card .story-step{border-color:#416585;background:#183c61}.star-card .story-step:nth-child(2){background:#4b3c78}.star-card .story-step:nth-child(3){background:#1a5b55}.star-card .story-step:nth-child(4){background:#75501a}.star-card .story-step b{color:#fff;font-size:11px}.star-card .story-step span{color:#eef5fb;font-size:9.5px;line-height:1.3;}.star-card .safe{color:#c7d6e4;font-size:9px;margin-top:8px}
+#learnings{background:#edf3f8}.comps{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto auto;gap:12px;flex:none;height:auto;align-content:center;}.comp{border:1px solid var(--line);border-left:4px solid #9fb8cf;border-radius:12px;background:#fff;padding:12px 14px;min-height:0;height:fit-content;}.comp:nth-child(1),.comp:nth-child(5),.comp:nth-child(9){background:var(--blue-soft)}.comp:nth-child(2),.comp:nth-child(6),.comp:nth-child(10){background:var(--lav-soft)}.comp:nth-child(3),.comp:nth-child(7),.comp:nth-child(11){background:var(--mint-soft)}.comp:nth-child(4),.comp:nth-child(8),.comp:nth-child(12){background:var(--amber-soft)}.comp b{display:block;font-size:12.5px;color:var(--ink);font-weight:950}.comp span{display:block;margin-top:4px;font-size:10.5px;line-height:1.35;color:#607993}.learn{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:12px;margin-top:14px;flex:none;height:auto;align-content:center;}.lesson{border:1px solid #cdddef;border-left:4px solid var(--blue);border-radius:12px;padding:14px;background:var(--blue-soft);height:fit-content;}.lesson:nth-child(2),.lesson:nth-child(5){background:var(--lav-soft);border-left-color:var(--lav)}.lesson:nth-child(3),.lesson:nth-child(6){background:var(--mint-soft);border-left-color:var(--mint)}.lesson:nth-child(4){background:var(--amber-soft);border-left-color:var(--amber)}.lesson strong{display:block;font-size:22px;line-height:1;color:var(--blue)}.lesson:nth-child(2) strong,.lesson:nth-child(5) strong{color:var(--lav)}.lesson:nth-child(3) strong,.lesson:nth-child(6) strong{color:var(--mint)}.lesson:nth-child(4) strong{color:var(--amber)}.lesson h3{margin:6px 0 4px;font-size:14px;color:var(--ink)}.lesson p{margin:0;font-size:11.5px;line-height:1.35;color:#58718d}.star-card{margin-top:14px;border:1px solid #294d72;border-radius:16px;background:var(--navy);padding:14px 18px;color:#fff;flex:none;min-height:0;height:auto;}.star-card .eyebrow{color:#c8d8e7}.star-card .story-flow{margin-top:8px}.star-card .story-step{border-color:#416585;background:#183c61}.star-card .story-step:nth-child(2){background:#4b3c78}.star-card .story-step:nth-child(3){background:#1a5b55}.star-card .story-step:nth-child(4){background:#75501a}.star-card .story-step b{color:#fff;font-size:11px}.star-card .story-step span{color:#eef5fb;font-size:9.5px;line-height:1.3;}.star-card .safe{color:#c7d6e4;font-size:9px;margin-top:8px}
 
 /* CLOSING FOOTER */
-footer{color:var(--ink);background:#fff;border-top:1px solid var(--line)}.footer-wrap{min-height:calc(100vh - var(--header-h));padding:40px 0;display:grid;grid-template-columns:1fr;gap:16px;align-content:center;position:relative;max-width:860px;margin:0 auto;text-align:center;}.footer-cta,.footer-meta{position:relative;z-index:1}.footer-cta{margin:0 auto;}.footer-eyebrow{color:var(--blue);font-weight:950;}.footer-cta h2{margin:12px 0 14px;font-size:48px;line-height:1.05;letter-spacing:-.05em;color:var(--ink)}.footer-cta p{margin:0 auto;color:var(--ink-2);font-size:16px;line-height:1.5}.footer-cta-btn{display:inline-flex;margin-top:20px;padding:14px 18px;border:1px solid var(--navy);border-radius:12px;background:var(--navy);color:#fff;font-size:12px;font-weight:950}.footer-meta{border:1px solid var(--line-2);border-radius:18px;background:#fbfdff;padding:22px;margin-top:30px;text-align:left;}.footer-meta>b,.footer-meta b{display:block;font-size:16px;color:var(--ink)}.footer-meta small{display:block;margin-top:6px;color:#627a94;font-size:11px}.footer-note{border:1px solid #cbddec;border-radius:11px;padding:12px;background:var(--blue-soft);margin-top:14px}.footer-note strong{display:block;font-size:11px;color:var(--ink)}.footer-note span{display:block;margin-top:4px;color:#55718c;font-size:10px;line-height:1.3}.source-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;justify-content:center;}.source-links a{padding:8px 12px;border-radius:9px;border:none;font-size:11px;font-weight:800;transition:.15s;}
+footer{color:var(--ink);background:#fff;border-top:1px solid var(--line)}.footer-wrap{min-height:calc(100vh - var(--header-h));padding:40px 0;display:grid;grid-template-columns:1fr;gap:16px;align-content:center;position:relative;max-width:860px;margin:0 auto;text-align:center;}.footer-cta,.footer-meta{position:relative;z-index:1}.footer-cta{margin:0 auto;}.footer-eyebrow{color:var(--blue);font-weight:950;}.footer-cta h2{margin:12px 0 14px;font-size:clamp(38px, 3vw, 58px);line-height:1.05;letter-spacing:-.05em;color:var(--ink);white-space:nowrap}.footer-cta p{margin:0 auto;color:var(--ink-2);font-size:16px;line-height:1.5}.footer-cta-btn{display:inline-flex;margin-top:20px;padding:14px 18px;border:1px solid var(--navy);border-radius:12px;background:var(--navy);color:#fff;font-size:12px;font-weight:950}.footer-meta{border:1px solid var(--line-2);border-radius:18px;background:#fbfdff;padding:22px;margin-top:30px;text-align:left;}.footer-meta>b,.footer-meta b{display:block;font-size:16px;color:var(--ink)}.footer-meta small{display:block;margin-top:6px;color:#627a94;font-size:11px}.footer-note{border:1px solid #cbddec;border-radius:11px;padding:12px;background:var(--blue-soft);margin-top:14px}.footer-note strong{display:block;font-size:11px;color:var(--ink)}.footer-note span{display:block;margin-top:4px;color:#55718c;font-size:10px;line-height:1.3}.source-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;justify-content:center;}.source-links a{padding:8px 12px;border-radius:9px;border:none;font-size:11px;font-weight:800;transition:.15s;}
 .source-links a:nth-child(1){background:var(--blue-soft);color:var(--blue);}
 .source-links a:nth-child(2){background:var(--mint-soft);color:var(--mint);}
 .source-links a:nth-child(3){background:var(--lav-soft);color:var(--lav);}
@@ -108,7 +111,7 @@ footer{color:var(--ink);background:#fff;border-top:1px solid var(--line)}.footer
 /* RESPONSIVE MEDIA QUERIES */
 @media screen and (max-width:1180px){:root{--header-h:132px}.head{grid-template-columns:205px minmax(440px,1fr) 260px}.section-head h2{font-size:34px}.lead{font-size:17px}.hero-copy{grid-template-columns:1.05fr .95fr}.eco-stage{padding:14px 10px 8px}.eco-board{width:100%}}
 @media screen and (max-width:900px){:root{--header-h:178px}.head{height:var(--header-h);grid-template-columns:1fr;grid-template-rows:40px 72px 46px;gap:6px;padding:10px 0}.brand{justify-content:flex-start}.head-actions{position:absolute;right:24px;top:10px;width:280px}.hero-copy{grid-template-columns:1fr}.role-card{max-width:none}.quick{grid-template-columns:repeat(2,1fr)}#architecture .arch-layout{grid-template-columns:1fr;height:auto}.integrations{height:auto}.integration-flow{grid-template-columns:1fr}.integration-arrow{display:none}.eco-board{grid-template-columns:repeat(6,1fr);grid-template-rows:auto;min-height:0}.eco-core{grid-column:1/-1;grid-row:auto;width:100%;max-width:none;}.eco-lines{display:none}.eco-node{grid-column:auto!important;grid-row:auto!important}.app-grid{grid-template-columns:repeat(2,1fr)}#ownership .ownership{grid-template-columns:repeat(2,1fr)}.scope-evidence{grid-template-columns:repeat(2,1fr)}.scope-chain{flex-wrap:wrap}.timeline{grid-template-columns:repeat(3,1fr)}.implementation{grid-template-columns:repeat(2,1fr)}.comps{grid-template-columns:repeat(2,1fr);height:auto}.learn{grid-template-columns:repeat(2,1fr);height:auto}.footer-wrap{grid-template-columns:1fr}.footer-meta{margin-top:0}}
-@media screen and (max-width:640px){:root{--header-h:238px}.head{height:var(--header-h)}.head-actions{position:static;width:100%}#nav{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(5,34px)}.wrap{width:min(var(--max),calc(100% - 28px))}.fit-section>.wrap,.slide-page>.wrap{padding-top:14px}.section-head h2{white-space:normal;font-size:28px}.section-head p{font-size:12.5px}.hero>.wrap{padding-top:12px}.hero-copy{gap:14px}.hero h1{font-size:52px}.lead{font-size:16px}.quick{grid-template-columns:1fr 1fr}.story-grid{grid-template-columns:1fr}.story-flow,.challenge-response{grid-template-columns:1fr 1fr}.strategy{grid-template-columns:1fr 1fr!important}.decision-row{grid-template-columns:repeat(3,1fr)}#ownership .ownership{grid-template-columns:1fr}.scope-evidence{grid-template-columns:1fr}.scope-chain{display:none}.arch-map{grid-template-columns:1fr}.arch-arrow{display:none}.stack{grid-template-columns:1fr}.timeline,.implementation{grid-template-columns:1fr}.app-grid{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr}.filters{justify-content:flex-start}.impact-metrics,.outcome-grid,.outcome-principles{grid-template-columns:1fr}.comps,.learn{grid-template-columns:1fr}.footer-cta h2{font-size:40px}}
+@media screen and (max-width:640px){:root{--header-h:238px}.head{height:var(--header-h)}.head-actions{position:static;width:100%}#nav{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(6,34px)}.wrap{width:min(var(--max),calc(100% - 28px))}.fit-section>.wrap,.slide-page>.wrap{padding-top:14px}.section-head h2{white-space:normal;font-size:28px}.section-head p{font-size:12.5px}.hero>.wrap{padding-top:12px}.hero-copy{gap:14px}.hero h1{font-size:52px}.lead{font-size:16px}.quick{grid-template-columns:1fr 1fr}.story-grid{grid-template-columns:1fr}.story-flow,.challenge-response{grid-template-columns:1fr 1fr}.strategy{grid-template-columns:1fr 1fr!important}.decision-row{grid-template-columns:repeat(3,1fr)}#ownership .ownership{grid-template-columns:1fr}.scope-evidence{grid-template-columns:1fr}.scope-chain{display:none}.arch-map{grid-template-columns:1fr}.arch-arrow{display:none}.stack{grid-template-columns:1fr}.timeline,.implementation{grid-template-columns:1fr}.app-grid{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr}.filters{justify-content:flex-start}.impact-metrics,.outcome-grid,.outcome-principles, .metrics-grid{grid-template-columns:1fr}.comps,.learn{grid-template-columns:1fr}.footer-cta h2{font-size:40px;white-space:normal}}
 </style>
 
 <div class="progress" id="progress"></div>
@@ -129,6 +132,8 @@ footer{color:var(--ink);background:#fff;border-top:1px solid var(--line)}.footer
       <a href="#products">Product Explorer</a>
       <a href="#impact">Impact</a>
       <a href="#learnings">Product Leadership</a>
+      <a href="#product-metrics">Product Metrics</a>
+      <a href="#connect">Connect</a>
     </nav>
     <div class="head-actions">
       <div class="action-row">
@@ -517,7 +522,6 @@ footer{color:var(--ink);background:#fff;border-top:1px solid var(--line)}.footer
 <section class="section slide-page" id="products" style="height: auto; min-height: auto; overflow: visible;">
   <div class="wrap" style="height: auto; min-height: auto; overflow: visible;">
     <div class="product-page product-page-one">
-      <div class="product-page-label">Product Explorer · 01 of 02</div>
       <div class="section-head">
         <div><span class="eyebrow">06 · Product Explorer</span><h2>Explore the banking applications</h2></div>
         <p>The main case study stays readable. Every product opens an in-depth workspace with its purpose, problem, users, capabilities, workflow, integration landscape, sample reporting, API thinking, exception design and PM contribution.</p>
@@ -575,7 +579,6 @@ footer{color:var(--ink);background:#fff;border-top:1px solid var(--line)}.footer
       </div>
     </div>
     <div class="product-page product-page-two">
-      <div class="product-page-label">Product Explorer · 02 of 02</div>
       <div class="product-page-heading">
         <h3>Continue exploring the suite</h3>
         <p>Six additional banking applications complete the second half of the product portfolio.</p>
@@ -694,21 +697,98 @@ footer{color:var(--ink);background:#fff;border-top:1px solid var(--line)}.footer
   </div>
 </section>
 
-<!-- 11. CONNECT (FOOTER) -->
-<footer class="slide-page" id="project-close" style="border-bottom: none;">
+<!-- 11. PRODUCT METRICS -->
+<section class="section slide-page" id="product-metrics">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">09 · Product Metrics</span><h2>Prioritisation frameworks and product metrics used in regulated digital banking</h2></div>
+      <p>These tools reflect realistic product-management practice for fintech and digital banking platforms, where decisions must balance customer value, regulatory criticality, implementation constraints and operational risk.</p>
+    </div>
+    <div class="metrics-grid reveal">
+      <div class="metrics-panel">
+        <h3>Prioritisation frameworks</h3>
+        <div class="framework-list">
+          <div class="framework-card" style="--tone:#2f6fe5;">
+            <h4>RICE</h4>
+            <p>Prioritise regulated features by reach, impact, confidence and effort, particularly when deciding between onboarding improvements, AML controls, reconciliation workflows, or API enhancements across multiple bank implementations.</p>
+          </div>
+          <div class="framework-card" style="--tone:#5c6be3;">
+            <h4>MoSCoW</h4>
+            <p>Separate must-have compliance and customer-critical workflows from should-have improvements so releases remain aligned to legal obligations, service continuity and migration readiness.</p>
+          </div>
+          <div class="framework-card" style="--tone:#1a9c7c;">
+            <h4>Impact vs. Effort</h4>
+            <p>Use this to sequence reusable platform capabilities such as workflow configuration, document upload, exception handling, and reporting dashboards across the product suite.</p>
+          </div>
+          <div class="framework-card" style="--tone:#d08d1d;">
+            <h4>WSJF</h4>
+            <p>Apply weighted short-job-first thinking where business urgency, regulatory dependency and customer friction are combined into a single prioritisation view for roadmap decisions.</p>
+          </div>
+        </div>
+      </div>
+      <div class="metrics-panel">
+        <h3>Product metrics</h3>
+        <div class="metric-list">
+          <div class="metric-pair">
+            <div class="metric-group">
+              <div class="metric-card" style="--tone:#2f6fe5;">
+                <h4>Adoption Rate</h4>
+                <p>Track percent of bank users or teams actively using a workflow after deployment.</p>
+              </div>
+              <div class="metric-card" style="--tone:#1a9c7c;">
+                <h4>Transaction Success Rate</h4>
+                <p>Measure successful completion of payments, lending actions, reconciliations, and operational flows.</p>
+              </div>
+              <div class="metric-card" style="--tone:#d08d1d;">
+                <h4>Exception Rate</h4>
+                <p>Identify failed or manually worked cases requiring intervention across integrations and operational functions.</p>
+              </div>
+            </div>
+            <div class="metric-group">
+              <div class="metric-card" style="--tone:#7b5de7;">
+                <h4>STP Rate</h4>
+                <p>Monitor straight-through processing for credit, payment, and compliance case handling.</p>
+              </div>
+              <div class="metric-card" style="--tone:#ba4d8c;">
+                <h4>API Success Rate</h4>
+                <p>Track the success of external calls to CBS, payment rails, credit bureaus and compliance services.</p>
+              </div>
+              <div class="metric-card" style="--tone:#3198a0;">
+                <h4>Reconciliation Accuracy</h4>
+                <p>Measure the percent of transaction records matching without manual adjustment or defect escalation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relationship">
+          <b>Product → Use case → Metric → Impact</b>
+          <p><strong>Loan origination:</strong> Application completion rate and turnaround time → reduced processing delays and better credit operations.</p>
+        </div>
+      </div>
+      <div class="metrics-panel" style="grid-column:1 / -1;">
+        <h3>Portfolio-relevant decision lens</h3>
+        <div class="metric-list">
+          <div class="metric-card" style="--tone:#6f96e8;"><h4>Risk Reduction</h4><p>Prioritise controls, alerting, validation and exception handling where compliance exposure and operational risk are highest.</p></div>
+          <div class="metric-card" style="--tone:#5ca580;"><h4>Customer / Business Impact</h4><p>Weight improvements by effect on user experience, clearances, turnaround time and operational efficiency for banks, NBFCs and support teams.</p></div>
+          <div class="metric-card" style="--tone:#b77a2f;"><h4>Dependency-based prioritisation</h4><p>Sequence work according to external dependencies, data migration readiness, integration contracts and downstream approvals that can block delivery.</p></div>
+          <div class="metric-card" style="--tone:#ba5d8d;"><h4>Regulatory / Criticality-based prioritisation</h4><p>Promote compliance, AML, KYC, audit and control functionalities ahead of low-risk enhancements when criticality and legal obligations justify it.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. CONNECT (FOOTER) -->
+<footer class="slide-page" id="connect" style="border-bottom: none;">
   <div class="wrap" style="align-items: center;">
     <div class="footer-wrap">
       <div class="footer-cta">
-        <span class="eyebrow footer-eyebrow">Project close</span>
+        <span class="eyebrow footer-eyebrow">Connect</span>
         <h2>Building similar regulated digital banking products?</h2>
         <p>A digital banking platform for banks and NBFCs needs more than application screens: the product must define the workflow, controls and integration model, then carry those decisions through migration, deployment, training, support and adoption.</p>
         <a class="footer-cta-btn" href="mailto:manoj.pant.pm@outlook.com">Interested in building similar regulated digital banking products? Let's discuss the challenge →</a>
       </div>
       <div class="footer-meta">
-        <div>
-          <b>Manoj Pant · Senior Product Manager</b>
-          <small>Integrated Channels Suite · Product Management Case Study</small>
-        </div>
         <div class="footer-note">
           <strong>Portfolio-safe reconstruction</strong>
           <span>Confidential client information excluded. Product-space references: RBI / NPCI / CKYC / CIBIL / GST / Frappe official documentation.</span>
