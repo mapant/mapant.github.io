@@ -9,6 +9,7 @@ const products = [
     description:
       'A modular enterprise platform bringing together banking, lending, payments, compliance and operational capabilities through configurable workflows and integrations.',
     tags: ['Banking', 'Lending', 'Payments', 'AML/KYC'],
+    url: '/projects/integrated-channels'
   },
   {
     number: '02',
@@ -17,6 +18,7 @@ const products = [
     description:
       'A 0→1 digital healthcare product focused on doctor acquisition, onboarding, engagement and treatment-related workflows across mobile platforms.',
     tags: ['0→1 Product', 'Mobile', 'Provider Experience', 'Adoption'],
+    url: '/projects/ayu-docconnect'
   },
   {
     number: '03',
@@ -25,6 +27,7 @@ const products = [
     description:
       'A rules-driven workflow product for provider onboarding, payout calculations, approvals and operational processing.',
     tags: ['Workflow Automation', 'Rules', 'Operations', 'Healthcare'],
+    url: '/projects/provider-payout'
   },
   {
     number: '04',
@@ -33,6 +36,7 @@ const products = [
     description:
       'A data-driven financial and operational optimization initiative using KPI frameworks, analytics, executive dashboards and workflow automation.',
     tags: ['Analytics', 'Cost Optimization', 'KPIs', 'Automation'],
+    url: '/projects/telecom-cost-optimization'
   },
   {
     number: '05',
@@ -41,6 +45,7 @@ const products = [
     description:
       'Enterprise analytics and reporting designed to improve visibility into service performance, operational KPIs and global delivery operations.',
     tags: ['Data Analytics', 'Power BI', 'KPIs', 'Enterprise Reporting'],
+    url: '/projects/global-service-delivery'
   },
 ];
 
@@ -241,7 +246,7 @@ const capabilities = [
                 ))}
               </div>
 
-              <a href="#contact" class="inline-block mt-5 text-sm font-black text-[#172033] hover:text-[#b58b43] transition">
+              <a href={product.url} class="inline-block mt-5 text-sm font-black text-[#172033] hover:text-[#b58b43] transition">
                 View Case Study →
               </a>
             </article>
