@@ -5,49 +5,223 @@ import Layout from '../../layouts/Layout.astro';
 <Layout title="Integrated Channels Suite | Case Study">
     <style>
         :root {
-            --navy: #102f55; --ink: #102a4d; --ink-2: #365774; 
-            --line: #d8e4ef; --bg: #f8fafc; --paper: #fff; 
-            --blue: #2468d7; --amber: #be7615;
+            --navy: #102f55; --navy-2: #163d6a; 
+            --ink: #102a4d; --ink-2: #365774; --muted: #627c97; 
+            --line: #d8e4ef; --line-2: #e8eff5;
+            --bg: #f8fafc; --paper: #fff; 
+            --blue: #2468d7; --blue-soft: #f0f6fc;
+            --lav: #7658d9; --lav-soft: #f4f1ff; 
+            --mint: #17886f; --mint-soft: #f0fbf7;
+            --amber: #be7615; --amber-soft: #fff9f0;
+            --teal: #167d87;
+            --radius: 8px;
+            --max: 1000px; /* Slightly narrower for reading focus */
+            --header-h: 70px;
+            --shadow: 0 4px 16px rgba(16, 47, 85, 0.04); 
             --sans: Inter, ui-sans-serif, system-ui, sans-serif;
         }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body { 
             margin: 0; background: var(--bg); color: var(--ink); 
-            font-family: var(--sans); font-size: 14px; line-height: 1.5; 
+            font-family: var(--sans); font-size: 14px; line-height: 1.6; 
+            overflow-x: hidden; 
         }
-        .wrap { width: 100%; padding: 0 40px; margin: 0 auto; max-width: 1200px; }
         
+        .wrap { width: 100%; padding: 0 40px; margin: 0 auto; max-width: var(--max); }
+        
+        /* HEADER */
         header { 
             background: var(--paper); border-bottom: 1px solid var(--line); 
-            padding: 20px 0; position: sticky; top: 0; z-index: 100;
+            height: var(--header-h); display: flex; align-items: center;
+            position: sticky; top: 0; z-index: 100;
         }
         .back-link { 
             display: inline-flex; align-items: center; gap: 8px; 
             color: var(--ink-2); font-weight: 700; text-decoration: none; font-size: 13px;
+            transition: 0.2s;
         }
-        .back-link:hover { color: var(--blue); }
+        .back-link:hover { color: var(--blue); transform: translateX(-4px); }
 
-        .hero { padding: 80px 0; background: #fff; border-bottom: 1px solid var(--line); }
-        .eyebrow { font-size: 11px; font-weight: 800; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 16px; }
-        h1 { font-size: 42px; font-weight: 900; color: var(--navy); line-height: 1.1; margin: 0 0 24px; letter-spacing: -0.02em; }
-        .lead { font-size: 18px; color: var(--ink-2); line-height: 1.6; max-width: 800px; margin: 0; }
+        /* SECTIONS */
+        section { padding: 60px 0; border-bottom: 1px solid var(--line-2); }
+        .section-white { background: var(--paper); }
+        
+        .eyebrow { font-size: 10px; font-weight: 800; color: var(--amber); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 12px; }
+        h1 { font-size: 38px; font-weight: 800; color: var(--navy); line-height: 1.1; margin: 0 0 20px; letter-spacing: -0.02em; }
+        h2 { font-size: 28px; font-weight: 800; color: var(--navy); line-height: 1.2; margin: 0 0 16px; letter-spacing: -0.02em; }
+        h3 { font-size: 16px; font-weight: 800; color: var(--navy); margin: 0 0 8px; }
+        p { margin: 0 0 16px; color: var(--ink-2); }
+        .lead { font-size: 16px; color: var(--ink-2); line-height: 1.6; max-width: 800px; margin: 0; }
+
+        /* GRIDS & CARDS */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+        .card { 
+            padding: 24px; border: 1px solid var(--line); 
+            border-radius: var(--radius); background: var(--paper); 
+            height: 100%; display: flex; flex-direction: column; 
+        }
+        .card.tint-blue { background: var(--blue-soft); border-color: #d1e4f9; }
+        .card.tint-lav { background: var(--lav-soft); border-color: #e2d9ff; }
+
+        .stat-card { border-top: 3px solid var(--blue); background: var(--paper); padding: 20px; border-radius: var(--radius) var(--radius) 4px 4px; border-left: 1px solid var(--line); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); box-shadow: var(--shadow); }
+        .stat-card strong { display: block; font-size: 32px; font-weight: 900; color: var(--navy); line-height: 1; margin-bottom: 8px; }
+        .stat-card span { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+
+        ul { margin: 0; padding-left: 20px; color: var(--ink-2); }
+        li { margin-bottom: 8px; }
+        li strong { color: var(--navy); }
+
+        .architecture-box { background: var(--navy); color: #fff; padding: 32px; border-radius: var(--radius); margin-top: 32px; }
+        .architecture-box h3 { color: #fff; }
+        .architecture-box p { color: #a9b9cc; }
+        
+        .tag { display: inline-block; padding: 4px 10px; background: rgba(255,255,255,0.1); border-radius: 4px; font-size: 10px; font-weight: 700; color: #fff; letter-spacing: 0.02em; margin: 4px 4px 4px 0; border: 1px solid rgba(255,255,255,0.2); }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .hero { padding: 40px 0; }
+        }
     </style>
 
     <header>
         <div class="wrap">
-            <a href="/" class="back-link">← Back to Portfolio</a>
+            <a href="/#portfolio" class="back-link">← Back to Portfolio</a>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <!-- HERO -->
+        <section class="section-white" style="padding: 80px 0;">
             <div class="wrap">
                 <span class="eyebrow">01 · M2P Fintech</span>
                 <h1>Integrated Channels Suite</h1>
-                <p class="lead">A modular enterprise banking platform designed to bring multiple banking, lending, payment, compliance and operational capabilities into an integration-ready product ecosystem.</p>
+                <p class="lead">I led product management for a digital banking platform for banks and NBFCs, built from scratch as a reusable 12-application suite. It brought together lending, cards, payments, reconciliation, compliance, and governance workflows into an integration-ready ecosystem.</p>
+
+                <div class="grid-4" style="margin-top: 40px;">
+                    <div class="stat-card">
+                        <strong>12</strong>
+                        <span>Applications Built</span>
+                    </div>
+                    <div class="stat-card" style="border-top-color: var(--amber);">
+                        <strong>6+6</strong>
+                        <span>Phase Product Build</span>
+                    </div>
+                    <div class="stat-card" style="border-top-color: var(--mint);">
+                        <strong>100+</strong>
+                        <span>Bank Deployments</span>
+                    </div>
+                    <div class="stat-card" style="border-top-color: var(--lav);">
+                        <strong>25%</strong>
+                        <span>Manual Effort Reduction</span>
+                    </div>
+                </div>
             </div>
         </section>
-        
-        <!-- We will build out the detailed architecture and workflow sections here next -->
-        
+
+        <!-- CHALLENGE & THESIS -->
+        <section>
+            <div class="wrap">
+                <div class="grid-2">
+                    <div>
+                        <span class="eyebrow" style="color: var(--blue);">The Challenge</span>
+                        <h2>More than building just applications.</h2>
+                        <p>Banks already operated within complex technology environments. The product had to support highly specific domain workflows (Lending, AML, Audit) while remaining configurable, integration-ready, and migration-aware.</p>
+                        <ul>
+                            <li><strong>Integration:</strong> Existing bank systems required coexistence from day one.</li>
+                            <li><strong>Configuration:</strong> Workflows needed adaptability without rigid, one-size-fits-all coding.</li>
+                            <li><strong>Regulation:</strong> Processes demanded strict roles, approvals, and traceability.</li>
+                        </ul>
+                    </div>
+                    <div class="card tint-blue">
+                        <span class="eyebrow" style="color: var(--blue);">Product Thesis</span>
+                        <h3 style="font-size: 20px;">Standardise. Configure. Integrate.</h3>
+                        <p>The suite was approached as a common product foundation with modular domain applications—not as 12 disconnected projects.</p>
+                        <ul>
+                            <li><strong>Standardise:</strong> Roles, controls, and reporting conventions.</li>
+                            <li><strong>Configure:</strong> Institution-specific business rules and journeys.</li>
+                            <li><strong>Integrate:</strong> Existing core systems, payment rails, and external APIs.</li>
+                            <li><strong>Adopt:</strong> Deep focus on migration, training, and support readiness.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARCHITECTURE & INTEGRATION -->
+        <section class="section-white">
+            <div class="wrap">
+                <span class="eyebrow">Architecture & Integrations</span>
+                <h2>Integration-first product design.</h2>
+                <p style="max-width: 800px;">We mapped the platform directly to the existing fintech ecosystem. Identifying systems of record, API contracts, authentication, failure handling, and reconciliation was treated as core UX, not just back-end engineering.</p>
+                
+                <div class="architecture-box">
+                    <div class="grid-2">
+                        <div>
+                            <h3>Integrated Domain Apps</h3>
+                            <p>LOS-LMS • CMS • Reconciliation • AML-KYC • Treasury • Audit • Fixed Assets • Shares • CIBIL</p>
+                            <div style="margin-top: 24px;">
+                                <span class="eyebrow" style="color: #fff; opacity: 0.6;">API / Integration Boundary</span>
+                                <div style="display: flex; gap: 8px; font-size: 11px; font-weight: 700; text-transform: uppercase;">
+                                    <span>Auth</span> • <span>Validation</span> • <span>Retries</span> • <span>Reconciliation</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="border-left: 1px solid rgba(255,255,255,0.2); padding-left: 24px;">
+                            <h3>Connected Ecosystem Rails</h3>
+                            <p>Designed to interface securely with existing banking environments.</p>
+                            <div>
+                                <span class="tag">CBS / Internal Bank Systems</span>
+                                <span class="tag">NPCI / UPI / AEPS</span>
+                                <span class="tag">ATM / Switch</span>
+                                <span class="tag">CIBIL</span>
+                                <span class="tag">CKYC & GST</span>
+                                <span class="tag">RuPay / Visa / Mastercard</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT SCOPE -->
+        <section>
+            <div class="wrap">
+                <span class="eyebrow">End-to-End Ownership</span>
+                <h2>Product management scope.</h2>
+                <p style="margin-bottom: 32px; max-width: 800px;">The work extended beyond backlog management. It connected business discovery, product definition, technical solutioning, engineering execution, client validation, and post-release enablement.</p>
+
+                <div class="grid-3">
+                    <div class="card">
+                        <h3>Strategy & Discovery</h3>
+                        <p>Shaped the suite direction and phased roadmap (6+6 applications). Worked with SMEs, banks, and compliance teams prior to development.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Definition & Design</h3>
+                        <p>Converted needs into executable BRD/FRDs, API specs, DFDs, ER mapping, and Figma workflows to align cross-functional teams.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Agile Delivery</h3>
+                        <p>Led backlog execution, epic/story refinement, and 2-week sprint cycles with engineering, ensuring alignment with acceptance criteria.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Implementation Readiness</h3>
+                        <p>Supported on-prem/bank-site implementations, data field mapping, migration validation, and production connectivity checks.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Quality & Controls</h3>
+                        <p>Connected product intent to QA feature testing, UAT, edge-case management, and VAPT (security) readiness.</p>
+                    </div>
+                    <div class="card tint-lav">
+                        <h3 style="color: var(--lav);">Adoption Focus</h3>
+                        <p>Treated adoption as a product outcome by preparing core-team training, user manuals, and L1/L2 support enablement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </Layout>
