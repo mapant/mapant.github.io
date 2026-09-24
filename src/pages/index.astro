@@ -83,10 +83,10 @@ const outcomes = [
             --mint: #17886f; --mint-soft: #f0fbf7;
             --amber: #be7615; --amber-soft: #fff9f0;
             --teal: #167d87;
-            --radius: 12px;
-            --max: 1400px;
-            --header-h: 80px;
-            --shadow: 0 4px 20px rgba(16, 47, 85, 0.05); 
+            --radius: 8px;
+            --max: 1200px;
+            --header-h: 70px;
+            --shadow: 0 4px 16px rgba(16, 47, 85, 0.04); 
             --sans: Inter, ui-sans-serif, system-ui, sans-serif;
         }
 
@@ -111,10 +111,10 @@ const outcomes = [
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
-            padding: 60px 0; 
+            padding: 40px 0; 
         }
 
-        .wrap { width: 100%; padding: 0 48px; margin: 0 auto; max-width: var(--max); }
+        .wrap { width: 100%; padding: 0 40px; margin: 0 auto; max-width: var(--max); }
 
         /* NAVIGATION */
         header { 
@@ -125,41 +125,41 @@ const outcomes = [
         }
         .head { 
             height: 100%; display: grid; 
-            grid-template-columns: 250px 1fr auto; gap: 24px; align-items: center; 
+            grid-template-columns: 220px 1fr auto; gap: 24px; align-items: center; 
         }
         .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
         .brand-logo { 
-            width: 36px; height: 36px; border-radius: 8px; 
+            width: 32px; height: 32px; border-radius: 6px; 
             background: var(--navy); color: #fff; display: flex; 
-            align-items: center; justify-content: center; font-weight: 900; 
+            align-items: center; justify-content: center; font-weight: 800; font-size: 13px;
         }
-        .brand-copy b { display: block; font-size: 16px; color: var(--navy); letter-spacing: -0.01em; }
-        .brand-copy small { display: block; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+        .brand-copy b { display: block; font-size: 14px; color: var(--navy); letter-spacing: -0.01em; }
+        .brand-copy small { display: block; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 
         #nav { display: flex; gap: 4px; justify-content: center; }
         #nav a { 
-            padding: 8px 16px; border-radius: 6px; color: var(--ink-2); 
-            font-size: 12px; font-weight: 700; transition: 0.2s; text-decoration: none;
+            padding: 6px 14px; border-radius: 6px; color: var(--ink-2); 
+            font-size: 12px; font-weight: 600; transition: 0.2s; text-decoration: none;
         }
         #nav a:hover, #nav a.active { background: var(--blue-soft); color: var(--blue); }
 
         .btn { 
             display: inline-flex; align-items: center; justify-content: center; 
-            padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: 800; 
+            padding: 10px 18px; border-radius: 6px; font-size: 12px; font-weight: 700; 
             transition: 0.2s; text-decoration: none; cursor: pointer;
         }
         .btn.primary { background: var(--amber); color: #fff; }
-        .btn.primary:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn.primary:hover { opacity: 0.9; }
         .btn.outline { border: 1px solid currentColor; background: transparent; }
         .btn.outline:hover { background: rgba(0,0,0,0.03); }
 
         /* GRIDS & CARDS */
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
         .card { 
-            padding: 28px; 
+            padding: 24px; 
             border: 1px solid var(--line); 
             border-radius: var(--radius); 
             background: var(--paper); 
@@ -169,11 +169,11 @@ const outcomes = [
             flex-direction: column; 
         }
         .card .eyebrow { 
-            font-size: 10px; font-weight: 900; letter-spacing: 0.15em; 
-            text-transform: uppercase; margin-bottom: 12px; 
+            font-size: 10px; font-weight: 800; letter-spacing: 0.1em; 
+            text-transform: uppercase; margin-bottom: 8px; 
         }
-        .card h3 { font-size: 18px; margin: 0 0 12px; color: var(--navy); line-height: 1.25; font-weight: 900; }
-        .card p { font-size: 13px; margin: 0; color: var(--ink-2); flex: 1; line-height: 1.6; }
+        .card h3 { font-size: 16px; margin: 0 0 10px; color: var(--navy); line-height: 1.3; font-weight: 800; }
+        .card p { font-size: 13px; margin: 0 0 16px; color: var(--ink-2); flex: 1; line-height: 1.5; }
 
         .card.tint-blue { background: var(--blue-soft); border-color: #d1e4f9; }
         .card.tint-blue .eyebrow { color: var(--blue); }
@@ -187,31 +187,31 @@ const outcomes = [
         .card.tint-lav { background: var(--lav-soft); border-color: #e2d9ff; }
         .card.tint-lav .eyebrow { color: var(--lav); }
 
-        .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
         .tag { 
-            padding: 6px 12px; background: #fff; border: 1px solid rgba(0,0,0,0.05); 
-            border-radius: 6px; font-size: 10px; font-weight: 800; color: var(--ink-2); 
-            text-transform: uppercase; letter-spacing: 0.05em;
+            padding: 4px 10px; background: #fff; border: 1px solid rgba(0,0,0,0.06); 
+            border-radius: 4px; font-size: 10px; font-weight: 700; color: var(--ink-2); 
+            letter-spacing: 0.02em;
         }
 
         /* TYPOGRAPHY */
-        .section-head { margin-bottom: 40px; max-width: 800px; }
-        .section-head .eyebrow { display: block; font-size: 11px; font-weight: 900; color: var(--amber); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; }
-        .section-head h2 { font-size: 36px; letter-spacing: -0.03em; color: var(--navy); font-weight: 900; margin: 0 0 16px; line-height: 1.1; }
-        .section-head p { font-size: 16px; color: var(--ink-2); margin: 0; line-height: 1.6; }
+        .section-head { margin-bottom: 32px; max-width: 700px; }
+        .section-head .eyebrow { display: block; font-size: 10px; font-weight: 800; color: var(--amber); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+        .section-head h2 { font-size: 28px; letter-spacing: -0.02em; color: var(--navy); font-weight: 800; margin: 0 0 12px; line-height: 1.15; }
+        .section-head p { font-size: 14px; color: var(--ink-2); margin: 0; line-height: 1.5; }
 
-        .hero-title { font-size: clamp(40px, 5vw, 68px); font-weight: 900; color: var(--navy); line-height: 1; letter-spacing: -0.04em; margin: 24px 0; max-width: 900px; }
-        .hero-lead { font-size: 18px; color: var(--ink-2); line-height: 1.6; max-width: 800px; margin: 0 0 32px; }
+        .hero-title { font-size: 38px; font-weight: 800; color: var(--navy); line-height: 1.1; letter-spacing: -0.02em; margin: 20px 0; max-width: 800px; }
+        .hero-lead { font-size: 15px; color: var(--ink-2); line-height: 1.6; max-width: 700px; margin: 0 0 24px; }
 
-        .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
-        .stat-box { background: #fff; border: 1px solid var(--line); padding: 24px; border-radius: var(--radius); }
-        .stat-box strong { display: block; font-size: 32px; color: var(--navy); font-weight: 900; line-height: 1; }
-        .stat-box span { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 800; margin-top: 8px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 32px; max-width: 800px; }
+        .stat-box { background: #fff; border: 1px solid var(--line); padding: 20px; border-radius: var(--radius); }
+        .stat-box strong { display: block; font-size: 24px; color: var(--navy); font-weight: 800; line-height: 1; }
+        .stat-box span { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 700; margin-top: 6px; }
 
         .dark-section { background: var(--navy); color: #fff; }
         .dark-section .section-head h2 { color: #fff; }
         .dark-section .section-head p { color: #a9b9cc; }
-        .dark-section .card { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); }
+        .dark-section .card { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); }
         .dark-section .card h3 { color: #fff; }
         .dark-section .card p { color: #a9b9cc; }
         
@@ -243,7 +243,7 @@ const outcomes = [
                 <a href="#contact">Contact</a>
             </nav>
             <div style="justify-self: end;">
-                <a class="btn outline" style="color:var(--navy); padding: 8px 16px;" href="#contact">Contact Me</a>
+                <a class="btn primary" style="padding: 8px 16px; font-size: 11px;" href="#portfolio">View Projects</a>
             </div>
         </div>
     </header>
@@ -252,21 +252,16 @@ const outcomes = [
         <!-- 01. OVERVIEW -->
         <section class="slide-page" id="overview">
             <div class="wrap">
-                <span class="eyebrow" style="color: var(--amber); font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase;">Senior Product Manager</span>
+                <span class="eyebrow" style="color: var(--amber); font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; font-size: 10px;">Senior Product Manager</span>
                 <h1 class="hero-title">Building products that solve complex business problems.</h1>
                 <p class="hero-lead">Senior Product Manager with <strong>10+ years of experience</strong> across FinTech, Healthcare, Telecom and Enterprise IT, combining product strategy, business analysis, technology, data and execution to build enterprise products.</p>
                 
-                <div class="tag-cloud" style="margin-top: 0; gap: 12px;">
-                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 13px;">Product Strategy <span style="color:var(--amber); margin:0 8px;">•</span></span>
-                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 13px;">Enterprise Platforms <span style="color:var(--amber); margin:0 8px;">•</span></span>
-                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 13px;">Digital Products <span style="color:var(--amber); margin:0 8px;">•</span></span>
-                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 13px;">Data & Analytics <span style="color:var(--amber); margin:0 8px;">•</span></span>
-                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 13px;">Workflow Automation</span>
-                </div>
-
-                <div style="margin-top: 32px; display: flex; gap: 16px;">
-                    <a href="#portfolio" class="btn primary">Explore Product Portfolio →</a>
-                    <a href="#approach" class="btn outline" style="color: var(--navy);">Product Approach</a>
+                <div class="tag-cloud" style="margin-top: 0; gap: 8px; border-bottom: 1px solid var(--line); padding-bottom: 24px; max-width: 800px;">
+                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 12px;">Product Strategy <span style="color:var(--amber); margin:0 6px;">•</span></span>
+                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 12px;">Enterprise Platforms <span style="color:var(--amber); margin:0 6px;">•</span></span>
+                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 12px;">Digital Products <span style="color:var(--amber); margin:0 6px;">•</span></span>
+                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 12px;">Data & Analytics <span style="color:var(--amber); margin:0 6px;">•</span></span>
+                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 12px;">Workflow Automation</span>
                 </div>
 
                 <div class="stat-grid">
@@ -287,7 +282,7 @@ const outcomes = [
                     <p>A focused selection of products and initiatives spanning banking, lending, payments, healthcare, telecom analytics and enterprise automation.</p>
                 </div>
                 
-                <div class="grid-3" style="margin-bottom: 24px;">
+                <div class="grid-3" style="margin-bottom: 20px;">
                     {products.slice(0, 3).map((product) => (
                         <article class={`card ${product.tint}`}>
                             <span class="eyebrow">{product.number} · {product.company}</span>
@@ -296,7 +291,7 @@ const outcomes = [
                             <div class="tag-cloud">
                                 {product.tags.map((tag) => ( <span class="tag">{tag}</span> ))}
                             </div>
-                            <a href={product.url} style="margin-top: 24px; font-size: 12px; font-weight: 800; color: var(--navy); text-decoration: none;">View Case Study →</a>
+                            <a href={product.url} style="margin-top: 16px; font-size: 11px; font-weight: 700; color: var(--navy); text-decoration: none; display: inline-block;">View Case Study →</a>
                         </article>
                     ))}
                 </div>
@@ -309,7 +304,7 @@ const outcomes = [
                             <div class="tag-cloud">
                                 {product.tags.map((tag) => ( <span class="tag">{tag}</span> ))}
                             </div>
-                            <a href={product.url} style="margin-top: 24px; font-size: 12px; font-weight: 800; color: var(--navy); text-decoration: none;">View Case Study →</a>
+                            <a href={product.url} style="margin-top: 16px; font-size: 11px; font-weight: 700; color: var(--navy); text-decoration: none; display: inline-block;">View Case Study →</a>
                         </article>
                     ))}
                 </div>
@@ -335,9 +330,9 @@ const outcomes = [
                     ))}
                 </div>
 
-                <div style="margin-top: 32px; padding: 24px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); border-radius: var(--radius);">
-                    <div style="font-size: 10px; font-weight: 900; color: var(--amber); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px;">Product Mindset</div>
-                    <div style="font-size: 16px; font-weight: 700; color: #fff;">Customer problem + Business value + Technical feasibility + Measurable outcome</div>
+                <div style="margin-top: 24px; padding: 20px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); border-radius: var(--radius); max-width: 800px;">
+                    <div style="font-size: 9px; font-weight: 800; color: var(--amber); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px;">Product Mindset</div>
+                    <div style="font-size: 14px; font-weight: 600; color: #fff;">Customer problem + Business value + Technical feasibility + Measurable outcome</div>
                 </div>
             </div>
         </section>
@@ -360,16 +355,16 @@ const outcomes = [
                     ))}
                 </div>
 
-                <div class="grid-4" style="margin-top: 24px;">
+                <div class="grid-4" style="margin-top: 20px;">
                     {[
                         ['SQL', 'Data & analysis'],
                         ['Power BI', 'Decision dashboards'],
                         ['APIs', 'Product integrations'],
                         ['Figma', 'Product prototyping'],
                     ].map(([name, label]) => (
-                        <div style="background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px;">
-                            <div style="font-weight: 900; color: var(--navy); font-size: 16px;">{name}</div>
-                            <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 800; margin-top: 6px;">{label}</div>
+                        <div style="background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px;">
+                            <div style="font-weight: 800; color: var(--navy); font-size: 14px;">{name}</div>
+                            <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 700; margin-top: 4px;">{label}</div>
                         </div>
                     ))}
                 </div>
@@ -388,9 +383,9 @@ const outcomes = [
                 <div class="grid-4">
                     {outcomes.map(([metric, label, company]) => (
                         <article class="card dark-section" style="background: var(--navy); border: none;">
-                            <div style="font-size: 36px; font-weight: 900; color: var(--amber); line-height: 1; margin-bottom: 12px;">{metric}</div>
-                            <h3 style="color: #fff; margin-bottom: 8px;">{label}</h3>
-                            <p style="font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-top: auto;">{company}</p>
+                            <div style="font-size: 28px; font-weight: 800; color: var(--amber); line-height: 1; margin-bottom: 10px;">{metric}</div>
+                            <h3 style="color: #fff; margin-bottom: 6px;">{label}</h3>
+                            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-top: auto;">{company}</p>
                         </article>
                     ))}
                 </div>
@@ -403,23 +398,33 @@ const outcomes = [
                 <div class="grid-2" style="align-items: center;">
                     <div>
                         <span class="eyebrow" style="color: var(--amber);">Senior Product Manager</span>
-                        <h2 style="font-size: 48px; line-height: 1.05; margin: 16px 0 24px;">Building products where business, technology and outcomes meet.</h2>
-                        <p style="font-size: 18px; max-width: 600px;">My experience spans the journey from data and business analysis to 0→1 product development and enterprise platform management.</p>
+                        <h2 style="font-size: 38px; line-height: 1.1; margin: 12px 0 20px;">Building products where business, technology and outcomes meet.</h2>
+                        <p style="font-size: 15px; max-width: 500px; line-height: 1.6;">My experience spans the journey from data and business analysis to 0→1 product development and enterprise platform management.</p>
                         
-                        <div class="tag-cloud" style="margin-top: 24px; gap: 8px;">
+                        <div class="tag-cloud" style="margin-top: 20px; gap: 6px;">
                             {['Product Strategy', 'Enterprise Platforms', 'Technical Product Management', 'Data & Analytics'].map((tag) => (
-                                <span class="tag" style="background: transparent; border-color: rgba(255,255,255,0.2); color: #fff;">{tag}</span>
+                                <span class="tag" style="background: transparent; border-color: rgba(255,255,255,0.15); color: #fff;">{tag}</span>
                             ))}
                         </div>
                     </div>
-                    <div class="card" style="margin-left: auto; width: 100%; max-width: 400px; background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1);">
-                        <span class="eyebrow" style="color: var(--amber);">Connect</span>
-                        <a href="mailto:manoj.pant.pm@outlook.com" class="btn outline" style="color: #fff; border-color: rgba(255,255,255,0.2); justify-content: flex-start; padding: 16px; margin-top: 16px;">manoj.pmpm@gmail.com</a>
-                        <a href="https://www.linkedin.com/in/manoj-pant-35129495/" target="_blank" rel="noreferrer" class="btn outline" style="color: #fff; border-color: rgba(255,255,255,0.2); justify-content: flex-start; padding: 16px; margin-top: 12px;">LinkedIn →</a>
+                    <div class="card" style="margin-left: auto; width: 100%; max-width: 360px; background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.08);">
+                        <span class="eyebrow" style="color: var(--amber);">Connect & Download</span>
+                        
+                        <a href="/Manoj_Pant_Senior_Product_Manager_AI_10Yrs.pdf" download class="btn primary" style="justify-content: flex-start; padding: 12px 16px; margin-top: 12px; font-size: 13px;">
+                            ↓ Download Resume (PDF)
+                        </a>
+
+                        <a href="mailto:manoj.pant.pm@outlook.com" class="btn outline" style="color: #fff; border-color: rgba(255,255,255,0.15); justify-content: flex-start; padding: 12px 16px; margin-top: 12px;">
+                            manoj.pant.pm@outlook.com
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/manoj-pant-35129495/" target="_blank" rel="noreferrer" class="btn outline" style="color: #fff; border-color: rgba(255,255,255,0.15); justify-content: flex-start; padding: 12px 16px; margin-top: 10px;">
+                            LinkedIn Profile →
+                        </a>
                     </div>
                 </div>
                 
-                <div style="margin-top: 80px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">
+                <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
                     <span>© {new Date().getFullYear()} Manoj Pant</span>
                     <span>Product Portfolio</span>
                 </div>
