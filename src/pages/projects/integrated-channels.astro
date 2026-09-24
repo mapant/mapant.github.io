@@ -24,7 +24,7 @@ a{text-decoration:none;color:inherit}button,input{font:inherit}button{cursor:poi
 #progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--blue),var(--lav));z-index:300}
 
 /* HEADER */
-header{position:sticky;top:0;z-index:120;background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.10);box-shadow:0 10px 24px rgba(8,28,51,.18)}
+header{position:fixed;inset:0 0 auto;width:100%;z-index:120;background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.10);box-shadow:0 10px 24px rgba(8,28,51,.18)}
 .head{height:var(--header-h);display:grid;grid-template-columns:210px minmax(620px,1fr) 250px;gap:16px;align-items:center}
 .brand{display:flex;align-items:center;gap:12px;min-width:0}
 .brand-logo{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#244f7f 0%,#1b3f69 100%);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-weight:950;color:#fff;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);line-height:1}
@@ -47,6 +47,7 @@ header{position:sticky;top:0;z-index:120;background:var(--navy);color:#fff;borde
 
 .eyebrow{font-size:11px;line-height:1.15;color:var(--blue);font-weight:950;letter-spacing:.17em;text-transform:uppercase}
 .section-head{display:grid;gap:6px;margin-bottom:14px;flex:none}.section-head h2{margin:4px 0 0;font-size:37px;line-height:1.03;letter-spacing:-.045em;color:var(--ink);font-weight:950;white-space:nowrap}.section-head p{margin:0;color:var(--ink-2);font-size:15px;line-height:1.42}
+main{padding-top:var(--header-h)}
 
 /* OVERVIEW */
 .hero{background:linear-gradient(180deg,#f8fbff 0%,#f3f7fb 100%)}
