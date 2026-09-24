@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Integrated Channels Suite | Case Study">
+    <style>
+        :root {
+            --navy: #102f55; --ink: #102a4d; --ink-2: #365774; 
+            --line: #d8e4ef; --bg: #f8fafc; --paper: #fff; 
+            --blue: #2468d7; --amber: #be7615;
+            --sans: Inter, ui-sans-serif, system-ui, sans-serif;
+        }
+        body { 
+            margin: 0; background: var(--bg); color: var(--ink); 
+            font-family: var(--sans); font-size: 14px; line-height: 1.5; 
+        }
+        .wrap { width: 100%; padding: 0 40px; margin: 0 auto; max-width: 1200px; }
+        
+        header { 
+            background: var(--paper); border-bottom: 1px solid var(--line); 
+            padding: 20px 0; position: sticky; top: 0; z-index: 100;
+        }
+        .back-link { 
+            display: inline-flex; align-items: center; gap: 8px; 
+            color: var(--ink-2); font-weight: 700; text-decoration: none; font-size: 13px;
+        }
+        .back-link:hover { color: var(--blue); }
+
+        .hero { padding: 80px 0; background: #fff; border-bottom: 1px solid var(--line); }
+        .eyebrow { font-size: 11px; font-weight: 800; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 16px; }
+        h1 { font-size: 42px; font-weight: 900; color: var(--navy); line-height: 1.1; margin: 0 0 24px; letter-spacing: -0.02em; }
+        .lead { font-size: 18px; color: var(--ink-2); line-height: 1.6; max-width: 800px; margin: 0; }
+    </style>
+
+    <header>
+        <div class="wrap">
+            <a href="/" class="back-link">← Back to Portfolio</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <span class="eyebrow">01 · M2P Fintech</span>
+                <h1>Integrated Channels Suite</h1>
+                <p class="lead">A modular enterprise banking platform designed to bring multiple banking, lending, payment, compliance and operational capabilities into an integration-ready product ecosystem.</p>
+            </div>
+        </section>
+        
+        <!-- We will build out the detailed architecture and workflow sections here next -->
+        
+    </main>
+</Layout>
