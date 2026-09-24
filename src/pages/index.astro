@@ -39,18 +39,19 @@ import Layout from '../layouts/Layout.astro';
         .head-actions{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:42px 42px;gap:7px}.head-actions .action-row{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:7px}.head-actions .btn{height:42px}.portfolio-top{grid-column:1/-1}
         .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);font-size:12px;font-weight:950;transition:.15s ease}
         .btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(10,36,65,.12)}.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}.portfolio-top{background:#2a5c8d;color:#fff;border-color:#547ca5}
+        .btn.outline{background:transparent;border:1px solid var(--blue);color:var(--blue);}.btn.outline:hover{background:var(--blue-soft);}
 
         /* SECTIONS & GRIDS */
         .section{border-bottom:1px solid var(--line-2)}
         .section.white{background:#fff}.section.bg-light{background:#f6f9fc}
-        .slide-page { padding: 40px 0; display: flex; flex-direction: column; }
+        .slide-page { padding: 50px 0; display: flex; flex-direction: column; }
         .slide-page:last-child { border-bottom: none; }
         
         .eyebrow{font-size:11px;line-height:1.15;color:var(--blue);font-weight:950;letter-spacing:.17em;text-transform:uppercase; display:block; margin-bottom:8px;}
-        .section-head{margin-bottom:24px; max-width: 900px;}.section-head h2{margin:0 0 12px;font-size:36px;line-height:1.05;letter-spacing:-.03em;color:var(--ink);font-weight:950;}.section-head p{margin:0;color:var(--ink-2);font-size:16px;line-height:1.5}
+        .section-head{margin-bottom:32px; max-width: 900px;}.section-head h2{margin:0 0 12px;font-size:36px;line-height:1.05;letter-spacing:-.03em;color:var(--ink);font-weight:950;}.section-head p{margin:0;color:var(--ink-2);font-size:16px;line-height:1.5}
 
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
         
@@ -75,16 +76,6 @@ import Layout from '../layouts/Layout.astro';
         .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
         .stat{background:#fff;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:13px;padding:16px;display:flex;flex-direction:column;justify-content:center}
         .stat strong{font-size:28px;line-height:1;color:var(--ink);letter-spacing:-.04em}.stat span{margin-top:6px;font-size:11px;line-height:1.3;color:#607891;font-weight:800;text-transform:uppercase;letter-spacing:0.05em}
-
-        /* CUSTOM COMPONENTS */
-        .timeline-box { padding: 20px; border-left: 4px solid var(--blue); background: #fff; border-radius: 0 12px 12px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
-        .timeline-box .date { font-size: 12px; font-weight: 900; color: var(--blue); margin-bottom: 4px; }
-        .timeline-box h3 { margin: 0 0 8px; font-size: 16px; }
-        
-        .flow-diagram { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; background: #fff; padding: 24px; border-radius: 16px; border: 1px solid var(--line); }
-        .flow-node { padding: 10px 16px; background: var(--navy); color: #fff; border-radius: 8px; font-size: 13px; font-weight: 700; text-align: center; }
-        .flow-arrow { color: var(--muted); font-weight: bold; }
-        .flow-node.light { background: var(--blue-soft); color: var(--navy); border: 1px solid #c8def7; }
 
         .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
         .tag { padding: 6px 12px; background: #f0f4f8; border: 1px solid #d1dfea; border-radius: 6px; font-size: 11px; font-weight: 700; color: #4a657e; }
@@ -114,19 +105,19 @@ import Layout from '../layouts/Layout.astro';
             </a>
             <nav aria-label="Portfolio sections" id="nav">
                 <a href="#overview">Overview</a>
-                <a href="#philosophy">Philosophy</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#flagship">Case Studies</a>
+                <a href="#portfolio">Portfolio Map</a>
+                <a href="#case-studies">Case Studies</a>
                 <a href="#tech">Tech & Data</a>
+                <a href="#contact">Contact</a>
             </nav>
             <div class="head-actions">
-                <a class="btn primary" href="#contact">Contact</a>
+                <a class="btn primary" href="#portfolio">View Projects</a>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- TIER 1: HERO & OVERVIEW -->
+        <!-- HERO & OVERVIEW -->
         <section class="hero section" id="overview">
             <div class="wrap">
                 <div class="hero-copy">
@@ -135,513 +126,221 @@ import Layout from '../layouts/Layout.astro';
                         <h1>Building enterprise products from problem to impact.</h1>
                         <p class="lead">Senior Product Manager with <strong>10+ years of experience</strong> across FinTech, Healthcare, Telecom and Enterprise IT, spanning Product Management, Business Analysis, Enterprise Platforms, Data & Analytics, Workflow Automation and AI-enabled product initiatives.</p>
                         
-                        <div class="flow-diagram" style="justify-content: flex-start; padding: 16px; background: transparent; border: none;">
-                            <span class="eyebrow" style="width: 100%;">Product Philosophy Lifecycle</span>
-                            <span class="flow-node light">Problem</span> <span class="flow-arrow">→</span>
-                            <span class="flow-node light">Discovery</span> <span class="flow-arrow">→</span>
-                            <span class="flow-node light">Strategy</span> <span class="flow-arrow">→</span>
-                            <span class="flow-node light">Definition</span> <span class="flow-arrow">→</span>
-                            <span class="flow-node light">Technology</span> <span class="flow-arrow">→</span>
-                            <span class="flow-node light">Delivery</span> <span class="flow-arrow">→</span>
-                            <span class="flow-node light">Adoption</span> <span class="flow-arrow">→</span>
-                            <span class="flow-node">Measurable Impact</span>
-                        </div>
-                    </div>
-                    <div>
                         <div class="stat-grid" style="grid-template-columns: 1fr 1fr;">
                             <div class="stat"><strong>10+</strong><span>Years Experience</span></div>
                             <div class="stat" style="border-top-color: var(--lav);"><strong>4</strong><span>Industry Ecosystems</span></div>
-                            <div class="stat" style="border-top-color: var(--mint);"><strong>12+</strong><span>Enterprise Apps (Integrated Channels)</span></div>
+                            <div class="stat" style="border-top-color: var(--mint);"><strong>12+</strong><span>Enterprise Apps</span></div>
                             <div class="stat" style="border-top-color: var(--amber);"><strong>0→1</strong><span>Product Development</span></div>
                         </div>
-                        <div class="card tint-blue" style="margin-top: 12px;">
+                    </div>
+                    <div>
+                        <div class="card tint-blue">
                             <span class="eyebrow">Documented Impact Highlights</span>
-                            <ul>
-                                <li><strong>40% → 75%</strong> Doctor adoption (Ayu Health)</li>
-                                <li><strong>10 → 2 days</strong> Payout turnaround (Provider Automation)</li>
-                                <li><strong>20–30%</strong> Operational-efficiency improvements across initiatives</li>
+                            <ul style="margin-top:12px;">
+                                <li style="margin-bottom:12px;"><strong>40% → 75%</strong> Doctor adoption (Ayu Health)</li>
+                                <li style="margin-bottom:12px;"><strong>10 → 2 days</strong> Payout turnaround (Provider Automation)</li>
+                                <li style="margin-bottom:12px;"><strong>20–30%</strong> Operational-efficiency improvements across Nokia & M2P initiatives</li>
+                                <li><strong>25%</strong> Enterprise OPEX reduction (Telecom Cost Optimization)</li>
                             </ul>
+                            <a class="btn primary" href="#portfolio" style="margin-top: 24px; align-self: flex-start;">Explore the Portfolio ↓</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TIER 1: PHILOSOPHY -->
-        <section class="slide-page white section" id="philosophy">
-            <div class="wrap">
-                <div class="section-head">
-                    <span class="eyebrow">How I think about product</span>
-                    <h2>Product management is the intersection of customer problems, business outcomes and technology.</h2>
-                    <p>I approach product development through five connected lenses.</p>
-                </div>
-                <div class="grid-5">
-                    <div class="card">
-                        <h3>01 — Customer</h3>
-                        <ul><li>Who is the user?</li><li>What problem are they solving?</li><li>Where does friction occur?</li><li>What outcome matters to them?</li></ul>
-                    </div>
-                    <div class="card">
-                        <h3>02 — Business</h3>
-                        <ul><li>Business objective</li><li>Revenue / cost implications</li><li>Operational efficiency</li><li>Risk & Adoption</li><li>Scalability</li></ul>
-                    </div>
-                    <div class="card">
-                        <h3>03 — Product</h3>
-                        <ul><li>Product vision & strategy</li><li>Product roadmap</li><li>Product capabilities</li><li>User journeys</li><li>Prioritized backlog</li></ul>
-                    </div>
-                    <div class="card">
-                        <h3>04 — Technology</h3>
-                        <ul><li>APIs & Integrations</li><li>Data flows</li><li>Workflow orchestration</li><li>System dependencies</li><li>Security & Scalability</li></ul>
-                    </div>
-                    <div class="card">
-                        <h3>05 — Measurement</h3>
-                        <ul><li>Adoption & Usage</li><li>Turnaround Time (TAT)</li><li>Efficiency & Conversion</li><li>Manual effort reduction</li><li>Business outcomes</li></ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TIER 1: CAREER EVOLUTION -->
-        <section class="slide-page bg-light section" id="career">
-            <div class="wrap">
-                <div class="section-head">
-                    <span class="eyebrow">Career Evolution</span>
-                    <h2>A product career built on data, business analysis and technology.</h2>
-                </div>
-                <div class="grid-5">
-                    <div class="timeline-box">
-                        <div class="date">2016–2019</div>
-                        <h3>Reporting Analyst</h3>
-                        <span class="eyebrow" style="color:var(--ink-2)">Nokia Networks</span>
-                        <div class="tag-cloud">
-                            <span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">KPI Frameworks</span><span class="tag">Financial Analytics</span>
-                        </div>
-                    </div>
-                    <div class="timeline-box">
-                        <div class="date">2019–2023</div>
-                        <h3>Business Analyst</h3>
-                        <span class="eyebrow" style="color:var(--ink-2)">Nokia Networks</span>
-                        <div class="tag-cloud">
-                            <span class="tag">Requirement Discovery</span><span class="tag">BRD/FRD</span><span class="tag">Solution Design</span><span class="tag">Agile Delivery</span>
-                        </div>
-                    </div>
-                    <div class="timeline-box">
-                        <div class="date">2023–2024</div>
-                        <h3>Product Manager</h3>
-                        <span class="eyebrow" style="color:var(--ink-2)">Ayu Health</span>
-                        <div class="tag-cloud">
-                            <span class="tag">0→1 Development</span><span class="tag">Product Strategy</span><span class="tag">Mobile Products</span><span class="tag">Workflow Automation</span>
-                        </div>
-                    </div>
-                    <div class="timeline-box">
-                        <div class="date">2024</div>
-                        <h3>Product Manager</h3>
-                        <span class="eyebrow" style="color:var(--ink-2)">Phoneme Solutions</span>
-                        <div class="tag-cloud">
-                            <span class="tag">Enterprise CRM</span><span class="tag">Healthcare Claims</span><span class="tag">API Integrations</span><span class="tag">OCR Automation</span>
-                        </div>
-                    </div>
-                    <div class="timeline-box" style="background: var(--navy); color: #fff;">
-                        <div class="date" style="color: var(--blue-soft);">2024–2026</div>
-                        <h3 style="color:#fff;">Senior Product Manager</h3>
-                        <span class="eyebrow" style="color:var(--line)">M2P Solutions</span>
-                        <div class="tag-cloud">
-                            <span class="tag" style="background:#1a4171; border-color:#2a5c8d; color:#fff;">Banking Platforms</span><span class="tag" style="background:#1a4171; border-color:#2a5c8d; color:#fff;">Lending & Payments</span><span class="tag" style="background:#1a4171; border-color:#2a5c8d; color:#fff;">AML/KYC</span><span class="tag" style="background:#1a4171; border-color:#2a5c8d; color:#fff;">Product Architecture</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TIER 1: PRODUCT PORTFOLIO MAP -->
+        <!-- PRODUCT PORTFOLIO MAP (5 PROJECTS) -->
         <section class="slide-page white section" id="portfolio">
             <div class="wrap">
                 <div class="section-head">
                     <span class="eyebrow">Product Portfolio Map</span>
                     <h2>Comprehensive product ownership across ecosystems.</h2>
+                    <p>Select a project below to explore the detailed case study, challenges, and measurable impact.</p>
                 </div>
                 
-                <h3 style="margin: 0 0 16px; font-size: 20px; color: var(--navy);">M2P — Banking & Financial Platforms</h3>
-                <div class="grid-4" style="margin-bottom: 32px;">
-                    <div class="card tint-blue"><strong>01. Integrated Channels Suite</strong><p>Enterprise digital banking ecosystem.</p></div>
-                    <div class="card"><strong>02. LOS–LMS</strong><p>Loan Origination & Loan Management.</p></div>
-                    <div class="card"><strong>03. UPI Payments & Collections</strong><p>Payments, allocation, delinquency, reconciliation & settlement.</p></div>
-                    <div class="card"><strong>04. AML & Compliance Automation</strong><p>Transaction monitoring, risk profiling and regulatory reporting.</p></div>
-                    <div class="card"><strong>05. Document Mgmt & CKYC</strong><p>KYC validation, OVD verification and secure document management.</p></div>
-                    <div class="card"><strong>06. Reconciliation / FinOps</strong><p>Transaction matching, exceptions and operational controls.</p></div>
-                    <div class="card"><strong>07. UPI/Card/Wallet/Voucher</strong><p>Payment journeys, settlement, refunds, chargebacks and reconciliation.</p></div>
+                <div class="grid-3" style="margin-bottom: 24px;">
+                    <!-- Project 1 -->
+                    <div class="card tint-blue">
+                        <span class="eyebrow" style="color:var(--navy);">01 · M2P Fintech</span>
+                        <h3>Integrated Channels Suite</h3>
+                        <p>A modular enterprise banking platform designed to bring multiple banking, lending, compliance, and payment capabilities into an integration-ready product ecosystem.</p>
+                        <a href="#proj-1" class="btn outline" style="margin-top:auto;">View Case Study →</a>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="card tint-mint">
+                        <span class="eyebrow" style="color:var(--teal);">02 · Ayu Health</span>
+                        <h3>Ayu DocConnect</h3>
+                        <p>0→1 product development for doctor acquisition, onboarding, engagement, and treatment lifecycles across Android and iOS platforms.</p>
+                        <a href="#proj-2" class="btn outline" style="border-color:var(--teal); color:var(--teal); margin-top:auto;">View Case Study →</a>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="card tint-amber">
+                        <span class="eyebrow" style="color:var(--amber);">03 · Phoneme / Ayu</span>
+                        <h3>Provider Payout Automation</h3>
+                        <p>Rules-driven provider lifecycle and workflow automation to orchestrate complex healthcare payout calculations and approvals.</p>
+                        <a href="#proj-3" class="btn outline" style="border-color:var(--amber); color:var(--amber); margin-top:auto;">View Case Study →</a>
+                    </div>
                 </div>
 
                 <div class="grid-2">
-                    <div>
-                        <h3 style="margin: 0 0 16px; font-size: 20px; color: var(--mint);">Ayu Health & Phoneme Solutions</h3>
-                        <div class="grid-2">
-                            <div class="card tint-mint"><strong>08. Ayu DocConnect</strong><p>Doctor acquisition, onboarding, engagement and treatment lifecycle.</p></div>
-                            <div class="card"><strong>09. Payout Automation</strong><p>Rules-driven provider lifecycle and payout workflows.</p></div>
-                            <div class="card" style="grid-column: 1/-1;"><strong>10. Healthcare Claims Automation (Phoneme)</strong><p>CRM-enabled claims workflows and OCR-based automation.</p></div>
-                        </div>
+                    <!-- Project 4 -->
+                    <div class="card tint-lav">
+                        <span class="eyebrow" style="color:var(--lav);">04 · Nokia Networks</span>
+                        <h3>Telecom Cost Optimization</h3>
+                        <p>KPI-driven financial and operational optimization framework utilizing analytics, executive dashboards, and workflow automation.</p>
+                        <a href="#proj-4" class="btn outline" style="border-color:var(--lav); color:var(--lav); margin-top:auto; width:fit-content;">View Case Study →</a>
                     </div>
-                    <div>
-                        <h3 style="margin: 0 0 16px; font-size: 20px; color: var(--lav);">Nokia Networks</h3>
-                        <div class="grid-2">
-                            <div class="card tint-lav"><strong>11. Telecom Cost Optimization</strong><p>KPI-driven financial and operational optimization.</p></div>
-                            <div class="card"><strong>12. Network Rollout Fin-Tracking</strong><p>CAPEX, forecasting, milestone tracking and reporting.</p></div>
-                            <div class="card" style="grid-column: 1/-1;"><strong>13. Global Service Delivery Analytics</strong><p>Enterprise KPI and service performance analytics.</p></div>
-                        </div>
+                    <!-- Project 5 -->
+                    <div class="card tint-lav">
+                        <span class="eyebrow" style="color:var(--lav);">05 · Nokia Networks</span>
+                        <h3>Global Service Delivery Analytics</h3>
+                        <p>Enterprise KPI and service performance analytics to provide visibility into global operations and reduce manual reporting efforts.</p>
+                        <a href="#proj-5" class="btn outline" style="border-color:var(--lav); color:var(--lav); margin-top:auto; width:fit-content;">View Case Study →</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TIER 1: FLAGSHIP PRODUCT (INTEGRATED CHANNELS) -->
-        <section class="slide-page bg-light section" id="flagship">
-            <div class="wrap">
-                <div class="grid-2" style="align-items: center;">
-                    <div>
-                        <span class="eyebrow">Flagship Enterprise Platform</span>
-                        <h2 style="font-size: 40px; margin: 0 0 16px; line-height: 1.1; color: var(--ink); font-weight: 950;">Integrated Channels Suite</h2>
-                        <p style="font-size: 18px; color: var(--ink-2); margin-bottom: 24px;">A modular enterprise banking platform designed to bring multiple banking, lending, payment, compliance and operational capabilities into an integration-ready product ecosystem.</p>
-                        <div class="tag-cloud" style="margin-bottom: 24px;">
-                            <span class="tag">Banks</span><span class="tag">NBFCs</span><span class="tag">Financial Institutions</span>
+        <!-- DETAILED CASE STUDIES -->
+        <div id="case-studies">
+            
+            <!-- PROJ 1: INTEGRATED CHANNELS -->
+            <section class="slide-page bg-light section" id="proj-1">
+                <div class="wrap">
+                    <div class="grid-2" style="align-items: center;">
+                        <div>
+                            <span class="eyebrow">Project 01 · Enterprise Platform</span>
+                            <h2 style="font-size: 36px; margin: 0 0 16px; line-height: 1.1; color: var(--ink); font-weight: 950;">Integrated Channels Suite</h2>
+                            <p style="font-size: 16px; color: var(--ink-2); margin-bottom: 24px;">A modular enterprise banking platform designed to bring multiple banking, lending, payment, compliance and operational capabilities into an integration-ready product ecosystem.</p>
+                            <div class="tag-cloud" style="margin-bottom: 24px;">
+                                <span class="tag">Banks</span><span class="tag">NBFCs</span><span class="tag">12+ Enterprise Apps</span><span class="tag">API-First</span>
+                            </div>
+                            <div class="card tint-blue">
+                                <strong>Core Proposition</strong>
+                                <p style="margin-top:8px;">Modular capabilities + configurable workflows + API-led integrations + scalable enterprise deployment.</p>
+                            </div>
                         </div>
-                        <div class="card tint-blue">
-                            <strong>Core Proposition</strong>
-                            <p>Modular capabilities + configurable workflows + API-led integrations + scalable enterprise deployment.</p>
-                            <strong>Scope:</strong> 12+ enterprise applications.
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <span class="eyebrow">The Problem</span>
-                        <h3 style="font-size: 20px;">Fragmented financial workflows and systems.</h3>
-                        <p>Enterprise banking environments involve multiple applications, disconnected data, point-to-point integrations, manual processes, reconciliation gaps, and duplicate data entry.</p>
                         
-                        <span class="eyebrow" style="margin-top: 20px;">The Product Response</span>
-                        <p>Build a platform around configurable workflows, reusable capabilities, API-driven integrations, common data structures, and enterprise controls.</p>
-                        
-                        <div class="stat-grid" style="grid-template-columns: 1fr 1fr; margin-top: 16px;">
-                            <div class="stat" style="padding: 12px;"><strong>20%</strong><span style="font-size: 9px;">Reduction in integration complexity</span></div>
-                            <div class="stat" style="padding: 12px;"><strong>20%</strong><span style="font-size: 9px;">Reduction in manual intervention</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TIER 1: PRODUCT LIFECYCLE & ARTIFACTS -->
-        <section class="slide-page white section">
-            <div class="wrap">
-                <div class="section-head">
-                    <span class="eyebrow">Product Management Lifecycle</span>
-                    <h2>From Problem to Production</h2>
-                </div>
-                <div class="grid-4">
-                    <div class="card"><strong>01 — Discover</strong><p>Stakeholder interviews, Customer requirements, User problems, Current-state process, Pain-point analysis, Business objectives.</p></div>
-                    <div class="card"><strong>02 — Define</strong><p>Problem statement, Business/Functional/Product requirements, Use cases, User journeys.</p></div>
-                    <div class="card"><strong>03 — Prioritize</strong><p>Business value, Customer impact, Regulatory importance, Technical feasibility, Dependencies, Effort, Risk.</p></div>
-                    <div class="card"><strong>04 — Design</strong><p>Wireframes, Figma prototypes, Process flows, DFDs, ER models, Solution flows.</p></div>
-                    <div class="card"><strong>05 — Build</strong><p>Epics, Features, User stories, Acceptance criteria, Sprint planning, Backlog refinement.</p></div>
-                    <div class="card"><strong>06 — Validate</strong><p>QA, UAT, Business validation, Integration testing, Defect management, Release readiness.</p></div>
-                    <div class="card"><strong>07 — Deploy</strong><p>Production rollout, Data migration, Configuration, Training, User manuals, Deployment support.</p></div>
-                    <div class="card"><strong>08 — Improve</strong><p>Usage analytics, Feedback, KPI monitoring, Product enhancements, Workflow optimization, Roadmap refinement.</p></div>
-                </div>
-
-                <div class="section-head" style="margin-top: 60px;">
-                    <span class="eyebrow">Product Artifacts</span>
-                    <h2>What I produce as a Product Manager</h2>
-                </div>
-                <div class="grid-5">
-                    <div class="card tint-blue"><strong>Strategy & Discovery</strong><ul><li>Product Vision/Roadmap</li><li>Business Cases</li><li>GTM Inputs</li><li>Problem Statements</li><li>User Personas/Journeys</li><li>Process Mapping</li></ul></div>
-                    <div class="card tint-lav"><strong>Requirements</strong><ul><li>BRD / PRD</li><li>FRD / FSD</li><li>User Stories</li><li>Acceptance Criteria</li><li>Business Rules</li></ul></div>
-                    <div class="card tint-mint"><strong>Technical PM Docs</strong><ul><li>DFD & ER Models</li><li>Architecture Diagrams</li><li>API Specifications</li><li>Integration Flows</li><li>Data Mapping</li></ul></div>
-                    <div class="card tint-amber"><strong>Delivery</strong><ul><li>Epics & Backlogs</li><li>Sprint Plans</li><li>UAT Scenarios</li><li>Release Notes</li><li>Deployment Plans</li></ul></div>
-                    <div class="card"><strong>Adoption</strong><ul><li>User Manuals</li><li>Training Materials</li><li>Product Demos</li><li>Onboarding Guides</li><li>L1/L2 Enablement</li></ul></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TIER 1: TECH TRANSLATION & ARCHITECTURE -->
-        <section class="slide-page bg-light section" id="tech">
-            <div class="wrap">
-                <div class="grid-2">
-                    <div>
-                        <div class="section-head">
-                            <span class="eyebrow">Technical Product Management</span>
-                            <h2>Translating Business into Technology</h2>
-                            <p>I operate between business requirements and technical execution.</p>
-                        </div>
                         <div class="card">
-                            <div style="display:flex; justify-content:space-between; margin-bottom:12px; font-weight:700; color:var(--navy); font-size:13px; border-bottom:1px solid var(--line); padding-bottom:8px;">
-                                <span>Business Layer</span><span>Product Layer</span><span>Technical Layer</span><span>Delivery Layer</span>
-                            </div>
-                            <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--ink-2); line-height:2;">
-                                <div>Business Problem<br/>↓<br/>User Need<br/>↓<br/>Requirement</div>
-                                <div>Feature<br/>↓<br/>Workflow<br/>↓<br/>Business Rules</div>
-                                <div>API<br/>↓<br/>Data Flow<br/>↓<br/>Architecture</div>
-                                <div>Build<br/>↓<br/>UAT<br/>↓<br/>Release</div>
+                            <span class="eyebrow">The Problem</span>
+                            <h3 style="font-size: 20px;">Fragmented financial workflows and systems.</h3>
+                            <p>Enterprise banking environments involve multiple applications, disconnected data, point-to-point integrations, manual processes, reconciliation gaps, and duplicate data entry.</p>
+                            
+                            <span class="eyebrow" style="margin-top: 20px;">The Product Response</span>
+                            <p>Build a platform around configurable workflows, reusable capabilities, API-driven integrations, common data structures, and enterprise controls.</p>
+                            
+                            <div class="stat-grid" style="grid-template-columns: 1fr 1fr; margin-top: 16px;">
+                                <div class="stat" style="padding: 12px; border-top-color:var(--blue);"><strong>20%</strong><span style="font-size: 9px;">Reduction in integration complexity</span></div>
+                                <div class="stat" style="padding: 12px; border-top-color:var(--blue);"><strong>20%</strong><span style="font-size: 9px;">Reduction in manual intervention</span></div>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="section-head">
-                            <span class="eyebrow">Enterprise Product Architecture</span>
-                            <h2>Technical Product Management — not software engineering.</h2>
+                </div>
+            </section>
+
+            <!-- PROJ 2: AYU DOCCONNECT -->
+            <section class="slide-page white section" id="proj-2">
+                <div class="wrap">
+                    <div class="section-head">
+                        <span class="eyebrow" style="color:var(--teal);">Project 02 · 0→1 Product Development</span>
+                        <h2>Ayu DocConnect</h2>
+                        <p>Doctor acquisition and engagement required a scalable digital experience spanning onboarding, treatment workflows, and payouts across mobile platforms.</p>
+                    </div>
+                    <div class="grid-2">
+                        <div class="card tint-mint">
+                            <strong>Discovery & Definition</strong>
+                            <ul style="margin-top:12px; line-height:1.6;">
+                                <li>Conducted customer interviews & workflow analysis to identify friction points.</li>
+                                <li>Designed user journeys and Figma prototypes to validate the concept.</li>
+                                <li>Defined the MVP scope and translated it into an actionable product roadmap.</li>
+                            </ul>
                         </div>
-                        <div class="card tint-blue">
-                            <strong>Architecture Principles</strong>
-                            <div class="tag-cloud" style="margin-bottom: 16px;">
-                                <span class="tag">Modular</span><span class="tag">API-first</span><span class="tag">Configurable workflows</span><span class="tag">Reusable capabilities</span><span class="tag">Secure data</span><span class="tag">Scalable</span>
-                            </div>
-                            <strong>Product Manager Contribution</strong>
-                            <ul style="margin-top:8px;">
-                                <li>Define system requirements and map dependencies</li>
-                                <li>Define integration journeys and document APIs</li>
-                                <li>Define data flows and identify exceptions</li>
-                                <li>Validate business rules</li>
-                                <li>Coordinate Engineering / QA / Integration teams</li>
+                        <div class="card tint-mint">
+                            <strong>Optimization & Delivery</strong>
+                            <ul style="margin-top:12px; line-height:1.6;">
+                                <li>Leveraged product analytics and active feedback loops for continuous improvement.</li>
+                                <li>Focused heavily on onboarding optimization and feature adoption.</li>
+                                <li>Coordinated cross-functional engineering, ops, and business teams.</li>
                             </ul>
                         </div>
                     </div>
+                    <div class="stat-grid" style="grid-template-columns: repeat(4, 1fr); margin-top: 24px;">
+                        <div class="stat" style="border-top-color:var(--teal);"><strong>40→75%</strong><span style="font-size: 10px;">Doctor Adoption</span></div>
+                        <div class="stat" style="border-top-color:var(--teal);"><strong>10→2d</strong><span style="font-size: 10px;">Payout TAT</span></div>
+                        <div class="stat" style="border-top-color:var(--teal);"><strong>2X</strong><span style="font-size: 10px;">Business Growth</span></div>
+                        <div class="stat" style="border-top-color:var(--teal);"><strong>35%</strong><span style="font-size: 10px;">CAC Reduction</span></div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- TIER 2: CASE STUDIES (LOS/LMS, UPI, AML, CKYC) -->
-        <section class="slide-page white section">
-            <div class="wrap">
-                <div class="section-head">
-                    <span class="eyebrow">Enterprise Banking Case Studies</span>
-                    <h2>Domain Expertise in Action</h2>
-                </div>
-                <div class="grid-2">
-                    <div class="card">
-                        <span class="eyebrow">LOS–LMS</span>
-                        <h3>Loan Origination & Management</h3>
-                        <p><strong>Problem:</strong> Fragmented workflows across Application → KYC → Credit → Underwriting → Approval → Disbursement → Repayment causing manual handoffs and delayed approvals.</p>
-                        <p><strong>Capabilities:</strong> Loan onboarding, Credit assessment, Configurable lending rules, Approval workflows.</p>
-                        <div class="tag-cloud"><span class="tag">Discovery</span><span class="tag">PRD/BRD</span><span class="tag">Agile Delivery</span><span class="tag">UAT</span></div>
-                        <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--mint); font-weight: 700;">Outcome: 20% improvement in onboarding efficiency</div>
-                    </div>
-                    <div class="card">
-                        <span class="eyebrow">UPI / Payments</span>
-                        <h3>Payments & Collections</h3>
-                        <p><strong>Flow:</strong> Initiation → Validation → Processing → Allocation → Settlement → Reconciliation → Exceptions.</p>
-                        <p><strong>Capabilities:</strong> UPI collections, Allocation logic, Delinquency tracking, Payment APIs, Operational reporting.</p>
-                        <div class="tag-cloud"><span class="tag">UPI</span><span class="tag">Card</span><span class="tag">Wallet</span><span class="tag">Refunds</span><span class="tag">Chargebacks</span></div>
-                        <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--mint); font-weight: 700;">Outcome: 20% reduction in manual reconciliation effort</div>
-                    </div>
-                    <div class="card">
-                        <span class="eyebrow">AML / Financial Crime</span>
-                        <h3>AML & Compliance Automation</h3>
-                        <p><strong>Problem:</strong> Compliance teams need to monitor transactions, identify risk, investigate alerts, and generate regulatory reports while applying changing rules.</p>
-                        <p><strong>Capabilities:</strong> Transaction monitoring, Configurable rules, Investigation workflows, Regulatory reporting (CTR/STR/NTR).</p>
-                        <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--mint); font-weight: 700;">Outcome: 25% reduction in manual compliance effort</div>
-                    </div>
-                    <div class="card">
-                        <span class="eyebrow">CKYC + Document Management</span>
-                        <h3>Document & KYC Automation</h3>
-                        <p><strong>Problem:</strong> Customer onboarding involves document collection, OVD verification, KYC checks, and secure storage with auditability.</p>
-                        <p><strong>Contribution:</strong> Workflow design, API integration, Validation rules, Data flow, Secure processing, UAT.</p>
-                        <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--mint); font-weight: 700;">Outcome: 30% reduction in manual verification effort</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TIER 2: 0->1 AND WORKFLOW AUTOMATION -->
-        <section class="slide-page bg-light section">
-            <div class="wrap">
-                <div class="section-head">
-                    <span class="eyebrow">0→1 Product & Workflow Automation</span>
-                    <h2>Healthcare Platforms</h2>
-                </div>
-                <div class="grid-3">
-                    <div class="card tint-blue" style="grid-column: span 2;">
-                        <span class="eyebrow">Ayu DocConnect</span>
-                        <h3>0→1 Product Case Study</h3>
-                        <p><strong>Problem:</strong> Doctor acquisition and engagement required a more scalable digital experience covering onboarding, engagement, treatment workflows, and payouts (Android + iOS).</p>
-                        <div class="grid-2">
-                            <div>
-                                <strong>Discovery & Definition</strong>
-                                <ul><li>Customer interviews & workflow analysis</li><li>User journeys & Figma prototypes</li><li>MVP definition & roadmap</li></ul>
-                            </div>
-                            <div>
-                                <strong>Optimization & Delivery</strong>
-                                <ul><li>Product analytics & feedback loops</li><li>Onboarding & feature adoption</li><li>Cross-functional engineering ops</li></ul>
+            <!-- PROJ 3: PAYOUT AUTOMATION -->
+            <section class="slide-page bg-light section" id="proj-3">
+                <div class="wrap">
+                    <div class="grid-2" style="align-items: center;">
+                        <div class="card tint-amber">
+                            <span class="eyebrow" style="color:var(--amber);">Project 03 · Workflow Automation</span>
+                            <h3>Provider Payout Automation</h3>
+                            <p><strong>The Problem:</strong> Provider payout processes were bogged down by manual validations, complex rules, delayed approvals, manual calculations, and ultimately delayed settlements.</p>
+                            <p><strong>The Product:</strong> A rules-driven Provider Onboarding & Payout Automation Platform designed to orchestrate the financial lifecycle seamlessly.</p>
+                            <div class="tag-cloud" style="margin-top: 16px;">
+                                <span class="tag">Workflow Orchestration</span><span class="tag">Rule Engine</span><span class="tag">Exception Handling</span>
                             </div>
                         </div>
-                        <div class="stat-grid" style="grid-template-columns: repeat(4, 1fr); margin-top: 16px;">
-                            <div class="stat" style="padding: 10px;"><strong>40→75%</strong><span style="font-size: 8px;">Doctor Adoption</span></div>
-                            <div class="stat" style="padding: 10px;"><strong>10→2d</strong><span style="font-size: 8px;">Payout TAT</span></div>
-                            <div class="stat" style="padding: 10px;"><strong>2X</strong><span style="font-size: 8px;">Business Growth</span></div>
-                            <div class="stat" style="padding: 10px;"><strong>35%</strong><span style="font-size: 8px;">CAC Reduction</span></div>
-                        </div>
-                    </div>
-                    <div class="grid-1" style="display:flex; flex-direction:column; gap:20px;">
-                        <div class="card">
-                            <span class="eyebrow">Provider Payout</span>
-                            <h3>Workflow Automation</h3>
-                            <p><strong>Capabilities:</strong> Configurable rule engine, Workflow orchestration, Approval controls, Exception handling.</p>
-                            <p style="font-size:12px; color:var(--mint); font-weight:700;">Payout turnaround reduced from 10 days to 2 days.</p>
-                        </div>
-                        <div class="card">
-                            <span class="eyebrow">Phoneme</span>
-                            <h3>Healthcare Claims Automation</h3>
-                            <p><strong>Approach:</strong> CRM workflows, API integration, OCR-based automation, Agile delivery.</p>
-                            <p style="font-size:12px; color:var(--mint); font-weight:700;">30% reduction in manual claim processing.</p>
+                        <div>
+                            <div class="card">
+                                <strong>End-to-End Automated Workflow</strong>
+                                <p style="font-family: var(--mono); font-size:12px; background:#f0f4f8; padding:12px; border-radius:6px; margin-top:12px; line-height:1.8;">
+                                    Onboarding → Validation → Business Rules → Approval → Payout Calculation → Settlement → Reporting
+                                </p>
+                                <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line);">
+                                    <strong style="color:var(--amber); font-size: 24px;">10 Days to 2 Days</strong>
+                                    <span style="display:block; font-size:12px; color:var(--ink-2); margin-top:4px; font-weight:700; text-transform:uppercase;">Reduction in Payout Turnaround Time (TAT)</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- TIER 2: NOKIA & PRODUCT ANALYTICS -->
-        <section class="slide-page white section">
-            <div class="wrap">
-                <div class="grid-2">
-                    <div>
-                        <div class="section-head">
-                            <span class="eyebrow">Nokia Projects</span>
-                            <h2>Analytics & Enterprise Transformation</h2>
-                        </div>
-                        <div class="card" style="margin-bottom: 16px;">
-                            <strong>Network Rollout Financial Tracking</strong>
-                            <p style="font-size: 13px;">Financial tracking, forecasting, milestone monitoring using SQL & Power Automate. <br/><span style="color:var(--mint); font-weight:bold;">40% reduction in manual effort.</span></p>
-                        </div>
-                        <div class="card" style="margin-bottom: 16px;">
-                            <strong>Telecom Cost Optimization</strong>
-                            <p style="font-size: 13px;">KPI framework, analytics, executive dashboards. <br/><span style="color:var(--mint); font-weight:bold;">25% reduction in enterprise OPEX.</span></p>
-                        </div>
-                        <div class="card">
-                            <strong>Global Service Delivery Analytics</strong>
-                            <p style="font-size: 13px;">Enterprise KPI tracking and operational analytics. <br/><span style="color:var(--mint); font-weight:bold;">30% reduction in manual effort.</span></p>
-                        </div>
+            <!-- PROJ 4 & 5: NOKIA ANALYTICS -->
+            <section class="slide-page white section" id="proj-4">
+                <div class="wrap">
+                    <div class="section-head">
+                        <span class="eyebrow" style="color:var(--lav);">Projects 04 & 05 · Enterprise Data & Analytics</span>
+                        <h2>Nokia Networks Transformation</h2>
+                        <p>Driving operational efficiency and financial clarity through robust data pipelines, KPIs, and executive reporting.</p>
                     </div>
                     
-                    <div>
-                        <div class="section-head">
-                            <span class="eyebrow">Product Analytics</span>
-                            <h2>How I Measure Products</h2>
-                        </div>
-                        <div class="grid-2">
-                            <div class="card tint-lav" style="padding: 16px;">
-                                <strong style="font-size: 14px;">Acquisition & Adoption</strong>
-                                <ul style="margin-top: 8px;"><li>CAC (Cost)</li><li>Adoption Rate</li><li>Activation Rate</li></ul>
-                            </div>
-                            <div class="card tint-lav" style="padding: 16px;">
-                                <strong style="font-size: 14px;">Engagement & Conversion</strong>
-                                <ul style="margin-top: 8px;"><li>DAU / MAU</li><li>Feature adoption</li><li>Conversion Rate</li></ul>
-                            </div>
-                            <div class="card tint-lav" style="padding: 16px;">
-                                <strong style="font-size: 14px;">Operations & Automation</strong>
-                                <ul style="margin-top: 8px;"><li>TAT (Turnaround Time)</li><li>Manual Intervention Rate</li><li>Match Rate (Reconciliation)</li></ul>
-                            </div>
-                            <div class="card tint-lav" style="padding: 16px;">
-                                <strong style="font-size: 14px;">Delivery</strong>
-                                <ul style="margin-top: 8px;"><li>Release Predictability (Delivered/Committed)</li></ul>
+                    <div class="grid-2">
+                        <!-- Project 4 Details -->
+                        <div class="card tint-lav">
+                            <span class="eyebrow" style="color:var(--lav);">Project 04</span>
+                            <h3 style="font-size: 22px;">Telecom Cost Optimization</h3>
+                            <p><strong>Problem:</strong> Limited visibility into operational expenses and hidden savings opportunities across the enterprise.</p>
+                            <p><strong>Solution:</strong> Developed a comprehensive KPI framework, deep analytics pipelines, and executive dashboards coupled with workflow automation.</p>
+                            
+                            <div class="stat-grid" style="grid-template-columns: 1fr 1fr; margin-top: 16px;">
+                                <div class="stat" style="padding: 12px; border-top-color:var(--lav);"><strong>30%</strong><span style="font-size: 9px;">Reduction in Review Cycle</span></div>
+                                <div class="stat" style="padding: 12px; border-top-color:var(--lav);"><strong>25%</strong><span style="font-size: 9px;">Reduction in Enterprise OPEX</span></div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- TIER 3: FRAMEWORKS, TOOLS & CAPABILITIES -->
-        <section class="slide-page bg-light section">
-            <div class="wrap">
-                <div class="section-head">
-                    <span class="eyebrow">Frameworks & Operating Model</span>
-                    <h2>Prioritization & Enterprise Rollout</h2>
-                </div>
-                <div class="grid-3">
-                    <div class="card">
-                        <h3>How I Prioritize</h3>
-                        <p style="font-family: var(--mono); font-size:11px; background:#f0f4f8; padding:8px; border-radius:6px;">Priority = Value × Confidence × Reach ÷ Effort</p>
-                        <p style="font-size: 12px; margin-top: 12px;"><strong>Overlays:</strong></p>
-                        <ul style="font-size: 12px;">
-                            <li><strong>Mandatory:</strong> Regulatory/critical risk</li>
-                            <li><strong>Strategic:</strong> Vision alignment</li>
-                            <li><strong>Growth:</strong> Revenue/Adoption</li>
-                            <li><strong>Efficiency:</strong> Automation</li>
-                            <li><strong>Experience:</strong> Usability</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>AI-Assisted Innovation</h3>
-                        <p style="font-size: 12px;">Using AI to accelerate discovery, automation, and decision support.</p>
-                        <ul style="font-size: 12px;">
-                            <li>GenAI use-case discovery</li>
-                            <li>OCR & Intelligent workflow automation</li>
-                            <li>AI-assisted alert analysis & rapid prototyping</li>
-                        </ul>
-                        <div class="tag-cloud"><span class="tag">ChatGPT</span><span class="tag">Copilot</span><span class="tag">Claude</span><span class="tag">Figma AI</span></div>
-                    </div>
-                    <div class="card">
-                        <h3>Enterprise Implementation</h3>
-                        <p style="font-size: 12px;">Balancing configuration, technical dependencies, risk, and deployment readiness.</p>
-                        <ul style="font-size: 12px;">
-                            <li>Product Configuration & Requirement Mapping</li>
-                            <li>Data Mapping & Migration</li>
-                            <li>UAT & VAPT / Security Validation</li>
-                            <li>Hypercare & L1/L2 Enablement</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="section-head" style="margin-top: 60px;">
-                    <span class="eyebrow">Competencies & Tools</span>
-                    <h2>Product Capability Matrix</h2>
-                </div>
-                <div class="grid-4">
-                    <div class="card" style="padding:16px;"><strong>01. Strategy</strong><p style="font-size:12px; margin-top:8px;">Vision, Roadmaps, Business Cases, Market/Competitive Analysis.</p></div>
-                    <div class="card" style="padding:16px;"><strong>02. Discovery & Definition</strong><p style="font-size:12px; margin-top:8px;">User Research, PRD/BRD/FRD, Stories, Acceptance Criteria.</p></div>
-                    <div class="card" style="padding:16px;"><strong>03. Technical PM</strong><p style="font-size:12px; margin-top:8px;">APIs, Integrations, DFD, ER Models, Architecture Collab.</p></div>
-                    <div class="card" style="padding:16px;"><strong>04. Enterprise Platforms</strong><p style="font-size:12px; margin-top:8px;">SaaS, Banking, Lending, Payments, Healthcare, Telecom.</p></div>
-                    <div class="card" style="padding:16px;"><strong>05. Data & Analytics</strong><p style="font-size:12px; margin-top:8px;">SQL, Power BI, Tableau, KPI Frameworks, Amplitude, Mixpanel.</p></div>
-                    <div class="card" style="padding:16px;"><strong>06. Workflow Automation</strong><p style="font-size:12px; margin-top:8px;">Rules Engines, Orchestration, OCR, Ops Automation.</p></div>
-                    <div class="card" style="padding:16px;"><strong>07. Agile Delivery</strong><p style="font-size:12px; margin-top:8px;">JIRA, Scrum, Backlog, Sprint Planning, Release Mgmt.</p></div>
-                    <div class="card" style="padding:16px;"><strong>08. Cross-Functional Ops</strong><p style="font-size:12px; margin-top:8px;">Eng, QA, Compliance, InfoSec, Delivery, Business.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TIER 3: EXECUTIVE SUMMARY & EDUCATION -->
-        <section class="slide-page white section">
-            <div class="wrap">
-                <div class="grid-2">
-                    <div>
-                        <div class="section-head">
-                            <span class="eyebrow">Executive Summary</span>
-                            <h2>A product manager who can move from ambiguity to execution.</h2>
-                        </div>
-                        <div style="display:grid; gap: 16px;">
-                            <div class="card tint-blue" style="padding: 16px;"><strong>01. Business & Product Thinking</strong><p style="font-size: 13px; margin:4px 0 0;">Translate operational problems into product vision, strategy, roadmaps, and measurable outcomes.</p></div>
-                            <div class="card tint-mint" style="padding: 16px;"><strong>02. Technical Depth & Data</strong><p style="font-size: 13px; margin:4px 0 0;">Work effectively with Eng on APIs, data models, and architecture. Use SQL/analytics to drive decisions.</p></div>
-                            <div class="card tint-lav" style="padding: 16px;"><strong>03. Enterprise Delivery & Automation</strong><p style="font-size: 13px; margin:4px 0 0;">Execute Agile UAT, releases, enterprise rollout, and eliminate manual processes through workflow automation.</p></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="section-head">
-                            <span class="eyebrow">Education & Professional Development</span>
-                            <h2>Academic Foundation</h2>
-                        </div>
-                        <div class="card" style="margin-bottom: 16px;">
-                            <strong>MBA — Business Analytics</strong>
-                            <p style="font-size: 13px; margin:4px 0 0;">Manipal Academy of Higher Education (2026)</p>
-                        </div>
-                        <div class="card" style="margin-bottom: 16px;">
-                            <strong>BCA & Software Engineering</strong>
-                            <p style="font-size: 13px; margin:4px 0 0;">Computer Program & Applications | GNIIT / NIIT</p>
-                        </div>
-                        <div class="card">
-                            <strong>Core Certifications</strong>
-                            <div class="tag-cloud" style="margin-top: 8px;">
-                                <span class="tag">Microsoft Power BI</span><span class="tag">Tableau</span><span class="tag">Business Analysis Foundation</span><span class="tag">AI Product Manager (Microsoft)</span><span class="tag">Google Project Management</span>
+                        <!-- Project 5 Details -->
+                        <div class="card tint-lav" id="proj-5">
+                            <span class="eyebrow" style="color:var(--lav);">Project 05</span>
+                            <h3 style="font-size: 22px;">Global Service Delivery Analytics</h3>
+                            <p><strong>Problem:</strong> Lack of centralized visibility into global service performance, leading to inefficient manual reporting.</p>
+                            <p><strong>Solution:</strong> Implemented rigorous enterprise KPI tracking, operational analytics, and continuous performance monitoring models.</p>
+                            
+                            <div class="stat-grid" style="grid-template-columns: 1fr 1fr; margin-top: 16px;">
+                                <div class="stat" style="padding: 12px; border-top-color:var(--lav);"><strong>30%</strong><span style="font-size: 9px;">Reduction in Manual Effort</span></div>
+                                <div class="stat" style="padding: 12px; border-top-color:var(--lav);"><strong>20%</strong><span style="font-size: 9px;">Reduction in Operational Costs</span></div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -654,7 +353,7 @@ import Layout from '../layouts/Layout.astro';
                 <div class="tag-cloud" style="justify-content: center; margin: 32px 0;">
                     <span class="tag" style="font-size: 13px; padding: 10px 16px; background:#fff;">Senior Product Manager</span>
                     <span class="tag" style="font-size: 13px; padding: 10px 16px; background:#fff;">Product Lead</span>
-                    <span class="tag" style="font-size: 13px; padding: 10px 16px; background:#fff;">Technical Product Manager</span>
+                    <span class="tag" style="font-size: 13px; padding: 10px 16px; background:#fff;">Data Analytics</span>
                 </div>
             </div>
         </div>
