@@ -6,415 +6,447 @@ const products = [
     number: '01',
     company: 'M2P Fintech',
     title: 'Integrated Channels Suite',
-    description:
-      'A modular enterprise platform bringing together banking, lending, payments, compliance and operational capabilities through configurable workflows and integrations.',
+    description: 'A modular enterprise platform bringing together banking, lending, payments, compliance and operational capabilities through configurable workflows and integrations.',
     tags: ['Banking', 'Lending', 'Payments', 'AML/KYC'],
-    url: '/projects/integrated-channels'
+    url: '/projects/integrated-channels',
+    tint: 'tint-blue'
   },
   {
     number: '02',
     company: 'Ayu Health',
     title: 'Ayu DocConnect',
-    description:
-      'A 0→1 digital healthcare product focused on doctor acquisition, onboarding, engagement and treatment-related workflows across mobile platforms.',
+    description: 'A 0→1 digital healthcare product focused on doctor acquisition, onboarding, engagement and treatment-related workflows across mobile platforms.',
     tags: ['0→1 Product', 'Mobile', 'Provider Experience', 'Adoption'],
-    url: '/projects/ayu-docconnect'
+    url: '/projects/ayu-docconnect',
+    tint: 'tint-mint'
   },
   {
     number: '03',
     company: 'Phoneme / Ayu',
     title: 'Provider Payout Automation',
-    description:
-      'A rules-driven workflow product for provider onboarding, payout calculations, approvals and operational processing.',
+    description: 'A rules-driven workflow product for provider onboarding, payout calculations, approvals and operational processing.',
     tags: ['Workflow Automation', 'Rules', 'Operations', 'Healthcare'],
-    url: '/projects/provider-payout'
+    url: '/projects/provider-payout',
+    tint: 'tint-amber'
   },
   {
     number: '04',
     company: 'Nokia Networks',
     title: 'Telecom Cost Optimization',
-    description:
-      'A data-driven financial and operational optimization initiative using KPI frameworks, analytics, executive dashboards and workflow automation.',
+    description: 'A data-driven financial and operational optimization initiative using KPI frameworks, analytics, executive dashboards and workflow automation.',
     tags: ['Analytics', 'Cost Optimization', 'KPIs', 'Automation'],
-    url: '/projects/telecom-cost-optimization'
+    url: '/projects/telecom-cost-optimization',
+    tint: 'tint-lav'
   },
   {
     number: '05',
     company: 'Nokia Networks',
     title: 'Global Service Delivery Analytics',
-    description:
-      'Enterprise analytics and reporting designed to improve visibility into service performance, operational KPIs and global delivery operations.',
+    description: 'Enterprise analytics and reporting designed to improve visibility into service performance, operational KPIs and global delivery operations.',
     tags: ['Data Analytics', 'Power BI', 'KPIs', 'Enterprise Reporting'],
-    url: '/projects/global-service-delivery'
-  },
+    url: '/projects/global-service-delivery',
+    tint: 'tint-lav'
+  }
 ];
 
 const approach = [
   ['01', 'Discover', 'Understand users, business problems, processes and opportunities.'],
   ['02', 'Define', 'Translate problems into product requirements, journeys and capabilities.'],
   ['03', 'Build', 'Work with design, engineering and cross-functional teams to deliver.'],
-  ['04', 'Measure', 'Use product and business metrics to evaluate adoption and outcomes.'],
+  ['04', 'Measure', 'Use product and business metrics to evaluate adoption and outcomes.']
 ];
 
 const capabilities = [
   ['Product', 'Strategy · Roadmaps · Discovery · Prioritization · Agile Delivery'],
   ['Technical', 'APIs · Integrations · Workflow Design · DFD · ER Models · Architecture Collaboration'],
   ['Data', 'SQL · Power BI · Tableau · KPI Frameworks · Product Analytics'],
-  ['Enterprise', 'Banking · Lending · Payments · Healthcare · Telecom · Enterprise Platforms'],
+  ['Enterprise', 'Banking · Lending · Payments · Healthcare · Telecom · Enterprise Platforms']
+];
+
+const outcomes = [
+  ['40% → 75%', 'Doctor adoption', 'Ayu Health'],
+  ['10 → 2 days', 'Provider payout turnaround', 'Provider Automation'],
+  ['20%', 'Operational efficiency improvement', 'Enterprise initiatives'],
+  ['25%', 'Telecom operating-cost reduction', 'Nokia Networks']
 ];
 ---
 
 <Layout title="Manoj Pant | Senior Product Manager | Product Portfolio">
-  <style>
-    :global(html) {
-      scroll-behavior: smooth;
-    }
+    <style>
+        :root {
+            --navy: #102f55; --navy-2: #163d6a; 
+            --ink: #102a4d; --ink-2: #365774; --muted: #627c97; 
+            --line: #d8e4ef; --line-2: #e8eff5;
+            --bg: #f8fafc; --paper: #fff; 
+            --blue: #2468d7; --blue-soft: #f0f6fc;
+            --lav: #7658d9; --lav-soft: #f4f1ff; 
+            --mint: #17886f; --mint-soft: #f0fbf7;
+            --amber: #be7615; --amber-soft: #fff9f0;
+            --teal: #167d87;
+            --radius: 12px;
+            --max: 1400px;
+            --header-h: 80px;
+            --shadow: 0 4px 20px rgba(16, 47, 85, 0.05); 
+            --sans: Inter, ui-sans-serif, system-ui, sans-serif;
+        }
 
-    :global(body) {
-      margin: 0;
-      background: #f8fafc;
-      color: #172033;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+        * { box-sizing: border-box; }
 
-    .portfolio-scroll {
-      scroll-snap-type: y mandatory;
-    }
+        html { scroll-behavior: smooth; }
+        body { 
+            margin: 0; background: var(--bg); color: var(--ink); 
+            font-family: var(--sans); font-size: 14px; line-height: 1.5; 
+            overflow-x: hidden; 
+        }
+        
+        main {
+            height: calc(100vh - var(--header-h));
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+        }
+        
+        .slide-page { 
+            min-height: calc(100vh - var(--header-h)); 
+            scroll-snap-align: start; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            padding: 60px 0; 
+        }
 
-    .portfolio-slide {
-      min-height: calc(100vh - 104px);
-      scroll-snap-align: start;
-      scroll-margin-top: 104px;
-    }
+        .wrap { width: 100%; padding: 0 48px; margin: 0 auto; max-width: var(--max); }
 
-    @media (max-width: 768px) {
-      .portfolio-slide {
-        min-height: auto;
-        scroll-snap-align: none;
-      }
-    }
-  </style>
+        /* NAVIGATION */
+        header { 
+            position: sticky; top: 0; z-index: 100; 
+            background: var(--paper); color: var(--navy); 
+            border-bottom: 1px solid var(--line); 
+            height: var(--header-h);
+        }
+        .head { 
+            height: 100%; display: grid; 
+            grid-template-columns: 250px 1fr auto; gap: 24px; align-items: center; 
+        }
+        .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .brand-logo { 
+            width: 36px; height: 36px; border-radius: 8px; 
+            background: var(--navy); color: #fff; display: flex; 
+            align-items: center; justify-content: center; font-weight: 900; 
+        }
+        .brand-copy b { display: block; font-size: 16px; color: var(--navy); letter-spacing: -0.01em; }
+        .brand-copy small { display: block; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 
-  <header class="sticky top-0 z-50 h-[104px] bg-[#172033] text-white shadow-xl overflow-hidden">
-    <div class="max-w-[1500px] mx-auto px-5 sm:px-8 h-full flex flex-col justify-center gap-3">
-      <div class="flex items-center justify-between gap-6">
-        <a href="#overview" class="font-black tracking-tight text-lg sm:text-xl">
-          MP<span class="text-[#c9a76a]">.</span>
-        </a>
+        #nav { display: flex; gap: 4px; justify-content: center; }
+        #nav a { 
+            padding: 8px 16px; border-radius: 6px; color: var(--ink-2); 
+            font-size: 12px; font-weight: 700; transition: 0.2s; text-decoration: none;
+        }
+        #nav a:hover, #nav a.active { background: var(--blue-soft); color: var(--blue); }
 
-        <div class="hidden md:flex items-center gap-3 text-[11px] uppercase tracking-[0.18em] text-slate-300">
-          <span>Manoj Pant</span>
-          <span class="text-[#c9a76a]">•</span>
-          <span>Senior Product Manager</span>
-        </div>
-      </div>
+        .btn { 
+            display: inline-flex; align-items: center; justify-content: center; 
+            padding: 12px 20px; border-radius: 8px; font-size: 13px; font-weight: 800; 
+            transition: 0.2s; text-decoration: none; cursor: pointer;
+        }
+        .btn.primary { background: var(--amber); color: #fff; }
+        .btn.primary:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn.outline { border: 1px solid currentColor; background: transparent; }
+        .btn.outline:hover { background: rgba(0,0,0,0.03); }
 
-      <nav class="grid grid-cols-5 gap-1.5 sm:gap-2 text-[9px] sm:text-[10px] font-black uppercase tracking-wider">
-        {[
-          ['overview', 'Overview'],
-          ['portfolio', 'Portfolio'],
-          ['approach', 'Product Approach'],
-          ['tech', 'Tech & Data'],
-          ['contact', 'Contact'],
-        ].map(([href, label], i) => (
-          <a
-            href={`#${href}`}
-            class={`rounded-lg px-2 sm:px-3 py-2 text-center border transition ${
-              i === 0
-                ? 'bg-[#c9a76a] text-[#172033] border-[#c9a76a]'
-                : 'border-slate-700 text-slate-200 hover:border-[#c9a76a] hover:text-white'
-            }`}
-          >
-            {label}
-          </a>
-        ))}
-      </nav>
-    </div>
-  </header>
+        /* GRIDS & CARDS */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 
-  <main class="portfolio-scroll h-[calc(100vh-104px)] overflow-y-auto bg-slate-50">
+        .card { 
+            padding: 28px; 
+            border: 1px solid var(--line); 
+            border-radius: var(--radius); 
+            background: var(--paper); 
+            box-shadow: var(--shadow); 
+            height: 100%; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        .card .eyebrow { 
+            font-size: 10px; font-weight: 900; letter-spacing: 0.15em; 
+            text-transform: uppercase; margin-bottom: 12px; 
+        }
+        .card h3 { font-size: 18px; margin: 0 0 12px; color: var(--navy); line-height: 1.25; font-weight: 900; }
+        .card p { font-size: 13px; margin: 0; color: var(--ink-2); flex: 1; line-height: 1.6; }
 
-    <!-- OVERVIEW -->
-    <section id="overview" class="portfolio-slide flex items-center px-5 sm:px-8 lg:px-12 py-10 lg:py-14">
-      <div class="w-full max-w-[1500px] mx-auto">
-        <div class="grid lg:grid-cols-[1.45fr_0.8fr] gap-8 xl:gap-14 items-center">
+        .card.tint-blue { background: var(--blue-soft); border-color: #d1e4f9; }
+        .card.tint-blue .eyebrow { color: var(--blue); }
 
-          <div>
-            <div class="text-[11px] font-black uppercase tracking-[0.2em] text-[#b58b43] mb-5">
-              Senior Product Manager
+        .card.tint-mint { background: var(--mint-soft); border-color: #c7efe2; }
+        .card.tint-mint .eyebrow { color: var(--mint); }
+
+        .card.tint-amber { background: var(--amber-soft); border-color: #fce3c0; }
+        .card.tint-amber .eyebrow { color: var(--amber); }
+
+        .card.tint-lav { background: var(--lav-soft); border-color: #e2d9ff; }
+        .card.tint-lav .eyebrow { color: var(--lav); }
+
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+        .tag { 
+            padding: 6px 12px; background: #fff; border: 1px solid rgba(0,0,0,0.05); 
+            border-radius: 6px; font-size: 10px; font-weight: 800; color: var(--ink-2); 
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+
+        /* TYPOGRAPHY */
+        .section-head { margin-bottom: 40px; max-width: 800px; }
+        .section-head .eyebrow { display: block; font-size: 11px; font-weight: 900; color: var(--amber); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; }
+        .section-head h2 { font-size: 36px; letter-spacing: -0.03em; color: var(--navy); font-weight: 900; margin: 0 0 16px; line-height: 1.1; }
+        .section-head p { font-size: 16px; color: var(--ink-2); margin: 0; line-height: 1.6; }
+
+        .hero-title { font-size: clamp(40px, 5vw, 68px); font-weight: 900; color: var(--navy); line-height: 1; letter-spacing: -0.04em; margin: 24px 0; max-width: 900px; }
+        .hero-lead { font-size: 18px; color: var(--ink-2); line-height: 1.6; max-width: 800px; margin: 0 0 32px; }
+
+        .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
+        .stat-box { background: #fff; border: 1px solid var(--line); padding: 24px; border-radius: var(--radius); }
+        .stat-box strong { display: block; font-size: 32px; color: var(--navy); font-weight: 900; line-height: 1; }
+        .stat-box span { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 800; margin-top: 8px; }
+
+        .dark-section { background: var(--navy); color: #fff; }
+        .dark-section .section-head h2 { color: #fff; }
+        .dark-section .section-head p { color: #a9b9cc; }
+        .dark-section .card { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); }
+        .dark-section .card h3 { color: #fff; }
+        .dark-section .card p { color: #a9b9cc; }
+        
+        @media screen and (max-width:1024px){
+            .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media screen and (max-width:768px){
+            .head { grid-template-columns: 1fr; gap: 12px; }
+            #nav { flex-wrap: wrap; }
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .slide-page { min-height: auto; scroll-snap-align: none; padding: 40px 0; }
+            main { scroll-snap-type: none; }
+        }
+    </style>
+
+    <header>
+        <div class="wrap head">
+            <a aria-label="Manoj Pant Portfolio" class="brand" href="#overview">
+                <span aria-hidden="true" class="brand-logo">MP</span>
+                <span class="brand-copy"><b>Manoj Pant</b><small>Senior Product Manager</small></span>
+            </a>
+            <nav aria-label="Portfolio sections" id="nav">
+                <a href="#overview">Overview</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#approach">Approach</a>
+                <a href="#tech">Tech & Data</a>
+                <a href="#impact">Outcomes</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div style="justify-self: end;">
+                <a class="btn outline" style="color:var(--navy); padding: 8px 16px;" href="#contact">Contact Me</a>
             </div>
+        </div>
+    </header>
 
-            <h1 class="text-[42px] sm:text-[56px] lg:text-[68px] xl:text-[76px] leading-[0.98] font-black tracking-[-0.04em] text-[#172033] max-w-5xl">
-              Building products that solve complex business problems.
-            </h1>
+    <main>
+        <!-- 01. OVERVIEW -->
+        <section class="slide-page" id="overview">
+            <div class="wrap">
+                <span class="eyebrow" style="color: var(--amber); font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase;">Senior Product Manager</span>
+                <h1 class="hero-title">Building products that solve complex business problems.</h1>
+                <p class="hero-lead">Senior Product Manager with <strong>10+ years of experience</strong> across FinTech, Healthcare, Telecom and Enterprise IT, combining product strategy, business analysis, technology, data and execution to build enterprise products.</p>
+                
+                <div class="tag-cloud" style="margin-top: 0; gap: 12px;">
+                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 13px;">Product Strategy <span style="color:var(--amber); margin:0 8px;">•</span></span>
+                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 13px;">Enterprise Platforms <span style="color:var(--amber); margin:0 8px;">•</span></span>
+                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 13px;">Digital Products <span style="color:var(--amber); margin:0 8px;">•</span></span>
+                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 13px;">Data & Analytics <span style="color:var(--amber); margin:0 8px;">•</span></span>
+                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 13px;">Workflow Automation</span>
+                </div>
 
-            <p class="mt-7 text-base sm:text-lg lg:text-xl leading-relaxed text-slate-600 max-w-4xl">
-              Senior Product Manager with <strong class="text-[#172033]">10+ years of experience</strong>
-              across FinTech, Healthcare, Telecom and Enterprise IT, combining product strategy,
-              business analysis, technology, data and execution to build enterprise products.
-            </p>
+                <div style="margin-top: 32px; display: flex; gap: 16px;">
+                    <a href="#portfolio" class="btn primary">Explore Product Portfolio →</a>
+                    <a href="#approach" class="btn outline" style="color: var(--navy);">Product Approach</a>
+                </div>
 
-            <div class="flex flex-wrap gap-x-5 gap-y-2 mt-6 text-sm font-bold text-[#172033]">
-              <span>Product Strategy</span>
-              <span class="text-[#b58b43]">•</span>
-              <span>Enterprise Platforms</span>
-              <span class="text-[#b58b43]">•</span>
-              <span>Digital Products</span>
-              <span class="text-[#b58b43]">•</span>
-              <span>Data & Analytics</span>
-              <span class="text-[#b58b43]">•</span>
-              <span>Workflow Automation</span>
+                <div class="stat-grid">
+                    <div class="stat-box"><strong>10+</strong><span>Years Experience</span></div>
+                    <div class="stat-box"><strong>12+</strong><span>Enterprise Applications</span></div>
+                    <div class="stat-box"><strong>4</strong><span>Industry Ecosystems</span></div>
+                    <div class="stat-box"><strong>0→1</strong><span>Product Development</span></div>
+                </div>
             </div>
+        </section>
 
-            <div class="flex flex-wrap gap-3 mt-8">
-              <a href="#portfolio" class="rounded-xl bg-[#b58b43] text-white px-6 py-3.5 text-sm font-black shadow-sm hover:opacity-90 transition">
-                Explore Product Portfolio →
-              </a>
-              <a href="#approach" class="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-black text-[#172033] hover:border-[#b58b43] transition">
-                Product Approach
-              </a>
+        <!-- 02. PORTFOLIO MAP -->
+        <section class="slide-page" id="portfolio" style="background: #fff; border-top: 1px solid var(--line);">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">Selected Product Portfolio</span>
+                    <h2>Products across industries and problem spaces.</h2>
+                    <p>A focused selection of products and initiatives spanning banking, lending, payments, healthcare, telecom analytics and enterprise automation.</p>
+                </div>
+                
+                <div class="grid-3" style="margin-bottom: 24px;">
+                    {products.slice(0, 3).map((product) => (
+                        <article class={`card ${product.tint}`}>
+                            <span class="eyebrow">{product.number} · {product.company}</span>
+                            <h3>{product.title}</h3>
+                            <p>{product.description}</p>
+                            <div class="tag-cloud">
+                                {product.tags.map((tag) => ( <span class="tag">{tag}</span> ))}
+                            </div>
+                            <a href={product.url} style="margin-top: 24px; font-size: 12px; font-weight: 800; color: var(--navy); text-decoration: none;">View Case Study →</a>
+                        </article>
+                    ))}
+                </div>
+                <div class="grid-2">
+                    {products.slice(3, 5).map((product) => (
+                        <article class={`card ${product.tint}`}>
+                            <span class="eyebrow">{product.number} · {product.company}</span>
+                            <h3>{product.title}</h3>
+                            <p>{product.description}</p>
+                            <div class="tag-cloud">
+                                {product.tags.map((tag) => ( <span class="tag">{tag}</span> ))}
+                            </div>
+                            <a href={product.url} style="margin-top: 24px; font-size: 12px; font-weight: 800; color: var(--navy); text-decoration: none;">View Case Study →</a>
+                        </article>
+                    ))}
+                </div>
             </div>
-          </div>
+        </section>
 
-          <div class="grid grid-cols-2 gap-3 lg:gap-4">
-            {[
-              ['10+', 'Years Experience'],
-              ['12+', 'Enterprise Applications'],
-              ['4', 'Industry Ecosystems'],
-              ['0→1', 'Product Development'],
-            ].map(([value, label]) => (
-              <div class="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 shadow-sm">
-                <div class="text-3xl sm:text-4xl font-black text-[#172033]">{value}</div>
-                <div class="mt-2 text-[10px] sm:text-xs font-black uppercase tracking-wider text-slate-500">{label}</div>
-              </div>
-            ))}
+        <!-- 03. APPROACH -->
+        <section class="slide-page dark-section" id="approach">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">Product Management Approach</span>
+                    <h2>From problem to product to measurable outcome.</h2>
+                    <p>I work across the product lifecycle — understanding the problem, defining the product, collaborating with technology teams, delivering the solution and measuring its impact.</p>
+                </div>
 
-            <div class="col-span-2 rounded-2xl bg-[#172033] text-white p-5 sm:p-6">
-              <div class="text-[10px] font-black uppercase tracking-[0.18em] text-[#d2b06c]">
-                Product focus
-              </div>
-              <div class="mt-3 text-xl sm:text-2xl font-black leading-tight">
-                Strategy → Product → Technology → Data → Measurable Outcomes
-              </div>
+                <div class="grid-4">
+                    {approach.map(([number, title, description]) => (
+                        <article class="card">
+                            <span class="eyebrow" style="color: var(--amber);">{number}</span>
+                            <h3>{title}</h3>
+                            <p>{description}</p>
+                        </article>
+                    ))}
+                </div>
+
+                <div style="margin-top: 32px; padding: 24px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); border-radius: var(--radius);">
+                    <div style="font-size: 10px; font-weight: 900; color: var(--amber); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px;">Product Mindset</div>
+                    <div style="font-size: 16px; font-weight: 700; color: #fff;">Customer problem + Business value + Technical feasibility + Measurable outcome</div>
+                </div>
             </div>
-          </div>
+        </section>
 
-        </div>
-      </div>
-    </section>
+        <!-- 04. TECH & DATA -->
+        <section class="slide-page" id="tech">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">Product & Technical Depth</span>
+                    <h2>Where product meets technology and data.</h2>
+                    <p>A product-management foundation supported by technical understanding, analytics and enterprise delivery experience.</p>
+                </div>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="portfolio-slide px-5 sm:px-8 lg:px-12 py-10 lg:py-12 flex items-center">
-      <div class="w-full max-w-[1500px] mx-auto">
-        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-7">
-          <div>
-            <div class="text-[11px] font-black uppercase tracking-[0.2em] text-[#b58b43]">
-              Selected Product Portfolio
+                <div class="grid-4">
+                    {capabilities.map(([title, content]) => (
+                        <article class="card" style="box-shadow: none;">
+                            <h3>{title}</h3>
+                            <p>{content}</p>
+                        </article>
+                    ))}
+                </div>
+
+                <div class="grid-4" style="margin-top: 24px;">
+                    {[
+                        ['SQL', 'Data & analysis'],
+                        ['Power BI', 'Decision dashboards'],
+                        ['APIs', 'Product integrations'],
+                        ['Figma', 'Product prototyping'],
+                    ].map(([name, label]) => (
+                        <div style="background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px;">
+                            <div style="font-weight: 900; color: var(--navy); font-size: 16px;">{name}</div>
+                            <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 800; margin-top: 6px;">{label}</div>
+                        </div>
+                    ))}
+                </div>
             </div>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mt-2">
-              Products across industries and problem spaces.
-            </h2>
-          </div>
-          <p class="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
-            A focused selection of products and initiatives spanning banking, lending,
-            payments, healthcare, telecom analytics and enterprise automation.
-          </p>
-        </div>
+        </section>
 
-        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {products.map((product) => (
-            <article class="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6 hover:-translate-y-1 hover:shadow-xl transition">
-              <div class="flex items-center justify-between">
-                <span class="text-[10px] font-black uppercase tracking-[0.18em] text-[#b58b43]">
-                  {product.number} · {product.company}
-                </span>
-              </div>
+        <!-- 05. IMPACT -->
+        <section class="slide-page" id="impact" style="background: #fff; border-top: 1px solid var(--line);">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">Selected Outcomes</span>
+                    <h2>Outcomes matter more than features.</h2>
+                    <p>A few documented outcomes from the products and initiatives represented in my experience.</p>
+                </div>
 
-              <h3 class="text-xl sm:text-2xl font-black mt-3 text-[#172033]">
-                {product.title}
-              </h3>
-
-              <p class="text-sm leading-relaxed text-slate-600 mt-3">
-                {product.description}
-              </p>
-
-              <div class="flex flex-wrap gap-2 mt-5">
-                {product.tags.map((tag) => (
-                  <span class="rounded-full bg-slate-100 px-3 py-1.5 text-[10px] font-black text-slate-600">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <a href={product.url} class="inline-block mt-5 text-sm font-black text-[#172033] hover:text-[#b58b43] transition">
-                View Case Study →
-              </a>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- APPROACH -->
-    <section id="approach" class="portfolio-slide bg-[#172033] text-white px-5 sm:px-8 lg:px-12 py-10 lg:py-12 flex items-center">
-      <div class="w-full max-w-[1500px] mx-auto">
-        <div class="max-w-4xl">
-          <div class="text-[11px] font-black uppercase tracking-[0.2em] text-[#d2b06c]">
-            Product Management Approach
-          </div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mt-3">
-            From problem to product to measurable outcome.
-          </h2>
-          <p class="mt-5 text-base sm:text-lg leading-relaxed text-slate-300 max-w-3xl">
-            I work across the product lifecycle — understanding the problem, defining the product,
-            collaborating with technology teams, delivering the solution and measuring its impact.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-4 mt-9">
-          {approach.map(([number, title, description]) => (
-            <article class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 sm:p-6">
-              <div class="text-sm font-black text-[#d2b06c]">{number}</div>
-              <h3 class="text-xl font-black mt-5">{title}</h3>
-              <p class="text-sm leading-relaxed text-slate-300 mt-3">{description}</p>
-            </article>
-          ))}
-        </div>
-
-        <div class="mt-7 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4">
-          <div class="text-xs font-black uppercase tracking-widest text-[#d2b06c]">
-            Product mindset
-          </div>
-          <div class="text-base sm:text-lg font-bold mt-2">
-            Customer problem + Business value + Technical feasibility + Measurable outcome
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TECH & DATA -->
-    <section id="tech" class="portfolio-slide px-5 sm:px-8 lg:px-12 py-10 lg:py-12 flex items-center">
-      <div class="w-full max-w-[1500px] mx-auto">
-        <div class="max-w-4xl">
-          <div class="text-[11px] font-black uppercase tracking-[0.2em] text-[#b58b43]">
-            Product & Technical Depth
-          </div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mt-2">
-            Where product meets technology and data.
-          </h2>
-          <p class="mt-4 text-base sm:text-lg leading-relaxed text-slate-600 max-w-3xl">
-            A product-management foundation supported by technical understanding, analytics
-            and enterprise delivery experience.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-4 mt-8">
-          {capabilities.map(([title, content]) => (
-            <article class="rounded-2xl bg-white border border-slate-200 p-5 sm:p-6">
-              <h3 class="text-lg font-black text-[#172033]">{title}</h3>
-              <p class="text-sm sm:text-base text-slate-600 leading-relaxed mt-2">{content}</p>
-            </article>
-          ))}
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5">
-          {[
-            ['SQL', 'Data & analysis'],
-            ['Power BI', 'Decision dashboards'],
-            ['APIs', 'Product integrations'],
-            ['Figma', 'Product prototyping'],
-          ].map(([name, label]) => (
-            <div class="rounded-xl bg-slate-100 p-4">
-              <div class="font-black text-[#172033]">{name}</div>
-              <div class="text-[10px] uppercase tracking-wide font-bold text-slate-500 mt-1">{label}</div>
+                <div class="grid-4">
+                    {outcomes.map(([metric, label, company]) => (
+                        <article class="card dark-section" style="background: var(--navy); border: none;">
+                            <div style="font-size: 36px; font-weight: 900; color: var(--amber); line-height: 1; margin-bottom: 12px;">{metric}</div>
+                            <h3 style="color: #fff; margin-bottom: 8px;">{label}</h3>
+                            <p style="font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-top: auto;">{company}</p>
+                        </article>
+                    ))}
+                </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- IMPACT -->
-    <section id="impact" class="portfolio-slide px-5 sm:px-8 lg:px-12 py-10 lg:py-12 flex items-center">
-      <div class="w-full max-w-[1500px] mx-auto">
-        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8">
-          <div>
-            <div class="text-[11px] font-black uppercase tracking-[0.2em] text-[#b58b43]">
-              Selected Outcomes
+        <!-- 06. CONTACT -->
+        <section class="slide-page dark-section" id="contact">
+            <div class="wrap">
+                <div class="grid-2" style="align-items: center;">
+                    <div>
+                        <span class="eyebrow" style="color: var(--amber);">Senior Product Manager</span>
+                        <h2 style="font-size: 48px; line-height: 1.05; margin: 16px 0 24px;">Building products where business, technology and outcomes meet.</h2>
+                        <p style="font-size: 18px; max-width: 600px;">My experience spans the journey from data and business analysis to 0→1 product development and enterprise platform management.</p>
+                        
+                        <div class="tag-cloud" style="margin-top: 24px; gap: 8px;">
+                            {['Product Strategy', 'Enterprise Platforms', 'Technical Product Management', 'Data & Analytics'].map((tag) => (
+                                <span class="tag" style="background: transparent; border-color: rgba(255,255,255,0.2); color: #fff;">{tag}</span>
+                            ))}
+                        </div>
+                    </div>
+                    <div class="card" style="margin-left: auto; width: 100%; max-width: 400px; background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1);">
+                        <span class="eyebrow" style="color: var(--amber);">Connect</span>
+                        <a href="mailto:manoj.pmpm@gmail.com" class="btn outline" style="color: #fff; border-color: rgba(255,255,255,0.2); justify-content: flex-start; padding: 16px; margin-top: 16px;">manoj.pmpm@gmail.com</a>
+                        <a href="https://www.linkedin.com/in/manoj-pant-35129495/" target="_blank" rel="noreferrer" class="btn outline" style="color: #fff; border-color: rgba(255,255,255,0.2); justify-content: flex-start; padding: 16px; margin-top: 12px;">LinkedIn →</a>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 80px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">
+                    <span>© {new Date().getFullYear()} Manoj Pant</span>
+                    <span>Product Portfolio</span>
+                </div>
             </div>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mt-2">
-              Outcomes matter more than features.
-            </h2>
-          </div>
-          <p class="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
-            A few documented outcomes from the products and initiatives represented in my experience.
-          </p>
-        </div>
+        </section>
+    </main>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            ['40% → 75%', 'Doctor adoption', 'Ayu Health'],
-            ['10 → 2 days', 'Provider payout turnaround', 'Provider Automation'],
-            ['20%', 'Operational efficiency improvement', 'Enterprise initiatives'],
-            ['25%', 'Telecom operating-cost reduction', 'Nokia Networks'],
-          ].map(([metric, label, company]) => (
-            <article class="rounded-2xl bg-[#172033] text-white p-6">
-              <div class="text-3xl sm:text-4xl font-black text-[#d2b06c]">{metric}</div>
-              <div class="mt-3 font-black text-base">{label}</div>
-              <div class="mt-2 text-xs text-slate-400 uppercase tracking-wide font-bold">{company}</div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+    <script is:inline>
+        // Navigation highlighting logic
+        const sections = document.querySelectorAll('.slide-page');
+        const navLinks = document.querySelectorAll('#nav a');
+        const mainScroll = document.querySelector('main');
 
-    <!-- CONTACT -->
-    <section id="contact" class="portfolio-slide bg-[#172033] text-white px-5 sm:px-8 lg:px-12 py-10 lg:py-12 flex items-center">
-      <div class="w-full max-w-[1500px] mx-auto">
-        <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-end">
-          <div>
-            <div class="text-[11px] font-black uppercase tracking-[0.2em] text-[#d2b06c]">
-              Senior Product Manager
-            </div>
-
-            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mt-3">
-              Building products where business, technology and outcomes meet.
-            </h2>
-
-            <p class="mt-6 text-base sm:text-lg leading-relaxed text-slate-300 max-w-3xl">
-              My experience spans the journey from data and business analysis to 0→1 product
-              development and enterprise platform management.
-            </p>
-
-            <div class="flex flex-wrap gap-2 mt-6">
-              {['Product Strategy', 'Enterprise Platforms', 'Technical Product Management', 'Data & Analytics'].map((tag) => (
-                <span class="rounded-full border border-white/10 px-3 py-2 text-xs font-bold text-slate-200">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
-            <div class="text-xs font-black uppercase tracking-widest text-[#d2b06c]">
-              Connect
-            </div>
-            <div class="mt-5 space-y-3">
-              <a href="mailto:manoj.pmpm@gmail.com" class="block rounded-xl border border-white/10 px-4 py-3 font-bold hover:border-[#d2b06c] transition">
-                manoj.pmpm@gmail.com
-              </a>
-              <a href="https://www.linkedin.com/in/manoj-pant-35129495/" target="_blank" rel="noreferrer" class="block rounded-xl border border-white/10 px-4 py-3 font-bold hover:border-[#d2b06c] transition">
-                LinkedIn →
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <footer class="mt-10 pt-5 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-3 text-xs text-slate-500">
-          <span>© {new Date().getFullYear()} Manoj Pant</span>
-          <span>Senior Product Manager · Product Portfolio</span>
-        </footer>
-      </div>
-    </section>
-
-  </main>
+        mainScroll.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (mainScroll.scrollTop >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('active');
+                }
+            });
+        }, { passive: true });
+    </script>
 </Layout>
