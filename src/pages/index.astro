@@ -1,457 +1,3324 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const products = [
+/* --------------------------------------------------------------------------
+   PORTFOLIO CONTENT MODEL
+   -------------------------------------------------------------------------- */
+
+const navItems = [
+  ['overview', 'Overview'],
+  ['ecosystem', 'Ecosystem'],
+  ['challenge', 'Challenge'],
+  ['strategy', 'Strategy'],
+  ['scope', 'PM Scope'],
+  ['metrics', 'Product Metrics'],
+  ['portfolio', 'Portfolio'],
+  ['tech', 'Tech & Data'],
+  ['outcomes', 'Outcomes'],
+  ['contact', 'Connect']
+];
+
+const heroFocus = [
+  'Product Strategy',
+  'AI & GenAI',
+  'Workflow Automation',
+  'Data & Product Intelligence',
+  'Enterprise Platforms'
+];
+
+const careerArc = [
+  ['01', 'Analytics', 'SQL · Power BI · Tableau · KPI reporting'],
+  ['02', 'Business Analysis', 'Requirements · process design · stakeholder discovery'],
+  ['03', 'Technical Product', 'APIs · workflows · data flows · solution collaboration'],
+  ['04', 'Product Management', 'Strategy · roadmap · delivery · adoption · outcomes']
+];
+
+const ecosystem = [
+  ['Business', 'Goals, economics and operating constraints', 'business'],
+  ['Customer', 'Journeys, pain points and adoption', 'customer'],
+  ['Product', 'Vision, roadmap, capabilities and experience', 'product'],
+  ['AI & GenAI', 'Decisioning, document and knowledge workflows', 'ai'],
+  ['Automation', 'Rules, approvals, exceptions and reconciliation', 'automation'],
+  ['Technology', 'APIs, architecture, integrations and delivery', 'technology'],
+  ['Data', 'SQL, BI, KPIs and product intelligence', 'data'],
+  ['Operations', 'Controls, rollout, training and support', 'operations'],
+  ['Compliance', 'AML/KYC, audit, regulatory and risk controls', 'compliance']
+];
+
+const challengeItems = [
+  ['01', 'Fragmented processes', 'Turn business processes spread across teams and systems into one coherent product journey.', 'workflow'],
+  ['02', 'Integration dependency', 'Design product behavior around APIs, external systems, failures, retries and reconciliation.', 'integration'],
+  ['03', 'Decision complexity', 'Convert rules, risk signals, exceptions and human judgment into clear decision workflows.', 'decision'],
+  ['04', 'Manual operations', 'Find opportunities to remove repetitive work through workflow automation and intelligent assistance.', 'automation'],
+  ['05', 'Data ambiguity', 'Create a reliable link between source data, KPI definitions, reporting and product decisions.', 'data'],
+  ['06', 'Enterprise alignment', 'Bring business, design, engineering, data, operations, compliance and clients around one outcome.', 'alignment']
+];
+
+const strategySteps = [
+  ['01', 'Frame', 'Clarify the business problem, user pain and measurable outcome.'],
+  ['02', 'Discover', 'Map users, processes, data, constraints, dependencies and opportunity areas.'],
+  ['03', 'Define', 'Translate the problem into journeys, capabilities, requirements and acceptance criteria.'],
+  ['04', 'Prioritize', 'Balance customer value, business value, risk, feasibility, AI opportunity and effort.'],
+  ['05', 'Roadmap', 'Sequence capabilities, dependencies, releases and adoption activities.'],
+  ['06', 'Deliver', 'Coordinate design, engineering, QA, UAT, security, migration and release readiness.'],
+  ['07', 'Learn', 'Use feedback, usage, exceptions and operational signals to improve the product.'],
+  ['08', 'Measure', 'Connect adoption, efficiency, quality and business outcomes back to the roadmap.']
+];
+
+const prioritization = [
+  ['Customer Value', 'Does it solve a meaningful user problem?'],
+  ['Business Value', 'Does it improve revenue, cost, productivity or service?'],
+  ['Risk / Compliance', 'Does it reduce regulatory or operational exposure?'],
+  ['AI / Automation', 'Can intelligence or automation materially improve the flow?'],
+  ['Feasibility', 'Can technology and data support the intended outcome?'],
+  ['Effort', 'What delivery complexity and dependency does it introduce?']
+];
+
+const pmScope = [
+  ['01', 'Discover', 'Customer workshops, stakeholder interviews, process mapping, use cases and problem framing.', ['Discovery', 'Process maps', 'Use cases']],
+  ['02', 'Define', 'Business and functional requirements translated into journeys, capabilities and acceptance criteria.', ['BRD / FRD / FSD', 'User stories', 'Acceptance criteria']],
+  ['03', 'Design', 'Workflow design, prototypes and solution concepts shaped with business, UX and technology teams.', ['Figma', 'Journeys', 'Workflow design']],
+  ['04', 'Architect', 'API contracts, DFDs, ER models, field mappings and integration behavior for enterprise systems.', ['APIs', 'DFD / ER', 'Data mapping']],
+  ['05', 'Automate', 'Rules, approval orchestration, exception handling, reconciliation and compliance workflows.', ['Rules engine', 'Approvals', 'Exceptions']],
+  ['06', 'AI / GenAI', 'AI-assisted decisioning, document intelligence, knowledge workflows and intelligent process assistance.', ['Decisioning', 'Document AI', 'GenAI workflows']],
+  ['07', 'Deliver', 'Backlog, epics, sprint execution, QA, UAT, VAPT, release coordination and stakeholder demos.', ['JIRA', 'Agile', 'UAT / VAPT']],
+  ['08', 'Scale & Adopt', 'Data migration, deployment, training, support readiness, rollout and feedback loops.', ['Migration', 'Deployment', 'Training / support']]
+];
+
+const metricGroups = [
   {
-    number: '01',
-    company: 'M2P Fintech',
-    title: 'Integrated Channels Suite',
-    description: 'A modular enterprise platform bringing together banking, lending, payments, compliance and operational capabilities through configurable workflows and integrations.',
-    tags: ['Banking', 'Lending', 'Payments', 'AML/KYC'],
-    url: '/projects/integrated-channels',
-    tint: 'tint-blue'
+    title: 'Adoption',
+    question: 'Are the intended users actually using the product?',
+    metrics: ['Eligible-user adoption', 'Active users / active accounts', 'Workflow completion rate']
   },
   {
-    number: '02',
-    company: 'Ayu Health',
-    title: 'Ayu DocConnect',
-    description: 'A 0→1 digital healthcare product focused on doctor acquisition, onboarding, engagement and treatment-related workflows across mobile platforms.',
-    tags: ['0→1 Product', 'Mobile', 'Provider Experience', 'Adoption'],
-    url: '/projects/ayu-docconnect',
-    tint: 'tint-mint'
+    title: 'Activation',
+    question: 'How quickly does a user reach meaningful value?',
+    metrics: ['Time to first value', 'Activation rate', 'Onboarding completion']
   },
   {
-    number: '03',
-    company: 'Phoneme / Ayu',
-    title: 'Provider Payout Automation',
-    description: 'A rules-driven workflow product for provider onboarding, payout calculations, approvals and operational processing.',
-    tags: ['Workflow Automation', 'Rules', 'Operations', 'Healthcare'],
-    url: '/projects/provider-payout',
-    tint: 'tint-amber'
+    title: 'Efficiency',
+    question: 'Does the product remove time, effort or manual work?',
+    metrics: ['Turnaround time', 'Manual effort saved', 'Automation rate']
   },
   {
-    number: '04',
-    company: 'Nokia Networks',
-    title: 'Telecom Cost Optimization',
-    description: 'A data-driven financial and operational optimization initiative using KPI frameworks, analytics, executive dashboards and workflow automation.',
-    tags: ['Analytics', 'Cost Optimization', 'KPIs', 'Automation'],
-    url: '/projects/telecom-cost-optimization',
-    tint: 'tint-lav'
+    title: 'Quality & Risk',
+    question: 'Does the product make the process more reliable and controlled?',
+    metrics: ['Error / exception rate', 'Reconciliation breaks', 'Control effectiveness']
   },
   {
-    number: '05',
-    company: 'Nokia Networks',
-    title: 'Global Service Delivery Analytics',
-    description: 'Enterprise analytics and reporting designed to improve visibility into service performance, operational KPIs and global delivery operations.',
-    tags: ['Data Analytics', 'Power BI', 'KPIs', 'Enterprise Reporting'],
-    url: '/projects/global-service-delivery',
-    tint: 'tint-lav'
+    title: 'AI & Automation',
+    question: 'Is intelligence improving the workflow without losing control?',
+    metrics: ['Assist rate', 'Straight-through rate', 'Human hand-off rate']
+  },
+  {
+    title: 'Business Impact',
+    question: 'Did the product change a meaningful business outcome?',
+    metrics: ['Cost reduction', 'Productivity gain', 'Revenue / service impact']
   }
 ];
 
-const approach = [
-  ['01', 'Discover', 'Understand users, business problems, processes and opportunities.'],
-  ['02', 'Define', 'Translate problems into product requirements, journeys and capabilities.'],
-  ['03', 'Build', 'Work with design, engineering and cross-functional teams to deliver.'],
-  ['04', 'Measure', 'Use product and business metrics to evaluate adoption and outcomes.']
+const metricFormulas = [
+  ['Adoption rate', 'Active eligible users ÷ total eligible users × 100'],
+  ['Activation rate', 'Users reaching first-value milestone ÷ eligible users × 100'],
+  ['Efficiency gain', '(Baseline effort − current effort) ÷ baseline effort × 100'],
+  ['Automation rate', 'Automated cases ÷ total eligible cases × 100'],
+  ['Exception rate', 'Exception cases ÷ total processed cases × 100']
 ];
 
-const capabilities = [
-  ['Product', 'Strategy · Roadmaps · Discovery · Prioritization · Agile Delivery'],
-  ['Technical', 'APIs · Integrations · Workflow Design · DFD · ER Models · Architecture Collaboration'],
-  ['Data', 'SQL · Power BI · Tableau · KPI Frameworks · Product Analytics'],
-  ['Enterprise', 'Banking · Lending · Payments · Healthcare · Telecom · Enterprise Platforms']
+const products = [
+  {
+    number: '01',
+    company: 'M2P FINTECH',
+    title: 'Integrated Channels Suite',
+    problem: 'Banks and NBFCs needed connected capabilities across lending, compliance, reconciliation, payments and operations.',
+    ownership: 'Product strategy, requirements, workflows, API integrations, DFD / ER mapping, roadmap and delivery.',
+    outcome: 'A modular multi-application platform designed for configurable workflows and integration-led deployment.',
+    tags: ['Banking', 'Lending', 'Payments', 'Enterprise Platform'],
+    url: '/projects/integrated-channels',
+    tint: 'blue'
+  },
+  {
+    number: '02',
+    company: 'M2P FINTECH',
+    title: 'AML & Compliance Automation',
+    problem: 'Compliance teams needed structured transaction monitoring, risk profiling, alert handling and regulatory reporting.',
+    ownership: 'Product flow, rules, risk logic, transaction monitoring, exception handling and reporting requirements.',
+    outcome: 'Automation initiative focused on reducing manual compliance effort while preserving audit and regulatory controls.',
+    tags: ['AML / KYC', 'Decisioning', 'Rules', 'Compliance'],
+    url: '/projects/aml-compliance',
+    tint: 'amber'
+  },
+  {
+    number: '03',
+    company: 'AYU HEALTH',
+    title: 'Ayu DocConnect',
+    problem: 'Doctor acquisition and onboarding required a scalable digital experience with clear provider journeys.',
+    ownership: '0→1 product definition, onboarding flows, engagement workflows, adoption analysis and cross-functional delivery.',
+    outcome: 'Doctor adoption increased from 40% to 75% in the represented initiative.',
+    tags: ['0→1', 'Healthcare', 'Provider Experience', 'Adoption'],
+    url: '/projects/ayu-docconnect',
+    tint: 'mint'
+  },
+  {
+    number: '04',
+    company: 'PHONEME / AYU HEALTH',
+    title: 'Provider Payout Automation',
+    problem: 'Provider payout processing involved rules, approvals, calculations and operational hand-offs.',
+    ownership: 'Workflow design, rules, approval states, exception handling, operational reporting and process automation.',
+    outcome: 'Provider payout turnaround represented in the portfolio moved from 10 days to 2 days.',
+    tags: ['Automation', 'Rules', 'Approvals', 'Healthcare'],
+    url: '/projects/provider-payout',
+    tint: 'lav'
+  },
+  {
+    number: '05',
+    company: 'NOKIA NETWORKS',
+    title: 'Telecom Analytics & Cost Optimization',
+    problem: 'Large operational datasets needed clearer financial visibility, KPI tracking and cost-control decisions.',
+    ownership: 'SQL analysis, Power BI / Tableau reporting, KPI frameworks, financial tracking and workflow automation.',
+    outcome: 'The represented initiative delivered a 25% telecom operating-cost reduction.',
+    tags: ['SQL', 'Power BI', 'Telecom', 'Optimization'],
+    url: '/projects/telecom-cost-optimization',
+    tint: 'teal'
+  }
+];
+
+const capabilityRows = [
+  ['Product', 'Strategy · discovery · roadmap · MVP · prioritization · GTM · adoption'],
+  ['AI & GenAI', 'AI-assisted decisioning · GenAI use cases · document intelligence · knowledge workflows · intelligent assistance'],
+  ['Automation', 'Rules engines · approval orchestration · exception handling · reconciliation · compliance automation'],
+  ['Architecture', 'API-first products · modular platforms · integrations · DFD · ER models · field mapping'],
+  ['Data', 'SQL · Power BI · Tableau · Looker Studio · Excel · KPI frameworks · product analytics'],
+  ['Delivery', 'Agile · JIRA · epics · stories · QA · UAT · VAPT · migration · deployment · training'],
+  ['Enterprise', 'Banking · lending · payments · healthcare · telecom · regulated enterprise platforms'],
+  ['Stakeholders', 'Business · clients · engineering · UX · data · QA · operations · compliance · InfoSec']
+];
+
+const techLayers = [
+  ['01', 'Business layer', 'Goals · users · process · economics · operating constraints'],
+  ['02', 'Product layer', 'Vision · journeys · roadmap · capabilities · requirements'],
+  ['03', 'Intelligence layer', 'AI / GenAI · decisioning · document intelligence · product analytics'],
+  ['04', 'Workflow layer', 'Rules · approvals · exceptions · reconciliation · orchestration'],
+  ['05', 'Technology layer', 'APIs · integrations · architecture · data flows · deployment'],
+  ['06', 'Outcome layer', 'Adoption · efficiency · quality · risk · business impact']
 ];
 
 const outcomes = [
-  ['40% → 75%', 'Doctor adoption', 'Ayu Health'],
-  ['10 → 2 days', 'Provider payout turnaround', 'Provider Automation'],
-  ['20%', 'Operational efficiency improvement', 'Enterprise initiatives'],
-  ['25%', 'Telecom operating-cost reduction', 'Nokia Networks']
+  ['40% → 75%', 'Doctor adoption', 'Ayu Health', 'Adoption'],
+  ['10 → 2 days', 'Provider payout turnaround', 'Provider Automation', 'Efficiency'],
+  ['25%', 'Manual compliance effort reduction', 'M2P Fintech · AML / Compliance', 'Automation'],
+  ['20%', 'Manual reconciliation reduction', 'M2P Fintech · UPI Collections', 'Efficiency'],
+  ['30%', 'Manual claim processing reduction', 'Claims Automation', 'Automation'],
+  ['25%', 'Telecom operating-cost reduction', 'Nokia Networks', 'Business impact']
 ];
+
+const seniorSignals = [
+  ['01', 'I connect the problem to the system', 'I do not stop at feature requirements; I map process, data, integrations, controls and operational impact.'],
+  ['02', 'I can go technical without becoming the engineer', 'I work with APIs, data flows, ER models, architecture, integration behavior and technical constraints.'],
+  ['03', 'I treat automation as a product capability', 'Rules, approvals, exceptions, reconciliation and intelligent assistance are designed into the workflow.'],
+  ['04', 'I use data to close the loop', 'KPIs, dashboards, product signals and operational metrics feed prioritization and improvement.']
+];
+
 ---
 
 <Layout title="Manoj Pant | Senior Product Manager | Product Portfolio">
-    <style>
-        :root {
-            --navy: #102f55; --navy-2: #163d6a; 
-            --ink: #102a4d; --ink-2: #365774; --muted: #627c97; 
-            --line: #d8e4ef; --line-2: #e8eff5;
-            --bg: #f8fafc; --paper: #fff; 
-            --blue: #2468d7; --blue-soft: #f0f6fc;
-            --lav: #7658d9; --lav-soft: #f4f1ff; 
-            --mint: #17886f; --mint-soft: #f0fbf7;
-            --amber: #be7615; --amber-soft: #fff9f0;
-            --teal: #167d87;
-            --radius: 8px;
-            --max: 1200px;
-            --header-h: 70px;
-            --shadow: 0 4px 16px rgba(16, 47, 85, 0.04); 
-            --sans: Inter, ui-sans-serif, system-ui, sans-serif;
-        }
+  <style>
+    /* ======================================================================
+       DESIGN SYSTEM
+       ====================================================================== */
 
-        * { box-sizing: border-box; }
+    :root {
+      --navy-950: #0b2443;
+      --navy-900: #102f55;
+      --navy-800: #163d6a;
+      --navy-700: #234f7c;
+      --ink: #15385f;
+      --ink-soft: #466887;
+      --body: #587795;
+      --muted: #7890a8;
+      --faint: #9aaec1;
+      --line: #d8e4ef;
+      --line-strong: #c9d9e7;
+      --line-soft: #eaf0f5;
+      --bg: #f5f8fb;
+      --paper: #ffffff;
+      --blue: #2167d3;
+      --blue-soft: #edf5ff;
+      --amber: #c47b0d;
+      --amber-bright: #e09a2b;
+      --amber-soft: #fff7e9;
+      --mint: #17886f;
+      --mint-soft: #eefaf6;
+      --lav: #7356d5;
+      --lav-soft: #f5f1ff;
+      --teal: #147c86;
+      --teal-soft: #edf9fa;
+      --red: #a74a43;
+      --shadow-xs: 0 4px 14px rgba(16,47,85,.035);
+      --shadow-sm: 0 10px 26px rgba(16,47,85,.055);
+      --shadow-md: 0 18px 44px rgba(16,47,85,.08);
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --header-h: 112px;
+      --max: 1480px;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-        html { scroll-behavior: smooth; }
-        body { 
-            margin: 0; background: var(--bg); color: var(--ink); 
-            font-family: var(--sans); font-size: 14px; line-height: 1.5; 
-            overflow-x: hidden; 
-        }
-        
-        main {
-            height: calc(100vh - var(--header-h));
-            overflow-y: auto;
-            scroll-snap-type: y mandatory;
-        }
-        
-        .slide-page { 
-            min-height: calc(100vh - var(--header-h)); 
-            scroll-snap-align: start; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            padding: 40px 0; 
-        }
+    /* ======================================================================
+       BASE / VIEWPORT
+       ====================================================================== */
 
-        .wrap { width: 100%; padding: 0 40px; margin: 0 auto; max-width: var(--max); }
+    * { box-sizing: border-box; }
 
-        /* NAVIGATION */
-        header { 
-            position: sticky; top: 0; z-index: 100; 
-            background: var(--paper); color: var(--navy); 
-            border-bottom: 1px solid var(--line); 
-            height: var(--header-h);
-        }
-        .head { 
-            height: 100%; display: grid; 
-            grid-template-columns: 220px 1fr auto; gap: 24px; align-items: center; 
-        }
-        .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .brand-logo { 
-            width: 32px; height: 32px; border-radius: 6px; 
-            background: var(--navy); color: #fff; display: flex; 
-            align-items: center; justify-content: center; font-weight: 800; font-size: 13px;
-        }
-        .brand-copy b { display: block; font-size: 14px; color: var(--navy); letter-spacing: -0.01em; }
-        .brand-copy small { display: block; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      overflow: hidden;
+    }
 
-        #nav { display: flex; gap: 4px; justify-content: center; }
-        #nav a { 
-            padding: 6px 14px; border-radius: 6px; color: var(--ink-2); 
-            font-size: 12px; font-weight: 600; transition: 0.2s; text-decoration: none;
-        }
-        #nav a:hover, #nav a.active { background: var(--blue-soft); color: var(--blue); }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.45;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-        .btn { 
-            display: inline-flex; align-items: center; justify-content: center; 
-            padding: 10px 18px; border-radius: 6px; font-size: 12px; font-weight: 700; 
-            transition: 0.2s; text-decoration: none; cursor: pointer;
-        }
-        .btn.primary { background: var(--amber); color: #fff; }
-        .btn.primary:hover { opacity: 0.9; }
-        .btn.outline { border: 1px solid currentColor; background: transparent; }
-        .btn.outline:hover { background: rgba(0,0,0,0.03); }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
 
-        /* GRIDS & CARDS */
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    main {
+      height: calc(100dvh - var(--header-h));
+      overflow-y: auto;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: #b8c9d9 transparent;
+    }
 
-        .card { 
-            padding: 24px; 
-            border: 1px solid var(--line); 
-            border-radius: var(--radius); 
-            background: var(--paper); 
-            box-shadow: var(--shadow); 
-            height: 100%; 
-            display: flex; 
-            flex-direction: column; 
-        }
-        .card .eyebrow { 
-            font-size: 10px; font-weight: 800; letter-spacing: 0.1em; 
-            text-transform: uppercase; margin-bottom: 8px; 
-        }
-        .card h3 { font-size: 16px; margin: 0 0 10px; color: var(--navy); line-height: 1.3; font-weight: 800; }
-        .card p { font-size: 13px; margin: 0 0 16px; color: var(--ink-2); flex: 1; line-height: 1.5; }
+    .slide {
+      height: calc(100dvh - var(--header-h));
+      min-height: 720px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      padding: 30px 0 28px;
+      isolation: isolate;
+    }
 
-        .card.tint-blue { background: var(--blue-soft); border-color: #d1e4f9; }
-        .card.tint-blue .eyebrow { color: var(--blue); }
+    .slide.white { background: var(--paper); }
+    .slide.soft { background: var(--bg); }
+    .slide.dark { background: var(--navy-900); color: #fff; }
 
-        .card.tint-mint { background: var(--mint-soft); border-color: #c7efe2; }
-        .card.tint-mint .eyebrow { color: var(--mint); }
+    .wrap {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 34px;
+      position: relative;
+      z-index: 2;
+    }
 
-        .card.tint-amber { background: var(--amber-soft); border-color: #fce3c0; }
-        .card.tint-amber .eyebrow { color: var(--amber); }
+    /* ======================================================================
+       HEADER / NAVIGATION
+       ====================================================================== */
 
-        .card.tint-lav { background: var(--lav-soft); border-color: #e2d9ff; }
-        .card.tint-lav .eyebrow { color: var(--lav); }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: var(--header-h);
+      background: rgba(255,255,255,.985);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
 
-        .tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
-        .tag { 
-            padding: 4px 10px; background: #fff; border: 1px solid rgba(0,0,0,0.06); 
-            border-radius: 4px; font-size: 10px; font-weight: 700; color: var(--ink-2); 
-            letter-spacing: 0.02em;
-        }
+    .head {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 240px minmax(0,1fr) 150px;
+      gap: 20px;
+      align-items: center;
+    }
 
-        /* TYPOGRAPHY */
-        .section-head { margin-bottom: 32px; max-width: 700px; }
-        .section-head .eyebrow { display: block; font-size: 10px; font-weight: 800; color: var(--amber); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
-        .section-head h2 { font-size: 28px; letter-spacing: -0.02em; color: var(--navy); font-weight: 800; margin: 0 0 12px; line-height: 1.15; }
-        .section-head p { font-size: 14px; color: var(--ink-2); margin: 0; line-height: 1.5; }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      text-decoration: none;
+      min-width: 0;
+    }
 
-        .hero-title { font-size: 38px; font-weight: 800; color: var(--navy); line-height: 1.1; letter-spacing: -0.02em; margin: 20px 0; max-width: 800px; }
-        .hero-lead { font-size: 15px; color: var(--ink-2); line-height: 1.6; max-width: 700px; margin: 0 0 24px; }
+    .brand-logo {
+      width: 49px;
+      height: 49px;
+      flex: 0 0 49px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--navy-900);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 900;
+      box-shadow: 0 9px 22px rgba(16,47,85,.17);
+    }
 
-        .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 32px; max-width: 800px; }
-        .stat-box { background: #fff; border: 1px solid var(--line); padding: 20px; border-radius: var(--radius); }
-        .stat-box strong { display: block; font-size: 24px; color: var(--navy); font-weight: 800; line-height: 1; }
-        .stat-box span { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 700; margin-top: 6px; }
+    .brand-copy {
+      min-width: 0;
+    }
 
-        .dark-section { background: var(--navy); color: #fff; }
-        .dark-section .section-head h2 { color: #fff; }
-        .dark-section .section-head p { color: #a9b9cc; }
-        .dark-section .card { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); }
-        .dark-section .card h3 { color: #fff; }
-        .dark-section .card p { color: #a9b9cc; }
-        
-        @media screen and (max-width:1024px){
-            .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
-            .stat-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media screen and (max-width:768px){
-            .head { grid-template-columns: 1fr; gap: 12px; }
-            #nav { flex-wrap: wrap; }
-            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-            .slide-page { min-height: auto; scroll-snap-align: none; padding: 40px 0; }
-            main { scroll-snap-type: none; }
-        }
-    </style>
+    .brand-copy b {
+      display: block;
+      color: var(--navy-900);
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -.025em;
+      white-space: nowrap;
+    }
 
-    <header>
-        <div class="wrap head">
-            <a aria-label="Manoj Pant Portfolio" class="brand" href="#overview">
-                <span aria-hidden="true" class="brand-logo">MP</span>
-                <span class="brand-copy"><b>Manoj Pant</b><small>Senior Product Manager</small></span>
-            </a>
-            <nav aria-label="Portfolio sections" id="nav">
-                <a href="#overview">Overview</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#approach">Approach</a>
-                <a href="#tech">Tech & Data</a>
-                <a href="#impact">Outcomes</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <div style="justify-self: end;">
-                <a class="btn primary" style="padding: 8px 16px; font-size: 11px;" href="#portfolio">View Projects</a>
+    .brand-copy small {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #nav {
+      height: 86px;
+      display: grid;
+      grid-template-columns: repeat(5,minmax(0,1fr));
+      grid-template-rows: repeat(2,1fr);
+      gap: 5px 8px;
+      align-content: center;
+      min-width: 0;
+    }
+
+    #nav a {
+      min-width: 0;
+      display: grid;
+      place-items: center;
+      padding: 8px 8px;
+      border-radius: 10px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 12.5px;
+      line-height: 1;
+      font-weight: 800;
+      white-space: nowrap;
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+
+    #nav a:hover {
+      background: #f1f6fb;
+      color: var(--blue);
+    }
+
+    #nav a.active {
+      background: #edf5ff;
+      color: var(--blue);
+    }
+
+    .nav-cta {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 19px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 12.5px;
+      line-height: 1;
+      font-weight: 900;
+      white-space: nowrap;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .btn.primary {
+      background: var(--amber);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(196,123,13,.19);
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 13px 28px rgba(196,123,13,.24);
+    }
+
+    /* ======================================================================
+       TYPOGRAPHY / SECTION HEADERS
+       ====================================================================== */
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--amber);
+      font-size: 10.5px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 3px;
+      flex: 0 0 30px;
+      background: var(--amber);
+      border-radius: 99px;
+    }
+
+    .section-head {
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      margin: 10px 0 8px;
+      color: var(--navy-900);
+      font-size: clamp(34px, 3.1vw, 50px);
+      line-height: .98;
+      font-weight: 950;
+      letter-spacing: -.052em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+
+    .section-head p {
+      max-width: 1040px;
+      margin: 0;
+      color: var(--body);
+      font-size: 14.5px;
+      line-height: 1.32;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+
+    .dark .section-head h2 { color: #fff; }
+    .dark .section-head p { color: #b9cbe0; }
+    .dark .eyebrow { color: var(--amber-bright); }
+    .dark .eyebrow::before { background: var(--amber-bright); }
+
+    .mini-label {
+      color: var(--muted);
+      font-size: 9px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .body-copy {
+      margin: 0;
+      color: var(--body);
+      font-size: 13px;
+      line-height: 1.48;
+    }
+
+    /* ======================================================================
+       GENERIC COMPONENTS
+       ====================================================================== */
+
+    .pill-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .pill {
+      min-height: 29px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink-soft);
+      font-size: 9.5px;
+      line-height: 1;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--paper);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .number {
+      color: var(--amber);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: .06em;
+    }
+
+    .soft-rule {
+      height: 1px;
+      background: var(--line);
+      width: 100%;
+    }
+
+    .dark-rule {
+      height: 1px;
+      background: rgba(255,255,255,.11);
+      width: 100%;
+    }
+
+    /* ======================================================================
+       OVERVIEW SLIDE
+       ====================================================================== */
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.04fr) minmax(430px,.96fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .overview-title {
+      margin: 17px 0 12px;
+      max-width: 900px;
+      color: var(--navy-900);
+      font-size: clamp(47px,4.55vw,68px);
+      line-height: .96;
+      font-weight: 950;
+      letter-spacing: -.06em;
+    }
+
+    .overview-lead {
+      max-width: 860px;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 17px;
+      line-height: 1.42;
+    }
+
+    .overview-lead strong {
+      color: var(--navy-900);
+      font-weight: 950;
+    }
+
+    .focus-row {
+      margin-top: 20px;
+      padding-bottom: 19px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .focus-row .pill {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      min-height: 24px;
+      color: var(--ink);
+      font-size: 11px;
+    }
+
+    .focus-row .pill::after {
+      content: "•";
+      margin-left: 9px;
+      color: var(--amber);
+    }
+
+    .focus-row .pill:last-child::after { display: none; }
+
+    .overview-stats {
+      display: grid;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .overview-stat {
+      padding: 14px 14px 13px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #fff;
+    }
+
+    .overview-stat strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 23px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -.035em;
+    }
+
+    .overview-stat span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 8.5px;
+      line-height: 1.12;
+      font-weight: 900;
+      letter-spacing: .055em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .career-strip {
+      margin-top: 15px;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .career-step {
+      min-width: 0;
+      min-height: 75px;
+      padding: 12px 13px;
+      border-right: 1px solid var(--line);
+    }
+
+    .career-step:last-child { border-right: 0; }
+
+    .career-step .number { font-size: 8.5px; }
+
+    .career-step strong {
+      display: block;
+      margin-top: 6px;
+      color: var(--navy-900);
+      font-size: 11px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .career-step span {
+      display: block;
+      margin-top: 5px;
+      color: var(--body);
+      font-size: 8.5px;
+      line-height: 1.25;
+    }
+
+    .overview-visual {
+      min-height: 500px;
+      padding: 23px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 90% 8%, rgba(33,103,211,.12), transparent 28%),
+        radial-gradient(circle at 4% 94%, rgba(196,123,13,.13), transparent 27%),
+        #fff;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .visual-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 9px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .operating-map {
+      height: 414px;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .operating-center {
+      width: 245px;
+      height: 125px;
+      border-radius: 22px;
+      background: var(--navy-900);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 3;
+      box-shadow: 0 20px 42px rgba(16,47,85,.2);
+    }
+
+    .operating-center strong {
+      display: block;
+      font-size: 23px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -.03em;
+    }
+
+    .operating-center span {
+      display: block;
+      margin-top: 8px;
+      color: #b8cbe0;
+      font-size: 10px;
+      line-height: 1.2;
+    }
+
+    .map-node {
+      width: 158px;
+      min-height: 72px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+      position: absolute;
+      z-index: 4;
+    }
+
+    .map-node strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 11.5px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .map-node span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 8.5px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .map-business { top: 55px; left: 13px; }
+    .map-ai { top: 55px; right: 13px; }
+    .map-auto { bottom: 55px; left: 13px; }
+    .map-data { bottom: 55px; right: 13px; }
+
+    .map-line {
+      position: absolute;
+      height: 1px;
+      width: 205px;
+      background: #c9d9e8;
+      z-index: 1;
+    }
+
+    .line-business { top: 125px; left: 158px; transform: rotate(24deg); }
+    .line-ai { top: 125px; right: 158px; transform: rotate(-24deg); }
+    .line-auto { bottom: 125px; left: 158px; transform: rotate(-24deg); }
+    .line-data { bottom: 125px; right: 158px; transform: rotate(24deg); }
+
+    .map-footer {
+      position: absolute;
+      left: 23px;
+      right: 23px;
+      bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--faint);
+      font-size: 8.5px;
+      font-weight: 850;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    /* ======================================================================
+       ECOSYSTEM SLIDE
+       ====================================================================== */
+
+    .ecosystem-grid-layout {
+      display: grid;
+      grid-template-columns: minmax(290px,.72fr) minmax(0,1.28fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .ecosystem-story {
+      padding: 28px;
+      border-radius: 25px;
+      background: var(--navy-900);
+      color: #fff;
+      min-height: 525px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-md);
+    }
+
+    .ecosystem-story h3 {
+      margin: 16px 0 12px;
+      color: #fff;
+      font-size: 31px;
+      line-height: 1.02;
+      font-weight: 950;
+      letter-spacing: -.045em;
+    }
+
+    .ecosystem-story p {
+      margin: 0;
+      color: #b9cbe0;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .story-points {
+      display: grid;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .story-point {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #edf3f8;
+      font-size: 10.5px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    .story-point i {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 7px;
+      border-radius: 50%;
+      background: var(--amber-bright);
+    }
+
+    .ecosystem-story-foot {
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: #7f9ab5;
+      font-size: 8.5px;
+      line-height: 1.3;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .ecosystem-panel {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 25px;
+      background: #fff;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .ecosystem-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 10px;
+    }
+
+    .eco-card {
+      min-height: 112px;
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .eco-card::after {
+      content: "";
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      right: -18px;
+      bottom: -18px;
+      border-radius: 50%;
+      background: var(--blue-soft);
+    }
+
+    .eco-card strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 900;
+      white-space: nowrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eco-card span {
+      display: block;
+      max-width: 190px;
+      margin-top: 8px;
+      color: var(--body);
+      font-size: 9.5px;
+      line-height: 1.35;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eco-card.ai { background: var(--lav-soft); border-color: #e1d9ff; }
+    .eco-card.automation { background: var(--amber-soft); border-color: #f2dfc3; }
+    .eco-card.data { background: var(--teal-soft); border-color: #cce9ec; }
+    .eco-card.product { background: var(--blue-soft); border-color: #d4e5fa; }
+
+    /* ======================================================================
+       CHALLENGE SLIDE
+       ====================================================================== */
+
+    .challenge-layout {
+      display: grid;
+      grid-template-columns: minmax(300px,.74fr) minmax(0,1.26fr);
+      gap: 27px;
+      align-items: stretch;
+    }
+
+    .challenge-lead {
+      min-height: 530px;
+      padding: 29px;
+      border-radius: 25px;
+      background: var(--navy-900);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-md);
+    }
+
+    .challenge-lead h3 {
+      margin: 18px 0 13px;
+      color: #fff;
+      font-size: 33px;
+      line-height: 1.02;
+      font-weight: 950;
+      letter-spacing: -.045em;
+    }
+
+    .challenge-lead p {
+      margin: 0;
+      color: #b8cbe0;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .challenge-lead .mini-label {
+      color: #8da8c3;
+    }
+
+    .challenge-cards {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 11px;
+    }
+
+    .challenge-card {
+      min-width: 0;
+      min-height: 169px;
+      padding: 18px 19px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: var(--shadow-xs);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .challenge-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .challenge-card h3 {
+      margin: 10px 0 7px;
+      color: var(--navy-900);
+      font-size: 14px;
+      line-height: 1.05;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .challenge-card p {
+      margin: 0;
+      color: var(--body);
+      font-size: 10.5px;
+      line-height: 1.4;
+    }
+
+    .challenge-card .response {
+      margin-top: 11px;
+      padding-top: 9px;
+      border-top: 1px solid var(--line-soft);
+      color: var(--muted);
+      font-size: 8.5px;
+      font-weight: 850;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* ======================================================================
+       STRATEGY SLIDE
+       ====================================================================== */
+
+    .strategy-flow {
+      display: grid;
+      grid-template-columns: repeat(8,minmax(0,1fr));
+      gap: 7px;
+    }
+
+    .strategy-step {
+      min-width: 0;
+      height: 205px;
+      padding: 16px 13px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #fff;
+      position: relative;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .strategy-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -11px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--amber);
+      font-size: 14px;
+      font-weight: 900;
+      z-index: 3;
+    }
+
+    .strategy-step strong {
+      display: block;
+      margin-top: 12px;
+      color: var(--navy-900);
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .strategy-step p {
+      margin: 9px 0 0;
+      color: var(--body);
+      font-size: 9.5px;
+      line-height: 1.4;
+    }
+
+    .strategy-bottom {
+      margin-top: 15px;
+      display: grid;
+      grid-template-columns: .55fr 1.45fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .strategy-principle {
+      padding: 17px 18px;
+      border-radius: 16px;
+      background: var(--navy-900);
+      color: #fff;
+    }
+
+    .strategy-principle strong {
+      display: block;
+      font-size: 13px;
+      line-height: 1.1;
+    }
+
+    .strategy-principle span {
+      display: block;
+      margin-top: 7px;
+      color: #b8cbe0;
+      font-size: 9.5px;
+      line-height: 1.35;
+    }
+
+    .priority-panel {
+      padding: 14px 16px;
+      border: 1px solid #d5e4f2;
+      border-radius: 16px;
+      background: var(--blue-soft);
+    }
+
+    .priority-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 7px 14px;
+      margin-top: 8px;
+    }
+
+    .priority-item {
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 7px minmax(0,1fr);
+      gap: 8px;
+      align-items: start;
+    }
+
+    .priority-item i {
+      width: 7px;
+      height: 7px;
+      margin-top: 4px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+
+    .priority-item strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 9px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .priority-item span {
+      display: block;
+      margin-top: 3px;
+      color: var(--body);
+      font-size: 8px;
+      line-height: 1.25;
+    }
+
+    /* ======================================================================
+       PM SCOPE SLIDE
+       ====================================================================== */
+
+    .scope-grid {
+      display: grid;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 10px;
+    }
+
+    .scope-card {
+      min-width: 0;
+      height: 210px;
+      padding: 17px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .scope-card::after {
+      content: "";
+      position: absolute;
+      width: 84px;
+      height: 84px;
+      right: -28px;
+      bottom: -28px;
+      border-radius: 50%;
+      background: var(--blue-soft);
+    }
+
+    .scope-card.ai-scope::after { background: var(--lav-soft); }
+    .scope-card.auto-scope::after { background: var(--amber-soft); }
+
+    .scope-card strong {
+      display: block;
+      margin: 12px 0 8px;
+      color: var(--navy-900);
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 900;
+      white-space: nowrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .scope-card p {
+      margin: 0;
+      color: var(--body);
+      font-size: 9.5px;
+      line-height: 1.4;
+      position: relative;
+      z-index: 2;
+    }
+
+    .scope-tags {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 15px;
+      display: flex;
+      gap: 5px;
+      overflow: hidden;
+      z-index: 3;
+    }
+
+    .scope-tag {
+      min-height: 23px;
+      padding: 0 8px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink-soft);
+      font-size: 7.5px;
+      line-height: 1;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .scope-footer {
+      margin-top: 13px;
+      padding: 12px 15px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .scope-footer strong {
+      color: var(--navy-900);
+      font-size: 10px;
+      white-space: nowrap;
+    }
+
+    .scope-footer span {
+      color: var(--body);
+      font-size: 9px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    /* ======================================================================
+       METRICS SLIDE
+       ====================================================================== */
+
+    .metrics-layout {
+      display: grid;
+      grid-template-columns: minmax(280px,.72fr) minmax(0,1.28fr);
+      gap: 27px;
+      align-items: stretch;
+    }
+
+    .metrics-story {
+      min-height: 530px;
+      padding: 28px;
+      border-radius: 25px;
+      background: var(--navy-900);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-md);
+    }
+
+    .metrics-story h3 {
+      margin: 18px 0 12px;
+      color: #fff;
+      font-size: 32px;
+      line-height: 1.02;
+      font-weight: 950;
+      letter-spacing: -.045em;
+    }
+
+    .metrics-story p {
+      margin: 0;
+      color: #b8cbe0;
+      font-size: 13px;
+      line-height: 1.48;
+    }
+
+    .metric-equation {
+      margin-top: 20px;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 13px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .metric-equation strong {
+      display: block;
+      color: #fff;
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .metric-equation span {
+      display: block;
+      margin-top: 7px;
+      color: #9fb7ce;
+      font-size: 8.5px;
+      line-height: 1.3;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 10px;
+    }
+
+    .metric-group {
+      min-height: 169px;
+      padding: 17px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .metric-group h3 {
+      margin: 0;
+      color: var(--navy-900);
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .metric-group > p {
+      margin: 8px 0 12px;
+      color: var(--body);
+      font-size: 9.5px;
+      line-height: 1.3;
+    }
+
+    .metric-list {
+      display: grid;
+      gap: 6px;
+    }
+
+    .metric-list div {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--ink-soft);
+      font-size: 8.5px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .metric-list i {
+      width: 5px;
+      height: 5px;
+      flex: 0 0 5px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+
+    .formula-bar {
+      margin-top: 12px;
+      padding: 11px 14px;
+      border: 1px solid #d5e4f2;
+      border-radius: 14px;
+      background: var(--blue-soft);
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 10px;
+    }
+
+    .formula {
+      min-width: 0;
+    }
+
+    .formula strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 8.5px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .formula span {
+      display: block;
+      margin-top: 5px;
+      color: var(--body);
+      font-size: 7.5px;
+      line-height: 1.2;
+    }
+
+    /* ======================================================================
+       PORTFOLIO SLIDE
+       ====================================================================== */
+
+    .portfolio-intro {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 17px;
+    }
+
+    .portfolio-intro .section-head { margin-bottom: 0; }
+
+    .portfolio-note {
+      width: 265px;
+      flex: 0 0 265px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--bg);
+    }
+
+    .portfolio-note strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 10px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .portfolio-note span {
+      display: block;
+      margin-top: 5px;
+      color: var(--body);
+      font-size: 8.5px;
+      line-height: 1.3;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(5,minmax(0,1fr));
+      gap: 9px;
+    }
+
+    .portfolio-card {
+      min-width: 0;
+      height: 408px;
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-card.blue { background: var(--blue-soft); border-color: #d2e4fa; }
+    .portfolio-card.amber { background: var(--amber-soft); border-color: #f1dec1; }
+    .portfolio-card.mint { background: var(--mint-soft); border-color: #cbece2; }
+    .portfolio-card.lav { background: var(--lav-soft); border-color: #e2d9ff; }
+    .portfolio-card.teal { background: var(--teal-soft); border-color: #cce8eb; }
+
+    .portfolio-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -55px;
+      bottom: -55px;
+      border-radius: 50%;
+      border: 1px solid rgba(16,47,85,.06);
+    }
+
+    .portfolio-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .portfolio-number {
+      color: var(--amber);
+      font-size: 9px;
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    .portfolio-company {
+      color: var(--muted);
+      font-size: 8px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+
+    .portfolio-card h3 {
+      margin: 14px 0 8px;
+      color: var(--navy-900);
+      font-size: 15px;
+      line-height: 1.05;
+      font-weight: 950;
+      letter-spacing: -.02em;
+    }
+
+    .portfolio-block {
+      margin-top: 9px;
+    }
+
+    .portfolio-block label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 7.5px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .portfolio-block p {
+      margin: 0;
+      color: var(--body);
+      font-size: 8.7px;
+      line-height: 1.36;
+    }
+
+    .portfolio-outcome {
+      margin-top: 10px;
+      padding: 9px 10px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.62);
+      border: 1px solid rgba(16,47,85,.06);
+    }
+
+    .portfolio-outcome p {
+      color: var(--ink-soft);
+      font-weight: 750;
+    }
+
+    .portfolio-tags {
+      margin-top: auto;
+      display: flex;
+      gap: 5px;
+      overflow: hidden;
+    }
+
+    .portfolio-tag {
+      min-height: 22px;
+      padding: 0 7px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(16,47,85,.08);
+      border-radius: 999px;
+      background: rgba(255,255,255,.68);
+      color: var(--ink-soft);
+      font-size: 7px;
+      line-height: 1;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .case-link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 9px;
+      color: var(--navy-900);
+      text-decoration: none;
+      font-size: 8.5px;
+      line-height: 1;
+      font-weight: 950;
+      position: relative;
+      z-index: 2;
+    }
+
+    .supporting-row {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(6,minmax(0,1fr));
+      gap: 7px;
+    }
+
+    .supporting-item {
+      min-width: 0;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #fff;
+    }
+
+    .supporting-item strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 8px;
+      line-height: 1.05;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+
+    .supporting-item span {
+      display: block;
+      margin-top: 4px;
+      color: var(--body);
+      font-size: 7px;
+      line-height: 1.25;
+    }
+
+    /* ======================================================================
+       TECH & DATA SLIDE
+       ====================================================================== */
+
+    .tech-layout {
+      display: grid;
+      grid-template-columns: minmax(0,1.04fr) minmax(380px,.96fr);
+      gap: 27px;
+      align-items: center;
+    }
+
+    .capability-table {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .capability-row {
+      min-height: 57px;
+      display: grid;
+      grid-template-columns: 145px minmax(0,1fr);
+      gap: 18px;
+      align-items: center;
+      padding: 0 17px;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .capability-row:last-child { border-bottom: 0; }
+
+    .capability-row strong {
+      color: var(--navy-900);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .capability-row span {
+      color: var(--body);
+      font-size: 8.8px;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+
+    .tech-panel {
+      min-height: 474px;
+      padding: 24px;
+      border-radius: 25px;
+      background: var(--navy-900);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .tech-panel::before {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      right: -135px;
+      top: -135px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+    }
+
+    .tech-panel::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      left: -150px;
+      bottom: -150px;
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 50%;
+    }
+
+    .tech-panel-title {
+      margin: 15px 0 0;
+      color: #fff;
+      font-size: 22px;
+      line-height: 1.03;
+      font-weight: 950;
+      letter-spacing: -.035em;
+    }
+
+    .tech-panel-sub {
+      margin: 7px 0 0;
+      color: #9fb8d0;
+      font-size: 9px;
+      line-height: 1.35;
+    }
+
+    .tech-layers {
+      display: grid;
+      gap: 7px;
+      margin-top: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tech-layer {
+      min-height: 55px;
+      display: grid;
+      grid-template-columns: 25px 105px minmax(0,1fr);
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .tech-layer .number {
+      color: var(--amber-bright);
+      font-size: 8px;
+    }
+
+    .tech-layer strong {
+      color: #fff;
+      font-size: 9.5px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .tech-layer span {
+      color: #9fb8d0;
+      font-size: 7.8px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .tool-row {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 6px;
+    }
+
+    .tool {
+      min-height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 9px;
+      color: #dbe6f1;
+      font-size: 7.5px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    /* ======================================================================
+       OUTCOMES SLIDE
+       ====================================================================== */
+
+    .outcomes-intro {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 19px;
+    }
+
+    .outcomes-intro .section-head { margin-bottom: 0; }
+
+    .outcomes-note {
+      width: 290px;
+      flex: 0 0 290px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--bg);
+    }
+
+    .outcomes-note strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 9px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .outcomes-note span {
+      display: block;
+      margin-top: 5px;
+      color: var(--body);
+      font-size: 8px;
+      line-height: 1.3;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(6,minmax(0,1fr));
+      gap: 9px;
+    }
+
+    .outcome-card {
+      height: 246px;
+      padding: 20px;
+      border-radius: 18px;
+      background: var(--navy-900);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .outcome-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -55px;
+      top: -55px;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 50%;
+    }
+
+    .outcome-card strong {
+      color: var(--amber-bright);
+      font-size: 29px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -.035em;
+      white-space: nowrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .outcome-card h3 {
+      margin: 0;
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.16;
+      font-weight: 900;
+      position: relative;
+      z-index: 2;
+    }
+
+    .outcome-card span {
+      color: #8fa8c0;
+      font-size: 7.5px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .outcome-summary {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 8px;
+    }
+
+    .outcome-summary-item {
+      padding: 11px 13px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .outcome-summary-item strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 9px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .outcome-summary-item span {
+      display: block;
+      margin-top: 4px;
+      color: var(--body);
+      font-size: 7.5px;
+      line-height: 1.2;
+    }
+
+    /* ======================================================================
+       CONNECT SLIDE
+       ====================================================================== */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.12fr) minmax(360px,.88fr);
+      gap: 45px;
+      align-items: center;
+    }
+
+    .contact-title {
+      margin: 16px 0 12px;
+      color: #fff;
+      font-size: clamp(45px,4.2vw,64px);
+      line-height: .97;
+      font-weight: 950;
+      letter-spacing: -.06em;
+      white-space: nowrap;
+    }
+
+    .contact-copy {
+      max-width: 850px;
+      margin: 0;
+      color: #b8cbe0;
+      font-size: 15px;
+      line-height: 1.42;
+    }
+
+    .contact-focus {
+      margin-top: 20px;
+      display: flex;
+      gap: 7px;
+      flex-wrap: nowrap;
+    }
+
+    .contact-focus .pill {
+      border-color: rgba(255,255,255,.13);
+      background: rgba(255,255,255,.045);
+      color: #fff;
+    }
+
+    .contact-card {
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 23px;
+      background: rgba(255,255,255,.035);
+      box-shadow: 0 18px 40px rgba(0,0,0,.1);
+    }
+
+    .contact-link {
+      min-height: 49px;
+      margin-top: 9px;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .contact-link.primary {
+      background: var(--amber);
+      border-color: var(--amber);
+      box-shadow: 0 9px 20px rgba(196,123,13,.17);
+    }
+
+    .contact-link:hover { background-color: rgba(255,255,255,.07); }
+    .contact-link.primary:hover { background-color: #d18718; }
+
+    .contact-foot {
+      margin-top: 28px;
+      padding-top: 13px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #7894b0;
+      font-size: 8px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    /* ======================================================================
+       RESPONSIVE / HEIGHT CONTROL
+       ====================================================================== */
+
+    @media (max-width: 1280px) {
+      :root { --header-h: 106px; --max: 1220px; }
+      .wrap { padding: 0 25px; }
+      .head { grid-template-columns: 205px minmax(0,1fr) 130px; gap: 12px; }
+      #nav a { font-size: 11px; }
+      .overview-grid { gap: 25px; }
+      .overview-title { font-size: 53px; }
+      .overview-visual { min-height: 475px; }
+      .portfolio-card { height: 395px; }
+      .portfolio-card p { font-size: 8.2px; }
+    }
+
+    @media (max-height: 850px) and (min-width: 900px) {
+      :root { --header-h: 96px; }
+      .slide { min-height: 0; padding: 21px 0; }
+      .section-head { margin-bottom: 15px; }
+      .section-head h2 { margin-top: 8px; margin-bottom: 5px; font-size: 39px; }
+      .section-head p { font-size: 12px; }
+      .overview-title { font-size: 50px; margin-top: 12px; }
+      .overview-lead { font-size: 14px; }
+      .overview-visual { min-height: 425px; }
+      .operating-map { height: 350px; }
+      .ecosystem-story, .challenge-lead, .metrics-story { min-height: 450px; }
+      .eco-card { min-height: 94px; }
+      .challenge-card { min-height: 140px; }
+      .strategy-step { height: 160px; }
+      .scope-card { height: 175px; }
+      .metric-group { min-height: 140px; }
+      .formula-bar { margin-top: 9px; }
+      .portfolio-card { height: 355px; }
+      .outcome-card { height: 205px; }
+      .tech-panel { min-height: 415px; }
+    }
+
+    @media (max-width: 1040px) {
+      :root { --header-h: 92px; }
+      .head { grid-template-columns: 175px minmax(0,1fr) 112px; }
+      .brand-logo { width: 42px; height: 42px; flex-basis: 42px; }
+      .brand-copy b { font-size: 15px; }
+      .brand-copy small { font-size: 8px; }
+      #nav { height: 72px; gap: 4px; }
+      #nav a { font-size: 9.5px; }
+      .btn { min-height: 40px; padding: 0 12px; font-size: 10px; }
+      .wrap { padding: 0 20px; }
+      .overview-grid, .ecosystem-grid-layout, .challenge-layout, .metrics-layout, .tech-layout, .contact-grid { gap: 18px; }
+      .overview-title { font-size: 43px; }
+      .overview-lead { font-size: 13px; }
+      .career-step span { font-size: 7px; }
+      .overview-visual { min-height: 420px; }
+      .portfolio-grid { gap: 6px; }
+      .portfolio-card { padding: 13px; }
+      .portfolio-card h3 { font-size: 13px; }
+      .portfolio-card p { font-size: 7.5px; }
+      .supporting-item span { font-size: 6.5px; }
+    }
+
+    @media (max-width: 820px) {
+      html { overflow: auto; }
+      body { overflow: auto; }
+      header { height: auto; position: sticky; }
+      .head { grid-template-columns: 1fr; padding: 12px 18px; }
+      .nav-cta { display: none; }
+      #nav { height: auto; grid-template-columns: repeat(2,1fr); grid-template-rows: none; }
+      #nav a { padding: 10px 5px; }
+      main { height: auto; overflow: visible; scroll-snap-type: none; }
+      .slide { min-height: auto; height: auto; overflow: visible; scroll-snap-align: none; padding: 55px 0; }
+      .section-head h2, .section-head p { white-space: normal; }
+      .overview-grid, .ecosystem-grid-layout, .challenge-layout, .metrics-layout, .tech-layout, .contact-grid { grid-template-columns: 1fr; }
+      .overview-visual { min-height: 420px; }
+      .ecosystem-story, .challenge-lead, .metrics-story { min-height: auto; }
+      .strategy-flow { grid-template-columns: repeat(2,1fr); }
+      .strategy-step { height: auto; min-height: 150px; }
+      .strategy-step:not(:last-child)::after { display: none; }
+      .strategy-bottom { grid-template-columns: 1fr; }
+      .scope-grid, .portfolio-grid { grid-template-columns: repeat(2,1fr); }
+      .portfolio-card { height: auto; min-height: 330px; }
+      .supporting-row { grid-template-columns: repeat(2,1fr); }
+      .outcomes-grid { grid-template-columns: repeat(2,1fr); }
+      .outcome-summary { grid-template-columns: repeat(2,1fr); }
+      .formula-bar { grid-template-columns: repeat(2,1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { padding: 0 16px; }
+      .overview-stats, .career-strip, .ecosystem-grid, .challenge-cards, .metrics-grid, .scope-grid, .portfolio-grid, .outcomes-grid { grid-template-columns: 1fr; }
+      .career-step { border-right: 0; border-bottom: 1px solid var(--line); }
+      .career-step:last-child { border-bottom: 0; }
+      .portfolio-intro, .outcomes-intro { display: block; }
+      .portfolio-note, .outcomes-note { width: auto; margin-top: 12px; }
+      .contact-title { white-space: normal; }
+      .contact-focus { flex-wrap: wrap; }
+      .strategy-bottom, .priority-grid, .formula-bar, .outcome-summary { grid-template-columns: 1fr; }
+      .tech-layer { grid-template-columns: 25px 1fr; }
+      .tech-layer span { grid-column: 2; }
+    }
+    /* ======================================================================
+       TYPOGRAPHY / READABILITY PASS
+       ====================================================================== */
+
+    /* Section titles may wrap when needed; never clip meaningful content. */
+    .section-head h2 {
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
+      font-size: clamp(34px, 3vw, 48px);
+      line-height: 1.02;
+      max-width: 1180px;
+    }
+
+    .section-head p {
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
+      font-size: 14px;
+      line-height: 1.42;
+      max-width: 980px;
+    }
+
+    /* OVERVIEW */
+    .overview-title {
+      max-width: 880px;
+      font-size: clamp(46px, 4.35vw, 66px);
+      line-height: .98;
+    }
+    .overview-lead { font-size: 16px; line-height: 1.48; }
+    .focus-row .pill { font-size: 11px; }
+    .overview-stat span { font-size: 9px; }
+    .career-step strong { font-size: 11.5px; }
+    .career-step span { font-size: 9px; }
+
+    /* ECOSYSTEM: wider statement column so the headline reads as a clean
+       3-line statement instead of a narrow 5-line block. */
+    .ecosystem-grid-layout {
+      grid-template-columns: minmax(560px,.9fr) minmax(0,1.1fr);
+      gap: 32px;
+    }
+    .ecosystem-story { padding: 30px; min-height: 525px; }
+    .ecosystem-story h3 {
+      max-width: 620px;
+      font-size: 34px;
+      line-height: 1.04;
+      letter-spacing: -.04em;
+    }
+    .ecosystem-story p { font-size: 13.5px; line-height: 1.52; }
+    .story-point { font-size: 11.5px; }
+    .ecosystem-story-foot { font-size: 9px; }
+    .eco-card { min-height: 112px; padding: 18px; }
+    .eco-card strong { font-size: 14px; }
+    .eco-card span { max-width: 225px; font-size: 11px; line-height: 1.4; }
+
+    /* CHALLENGE */
+    .challenge-lead h3 { font-size: 34px; }
+    .challenge-lead p { font-size: 13.5px; }
+    .challenge-card h3 { font-size: 15px; }
+    .challenge-card p { font-size: 11px; line-height: 1.46; }
+    .challenge-card .response { font-size: 9px; line-height: 1.25; white-space: normal; }
+
+    /* STRATEGY: 4 x 2 gives every step enough width for readable copy. */
+    .strategy-flow { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; }
+    .strategy-step { height: 158px; padding: 17px 16px; }
+    .strategy-step:not(:last-child)::after { display: none; }
+    .strategy-step strong { font-size: 14px; }
+    .strategy-step p { font-size: 10.5px; line-height: 1.42; }
+    .strategy-principle strong { font-size: 14px; }
+    .strategy-principle span { font-size: 10.5px; }
+    .priority-item strong { font-size: 10px; }
+    .priority-item span { font-size: 9px; line-height: 1.3; }
+
+    /* PM SCOPE */
+    .scope-card strong { font-size: 15px; }
+    .scope-card p { font-size: 10.5px; line-height: 1.45; }
+    .scope-tag { font-size: 8.5px; }
+    .scope-footer strong { font-size: 10.5px; }
+    .scope-footer span { font-size: 9.5px; white-space: normal; }
+
+    /* PRODUCT METRICS */
+    .metrics-story h3 { font-size: 33px; }
+    .metrics-story p { font-size: 13.5px; }
+    .metric-equation strong { font-size: 10.5px; }
+    .metric-equation span { font-size: 9.5px; }
+    .metric-group h3 { font-size: 15px; }
+    .metric-group > p { font-size: 10.5px; line-height: 1.35; }
+    .metric-list div { font-size: 10px; }
+    .formula strong { font-size: 9px; }
+    .formula span { font-size: 8.5px; line-height: 1.28; }
+
+    /* PORTFOLIO */
+    .portfolio-card h3 { font-size: 16px; line-height: 1.08; }
+    .portfolio-block label { font-size: 8px; }
+    .portfolio-block p { font-size: 10px; line-height: 1.42; }
+    .portfolio-outcome { padding: 10px 11px; }
+    .portfolio-outcome p { font-size: 10px; }
+    .portfolio-tag { font-size: 8px; }
+    .case-link { font-size: 9.5px; }
+    .supporting-item strong { font-size: 8.5px; }
+    .supporting-item span { font-size: 8px; line-height: 1.3; }
+
+    /* TECH & DATA */
+    .capability-row strong { font-size: 11px; }
+    .capability-row span { font-size: 10px; line-height: 1.32; white-space: normal; }
+    .tech-panel-title { font-size: 24px; line-height: 1.06; }
+    .tech-panel-sub { font-size: 10.5px; }
+    .tech-layer strong { font-size: 10.5px; }
+    .tech-layer span { font-size: 9.5px; line-height: 1.25; white-space: normal; }
+    .tool { font-size: 8.5px; }
+
+    /* OUTCOMES */
+    .outcomes-note strong { font-size: 10px; }
+    .outcomes-note span { font-size: 9px; }
+    .outcome-card strong { font-size: 29px; }
+    .outcome-card h3 { font-size: 14px; line-height: 1.18; }
+    .outcome-card span { font-size: 8.5px; line-height: 1.2; white-space: normal; }
+    .outcome-summary-item strong { font-size: 10px; }
+    .outcome-summary-item span { font-size: 8.5px; }
+
+    /* CONNECT */
+    .contact-title {
+      white-space: normal;
+      max-width: 900px;
+      font-size: clamp(44px, 4vw, 60px);
+      line-height: 1;
+    }
+    .contact-copy { font-size: 15px; line-height: 1.48; }
+    .contact-link { font-size: 11.5px; }
+
+    /* DESKTOP HEIGHT SAFETY */
+    @media (max-height: 850px) and (min-width: 900px) {
+      .ecosystem-story h3 { font-size: 30px; }
+      .eco-card { min-height: 96px; padding: 15px; }
+      .eco-card span { font-size: 10px; }
+      .strategy-step { height: 135px; padding: 14px; }
+      .strategy-step p { font-size: 9.5px; }
+      .scope-card { height: 190px; }
+      .metric-group { min-height: 145px; }
+      .portfolio-card { height: 375px; }
+      .outcome-card { height: 220px; }
+      .contact-title { font-size: 48px; }
+    }
+
+    @media (max-width: 1280px) and (min-width: 821px) {
+      .ecosystem-grid-layout { grid-template-columns: minmax(470px,.9fr) minmax(0,1.1fr); }
+      .ecosystem-story h3 { font-size: 31px; }
+      .eco-card span { font-size: 10px; }
+      .portfolio-block p { font-size: 9.5px; }
+    }
+
+    @media (max-width: 820px) {
+      .ecosystem-grid-layout { grid-template-columns: 1fr; }
+      .strategy-flow { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .strategy-step { height: auto; min-height: 145px; }
+      .section-head h2 { font-size: clamp(32px, 7vw, 44px); }
+    }
+
+
+    /* ======================================================================
+       FINAL CLEAN-UI SYSTEM — CONSISTENT TYPOGRAPHY / CONTRAST / ALIGNMENT
+       This layer intentionally overrides earlier experimental sizing without
+       deleting the original content or component structure.
+       ====================================================================== */
+
+    :root {
+      --font-ui: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --text-strong: #173a63;
+      --text-body: #4f6780;
+      --text-soft: #667d93;
+      --text-on-dark: #f8fbff;
+      --text-on-dark-soft: #c7d6e6;
+      --pastel-blue: #edf5ff;
+      --pastel-mint: #edf9f5;
+      --pastel-lavender: #f4f0ff;
+      --pastel-amber: #fff6e8;
+      --pastel-teal: #edf8fa;
+      --pastel-sand: #fbf7ef;
+      --footer-ink: #244d76;
+    }
+
+    html, body, button, input, textarea, select, a {
+      font-family: var(--font-ui);
+    }
+
+    body {
+      color: var(--text-body);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .wrap {
+      max-width: 1480px;
+      padding-left: 42px;
+      padding-right: 42px;
+    }
+
+    /* One typographic hierarchy across every section. */
+    .eyebrow {
+      font-size: 11px;
+      line-height: 1.1;
+      letter-spacing: .14em;
+    }
+
+    .section-head {
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      color: var(--text-strong);
+      font-size: clamp(36px, 3.05vw, 48px);
+      line-height: 1.04;
+      letter-spacing: -.045em;
+      font-weight: 850;
+      margin: 10px 0 8px;
+      white-space: normal;
+      overflow: visible;
+    }
+
+    .section-head p {
+      color: var(--text-body);
+      font-size: 14px;
+      line-height: 1.48;
+      white-space: normal;
+      overflow: visible;
+      max-width: 980px;
+    }
+
+    .dark .section-head h2 { color: var(--text-on-dark); }
+    .dark .section-head p { color: var(--text-on-dark-soft); }
+
+    /* Overview: role already exists in the static header, so no duplicate
+       orange role label is allowed inside the slide. */
+    #overview .overview-title {
+      max-width: 820px;
+      color: var(--text-strong);
+      font-size: clamp(46px, 4.25vw, 64px);
+      line-height: .99;
+      letter-spacing: -.055em;
+    }
+
+    #overview .overview-lead {
+      max-width: 820px;
+      color: var(--text-body);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    #overview .overview-stat strong { color: var(--text-strong); }
+    #overview .overview-stat span { color: var(--text-soft); font-size: 10px; }
+    #overview .career-step strong { color: var(--text-strong); font-size: 12px; }
+    #overview .career-step span { color: var(--text-soft); font-size: 10px; line-height: 1.35; }
+
+    /* Ecosystem: give the narrative column enough width for a 3-line headline,
+       while keeping the 3x3 card matrix compact and readable. */
+    #ecosystem .ecosystem-grid-layout {
+      grid-template-columns: minmax(570px, .95fr) minmax(0, 1.05fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    #ecosystem .ecosystem-story {
+      min-height: 500px;
+      padding: 30px 32px;
+      border-radius: 24px;
+    }
+
+    #ecosystem .ecosystem-story h3 {
+      max-width: 560px;
+      margin: 15px 0 13px;
+      font-size: 34px;
+      line-height: 1.04;
+      letter-spacing: -.045em;
+    }
+
+    #ecosystem .ecosystem-story p {
+      max-width: 560px;
+      color: #c6d5e5;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    #ecosystem .story-point {
+      color: #f1f6fb;
+      font-size: 11px;
+      line-height: 1.3;
+      white-space: normal;
+    }
+
+    #ecosystem .ecosystem-story-foot {
+      color: #9eb5cb;
+      font-size: 9px;
+    }
+
+    #ecosystem .ecosystem-panel {
+      padding: 12px;
+      border-radius: 24px;
+    }
+
+    #ecosystem .eco-card {
+      min-height: 105px;
+      padding: 17px 18px;
+      border-radius: 15px;
+    }
+
+    #ecosystem .eco-card strong {
+      color: var(--text-strong);
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    #ecosystem .eco-card span {
+      max-width: 100%;
+      margin-top: 6px;
+      color: var(--text-body);
+      font-size: 11px;
+      line-height: 1.42;
+      white-space: normal;
+    }
+
+    /* Challenge / Strategy / PM Scope / Metrics — normalize body contrast and
+       prevent small grey text from becoming visually weak. */
+    #challenge p, #strategy p, #scope p, #metrics p,
+    #challenge span, #strategy span, #scope span, #metrics span {
+      color: var(--text-body);
+    }
+
+    .challenge-card p,
+    .strategy-step p,
+    .scope-card p,
+    .metric-group > p {
+      font-size: 11px;
+      line-height: 1.42;
+    }
+
+    .challenge-card h3,
+    .strategy-step strong,
+    .scope-card strong,
+    .metric-group h3 {
+      color: var(--text-strong);
+      font-size: 15px;
+      line-height: 1.14;
+    }
+
+    .strategy-step,
+    .scope-card,
+    .metric-group,
+    .priority-item {
+      overflow: hidden;
+    }
+
+    /* Product Metrics */
+    #metrics .metrics-story h3 {
+      font-size: 33px;
+      line-height: 1.05;
+    }
+
+    #metrics .metrics-story p { font-size: 13.5px; line-height: 1.5; }
+    #metrics .metric-list div { font-size: 10.5px; line-height: 1.3; }
+    #metrics .formula strong { font-size: 9.5px; }
+    #metrics .formula span { color: var(--text-body); font-size: 8.5px; line-height: 1.28; }
+
+    /* Portfolio: exactly five primary case-study cards. No extra project strip. */
+    #portfolio .portfolio-intro {
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    #portfolio .portfolio-note {
+      width: 250px;
+      flex: 0 0 250px;
+      background: var(--pastel-blue);
+    }
+
+    #portfolio .portfolio-note strong { color: var(--text-strong); font-size: 10.5px; }
+    #portfolio .portfolio-note span { color: var(--text-body); font-size: 9.5px; line-height: 1.4; }
+
+    #portfolio .portfolio-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    #portfolio .portfolio-card {
+      height: 392px;
+      padding: 17px;
+      border-radius: 17px;
+    }
+
+    #portfolio .portfolio-card h3 {
+      color: var(--text-strong);
+      font-size: 16px;
+      line-height: 1.12;
+      margin: 13px 0 9px;
+    }
+
+    #portfolio .portfolio-company,
+    #portfolio .portfolio-block label {
+      color: #607993;
+    }
+
+    #portfolio .portfolio-block p,
+    #portfolio .portfolio-outcome p {
+      color: #405d78;
+      font-size: 10px;
+      line-height: 1.42;
+    }
+
+    #portfolio .portfolio-outcome {
+      background: rgba(255,255,255,.72);
+      border-color: rgba(23,58,99,.09);
+    }
+
+    #portfolio .portfolio-tag {
+      color: #355875;
+      background: rgba(255,255,255,.82);
+      font-size: 8px;
+    }
+
+    #portfolio .case-link {
+      color: var(--text-strong);
+      font-size: 9.5px;
+    }
+
+    /* Tech & Data: smaller physical left rows, larger readable text, and a
+       slightly wider technology model panel. */
+    #tech .tech-layout {
+      grid-template-columns: minmax(0, .92fr) minmax(430px, 1.08fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    #tech .capability-table {
+      border-radius: 17px;
+    }
+
+    #tech .capability-row {
+      min-height: 50px;
+      grid-template-columns: 130px minmax(0, 1fr);
+      gap: 16px;
+      padding: 7px 16px;
+    }
+
+    #tech .capability-row strong {
+      color: var(--text-strong);
+      font-size: 11px;
+    }
+
+    #tech .capability-row span {
+      color: var(--text-body);
+      font-size: 10.5px;
+      line-height: 1.34;
+      white-space: normal;
+      overflow: visible;
+    }
+
+    #tech .tech-panel {
+      min-height: 455px;
+      padding: 25px;
+      border-radius: 24px;
+    }
+
+    #tech .tech-panel-title {
+      font-size: 24px;
+      line-height: 1.08;
+    }
+
+    #tech .tech-panel-sub { color: #c1d1e1; font-size: 10.5px; }
+
+    #tech .tech-layer {
+      min-height: 55px;
+      grid-template-columns: 28px 130px minmax(0,1fr);
+      padding: 10px 13px;
+    }
+
+    #tech .tech-layer strong { font-size: 10.5px; }
+    #tech .tech-layer span { color: #bfd0e1; font-size: 9.5px; line-height: 1.32; white-space: normal; }
+    #tech .tool { color: #edf4fb; font-size: 9px; }
+
+    /* Outcomes: explicitly identify the employer/project context, including
+       M2P Fintech, rather than leaving it as a generic capability label. */
+    #outcomes .outcomes-intro {
+      align-items: flex-start;
+      margin-bottom: 17px;
+    }
+
+    #outcomes .outcomes-note {
+      background: var(--pastel-blue);
+    }
+
+    #outcomes .outcomes-note strong { color: var(--text-strong); font-size: 10.5px; }
+    #outcomes .outcomes-note span { color: var(--text-body); font-size: 9.5px; line-height: 1.4; }
+
+    #outcomes .outcome-card {
+      height: 240px;
+      padding: 19px;
+      border-radius: 18px;
+    }
+
+    #outcomes .outcome-card strong {
+      font-size: 29px;
+      color: var(--amber-bright);
+    }
+
+    #outcomes .outcome-card h3 {
+      font-size: 14px;
+      line-height: 1.18;
+    }
+
+    #outcomes .outcome-card span {
+      color: #c7d7e7;
+      font-size: 9px;
+      line-height: 1.25;
+      white-space: normal;
+    }
+
+    #outcomes .outcome-summary-item strong { color: var(--text-strong); font-size: 10.5px; }
+    #outcomes .outcome-summary-item span { color: var(--text-body); font-size: 9px; }
+
+    /* Connect: switch from a single dark block to a light editorial closing
+       slide with distinct pastel cards and high-contrast footer text. */
+    #contact.slide.dark {
+      background: #f3f7fb;
+      color: var(--text-strong);
+    }
+
+    #contact .contact-title {
+      color: var(--text-strong);
+      max-width: 860px;
+      font-size: clamp(43px, 4vw, 60px);
+      line-height: 1.01;
+      white-space: normal;
+    }
+
+    #contact .contact-copy {
+      max-width: 830px;
+      color: var(--text-body);
+      font-size: 15px;
+      line-height: 1.52;
+    }
+
+    #contact .contact-focus { flex-wrap: wrap; gap: 8px; }
+
+    #contact .contact-focus .pill {
+      color: #315876;
+      background: #ffffff;
+      border: 1px solid #d7e5f0;
+      box-shadow: 0 4px 12px rgba(25,55,90,.04);
+    }
+
+    #contact .contact-card {
+      padding: 24px;
+      border: 1px solid #d5e3ee;
+      border-radius: 22px;
+      background: #ffffff;
+      box-shadow: 0 16px 36px rgba(25,55,90,.08);
+    }
+
+    #contact .contact-card .eyebrow { color: var(--amber); }
+    #contact .contact-card .eyebrow::before { background: var(--amber); }
+
+    #contact .contact-link {
+      min-height: 52px;
+      margin-top: 10px;
+      color: var(--text-strong);
+      border: 1px solid #d8e5ef;
+      background: #f7fafc;
+      font-size: 11.5px;
+      border-radius: 12px;
+    }
+
+    #contact .contact-link.primary {
+      color: #fff;
+      background: var(--amber);
+      border-color: var(--amber);
+    }
+
+    #contact .contact-link:nth-of-type(2) {
+      background: var(--pastel-blue);
+      border-color: #d6e6f7;
+    }
+
+    #contact .contact-link:nth-of-type(3) {
+      background: var(--pastel-lavender);
+      border-color: #e1d9f7;
+    }
+
+    #contact .contact-link:hover { background: #eef5fb; }
+    #contact .contact-link.primary:hover { background: #d18718; }
+
+    #contact .senior-signals > div {
+      background: #ffffff !important;
+      border-color: #d9e6ef !important;
+      box-shadow: 0 5px 15px rgba(25,55,90,.04);
+    }
+
+    #contact .senior-signals strong { color: var(--text-strong) !important; font-size: 10px !important; }
+    #contact .senior-signals p { color: var(--text-body) !important; font-size: 9px !important; line-height: 1.38 !important; }
+    #contact .senior-signals span { color: var(--amber) !important; }
+
+    #contact .contact-foot {
+      margin-top: 26px;
+      padding-top: 14px;
+      border-top: 1px solid #d3e0eb;
+      color: var(--footer-ink);
+      font-size: 9px;
+      line-height: 1.3;
+      font-weight: 850;
+      letter-spacing: .08em;
+    }
+
+    /* Do not allow tiny text to fall below the readable baseline on desktop. */
+    @media (min-width: 821px) {
+      .supporting-row { display: none !important; }
+      .portfolio-card p { font-size: 10px; }
+    }
+
+    @media (max-width: 1280px) and (min-width: 821px) {
+      .wrap { padding-left: 28px; padding-right: 28px; }
+      #ecosystem .ecosystem-grid-layout { grid-template-columns: minmax(500px,.95fr) minmax(0,1.05fr); }
+      #ecosystem .ecosystem-story h3 { font-size: 31px; }
+      #tech .tech-layout { grid-template-columns: minmax(0,.9fr) minmax(390px,1.1fr); }
+      #portfolio .portfolio-card { height: 380px; padding: 15px; }
+      #portfolio .portfolio-block p, #portfolio .portfolio-outcome p { font-size: 9.5px; }
+    }
+
+    @media (max-height: 850px) and (min-width: 821px) {
+      #ecosystem .ecosystem-story { min-height: 465px; padding: 25px 28px; }
+      #ecosystem .eco-card { min-height: 92px; padding: 14px 16px; }
+      #tech .capability-row { min-height: 46px; padding-top: 5px; padding-bottom: 5px; }
+      #tech .tech-panel { min-height: 430px; padding: 22px; }
+      #tech .tech-layer { min-height: 50px; }
+      #portfolio .portfolio-card { height: 360px; }
+      #outcomes .outcome-card { height: 215px; }
+      #contact .contact-title { font-size: 48px; }
+    }
+
+    @media (max-width: 820px) {
+      .wrap { padding-left: 20px; padding-right: 20px; }
+      #ecosystem .ecosystem-grid-layout,
+      #tech .tech-layout { grid-template-columns: 1fr; }
+      #ecosystem .ecosystem-story { min-height: auto; }
+      #portfolio .portfolio-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      #portfolio .portfolio-card { height: auto; min-height: 350px; }
+      #contact .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      #portfolio .portfolio-grid { grid-template-columns: 1fr; }
+      #contact .senior-signals { grid-template-columns: 1fr !important; }
+    }
+
+  </style>
+
+  <header>
+    <div class="wrap head">
+      <a class="brand" href="#overview" aria-label="Manoj Pant Product Portfolio">
+        <span class="brand-logo" aria-hidden="true">MP</span>
+        <span class="brand-copy">
+          <b>Manoj Pant</b>
+          <small>Senior Product Manager</small>
+        </span>
+      </a>
+
+      <nav id="nav" aria-label="Portfolio sections">
+        {navItems.map(([id, label]) => <a href={`#${id}`}>{label}</a>)}
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn primary" href="#portfolio">View Projects</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================================================================
+         01 / OVERVIEW
+         ================================================================== -->
+    <section class="slide soft" id="overview">
+      <div class="wrap">
+        <div class="overview-grid">
+          <div>
+            <h1 class="overview-title">Building products that solve complex business problems.</h1>
+            <p class="overview-lead">
+              Senior Product Manager with <strong>10+ years of experience</strong> across FinTech, Healthcare, Telecom and Enterprise IT — combining product strategy, business analysis, technology, data and execution to build enterprise products.
+            </p>
+
+            <div class="focus-row">
+              <div class="pill-row">
+                {heroFocus.map((item) => <span class="pill">{item}</span>)}
+              </div>
             </div>
+
+            <div class="overview-stats">
+              <div class="overview-stat"><strong>10+</strong><span>Years Experience</span></div>
+              <div class="overview-stat"><strong>12+</strong><span>Enterprise Applications</span></div>
+              <div class="overview-stat"><strong>4</strong><span>Industry Ecosystems</span></div>
+              <div class="overview-stat"><strong>0→1</strong><span>Product Development</span></div>
+            </div>
+
+            <div class="career-strip" aria-label="Career progression">
+              {careerArc.map(([number, title, text]) => (
+                <div class="career-step">
+                  <span class="number">{number}</span>
+                  <strong>{title}</strong>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="overview-visual" aria-label="Product operating model">
+            <div class="visual-top">
+              <span>Product Operating Model</span>
+              <span>Problem → Product → Outcome</span>
+            </div>
+
+            <div class="operating-map">
+              <span class="map-line line-business"></span>
+              <span class="map-line line-ai"></span>
+              <span class="map-line line-auto"></span>
+              <span class="map-line line-data"></span>
+
+              <div class="map-node map-business">
+                <strong>Business</strong>
+                <span>Goals · users · value</span>
+              </div>
+              <div class="map-node map-ai">
+                <strong>AI & GenAI</strong>
+                <span>Decisioning · assistance</span>
+              </div>
+              <div class="map-node map-auto">
+                <strong>Automation</strong>
+                <span>Rules · approvals · exceptions</span>
+              </div>
+              <div class="map-node map-data">
+                <strong>Data</strong>
+                <span>KPIs · intelligence · outcomes</span>
+              </div>
+
+              <div class="operating-center">
+                <div>
+                  <strong>Product</strong>
+                  <span>Business + Technology + Data</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="map-footer">
+              <span>Strategy</span>
+              <span>Delivery</span>
+              <span>Adoption & Outcomes</span>
+            </div>
+          </div>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <main>
-        <!-- 01. OVERVIEW -->
-        <section class="slide-page" id="overview">
-            <div class="wrap">
-                <span class="eyebrow" style="color: var(--amber); font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; font-size: 10px;">Senior Product Manager</span>
-                <h1 class="hero-title">Building products that solve complex business problems.</h1>
-                <p class="hero-lead">Senior Product Manager with <strong>10+ years of experience</strong> across FinTech, Healthcare, Telecom and Enterprise IT, combining product strategy, business analysis, technology, data and execution to build enterprise products.</p>
-                
-                <div class="tag-cloud" style="margin-top: 0; gap: 8px; border-bottom: 1px solid var(--line); padding-bottom: 24px; max-width: 800px;">
-                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 12px;">Product Strategy <span style="color:var(--amber); margin:0 6px;">•</span></span>
-                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 12px;">Enterprise Platforms <span style="color:var(--amber); margin:0 6px;">•</span></span>
-                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 12px;">Digital Products <span style="color:var(--amber); margin:0 6px;">•</span></span>
-                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 12px;">Data & Analytics <span style="color:var(--amber); margin:0 6px;">•</span></span>
-                    <span class="tag" style="background: transparent; border: none; padding: 0; color: var(--navy); font-size: 12px;">Workflow Automation</span>
-                </div>
+    <!-- ==================================================================
+         02 / ECOSYSTEM
+         ================================================================== -->
+    <section class="slide dark" id="ecosystem">
+      <div class="wrap">
+        <div class="ecosystem-grid-layout">
+          <div class="ecosystem-story">
+            <div>
+              <span class="eyebrow">Product Ecosystem</span>
+              <h3>Product is the coordination layer between business, technology and operations.</h3>
+              <p>
+                My work spans enterprise products where a feature is only one part of the solution. The product has to connect the user journey with workflows, data, integrations, controls, intelligence and operational readiness.
+              </p>
 
-                <div class="stat-grid">
-                    <div class="stat-box"><strong>10+</strong><span>Years Experience</span></div>
-                    <div class="stat-box"><strong>12+</strong><span>Enterprise Applications</span></div>
-                    <div class="stat-box"><strong>4</strong><span>Industry Ecosystems</span></div>
-                    <div class="stat-box"><strong>0→1</strong><span>Product Development</span></div>
-                </div>
+              <div class="story-points">
+                <div class="story-point"><i></i>Customer and business problem</div>
+                <div class="story-point"><i></i>Product journey and workflow</div>
+                <div class="story-point"><i></i>AI / GenAI opportunity</div>
+                <div class="story-point"><i></i>Automation and integration behavior</div>
+                <div class="story-point"><i></i>Data, operations and measurable outcome</div>
+              </div>
             </div>
-        </section>
+            <div class="ecosystem-story-foot">Enterprise product thinking — from problem framing to production readiness</div>
+          </div>
 
-        <!-- 02. PORTFOLIO MAP -->
-        <section class="slide-page" id="portfolio" style="background: #fff; border-top: 1px solid var(--line);">
-            <div class="wrap">
-                <div class="section-head">
-                    <span class="eyebrow">Selected Product Portfolio</span>
-                    <h2>Products across industries and problem spaces.</h2>
-                    <p>A focused selection of products and initiatives spanning banking, lending, payments, healthcare, telecom analytics and enterprise automation.</p>
-                </div>
-                
-                <div class="grid-3" style="margin-bottom: 20px;">
-                    {products.slice(0, 3).map((product) => (
-                        <article class={`card ${product.tint}`}>
-                            <span class="eyebrow">{product.number} · {product.company}</span>
-                            <h3>{product.title}</h3>
-                            <p>{product.description}</p>
-                            <div class="tag-cloud">
-                                {product.tags.map((tag) => ( <span class="tag">{tag}</span> ))}
-                            </div>
-                            <a href={product.url} style="margin-top: 16px; font-size: 11px; font-weight: 700; color: var(--navy); text-decoration: none; display: inline-block;">View Case Study →</a>
-                        </article>
-                    ))}
-                </div>
-                <div class="grid-2">
-                    {products.slice(3, 5).map((product) => (
-                        <article class={`card ${product.tint}`}>
-                            <span class="eyebrow">{product.number} · {product.company}</span>
-                            <h3>{product.title}</h3>
-                            <p>{product.description}</p>
-                            <div class="tag-cloud">
-                                {product.tags.map((tag) => ( <span class="tag">{tag}</span> ))}
-                            </div>
-                            <a href={product.url} style="margin-top: 16px; font-size: 11px; font-weight: 700; color: var(--navy); text-decoration: none; display: inline-block;">View Case Study →</a>
-                        </article>
-                    ))}
-                </div>
+          <div class="ecosystem-panel">
+            <div class="ecosystem-grid">
+              {ecosystem.map(([title, text, type]) => (
+                <article class:list={['eco-card', type]}>
+                  <strong>{title}</strong>
+                  <span>{text}</span>
+                </article>
+              ))}
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- 03. APPROACH -->
-        <section class="slide-page dark-section" id="approach">
-            <div class="wrap">
-                <div class="section-head">
-                    <span class="eyebrow">Product Management Approach</span>
-                    <h2>From problem to product to measurable outcome.</h2>
-                    <p>I work across the product lifecycle — understanding the problem, defining the product, collaborating with technology teams, delivering the solution and measuring its impact.</p>
-                </div>
-
-                <div class="grid-4">
-                    {approach.map(([number, title, description]) => (
-                        <article class="card">
-                            <span class="eyebrow" style="color: var(--amber);">{number}</span>
-                            <h3>{title}</h3>
-                            <p>{description}</p>
-                        </article>
-                    ))}
-                </div>
-
-                <div style="margin-top: 24px; padding: 20px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); border-radius: var(--radius); max-width: 800px;">
-                    <div style="font-size: 9px; font-weight: 800; color: var(--amber); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px;">Product Mindset</div>
-                    <div style="font-size: 14px; font-weight: 600; color: #fff;">Customer problem + Business value + Technical feasibility + Measurable outcome</div>
-                </div>
+    <!-- ==================================================================
+         03 / CHALLENGE
+         ================================================================== -->
+    <section class="slide soft" id="challenge">
+      <div class="wrap">
+        <div class="challenge-layout">
+          <div class="challenge-lead">
+            <div>
+              <span class="eyebrow">The Challenge</span>
+              <h3>Complex enterprise products rarely have a single problem.</h3>
+              <p>
+                The hard part is usually the coordination: multiple stakeholders, systems, data sources, business rules, exceptions, regulatory requirements and operational hand-offs have to behave as one product experience.
+              </p>
             </div>
-        </section>
-
-        <!-- 04. TECH & DATA -->
-        <section class="slide-page" id="tech">
-            <div class="wrap">
-                <div class="section-head">
-                    <span class="eyebrow">Product & Technical Depth</span>
-                    <h2>Where product meets technology and data.</h2>
-                    <p>A product-management foundation supported by technical understanding, analytics and enterprise delivery experience.</p>
-                </div>
-
-                <div class="grid-4">
-                    {capabilities.map(([title, content]) => (
-                        <article class="card" style="box-shadow: none;">
-                            <h3>{title}</h3>
-                            <p>{content}</p>
-                        </article>
-                    ))}
-                </div>
-
-                <div class="grid-4" style="margin-top: 20px;">
-                    {[
-                        ['SQL', 'Data & analysis'],
-                        ['Power BI', 'Decision dashboards'],
-                        ['APIs', 'Product integrations'],
-                        ['Figma', 'Product prototyping'],
-                    ].map(([name, label]) => (
-                        <div style="background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px;">
-                            <div style="font-weight: 800; color: var(--navy); font-size: 14px;">{name}</div>
-                            <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 700; margin-top: 4px;">{label}</div>
-                        </div>
-                    ))}
-                </div>
+            <div>
+              <div class="dark-rule"></div>
+              <span class="mini-label" style="display:block;margin-top:12px;">Problem framing before solution design</span>
             </div>
-        </section>
+          </div>
 
-        <!-- 05. IMPACT -->
-        <section class="slide-page" id="impact" style="background: #fff; border-top: 1px solid var(--line);">
-            <div class="wrap">
-                <div class="section-head">
-                    <span class="eyebrow">Selected Outcomes</span>
-                    <h2>Outcomes matter more than features.</h2>
-                    <p>A few documented outcomes from the products and initiatives represented in my experience.</p>
+          <div class="challenge-cards">
+            {challengeItems.map(([number, title, text, type]) => (
+              <article class="challenge-card">
+                <div>
+                  <div class="challenge-card-top">
+                    <span class="number">{number}</span>
+                    <span class="mini-label">{type}</span>
+                  </div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
                 </div>
+                <div class="response">PM response: frame → design → deliver → measure</div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <div class="grid-4">
-                    {outcomes.map(([metric, label, company]) => (
-                        <article class="card dark-section" style="background: var(--navy); border: none;">
-                            <div style="font-size: 28px; font-weight: 800; color: var(--amber); line-height: 1; margin-bottom: 10px;">{metric}</div>
-                            <h3 style="color: #fff; margin-bottom: 6px;">{label}</h3>
-                            <p style="font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-top: auto;">{company}</p>
-                        </article>
-                    ))}
+    <!-- ==================================================================
+         04 / STRATEGY
+         ================================================================== -->
+    <section class="slide white" id="strategy">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Product Strategy</span>
+          <h2>From problem framing to measurable product delivery.</h2>
+          <p>A practical product flow that keeps customer need, business value, feasibility, AI opportunity, automation potential and measurable outcomes connected.</p>
+        </div>
+
+        <div class="strategy-flow">
+          {strategySteps.map(([number, title, text]) => (
+            <article class="strategy-step">
+              <span class="number">{number}</span>
+              <strong>{title}</strong>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="strategy-bottom">
+          <div class="strategy-principle">
+            <strong>Product decision model</strong>
+            <span>Customer problem + business value + technical feasibility + risk + measurable outcome.</span>
+          </div>
+
+          <div class="priority-panel">
+            <span class="mini-label">Prioritization lens</span>
+            <div class="priority-grid">
+              {prioritization.map(([title, text]) => (
+                <div class="priority-item">
+                  <i></i>
+                  <div><strong>{title}</strong><span>{text}</span></div>
                 </div>
+              ))}
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- 06. CONTACT -->
-        <section class="slide-page dark-section" id="contact">
-            <div class="wrap">
-                <div class="grid-2" style="align-items: center;">
-                    <div>
-                        <span class="eyebrow" style="color: var(--amber);">Senior Product Manager</span>
-                        <h2 style="font-size: 38px; line-height: 1.1; margin: 12px 0 20px;">Building products where business, technology and outcomes meet.</h2>
-                        <p style="font-size: 15px; max-width: 500px; line-height: 1.6;">My experience spans the journey from data and business analysis to 0→1 product development and enterprise platform management.</p>
-                        
-                        <div class="tag-cloud" style="margin-top: 20px; gap: 6px;">
-                            {['Product Strategy', 'Enterprise Platforms', 'Technical Product Management', 'Data & Analytics'].map((tag) => (
-                                <span class="tag" style="background: transparent; border-color: rgba(255,255,255,0.15); color: #fff;">{tag}</span>
-                            ))}
-                        </div>
-                    </div>
-                    <div class="card" style="margin-left: auto; width: 100%; max-width: 360px; background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.08);">
-                        <span class="eyebrow" style="color: var(--amber);">Connect & Download</span>
-                        
-                        <a href="/Manoj_Pant_Senior_Product_Manager_AI_10Yrs.pdf" download class="btn primary" style="justify-content: flex-start; padding: 12px 16px; margin-top: 12px; font-size: 13px;">
-                            ↓ Download Resume (PDF)
-                        </a>
+    <!-- ==================================================================
+         05 / PM SCOPE
+         ================================================================== -->
+    <section class="slide soft" id="scope">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">PM Scope</span>
+          <h2>Product management across strategy, systems and execution.</h2>
+          <p>Hands-on ownership from discovery and requirements through architecture, AI / GenAI, workflow automation, delivery, adoption and operational readiness.</p>
+        </div>
 
-                        <a href="mailto:manoj.pant.pm@outlook.com" class="btn outline" style="color: #fff; border-color: rgba(255,255,255,0.15); justify-content: flex-start; padding: 12px 16px; margin-top: 12px;">
-                            manoj.pant.pm@outlook.com
-                        </a>
+        <div class="scope-grid">
+          {pmScope.map(([number, title, text, tags]) => (
+            <article class:list={['scope-card', title === 'AI / GenAI' ? 'ai-scope' : '', title === 'Automate' ? 'auto-scope' : '']}>
+              <span class="number">{number}</span>
+              <strong>{title}</strong>
+              <p>{text}</p>
+              <div class="scope-tags">
+                {tags.map((tag) => <span class="scope-tag">{tag}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
 
-                        <a href="https://www.linkedin.com/in/manoj-pant-35129495/" target="_blank" rel="noreferrer" class="btn outline" style="color: #fff; border-color: rgba(255,255,255,0.15); justify-content: flex-start; padding: 12px 16px; margin-top: 10px;">
-                            LinkedIn Profile →
-                        </a>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
-                    <span>© {new Date().getFullYear()} Manoj Pant</span>
-                    <span>Product Portfolio</span>
-                </div>
+        <div class="scope-footer">
+          <strong>Typical product artifacts</strong>
+          <span>BRD · FRD · FSD · PRD · user stories · acceptance criteria · DFD · ER models · API specifications · prototypes · UAT · VAPT · migration · deployment · training</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         06 / PRODUCT METRICS
+         ================================================================== -->
+    <section class="slide white" id="metrics">
+      <div class="wrap">
+        <div class="metrics-layout">
+          <div class="metrics-story">
+            <div>
+              <span class="eyebrow">Product Metrics</span>
+              <h3>Measure the product, not just the release.</h3>
+              <p>
+                I use product metrics to connect activity to adoption, efficiency, quality, control and business impact. Where a numeric result exists, it is presented as an outcome; otherwise the portfolio shows the measurement framework.
+              </p>
             </div>
-        </section>
-    </main>
 
-    <script is:inline>
-        // Navigation highlighting logic
-        const sections = document.querySelectorAll('.slide-page');
-        const navLinks = document.querySelectorAll('#nav a');
-        const mainScroll = document.querySelector('main');
+            <div>
+              <div class="metric-equation">
+                <strong>North-star thinking</strong>
+                <span>Outcome → leading indicators → workflow behavior → user action → business result.</span>
+              </div>
+              <div class="metric-equation">
+                <strong>AI / automation guardrail</strong>
+                <span>Automation is not the objective by itself; quality, exception rate and human hand-offs remain part of the measurement.</span>
+              </div>
+            </div>
+          </div>
 
-        mainScroll.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (mainScroll.scrollTop >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navLinks.forEach(a => {
-                a.classList.remove('active');
-                if (a.getAttribute('href').includes(current)) {
-                    a.classList.add('active');
-                }
-            });
-        }, { passive: true });
-    </script>
+          <div>
+            <div class="metrics-grid">
+              {metricGroups.map((group) => (
+                <article class="metric-group">
+                  <h3>{group.title}</h3>
+                  <p>{group.question}</p>
+                  <div class="metric-list">
+                    {group.metrics.map((metric) => <div><i></i>{metric}</div>)}
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div class="formula-bar">
+              {metricFormulas.map(([title, formula]) => (
+                <div class="formula"><strong>{title}</strong><span>{formula}</span></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         07 / PORTFOLIO
+         ================================================================== -->
+    <section class="slide white" id="portfolio">
+      <div class="wrap">
+        <div class="portfolio-intro">
+          <div class="section-head">
+            <span class="eyebrow">Selected Product Portfolio</span>
+            <h2>Selected product work across platforms, automation and analytics.</h2>
+            <p>Five representative case studies; deeper project detail is intentionally kept inside the individual project pages.</p>
+          </div>
+
+          <div class="portfolio-note">
+            <strong>Portfolio lens</strong>
+            <span>Problem → ownership → product decision → delivery → outcome. Competencies are shown through the work, not as a keyword list.</span>
+          </div>
+        </div>
+
+        <div class="portfolio-grid">
+          {products.map((product) => (
+            <article class:list={['portfolio-card', product.tint]}>
+              <div class="portfolio-meta">
+                <span class="portfolio-number">{product.number}</span>
+                <span class="portfolio-company">{product.company}</span>
+              </div>
+
+              <h3>{product.title}</h3>
+
+              <div class="portfolio-block">
+                <label>Problem</label>
+                <p>{product.problem}</p>
+              </div>
+
+              <div class="portfolio-block">
+                <label>My ownership</label>
+                <p>{product.ownership}</p>
+              </div>
+
+              <div class="portfolio-outcome">
+                <label>Outcome / product result</label>
+                <p>{product.outcome}</p>
+              </div>
+
+              <div class="portfolio-tags">
+                {product.tags.map((tag) => <span class="portfolio-tag">{tag}</span>)}
+              </div>
+
+              <a class="case-link" href={product.url}>View case study →</a>
+            </article>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         08 / TECH & DATA
+         ================================================================== -->
+    <section class="slide soft" id="tech">
+      <div class="wrap">
+        <div class="tech-layout">
+          <div>
+            <div class="section-head">
+              <span class="eyebrow">Tech & Data</span>
+              <h2>Where product meets technology, AI and data.</h2>
+              <p>Technical product management grounded in enterprise architecture, APIs, workflows, analytics, integrations and delivery collaboration.</p>
+            </div>
+
+            <div class="capability-table">
+              {capabilityRows.map(([title, text]) => (
+                <div class="capability-row">
+                  <strong>{title}</strong>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="tech-panel">
+            <span class="eyebrow">Product Technology Model</span>
+            <h3 class="tech-panel-title">I translate business intent into product behavior and technical context.</h3>
+            <p class="tech-panel-sub">The product layer sits between the business problem and the systems that execute it.</p>
+
+            <div class="tech-layers">
+              {techLayers.map(([number, title, text]) => (
+                <div class="tech-layer">
+                  <span class="number">{number}</span>
+                  <strong>{title}</strong>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
+
+            <div class="tool-row">
+              {['SQL', 'Power BI', 'Tableau', 'Figma', 'JIRA'].map((tool) => <div class="tool">{tool}</div>)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         09 / OUTCOMES
+         ================================================================== -->
+    <section class="slide white" id="outcomes">
+      <div class="wrap">
+        <div class="outcomes-intro">
+          <div class="section-head">
+            <span class="eyebrow">Selected Outcomes</span>
+            <h2>Outcomes that connect product work to business performance.</h2>
+            <p>Selected outcomes represented across healthcare, compliance, payments, claims and telecom initiatives.</p>
+          </div>
+
+          <div class="outcomes-note">
+            <strong>How I use outcomes</strong>
+            <span>Adoption, turnaround, efficiency, automation and cost are treated as product signals that inform prioritization and iteration.</span>
+          </div>
+        </div>
+
+        <div class="outcomes-grid">
+          {outcomes.map(([metric, label, company, type]) => (
+            <article class="outcome-card">
+              <strong>{metric}</strong>
+              <h3>{label}</h3>
+              <span>{company} · {type}</span>
+            </article>
+          ))}
+        </div>
+
+        <div class="outcome-summary">
+          <div class="outcome-summary-item"><strong>Adoption</strong><span>Doctor adoption, provider journeys and user engagement.</span></div>
+          <div class="outcome-summary-item"><strong>Efficiency</strong><span>Turnaround time, reconciliation and manual effort.</span></div>
+          <div class="outcome-summary-item"><strong>Automation</strong><span>Rules, workflow automation and operational processing.</span></div>
+          <div class="outcome-summary-item"><strong>Business impact</strong><span>Cost optimization, productivity and service performance.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         10 / CONNECT
+         ================================================================== -->
+    <section class="slide dark" id="contact">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div>
+            <span class="eyebrow">Connect</span>
+            <h2 class="contact-title">Building products where business, technology and outcomes meet.</h2>
+            <p class="contact-copy">My experience spans the journey from data and business analysis to 0→1 product development and enterprise platform management, with a strong focus on AI / GenAI opportunities, workflow automation and data-driven product decisions.</p>
+
+            <div class="contact-focus">
+              {['Product Strategy', 'AI & GenAI', 'Workflow Automation', 'Technical Product Management', 'Data & Analytics'].map((item) => <span class="pill">{item}</span>)}
+            </div>
+
+            <div class="senior-signals" style="margin-top:22px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;max-width:900px;">
+              {seniorSignals.map(([number, title, text]) => (
+                <div style="padding:11px 12px;border:1px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(255,255,255,.03);">
+                  <div style="display:flex;gap:9px;align-items:center;">
+                    <span style="color:var(--amber-bright);font-size:8px;font-weight:950;">{number}</span>
+                    <strong style="color:#fff;font-size:9px;line-height:1.1;white-space:nowrap;">{title}</strong>
+                  </div>
+                  <p style="margin:5px 0 0;color:#9fb8d0;font-size:7.5px;line-height:1.3;">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <span class="eyebrow">Connect & Download</span>
+            <a class="contact-link primary" href="/Manoj_Pant_Senior_Product_Manager_AI_10Yrs.pdf" download>↓&nbsp; Download Resume (PDF)</a>
+            <a class="contact-link" href="mailto:manoj.pant.pm@outlook.com">manoj.pant.pm@outlook.com</a>
+            <a class="contact-link" href="https://www.linkedin.com/in/manoj-pant-35129495/" target="_blank" rel="noreferrer">LinkedIn Profile →</a>
+          </div>
+        </div>
+
+        <div class="contact-foot">
+          <span>© {new Date().getFullYear()} Manoj Pant</span>
+          <span>Senior Product Manager · Product Portfolio</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script is:inline>
+    const mainScroll = document.querySelector('main');
+    const sections = Array.from(document.querySelectorAll('.slide'));
+    const navLinks = Array.from(document.querySelectorAll('#nav a'));
+
+    const setActive = () => {
+      if (!mainScroll || !sections.length) return;
+      const marker = mainScroll.scrollTop + (mainScroll.clientHeight * 0.34);
+      let current = sections[0].id;
+
+      for (const section of sections) {
+        if (marker >= section.offsetTop) current = section.id;
+      }
+
+      navLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+      });
+    };
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        const target = document.querySelector(link.getAttribute('href'));
+        target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    mainScroll?.addEventListener('scroll', setActive, { passive: true });
+    window.addEventListener('resize', setActive, { passive: true });
+    window.addEventListener('load', setActive);
+    setActive();
+  </script>
 </Layout>
