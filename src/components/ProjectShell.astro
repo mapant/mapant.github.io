@@ -1,5 +1,6 @@
 ﻿---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import ResponsiveNavigation from './ResponsiveNavigation.astro';
 import '../styles/project-case-study.scss';
 
 interface LinkItem { title: string; href: string; }
@@ -44,6 +45,7 @@ const ctaAriaLabel = ctaText === 'Portfolio' ? 'Return to portfolio' : ctaText;
           <img src={profileImage} alt="Manoj Pant" />
           <span><strong>Manoj Pant</strong><small>SENIOR PRODUCT MANAGER</small></span>
         </a>
+        <ResponsiveNavigation navId="project-nav" />
         <nav id="project-nav" aria-label="Case study sections">
           {sections.map(([id, label]) => <a href={`#${id}`}>{label}</a>)}
         </nav>

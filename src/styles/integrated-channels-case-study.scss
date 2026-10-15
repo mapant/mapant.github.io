@@ -1122,7 +1122,7 @@ html:has(.ics-case) {
 
 // Full-width desktop frame, as on Ayu DocConnect. Keep dense ICS sections
 // inside the viewport by tightening layout spacing; copy sizes stay intact.
-@media (min-width: 761px) {
+@media (min-width: 1280px) {
   .ics-ecosystem-page,
   .ics-strategy-page,
   .ics-metrics-page,
@@ -1237,7 +1237,7 @@ html:has(.ics-case) {
 
 // Genuine small screens keep all content in document flow. Browser zoom-out
 // on the target desktop stays above this breakpoint, so it cannot reflow pages.
-@media (max-width: 760px) {
+@media (max-width: 1279px) {
   .project-shell.viewport-fit-prototype:has(.ics-case) .project-header { height: auto; min-height: 0; position: sticky; }
   .project-shell.viewport-fit-prototype:has(.ics-case) .project-header-inner { width: 100%; min-width: 0; margin-inline: 0; container-type: normal; grid-template-columns: 1fr auto; gap: 8px 12px; padding: 9px 14px; }
   .project-shell.viewport-fit-prototype:has(.ics-case) .project-brand img { width: 58px; height: 58px; }
@@ -1295,7 +1295,7 @@ html:has(.ics-case) {
   .ics-modal-two-col { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .project-shell.viewport-fit-prototype:has(.ics-case) .project-header-inner { grid-template-columns: 1fr; }
   .project-shell.viewport-fit-prototype:has(.ics-case) .project-brand { justify-content: center; }
   .project-shell.viewport-fit-prototype:has(.ics-case) .project-cta { grid-row: 2; justify-self: center; width: 80%; }
@@ -1312,4 +1312,161 @@ html:has(.ics-case) {
   .ics-app-grid { grid-template-columns: 1fr; }
   .ics-technology-panel > div:nth-child(2) { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .ics-outcome-metrics { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1279px) {
+  .project-shell.viewport-fit-prototype:has(.ics-case) .ics-section { height: auto; min-height: 0; overflow: visible; padding: 28px 24px; container-type: inline-size; }
+  .ics-case.ics-case.ics-case {
+    .ics-page, .ics-inner { height: auto; min-height: 0; gap: 20px; }
+    h1 { font-size: clamp(34px, 4.6vw, 52px); }
+    h2 { font-size: 30px; line-height: 1.15; }
+    h3 { font-size: 19px; line-height: 1.25; }
+    h4 { font-size: 17px; line-height: 1.3; }
+    h1 :is(em, span), h2 :is(em, span) { font-size: inherit; line-height: inherit; }
+    p, li { font-size: 14px; line-height: 1.5; }
+    b, strong { font-size: 16px; line-height: 1.3; }
+    small, em { font-size: 13px; line-height: 1.4; }
+    .ics-kicker { font-size: 12px; letter-spacing: .08em; }
+    .ics-icon, .ics-app-icon { width: 44px; height: 44px; }
+    .ics-native-icon { width: 28px; height: 28px; flex: none; }
+    .ics-inline-icon { width: 20px; height: 20px; flex: none; }
+    .ics-brand-mark { min-width: 28px; min-height: 28px; }
+    .ics-story, .ics-overview-copy, .ics-portfolio-story, .ics-tech-story { padding: 24px; min-height: 0; }
+    .ics-ecosystem-story, .ics-strategy-story, .ics-metrics-story, .ics-outcomes-story { padding: 24px; min-height: 0; border-radius: 20px; }
+    .ics-overview-visual { display: flex; flex-direction: column; gap: 20px; min-height: 0; }
+    .ics-entity-row > div { padding: 16px; gap: 12px; }
+    .ics-overview-pillars { gap: 12px; }
+    .ics-overview-pillars article { padding: 16px; }
+    .ics-workspace-scene { display: flex; flex-direction: column; gap: 20px; padding: 20px; height: auto; min-height: 0; }
+    .ics-callout, .ics-laptop { position: relative; inset: auto; transform: none; width: 100%; height: auto; }
+    .ics-callout { padding: 18px; gap: 12px; }
+    .ics-laptop-screen { height: auto; grid-template-columns: minmax(0, 1fr); overflow: visible; border-width: 6px; border-radius: 18px; }
+    .ics-laptop-screen > aside { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 18px; gap: 12px; font-size: 13px; }
+    .ics-laptop-screen > aside > b, .ics-laptop-screen > aside > strong { grid-column: 1 / -1; }
+    .ics-laptop-screen > aside > span { display: flex; align-items: center; gap: 8px; }
+    .ics-searchbar { height: auto; min-height: 44px; flex-wrap: wrap; gap: 8px; font-size: 13px; }
+    .ics-searchbar > span { white-space: normal; }
+    .ics-dashboard { padding: 18px; }
+    .ics-phone { position: relative; inset: auto; width: min(100%, 280px); height: auto; padding: 16px; border-width: 5px; border-radius: 24px; align-self: center; }
+    .ics-phone-top { margin: -16px -16px 16px; padding: 16px; font-size: 14px; flex-wrap: wrap; }
+    .ics-phone-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .ics-phone-actions > span { padding: 12px; }
+    .ics-phone { display: block; }
+    .ics-ecosystem-board, .ics-leadership-map { display: flex; flex-direction: column; gap: 24px; padding: 20px 16px 20px 40px; height: auto; min-height: 0; overflow: visible; }
+    .ics-eco-node, .ics-competency { position: relative; inset: auto; width: 100%; height: auto; min-height: 0; padding: 14px; border-radius: 14px; }
+    .ics-ecosystem-hub, .ics-leadership-hub { position: relative; inset: auto; order: -1; width: min(100%, 300px); height: auto; min-height: 0; aspect-ratio: auto; padding: 18px; border-radius: 24px; justify-self: center; align-self: center; }
+    .ics-ecosystem-note { position: relative; inset: auto; }
+    .ics-ecosystem-connectors, .ics-leadership-map > svg:not(.responsive-relationships) { display: none; }
+    @media (min-width: 768px) {
+      .ics-ecosystem-board, .ics-leadership-map { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 16px 40px; padding: 16px; }
+      .ics-ecosystem-hub, .ics-leadership-hub { grid-column: 1 / -1; grid-row: 1; }
+      .ics-ecosystem-note { grid-column: 1 / -1; }
+    }
+    .ics-challenge-card, .ics-responsibility-card, .ics-metric-card, .ics-app-card, .ics-capability-grid > article { min-height: 0; padding: 18px; gap: 12px; }
+    .ics-challenge-cards, .ics-app-grid, .ics-metric-cards, .ics-responsibility-grid, .ics-capability-grid { gap: 14px; }
+    .ics-app-card { min-height: 190px; }
+    .ics-app-cta { min-height: 44px; font-size: 14px; padding: 10px; }
+    .ics-strategy-diagram { display: flex; flex-direction: column; min-height: 0; gap: 24px; padding-left: 24px; }
+    .ics-strategy-card { position: relative; padding: 20px; min-height: 0; }
+    .ics-strategy-hub { display: grid; position: relative; inset: auto; transform: none; order: -1; width: 100%; min-height: 140px; height: auto; aspect-ratio: auto; border-radius: 20px; padding: 24px; }
+    .ics-strategy-outcomes { padding: 18px; margin-top: 20px; }
+    .ics-strategy-outcomes > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .ics-strategy-outcomes b { padding: 12px; }
+    .ics-strategy-diagram > svg:not(.responsive-relationships) { display: none; }
+    .ics-priority-strip { padding: 16px; gap: 12px; }
+    .ics-scope-center, .ics-metrics-content, .ics-portfolio-main, .ics-portfolio-support, .ics-outcomes-main { grid-template-rows: auto; height: auto; gap: 20px; }
+    .ics-scope-support { gap: 20px; }
+    .ics-pm-impact { min-height: 0; grid-template-rows: auto auto; align-self: start; }
+    .ics-pm-illustration { height: auto; aspect-ratio: 16 / 9; }
+    .ics-delivery-process > div:last-child { grid-template-columns: 1fr; grid-auto-rows: auto; align-items: start; gap: 20px; }
+    .ics-delivery-process article, .ics-delivery-process article:first-child { height: auto; min-height: 0; padding: 12px 16px; clip-path: none; border-radius: 12px; }
+    .ics-delivery-process article i { width: 26px; height: 26px; font-size: 14px; }
+    .ics-delivery-process article:not(:last-child)::after { content: '\2193'; position: absolute; top: 100%; left: 50%; color: var(--tone); font-size: 18px; line-height: 20px; transform: translateX(-50%); }
+    .ics-scope-responsibilities, .ics-deliverables, .ics-tools { padding: 20px; }
+    .ics-tool { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; padding: 12px 0; }
+    .ics-tool-icon, .ics-tool .ics-brand-mark { width: 40px; height: 40px; }
+    .ics-pm-impact-copy { padding: 20px; }
+    .ics-pm-impact-copy article { padding: 16px; gap: 14px; }
+    .ics-architecture-layer { padding: 16px; gap: 12px; }
+    .ics-layer-items { gap: 12px; }
+    .ics-layer-items article { padding: 14px; min-height: 90px; }
+    .ics-integrations-panel > article { padding: 16px; }
+    .ics-technology-panel { padding: 20px; gap: 16px; }
+    .ics-technology-panel > div:nth-child(2) { gap: 12px; }
+    .ics-technology-panel > div:nth-child(2) article { padding: 14px; }
+    .ics-outcome-metrics > article { padding: 20px; min-height: 150px; }
+    .ics-outcome-metrics strong { font-size: 34px; }
+    .ics-institution-cards, .ics-business-outcomes > div:last-child { gap: 12px; }
+    .ics-institution-cards article, .ics-business-outcomes article { padding: 16px; }
+    .ics-connect-banner { padding: 18px; gap: 14px; }
+    .ics-connect-ways article { padding: 8px 0; gap: 6px 10px; border-right: 0; }
+    .ics-connect-ways article > span { width: 28px; height: 28px; }
+    .ics-project-navigation { gap: 16px; padding: 16px; }
+    .ics-project-navigation a { min-height: 44px; font-size: 14px; white-space: normal; }
+  }
+  .ics-modal-backdrop { padding: 12px; }
+  .ics-modal { width: min(960px, 100%); max-height: calc(100dvh - 24px); border-radius: 16px; }
+  .ics-modal-head { padding: 16px; min-height: 70px; gap: 12px; }
+  .ics-modal-head h2 { font-size: 22px; }
+  .ics-modal-head small { font-size: 13px; }
+  .ics-modal-badge { width: 40px; height: 40px; font-size: 20px; }
+  .ics-modal-close { min-width: 44px; min-height: 44px; font-size: 26px; }
+  .ics-modal-body { padding: 16px; gap: 16px; }
+  .ics-modal-card { padding: 16px; }
+  .ics-modal-card h3 { font-size: 20px; }
+  .ics-modal-card h4 { font-size: 17px; }
+  .ics-modal-card p, .ics-modal-card li { font-size: 14px; line-height: 1.5; }
+  .ics-modal-flow { grid-template-columns: 1fr; gap: 12px; }
+  .ics-modal-flow li { padding: 12px; }
+  .ics-modal-flow li span, .ics-modal-section-head span, .ics-modal-card pre { font-size: 13px; }
+    .ics-modal-card pre { min-width: 0; overflow-wrap: anywhere; }
+  .ics-modal-report table { font-size: 13px; table-layout: fixed; }
+  .ics-modal-report td, .ics-modal-report th { overflow-wrap: anywhere; padding: 8px 4px; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .ics-case.ics-case.ics-case {
+    .ics-overview-page, .ics-ecosystem-page, .ics-metrics-page, .ics-outcomes-page { grid-template-columns: minmax(0, .85fr) minmax(0, 1.3fr); }
+    .ics-overview-pillars { grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .ics-app-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .ics-challenge-cards, .ics-responsibility-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+}
+@media (max-width: 767px) {
+  .project-shell.viewport-fit-prototype:has(.ics-case) .ics-section { padding: 28px 16px; }
+  .ics-case.ics-case.ics-case {
+    .ics-challenge-cards, .ics-responsibility-grid, .ics-metric-cards, .ics-app-grid, .ics-layer-items, .ics-capability-grid { grid-template-columns: 1fr; }
+    .ics-workspace-scene { display: flex; flex-direction: column; gap: 20px; padding: 20px; }
+    .ics-dashboard, .ics-phone { position: relative; inset: auto; transform: none; width: 100%; height: auto; min-height: 0; }
+    .ics-quick-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .ics-quick-stats > span { min-width: 0; padding: 12px; }
+    .ics-dashboard-panels { grid-template-columns: 1fr; gap: 16px; }
+    .ics-dashboard-panels article { padding: 16px; min-width: 0; }
+    .ics-priority-strip { grid-template-columns: 1fr; }
+    .ics-phone { max-width: 280px; align-self: center; padding: 16px; border-width: 5px; border-radius: 24px; }
+    .ics-workspace-scene > svg { max-width: 100%; }
+    .ics-technology-panel > div:nth-child(2) { grid-template-columns: 1fr; }
+    .ics-connect-ways { grid-template-columns: 1fr; }
+  }
+}
+@media (max-width: 1279px) {
+  .ics-case.ics-case.ics-case .ics-app-cta { white-space: normal; }
+  .ics-case.ics-case.ics-case .ics-app-cta > .ics-native-icon { width: 18px; height: 18px; min-width: 18px; }
+}
+@media (max-width: 1279px) {
+  .ics-case.ics-case.ics-case {
+    .ics-panel-title { display: flex; flex-direction: column; align-items: stretch; gap: 12px; }
+    .ics-panel-title p { text-align: left; }
+    .ics-panel-title > span { font-size: 12px; }
+    .ics-outcome-value { font-size: 32px; }
+    .ics-outcome-metrics strong { font-size: 20px; }
+  }
+}
+@media (max-width: 1279px) {
+  .ics-case.ics-case.ics-case .ics-app-number { font-size: 13px; }
+}
+@media (max-width: 1279px) {
+  .ics-case.ics-case.ics-case .ics-architecture-layer .ics-layer-items { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .ics-case.ics-case.ics-case .ics-architecture-layer .ics-layer-items { grid-template-columns: minmax(0, 1fr); }
 }

@@ -11,3 +11,126 @@
 .nokia-leadership { background: radial-gradient(ellipse at 95% 8%,#dff3ef 0,transparent 34%),linear-gradient(135deg,#fcfeff,#f0f7fa); }.trust-model { display: grid; grid-template-columns: 1fr 1fr; gap: 19px; flex: 1; min-height: 0; }.trust-pyramid { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }.trust-pyramid article { min-height: 63px; padding: 10px; display: flex; flex-direction: column; justify-content: center; text-align: center; border: 1px solid var(--tl); background: var(--tb); clip-path: polygon(var(--clip)); }.trust-pyramid article b { color: var(--tc); font-size: 8px; letter-spacing: .08em; }.trust-pyramid article span { margin-top: 4px; color: #6a8189; font-size: 7px; }.trust-top{width:47%;--clip:20% 0,80% 0,100% 100%,0 100%;--tl:#c8e2db;--tb:#edfaf5;--tc:#178b79}.trust-mid{width:64%;--clip:14% 0,86% 0,100% 100%,0 100%;--tl:#c6e0e6;--tb:#eff9fc;--tc:#2580a0}.trust-low{width:82%;--clip:9% 0,91% 0,100% 100%,0 100%;--tl:#d9d9eb;--tb:#f7f6fc;--tc:#7668ab}.trust-base{width:100%;--clip:5% 0,95% 0,100% 100%,0 100%;--tl:#e3ddca;--tb:#fffdf3;--tc:#98823b}.maturity-roadmap { display: flex; flex-direction: column; justify-content: center; gap: 8px; }.maturity-roadmap>small { color: #388895; font-weight: 900; letter-spacing: .12em; }.maturity-roadmap article { display: grid; grid-template-columns: .2fr .8fr 1fr; align-items: center; gap: 8px; min-height: 82px; padding: 10px; border: 1px solid #d2e2e7; border-left: 4px solid var(--stage); border-radius: 9px; background: #fff; }.maturity-roadmap article>b { color: var(--stage); font-size: 7px; }.maturity-roadmap article strong { color: #3f606a; font-size: 8px; }.maturity-roadmap article span { color: #748990; font-size: 7px; line-height: 1.3; }.maturity-roadmap article:nth-of-type(1){--stage:#168c86}.maturity-roadmap article:nth-of-type(2){--stage:#3c83a7}.maturity-roadmap article:nth-of-type(3){--stage:#7969aa}
 @media(max-width:760px){.nokia-intro,.analytics-strategy,.regional-rollout,.trust-model{grid-template-columns:1fr}.nokia-intro{flex:none}.nokia-map-card{min-height:230px}.nokia-map-card svg{height:190px}.nokia-result{flex-wrap:wrap}.nokia-result small{margin-left:0}.nokia-ecosystem-map{grid-template-columns:1fr;gap:8px}.source-column,.decision-column{display:grid;grid-template-columns:1fr 1fr}.source-column>b,.decision-column>b{grid-column:1/-1}.source-converge,.decision-fan{display:none}.analytics-core{min-height:100px}.silo-story{grid-template-columns:1fr;grid-template-rows:auto}.visibility-consequence{grid-template-columns:1fr}.silo-after{grid-column:auto}.strategy-matrix{min-height:450px}.decision-ladder{min-height:260px}.semantic-rail{grid-template-columns:1fr}.semantic-rail article{min-height:100px}.semantic-rail>i{transform:rotate(90deg);justify-self:center}.semantic-contract{grid-template-columns:1fr 1fr}.semantic-contract>b{grid-column:1/-1}.stakeholder-bar{flex-wrap:wrap}.rollout-layers article{grid-template-columns:.3fr 1fr}.rollout-layers article span{grid-column:2}.rollout-layers article>b{grid-column:2;text-align:left}.rollout-conditions{min-height:330px}.analytics-command{min-height:800px}.executive-strip{grid-template-columns:1fr 1fr}.command-body{grid-template-columns:1fr}.spatial-panel{min-height:330px}.cost-driver-panel{min-height:250px}.command-footer{flex-wrap:wrap}.cost-impact{grid-template-columns:1fr;grid-template-rows:auto}.savings-card{min-height:230px}.impact-chain article{grid-template-columns:.35fr 1fr}.impact-chain article span{grid-column:2}.impact-integrity{grid-column:auto}.trust-pyramid{min-height:430px}.maturity-roadmap{min-height:330px}}
 @media(max-width:480px){.analytics-thesis{justify-content:center}.nokia-result{align-items:flex-start;flex-direction:column}.nokia-map-card{min-height:210px}.nokia-map-card svg{height:165px}.source-column,.decision-column{grid-template-columns:1fr}.silo-databases{grid-template-columns:1fr}.silo-after>div{flex-wrap:wrap;justify-content:center}.visibility-consequence>div:first-child{grid-template-columns:1fr 1fr}.semantic-contract{grid-template-columns:1fr}.semantic-contract>b{grid-column:auto}.stakeholder-bar{flex-direction:column}.rollout-layers article{grid-template-columns:1fr}.rollout-layers article span,.rollout-layers article>b{grid-column:1}.rollout-layers article>b{text-align:left}.command-top{align-items:flex-start;flex-direction:column}.command-filters{flex-wrap:wrap}.executive-strip{grid-template-columns:1fr}.analytics-command{min-height:1200px}.cost-driver-panel{gap:15px}.command-footer{display:grid;grid-template-columns:1fr}}
+
+@media (max-width: 1279px) {
+  .project-shell:has(.nokia-case) .case-page { width: 100%; min-width: 0; height: auto; min-height: 0; aspect-ratio: auto; overflow: visible; }
+  .nokia-case.nokia-case.nokia-case {
+    .case-page-inner { height: auto; min-height: 0; padding: 28px 24px; gap: 24px; }
+    h1 { font-size: clamp(34px, 4.5vw, 52px); line-height: 1.1; }
+    h2 { font-size: 30px; line-height: 1.15; }
+    h3 { font-size: 20px; }
+    p, li, article { font-size: 14px; line-height: 1.5; }
+    b, strong { font-size: 15px; line-height: 1.4; }
+    small, span { font-size: 13px; line-height: 1.45; }
+    .case-kicker { font-size: 12px; flex-wrap: wrap; }
+    .case-kicker > span { display: inline; margin-left: 0; }
+    .case-page-foot { flex-wrap: wrap; font-size: 12px; }
+    .case-page-foot > b { display: block; font-size: 12px; }
+    .case-heading { display: block; margin-bottom: 0; }
+    .case-heading h2 { margin: 12px 0; }
+    .case-heading > p { max-width: none; font-size: 15px; }
+    .analytics-thesis b, .analytics-thesis strong { font-size: 12px; padding: 12px; }
+    .map-label { font-size: 12px; }
+    .nokia-result { flex-wrap: wrap; padding: 20px; gap: 16px; }
+    .nokia-result strong, .savings-card strong { font-size: 40px; }
+    .nokia-result small { margin-left: 0; }
+    .nokia-map-card { padding: 20px; }
+    .nokia-map-card svg { height: auto; aspect-ratio: 440 / 290; }
+    .map-legend, .spatial-legend { flex-wrap: wrap; gap: 12px; font-size: 13px; }
+    .nokia-ecosystem-map { position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 24px; padding-left: 40px; }
+    .source-column, .decision-column { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .source-column article, .decision-column article { position: relative; z-index: 1; min-height: 0; padding: 16px; }
+    .source-converge, .decision-fan { display: none; }
+    .analytics-core { position: relative; z-index: 1; padding: 24px; min-height: 190px; }
+    .silo-before, .cost-blindspot, .silo-after { padding: 20px; }
+    .silo-databases { gap: 16px; }
+    .silo-databases article { padding: 18px; }
+    .silo-after > div { flex-wrap: wrap; gap: 12px; }
+    .silo-gap { font-size: 13px; padding: 16px; }
+    .visibility-consequence { grid-template-columns: 1fr; gap: 20px; }
+    .strategy-matrix { min-height: 0; grid-template-rows: auto; padding: 36px 10px 48px 26px; gap: 16px; }
+    .strategy-matrix article { min-height: 170px; padding: 20px; }
+    .matrix-label { font-size: 11px; }
+    .decision-ladder { padding: 20px; gap: 16px; }
+    .decision-ladder b { padding: 16px; }
+    .semantic-rail { grid-template-columns: 1fr; gap: 16px; }
+    .semantic-rail article { min-height: 0; padding: 20px; }
+    .semantic-rail > i { transform: rotate(90deg); justify-self: center; }
+    .semantic-contract { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 20px; }
+    .semantic-contract > b { grid-column: 1 / -1; }
+    .semantic-contract span { min-height: 90px; padding: 16px; }
+    .stakeholder-bar, .architecture-quality { flex-wrap: wrap; padding: 20px; gap: 16px; }
+    .data-architecture { position: relative; gap: 24px; }
+    .domain-sources { gap: 16px; }
+    .domain-sources article { padding: 18px; min-height: 100px; }
+    .ingestion-layer { height: 90px; }
+    .ingestion-layer > b { font-size: 12px; padding: 14px; text-align: center; }
+    .asset-model, .consumer-layer { gap: 16px; }
+    .data-dim, .consumer-layer article { padding: 20px; min-height: 130px; }
+    .rollout-layers { gap: 16px; }
+    .rollout-layers article { grid-template-columns: 1fr; padding: 20px; gap: 12px; }
+    .rollout-layers article span, .rollout-layers article > b { grid-column: auto; text-align: left; }
+    .rollout-up { font-size: 12px; padding: 12px; }
+    .rollout-conditions { min-height: 0; padding: 20px; gap: 16px; }
+    .rollout-conditions span { font-size: 14px; padding: 16px; }
+    .analytics-command { height: auto; min-height: 0; overflow: visible; }
+    .command-top { padding: 20px; gap: 16px; flex-wrap: wrap; }
+    .command-filters { flex-wrap: wrap; gap: 10px; }
+    .command-filters span { padding: 12px; }
+    .executive-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 20px; }
+    .executive-strip article { min-height: 160px; padding: 20px; gap: 12px; }
+    .command-body { grid-template-columns: 1fr; padding: 0 20px 20px; gap: 20px; }
+    .spatial-panel { height: auto; min-height: 0; padding: 20px; display: grid; grid-template-rows: auto auto auto; gap: 20px; }
+    .spatial-panel svg { height: auto; min-height: 0; aspect-ratio: 2; }
+    .panel-top { flex-wrap: wrap; gap: 12px; }
+    .cost-driver-panel { height: auto; min-height: 0; padding: 20px; gap: 24px; }
+    .cost-driver-panel > article > i { height: 10px; }
+    .driver-note { font-size: 13px; padding: 16px; }
+    .command-footer { display: flex; flex-direction: column; padding: 20px; gap: 12px; font-size: 13px; }
+    .savings-card { min-height: 230px; padding: 24px; }
+    .impact-chain { gap: 16px; }
+    .impact-chain article { grid-template-columns: 1fr; padding: 20px; gap: 12px; }
+    .impact-chain article span { grid-column: auto; }
+    .impact-chain > i { transform: rotate(90deg); }
+    .impact-integrity { padding: 20px; font-size: 14px; }
+    .trust-pyramid { min-height: 0; gap: 12px; }
+    .trust-pyramid article { min-height: 0; padding: 16px 24px; }
+    .trust-top { width: 70%; }
+    .trust-mid { width: 80%; }
+    .trust-low { width: 90%; }
+    .maturity-roadmap { min-height: 0; gap: 16px; }
+    .maturity-roadmap article { grid-template-columns: 1fr; gap: 12px; padding: 20px; }
+  }
+  .project-shell:has(.nokia-case) .project-site-footer { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
+  .project-shell:has(.nokia-case) .project-site-footer a { min-height: 44px; font-size: 14px; }
+  .project-shell:has(.nokia-case) .project-site-footer a strong { font-size: 14px; }
+  .project-shell:has(.nokia-case) .project-site-footer a span { font-size: 12px; }
+  .project-shell:has(.nokia-case) .project-site-footer a:last-child { text-align: left; justify-items: start; }
+}
+@media (max-width: 1023px) {
+  .nokia-case.nokia-case.nokia-case {
+    .nokia-intro, .analytics-strategy, .regional-rollout, .cost-impact, .trust-model, .silo-story { grid-template-columns: 1fr; gap: 24px; }
+    .domain-sources { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+}
+@media (max-width: 767px) {
+  .nokia-case.nokia-case.nokia-case {
+    .case-page-inner { padding: 28px 16px; }
+    .strategy-matrix { grid-template-columns: 1fr; }
+    .semantic-contract, .domain-sources, .asset-model, .consumer-layer, .executive-strip { grid-template-columns: 1fr; }
+    .strategy-matrix article { min-height: 0; }
+    .trust-pyramid article { clip-path: none; border-radius: 14px; width: 100%; }
+    .trust-pyramid article:not(:last-child)::after { content: '↑'; display: block; color: #1875a8; padding-top: 12px; }
+    .ingestion-layer { height: auto; padding: 20px 0; }
+    .ingestion-layer svg { display: none; }
+    .domain-sources article, .asset-model > div, .consumer-layer article { position: relative; }
+    .domain-sources article::after, .asset-model > div::after { content: '↓'; position: absolute; bottom: -24px; left: 50%; color: #08a997; font-size: 20px; }
+    .spatial-panel, .cost-driver-panel { padding: 16px; }
+    .command-body { padding: 0 12px 12px; }
+    .executive-strip { padding: 12px; }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .nokia-case.nokia-case.nokia-case .command-body { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); align-items: start; }
+}

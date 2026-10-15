@@ -1,0 +1,91 @@
+---
+const { navId } = Astro.props;
+---
+<button class="responsive-menu" type="button" aria-controls={navId} aria-expanded="false">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+  <span>Menu</span>
+</button>
+<script>
+  import '../scripts/responsive-relationships.js';
+  import '../scripts/tablet-desktop-fit.js';
+  document.querySelectorAll<HTMLButtonElement>('.responsive-menu').forEach(button => {
+    const nav = document.getElementById(button.getAttribute('aria-controls')!);
+    const header = button.closest('header');
+    if (!nav || !header) return;
+    const compact = window.matchMedia('(max-width: 767px)');
+    const updateOffset = () => {
+      if (compact.matches) document.documentElement.style.setProperty('--responsive-header-height', `${header.getBoundingClientRect().height + 12}px`);
+      else document.documentElement.style.removeProperty('--responsive-header-height');
+    };
+    new ResizeObserver(updateOffset).observe(header);
+    compact.addEventListener('change', updateOffset);
+    updateOffset();
+    const close = () => {
+      button.setAttribute('aria-expanded', 'false');
+      header.classList.remove('navigation-open');
+    };
+    button.addEventListener('click', () => {
+      const open = button.getAttribute('aria-expanded') !== 'true';
+      button.setAttribute('aria-expanded', String(open));
+      header.classList.toggle('navigation-open', open);
+    });
+    nav.addEventListener('click', event => {
+      if ((event.target as Element).closest('a')) close();
+    });
+    header.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
+        close();
+        button.focus();
+      }
+    });
+    document.addEventListener('click', event => {
+      if (!header.contains(event.target as Node)) close();
+    });
+    compact.addEventListener('change', close);
+  });
+</script>
+<style is:global>
+  .responsive-menu { display: none; }
+  .responsive-relationships { display: none; }
+  @media (max-width: 1279px) {
+    .responsive-relationships { display: block; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    html:has(.portfolio-root.portfolio-root.portfolio-root), html:has(.project-shell.project-shell.project-shell) { scroll-padding-top: var(--responsive-header-height, 82px); }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.site-header, .project-header) {
+      height: auto; min-height: 0; position: sticky; top: 0; z-index: 50; container-type: normal;
+    }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.header-inner, .project-header-inner) {
+      position: relative; width: 100%; min-width: 0; max-width: none; margin: 0;
+      display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 12px; padding: 10px 18px; container-type: normal;
+    }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.brand, .project-brand) { justify-content: flex-start; gap: 10px; min-width: 0; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.brand-avatar, .project-brand img) { width: 48px; height: 48px; border-width: 2px; flex: none; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.brand-copy strong, .project-brand strong) { font-size: 18px; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.brand-copy small, .project-brand small) { margin-top: 4px; font-size: 9px; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.header-cta, .project-cta) { grid-area: 1 / 2; justify-self: stretch; width: auto; height: 44px; padding: 0 14px; gap: 8px; border-radius: 12px; font-size: 13px; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.header-cta, .project-cta) svg { width: 20px; height: 20px; }
+    .responsive-menu { grid-area: 1 / 3; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 12px; border: 1px solid #b9d5ed; border-radius: 10px; background: #eff7ff; color: #123961; font: 700 13px "Segoe UI", Arial, sans-serif; cursor: pointer; }
+    .responsive-menu svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(#nav, #project-nav) {
+      display: none; position: absolute; top: 100%; left: 0; right: 0; grid-area: auto;
+      padding: 12px 18px; background: #f4faff; border-bottom: 1px solid #b9d5ed; box-shadow: 0 12px 18px #12396122;
+      grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: auto; gap: 8px;
+    }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) .navigation-open :is(#nav, #project-nav) { display: grid; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(#nav, #project-nav) a { width: 100%; min-height: 44px; padding: 8px; border-radius: 10px; font-size: 13px; white-space: normal; text-align: center; color: #123961; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(#nav, #project-nav) a.active { color: #f5f8ff; }
+    .responsive-menu:focus-visible { outline: 3px solid #087ff0; outline-offset: 3px; }
+  }
+  @media (max-width: 767px) {
+    html:has(.portfolio-root.portfolio-root.portfolio-root), html:has(.project-shell.project-shell.project-shell) { scroll-padding-top: var(--responsive-header-height, 120px); }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.header-inner, .project-header-inner) { grid-template-columns: minmax(0, 1fr) auto; gap: 4px; padding: 6px 10px; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.brand, .project-brand) { gap: 6px; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.brand-avatar, .project-brand img) { width: 36px; height: 36px; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.brand-copy strong, .project-brand strong) { font-size: 16px; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.brand-copy small, .project-brand small) { font-size: 9px; letter-spacing: .02em; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.header-cta, .project-cta) { grid-area: 2 / 1 / 3 / -1; padding: 0 12px; gap: 8px; font-size: 13px; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(.header-cta, .project-cta) svg { width: 14px; height: 14px; }
+    .responsive-menu { grid-area: 1 / 2; padding: 8px; gap: 4px; font-size: 13px; }
+    .responsive-menu svg { width: 16px; }
+    :is(.portfolio-root.portfolio-root.portfolio-root.viewport-fit-prototype, .project-shell.project-shell.project-shell.project-shell) :is(#nav, #project-nav) { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 10px; gap: 4px; }
+  }
+</style>
