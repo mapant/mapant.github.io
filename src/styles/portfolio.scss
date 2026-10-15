@@ -199,3 +199,272 @@ p { margin-bottom: 0; }
 .portfolio-root.viewport-fit-prototype #nav a { min-height: 2.65cqw; padding: 0 .9cqw; border-radius: .94cqw; font-size: .86cqw; }
 .portfolio-root.viewport-fit-prototype .header-cta { height: 5cqw; gap: .94cqw; padding-inline: 1.4cqw; border-radius: 1.4cqw; font-size: 1.25cqw; }
 .portfolio-root.viewport-fit-prototype .header-cta svg { width: 1.875cqw; height: 1.875cqw; }
+
+/* Smaller screens use document flow; the approved >=1280px composition stays above. */
+@media (max-width: 1279px) {
+  .portfolio-root.portfolio-root.viewport-fit-prototype main {
+    b, strong { font-size: 14px; line-height: 1.4; }
+    .stat strong { font-size: 30px; }
+    .model-product strong { font-size: 22px; }
+    .model-card strong { font-size: 15px; }
+    .outcome-metric-head strong { font-size: 28px; }
+    .ecosystem-proof strong { font-size: 20px; }
+    .model-heading strong { font-size: 17px; }
+    .expertise-card strong { font-size: 14px; }
+    .north-star { grid-template-columns: 1fr; gap: 16px; padding: 18px; }
+    .north-star span, .metric-delta span, .chart-caption { font-size: 13px; line-height: 1.45; }
+    .metric-delta { flex-wrap: wrap; gap: 8px; }
+    .domain-bar { display: grid; grid-template-columns: minmax(0, 1fr) 60px; gap: 10px; margin: 20px 0; }
+    .domain-bar > b { grid-column: 1 / -1; }
+    .outcome-steps { display: flex; flex-direction: column; gap: 16px; height: auto; }
+    .outcome-steps span { clip-path: none; width: 100%; min-height: 70px; padding: 16px; border-radius: 12px; }
+    .outcome-steps span:not(:last-child)::after { content: '↓'; padding-top: 10px; }
+    .impact-grid { grid-template-columns: 1fr; gap: 16px; }
+    .tech-model-head { display: flex; flex-direction: column; gap: 12px; }
+    .product-art { height: auto; display: flex; flex-direction: column; }
+    .product-illustration { position: relative; inset: auto; height: 150px; min-height: 150px; margin-top: 16px; }
+    .product-illustration .device { max-width: 100%; }
+  }
+  .portfolio-root.viewport-fit-prototype {
+    --header-h: 68px;
+    main small { font-size: 13px; line-height: 1.45; }
+    main > .slide.page { height: auto; min-height: 0; aspect-ratio: auto; overflow: visible; container-type: inline-size; }
+    main > .slide.page > .page-inner { height: auto; min-height: 0; padding: 28px 24px; gap: 24px; }
+    .page-inner.overview-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+    .overview-copy h1 { font-size: clamp(34px, 4.2vw, 48px); }
+    .overview-lead { max-width: none; font-size: 16px; }
+    .eyebrow { font-size: 12px; gap: 8px; flex-wrap: wrap; }
+    .mini-heading { font-size: 15px; margin: 20px 0 12px; }
+    .overview-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
+    .stat { min-height: 100px; padding: 14px; border-radius: 14px; }
+    .stat strong { font-size: 30px; }
+    .stat small { font-size: 12px; }
+    .stat .icon { width: 28px; height: 28px; font-size: 20px; }
+    .expertise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .expertise-card { min-height: 0; padding: 14px; grid-template-columns: 28px minmax(0, 1fr); gap: 8px; }
+    .expertise-icon { width: 26px; height: 26px; font-size: 18px; }
+    .expertise-card strong { font-size: 14px; }
+    .expertise-card > span:last-child { font-size: 13px; line-height: 1.4; }
+    .operating-model { padding: 18px; min-height: 560px; border-radius: 20px; }
+    .model-heading { flex-wrap: wrap; gap: 10px; }
+    .model-heading strong { font-size: 17px; }
+    .model-heading small { font-size: 12px; }
+    .model-stage { min-height: 400px; }
+    .model-card { height: auto; min-height: 100px; padding: 12px; gap: 8px; }
+    .model-card strong { font-size: 15px; }
+    .model-card small { font-size: 12px; }
+    .model-card > span { width: 28px; height: 28px; font-size: 20px; }
+    .model-product strong { font-size: 22px; }
+    .model-product small { font-size: 12px; }
+    .model-product .cube-icon { width: 36px; height: 36px; font-size: 24px; }
+    .operating-steps { min-height: 85px; }
+    .operating-steps b, .operating-steps small { font-size: 12px; }
+    .dark-story { height: auto; min-height: 0; padding: 24px; }
+    .dark-story h2 { font-size: 30px; line-height: 1.15; }
+    .dark-story > p, .check-list li { font-size: 15px; line-height: 1.5; }
+    .story-caption { font-size: 12px; margin-top: 18px; }
+    .ecosystem-panel, .ecosystem-cards, .challenge-cards, .strategy-main, .scope-cards, .metrics-content, .tech-layers { height: auto; min-height: 0; }
+    .ecosystem-cards { position: relative; display: flex; flex-direction: column; padding-left: 36px; gap: 24px; }
+    .eco-card:nth-child(n) { grid-area: auto; padding: 18px; min-height: 0; }
+    .eco-center { display: grid; position: relative; inset: auto; transform: none; width: 180px; height: 180px; order: -1; align-self: center; margin: 16px 0; }
+    .eco-center b { font-size: 18px; }
+    .eco-orbit { display: flex; flex-direction: column; height: auto; min-height: 0; gap: 24px; width: 100%; padding: 20px 0 20px 36px; border: 0; border-radius: 0; background: none; }
+    .orbit-tag, .orbit-core { position: relative; inset: auto; width: 100%; height: auto; min-height: 90px; padding: 16px; gap: 10px; }
+    .orbit-core { order: -1; }
+    .orbit-tag b, .orbit-core b { font-size: 15px; }
+    .eco-card h3, .challenge-card h3, .strategy-step-card h3, .scope-card h3, .metric-card h3 { font-size: 18px; }
+    .eco-card p, .eco-card li, .challenge-card p, .challenge-card li, .strategy-step-card p, .strategy-step-card li, .scope-card p, .scope-card li, .metric-card p, .metric-card li { font-size: 14px; line-height: 1.45; min-height: 0; }
+    .ecosystem-proof { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ecosystem-proof strong { font-size: 20px; }
+    .ecosystem-proof > div { min-width: 0; }
+    .ecosystem-proof strong { overflow-wrap: anywhere; }
+    .ecosystem-proof small { font-size: 12px; }
+    .challenge-cards, .scope-cards, .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; gap: 12px; }
+    .challenge-card, .scope-card, .metric-card { height: auto; min-height: 0; padding: 18px; }
+    .pm-response, .scope-output { margin-top: 16px; padding: 10px; }
+    .pm-response small, .scope-output small, .step-focus span { font-size: 13px; line-height: 1.4; }
+    .pm-response b, .scope-output b, .step-focus b { font-size: 12px; }
+    .pm-response strong { font-size: 12px; line-height: 1.4; }
+    .challenge-illustration { display: flex; flex-direction: column; gap: 20px; padding: 24px 0; }
+    .challenge-illustration .people-chip, .strategy-art .people-chip { position: relative; inset: auto; font-size: 13px; }
+    .challenge-stack { width: 100%; transform: none; gap: 16px; }
+    .challenge-stack span { font-size: 14px; padding: 16px; }
+    .stack-side, .strategy-side { position: relative; inset: auto; width: 100%; gap: 12px; }
+    .stack-side b, .strategy-side b { max-width: none; padding: 14px; font-size: 13px; }
+    .scope-card-head small { position: static; max-width: none; font-size: 12px; }
+    .strategy-main { display: flex; flex-direction: column; gap: 20px; }
+    .strategy-step-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; gap: 12px; }
+    .strategy-step-card:nth-child(n) { grid-area: auto; min-height: 0; padding: 18px; }
+    .step-head strong { font-size: 16px; }
+    .strategy-orbit { display: block; position: relative; inset: auto; transform: none; width: min(100%, 360px); aspect-ratio: 1; align-self: center; }
+    .wheel-ring { display: flex; flex-direction: column; gap: 24px; height: auto; padding-left: 36px; border: 0; border-radius: 0; background: none; box-shadow: none; }
+    .wheel-seg, .wheel-core { position: relative; inset: auto; width: 100%; height: auto; min-height: 90px; padding: 16px; border: 1px solid #bedbfa; border-radius: 16px; gap: 10px; }
+    .wheel-core { order: -1; min-height: 150px; }
+    .wheel-core strong, .wheel-seg b { font-size: 15px; line-height: 1.3; }
+    .wheel-seg { background: #f3f8ff; }
+    .scope-cycle { gap: 24px; min-height: 0; padding: 20px; border-radius: 20px; }
+    .scope-cycle > strong { position: relative; inset: auto; width: 100%; aspect-ratio: auto; min-height: 120px; border-radius: 16px; order: -1; font-size: 18px; }
+    .cycle-row { flex-direction: column; gap: 16px; }
+    .cycle-row b { width: 100%; padding: 16px; font-size: 14px; border-radius: 14px; }
+    .cycle-row i { transform: rotate(90deg); }
+    .scope-principles b { font-size: 13px; }
+    .strategy-outcomes { flex-wrap: wrap; padding: 12px; }
+    .strategy-outcomes span { max-width: none; font-size: 13px; }
+    .portfolio-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .product-card { height: auto; min-height: 0; }
+    .product-art { min-height: 230px; padding: 18px; }
+    .product-art h3 { font-size: 24px; }
+    .product-art p { font-size: 14px; }
+    .product-detail { padding: 18px; gap: 16px; }
+    .product-copy-row p { font-size: 14px; line-height: 1.45; }
+    .product-copy-row b, .product-card-meta small, .product-stats b { font-size: 13px; }
+    .product-stats small, .product-tags span { font-size: 12px; }
+    .case-link { min-height: 44px; font-size: 14px; }
+    .section-intro, .tech-heading { align-items: start; gap: 20px; }
+    .section-intro h2, .tech-heading h2, .outcomes-intro h2, .connect-copy h2 { font-size: 32px; }
+    .section-intro p, .tech-heading p, .outcomes-intro p, .connect-copy p { font-size: 15px; line-height: 1.5; }
+    .lens-note small, .translation-note small { font-size: 13px; }
+    .tech-content { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+    .tech-layer { min-height: 0; padding: 14px; }
+    .tech-layer strong { font-size: 16px; }
+    .tech-layer small, .tech-layer li, .tech-capability-grid li { font-size: 13px; line-height: 1.4; }
+    .technology-model { min-height: 660px; }
+    .tech-model-head { padding: 16px; }
+    .tech-model-head span { font-size: 16px; }
+    .tech-model-chain { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .tech-model-chain article { padding: 16px; min-height: 120px; }
+    .tech-model-chain b { font-size: 15px; }
+    .tech-model-chain article::after { display: none; }
+    .data-source span, .output-impact span, .external-systems span, .arch-layer span, .tools-strip span { font-size: 13px; line-height: 1.4; }
+    .data-source > b, .output-impact > b, .arch-layer b, .tools-strip > b { font-size: 15px; }
+    .external-systems { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .external-systems span, .arch-layer { padding: 14px; }
+    .outcome-metric-head { display: flex; flex-direction: column; gap: 12px; }
+    .outcome-metric-head > div { min-width: 0; }
+    .outcome-chart { display: block; }
+    .outcome-metrics { height: auto; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .outcome-metric { min-height: 0; padding: 16px; }
+    .outcome-metric h3, .outcome-metric p, .outcome-metric small { font-size: 13px; }
+    .outcome-bottom { height: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .outcome-bottom h3 { font-size: 20px; }
+    .outcome-bottom p { font-size: 14px; }
+    .connect-top { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .connect-copy { grid-column: 1 / -1; min-height: 0; }
+    .connect-focus strong { font-size: 14px; }
+    .connect-focus small { font-size: 13px; }
+    .connect-scene { margin: 0; min-height: 300px; }
+    .contact-card { min-height: 0; padding: 24px; }
+    .contact-card h3 { font-size: 26px; }
+    .contact-card > p { font-size: 14px; }
+    .contact-card label { min-height: 44px; }
+    .contact-card input, .contact-card select, .contact-card textarea { font-size: 16px; }
+    .contact-card .message-field { height: 120px; }
+    .message-field textarea { height: 95px; }
+    .contact-card button { min-height: 44px; font-size: 14px; }
+    .form-note, .bottom-heading small, .social-links a small, .availability span { font-size: 12px; }
+    .bottom-heading strong, .social-links a strong { font-size: 14px; }
+    .connect-bottom { grid-template-columns: 1fr; gap: 16px; }
+    .connect-bottom > article { border: 0; padding: 14px; }
+    .formula-strip span, .formula-strip strong, .metric-categories b, .metric-categories small { font-size: 12px; }
+    .formula-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .formula-strip > b { grid-column: 1 / -1; }
+  }
+}
+@media (max-width: 1023px) {
+  .portfolio-root.viewport-fit-prototype {
+    .page-inner.overview-layout, .ecosystem-layout, .challenge-layout, .strategy-layout, .scope-layout, .metrics-layout, .tech-content { grid-template-columns: 1fr; }
+    .operating-model { min-height: 650px; }
+    .section-intro, .tech-heading { display: block; }
+    .lens-note, .translation-note { width: 100%; margin-top: 16px; }
+  }
+}
+@media (max-width: 767px) {
+  .portfolio-root.viewport-fit-prototype {
+    main > .slide.page > .page-inner { padding: 28px 16px; }
+    .overview-copy h1 { font-size: clamp(30px, 8vw, 40px); }
+    .expertise-grid, .ecosystem-cards, .challenge-cards, .strategy-step-list, .scope-cards, .metrics-grid, .portfolio-cards, .outcome-bottom, .connect-top { grid-template-columns: 1fr; }
+    .expertise-card { min-height: 80px; }
+    .scope-card-head { flex-wrap: wrap; }
+    .outcome-metrics, .outcome-categories, .metric-categories { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ecosystem-proof { grid-template-columns: minmax(0, 1fr); }
+    .outcomes-intro { display: block; }
+    .outcome-chart { min-height: 120px; margin-top: 16px; }
+    .connect-scene, .contact-card { grid-column: auto; grid-row: auto; }
+    .connect-focus { grid-template-columns: 1fr; }
+    .connect-focus article:last-child { grid-column: auto; }
+    .operating-model { min-height: 0; }
+    .model-stage { display: flex; flex-direction: column; gap: 24px; padding: 24px 0 24px 22px; }
+    .model-card { position: relative; width: 100%; height: auto; }
+    .model-product { position: relative; inset: auto; transform: none; width: 100%; min-height: 130px; order: -1; }
+    .model-connectors { display: none; }
+    .model-stage::before { content: ''; position: absolute; left: 8px; top: 80px; bottom: 65px; border-left: 2px dashed #087ff0; }
+    .model-card::before { content: ''; position: absolute; left: -14px; top: 50%; width: 14px; border-top: 2px solid #087ff0; }
+    .operating-steps { grid-template-columns: 1fr; }
+    .eco-orbit { min-height: 290px; }
+    .eco-center { margin-inline: 0; }
+    .strategy-art { display: flex; flex-direction: column; gap: 18px; }
+    .strategy-side { position: static; width: 100%; display: grid; grid-template-columns: 1fr; }
+    .strategy-pyramid { width: 100%; }
+    .strategy-pyramid span { font-size: 11px; padding-inline: 12px; }
+    .scope-cycle { min-height: 0; gap: 18px; }
+    .cycle-row { flex-wrap: wrap; gap: 12px; }
+    .cycle-row b { min-width: 75px; font-size: 12px; }
+    .scope-principles { flex-wrap: wrap; }
+    .scope-principles b, .scope-principles small { font-size: 12px; }
+    .technology-model { min-height: 0; }
+    .tech-model-chain { grid-template-columns: 1fr; }
+    .tech-model-chain article { position: relative; }
+    .tech-model-chain article:not(:last-child)::after { display: block; content: '↓'; position: absolute; top: auto; bottom: -21px; left: 50%; width: auto; height: auto; border: 0; color: #087ff0; }
+    .architecture-grid { grid-template-columns: 1fr; }
+    .tech-capability-grid { grid-template-columns: 1fr; }
+    .data-source, .output-impact, .tools-strip > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .social-links { grid-template-columns: 1fr; }
+    .form-two { grid-template-columns: 1fr; }
+  }
+}
+@media (max-width: 767px) {
+  html { scroll-padding-top: 120px; }
+}
+@media (max-width: 767px) {
+  .portfolio-root.portfolio-root.viewport-fit-prototype .scope-principles.bottom { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+}
+@media (max-width: 1279px) {
+  .portfolio-root.portfolio-root.viewport-fit-prototype {
+    .strategy-art { flex-direction: column; gap: 18px; padding: 20px 0; }
+    .strategy-pyramid { width: 100%; transform: none; }
+    .strategy-pyramid span { font-size: 13px; padding: 16px; }
+    .strategy-art .people-chip { position: relative; inset: auto; font-size: 13px; }
+    .strategy-side { position: relative; inset: auto; width: 100%; gap: 12px; }
+    .strategy-side b { max-width: none; padding: 14px; font-size: 13px; }
+    .contact-label, .cityline { font-size: 12px; }
+    .connect-art text { font-size: 13px; }
+    .eco-summary { grid-template-columns: 1fr; }
+  }
+}
+@media (max-width: 1279px) {
+  .portfolio-root.portfolio-root.viewport-fit-prototype {
+    .tech-content { align-items: start; }
+    .tech-layers { grid-template-rows: repeat(6, auto); align-self: start; }
+    .tech-layer { min-height: 0; padding-block: 16px; }
+    .technology-model { height: auto; min-height: 0; }
+    .tech-model-chain { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+    .tech-model-chain article { position: relative; gap: 12px; }
+    .tech-model-chain article > ul { margin: 12px 0 0; padding: 16px 16px 16px 32px; background: #f4f9ff; color: #315b80; border-radius: 12px; text-align: left; }
+    .tech-model-chain article:not(:last-child)::after { display: block; content: '\2193'; position: absolute; inset: auto auto -24px 50%; color: #1daeea; font-size: 20px; }
+    .tech-capability-grid:empty { display: none; }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .portfolio-root.portfolio-root.viewport-fit-prototype {
+    .tech-model-chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tech-model-chain article:nth-child(1) { grid-area: 1 / 1; }
+    .tech-model-chain article:nth-child(2) { grid-area: 1 / 2; }
+    .tech-model-chain article:nth-child(3) { grid-area: 2 / 2; }
+    .tech-model-chain article:nth-child(4) { grid-area: 2 / 1; }
+    .tech-model-chain article:nth-child(5) { grid-area: 3 / 1; }
+    .tech-model-chain article:nth-child(6) { grid-area: 3 / 2; }
+    .tech-model-chain article:nth-child(1)::after, .tech-model-chain article:nth-child(5)::after { content: '\2192'; inset: 50% -24px auto auto; }
+    .tech-model-chain article:nth-child(3)::after { content: '\2190'; inset: 50% auto auto -24px; }
+  }
+}

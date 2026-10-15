@@ -10,7 +10,7 @@ html:has(.nokia-case) {
   scroll-padding-top: $page-header-height;
 }
 
-@media (min-width: 761px) {
+@media (min-width: 1280px) {
   .portfolio-root.viewport-fit-prototype {
     --header-h: #{$page-header-height};
   }
@@ -376,7 +376,7 @@ html:has(.nokia-case) {
 
 /* Keep dense portfolio narratives and their existing diagrams visible in the
    viewport-sized sections. These rules only change card placement. */
-@media (min-width: 761px) {
+@media (min-width: 1280px) {
   .portfolio-root.viewport-fit-prototype .ecosystem-story .eco-orbit {
     min-height: 0;
     height: min(100%, 14cqw);
@@ -484,7 +484,7 @@ html:has(.nokia-case) {
   .portfolio-root.viewport-fit-prototype .outcome-bottom > article { min-height: 0; height: 100%; }
 }
 
-@media (min-width: 761px) {
+@media (min-width: 1280px) {
   /* The integrated-channel page keeps its original content and reflows only
      the denser sections so each section stays within the shared page frame. */
   .project-shell:has(.ics-case) .ics-metrics .ics-inner {

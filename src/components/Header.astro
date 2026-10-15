@@ -1,5 +1,6 @@
 ---
 import { navItems } from '../data/portfolio.js';
+import ResponsiveNavigation from './ResponsiveNavigation.astro';
 ---
 <header class="site-header">
   <div class="header-inner">
@@ -7,6 +8,7 @@ import { navItems } from '../data/portfolio.js';
       <img class="brand-avatar" src="/profile/portrait.jpg" alt="Manoj Pant" />
       <span class="brand-copy"><strong>Manoj Pant</strong><small>SENIOR PRODUCT MANAGER</small></span>
     </a>
+    <ResponsiveNavigation navId="nav" />
     <nav id="nav" aria-label="Portfolio sections">
       {navItems.map(([id, label]) => <a href={`#${id}`}>{label}</a>)}
     </nav>
