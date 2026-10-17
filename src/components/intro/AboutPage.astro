@@ -1,0 +1,24 @@
+---
+import Icon from './IntroIcon.astro';
+import Artwork from './IntroArtwork.astro';
+import { profile, journey, focus, principles, domains } from '../../data/intro-portfolio';
+const domainArtwork = ['banking-v1', 'healthcare-v1', 'telecom-v1', 'claims-v1'];
+const domainText = [
+  domains[0].text,
+  'Doctor engagement, onboarding, payouts, field-force intelligence and healthcare operations.',
+  domains[2].text,
+  'Workflow automation, OCR feasibility, APIs and claims-processing improvements.',
+];
+---
+<div class="intro-about-page">
+  <section class="intro-about-hero" aria-labelledby="intro-about-title">
+    <div class="intro-about-copy"><p class="intro-eyebrow">ABOUT ME <span/></p><h1 id="intro-about-title">A career shaped by <em>data, business<br class="intro-desktop-break"/> understanding</em> and <em>product ownership</em></h1><p>My professional journey started in reporting and analytics, where I learned how businesses measure performance and make decisions from data. Over time, I moved into Business Analysis and then Product Management, taking on broader responsibility for defining problems, shaping solutions and driving execution.</p><p>Today, I work as a Senior Product Manager with 10+ years of experience across FinTech, Healthcare, Telecom and CRM, combining business understanding, product thinking, technology, data and cross-functional execution.</p></div>
+    <div class="intro-about-scene" aria-hidden="true"><img class="intro-about-environment" src="/intro/about/about-scene-v1.png" alt="" width="2172" height="724" fetchpriority="high"/><Artwork kind="office" id="about-office" composition/><div class="intro-about-mountains"><Artwork kind="mountain" id="about-mountains" composition/></div><img class="intro-about-portrait" src={profile.portrait} alt="" width="1254" height="1254"/><p class="intro-handwriting">Curious<br/>Analytical<br/>Product-minded</p><div class="intro-insight-panel">{[['target','Understand','Complex Problems'],['bulb','Design','Practical Solutions'],['chart','Create','Measurable Impact']].map(([icon,verb,text]) => <div><Icon name={icon}/><span>{verb}<br/>{text}</span></div>)}</div></div>
+  </section>
+  <div class="intro-about-middle">
+    <section class="intro-panel intro-journey" aria-labelledby="intro-journey-title"><div class="intro-panel-heading intro-tone-blue"><span class="intro-icon-tile"><Icon name="chart"/></span><div><h2 id="intro-journey-title">My Journey</h2><h3>Data & Reporting <span>→</span> Business Analysis <span>→</span> Product Management</h3></div></div><p class="intro-journey-summary">This journey has given me experience across both sides of product development — understanding operational and business problems deeply, and then translating them into requirements, workflows, integrations, product capabilities and measurable outcomes.</p><ol class="intro-journey-stages">{journey.map(item => <li class={`intro-tone-${item.tone}`}><div class="intro-stage-top"><span class="intro-icon-disc"><Icon name={item.icon}/></span><Icon name="arrow"/></div><h3>{item.title}</h3><p>{item.description}</p></li>)}</ol></section>
+    <section class="intro-panel intro-focus" aria-labelledby="intro-focus-title"><div class="intro-panel-heading intro-tone-blue"><span class="intro-icon-tile"><Icon name="target"/></span><h2 id="intro-focus-title">What I Focus On</h2></div><ul>{focus.map((item, index) => <li class={`intro-tone-${item.tone}`}><span class="intro-icon-soft"><Icon name={index === 1 ? 'growth-bars' : item.icon === 'cube' ? 'layers-solid' : item.icon}/></span><p>{item.text}</p></li>)}</ul></section>
+  </div>
+  <section class="intro-panel intro-principles" aria-labelledby="intro-work-title"><div class="intro-panel-heading intro-tone-blue"><span class="intro-icon-tile"><Icon name="people-solid"/></span><h2 id="intro-work-title">How I Work</h2></div><div class="intro-principles-grid">{principles.map((item, index) => <article class={`intro-tone-${item.tone}`}><span class="intro-icon-soft"><Icon name={index === 3 ? 'people-solid' : item.icon}/></span><div><h3>{item.title}</h3><p>{item.text}</p></div></article>)}</div></section>
+  <section class="intro-panel intro-domains" aria-labelledby="intro-domains-title"><div class="intro-panel-heading intro-tone-blue"><span class="intro-icon-tile"><Icon name="layers"/></span><h2 id="intro-domains-title">Domains I’ve Worked In</h2></div><div class="intro-domains-grid">{domains.map((item,i) => <article class={`intro-tone-${item.tone}`}><img class="intro-artwork intro-domain-photo" src={`/intro/about/${domainArtwork[i]}.png`} alt="" width="1672" height="941" loading="eager"/><span class="intro-icon-soft"><Icon name={i === 3 ? 'people-solid' : item.icon}/></span><div><h3>{item.title}</h3><p>{domainText[i]}</p></div></article>)}</div></section>
+</div>

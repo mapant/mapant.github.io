@@ -1,0 +1,12 @@
+---
+// Vector marks remain crisp at the reference's compact certification size.
+const { brand } = Astro.props;
+---
+<svg class="intro-certification-mark" viewBox="0 0 64 48" aria-hidden="true">
+  {brand === 'microsoft' ? <g><path fill="#f25022" d="M12 4h18v18H12z"/><path fill="#7fba00" d="M32 4h18v18H32z"/><path fill="#00a4ef" d="M12 24h18v18H12z"/><path fill="#ffb900" d="M32 24h18v18H32z"/></g>
+  : brand === 'google' ? <g transform="translate(8 0)"><path fill="#4285f4" d="M45 25c0-1.5-.1-3-.4-4.5H24v8.6h11.8a10 10 0 0 1-4.4 6.5v5.6h7.1C42.7 37.3 45 31.7 45 25Z"/><path fill="#34a853" d="M24 46c6 0 11-2 14.5-5.3l-7.1-5.6c-2 1.4-4.4 2.2-7.4 2.2-5.7 0-10.5-3.8-12.2-8.9H4.5v5.8A22 22 0 0 0 24 46Z"/><path fill="#fbbc05" d="M11.8 28.4a13 13 0 0 1 0-8.8v-5.8H4.5a22 22 0 0 0 0 20.4Z"/><path fill="#ea4335" d="M24 10.7c3.3 0 6.2 1.1 8.5 3.3l6.4-6.4A21 21 0 0 0 24 2 22 22 0 0 0 4.5 13.8l7.3 5.8C13.5 14.5 18.3 10.7 24 10.7Z"/></g>
+  : brand === 'powerbi' ? <g><rect x="13" y="23" width="11" height="20" rx="3" fill="#f2c811"/><rect x="24" y="13" width="12" height="30" rx="3" fill="#e8b908"/><rect x="36" y="3" width="13" height="40" rx="3" fill="#f7d84b"/></g>
+  : brand === 'ibm' ? <g><defs><pattern id="education-ibm-stripes" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2.4" fill="#087bff"/></pattern></defs><text x="1" y="36" font-family="Georgia,serif" font-size="31" font-weight="900" letter-spacing="-2" fill="url(#education-ibm-stripes)">IBM</text></g>
+  : brand === 'jhu' ? <g><path d="M13 6 32 2l19 4v17c0 11-11 19-19 23-8-4-19-12-19-23Z" fill="#0b2858"/><path d="M15 15h34M32 16v26M17 18l27 18M47 18 20 36" stroke="#fff" stroke-width="1.2"/><text x="32" y="12" fill="white" font-size="6" text-anchor="middle" font-family="Georgia,serif">JHU</text></g>
+  : <g><text x="2" y="36" fill="#06334c" font-family="Arial,sans-serif" font-size="31" font-weight="900" letter-spacing="-3">iIBA</text><circle cx="8" cy="11" r="5" fill="#ff7b16"/></g>}
+</svg>

@@ -1,0 +1,95 @@
+---
+// Decorative, editable vector artwork. No reference image is used or traced.
+const { kind = 'office', id = `intro-${kind}`, label, fit = 'xMidYMid slice', viewBox = '0 0 600 400', bookScale = 1, composition = false } = Astro.props;
+const paint = (name: string) => `url(#${id}-${name})`;
+const environmentOnly = composition && (id === 'hero-office' || id === 'about-office');
+---
+<svg class:list={['intro-artwork', `intro-artwork--${kind}`]} viewBox={viewBox} preserveAspectRatio={fit} role={label ? 'img' : undefined} aria-label={label} aria-hidden={label ? undefined : 'true'}>
+  <defs>
+    <linearGradient id={`${id}-sky`} x2=".7" y2="1"><stop stop-color="#e8f6ff"/><stop offset=".6" stop-color="#b5d9f2"/><stop offset="1" stop-color="#fbefe4"/></linearGradient>
+    <linearGradient id={`${id}-glass`} x2="1" y2="1"><stop stop-color="#f5fcff"/><stop offset=".4" stop-color="#b7d9ec"/><stop offset="1" stop-color="#6088a7"/></linearGradient>
+    <linearGradient id={`${id}-navy`} x2="1" y2="1"><stop stop-color="#0969b4"/><stop offset=".6" stop-color="#073c65"/><stop offset="1" stop-color="#14283b"/></linearGradient>
+    <linearGradient id={`${id}-pages`} x2="0" y2="1"><stop stop-color="#fffdf7"/><stop offset=".55" stop-color="#eeece5"/><stop offset="1" stop-color="#c8c8c2"/></linearGradient>
+    <linearGradient id={`${id}-wood`} x2="0" y2="1"><stop stop-color="#e8d4bc"/><stop offset="1" stop-color="#b99b7d"/></linearGradient>
+    <radialGradient id={`${id}-sun`}><stop stop-color="#fffdf0"/><stop offset="1" stop-color="#fff1bb" stop-opacity="0"/></radialGradient>
+    <filter id={`${id}-blur`}><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id={`${id}-shadow`} x="-30%" y="-40%" width="170%" height="200%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#153f68" flood-opacity=".23"/></filter>
+    {composition && <>
+      <linearGradient id={`${id}-dawn`} x2="0" y2="1"><stop stop-color="#e4e6f4"/><stop offset=".32" stop-color="#ffe5c2"/><stop offset=".53" stop-color="#f8dfc9"/><stop offset="1" stop-color="#7ca7cf"/></linearGradient>
+      <linearGradient id={`${id}-ridge`} x2=".2" y2="1"><stop stop-color="#6486b0"/><stop offset=".55" stop-color="#315f8a"/><stop offset="1" stop-color="#173d5c"/></linearGradient>
+      <linearGradient id={`${id}-steel`} x2="1" y2="0"><stop stop-color="#829eaf"/><stop offset=".25" stop-color="#f4fcff"/><stop offset=".6" stop-color="#abc5d6"/><stop offset="1" stop-color="#537a93"/></linearGradient>
+      <linearGradient id={`${id}-leaf`} x2="1" y2="1"><stop stop-color="#b8cba1"/><stop offset=".45" stop-color="#5e8d64"/><stop offset="1" stop-color="#2c5a47"/></linearGradient>
+      <pattern id={`${id}-windows`} width="19" height="24" patternUnits="userSpaceOnUse"><rect width="19" height="24" fill="#7aa5c4"/><path d="M1 1h15v19H1Z" fill="#c2e2f2"/><path d="M2 2h5v18H2" fill="#dbeef5"/><path d="M0 23h19M18 0v24" stroke="#597f9d" stroke-width="1.5"/></pattern>
+      <pattern id={`${id}-forest`} width="23" height="31" patternUnits="userSpaceOnUse"><path d="m4 26 7-23 8 23h-6v5H9v-5Z" fill="#244d54"/><path d="m12 17 6-16 5 16Z" fill="#55765e" opacity=".7"/></pattern>
+      <filter id={`${id}-distance`}><feGaussianBlur stdDeviation="1.4"/></filter>
+    </>}
+  </defs>
+  {kind === 'mountain' || kind === 'telecom' ? <>
+    {composition ? <>
+      <rect width="600" height="400" fill={paint('dawn')}/><ellipse cx="477" cy="76" rx="160" ry="95" fill={paint('sun')}/>
+      <g fill="none" stroke="#fff4df" stroke-linecap="round" opacity=".55"><path d="M250 62c115 9 201-20 350-10M313 84c86 0 150-11 241-7M14 107c124-14 158-4 251-10" stroke-width="3"/><path d="M380 38h190M317 117l265-20" stroke-width="1"/></g>
+      <path d="m0 223 39-31 20 11 38-41 19 18 26-22 37 39 47-43 20 12 34-31 22 23 31-14 30 32 25-26 41 23 37-48 24 12 23-32 33 36 34-10 25 40v224H0Z" fill="#b5adc5" filter={paint('distance')}/>
+      <path d="m0 273 39-35 28 18 54-62 34 23 36-38 29 27 54-70 27 32 19-15 28 45 23-31 26 12 55-92 27 24 24-39 48 58 24-12 35 46v231H0Z" fill="#8199be"/>
+      <path d="m234 186 40-50 27 32-22-10-9 18-12-7Zm171-56 27-43 27 24 24-39 43 52-40-25-9 19-19-14-13 17-13-15-15 24Z" fill="#f7edf0"/>
+      <path d="m0 333 45-46 26 12 55-72 23 20 28-28 47 47 30-19 55-71 24 24 24-13 33 51 27-20 33 21 51-70 32 21 26-17 43 24 33-30v213H0Z" fill={paint('ridge')}/>
+      <g stroke="#adc6dc" stroke-opacity=".32" fill="none" stroke-width="1.6"><path d="m126 227-12 54-25 31m37-85 15 43 36 33m132-127-10 57-26 30m36-87 9 73 35 24m118-64-19 62-29 24m48-86 10 57 35 29"/></g>
+      <path d="m0 390 81-63 31 13 44-38 43 22 46-14 51 32 49-17 38 22 38-35 28 10 38-55 33 10 46-37 34 34v126H0Z" fill="#345c62"/>
+      <path d="m0 390 81-63 31 13 44-38 43 22 46-14 51 32 49-17 38 22 38-35 28 10 38-55 33 10 46-37 34 34v126H0Z" fill={paint('forest')} opacity=".74"/>
+      <path d="m355 400 52-55 40-4 42-40 28 12 38-27 45 16v98Z" fill="#395464"/><path d="m407 345 40-4-9 18 39-4-42 45h-80Z" fill="#6c8590"/><path d="m489 301 28 12-14 21 52-48-7 33 52-17" fill="none" stroke="#9cabb0" stroke-width="3"/>
+    </> : <>
+    <rect width="600" height="400" fill={paint('sky')}/><circle cx="450" cy="60" r="145" fill={paint('sun')}/>
+    <path d="M0 270 93 139 174 231 286 89 375 180 483 54 600 180V400H0" fill="#a2b9db"/>
+    <path d="m232 158 54-69 34 41-32-9-20 19-12-3M445 103l38-49 45 50-43-25-14 21Z" fill="#f2f6fe"/>
+    <path d="M0 300 115 212 199 304 365 169 476 259 600 143V400H0" fill="#5d8cba"/>
+    <path d="M0 400V345l146-67 89 51 129-89 85 74 151-56v142" fill="#1d5d87"/>
+    <path d="m360 400 74-103 44-8 63-56 59 51v116" fill="#294b65"/>
+    <path d="m0 400 111-62 85 29 63-29 62 62" fill="#6295b0"/>
+    {[30,80,140,225,295,565].map((x,i) => <path d={`m${x} ${370-i%2*18} 12-44 12 44h-8v20h-8v-20Z`} fill="#174e60"/>)}
+    </>}
+    {kind === 'telecom' ? <g stroke="#314b68" stroke-width="5" fill="none"><path d="M425 70 382 370m43-300 43 300M398 260h54m-49-50h42m-36-50h30M390 313l65-53m-58 0 47-50m-41 0 35-50M391 313l69 57m-65-110 58 53m-50-103 49 50m-43-100 35 50"/><path d="M390 100a45 45 0 0 1 0-65m70 65a45 45 0 0 0 0-65m-90 85a75 75 0 0 1 0-105m110 105a75 75 0 0 0 0-105" stroke="#704ca1" stroke-width="3"/><rect x="402" y="91" width="12" height="48" rx="3" fill="#eff7ff"/><rect x="437" y="91" width="12" height="48" rx="3" fill="#eff7ff"/></g> : <g transform="translate(450 217)" fill="#173452"><circle cx="0" cy="-21" r="9"/><path d="m-9-10 19 1 7 32-15 6-3 43h-8l-2-42-12 37-8-3 8-40z"/><path d="m-7-8-14 14 6 31 10-4 1-26" fill="#2577b7"/><path d="m10-4 12 25 15 3-2 7-22-5-11-21"/></g>}
+  </> : kind === 'books' || kind === 'laptop' ? <>
+    <rect width="600" height="400" fill="#eff9fa"/>
+    <g opacity=".6" filter={paint('blur')}><rect x="40" width="180" height="300" fill={paint('glass')}/><rect x="242" width="20" height="300" fill="#7997a9"/><rect x="285" width="230" height="300" fill={paint('sky')}/><path d="M80 280v-100h45v-65h35v165m190 0V80h45v200m50 0V140h35v140" fill="#9dc4db"/></g>
+    <path d="M0 315 600 300v100H0" fill={paint('wood')}/>
+    {kind === 'laptop' ? <g transform="translate(130 140)" filter={paint('shadow')}><path d="M50 0h270l-22 170H30Z" fill="#223e54"/><path d="M60 10h247l-21 145H42Z" fill={paint('glass')}/><path d="m30 170-60 35h340l-12-35" fill="#a6b6bf"/><path d="m57 177-26 13h224l15-13" fill="#6b8798"/><rect x="320" y="135" width="135" height="32" rx="5" fill={paint('navy')}/><rect x="325" y="140" width="128" height="20" fill={paint('pages')}/></g> : <g transform={`translate(135 145) scale(${bookScale} 1)`} filter={paint('shadow')}>
+      {[0,1,2,3].map((n) => <g transform={`translate(${n%2*12} ${144-n*36})`}><rect width="340" height="37" rx="5" fill={n===2?'#087a94':n===3?'#e4e5e0':'#143f62'}/><path d="M225 4h110v28H225" fill={paint('pages')}/><path d="M240 9h89m-89 6h89m-89 6h89m-89 6h89" stroke="#b4b7b5" stroke-width=".8"/>{composition && <><path d="M7 3h329M7 34h329" stroke="#fff" stroke-opacity=".28"/><path d="M8 5v27" stroke="#d8bc79" stroke-width="1.5"/></>}<text x="14" y="24" fill={n===3?'#172d43':'white'} font-size="15" font-family="Segoe UI, sans-serif">{['Enterprise Technology','Product Management','Data Visualization','Business Analytics'][n]}</text></g>)}
+      <path d="M62 14v-58l191 3 9 67c-56 20-126 19-200-12" fill="#122d45"/><path d="m3-53 166-35 178 30-170 40Z" fill="#10293d" stroke="#426781" stroke-width="2"/><path d="m170-56 132 6v83" fill="none" stroke="#ffbb32" stroke-width="3"/><path d="m302 23-7 31h14z" fill="#ffa518"/>
+    </g>}
+  </> : kind === 'dashboard' ? <>
+    <rect width="600" height="400" fill="#fff3e8"/>
+    <rect x="450" width="150" height="320" fill={paint('glass')}/><path d="M0 335 600 282v118H0" fill={paint('wood')}/>
+    <g transform="translate(180 74) rotate(4)" filter={paint('shadow')}><rect width="370" height="238" rx="10" fill="#153753"/><rect x="10" y="10" width="350" height="215" fill="#f9fcff"/><path d="M10 10h350v27H10" fill="#0a68c0"/><rect x="24" y="54" width="70" height="151" rx="4" fill="#e2efff"/>
+      {[0,1,2].map(n => <rect x={110+n*79} y="54" width="70" height="37" rx="4" fill={['#dcecff','#d6f4ef','#eee3ff'][n]}/>)}
+      {[0,1,2,3,4].map(n => <rect x={116+n*39} y={175-n*15} width="20" height={n*15+20} rx="2" fill={n%2?'#8d6eff':'#2498ff'}/>)}
+      <path d="M105 121h230m-230 30h230m-230 30h230" stroke="#dfebf5"/>{composition && <><path d="m111 137 35-15 29 7 26-25 37 8 27-18 49 10" fill="none" stroke="#3ca7e8" stroke-width="2"/>{[68,88,108,128,148,168,188].map(y => <g><rect x="33" y={y} width="7" height="7" rx="1" fill="#5999d2"/><path d={`M46 ${y+3}h34`} stroke="#9fbbd5" stroke-width="2"/></g>)}<path d="M118 67h42m37 0h42m37 0h42" stroke="#8faec8" stroke-width="3"/><path d="M118 79h22m57 0h25m54 0h19" stroke="#4a86bc" stroke-width="4"/></>}<path d="m94 238-53 28h360l-31-28" fill="#99b7cc"/>{composition && <path d="m109 241-18 9h225l-11-9m-115 14h48" fill="none" stroke="#567b97" stroke-width="2"/>}</g>
+    <path d="M88 300v-98m0 65-38-37m38 17 35-30m-35 3-20-35" stroke="#6c9d6a" stroke-width="8"/><path d="M62 285h58l-8 59H70" fill="#f5f7f5"/>
+  </> : <>
+    <rect width="600" height="400" fill={paint('sky')}/>
+    <g opacity=".65" filter={paint('blur')}><path d="M0 310V129h48v181m19 0V64h52v246m24 0V105h45v205m24 0V34h63v276m22 0V97h42v213m19 0V70h55v240m30 0V143h46v167m30 0V86h55v224" fill="#7fafce"/><path d="M4 148h42M70 94h45m37 48h32m32-79h53m31 66h34m33-29h44" stroke="#e4f4ff" stroke-width="6"/></g>
+    <g stroke="#b1c6d3" stroke-width="8"><path d="M110 0v315M311 0v315M512 0v315"/><path d="M0 280h600" stroke-width="4"/></g>
+    {composition && <>
+      <g opacity=".6" filter={paint('distance')}>{[20,75,150,205,280,350,425,485,555].map((x,n) => <g><path d={`M${x} 287V${66+n%3*39}h${30+n%2*12}v${221-n%3*39}Z`} fill={paint('windows')}/><path d={`M${x+15} ${66+n%3*39}v-18`} stroke="#759ab4" stroke-width="2"/></g>)}</g>
+      <path d="M100 0h13v315h-13Zm202 0h15v315h-15Zm201 0h13v315h-13Z" fill={paint('steel')}/><path d="M0 283h600v8H0Z" fill="#f5fcff" opacity=".75"/>
+      <path d="m0 0 110 0 165 315H165Zm312 0h49l165 315h-49Z" fill="#fff" opacity=".16"/>
+    </>}
+    <path d="M0 335 600 280v120H0Z" fill={paint('wood')}/>
+    {kind === 'campus' || kind === 'hospital' ? <g transform="translate(140 95)" filter={paint('shadow')}>
+      <path d="m0 45 200-40 170 60v235H0" fill="#b7c9d5"/><path d="m0 45 200-40v295H0" fill={kind === 'hospital' ? '#e6f1ee' : '#d5c8b4'}/><path d="M24 85h154v175H24m193-205 120 39v171l-120-5" fill={paint('glass')}/>
+      {[0,1,2,3,4].map(n => <path d={`M24 ${100+n*30}h154m39 ${-35+n*30} 120 35`} stroke="#e2e8e9" stroke-width="4"/>)}<path d="M90 300v-60h45v60" fill="#31566b"/>
+      {composition && <><path d="M24 85h154v175H24" fill={paint('windows')}/><path d="m218 61 119 36v166l-119-4Z" fill={paint('windows')} opacity=".8"/><path d="M0 46 200 5l170 60M0 275h370" fill="none" stroke="#f4f6f0" stroke-width="6"/><path d="M88 300v-61h49v61m-24-61v61" fill="#36546d" stroke="#adc3d0" stroke-width="2"/></>}
+      {kind === 'hospital' && <path d="M93 37h18v17h17v18h-17v17H93V72H76V54h17Z" fill="#00a994"/>}<path d="m-20 300 140-30 260 30" fill="#668f65"/>
+      {composition && <g fill={paint('leaf')}>{[0,60,185,295,360].map((x,n) => <g transform={`translate(${x} ${290-n%2*14})`}><path d="M0 7v-36" stroke="#5a6550" stroke-width="4"/><circle cy="-47" r="20"/><circle cx="-12" cy="-33" r="16"/><circle cx="12" cy="-32" r="17"/></g>)}</g>}
+    </g> : <>
+      {!environmentOnly && <>
+      <g filter={paint('shadow')}><path d="m160 267 280-26 117 29-296 34Z" fill="#eaf4f7"/><path d="m262 304-4 96m271-124 25 124" stroke="#6c8391" stroke-width="8"/>
+      {[130,310,470].map((x,n) => <g transform={`translate(${x} ${290+n%2*30})`}><rect x="-25" y="-19" width="48" height="56" rx="10" fill="#35536a"/><path d="M0 37v44m-23 0 23-8 23 8" stroke="#4c5f6e" stroke-width="5"/></g>)}</g>
+      <g transform="translate(475 127)"><path d="M12 145V32m0 72-35-31m35 11 30-27m-30 7-22-29" stroke="#5b875b" stroke-width="5"/><g fill="#639467"><ellipse cx="-15" cy="68" rx="25" ry="12" transform="rotate(30 -15 68)"/><ellipse cx="28" cy="56" rx="27" ry="12" transform="rotate(-40 28 56)"/><ellipse cx="0" cy="31" rx="23" ry="12" transform="rotate(65 0 31)"/></g><path d="M-12 124h48l-6 53H-7" fill="#e9e9dd"/></g>
+      {kind === 'meeting' && <g>{[200,330,420].map((x,n) => <g transform={`translate(${x} ${222+n%2*12})`}><circle cy="-25" r="15" fill="#b8947d"/><path d="M-23 22v-23c0-17 46-17 46 0v23Z" fill={n===1 ? '#506b87' : '#273e58'}/><path d="m-8-8 8 22 8-22" fill="#e7f2fa"/></g>)}<path d="m170 265 300-20 75 42-315 32Z" fill="#d5c3ac"/><path d="m310 267 35-3 16 16-36 2Z" fill="#fff"/></g>}
+      </>}
+      {composition && <>
+        <g transform={`translate(${environmentOnly ? 483 : 530} ${environmentOnly ? 114 : 122})`}><path d="M0 200V0m0 133-38-43m38 13 30-41m-30 8-22-44" stroke="#51734f" stroke-width="3"/>{[[-29,79,-40],[24,58,35],[-12,22,-25],[31,108,40],[-26,131,-35]].map(([x,y,angle]) => <g transform={`translate(${x} ${y}) rotate(${angle})`}><ellipse rx="12" ry="29" fill={paint('leaf')}/><path d="M0-25v52" stroke="#b9c79b" stroke-width=".8" opacity=".5"/></g>)}<path d="M-23 177h48l-7 58h-34Z" fill="#f3f2e7"/><path d="M-23 179h48" stroke="#d2d3c5" stroke-width="4"/></g>
+        {!environmentOnly && <><path d="m180 274 85-6 14 11-84 7Z" fill="#173e58"/><path d="m181 274 2-42 70-5 12 41Z" fill="#3d667e"/><path d="m186 269 1-31 61-4 11 33Z" fill="#b8d8e9"/><path d="m408 286 27-2 7 9-27 2Z" fill="#f6f7f0"/><path d="M442 287v-17h12v17Z" fill="#244254"/></>}
+      </>}
+    </>}
+  </>}
+</svg>

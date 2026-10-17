@@ -1,0 +1,26 @@
+---
+import '../styles/portfolio-print.css';
+const { intro = false } = Astro.props;
+const label = intro ? 'Export Intro PDF' : 'Save PDF';
+---
+<button class:list={['save-pdf', 'pdf-icon', intro && 'save-intro-pdf']} type="button" data-header-action data-save-pdf={intro ? undefined : true} data-save-intro-pdf={intro ? true : undefined} aria-label={label} title={label}>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 11v7m-3-3 3 3 3-3"/></svg>
+</button>
+<script>
+  import { savePortfolioPdf } from '../scripts/save-portfolio-pdf.js';
+  document.querySelectorAll<HTMLButtonElement>('[data-save-pdf], [data-save-intro-pdf]').forEach(button => {
+    button.addEventListener('click', async () => {
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      try {
+        await savePortfolioPdf({ intro: button.hasAttribute('data-save-intro-pdf') });
+      } catch (error) {
+        console.error('Unable to prepare portfolio PDF.', error);
+        window.alert('Unable to prepare the PDF. Please try again.');
+      } finally {
+        button.disabled = false;
+        button.removeAttribute('aria-busy');
+      }
+    });
+  });
+</script>

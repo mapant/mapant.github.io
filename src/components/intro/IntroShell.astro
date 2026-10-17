@@ -1,0 +1,17 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import IntroHeader from './IntroHeader.astro';
+import '../../styles/intro-portfolio.scss';
+const { title, page } = Astro.props;
+---
+<SiteLayout title={`${title} | Manoj Pant`}>
+  <div class:list={['portfolio-root', 'intro-root', `intro-root--${page}`]}>
+    <a class="intro-skip" href="#intro-main">Skip to content</a>
+    <IntroHeader active={page} />
+    <main class="intro-main" id="intro-main"><slot /></main>
+  </div>
+</SiteLayout>
+<script>
+  // Reuse the approved 1280 × 665 tablet fit without changing its implementation.
+  import '../../scripts/tablet-desktop-fit.js';
+</script>

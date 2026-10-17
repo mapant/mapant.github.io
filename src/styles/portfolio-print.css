@@ -1,0 +1,14 @@
+/* The approved desktop viewport, independent of the initiating device. */
+@page { size:1280px 665px; margin:0; }
+@media print {
+  [data-save-pdf] { display:none !important; }
+  html:has(.pdf-document), body.pdf-document { margin:0 !important; padding:0 !important; height:auto !important; min-height:0 !important; overflow:visible !important; }
+  .pdf-document, .pdf-document * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .pdf-page { box-sizing:border-box; position:relative; width:1280px; height:665px; margin:0; padding:0; border:0; container-type:size; break-inside:avoid; page-break-inside:avoid; break-after:page; page-break-after:always; }
+  .pdf-page:last-child { break-after:auto; page-break-after:auto; }
+  .pdf-page > :is(.portfolio-root,.project-shell) { height:665px !important; min-height:0 !important; max-width:none !important; margin:0 !important; transform:none !important; translate:none !important; }
+  .pdf-page > :is(.portfolio-root,.project-shell) > :is(.site-header,.project-header) { position:static !important; top:auto !important; transform:none !important; translate:none !important; }
+  .pdf-page :is(.site-header,.project-header) :is(nav,.header-cta,.project-cta,.responsive-menu) { visibility:hidden !important; }
+  .pdf-page main > section { break-inside:avoid; page-break-inside:avoid; }
+  .pdf-page :is(.project-site-footer,.ics-modal-backdrop,.asi-workspace-dialog,.responsive-relationships), .pdf-page dialog { display:none !important; }
+}

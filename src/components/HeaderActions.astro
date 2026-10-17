@@ -1,0 +1,100 @@
+---
+import SavePdf from './SavePdf.astro';
+const { project = false, href = '#portfolio', ariaLabel = 'View Projects', intro = false } = Astro.props;
+---
+<div class:list={['header-actions', project && 'header-actions-project', intro && 'header-actions-intro']}>
+  {project && <a class="project-cta header-action-back" data-header-action href="/">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4m7-7-7 7 7 7" /></svg>
+    <span class="header-action-label">Back to Portfolio</span>
+  </a>}
+  <a class={project ? 'project-cta' : 'header-cta'} data-header-action href={href} aria-label={ariaLabel}>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    <span class="header-action-label">View Projects</span><span class="header-action-arrow" aria-hidden="true">&rarr;</span>
+  </a>
+  <SavePdf intro={intro} />
+</div>
+<style is:global>
+  /* Occupy only the existing CTA grid cell; never contribute a minimum track width. */
+  .header-actions {
+    grid-area: 1 / 3; min-width: 0; width: 100%; height: 4.2cqw;
+    display: grid; grid-template-columns: minmax(0, 1fr) 44px;
+    align-items: stretch; gap: 8px;
+    --header-action-font: clamp(12px, .85vw, 16px);
+    --header-action-icon: clamp(12px, .9vw, 18px);
+    --header-action-radius: 1.4cqw;
+  }
+  .header-actions-project {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.25fr) 44px;
+    --header-action-font: clamp(11px, .7vw, 14px);
+    --header-action-icon: clamp(12px, .85vw, 17px);
+  }
+  .project-shell:has(.docconnect-case) .header-actions { height: 5cqw; }
+  .header-actions > [data-header-action] {
+    box-sizing: border-box; position: static; translate: none;
+    display: flex !important; grid-area: auto !important; align-items: center; justify-content: center;
+    min-width: 0; width: 100% !important; height: 100% !important; margin: 0;
+    padding: 0 .22cqw !important; gap: .2cqw !important; border: 0;
+    border-radius: var(--header-action-radius) !important;
+    font: 800 var(--header-action-font)/1.15 "Segoe UI", Arial, sans-serif !important;
+    color: #fff; text-decoration: none; white-space: normal !important; text-align: center;
+    background: linear-gradient(105deg, #00b9ed, #0787f1 48%, #a600f0);
+    box-shadow: 0 8px 20px #00396c25; cursor: pointer;
+  }
+  .header-actions > .header-action-back { background: linear-gradient(105deg, #0868ed, #4338ca); }
+  .header-actions > [data-header-action] svg {
+    flex: none; width: var(--header-action-icon) !important; height: var(--header-action-icon) !important;
+    fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .header-actions .header-action-label { min-width: 0; font: inherit !important; }
+  .header-actions .header-action-arrow { flex: none; font-size: 1.15em !important; }
+  .header-actions > [data-header-action]:hover { filter: brightness(1.08); }
+  .header-actions > [data-header-action]:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .header-actions > [data-header-action]:disabled { cursor: wait; opacity: .65; }
+  .header-actions > .save-pdf.pdf-icon {
+    align-self: center; width: 44px !important; height: 44px !important;
+    padding: 0 !important; border: 1px solid #ffffff52;
+    border-radius: 12px !important; background: #092b4d; box-shadow: none;
+  }
+  .header-actions > .save-pdf.pdf-icon svg { width: 22px !important; height: 22px !important; }
+  .header-actions > .save-pdf.pdf-icon:hover { background: #164569; }
+  .header-actions > .save-pdf.pdf-icon:focus-visible { outline: 2px solid #80dbff; outline-offset: 3px; }
+  @media (min-width: 1600px) {
+    .header-actions .header-action-label { white-space: nowrap; }
+  }
+  @media (min-width: 1280px) {
+    /* Reserve identity territory and explicit breathing room on both sides
+       of a flexible center zone. Actions retain their content-driven widths. */
+    .header-inner:has(> #nav):has(> .header-actions),
+    .project-header-inner:has(> #project-nav):has(> .header-actions-project) {
+      grid-template-columns: minmax(max-content, .95fr) minmax(max-content, 1.55fr) max-content;
+      column-gap: clamp(24px, 2cqw, 40px);
+    }
+    .project-header-inner:has(> #project-nav):has(> .header-actions-project) {
+      grid-template-columns: minmax(max-content, .8fr) minmax(max-content, 1.55fr) max-content;
+    }
+    .header-inner:has(> #nav):has(> .header-actions) > #nav,
+    .project-header-inner:has(> #project-nav):has(> .header-actions-project) > #project-nav {
+      grid-template-columns: repeat(5, auto);
+      column-gap: clamp(10px, .9cqw, 18px);
+    }
+    .header-actions {
+      display: flex; justify-self: end; width: max-content;
+      gap: 8px;
+    }
+    .header-actions > [data-header-action] {
+      flex: none; width: max-content !important;
+      padding-inline: .75cqw !important; gap: .4cqw !important;
+      white-space: nowrap !important;
+    }
+    .header-actions .header-action-label { white-space: nowrap !important; }
+  }
+  @media (max-width: 767px) {
+    .header-actions {
+      grid-area: 2 / 1 / 3 / -1; height: 44px; gap: 4px;
+      --header-action-font: 12px; --header-action-icon: 14px; --header-action-radius: 12px;
+    }
+    .header-actions-project { --header-action-font: 11px; }
+    .project-shell:has(.docconnect-case) .header-actions { height: 44px; }
+    .header-actions > [data-header-action] { padding-inline: 4px !important; gap: 3px !important; }
+  }
+</style>

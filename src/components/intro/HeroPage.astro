@@ -1,0 +1,30 @@
+---
+import Icon from './IntroIcon.astro';
+import { navigation, pillars, profile } from '../../data/intro-portfolio';
+const gatewayArtwork = [
+  '/intro/hero/about-card-v1.png',
+  '/intro/hero/education-card-v1.png',
+  '/intro/hero/experience-card-v1.png',
+  '/intro/hero/portfolio-card-v1.png',
+];
+---
+<div class="intro-hero-page">
+  <div class="intro-hero-scene" aria-hidden="true">
+    <img class="intro-hero-environment" src="/intro/hero/hero-scene-v1.png" alt="" width="2172" height="724" fetchpriority="high" />
+  </div>
+  <div class="intro-hero-photo"><img src={profile.portrait} alt="Manoj Pant wearing a grey suit" width="1254" height="1254" loading="lazy" /></div>
+  <section class="intro-hero-copy" aria-labelledby="intro-hero-title">
+    <p class="intro-eyebrow">PRODUCT <b>|</b> DATA <b>|</b> AI <b>|</b> ENTERPRISE</p>
+    <h1 id="intro-hero-title">Manoj <span>Pant</span></h1>
+    <p class="intro-designation">SENIOR PRODUCT MANAGER</p>
+    <h2>Product leadership across <em>enterprise platforms,</em><br class="intro-desktop-break"/> <em>data, AI</em> and <em>digital transformation.</em></h2>
+    <p>Senior Product Manager with <strong>10+ years</strong> of experience across Product<br class="intro-desktop-break"/> Management, Business Analysis and Data, working across FinTech,<br class="intro-desktop-break"/> Healthcare, Telecom and enterprise technology environments.</p>
+    <p>I work at the intersection of <strong>business, technology, data and AI,</strong><br class="intro-desktop-break"/> translating complex requirements into scalable products, platforms<br class="intro-desktop-break"/> and measurable business outcomes.</p>
+  </section>
+  <section class="intro-pillars" aria-label="Professional focus">
+    {pillars.map(item => <article class={`intro-pillar intro-tone-${item.tone}`}><span class="intro-icon-disc"><Icon name={item.icon}/></span><h3>{item.title}</h3><p>{item.description}</p></article>)}
+  </section>
+  <nav class="intro-gateways" aria-label="Explore my professional profile">
+    {navigation.map((item, index) => <a class={`intro-gateway intro-tone-${item.tone}`} href={item.href}><img class="intro-artwork intro-gateway-art" src={gatewayArtwork[index]} alt="" width="1672" height="941" loading="eager" /><div class="intro-gateway-copy"><span class="intro-icon-tile"><Icon name={item.icon}/></span><h2>{item.title}</h2><p>{item.description}</p><span class="intro-arrow-circle"><Icon name="arrow" weight={2.2}/></span></div></a>)}
+  </nav>
+</div>
