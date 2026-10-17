@@ -1,15 +1,16 @@
 ---
+import PortfolioIcon from '../PortfolioIcon.astro';
 import { techLayers } from '../../data/portfolio.js';
 ---
 <section class="slide page tech-page" id="tech" aria-labelledby="tech-title">
   <div class="page-inner tech-layout">
-    <div class="tech-heading"><div><div class="eyebrow"><i></i> TECH &amp; DATA</div><h2 id="tech-title">Where product meets <em>technology, AI and data.</em></h2><p>Technical product management grounded in enterprise architecture, APIs, workflows, analytics, integrations and delivery collaboration.</p></div><aside class="translation-note"><b>✦</b><span><strong>PM Translation Layer</strong><small>I translate business intent into product behavior and technical context — connecting customer needs, business outcomes and the systems that execute them.</small></span></aside></div>
+    <div class="tech-heading"><div><div class="eyebrow"><i></i> TECH &amp; DATA</div><h2 id="tech-title">Where product meets <em>technology, AI and data.</em></h2><p>Technical product management grounded in enterprise architecture, APIs, workflows, analytics, integrations and delivery collaboration.</p></div><aside class="translation-note"><b><PortfolioIcon name="bulb" /></b><span><strong>PM Translation Layer</strong><small>I translate business intent into product behavior and technical context — connecting customer needs, business outcomes and the systems that execute them.</small></span></aside></div>
     <div class="tech-content">
       <div class="tech-layers">
-        {techLayers.map(([n, title, details], i) => <article class:list={['tech-layer', `tech-tone-${i + 1}`]}><b>{n}</b><span class="tech-icon">{['◎','♟','♧','⚙','▤','▥'][i]}</span><div><strong>{title}</strong><small>{details}</small></div><i>→</i></article>)}
+        {techLayers.map(([n, title, details], i) => <article class:list={['tech-layer', `tech-tone-${i + 1}`]}><b>{n}</b><span class="tech-icon"><PortfolioIcon name={['target','users','brain','gear','database','chart'][i]} /></span><div><strong>{title}</strong><small>{details}</small></div><i>→</i></article>)}
       </div>
       <div class="technology-model"><div class="tech-model-head"><span>PRODUCT TECHNOLOGY MODEL</span><small>FROM BUSINESS REQUIREMENTS TO REAL-WORLD IMPACT</small></div>
-        <div class="tech-model-chain">{[['Business','Goals, needs and constraints'],['Product','Journeys, features and experiences'],['Intelligence','(AI / GenAI) Decisioning and insights'],['Workflow & Automation','Rules, approvals and orchestration'],['Technology','(APIs & Data) Integrations, architecture and data'],['Outcome','Adoption, efficiency and business value']].map(([name, sub]) => <article><b>{name}</b><small>{sub}</small></article>)}</div>
+        <div class="tech-model-chain">{[['Business','Goals, needs and constraints'],['Product','Journeys, features and experiences'],['Intelligence','(AI / GenAI) Decisioning and insights'],['Workflow & Automation','Rules, approvals and orchestration'],['Technology','(APIs & Data) Integrations, architecture and data'],['Outcome','Adoption, efficiency and business value']].map(([name, sub], i) => <article><PortfolioIcon name={['building','users','brain','gear','database','chart'][i]} /><b>{name}</b><small>{sub}</small></article>)}</div>
         <div class="tech-capability-grid">{[
           ['Customer needs','Business goals','Regulatory needs','Operating model'],
           ['User journeys','Capabilities','Requirements','Roadmap / GTM'],
@@ -18,9 +19,16 @@ import { techLayers } from '../../data/portfolio.js';
           ['APIs & integrations','Modular platforms','DFD / ER models','Field mapping'],
           ['Adoption & usage','Efficiency & cost','Risk & compliance','Business impact']
         ].map((items) => <ul>{items.map((item) => <li>{item}</li>)}</ul>)}</div>
-        <div class="architecture-grid"><aside class="data-source"><b>Data Sources</b>{['Core Systems','External APIs','Partner Systems','Documents','Real-time Data'].map((x, i) => <span>{['▤','♧','♙','▧','▣'][i]} &nbsp; {x}</span>)}</aside><div class="system-architecture"><div class="external-systems">{['Web / Mobile Apps','Partner Systems','Banks / NBFCs','Regulatory Systems','3rd Party Services'].map((x) => <span>{x}</span>)}</div><div class="arch-layer api-layer"><b>♧ &nbsp; API Layer</b><span>(REST APIs, Integrations, Security &amp; Access Control)</span></div><div class="arch-layer"><b>⬡ &nbsp; Product Services</b><span>(Business Logic, Workflows, AI/GenAI, Rules &amp; Compliance)</span></div><div class="arch-layer data-layer"><b>▤ &nbsp; Data Layer</b><span>(SQL, Data Models, DFD, ER Models, Analytics)</span></div></div><aside class="output-impact"><b>Outputs &amp; Impact</b>{['Operational Efficiency','Regulatory Compliance','Better User Experience','Cost Optimization','Business Growth'].map((x,i)=><span>{['⚙','⬡','♟','▣','▥'][i]} &nbsp; {x}</span>)}</aside></div>
-        <div class="tools-strip"><b>KEY TOOLS &amp; TECHNOLOGIES</b><div>{['SQL','Power BI','Tableau','Looker Studio','Excel','Figma','JIRA','APIs','DFD / ER','Data Mapping'].map((x, i) => <span><b>{['▤','▥','▥','◉','▧','✿','◈','☁','♧','▦'][i]}</b>{x}</span>)}</div></div>
+        <div class="architecture-grid"><aside class="data-source"><b>Data Sources</b>{['Core Systems','External APIs','Partner Systems','Documents','Real-time Data'].map((x, i) => <span><PortfolioIcon name={['database','network','users','document','analytics'][i]} /> &nbsp; {x}</span>)}</aside><div class="system-architecture"><div class="external-systems">{['Web / Mobile Apps','Partner Systems','Banks / NBFCs','Regulatory Systems','3rd Party Services'].map((x, i) => <span><PortfolioIcon name={['monitor','network','bank','shield','cloud'][i]} /> {x}</span>)}</div><div class="arch-layer api-layer"><b><PortfolioIcon name="network" /> &nbsp; API Layer</b><span>(REST APIs, Integrations, Security &amp; Access Control)</span></div><div class="arch-layer"><b><PortfolioIcon name="cube" /> &nbsp; Product Services</b><span>(Business Logic, Workflows, AI/GenAI, Rules &amp; Compliance)</span></div><div class="arch-layer data-layer"><b><PortfolioIcon name="database" /> &nbsp; Data Layer</b><span>(SQL, Data Models, DFD, ER Models, Analytics)</span></div></div><aside class="output-impact"><b>Outputs &amp; Impact</b>{['Operational Efficiency','Regulatory Compliance','Better User Experience','Cost Optimization','Business Growth'].map((x,i)=><span><PortfolioIcon name={['gear','shield','users','rupee','chart'][i]} /> &nbsp; {x}</span>)}</aside></div>
+        <div class="tools-strip"><b>KEY TOOLS &amp; TECHNOLOGIES</b><div>{['SQL','Power BI','Tableau','Looker Studio','Excel','Figma','JIRA','APIs','DFD / ER','Data Mapping'].map((x, i) => <span><b style={`color:${['#48b8ff','#f4c626','#66a7e7','#199ce3','#26b66e','#9d70ff','#148aff','#4cc3ff','#51ceff','#91e2ff'][i]}`}>{x === 'Figma' ? <img class="tool-logo" src="/ayu-docconnect/logos/figma.svg" alt="" /> : <PortfolioIcon name={['database','chart','tableau','network','spreadsheet','grid','diamond','cloud','network','grid'][i]} />}</b>{x}</span>)}</div></div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+.tool-logo { display:block; width:1em; height:1em; object-fit:contain; }
+.tech-model-chain article { clip-path:polygon(0 0,88% 0,100% 50%,88% 100%,0 100%,8% 50%); }
+.arch-layer { position:relative; }
+.arch-layer::before { content:""; position:absolute; bottom:100%; left:50%; height:6px; border-left:1px dashed #5be4ff; }
+</style>
