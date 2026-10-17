@@ -1,4 +1,6 @@
 ---
+import PortfolioDiagram from '../PortfolioDiagram.astro';
+import PortfolioIcon from '../PortfolioIcon.astro';
 import { ecosystemCards } from '../../data/portfolio.js';
 ---
 <section class="slide page ecosystem-page" id="ecosystem" aria-labelledby="ecosystem-title">
@@ -9,16 +11,69 @@ import { ecosystemCards } from '../../data/portfolio.js';
       <p>My work spans enterprise products where a feature is only one part of the solution. The product has to connect the user journey with workflows, data, integrations, controls, intelligence and operational readiness.</p>
       <ul class="check-list"><li>Customer and business problem → measurable outcome</li><li>Product journey and workflow across multiple systems</li><li>AI / GenAI opportunity in real business processes</li><li>Automation and integration behavior with enterprise platforms</li><li>Data, operations, compliance and support readiness</li></ul>
       <div class="ecosystem-illustration" aria-label="Product ecosystem diagram">
-        <div class="eco-orbit"><span class="orbit-tag tag-top">♧<b>Customer<br/>Experience</b></span><span class="orbit-tag tag-left">▥<b>Business<br/>Goals</b></span><span class="orbit-tag tag-right">▤<b>Technology<br/>&amp; Data</b></span><span class="orbit-tag tag-bottom-left">⚙<b>Operations<br/>&amp; Support</b></span><span class="orbit-tag tag-bottom-right">⬡<b>Compliance<br/>&amp; Risk</b></span><span class="orbit-core">⬡<b>Product</b></span></div>
+        <div class="eco-orbit"><PortfolioDiagram kind="ecosystem" /></div>
       </div>
       <div class="story-caption">ENTERPRISE PRODUCT THINKING — FROM PROBLEM FRAMING<br/>TO PRODUCTION READINESS</div>
     </article>
     <div class="ecosystem-panel">
       <div class="ecosystem-cards">
-        {ecosystemCards.map(({ title, color, intro, bullets }) => <article class:list={['eco-card', `tone-${color}`]}><span class="eco-icon">{title === 'Business' ? '▦' : title === 'Customer' ? '♙' : title === 'Product' ? '⬡' : title === 'AI & GenAI' ? '♧' : title === 'Automation' ? '⚙' : title === 'Data' ? '▤' : title === 'Operations' ? '♧' : '⬡'}</span><h3>{title}</h3><p>{intro}</p><ul>{bullets.map((line) => <li>{line}</li>)}</ul></article>)}
-        <div class="eco-center"><span>⬡</span><b>Product<br/>Ecosystem</b></div>
+        {ecosystemCards.map(({ title, color, intro, bullets }) => <article class:list={['eco-card', `tone-${color}`]}><span class="eco-watermark" aria-hidden="true"><PortfolioIcon name={{ Business:'building', Customer:'users', Product:'cube', 'AI & GenAI':'brain', Automation:'gear', Data:'database', Operations:'network', Compliance:'shield' }[title]} /></span><span class="eco-icon"><PortfolioIcon name={{ Business:'building', Customer:'user', Product:'cube', 'AI & GenAI':'brain', Automation:'gear', Data:'database', Operations:'users', Compliance:'shield' }[title]} /></span><h3>{title}</h3><p>{intro}</p><ul>{bullets.map((line) => <li>{line}</li>)}</ul></article>)}
+        <div class="eco-center"><span><PortfolioIcon name="cube" /></span><b>Product<br/>Ecosystem</b></div>
+        <svg class="ecosystem-spokes" viewBox="0 0 900 600" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#55acff" stroke-width="1.6" stroke-dasharray="3 5"><path d="m450 300-300-200m300 200V100m0 200 300-200m-300 200H150m300 0h300m-300 0-300 200m300-200v200m0-200 300 200"/></g><g fill="#6cbcff">{[[340,227],[450,213],[560,227],[335,300],[565,300],[340,373],[450,387],[560,373]].map(([x,y])=><circle cx={x} cy={y} r="3"/>)}</g></svg>
       </div>
-      <div class="ecosystem-proof"><div><b>♟</b><strong>100%</strong><small>CROSS FUNCTIONAL<br/>COLLABORATION</small></div><div><b>▤</b><strong>MULTI-SYSTEM</strong><small>INTEGRATIONS<br/>&amp; DATA FLOWS</small></div><div><b>⚙</b><strong>COMPLIANT</strong><small>AND SECURE<br/>BY DESIGN</small></div><div><b>◎</b><strong>MEASURABLE</strong><small>BUSINESS OUTCOMES<br/>AND USER IMPACT</small></div></div>
+      <div class="ecosystem-proof"><div><b><PortfolioIcon name="users" /></b><strong>100%</strong><small>CROSS FUNCTIONAL<br/>COLLABORATION</small></div><div><b><PortfolioIcon name="database" /></b><strong>MULTI-SYSTEM</strong><small>INTEGRATIONS<br/>&amp; DATA FLOWS</small></div><div><b><PortfolioIcon name="gear" /></b><strong>COMPLIANT</strong><small>AND SECURE<br/>BY DESIGN</small></div><div><b><PortfolioIcon name="target" /></b><strong>MEASURABLE</strong><small>BUSINESS OUTCOMES<br/>AND USER IMPACT</small></div></div>
     </div>
   </div>
 </section>
+
+<style>
+.eco-watermark { position:absolute; right:6%; top:16%; width:24%; aspect-ratio:1; color:var(--tone); opacity:.18; pointer-events:none; }
+.eco-watermark :global(svg) { display:block; width:100%; height:100%; }
+.ecosystem-spokes { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+.ecosystem-cards { position:relative; }
+.eco-card { position:relative; z-index:1; }
+.eco-center { z-index:2; }
+.eco-orbit { border:0; border-radius:0; background:none; box-shadow:none; width:100%; }
+
+@media screen and (min-width:1280px) {
+
+#ecosystem .dark-story { padding:min(1.9cqw,3.3cqh); border-radius:1.35cqw; background:linear-gradient(145deg,#062a52 0%,#0b4381 64%,#5130db 100%); }
+#ecosystem .dark-story .eyebrow { font-size:min(.9cqw,1.9cqh); letter-spacing:.13em; }
+#ecosystem .dark-story h2 { margin:1cqh 0 1.5cqh; font-size:min(2.45cqw,5.2cqh); line-height:1.08; letter-spacing:-.045em; }
+#ecosystem .dark-story > p { margin:0 0 1cqh; font-size:min(1.03cqw,2.15cqh); line-height:1.42; }
+#ecosystem .dark-story .check-list { grid-template-columns:minmax(0,1fr); gap:.65cqh; margin:.7cqh 0; }
+#ecosystem .dark-story .check-list li { gap:.65cqw; font-size:min(.89cqw,1.9cqh); line-height:1.25; }
+#ecosystem .dark-story .check-list li::before { width:1.4cqw; height:1.4cqw; font-size:.95cqw; }
+#ecosystem .story-caption { flex:none; margin-top:0; padding-top:1.4cqh; font-size:min(.72cqw,1.55cqh); line-height:1.35; }
+
+#ecosystem .ecosystem-layout { grid-template-columns:minmax(0,38.3fr) minmax(0,61.7fr); gap:1.15cqw; }
+#ecosystem .ecosystem-illustration { flex:1; min-height:0; padding:.3cqh 0; }
+#ecosystem .ecosystem-story .eco-orbit { width:100%; height:100%; min-height:0; }
+#ecosystem .ecosystem-panel { padding:.85cqw; border-radius:1.5cqw; }
+#ecosystem .ecosystem-cards { height:auto; flex:1; grid-template:repeat(3,minmax(0,1fr))/repeat(3,minmax(0,1fr)); gap:1cqw; }
+#ecosystem .eco-card { display:flex; flex-direction:column; align-items:flex-start; text-align:left; gap:0; padding:.7cqw 1cqw; border-radius:1cqw; }
+#ecosystem .eco-icon { width:2.9cqw; height:2.9cqw; font-size:1.8cqw; border-radius:.8cqw; background:linear-gradient(145deg,color-mix(in srgb,var(--tone) 75%,white),var(--tone)); }
+#ecosystem .eco-card h3 { align-self:stretch; margin:.55cqh 0 .5cqh; text-align:left; font-size:1.15cqw; line-height:1.15; }
+#ecosystem .eco-card p { min-height:0; margin:0 0 .75cqh; font-size:.79cqw; line-height:1.3; }
+#ecosystem .eco-card ul { display:grid; align-content:start; gap:.55cqh; }
+#ecosystem .eco-card li { font-size:.75cqw; line-height:1.25; }
+#ecosystem .eco-center { width:auto; height:calc((100% - 2cqw)/3); max-height:none; aspect-ratio:1; border:4px solid #b9e2ff; box-shadow:0 0 0 .65cqw #78bfff18,0 .75cqw 1.7cqw #3176d336; }
+#ecosystem .eco-center span { font-size:3.3cqw; }
+#ecosystem .eco-center b { font-size:1.3cqw; line-height:1.08; }
+#ecosystem .ecosystem-proof { height:5.1cqw; min-height:0; flex:none; margin-top:.75cqw; padding:.35cqw; }
+#ecosystem .ecosystem-proof div { grid-template-columns:3.8cqw 1fr; padding:.3cqw .55cqw; }
+#ecosystem .ecosystem-proof b { font-size:1.95cqw; }
+#ecosystem .ecosystem-proof strong { font-size:.88cqw; }
+#ecosystem .ecosystem-proof div:first-child strong { font-size:1.35cqw; }
+#ecosystem .ecosystem-proof small { font-size:.61cqw; line-height:1.3; }
+
+
+/* Requested card-icon containment and readability only. */
+#ecosystem .eco-watermark { top:.7cqw; right:.7cqw; width:2.9cqw; height:2.9cqw; opacity:.4; }
+#ecosystem .eco-watermark :global(svg) { stroke-width:2.4; }
+#ecosystem .eco-card p, #ecosystem .eco-card li { color:#304e70; }
+#ecosystem .ecosystem-proof strong { color:#0766ce; font-weight:850; }
+#ecosystem .ecosystem-proof small { color:#365372; }
+
+}
+</style>

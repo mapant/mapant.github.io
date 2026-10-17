@@ -1,4 +1,7 @@
 ---
+import PortfolioDiagram from '../PortfolioDiagram.astro';
+import PortfolioIllustration from '../PortfolioIllustration.astro';
+import PortfolioIcon from '../PortfolioIcon.astro';
 import { challengeCards } from '../../data/portfolio.js';
 ---
 <section class="slide page challenge-page" id="challenge" aria-labelledby="challenge-title">
@@ -8,15 +11,52 @@ import { challengeCards } from '../../data/portfolio.js';
       <h2 id="challenge-title">Complex enterprise products rarely have <em>a single problem.</em></h2>
       <p>The hard part is usually the coordination: multiple stakeholders, systems, data sources, business rules, exceptions, regulatory requirements and operational hand-offs have to behave as one product experience.</p>
       <ul class="check-list"><li>Customer and business problem → measurable outcome</li><li>Product journey and workflow across multiple systems</li><li>AI / GenAI opportunity in real business processes</li><li>Automation and integration behavior with enterprise platforms</li><li>Data, operations, compliance and support readiness</li></ul>
-      <div class="challenge-illustration">
-        <div class="people-chip">♧ &nbsp; Customer Need &amp; Experience</div>
-        <div class="challenge-stack"><span>⚙ &nbsp; Business Processes</span><span>⬡ &nbsp; Technology &amp; Integrations</span><span>▤ &nbsp; Data &amp; Intelligence</span><span>⬡ &nbsp; Compliance &amp; Risk</span></div>
-        <div class="stack-side left"><b>People &amp; Stakeholders</b><b>Business Rules</b><b>External Systems</b></div><div class="stack-side right"><b>Operational Readiness</b><b>Measurable Outcomes</b><b>Scalable Growth</b></div>
-      </div>
+      <div class="challenge-illustration"><PortfolioDiagram kind="challenge" /></div>
       <div class="story-caption">PROBLEM FRAMING BEFORE SOLUTION DESIGN</div>
     </article>
     <div class="challenge-cards">
-      {challengeCards.map((card, i) => <article class:list={['challenge-card', `tone-${['blue','purple','amber','blue','purple','amber'][i]}`]}><div class="challenge-card-top"><b>{card.n}</b><small>{card.type}</small></div><h3>{card.title}</h3><p>{card.description}</p><ul>{card.points.map((point) => <li>{point}</li>)}</ul><div class="pm-response"><span class="gear">⚙</span><div><b>PM RESPONSE</b><strong>Frame → Design → Deliver → Measure</strong><small>{card.response}</small></div></div></article>)}
+      {challengeCards.map((card, i) => <article class:list={['challenge-card', `tone-${['blue','purple','amber','blue','purple','amber'][i]}`]}><div class="challenge-card-top"><b>{card.n}</b><small>{card.type}</small></div><h3>{card.title}</h3><div class="challenge-card-art" aria-hidden="true"><PortfolioIllustration name={['workflow','integration','decision','automation','data','alignment'][i]} id={`challenge-${i}`} refined /></div><p>{card.description}</p><ul>{card.points.map((point) => <li>{point}</li>)}</ul><div class="pm-response"><span class="gear"><PortfolioIcon name="gear" /></span><div><b>PM RESPONSE</b><strong>Frame → Design → Deliver → Measure</strong><small>{card.response}</small></div></div></article>)}
     </div>
   </div>
 </section>
+
+<style>
+.challenge-illustration { border:0; background:none; box-shadow:none; }
+.challenge-card-art { width:28%; height:7cqw; }
+.challenge-card-art :global(svg) { display:block; width:100%; height:100%; }
+
+@media screen and (min-width:1280px) {
+
+#challenge .dark-story { padding:min(1.9cqw,3.3cqh); border-radius:1.35cqw; background:linear-gradient(145deg,#062a52 0%,#0b4381 64%,#5130db 100%); }
+#challenge .dark-story .eyebrow { font-size:min(.9cqw,1.9cqh); letter-spacing:.13em; }
+#challenge .dark-story h2 { margin:1cqh 0 1.5cqh; font-size:min(2.45cqw,5.2cqh); line-height:1.08; letter-spacing:-.045em; }
+#challenge .dark-story > p { margin:0 0 1cqh; font-size:min(1.03cqw,2.15cqh); line-height:1.42; }
+#challenge .dark-story .check-list { grid-template-columns:minmax(0,1fr); gap:.65cqh; margin:.7cqh 0; }
+#challenge .dark-story .check-list li { gap:.65cqw; font-size:min(.89cqw,1.9cqh); line-height:1.25; }
+#challenge .dark-story .check-list li::before { width:1.4cqw; height:1.4cqw; font-size:.95cqw; }
+#challenge .story-caption { flex:none; margin-top:0; padding-top:1.4cqh; font-size:min(.72cqw,1.55cqh); line-height:1.35; }
+
+#challenge .challenge-layout { grid-template-columns:minmax(0,37fr) minmax(0,63fr); gap:1.2cqw; }
+#challenge .challenge-story h2 { max-width:95%; }
+#challenge .challenge-illustration { flex:1; display:block; min-height:0; padding:0; margin:0; }
+#challenge .challenge-cards { grid-template:repeat(3,minmax(0,1fr))/repeat(2,minmax(0,1fr)); gap:.8cqw 1.3cqw; }
+#challenge .challenge-card { position:relative; display:flex; flex-direction:column; gap:0; padding:.7cqw; border-radius:1.15cqw; background:linear-gradient(145deg,#fff,var(--cardbg)); }
+#challenge .challenge-card-top { display:flex; justify-content:space-between; gap:0; font-size:1cqw; line-height:1.1; }
+#challenge .challenge-card-top small { font-size:.76cqw; color:var(--tone); }
+#challenge .challenge-card h3 { margin:.6cqh 0; text-align:left; font-size:1.15cqw; line-height:1.1; }
+#challenge .challenge-card > p { width:72%; max-width:none; margin:0 0 .6cqh; font-size:.79cqw; line-height:1.3; }
+#challenge .challenge-card ul { width:73%; margin:0 0 .5cqh; gap:.35cqh; }
+#challenge .challenge-card li { font-size:.73cqw; line-height:1.18; }
+#challenge .challenge-card-art { position:absolute; top:24%; right:3%; width:28%; height:46%; float:none; margin:0; }
+#challenge .pm-response { margin-top:auto; padding:.35cqw .55cqw; gap:.7cqw; min-height:3.1cqw; border-radius:.8cqw; }
+#challenge .pm-response .gear { width:2cqw; height:2cqw; font-size:1.45cqw; box-shadow:0 .2cqw .5cqw color-mix(in srgb,var(--tone) 20%,transparent); }
+#challenge .pm-response b { font-size:.6cqw; line-height:1.15; }
+#challenge .pm-response strong { font-size:.72cqw; line-height:1.3; }
+#challenge .pm-response small { font-size:.64cqw; line-height:1.2; }
+
+
+#challenge .challenge-card > p, #challenge .challenge-card li { color:#304b6c; }
+#challenge .pm-response small { color:#36516f; }
+
+}
+</style>

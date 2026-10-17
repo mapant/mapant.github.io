@@ -1,0 +1,47 @@
+---
+// Editable illustration of the planning desk in the Connect reference.
+---
+<svg viewBox="0 0 600 470" role="img" aria-label="Planning desk with ideas, data and people notes, a laptop, product books and a notebook">
+  <defs>
+    <linearGradient id="portfolio-desk-wall" x2="1" y2="1"><stop stop-color="#fbfaf6"/><stop offset="1" stop-color="#dedbd4"/></linearGradient>
+    <linearGradient id="portfolio-desk-table" x2="0" y2="1"><stop stop-color="#ead4b4"/><stop offset="1" stop-color="#fbf1df"/></linearGradient>
+    <linearGradient id="portfolio-desk-screen" x2="1" y2="1"><stop stop-color="#334b61"/><stop offset="1" stop-color="#102534"/></linearGradient>
+    <linearGradient id="portfolio-desk-metal" x2="0" y2="1"><stop stop-color="#e4e7e6"/><stop offset="1" stop-color="#969f9f"/></linearGradient>
+    <linearGradient id="portfolio-desk-mug" x2="1" y2="0"><stop stop-color="#111c20"/><stop offset=".5" stop-color="#303d3d"/><stop offset="1" stop-color="#101a1c"/></linearGradient>
+  </defs>
+  <rect width="600" height="470" fill="url(#portfolio-desk-wall)"/>
+  <path d="M0 0h60l390 310H335zM133 0h32l390 310h-32zM0 70l260 240h-46L0 107z" fill="#fff" opacity=".65"/>
+  <path d="M0 309 600 289v181H0z" fill="url(#portfolio-desk-table)"/>
+  {[330,365,405,447].map(y=><path d={`M0 ${y} 600 ${y-23}`} stroke="#bf9e72" stroke-opacity=".2" fill="none"/>)}
+  <g stroke="#6a8c3c" stroke-width="3" fill="none"><path d="M73 329 64 137m5 73-32-52m35 83 37-58m-40 99-42-43m43 13 49-24"/></g>
+  <g fill="#719443">{[[63,142,-10],[39,159,-45],[106,183,35],[28,240,-40],[119,226,48],[63,189,-20],[72,260,12]].map(([x,y,angle])=><ellipse cx={x} cy={y} rx="9" ry="24" transform={`rotate(${angle} ${x} ${y})`}/>)}</g>
+  <path d="M43 297h64l-10 65H53z" fill="#e1dfca"/><ellipse cx="75" cy="297" rx="32" ry="8" fill="#d3cbb3"/>
+  <g font-family="Segoe Print,Comic Sans MS,cursive" font-size="17" text-anchor="middle" fill="#23353b">
+    <g transform="rotate(4 255 81)"><rect x="219" y="29" width="72" height="93" fill="#91dfdf"/><path d="M219 117q35-5 72 0v5h-72z" fill="#76c5c7"/><text x="255" y="57">Ideas<tspan x="255" dy="23">to</tspan><tspan x="255" dy="23">Products</tspan></text></g>
+    <g transform="rotate(3 344 98)"><rect x="307" y="48" width="75" height="96" fill="#ffdc6a"/><text x="344" y="79">Data<tspan x="344" dy="23">to</tspan><tspan x="344" dy="23">Insights</tspan></text></g>
+    <g transform="rotate(-3 435 120)"><rect x="396" y="72" width="78" height="96" fill="#ef9eb0"/><text x="435" y="103">People<tspan x="435" dy="23">to</tspan><tspan x="435" dy="23">Impact</tspan></text></g>
+  </g>
+  <g>
+    <path d="m147 326 39-163q3-10 16-9l230 25q10 2 8 14l-27 153z" fill="#20292e"/>
+    <path d="m164 318 33-151 227 24-24 141z" fill="url(#portfolio-desk-screen)"/>
+    <g fill="#eef6f5" font-family="Segoe Print,Comic Sans MS,cursive" font-size="22"><text x="223" y="203">Ideas<tspan x="216" dy="28">Products</tspan><tspan x="211" dy="28">People</tspan><tspan x="207" dy="28">Impact</tspan></text></g>
+    <path d="m299 291 17-3v-16h12v14l9-2v-31h12v28l10-5v-43h12v38l11-10v-45h12v38M286 268q48 1 100-57m-12-1 15-1-2 15" fill="none" stroke="#c7e6eb" stroke-width="2"/>
+    <path d="m126 329 288 16 53 30q-8 10-24 10l-294-23q-23-2-23-17z" fill="url(#portfolio-desk-metal)"/>
+    <path d="m186 339 188 12 37 18-214-15z" fill="#424b4d"/>
+    {[0,1,2].map(row=><path d={`m${194+row*5} ${343+row*4} 180 12`} stroke="#c5cccc" stroke-width="1"/>)}
+    <path d="m252 359 71 5 14 7-79-5z" fill="#a8b1b0"/>
+  </g>
+  <g font-family="Segoe UI,Arial" font-size="13" font-weight="700">
+    {[
+      ['Product Strategy','#e6ae38',215],['AI / GenAI','#a53230',242],['Data & Analytics','#2287a0',269],['Workflow Automation','#aab8b6',296],['Business Impact','#344849',323]
+    ].map(([label,color,y],i)=><g><path d={`m${416+i*3} ${y} 161-4 13 7-166 5z`} fill="#e8ddc1"/><rect x={416+i*3} y={Number(y)+7} width="161" height="22" rx="3" fill={color}/><text x={425+i*3} y={Number(y)+23} fill={i===0||i===3?'#172e36':'#fff'}>{label}</text></g>)}
+  </g>
+  <g>
+    <ellipse cx="405" cy="372" rx="35" ry="9" fill="#0c161a"/>
+    <path d="M370 372h70v63q-35 20-68-1z" fill="url(#portfolio-desk-mug)"/><path d="M440 382c43-16 43 45 0 29" fill="none" stroke="#1b292d" stroke-width="9"/>
+    <text x="404" y="390" text-anchor="middle" fill="#fff" font-family="Segoe Print,Comic Sans MS,cursive" font-size="11">Better<tspan x="404" dy="12">Products</tspan><tspan x="404" dy="12">Brighter</tspan><tspan x="404" dy="12">Outcomes</tspan></text>
+    <path d="m481 393 119-20v88l-139-24z" fill="#fffdf5" stroke="#d0c8b6"/>
+    <path d="m482 405 100-17m-100 28 90-15m-102 24 96-16" stroke="#4c94ab" fill="none" stroke-width="2"/>
+    <path d="m521 441 42-70" stroke="#193b4b" stroke-width="6"/><path d="m557 383 5-9" stroke="#d5a950" stroke-width="7"/>
+  </g>
+</svg>

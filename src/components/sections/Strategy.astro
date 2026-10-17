@@ -1,4 +1,6 @@
 ---
+import PortfolioDiagram from '../PortfolioDiagram.astro';
+import PortfolioIcon from '../PortfolioIcon.astro';
 import { strategySteps } from '../../data/portfolio.js';
 ---
 <section class="slide page strategy-page" id="strategy" aria-labelledby="strategy-title">
@@ -8,19 +10,78 @@ import { strategySteps } from '../../data/portfolio.js';
       <h2 id="strategy-title">From problem framing to <em>measurable product delivery.</em></h2>
       <p>A practical product strategy that keeps customer need, business value, feasibility, AI opportunity, automation potential and measurable outcomes connected.</p>
       <ul class="check-list"><li>Bridge customer needs with business outcomes</li><li>Data-informed, opportunity-driven prioritization</li><li>Scalable and compliant product roadmaps</li><li>Continuous learning and iteration for impact</li></ul>
-      <div class="strategy-art">
-        <div class="people-chip">♟ &nbsp; CUSTOMER NEED &amp; EXPERIENCE</div>
-        <div class="strategy-pyramid"><span>STRATEGY &amp; PRIORITIES</span><span>PRODUCT ROADMAP</span><span>EXECUTION &amp; ENABLEMENT</span><span>MEASUREMENT &amp; OUTCOMES</span></div>
-        <div class="strategy-side left"><b>Market &amp; Competition</b><b>Technology &amp; AI Opportunity</b><b>Data &amp; Insights</b></div><div class="strategy-side right"><b>Business Goals &amp; OKRs</b><b>Risk, Compliance &amp; Constraints</b><b>People, Process &amp; Operations</b></div>
-      </div>
+      <div class="strategy-art"><PortfolioDiagram kind="strategy" /></div>
       <div class="story-caption">A REPEATABLE PRODUCT STRATEGY FOR ENTERPRISE IMPACT</div>
     </article>
     <div class="strategy-main">
-      <div class="strategy-orbit"><div class="wheel-ring"><span class="wheel-seg s1">♟<b>Customer<br/>Value</b></span><span class="wheel-seg s2">▥<b>Business<br/>Impact</b></span><span class="wheel-seg s3">⚙<b>Feasibility</b></span><span class="wheel-seg s4">🚀<b>Execution<br/>Readiness</b></span><span class="wheel-seg s5">▥<b>Measurable<br/>Outcomes</b></span><span class="wheel-seg s6">⟳<b>Continuous<br/>Learning</b></span><div class="wheel-core">⬡<strong>PRODUCT<br/>STRATEGY</strong><small>VISION → ROADMAP<br/>EXECUTION → OUTCOMES</small></div></div></div>
+      <div class="strategy-orbit"><PortfolioDiagram kind="strategy-wheel" /></div>
       <div class="strategy-step-list">
-        {strategySteps.map(([n, stage, title, description, items, focus], i) => <article class:list={['strategy-step-card', `step-${i + 1}`]}><div class="step-head"><b>{n}</b><strong>{stage}</strong><span>{['◎','⌕','▤','▥','◫','🚀','▥'][i]}</span></div><h3>{title}</h3><p>{description}</p><ul>{items.map((item) => <li>{item}</li>)}</ul><div class="step-focus"><b>⚙ &nbsp; PM FOCUS</b><span>{focus}</span></div></article>)}
+        {strategySteps.map(([n, stage, title, description, items, focus], i) => <article class:list={['strategy-step-card', `step-${i + 1}`]}><div class="step-head"><b>{n}</b><strong>{stage}</strong><span><PortfolioIcon name={['target','search','document','chart','map','rocket','chart'][i]} /></span></div><h3>{title}</h3><p>{description}</p><ul>{items.map((item) => <li>{item}</li>)}</ul><div class="step-focus"><b><PortfolioIcon name="gear" /> &nbsp; PM FOCUS</b><span>{focus}</span></div></article>)}
       </div>
-      <div class="strategy-outcomes"><b>STRATEGY OUTCOMES</b><span>Higher customer satisfaction</span><span>Measurable business impact</span><span>Faster time to value</span><span>Scalable &amp; compliant growth</span></div>
+      <div class="strategy-outcomes"><div><b>STRATEGY OUTCOMES</b><small>A consistent approach that turns strategy into measurable business impact.</small></div>{[
+    ['users','HIGHER CUSTOMER SATISFACTION','Better user experience and adoption'],
+    ['chart','MEASURABLE BUSINESS IMPACT','Revenue, efficiency and cost optimization'],
+    ['gear','FASTER TIME TO VALUE','Prioritized and focused delivery'],
+    ['shield','SCALABLE & COMPLIANT GROWTH','Future-ready and risk-aware products']
+  ].map(([icon,title,detail])=><div><span><PortfolioIcon name={icon}/></span><b>{title}</b><small>{detail}</small></div>)}</div>
     </div>
   </div>
 </section>
+
+<style>
+.strategy-art { border:0; background:none; box-shadow:none; }
+
+@media screen and (min-width:1280px) {
+
+#strategy .dark-story { padding:min(1.9cqw,3.3cqh); border-radius:1.35cqw; background:linear-gradient(145deg,#062a52 0%,#0b4381 64%,#5130db 100%); }
+#strategy .dark-story .eyebrow { font-size:min(.9cqw,1.9cqh); letter-spacing:.13em; }
+#strategy .dark-story h2 { max-width:90%; margin:1cqh 0 1.5cqh; font-size:min(2.45cqw,5.2cqh); line-height:1.08; letter-spacing:-.045em; }
+#strategy .dark-story > p { margin:0 0 1cqh; font-size:min(1.03cqw,2.15cqh); line-height:1.42; }
+#strategy .dark-story .check-list { grid-template-columns:minmax(0,1fr); gap:.65cqh; margin:.7cqh 0; }
+#strategy .dark-story .check-list li { gap:.65cqw; font-size:min(.89cqw,1.9cqh); line-height:1.25; }
+#strategy .dark-story .check-list li::before { width:1.4cqw; height:1.4cqw; font-size:.95cqw; }
+#strategy .story-caption { flex:none; margin-top:0; padding-top:1.4cqh; font-size:min(.72cqw,1.55cqh); line-height:1.35; }
+
+#strategy .strategy-layout { grid-template-columns:minmax(0,35fr) minmax(0,65fr); gap:1.45cqw; }
+#strategy .strategy-art { display:block; flex:1; min-height:0; padding:0; margin:.5cqh 0; }
+#strategy .strategy-main { position:relative; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); grid-template-rows:repeat(3,minmax(0,1fr)) auto; gap:.55cqw; }
+#strategy .strategy-step-list { display:contents; }
+#strategy .strategy-step-card { display:flex; flex-direction:column; padding:.55cqw; gap:0; border-radius:.95cqw; }
+#strategy .strategy-step-card.step-1 { grid-area:1/1; }
+#strategy .strategy-step-card.step-2 { grid-area:1/3; --tone:#892ff0; --cardline:#dfc5ff; --cardbg:#fbf5ff; }
+#strategy .strategy-step-card.step-3 { grid-area:2/1; --tone:#00aa87; --cardline:#aee8d9; --cardbg:#effcf8; }
+#strategy .strategy-step-card.step-4 { grid-area:2/3; }
+#strategy .strategy-step-card.step-5 { grid-area:3/1; }
+#strategy .strategy-step-card.step-6 { grid-area:3/2; }
+#strategy .strategy-step-card.step-7 { grid-area:3/3; }
+#strategy .step-head { gap:.55cqw; }
+#strategy .step-head > b { font-size:.9cqw; padding:.3cqw .6cqw; }
+#strategy .step-head > strong { font-size:.78cqw; }
+#strategy .step-head > span { font-size:1.8cqw; }
+#strategy .strategy-step-card h3 { align-self:stretch; margin:.35cqh 0 .6cqh; text-align:left; font-size:.98cqw; line-height:1.15; }
+#strategy .strategy-step-card > p { margin:0 0 .4cqh; font-size:.72cqw; line-height:1.2; }
+#strategy .strategy-step-card ul { display:grid; grid-template-columns:minmax(0,1fr); gap:.3cqh; padding:0 0 0 .8cqw; margin:0 0 .4cqh; font-size:.69cqw; line-height:1.18; }
+#strategy .strategy-step-card li::marker { color:var(--tone); }
+#strategy .step-focus { position:relative; flex:none; margin-top:auto; padding:.35cqw .5cqw .35cqw 3cqw; min-height:0; border-radius:.65cqw; }
+#strategy .step-focus b { font-size:.6cqw; line-height:1.2; }
+#strategy .step-focus b :global(svg) { position:absolute; top:50%; left:.6cqw; transform:translateY(-50%); width:1.7cqw; height:1.7cqw; padding:.25cqw; border-radius:50%; background:white; }
+#strategy .step-focus span { font-size:.66cqw; line-height:1.17; }
+#strategy .strategy-orbit { position:relative; inset:auto; grid-area:1/2/3/3; width:100%; height:auto; max-height:100%; aspect-ratio:1; align-self:center; justify-self:center; transform:none; z-index:2; }
+#strategy .strategy-outcomes { grid-column:1/-1; grid-row:4; display:grid; grid-template-columns:1.2fr repeat(4,1fr); gap:0; margin:0; padding:.5cqw; border-radius:.9cqw; }
+#strategy .strategy-outcomes > div { position:relative; display:flex; flex-direction:column; justify-content:center; min-width:0; padding:.15cqw .55cqw .15cqw 3.4cqw; border-left:1px solid #d8e5f5; }
+#strategy .strategy-outcomes > div:first-child { padding-left:.5cqw; border:0; }
+#strategy .strategy-outcomes b { font-size:.65cqw; line-height:1.15; color:#07316c; }
+#strategy .strategy-outcomes small { margin-top:.25cqw; font-size:.64cqw; line-height:1.2; color:#4c6b91; }
+#strategy .strategy-outcomes span { position:absolute; left:.45cqw; font-size:2cqw; color:#087fff; }
+#strategy .strategy-outcomes > div:nth-child(2) span { color:#892cff; }
+#strategy .strategy-outcomes > div:nth-child(4) span { color:#00ae89; }
+#strategy .strategy-outcomes > div:nth-child(5) span { color:#f39b00; }
+
+
+#strategy .strategy-step-card > p, #strategy .strategy-step-card li, #strategy .step-focus > span { color:#304b6c; }
+#strategy .step-head > strong { color:color-mix(in srgb,var(--tone) 78%,#10284c); font-weight:850; }
+#strategy .step-head :global(svg), #strategy .step-focus :global(svg) { stroke-width:2.35; }
+#strategy .strategy-outcomes b { color:#092c55; font-weight:850; }
+
+}
+</style>
