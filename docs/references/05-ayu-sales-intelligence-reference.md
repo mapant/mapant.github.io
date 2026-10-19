@@ -2,7 +2,25 @@
 
 Complete implementation, product scope, field-force workflow, measurement framework, workspace interaction, architecture, pilot outcomes, responsive behavior, export, historical validation, and maintenance reference for the Ayu Sales Intelligence case study.
 
+<div align="center">
+
+### 📍 Ayu Sales Intelligence · Field Force
+
+![Sales Intelligence](https://img.shields.io/badge/Sales_Intelligence-7C3AED?style=for-the-badge)
+![Field Force](https://img.shields.io/badge/Field_Force-0EA5E9?style=for-the-badge)
+![Location Intelligence](https://img.shields.io/badge/Location_Intelligence-059669?style=for-the-badge)
+![7 Workspaces](https://img.shields.io/badge/7_Workspaces-F59E0B?style=for-the-badge)
+![10 Sections](https://img.shields.io/badge/10_Sections-2563EB?style=for-the-badge)
+![Pilot Metrics](https://img.shields.io/badge/Pilot_Metrics-E11D48?style=for-the-badge)
+
+</div>
+
+> **Visual guide:** 🧭 Context · 🔗 Routing · 🏗️ Architecture · 🧩 Components · 📊 Metrics · 📱 Responsive · 📄 Export · ♿ Accessibility · ✅ Validation · 🛠️ Maintenance
+
+
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 1. Purpose and Product Context
 
@@ -62,6 +80,8 @@ All data, maps, phone screens, dialog content, metrics, and field-workflow views
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 2. Route and Page Entry Point
 
 Current route:
@@ -113,6 +133,8 @@ Next     → Telecom Cost Optimization
 ```
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 3. Case Study Architecture
 
@@ -177,6 +199,8 @@ This separation is important when identifying the actual owner of a content or l
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 4. Section Order and Navigation Anchors
 
 The project contains ten sections.
@@ -211,6 +235,8 @@ Do not replace them with Main Product Portfolio IDs such as:
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 5. Case Study Structure
 
 | # | Section | Main Content | Visual / Technical Implementation |
@@ -231,6 +257,8 @@ Each section is specifically authored for its content.
 The page is **not** implemented as ten identical repeated templates.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 6. Sales Intelligence / Field Force Product Scope
 
@@ -285,6 +313,8 @@ Measurement
 ```
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 7. Primary Actors
 
@@ -350,6 +380,8 @@ Represent users responsible for:
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 8. Actor Data Contract
 
 The actor collection follows the structure:
@@ -379,6 +411,8 @@ visible actor label
 Changing the actor order without reviewing the sprite mapping can display the wrong portrait against an actor.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 9. Ecosystem Portrait Sprite
 
@@ -414,6 +448,8 @@ Preserve:
 Do not treat the sprite as six independent image files.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 10. Overview
 
@@ -481,6 +517,8 @@ aligned.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 11. Ecosystem
 
 ### 11.1 Purpose
@@ -510,6 +548,8 @@ Do not change actor placement independently of:
 - supporting labels.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 12. Challenge
 
@@ -555,6 +595,8 @@ Do not change the semantic meaning of an illustration key while only modifying i
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 13. Challenge Baseline Context
 
 The authored Challenge context includes:
@@ -591,6 +633,8 @@ The website does not fetch or recalculate either value.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 14. Challenge — Prospect Discovery
 
 The discovery problem represents dependence on existing sales relationships rather than systematic prospect intelligence.
@@ -608,6 +652,8 @@ The portfolio does not query a live prospect database.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 15. Challenge — Visit Planning
 
 The planning problem represents inconsistent or manual visit planning.
@@ -622,6 +668,8 @@ The product opportunity is to:
 The website does not generate live sales schedules.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 16. Challenge — Travel Efficiency
 
@@ -638,6 +686,8 @@ The portfolio does not calculate real routes or travel distances.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 17. Challenge — Reassignment
 
 The reassignment problem represents operational dependency on individual identifiers or manual processes.
@@ -651,6 +701,8 @@ The product story introduces centralized territory/allocation controls for:
 Reassignment is represented as product functionality, not as a live portfolio control.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 18. Challenge — Manager Visibility
 
@@ -672,6 +724,8 @@ The portfolio does not query real-time agent-location data.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 19. Challenge — Verification
 
 The verification problem represents the need to confirm that field activity actually occurred.
@@ -688,6 +742,8 @@ These are represented workflows.
 The portfolio does not validate real clinics or field visits.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 20. Prospect Intelligence
 
@@ -725,6 +781,8 @@ These are product-domain concepts.
 The portfolio site does not fetch prospect records from an external service.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 21. Prioritisation
 
@@ -774,6 +832,8 @@ without intentionally changing the layout.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 22. Strategy
 
 The strategy contains six authored steps.
@@ -817,6 +877,8 @@ The semantic strategy and the visual storage order must both be respected.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 23. Beat / Visit Planning
 
 ### 23.1 Purpose
@@ -856,6 +918,8 @@ The website itself does not execute beat-plan logic.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 24. Location-Aware Execution
 
 ### 24.1 Purpose
@@ -892,6 +956,8 @@ The map is an authored portfolio illustration.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 25. Allocation and Territory Controls
 
 The product narrative introduces centralized allocation/reassignment rather than relying on individual phone-number-based reassignment.
@@ -914,6 +980,8 @@ The intent is to improve:
 These controls are static portfolio representations.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 26. PM Scope
 
@@ -967,6 +1035,8 @@ Preserve this order.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 27. PM Deliverables
 
 Two groups of five items are authored directly in Management markup.
@@ -991,6 +1061,8 @@ They are literal component content rather than a remote dataset.
 
 ---
 
+> 🖼️ **ASSETS & VISUALS**
+
 ## 28. PM Scope Production Asset
 
 Current local PM Scope image:
@@ -1006,6 +1078,8 @@ It does not contain the entire PM Scope UI.
 The historical reference-fidelity validation recorded that its pixels/composition differ from the original flattened comparison image.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 29. Product Metrics
 
@@ -1043,6 +1117,8 @@ Each group contains three product signals.
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 30. Prospect Quality & Acquisition Metrics
 
 This group evaluates whether the system is helping teams identify and convert relevant prospects.
@@ -1057,6 +1133,8 @@ Relevant measurements include concepts such as:
 - interested/high-potential coverage.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 31. Field Coverage Metrics
 
@@ -1073,6 +1151,8 @@ These are measurement requirements for the represented product.
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 32. Visit Efficiency Metrics
 
 Visit Efficiency focuses on the relationship between field activity and travel effort.
@@ -1088,6 +1168,8 @@ Important concepts include:
 The website does not calculate these values from GPS records.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 33. Conversion Metrics
 
@@ -1114,6 +1196,8 @@ Relevant measures can include:
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 34. Field Productivity Metrics
 
 Field Productivity evaluates the relationship between:
@@ -1127,6 +1211,8 @@ Field Productivity evaluates the relationship between:
 The focus is not merely on visit volume, but on whether field time is being used effectively.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 35. Product Adoption / Usage Metrics
 
@@ -1145,6 +1231,8 @@ These labels describe the underlying product measurement approach.
 They do **not** mean Google Analytics or Mixpanel is instrumenting the portfolio case-study interactions.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 36. Measurement Instrumentation
 
@@ -1178,6 +1266,8 @@ These are product-measurement requirements rather than live portfolio integratio
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 37. Data and Content Contracts
 
 There is no Sales Intelligence JSON database or CMS.
@@ -1208,6 +1298,8 @@ Current major collections:
 Additional text remains literal markup.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 38. Portfolio / Workspaces
 
@@ -1242,6 +1334,8 @@ Capability Card
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 39. Seven Product Workspaces
 
 | ID | Capability | Dialog |
@@ -1259,6 +1353,8 @@ These IDs are part of the implementation contract.
 Do not rename one without updating all dependent controls and labels.
 
 ---
+
+> ♿ **ACCESSIBILITY & INTERACTION**
 
 ## 40. Workspace Interaction
 
@@ -1296,6 +1392,8 @@ data-asi-close
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 41. Workspace Close Behaviour
 
 Dialogs can be closed through:
@@ -1314,6 +1412,8 @@ The workspace does **not**:
 The dialog is an interactive portfolio demonstration.
 
 ---
+
+> 🛠️ **MAINTENANCE & GUARDRAILS**
 
 ## 42. Workspace Maintenance Contract
 
@@ -1336,6 +1436,8 @@ The current implementation assumes only one dialog should be open at a time.
 Preserve native dialog behavior unless an interaction redesign is explicitly requested.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 43. Native Phone Demonstrations
 
@@ -1371,6 +1473,8 @@ They are not:
 - live field-sales sessions.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 44. Tech & Data Architecture
 
@@ -1418,6 +1522,8 @@ It is not a running system diagram generated from live infrastructure.
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 45. Location Data
 
 The Tech & Data section defines:
@@ -1445,6 +1551,8 @@ Location context supports product concepts such as:
 The portfolio does not read browser GPS or production location history.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 46. Sales Intelligence Map
 
@@ -1474,6 +1582,8 @@ Changing SVG geometry changes the illustration, not product data.
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 47. Outcomes
 
 ### 47.1 Purpose
@@ -1498,6 +1608,8 @@ The results are not:
 - portfolio-calculated values.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 48. Pilot Results
 
@@ -1532,6 +1644,8 @@ Preserve:
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 49. Unique Doctor-Agent Visit Results
 
 The pilot reports:
@@ -1560,6 +1674,8 @@ They must not be described as:
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 50. Distance per Visit Results
 
 The pilot reports:
@@ -1584,6 +1700,8 @@ The portfolio does not calculate these distances at runtime.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 51. Operational Impact
 
 The Outcomes section contains four `impact` records representing themes such as:
@@ -1599,6 +1717,8 @@ They are distinct from the four numeric pilot records.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 52. Business Value
 
 Three `value` records represent the broader business-value themes:
@@ -1610,6 +1730,8 @@ Three `value` records represent the broader business-value themes:
 These value statements summarize the intended product effect rather than introducing new numeric outcome claims.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 53. Baseline vs Pilot Population
 
@@ -1641,6 +1763,8 @@ Do not calculate a portfolio-wide effect by combining the baseline and pilot val
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 54. Main Product Portfolio Metric Relationship
 
 The Main Product Portfolio independently summarizes the Sales Intelligence project in:
@@ -1671,6 +1795,8 @@ Do not silently change:
 without explicit approval.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 55. Product Leadership
 
@@ -1706,6 +1832,8 @@ The Product Leadership narrative positions the project across:
 - operational transformation.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 56. Let’s Connect CTA — Known Source Exception
 
@@ -1750,6 +1878,8 @@ It does not correct production code.
 Do not describe the CTA as fixed until the source is changed and verified.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 57. Header and Navigation
 
@@ -1796,6 +1926,8 @@ The shared Header destination model is separate from the stale section-level Let
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 58. Final Project Navigation
 
 The shared project footer is disabled:
@@ -1830,6 +1962,8 @@ Preserve the authored distinction unless navigation is intentionally standardize
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 59. Four-Project Navigation Loop
 
 The portfolio case-study loop is:
@@ -1849,6 +1983,8 @@ Integrated Channels
 If a route slug or project order changes, review previous/next relationships across all four project pages.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 60. Component Map
 
@@ -1881,6 +2017,8 @@ All paths are relative to the repository root.
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 61. Reusable Story Component
 
 `SalesIntelligenceStory.astro` provides the reusable narrative-panel structure.
@@ -1900,6 +2038,8 @@ Sections can use the common story vocabulary without requiring identical overall
 Do not interpret component reuse as proof that every section should have the same geometry.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 62. Native Illustration System
 
@@ -1933,6 +2073,8 @@ Changing vector artwork should not silently change which business concept the ke
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 63. Icon System
 
 `SalesIntelligenceIcon.astro` provides named inline SVG icons for the project.
@@ -1946,6 +2088,8 @@ When extending the project:
 - do not replace meaningful icons with arbitrary Unicode characters.
 
 ---
+
+> 🖼️ **ASSETS & VISUALS**
 
 ## 64. Production Assets
 
@@ -1974,6 +2118,8 @@ Documentation remains Markdown-only.
 
 ---
 
+> 🖼️ **ASSETS & VISUALS**
+
 ## 65. Asset Interpretation
 
 The three Sales Intelligence project images are production assets.
@@ -1989,6 +2135,8 @@ The earlier implementation used independently generated/recreated imagery.
 Historical fidelity evaluation therefore treated photographic identity separately from general page functionality.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 66. Styling Architecture
 
@@ -2022,6 +2170,8 @@ Do not assume the first local declaration found in Sales SCSS is the winning sty
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 67. Responsive Architecture
 
 Current responsive architecture:
@@ -2044,6 +2194,8 @@ The implementation combines:
 The architecture is not CSS-only.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 68. Desktop Behaviour
 
@@ -2070,6 +2222,8 @@ A dense card appearing valid in SCSS does not by itself prove that it fits at ru
 Dialog size and section size are also separate layout concerns.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 69. Tablet Behaviour
 
@@ -2103,6 +2257,8 @@ Do not introduce a second independent tablet-fit system unless replacing the exi
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 70. Mobile Behaviour
 
 Below:
@@ -2128,6 +2284,8 @@ This includes:
 It does not create a duplicate content set.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 71. Responsive Navigation
 
@@ -2161,6 +2319,8 @@ Do not document it as resolved.
 
 ---
 
+> ♿ **ACCESSIBILITY & INTERACTION**
+
 ## 72. Workspace Accessibility and Native Dialog Behavior
 
 The seven workspaces use native:
@@ -2183,6 +2343,8 @@ Those checks were historical and were not rerun during later documentation synch
 The current source should not be described as formally accessibility-certified.
 
 ---
+
+> 📄 **PDF & EXPORT**
 
 ## 73. PDF / Export Behaviour
 
@@ -2265,6 +2427,8 @@ Print fidelity must be validated separately when PDF behavior changes.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 74. Historical Visual Validation
 
 An earlier October validation compared all ten sections with supplied flattened page references.
@@ -2288,6 +2452,8 @@ It does **not** mean the route or implementation was broken.
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 75. Historical Fidelity Results
 
 | Section | Photo / Illustration Fidelity | Icon / SVG Fidelity | Layout Fidelity | Text / Content | Page Fit |
@@ -2308,6 +2474,8 @@ These results are intentionally conservative.
 They must not be upgraded to PASS without a later explicit comparison.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 76. Historical Remaining Visual Differences
 
@@ -2404,6 +2572,8 @@ Historical differences included:
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 77. Historical Validation Constraint
 
 The original visual comparison used:
@@ -2425,6 +2595,8 @@ The historical fidelity FAIL results remain valid acceptance evidence for that c
 No visual-reference images are retained in the current documentation library.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 78. Historical Baseline Geometry
 
@@ -2454,6 +2626,8 @@ They do not certify later:
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 79. Historical Interaction Validation
 
 The earlier validation recorded:
@@ -2477,6 +2651,8 @@ These tests were not rerun specifically for the documentation consolidation.
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 80. Historical Content Integrity
 
 The earlier report recorded:
@@ -2493,6 +2669,8 @@ This demonstrates that the correction effort intentionally preserved product con
 It is historical evidence, not a current automatic regression test.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 81. Historical Engineering Checks
 
@@ -2513,6 +2691,8 @@ Later final routing/header work separately recorded a successful ten-route build
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 82. Native Browser Zoom
 
 Historical Sales Intelligence validation explicitly did **not** verify:
@@ -2530,6 +2710,8 @@ Do not infer zoom support from:
 - responsive source inspection.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 83. Current Source Exception — Contact Route
 
@@ -2556,6 +2738,8 @@ The exception should remain visible in:
 It should only be marked resolved after production source correction and verification.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 84. Main Portfolio Synchronization
 
@@ -2584,6 +2768,8 @@ When an approved change affects:
 check both the Main Portfolio summary and the detailed case study.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 85. Important Data / Rendering Contracts
 
@@ -2653,6 +2839,8 @@ The same section IDs are required for the ten-page project export.
 
 ---
 
+> 🛠️ **MAINTENANCE & GUARDRAILS**
+
 ## 86. Maintenance Rules
 
 When modifying Ayu Sales Intelligence:
@@ -2689,6 +2877,8 @@ When modifying Ayu Sales Intelligence:
 30. Do not describe source/browser checks as formal accessibility certification.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 87. Current Validation Status
 

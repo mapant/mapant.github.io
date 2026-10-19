@@ -2,7 +2,25 @@
 
 Complete implementation, content, navigation, responsive, interaction, export, and maintenance reference for the ten-section Main Product Portfolio at `/portfolio/`.
 
+<div align="center">
+
+### 🧭 Main Product Portfolio
+
+![Product Portfolio](https://img.shields.io/badge/Product_Portfolio-0A66C2?style=for-the-badge)
+![10 Sections](https://img.shields.io/badge/10_Sections-2563EB?style=for-the-badge)
+![4 Projects](https://img.shields.io/badge/4_Projects-7C3AED?style=for-the-badge)
+![Product Metrics](https://img.shields.io/badge/Product_Metrics-059669?style=for-the-badge)
+![Responsive](https://img.shields.io/badge/Responsive-0891B2?style=for-the-badge)
+![PDF Export](https://img.shields.io/badge/PDF_Export-E76F51?style=for-the-badge)
+
+</div>
+
+> **Visual guide:** 🧭 Context · 🔗 Routing · 🏗️ Architecture · 🧩 Components · 📊 Metrics · 📱 Responsive · 📄 Export · ♿ Accessibility · ✅ Validation · 🛠️ Maintenance
+
+
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 1. Purpose and Scope
 
@@ -53,6 +71,8 @@ The Main Product Portfolio is a static Astro experience built from local authore
 It does not operate the represented banking, healthcare, telecom, analytics, AI, workflow, or enterprise systems.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 2. Route and Page Entry Point
 
@@ -118,6 +138,8 @@ Manoj Pant — Senior Product Manager portfolio and product case studies.
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 3. Routing Context
 
 The Main Product Portfolio originally occupied `/`.
@@ -142,6 +164,8 @@ For migration history, see:
 [09-github-pages-routing-migration.md](09-github-pages-routing-migration.md)
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 4. Page Architecture
 
@@ -188,6 +212,8 @@ It does not use:
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 5. Section Order and Navigation Anchors
 
 The section order is fixed.
@@ -220,6 +246,8 @@ Main Portfolio     Project Case Studies
 Do not copy project navigation IDs into the Main Product Portfolio.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 6. Header and Navigation
 
@@ -377,6 +405,8 @@ title
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 7. Active Section Navigation
 
 Active-state behavior is implemented by:
@@ -432,6 +462,8 @@ The script does **not**:
 - replace native document scrolling.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 8. Overview
 
@@ -552,6 +584,8 @@ The operating-model illustration is native HTML/SVG/CSS and local `PortfolioIllu
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 9. Ecosystem
 
 ### 9.1 Source
@@ -662,6 +696,8 @@ No remote ecosystem diagram or embedded presentation is used.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 10. Challenge
 
 ### 10.1 Source
@@ -763,6 +799,8 @@ Changing `challengeCards` order without updating the illustration mapping can at
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 11. Strategy
 
 ### 11.1 Source
@@ -857,6 +895,8 @@ The strategy cards are deliberately positioned around the central strategy-wheel
 Their visual order should not be changed casually by modifying only CSS grid placement.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 12. PM Scope
 
@@ -1003,6 +1043,8 @@ adoption
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 13. Product Metrics
 
 ### 13.1 Source
@@ -1133,6 +1175,8 @@ Five category summaries are also displayed:
 5. AI & Automation
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 14. Product Portfolio
 
@@ -1388,6 +1432,8 @@ When an approved project title, metric, scope statement, or outcome changes, che
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 15. Tech & Data
 
 ### 15.1 Source
@@ -1579,6 +1625,8 @@ This is a reused production asset rather than a separate Main Portfolio logo fil
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 16. Outcomes
 
 ### 16.1 Source
@@ -1695,6 +1743,8 @@ Do **not** silently normalize one to the other.
 Any reconciliation requires explicit confirmation of intended scope and wording.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 17. Connect
 
@@ -1908,6 +1958,8 @@ The GitHub logo used in the social links is:
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 18. Main Data Source
 
 The primary data file is:
@@ -1940,6 +1992,8 @@ Literal content also exists inside individual Astro section components.
 A text or metric change must therefore be traced to its actual source before editing.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 19. Important Data / Rendering Contracts
 
@@ -2071,6 +2125,8 @@ Changing focus order without updating this icon mapping can create semantic mism
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 20. Component Map
 
 All paths are relative to the repository root.
@@ -2107,6 +2163,8 @@ All paths are relative to the repository root.
 | `src/styles/portfolio-print.css` | Shared print/export styling |
 
 ---
+
+> 🖼️ **ASSETS & VISUALS**
 
 ## 21. Icons, Diagrams, Illustrations, and Assets
 
@@ -2167,6 +2225,8 @@ public/
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 22. Styling Architecture
 
 The Main Product Portfolio uses two primary style layers:
@@ -2196,6 +2256,8 @@ Owns the current viewport-sized desktop frame and dense layout overrides used by
 Because both stylesheets participate in the final cascade, inspecting only `portfolio.scss` is not sufficient to determine final desktop geometry.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 23. Desktop Behaviour
 
@@ -2257,6 +2319,8 @@ The current desktop action controls are standardized through `HeaderActions.astr
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 24. Tablet Behaviour
 
 Tablet range:
@@ -2292,6 +2356,8 @@ The implementation is therefore not CSS-only.
 Do not add a second tablet scaling system without explicitly replacing the existing architecture.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 25. Mobile Behaviour
 
@@ -2342,6 +2408,8 @@ rather than relying on one breakpoint in isolation.
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 26. Responsive Menu Behaviour
 
 The shared Menu is implemented by:
@@ -2385,6 +2453,8 @@ and it remains intentionally deferred.
 Do not document it as resolved.
 
 ---
+
+> 📄 **PDF & EXPORT**
 
 ## 27. PDF / Export Behaviour
 
@@ -2482,6 +2552,8 @@ Actual output fidelity depends on browser print behavior and should be tested se
 
 ---
 
+> ♿ **ACCESSIBILITY & INTERACTION**
+
 ## 28. Accessibility and Interaction Notes
 
 ### 28.1 Section semantics
@@ -2564,6 +2636,8 @@ They do not constitute:
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 29. Known Source Exception
 
 A separately authored CTA inside:
@@ -2589,6 +2663,8 @@ This exception belongs to the Ayu Sales Intelligence source rather than the Main
 It is documented as a known exception and must not be described as resolved until the production source is changed and verified.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 30. Authored Metrics and Scope Boundaries
 
@@ -2621,6 +2697,8 @@ Where values differ between summary and detailed pages, preserve the distinction
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 31. Main Portfolio and Project Case-Study Synchronization
 
 The Main Product Portfolio and detailed project pages do not share a single content model.
@@ -2652,6 +2730,8 @@ Do not assume changing the card automatically updates the case study.
 
 ---
 
+> 🛠️ **MAINTENANCE & GUARDRAILS**
+
 ## 32. Maintenance Rules
 
 When modifying the Main Product Portfolio:
@@ -2678,6 +2758,8 @@ When modifying the Main Product Portfolio:
 20. Do not describe source-level accessibility fixes as formal accessibility certification.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 33. Important Source Relationships
 
@@ -2741,6 +2823,8 @@ portfolio-print.css
 A change to these shared files can affect multiple sections or routes.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 34. Current Validation Status
 

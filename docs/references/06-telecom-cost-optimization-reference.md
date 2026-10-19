@@ -2,7 +2,25 @@
 
 Complete implementation, analytics/product scope, data model, architecture, delivery, navigation, responsive behavior, export, outcome qualification, and maintenance reference for the Telecom Cost Optimization case study.
 
+<div align="center">
+
+### 📡 Telecom Analytics · Cost Optimization
+
+![Telecom](https://img.shields.io/badge/Telecom-E76F51?style=for-the-badge)
+![Analytics](https://img.shields.io/badge/Analytics-0A66C2?style=for-the-badge)
+![Spatial Intelligence](https://img.shields.io/badge/Spatial_Intelligence-059669?style=for-the-badge)
+![CapEx / OpEx](https://img.shields.io/badge/CapEx_%2F_OpEx-F59E0B?style=for-the-badge)
+![10 Sections](https://img.shields.io/badge/10_Sections-2563EB?style=for-the-badge)
+![15–20% Supplied Result](https://img.shields.io/badge/15--20%_Supplied_Result-7C3AED?style=for-the-badge)
+
+</div>
+
+> **Visual guide:** 🧭 Context · 🔗 Routing · 🏗️ Architecture · 🧩 Components · 📊 Metrics · 📱 Responsive · 📄 Export · ♿ Accessibility · ✅ Validation · 🛠️ Maintenance
+
+
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 1. Purpose and Product Context
 
@@ -65,6 +83,8 @@ All maps, bars, source systems, filters, KPIs, and data relationships shown in t
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 2. Route and Page Entry Point
 
 Current route:
@@ -107,6 +127,8 @@ Next     → Integrated Channels
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 3. Case Study Structure
 
 All ten sections are authored directly in:
@@ -132,6 +154,8 @@ The case study does not use a project-specific JSON file, CMS, or external data 
 Detailed content is primarily literal Astro markup.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 4. Section Order and Navigation Anchors
 
@@ -164,6 +188,8 @@ unless the project structure is intentionally redesigned.
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 5. Section Structure
 
 | # | Section | Main Information | Visual / Layout Model |
@@ -190,6 +216,8 @@ content strip.
 These section footers are part of the project content and are distinct from the shared ProjectShell footer.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 6. Telecom / Network Analytics Context
 
@@ -229,6 +257,8 @@ what decision should follow
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 7. Product Problem
 
 The project identifies a common enterprise analytics problem:
@@ -261,6 +291,8 @@ Without a stable join across those records, teams can struggle to answer:
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 8. Problem / Opportunity Areas
 
 The case-study narrative identifies issues such as:
@@ -289,6 +321,8 @@ This is **not** a newly calculated or audited amount in the portfolio.
 No underlying raw financial dataset is shipped with the website.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 9. Core Product Thesis
 
@@ -325,6 +359,8 @@ This principle is central to:
 
 ---
 
+> 🖼️ **ASSETS & VISUALS**
+
 ## 10. Asset Identity
 
 Asset identity is the primary conceptual join key.
@@ -355,6 +391,8 @@ The product story depends on identity being the semantic bridge between operatio
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 11. Geography / Location
 
 Geography is represented through:
@@ -378,6 +416,8 @@ It does **not** query:
 Map markers and regions are static product illustrations.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 12. Finance / Cost Context
 
@@ -410,6 +450,8 @@ It must not be converted into a single-point percentage without confirming:
 - scope.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 13. Decision Users
 
@@ -446,6 +488,8 @@ Uses the model to understand:
 These roles use a shared analytical model but do not necessarily require identical information or views.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 14. Overview
 
@@ -500,6 +544,8 @@ CapEx / OpEx savings via asset visibility optimisation
 Preserve the range and qualification.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 15. Ecosystem
 
@@ -570,6 +616,8 @@ when modifying connector geometry.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 16. Challenge
 
 ### 16.1 Purpose
@@ -629,6 +677,8 @@ Actionable Insight
 ```
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 17. Strategy
 
@@ -702,6 +752,8 @@ Preserve the distinction between:
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 18. PM Scope
 
 ### 18.1 Purpose
@@ -768,6 +820,8 @@ Focuses on:
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 19. Data-Contract Questions
 
 The PM Scope explicitly represents five important data-contract questions.
@@ -785,6 +839,8 @@ These questions represent analytical-product governance.
 They are not automated data-quality checks running on the portfolio website.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 20. Stakeholder Alignment
 
@@ -810,6 +866,8 @@ The Product Manager role is represented as the coordination layer between:
 - user decisions.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 21. Architecture
 
@@ -874,6 +932,8 @@ These correspond to decision needs such as:
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 22. Architecture Trust Concepts
 
 Four quality/trust labels are represented in the architecture/leadership model.
@@ -891,6 +951,8 @@ These represent requirements for trusted analytics.
 They are **not** implemented monitoring endpoints within the portfolio.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 23. Technical Context
 
@@ -919,6 +981,8 @@ The website does not have:
 - operational monitoring.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 24. Delivery
 
@@ -986,6 +1050,8 @@ These are product rollout concepts rather than an automated deployment pipeline.
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 25. Product Explorer
 
 ### 25.1 Purpose
@@ -1031,6 +1097,8 @@ It does **not** change any underlying business calculation.
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 26. Product Explorer Filter Labels
 
 The Product Explorer displays labels such as:
@@ -1063,6 +1131,8 @@ Do not document these labels as interactive dashboard controls.
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 27. Product Explorer Map
 
 The Product Explorer map is implemented with native:
@@ -1090,6 +1160,8 @@ There is no:
 - external GIS dependency.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 28. Impact
 
@@ -1133,6 +1205,8 @@ Combine operational and financial context.
 Use the shared context to support cost and capital-efficiency decisions.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 29. Supplied Outcome
 
@@ -1181,6 +1255,8 @@ without an explicitly approved content change.
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 30. Main Product Portfolio Metric Difference
 
 The Main Product Portfolio product card also describes:
@@ -1220,6 +1296,8 @@ Any reconciliation requires explicit confirmation of:
 - calculation basis.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 31. Product Leadership
 
@@ -1270,6 +1348,8 @@ as analytical maturity stages.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 32. Now / Next / Future
 
 ### Now
@@ -1308,6 +1388,8 @@ It does not mean predictive models are running on the website.
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 33. Cross-Section Conceptual Mapping
 
 Several concepts intentionally repeat across the case study.
@@ -1325,6 +1407,8 @@ Several concepts intentionally repeat across the case study.
 When visual diagrams change, preserve the conceptual meaning across all affected sections.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 34. Data / KPI Framework
 
@@ -1359,6 +1443,8 @@ These concepts should remain semantically consistent across sections.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 35. No Runtime Analytics Engine
 
 The source does **not** include a project-specific:
@@ -1378,6 +1464,8 @@ The project is a static analytical-product case study.
 This distinction is especially important for Product Explorer.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 36. Main Product Portfolio Synchronization
 
@@ -1424,6 +1512,8 @@ Review both locations when changing:
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 37. Real-Time Terminology
 
 The Main Product Portfolio card uses:
@@ -1447,6 +1537,8 @@ Do not automatically rewrite one based on the other.
 If terminology is to be reconciled, confirm the intended product capability and scope first.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 38. Header and Navigation
 
@@ -1500,6 +1592,8 @@ This destination was corrected during the final repository QA/fix pass.
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 39. Project Navigation Anchors
 
 Current project Header links:
@@ -1520,6 +1614,8 @@ Product Leadership   → #leadership
 Preserve these IDs unless the entire project navigation is intentionally updated.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 40. Project Footer
 
@@ -1555,6 +1651,8 @@ shared project-navigation footer
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 41. Four-Project Navigation Loop
 
 Current project order:
@@ -1576,6 +1674,8 @@ Telecom therefore acts as the final project before the navigation cycles back to
 Any project-order change requires reviewing previous/next links across all project routes.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 42. Component Map
 
@@ -1601,6 +1701,8 @@ All paths are relative to the repository root.
 There is no Nokia-specific client application or data-loader script.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 43. Styling Architecture
 
@@ -1629,6 +1731,8 @@ and assume every local declaration wins.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 44. Project Palette
 
 The local project palette begins with variables such as:
@@ -1647,6 +1751,8 @@ Additional project-specific colors and gradients remain literal within the style
 This is not a complete global design-token system for the entire portfolio.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 45. Visual Implementation
 
@@ -1672,6 +1778,8 @@ It does not rely on:
 
 ---
 
+> 🖼️ **ASSETS & VISUALS**
+
 ## 46. Maps and Spatial Visuals
 
 Both the Overview and Product Explorer contain authored map/spatial visuals.
@@ -1694,6 +1802,8 @@ They do not represent:
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 47. Strategy Matrix
 
 The Strategy section uses native HTML/CSS geometry for the:
@@ -1713,6 +1823,8 @@ Review the full matrix when modifying one quadrant.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 48. Trust Pyramid
 
 The Product Leadership section uses native card/geometry structures for the trust model.
@@ -1726,6 +1838,8 @@ Preserve:
 - quality/freshness/governance meaning.
 
 ---
+
+> 🖼️ **ASSETS & VISUALS**
 
 ## 49. Production Assets
 
@@ -1758,6 +1872,8 @@ Documentation remains Markdown-only.
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 50. Responsive Architecture
 
 Current responsive model:
@@ -1780,6 +1896,8 @@ The implementation combines:
 It is not a CSS-only responsive implementation.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 51. Desktop Behaviour
 
@@ -1811,6 +1929,8 @@ A valid outer section size is therefore not enough to prove that every internal 
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 52. Product Explorer Fit Risk
 
 The Product Explorer is one of the densest project sections.
@@ -1834,6 +1954,8 @@ build PASS
 alone to establish explorer fit.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 53. Tablet Behaviour
 
@@ -1867,6 +1989,8 @@ Do not add a second tablet-fit architecture unless intentionally replacing the e
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 54. Mobile Behaviour
 
 Below:
@@ -1891,6 +2015,8 @@ This includes:
 It does not introduce a second copy of the project content.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 55. Responsive Navigation
 
@@ -1923,6 +2049,8 @@ and it remains intentionally deferred.
 Do not document it as resolved.
 
 ---
+
+> 📄 **PDF & EXPORT**
 
 ## 56. PDF / Export Behaviour
 
@@ -2007,6 +2135,8 @@ Actual print/PDF fidelity requires separate runtime validation.
 
 ---
 
+> ♿ **ACCESSIBILITY & INTERACTION**
+
 ## 57. Accessibility and Interaction Notes
 
 The Telecom route has no project-specific custom modal or interactive product application.
@@ -2026,6 +2156,8 @@ Native SVG/diagram content is explanatory rather than a user-operated analytics 
 Source inspection does not constitute formal accessibility certification.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 58. Important Source / Rendering Contracts
 
@@ -2117,6 +2249,8 @@ Main Portfolio outcome.
 
 ---
 
+> 🛠️ **MAINTENANCE & GUARDRAILS**
+
 ## 59. Maintenance Rules
 
 When modifying Telecom Cost Optimization:
@@ -2154,6 +2288,8 @@ When modifying Telecom Cost Optimization:
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 60. Historical Validation
 
 Historical checks performed on:
@@ -2187,6 +2323,8 @@ They were **not**:
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 61. Historical Validation Boundary
 
 The earlier Telecom validation did not establish:
@@ -2203,6 +2341,8 @@ The earlier Telecom validation did not establish:
 Later routing/header changes also mean historical geometry should not be treated as a fresh current acceptance test.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 62. Current Validation Status
 

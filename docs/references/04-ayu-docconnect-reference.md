@@ -2,7 +2,25 @@
 
 Complete implementation, product scope, user journey, measurement, architecture, navigation, responsive behavior, export, historical validation, and maintenance reference for the Ayu DocConnect case study.
 
+<div align="center">
+
+### 🩺 Ayu DocConnect · HealthTech
+
+![HealthTech](https://img.shields.io/badge/HealthTech-00A67E?style=for-the-badge)
+![Doctor Engagement](https://img.shields.io/badge/Doctor_Engagement-0EA5E9?style=for-the-badge)
+![Referral Journey](https://img.shields.io/badge/Referral_Journey-7C3AED?style=for-the-badge)
+![Product Metrics](https://img.shields.io/badge/Product_Metrics-E11D48?style=for-the-badge)
+![10 Sections](https://img.shields.io/badge/10_Sections-059669?style=for-the-badge)
+![Mobile Experience](https://img.shields.io/badge/Mobile_Experience-F59E0B?style=for-the-badge)
+
+</div>
+
+> **Visual guide:** 🧭 Context · 🔗 Routing · 🏗️ Architecture · 🧩 Components · 📊 Metrics · 📱 Responsive · 📄 Export · ♿ Accessibility · ✅ Validation · 🛠️ Maintenance
+
+
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 1. Purpose and Product Context
 
@@ -48,6 +66,8 @@ It does **not** connect to:
 Phone screens, patient names, statuses, earnings, charts, workflows, and architectural diagrams are portfolio representations rather than a running healthcare application.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 2. Route and Page Entry Point
 
@@ -98,6 +118,8 @@ Next     → Ayu Sales Intelligence & Field Force Optimization
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 3. Shared Project-Shell Configuration
 
 `DocConnectCaseStudy.astro` invokes `ProjectShell.astro` with project-specific configuration.
@@ -123,6 +145,8 @@ Important implications:
 - View Projects goes directly to the Main Product Portfolio project section.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 4. Section Order and Navigation Anchors
 
@@ -160,6 +184,8 @@ must not replace the project-specific:
 ```
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 5. Section Metadata
 
@@ -204,6 +230,8 @@ The ratios remain implementation metadata and must not be treated as proof of th
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 6. Case Study Structure
 
 | # | Section | Main Content Sources | Main Presentation |
@@ -220,6 +248,8 @@ The ratios remain implementation metadata and must not be treated as proof of th
 | 10 | Product Leadership | `leadershipCards` | Collaboration map, leadership cards, connect banner and project navigation |
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 7. Doctor Business / Product Scope
 
@@ -258,6 +288,8 @@ The detailed page is independently authored from the Main Product Portfolio DocC
 Changes to one do not automatically update the other.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 8. Primary Stakeholders
 
@@ -326,6 +358,8 @@ These are represented integration/product contexts.
 They are not active service connections made by the portfolio website.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 9. Overview
 
@@ -430,6 +464,8 @@ Standalone Ayu Health branding is intentionally concentrated in the Overview.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 10. Ecosystem
 
 ### 10.1 Purpose
@@ -511,6 +547,8 @@ Four authored outcomes are displayed:
 | Integrated services | Access to ambulance, Google Business and healthcare services |
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 11. Challenge
 
@@ -612,6 +650,8 @@ Four impacts are authored:
 | Underutilised potential | Doctor relationships did not fully convert to patient/business outcomes |
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 12. Strategy
 
@@ -731,6 +771,8 @@ Five priorities are displayed:
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 13. Product Management Scope
 
 ### 13.1 Purpose
@@ -766,6 +808,8 @@ Current phases:
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 14. Product Strategy Phase
 
 Primary description begins:
@@ -783,6 +827,8 @@ Current deliverables:
 - Success metrics
 
 ---
+
+> 🛠️ **MAINTENANCE & GUARDRAILS**
 
 ## 15. Requirement Gathering Phase
 
@@ -802,6 +848,8 @@ Current deliverables:
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 16. Product Design & Documentation Phase
 
 Primary description begins:
@@ -820,6 +868,8 @@ Current deliverables:
 - UAT scenarios.
 
 ---
+
+> 🛠️ **MAINTENANCE & GUARDRAILS**
 
 ## 17. Development & Execution Phase
 
@@ -842,6 +892,8 @@ Current deliverables:
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 18. GTM & Adoption Phase
 
 Primary description begins:
@@ -861,6 +913,8 @@ Current deliverables:
 - feedback.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 19. Monitoring & Continuous Improvement Phase
 
@@ -897,6 +951,8 @@ Current benefit statements:
 - Strong foundation for future scale
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 20. PM Phase Rendering Contract
 
@@ -938,6 +994,8 @@ If it does not, visible text can:
 Do not reorder `phases` without also reordering `phaseTypography`.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 21. Product Metrics
 
@@ -986,6 +1044,8 @@ Continuity
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 22. Core Product Signals
 
 Six signals are displayed in the current framework.
@@ -1013,6 +1073,8 @@ Each line is rendered separately using `<span>` elements.
 Changing the array structure changes approved wrapping and should not be treated as a normal prose edit.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 23. Referral Journey Measurement
 
@@ -1057,6 +1119,8 @@ identify where referrals stall or visibility breaks.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 24. Doctor Lifecycle and Retention
 
 Three lifecycle areas are represented.
@@ -1087,6 +1151,8 @@ and strengthen repeat value.
 ```
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 25. Workflow Adoption and Operational Health
 
@@ -1150,6 +1216,8 @@ Resolve recurring service friction
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 26. Product Decisions Driven by Measurement
 
 The current Metrics section ends with four decision areas:
@@ -1162,6 +1230,8 @@ The current Metrics section ends with four decision areas:
 These are product-decision outcomes of the measurement framework rather than additional metrics.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 27. Product Metrics Replacement History
 
@@ -1189,6 +1259,8 @@ The current source is authoritative.
 No reference image is used as live Product Metrics UI.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 28. Product Metrics Fidelity Status
 
@@ -1225,6 +1297,8 @@ until an explicitly performed later fidelity validation proves otherwise.
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 29. Portfolio / Product Experience
 
 ### 29.1 Purpose
@@ -1259,6 +1333,8 @@ Current authored statements:
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 30. Product Modules
 
 Six modules are rendered.
@@ -1275,6 +1351,8 @@ Six modules are rendered.
 These are authored product capabilities, not functioning modules within the portfolio website.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 31. Native Phone Demonstrations
 
@@ -1365,6 +1443,8 @@ They are not connected to real doctor payouts or financial systems.
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 32. User Experience Highlights
 
 Four UX themes are rendered.
@@ -1377,6 +1457,8 @@ Four UX themes are rendered.
 | Real-time notifications | Patient updates, referral status and incentives |
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 33. Doctor Journey
 
@@ -1401,6 +1483,8 @@ Current supporting intent:
 | Access Services | Book ambulance and other healthcare services |
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 34. Tech & Data
 
@@ -1434,6 +1518,8 @@ Current narrative principles:
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 35. Platform Foundation
 
 The authored foundation sequence presents:
@@ -1450,6 +1536,8 @@ These represent the underlying product architecture concept.
 They are not runtime capabilities of the portfolio website.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 36. System Architecture
 
@@ -1530,6 +1618,8 @@ It does not represent live connections created by the portfolio.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 37. Key Integrations
 
 Six integration summaries are stored in `integrations`.
@@ -1548,6 +1638,8 @@ These integration labels describe the represented product ecosystem.
 No external integration request is initiated by the portfolio page.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 38. Technology Stack
 
@@ -1571,6 +1663,8 @@ These labels describe product/delivery context.
 They do not mean the portfolio route directly connects to or executes these systems.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 39. Technology Logo Implementation
 
@@ -1597,6 +1691,8 @@ This file must be retained when the vendor SVG sources are retained.
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 40. Outcomes
 
 ### 40.1 Purpose
@@ -1621,6 +1717,8 @@ The section presents:
 - stakeholder value.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 41. Key Outcome Metrics
 
@@ -1647,6 +1745,8 @@ Do not transform these values into broader organizational or production-wide cla
 
 ---
 
+> 🖼️ **ASSETS & VISUALS**
+
 ## 42. Adoption Visualization
 
 The source contains six authored adoption-bar fixtures.
@@ -1671,6 +1771,8 @@ They must not automatically be interpreted as independently calculated adoption-
 The website does not calculate the chart from raw product data.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 43. Referral Growth
 
@@ -1698,6 +1800,8 @@ These remain authored pilot-scope statements.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 44. Patient Journey Visibility
 
 The Outcomes section represents:
@@ -1720,6 +1824,8 @@ The portfolio itself does not query a patient-status system.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 45. Ecosystem Value
 
 Five stakeholder-value records are displayed.
@@ -1733,6 +1839,8 @@ Five stakeholder-value records are displayed.
 | Growth / Product | Validated product model with clear path to scale |
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 46. Outcomes Key Takeaway
 
@@ -1759,6 +1867,8 @@ Current photograph:
 ```
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 47. Product Leadership
 
@@ -1823,6 +1933,8 @@ Focus:
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 48. Final Connect Banner
 
 The final section contains an authored healthcare-product collaboration banner.
@@ -1847,6 +1959,8 @@ This banner is content within the case study.
 It is distinct from the Main Product Portfolio `#connect` form.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 49. Project Navigation
 
@@ -1892,6 +2006,8 @@ This final-section return link intentionally targets the project-card section ra
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 50. Shared Header and Navigation
 
 ### 50.1 Header structure
@@ -1935,6 +2051,8 @@ Do not change the DocConnect profile path unintentionally while modifying shared
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 51. Active Section Navigation
 
 `ProjectShell.astro` creates an:
@@ -1969,6 +2087,8 @@ on its project-header navigation link.
 This behavior is shared across project routes.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 52. Main Data Collections
 
@@ -2006,6 +2126,8 @@ Additional content remains literal Astro markup.
 There is no project CMS or remote content database.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 53. Main Portfolio Synchronization
 
@@ -2059,6 +2181,8 @@ review both sources.
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 54. Component Map
 
 All paths below are relative to the repository root.
@@ -2085,6 +2209,8 @@ All paths below are relative to the repository root.
 | `src/data/portfolio.js` | Main Product Portfolio DocConnect summary |
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 55. Style-Layer Ownership
 
@@ -2128,6 +2254,8 @@ Because all layers participate in the final cascade, do not create a new competi
 
 ---
 
+> 🖼️ **ASSETS & VISUALS**
+
 ## 56. Production Assets
 
 All live assets remain under:
@@ -2161,6 +2289,8 @@ Documentation is Markdown-only.
 
 ---
 
+> 🖼️ **ASSETS & VISUALS**
+
 ## 57. Active and Inactive Assets
 
 The presence of an asset under `public/` does not guarantee that it is currently rendered.
@@ -2186,6 +2316,8 @@ Before deleting or replacing an asset:
 3. distinguish historical/stored assets from runtime assets.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 58. DocConnect Landscape Component
 
@@ -2218,6 +2350,8 @@ When adding another instance, provide a distinct class so its generated SVG IDs 
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 59. Responsive Architecture
 
 The project uses the shared responsive model:
@@ -2240,6 +2374,8 @@ It combines:
 - shared responsive navigation logic.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 60. Desktop Behaviour
 
@@ -2270,6 +2406,8 @@ pages[].ratio
 must not be treated as the final rendered aspect ratio.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 61. Tablet Behaviour
 
@@ -2303,6 +2441,8 @@ Do not introduce a second tablet scaling system unless the existing approach is 
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 62. Mobile Behaviour
 
 Below:
@@ -2328,6 +2468,8 @@ This includes:
 It does not create a second duplicate content set.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 63. Responsive Navigation
 
@@ -2360,6 +2502,8 @@ and it remains intentionally deferred.
 Do not document it as resolved.
 
 ---
+
+> 📄 **PDF & EXPORT**
 
 ## 64. PDF / Export Behaviour
 
@@ -2444,6 +2588,8 @@ Actual print/PDF fidelity must be validated separately from source inspection.
 
 ---
 
+> ♿ **ACCESSIBILITY & INTERACTION**
+
 ## 65. Accessibility and Interaction Notes
 
 ### 65.1 Project navigation
@@ -2505,6 +2651,8 @@ Source semantics and keyboard behavior are implementation features.
 They are not formal accessibility certification.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 66. Important Data / Rendering Contracts
 
@@ -2570,6 +2718,8 @@ Navigation, active-state tracking, and PDF export depend on the ten stable secti
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 67. Main Portfolio Metric Distinction
 
 The Main Product Portfolio contains a separate global outcome:
@@ -2605,6 +2755,8 @@ must be confirmed first.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 68. Historical Targeted Validation
 
 A dedicated DocConnect correction pass was performed on:
@@ -2629,6 +2781,8 @@ Those historical results remain evidence for that implementation state.
 They are not a new validation of later routing/header/export changes.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 69. Historical Targeted Validation Results
 
@@ -2656,6 +2810,8 @@ They are not a new validation of later routing/header/export changes.
 The historical fidelity FAIL must remain visible and must not be converted to PASS based on later source inspection alone.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 70. Historical Section Fit Validation
 
@@ -2702,6 +2858,8 @@ They predate later shared route/header/responsive/export changes and must not be
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 71. Historical Portfolio and Asset Validation
 
 The historical validation also recorded:
@@ -2718,6 +2876,8 @@ The five existing Portfolio journey counters were intentionally positioned besid
 Historical visual inspection found no unintended overlap from those counters.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 72. Historical Engineering Checks
 
@@ -2754,6 +2914,8 @@ No zoom matrix was performed.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 73. Historical Validation Boundaries
 
 The historical validation did **not** establish:
@@ -2772,6 +2934,8 @@ Historical temporary QA evidence was stored outside the repository.
 No visual-comparison screenshots are retained in the current documentation directory.
 
 ---
+
+> 🛠️ **MAINTENANCE & GUARDRAILS**
 
 ## 74. Maintenance Rules
 
@@ -2806,6 +2970,8 @@ When modifying Ayu DocConnect:
 27. Preserve historical fidelity FAIL results unless a new validation explicitly replaces them.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 75. Current Validation Status
 

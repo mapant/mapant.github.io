@@ -2,7 +2,25 @@
 
 Complete implementation, product scope, application model, navigation, workspace interaction, responsive behavior, export, accessibility, and maintenance reference for the Integrated Channels case study.
 
+<div align="center">
+
+### 🏦 Integrated Channels · Digital Banking
+
+![FinTech](https://img.shields.io/badge/FinTech-0052CC?style=for-the-badge)
+![Digital Banking](https://img.shields.io/badge/Digital_Banking-0A66C2?style=for-the-badge)
+![12+ Applications](https://img.shields.io/badge/12%2B_Applications-7C3AED?style=for-the-badge)
+![API Integrations](https://img.shields.io/badge/API_Integrations-059669?style=for-the-badge)
+![Compliance](https://img.shields.io/badge/Compliance-E11D48?style=for-the-badge)
+![10 Sections](https://img.shields.io/badge/10_Sections-0891B2?style=for-the-badge)
+
+</div>
+
+> **Visual guide:** 🧭 Context · 🔗 Routing · 🏗️ Architecture · 🧩 Components · 📊 Metrics · 📱 Responsive · 📄 Export · ♿ Accessibility · ✅ Validation · 🛠️ Maintenance
+
+
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 1. Purpose and Product Context
 
@@ -59,6 +77,8 @@ Example APIs, workflows, reports, transactions, controls, and application data s
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 2. Route and Page Entry Point
 
 Current route:
@@ -111,6 +131,8 @@ The route slug must remain aligned with the corresponding Main Product Portfolio
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 3. Case Study Architecture
 
 The project uses two main content layers.
@@ -157,6 +179,8 @@ to open the same canonical application workspaces.
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 4. Section Order and Navigation Anchors
 
 The case study contains ten sections.
@@ -190,6 +214,8 @@ Do not substitute Main Product Portfolio hashes into the project navigation.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 5. Case Study Structure
 
 | # | Section | Primary Content Sources | Main Implementation |
@@ -208,6 +234,8 @@ Do not substitute Main Product Portfolio hashes into the project navigation.
 All ten sections are authored as one continuous project presentation.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 6. Product Scope
 
@@ -249,6 +277,8 @@ They should not be generalized into one universal banking workflow.
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 7. Canonical Application Portfolio
 
 The current application order is:
@@ -280,6 +310,8 @@ Changing application order can affect:
 - workspace launch behavior.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 8. Application Capability Reference
 
@@ -623,6 +655,8 @@ Represented integrations include:
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 9. Canonical `APPS` Data Contract
 
 Each application record contains structured data used by the workspace/modal.
@@ -650,6 +684,8 @@ The application records are local build-time data.
 They are not fetched from a database or external application service.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 10. Application Presentation Dictionaries
 
@@ -697,6 +733,8 @@ Do not silently normalize different descriptions unless the content change is ex
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 11. Overview
 
 ### 11.1 Purpose
@@ -734,6 +772,8 @@ The section uses:
 The case-study Overview is not a screenshot of a production banking product.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 12. Ecosystem
 
@@ -788,6 +828,8 @@ Application positioning should not be changed independently of:
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 13. Challenge
 
 ### 13.1 Purpose
@@ -835,6 +877,8 @@ When replacing the asset, inspect both the image and its CSS treatment.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 14. Strategy
 
 ### 14.1 Purpose
@@ -861,6 +905,8 @@ The current section includes:
 The strategy should continue to represent platform/product thinking rather than independent application delivery only.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 15. PM Scope
 
@@ -931,6 +977,8 @@ The image supports the section visually and does not contain the complete interf
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 16. Product Metrics
 
 ### 16.1 Purpose
@@ -976,6 +1024,8 @@ The portfolio does not fetch:
 Values and frameworks shown in the case study are authored explanatory content.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 17. Product Portfolio / Workspaces
 
@@ -1031,6 +1081,8 @@ It does not:
 - connect to client systems.
 
 ---
+
+> ♿ **ACCESSIBILITY & INTERACTION**
 
 ## 18. Workspace / Modal Interaction
 
@@ -1173,6 +1225,8 @@ Closing:
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 19. Workspace Content Safety
 
 Rendered string values pass through the local:
@@ -1208,6 +1262,8 @@ are synthetic demonstration content.
 Workspace report tables are also synthetic product/report specifications rather than client banking data.
 
 ---
+
+> ♿ **ACCESSIBILITY & INTERACTION**
 
 ## 20. Modal Accessibility
 
@@ -1283,6 +1339,8 @@ It does not constitute:
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 21. Tech & Data
 
 ### 21.1 Purpose
@@ -1328,6 +1386,8 @@ The portfolio website itself does not implement the banking architecture.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 22. Application Integration Reference
 
 | Application | Represented Integrations |
@@ -1350,6 +1410,8 @@ These are represented product integrations.
 They are not network calls made by the portfolio website.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 23. Compliance and Operational Controls
 
@@ -1389,6 +1451,8 @@ That field demonstrates a product guardrail or validation concept.
 It is not a running banking validator implemented by the portfolio website.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 24. Outcomes
 
@@ -1445,6 +1509,8 @@ When an approved outcome changes, review both locations.
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 25. Product Leadership
 
 ### 25.1 Purpose
@@ -1477,6 +1543,8 @@ The final section also owns project-navigation controls separately from the shar
 The shared project footer is intentionally suppressed for this route.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 26. Header and Navigation
 
@@ -1540,6 +1608,8 @@ These IDs must remain aligned with the actual sections.
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 27. Previous / Next Project Navigation
 
 Current case-study relationship:
@@ -1573,6 +1643,8 @@ If a project slug or project order changes, update the relevant previous/next li
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 28. Component Map
 
 All paths are relative to the repository root.
@@ -1598,6 +1670,8 @@ All paths are relative to the repository root.
 | `src/data/portfolio.js` | Main Product Portfolio summary/card for Integrated Channels |
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 29. Active vs Legacy Implementation
 
@@ -1628,6 +1702,8 @@ This distinction is important when:
 Do not assume a similarly named legacy script controls the live route.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 30. Icon and Brand Architecture
 
@@ -1665,6 +1741,8 @@ Preserve:
 - sizing contract.
 
 ---
+
+> 🖼️ **ASSETS & VISUALS**
 
 ## 31. Production Assets
 
@@ -1714,6 +1792,8 @@ Documentation remains Markdown-only.
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 32. Styling Architecture
 
 Primary project stylesheet:
@@ -1753,6 +1833,8 @@ It is a shared dependency and therefore requires cross-project caution.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 33. `ic()` Sizing Helper
 
 Integrated Channels SCSS uses the Sass helper:
@@ -1786,6 +1868,8 @@ Do not replace or combine them without first understanding:
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 34. Desktop Behaviour
 
 Current shared project desktop architecture applies from approximately:
@@ -1816,6 +1900,8 @@ The desktop presentation retains:
 - authored project content density.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 35. Tablet Behaviour
 
@@ -1849,6 +1935,8 @@ Do not introduce a competing tablet-scale system without intentionally replacing
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 36. Mobile Behaviour
 
 Below:
@@ -1873,6 +1961,8 @@ Shared responsive behavior includes:
 This is part of the active architecture and should not be duplicated through a second compact-layout script.
 
 ---
+
+> 📄 **PDF & EXPORT**
 
 ## 37. PDF / Export Behaviour
 
@@ -1965,6 +2055,8 @@ Actual PDF fidelity should be validated separately when export behavior is chang
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 38. Important Data / Rendering Contracts
 
 ### 38.1 Application IDs
@@ -2047,6 +2139,8 @@ Changing one does not automatically update the other.
 
 ---
 
+> 🛠️ **MAINTENANCE & GUARDRAILS**
+
 ## 39. Maintenance Rules
 
 When modifying Integrated Channels:
@@ -2077,6 +2171,8 @@ When modifying Integrated Channels:
 24. Validate workspace interactions separately from visual/layout changes.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 40. Current QA-Resolved Modal Finding
 
@@ -2115,6 +2211,8 @@ For complete QA history, see:
 [07-repository-qa-report.md](07-repository-qa-report.md)
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 41. Current Validation Status
 

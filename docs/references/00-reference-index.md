@@ -2,7 +2,25 @@
 
 Central navigation and governance index for the portfolio documentation, covering the current website architecture, Intro Experience, Main Product Portfolio, four project case studies, repository QA status, implementation context, and GitHub Pages routing history.
 
+<div align="center">
+
+### 📚 Documentation Navigation & Governance
+
+![Documentation](https://img.shields.io/badge/Documentation-0A66C2?style=for-the-badge)
+![10 Routes](https://img.shields.io/badge/10_Routes-2563EB?style=for-the-badge)
+![4 Projects](https://img.shields.io/badge/4_Projects-7C3AED?style=for-the-badge)
+![QA Reference](https://img.shields.io/badge/QA_Reference-059669?style=for-the-badge)
+![Architecture](https://img.shields.io/badge/Architecture-0891B2?style=for-the-badge)
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-181717?style=for-the-badge)
+
+</div>
+
+> **Visual guide:** 🧭 Context · 🔗 Routing · 🏗️ Architecture · 🧩 Components · 📊 Metrics · 📱 Responsive · 📄 Export · ♿ Accessibility · ✅ Validation · 🛠️ Maintenance
+
+
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 1. Documentation Purpose
 
@@ -39,6 +57,8 @@ The application source remains authoritative for actual implementation behavior.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 2. Documentation Structure
 
 The documentation library follows a fixed sequence so that files remain easy to locate and understand.
@@ -72,6 +92,8 @@ The files are intentionally grouped into four logical areas:
 `00-reference-index.md` is the entry point for all of them.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 3. Current Website Route Map
 
@@ -108,6 +130,8 @@ The portfolio currently exposes ten source routes.
 `/intro/` remains available as an alias of the Hero experience, but normal Home and identity navigation uses `/`.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 4. Experience Architecture
 
@@ -162,6 +186,8 @@ Each case study is a dedicated route with its own content, navigation, implement
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 5. Documentation Index
 
 | Seq. | Document | Primary Purpose | Main Coverage |
@@ -177,6 +203,8 @@ Each case study is a dedicated route with its own content, navigation, implement
 | 09 | [GitHub Pages Routing Migration](09-github-pages-routing-migration.md) | Historical technical record | Repository/root-domain migration, interim Intro routing, final Hero/Main Portfolio routing, route updates, GitHub Pages deployment evidence, and final state |
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 6. Which Document to Use
 
@@ -201,6 +229,8 @@ For a shared architectural change affecting several routes, read `08-project-con
 For any change related to a previously identified QA issue, consult `07-repository-qa-report.md` before modifying the implementation.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 7. Source-of-Truth Hierarchy
 
@@ -274,6 +304,8 @@ PDF output PASS
 These are separate validation categories.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 8. Navigation Model
 
@@ -354,6 +386,8 @@ This is documented as a known source exception. It must not be described as reso
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 9. Documentation Conventions
 
 All reference documents follow the same principles.
@@ -420,6 +454,8 @@ Where Main Product Portfolio and detailed case-study metrics differ, preserve th
 
 ---
 
+> 🖼️ **ASSETS & VISUALS**
+
 ## 10. Documentation and Production Assets
 
 The documentation directory is Markdown-only.
@@ -445,6 +481,8 @@ Do not move or delete assets from `public/` merely because they are described in
 Project reference documents may list production asset paths so that maintainers can identify which assets are actually used by each implementation.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 11. Validation Terminology
 
@@ -482,6 +520,8 @@ A source-level accessibility improvement must not be described as formal WCAG co
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 12. Current Repository QA Status
 
 The repository-wide QA record is maintained in:
@@ -517,6 +557,8 @@ The JavaScript-dependent navigation fallback remains deferred and must not be re
 See the QA report for severity, evidence, source locations, fixes, limitations, and post-fix validation details.
 
 ---
+
+> 📄 **PDF & EXPORT**
 
 ## 13. Responsive and PDF Architecture
 
@@ -559,6 +601,8 @@ Detailed behavior is documented in the relevant reference files and `08-project-
 
 ---
 
+> 🛠️ **MAINTENANCE & GUARDRAILS**
+
 ## 14. Maintenance Rules
 
 When updating the repository:
@@ -577,6 +621,8 @@ When updating the repository:
 12. Preserve historical migration evidence as history rather than rewriting it to describe the present.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 15. Documentation Boundaries
 
@@ -606,6 +652,8 @@ Where historical evidence exists, the corresponding document records the date an
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 16. Recommended Reading Order
 
 For someone new to the repository:
@@ -629,6 +677,8 @@ For someone new to the repository:
 For a narrow project change, it is not necessary to read every document. Start with the relevant project reference and consult Project Context or QA only where the change crosses shared architecture or known issues.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 17. Current Documentation State
 

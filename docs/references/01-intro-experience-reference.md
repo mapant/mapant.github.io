@@ -2,7 +2,25 @@
 
 Complete implementation and maintenance reference for the four-page Intro Experience: Hero, About Me, Education, and Work Experience.
 
+<div align="center">
+
+### 👤 Professional Intro Experience
+
+![Intro Experience](https://img.shields.io/badge/Intro_Experience-0A66C2?style=for-the-badge)
+![4 Pages](https://img.shields.io/badge/4_Pages-2563EB?style=for-the-badge)
+![Career](https://img.shields.io/badge/Career-7C3AED?style=for-the-badge)
+![Education](https://img.shields.io/badge/Education-059669?style=for-the-badge)
+![Responsive](https://img.shields.io/badge/Responsive-0891B2?style=for-the-badge)
+![4 Page PDF](https://img.shields.io/badge/4_Page_PDF-E76F51?style=for-the-badge)
+
+</div>
+
+> **Visual guide:** 🧭 Context · 🔗 Routing · 🏗️ Architecture · 🧩 Components · 📊 Metrics · 📱 Responsive · 📄 Export · ♿ Accessibility · ✅ Validation · 🛠️ Maintenance
+
+
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 1. Purpose and Scope
 
@@ -31,6 +49,8 @@ The Intro Experience is implemented as a static Astro experience using local aut
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 2. Route Structure
 
 | Page | Current Route | Source Adapter | Page Component | Active Key |
@@ -58,6 +78,8 @@ The route adapters supply the following titles to `IntroShell.astro`:
 | `/experience/` | `Work Experience` | `Work Experience \| Manoj Pant` |
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 3. Shared Intro Architecture
 
@@ -103,6 +125,8 @@ The shared header separately uses `ResponsiveNavigation.astro`, which also impor
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 4. Experience Flow
 
 The intended professional flow is:
@@ -131,6 +155,8 @@ The Hero additionally exposes gateway cards to:
 - Product Portfolio
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 5. Shared Header and Navigation
 
@@ -214,6 +240,8 @@ The normal HeaderActions Home button is suppressed when `intro={true}`.
 | View Projects | `/portfolio/#portfolio` |
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 6. Hero Page
 
@@ -334,6 +362,8 @@ The artwork array and navigation array are positionally aligned.
 Changing their order independently can attach the wrong artwork to a gateway.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 7. About Me Page
 
@@ -465,6 +495,8 @@ The authored scene uses:
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 8. Education Page
 
 ### 8.1 Source
@@ -585,6 +617,8 @@ Six learning areas are rendered:
 These records describe current/future learning interests, not additional completed qualifications.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 9. Work Experience Page
 
@@ -814,6 +848,8 @@ while the other current company-logo records use assets under:
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 10. Content and Data Source
 
 The central Intro data file is:
@@ -851,6 +887,8 @@ Literal content also exists inside:
 A text change must therefore be traced to its actual rendering source before editing.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 11. Important Data / Rendering Contracts
 
@@ -938,6 +976,8 @@ unless the alias is intentionally redesigned or removed.
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 12. Component Map
 
 All paths below are relative to the repository root.
@@ -967,6 +1007,8 @@ All paths below are relative to the repository root.
 | `src/scripts/save-portfolio-pdf.js` | Four-page Intro print/PDF preparation |
 
 ---
+
+> 🖼️ **ASSETS & VISUALS**
 
 ## 13. Production Assets
 
@@ -1035,6 +1077,8 @@ Production assets must remain under `public/`.
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 14. Styling and Visual Architecture
 
 The Intro Experience uses:
@@ -1070,6 +1114,8 @@ The Intro header uses:
 Page-specific content may vary, but page-specific CSS should not independently reposition or resize the shared Intro header.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 15. Desktop Layout
 
@@ -1119,6 +1165,8 @@ Header spacing and action capacity were deliberately stabilized so that active-s
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 16. Tablet Behaviour
 
 Tablet range:
@@ -1156,6 +1204,8 @@ Do not introduce a second independent tablet-scaling architecture unless explici
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 17. Mobile Behaviour
 
 Native mobile behavior applies below:
@@ -1185,6 +1235,8 @@ The shared Menu closes when:
 - the compact media-query state changes.
 
 ---
+
+> ♿ **ACCESSIBILITY & INTERACTION**
 
 ## 18. Accessibility and Interaction
 
@@ -1285,6 +1337,8 @@ No formal accessibility certification follows from the source-level accessibilit
 
 ---
 
+> 📄 **PDF & EXPORT**
+
 ## 19. Intro PDF / Export Behaviour
 
 ### 19.1 Trigger
@@ -1382,6 +1436,8 @@ Actual PDF pagination/render fidelity therefore depends partly on the browser pr
 
 ---
 
+> 🛠️ **MAINTENANCE & GUARDRAILS**
+
 ## 20. Maintenance Rules
 
 When changing the Intro Experience:
@@ -1403,6 +1459,8 @@ When changing the Intro Experience:
 15. Treat professional facts, dates, roles, metrics, certifications, and project claims as authored content; do not silently reconcile or rewrite them without approval.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 21. Important Source Relationships
 
@@ -1447,6 +1505,8 @@ A change to a shared file can affect more than one Intro route.
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 22. Known Implementation Considerations
 
 ### Shared data does not control all visible copy
@@ -1478,6 +1538,8 @@ The active Intro imagery comes from `public/` and native source components.
 Do not substitute documentation assets or historical visual references.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 23. Validation Status
 

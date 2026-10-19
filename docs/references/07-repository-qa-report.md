@@ -2,7 +2,25 @@
 
 Repository-wide record of the original static QA review, targeted validation, approved fixes, deferred risk, later technical validation, known source exceptions, historical evidence, and remaining verification boundaries.
 
+<div align="center">
+
+### ✅ Repository QA · Validation & Risk
+
+![QA Report](https://img.shields.io/badge/QA_Report-0A66C2?style=for-the-badge)
+![0 Critical](https://img.shields.io/badge/0_Critical-059669?style=for-the-badge)
+![0 High](https://img.shields.io/badge/0_High-059669?style=for-the-badge)
+![3 Medium](https://img.shields.io/badge/3_Medium-F59E0B?style=for-the-badge)
+![2 Low](https://img.shields.io/badge/2_Low-EAB308?style=for-the-badge)
+![4 Resolved · 1 Deferred](https://img.shields.io/badge/4_Resolved_%C2%B7_1_Deferred-7C3AED?style=for-the-badge)
+
+</div>
+
+> **Visual guide:** 🧭 Context · 🔗 Routing · 🏗️ Architecture · 🧩 Components · 📊 Metrics · 📱 Responsive · 📄 Export · ♿ Accessibility · ✅ Validation · 🛠️ Maintenance
+
+
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 1. Purpose
 
@@ -34,6 +52,8 @@ The original five-finding count must remain historically accurate even when late
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 2. Current Documentation Baseline
 
 Current documentation is aligned to the source state associated with:
@@ -61,6 +81,8 @@ The repository source remains authoritative for current implementation behavior.
 Historical QA evidence remains authoritative only for the source state and scope in which it was originally performed.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 3. QA History Overview
 
@@ -119,6 +141,8 @@ Those later checks validate the final recorded repository source state more broa
 They do **not** retroactively mean that every original QA fix was individually runtime-tested immediately after its implementation.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 4. Original QA Scope
 
@@ -182,6 +206,8 @@ severity.
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 5. Routes Covered
 
 The original QA was performed before the final routing migration was complete.
@@ -219,6 +245,8 @@ Current route map:
 The current ten-route architecture should not be confused with the route state in effect during every historical test.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 6. Shared Areas Reviewed
 
@@ -259,6 +287,8 @@ Because many of these files are shared, a defect in one shared component can aff
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 7. Intentionally Excluded Areas
 
 The original static QA intentionally did **not** perform:
@@ -289,6 +319,8 @@ It was not silently rerun or upgraded during the QA consolidation.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 8. Original QA Summary
 
 Original finding counts:
@@ -314,6 +346,8 @@ Current disposition:
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 9. Finding Classification Definitions
 
 ### Confirmed Defect
@@ -336,9 +370,17 @@ The finding remains known and intentionally unchanged.
 
 ---
 
+<div align="center">
+
+![QA & VALIDATION](https://img.shields.io/badge/QA_&_VALIDATION-059669?style=flat-square)
+
+</div>
+
 # Original QA Findings
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 10. Finding 1 — Integrated Channels Modal Focus Handling
 
@@ -426,6 +468,8 @@ If additional interactive controls are introduced, the focus logic must be redes
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 11. Finding 2 — Connect Form Accessible Names
 
 ### Original severity
@@ -505,6 +549,8 @@ Source inspection confirms the explicit names.
 Formal screen-reader/assistive-technology validation was not performed as part of the source fix.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 12. Finding 3 — JavaScript-Dependent Responsive Navigation
 
@@ -588,6 +634,8 @@ Do **not** describe the responsive-navigation fallback as fixed.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 13. Finding 4 — Empty Inquiry Topic Select
 
 ### Original severity
@@ -649,6 +697,8 @@ RESOLVED IN SOURCE
 ```
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 14. Finding 5 — Telecom View Projects CTA
 
@@ -730,9 +780,17 @@ Full runtime route/navigation verification was not part of the original source-f
 
 ---
 
+<div align="center">
+
+![QA & VALIDATION](https://img.shields.io/badge/QA_&_VALIDATION-059669?style=flat-square)
+
+</div>
+
 # Consolidated Finding Table
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 15. Original Five-Finding Matrix
 
@@ -745,6 +803,8 @@ Full runtime route/navigation verification was not part of the original source-f
 | 5 | Low | CONFIRMED DEFECT | Telecom View Projects CTA | VALID BUT LOW PRACTICAL IMPACT | Resolved in source |
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 16. Implemented Fix Summary
 
@@ -799,6 +859,8 @@ Current explicit destination:
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 17. Deferred Finding Summary
 
 The only original finding intentionally left unresolved is:
@@ -828,9 +890,17 @@ It should not be changed casually while working on a single route.
 
 ---
 
+<div align="center">
+
+![QA & VALIDATION](https://img.shields.io/badge/QA_&_VALIDATION-059669?style=flat-square)
+
+</div>
+
 # Known Source Exceptions Outside the Original Five Findings
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 18. Ayu Sales Intelligence `/#connect` CTA
 
@@ -880,6 +950,8 @@ until explicitly fixed and verified.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 19. Why Known Exceptions Are Kept Separate
 
 The repository QA count represents a specific historical audit.
@@ -905,9 +977,17 @@ This preserves both:
 
 ---
 
+<div align="center">
+
+![QA & VALIDATION](https://img.shields.io/badge/QA_&_VALIDATION-059669?style=flat-square)
+
+</div>
+
 # Validation History
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 20. Original QA Methodology
 
@@ -929,6 +1009,8 @@ The review looked for:
 It did not intentionally perform broad visual or runtime testing.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 21. Targeted Validation Methodology
 
@@ -959,6 +1041,8 @@ Finding 5 → Valid but low practical impact
 This targeted pass should not be described as a second full audit.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 22. Source Fix Validation vs Runtime Validation
 
@@ -998,6 +1082,8 @@ while some runtime scenarios still remain unverified.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 23. Historical Ayu Sales Intelligence Validation
 
 A separate earlier visual/interaction pass for Ayu Sales Intelligence recorded:
@@ -1027,6 +1113,8 @@ For detailed historical evidence, see:
 [05-ayu-sales-intelligence-reference.md](05-ayu-sales-intelligence-reference.md)
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 24. Historical Ayu DocConnect Validation
 
@@ -1058,6 +1146,8 @@ For details, see:
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 25. Historical Telecom Validation
 
 Historical Telecom checks recorded:
@@ -1083,6 +1173,8 @@ For details, see:
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 26. Historical GitHub Pages Validation
 
 The earlier root-hosting migration work recorded successful GitHub Pages deployment evidence for the then-current release.
@@ -1104,6 +1196,8 @@ For migration/deployment history, see:
 [09-github-pages-routing-migration.md](09-github-pages-routing-migration.md)
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 27. Final Routing / Header Technical Validation
 
@@ -1150,6 +1244,8 @@ Final repository build after subsequent routing/header work → PASS
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 28. Current Route Generation Evidence
 
 The later final build generated ten routes corresponding to the current source architecture.
@@ -1181,9 +1277,17 @@ It does not by itself validate:
 
 ---
 
+<div align="center">
+
+![QA & VALIDATION](https://img.shields.io/badge/QA_&_VALIDATION-059669?style=flat-square)
+
+</div>
+
 # Current QA Status
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 29. Current Finding Status
 
@@ -1197,6 +1301,8 @@ It does not by itself validate:
 | Sales Intelligence `/#connect` CTA | **Known unresolved source exception** |
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 30. Original Severity vs Current Unresolved State
 
@@ -1227,6 +1333,8 @@ For operational maintenance purposes, however, the remaining known unresolved it
 These are different categories.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 31. Runtime / Manual Verification Still Appropriate
 
@@ -1281,6 +1389,8 @@ Native browser zoom remains a separate validation category.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 32. Accessibility Status
 
 Current source contains several accessibility improvements, including:
@@ -1315,6 +1425,8 @@ No claim is made that the repository has completed:
 - full keyboard matrix testing.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 33. Responsive QA Status
 
@@ -1356,6 +1468,8 @@ particularly in dense sections.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 34. PDF QA Status
 
 Current source confirms:
@@ -1390,6 +1504,8 @@ The export architecture is source-confirmed.
 Actual browser print output was not newly certified during documentation synchronization.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 35. Visual Fidelity Status
 
@@ -1431,6 +1547,8 @@ They also must not be silently upgraded to PASS.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 36. Business-Metric Validation Boundary
 
 Repository QA validates implementation/source behavior.
@@ -1450,6 +1568,8 @@ Those values are authored portfolio content.
 The QA process only checks whether the source contains and presents them consistently within its intended implementation.
 
 ---
+
+> 🛠️ **MAINTENANCE & GUARDRAILS**
 
 ## 37. External Service Boundary
 
@@ -1476,6 +1596,8 @@ The website primarily renders authored explanatory content.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 38. QA Maintenance Rules
 
 When updating this report:
@@ -1498,6 +1620,8 @@ When updating this report:
 16. Do not invent tests that were not performed.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 39. Evidence Hierarchy
 
@@ -1527,6 +1651,8 @@ QA does not independently redefine those claims.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 40. Current QA Summary
 
 Current overall repository QA state:
@@ -1549,6 +1675,8 @@ Current overall repository QA state:
 | Current PDF output certification | Not performed |
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 41. Current Validation Baseline
 

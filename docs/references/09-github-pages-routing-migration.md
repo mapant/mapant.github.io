@@ -2,7 +2,25 @@
 
 Complete technical history of repository root-hosting migration, Intro Experience introduction, final Hero/Main Product Portfolio route migration, GitHub Pages deployment architecture, navigation changes, export-route updates, historical deployment evidence, and current maintenance boundaries.
 
+<div align="center">
+
+### 🚀 GitHub Pages · Routing Migration
+
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-181717?style=for-the-badge)
+![Routing Migration](https://img.shields.io/badge/Routing_Migration-0A66C2?style=for-the-badge)
+![Root Hosting](https://img.shields.io/badge/Root_Hosting-2563EB?style=for-the-badge)
+![10 Routes](https://img.shields.io/badge/10_Routes-7C3AED?style=for-the-badge)
+![Deployment](https://img.shields.io/badge/Deployment-059669?style=for-the-badge)
+![PDF Routes](https://img.shields.io/badge/PDF_Routes-E76F51?style=for-the-badge)
+
+</div>
+
+> **Visual guide:** 🧭 Context · 🔗 Routing · 🏗️ Architecture · 🧩 Components · 📊 Metrics · 📱 Responsive · 📄 Export · ♿ Accessibility · ✅ Validation · 🛠️ Maintenance
+
+
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 1. Purpose
 
@@ -55,6 +73,8 @@ Historical deployment evidence remains tied to the source state in which it was 
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 2. Current Source Baseline
 
 Current documentation is aligned to the source state associated with:
@@ -86,6 +106,8 @@ C:\Users\Manoj Pant\GitHub\manoj-product-portfolio
 The local folder name does not control the public GitHub Pages URL.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 3. Migration Timeline
 
@@ -130,9 +152,17 @@ Project links and PDF route behavior aligned
 
 ---
 
+<div align="center">
+
+![HISTORY & DEPLOYMENT](https://img.shields.io/badge/HISTORY_&_DEPLOYMENT-7C3AED?style=flat-square)
+
+</div>
+
 # Repository / Root-Hosting Migration
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 4. Original Hosting State
 
@@ -188,6 +218,8 @@ Because the old repository occupied the root site, some root-relative navigation
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 5. Root-Domain Migration Decision
 
 The approved solution was to make the new portfolio repository the GitHub Pages user-site repository:
@@ -208,6 +240,8 @@ The old portfolio repository was retained as a backup rather than deleted.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 6. Repository Renames
 
 The repository renames were completed manually through the GitHub user interface.
@@ -222,6 +256,8 @@ The assistant did **not** perform the GitHub UI renames.
 The repository migration preserved the old repository rather than deleting it.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 7. Repository Identity Verification
 
@@ -253,6 +289,8 @@ was the renamed **new portfolio repository**, not the old root portfolio.
 
 ---
 
+> 🛠️ **MAINTENANCE & GUARDRAILS**
+
 ## 8. Backup Repository Boundary
 
 The previous root portfolio was preserved as:
@@ -274,6 +312,8 @@ for the backup repository.
 Do not claim that backup Pages was disabled unless separately verified.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 9. Local Repository Name
 
@@ -302,9 +342,17 @@ origin
 
 ---
 
+<div align="center">
+
+![HISTORY & DEPLOYMENT](https://img.shields.io/badge/HISTORY_&_DEPLOYMENT-7C3AED?style=flat-square)
+
+</div>
+
 # GitHub Pages Configuration
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 10. Astro Root-Site Configuration
 
@@ -333,6 +381,8 @@ configured.
 This is appropriate for a root GitHub Pages user site.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 11. Why No Subpath `base` Is Required
 
@@ -372,6 +422,8 @@ Therefore the intended URL model is:
 Root-relative URLs now correctly resolve against the intended portfolio site.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 12. Active Deployment Workflow
 
@@ -419,6 +471,8 @@ Node version:
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 13. Inactive Workflow Backup
 
 The repository also contains:
@@ -439,9 +493,17 @@ Do not treat it as a second deployment pipeline.
 
 ---
 
+<div align="center">
+
+![HISTORY & DEPLOYMENT](https://img.shields.io/badge/HISTORY_&_DEPLOYMENT-7C3AED?style=flat-square)
+
+</div>
+
 # Historical Root Deployment
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 14. Root-Hosting Migration Commit
 
@@ -481,6 +543,8 @@ to support root-domain deployment.
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 15. Historical Push
 
 The root-hosting migration push advanced:
@@ -509,6 +573,8 @@ mapant/mapant.github.io
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 16. Historical GitHub Actions Deployment
 
 Recorded GitHub Actions run:
@@ -535,6 +601,8 @@ It does not independently establish the live deployment status of every later co
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 17. Historical Five-Route Build
 
 At the time of the original root-hosting deployment, the repository produced five static pages.
@@ -556,6 +624,8 @@ The five published pages were the then-root Main Product Portfolio plus the four
 This occurred **before** the Intro Experience and final routing architecture expanded the site to the current ten routes.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 18. Historical Published Routes
 
@@ -588,6 +658,8 @@ Therefore historical root-route test results must not be described as Hero-route
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 19. Historical HTTP Validation
 
 Recorded historical results:
@@ -603,6 +675,8 @@ Recorded historical results:
 These results belong to the 10 October 2026 root-hosting deployment state.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 20. Historical Asset / Link Validation
 
@@ -637,6 +711,8 @@ This provided evidence that the root-relative URL migration worked for the then-
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 21. Historical HTML Hash Validation
 
 Historical live HTML was compared against local production output.
@@ -654,6 +730,8 @@ This established that the published HTML matched the local build at the time of 
 It does not establish hash equality for the current ten-route implementation.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 22. Historical Browser Validation
 
@@ -677,6 +755,8 @@ Pixel-perfect visual fidelity was not certified.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 23. Historical Whitespace Validation
 
 The migration work recorded:
@@ -693,9 +773,17 @@ It does not establish visual correctness.
 
 ---
 
+<div align="center">
+
+![PRODUCT & EXPERIENCE CONTEXT](https://img.shields.io/badge/PRODUCT_&_EXPERIENCE_CONTEXT-0A66C2?style=flat-square)
+
+</div>
+
 # Intro Experience Introduction
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 24. Intermediate Routing State
 
@@ -723,6 +811,8 @@ The Intro Experience existed alongside it.
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 25. Intro Architecture Introduced
 
 The Intro Experience added shared structures including:
@@ -741,6 +831,8 @@ intro-portfolio.js
 The experience was designed to provide professional context before the user entered the detailed Product Portfolio.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 26. Intermediate Experience Flow
 
@@ -765,9 +857,17 @@ This created the basis for the later route migration.
 
 ---
 
+<div align="center">
+
+![HISTORY & DEPLOYMENT](https://img.shields.io/badge/HISTORY_&_DEPLOYMENT-7C3AED?style=flat-square)
+
+</div>
+
 # Final Content Routing Migration
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 27. Final Routing Objective
 
@@ -789,6 +889,8 @@ The previous Hero route:
 was retained as an alias.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 28. Final Route Migration
 
@@ -822,6 +924,8 @@ The resulting current architecture is:
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 29. Current Route Map
 
 | # | Page | Route | Source |
@@ -838,6 +942,8 @@ The resulting current architecture is:
 | 10 | Telecom Cost Optimization | `/projects/telecom-cost-optimization/` | `src/pages/projects/telecom-cost-optimization.mdx` |
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 30. Current Route Hierarchy
 
@@ -859,6 +965,8 @@ The four detailed project slugs were preserved during the final root/content-rou
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 31. Content Preservation During Migration
 
 The final route migration was intended to move existing experiences rather than rewrite them.
@@ -879,6 +987,8 @@ The migration preserved:
 The change was primarily a route/navigation migration rather than a product-content rewrite.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 32. Main Product Portfolio Move
 
@@ -917,6 +1027,8 @@ Connect
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 33. Hero Move
 
 Before the final migration:
@@ -945,9 +1057,17 @@ for backward compatibility.
 
 ---
 
+<div align="center">
+
+![REFERENCE DETAIL](https://img.shields.io/badge/REFERENCE_DETAIL-6B7280?style=flat-square)
+
+</div>
+
 # `/intro/` Alias
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 34. Alias Implementation
 
@@ -983,6 +1103,8 @@ It is **not** implemented through an HTTP redirect.
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 35. Normal Navigation Uses Root
 
 Although `/intro/` remains valid, normal Home and identity navigation uses:
@@ -994,6 +1116,8 @@ Although `/intro/` remains valid, normal Home and identity navigation uses:
 This prevents the website from treating `/intro/` as the canonical Home destination.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 36. `/intro/` Route vs `/intro/` Asset Directory
 
@@ -1037,9 +1161,17 @@ Route migration and asset-directory naming are separate concerns.
 
 ---
 
+<div align="center">
+
+![HISTORY & DEPLOYMENT](https://img.shields.io/badge/HISTORY_&_DEPLOYMENT-7C3AED?style=flat-square)
+
+</div>
+
 # Navigation Migration
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 37. Navigation Destinations Requiring Update
 
@@ -1068,6 +1200,8 @@ required navigation destinations to be reviewed across:
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 38. Current Global Navigation Intent
 
 | Intent | Current Destination |
@@ -1082,6 +1216,8 @@ required navigation destinations to be reviewed across:
 This table represents the intended current route model.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 39. Intro Navigation After Migration
 
@@ -1101,6 +1237,8 @@ The Intro Header does not use a separate Home button.
 Identity is the Home control.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 40. Main Product Portfolio Navigation After Migration
 
@@ -1131,6 +1269,8 @@ resolves to:
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 41. Project Header Navigation After Migration
 
 Current project actions:
@@ -1150,6 +1290,8 @@ HeaderActions.astro
 ```
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 42. Telecom CTA Correction
 
@@ -1171,6 +1313,8 @@ Current Telecom View Projects destination:
 This aligns the Telecom Header with the current route architecture.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 43. Known Sales Intelligence Contact Exception
 
@@ -1211,6 +1355,8 @@ and:
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 44. Project Previous / Next Navigation
 
 The final route migration preserved the project route slugs.
@@ -1233,9 +1379,17 @@ Because project slugs did not change, the primary migration work concerned Home/
 
 ---
 
+<div align="center">
+
+![HISTORY & DEPLOYMENT](https://img.shields.io/badge/HISTORY_&_DEPLOYMENT-7C3AED?style=flat-square)
+
+</div>
+
 # PDF / Export Migration
 
 ---
+
+> 📄 **PDF & EXPORT**
 
 ## 45. Why PDF Routes Required Update
 
@@ -1262,6 +1416,8 @@ Main Portfolio / project export
 ```
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 46. Intro Export Route Migration
 
@@ -1294,6 +1450,8 @@ This ensures the exported Intro PDF starts from the canonical root Hero.
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 47. Main Product Portfolio Export Migration
 
 Main Product Portfolio export now operates from:
@@ -1320,6 +1478,8 @@ it fetches the Main Product Portfolio rather than Hero.
 
 ---
 
+> 📄 **PDF & EXPORT**
+
 ## 48. Project Export Behavior
 
 The four detailed case-study routes continue to export their current route.
@@ -1344,6 +1504,8 @@ navigation-linked sections.
 Project slugs did not require migration.
 
 ---
+
+> 📄 **PDF & EXPORT**
 
 ## 49. Export Architecture Preserved
 
@@ -1372,9 +1534,17 @@ Open browser print dialog
 
 ---
 
+<div align="center">
+
+![ARCHITECTURE & IMPLEMENTATION](https://img.shields.io/badge/ARCHITECTURE_&_IMPLEMENTATION-0A66C2?style=flat-square)
+
+</div>
+
 # Current Build Architecture
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 50. Current Ten-Route Source Set
 
@@ -1397,6 +1567,8 @@ This route count differs from the historical five-page root-hosting deployment.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 51. Final Current Build Validation
 
 Later final routing/header work associated with the current implementation state recorded:
@@ -1412,6 +1584,8 @@ This is the current recorded source/build validation.
 It is separate from the earlier five-route migration deployment evidence.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 52. Historical vs Current Validation
 
@@ -1441,6 +1615,8 @@ Do not combine these into one test event.
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 53. Current Live-Deployment Verification Boundary
 
 The recorded final source build confirms:
@@ -1455,9 +1631,17 @@ A fresh deployment/HTTP/browser validation would be required to make that claim.
 
 ---
 
+<div align="center">
+
+![HISTORY & DEPLOYMENT](https://img.shields.io/badge/HISTORY_&_DEPLOYMENT-7C3AED?style=flat-square)
+
+</div>
+
 # GitHub Pages Deployment Architecture
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 54. Deployment Flow
 
@@ -1489,6 +1673,8 @@ is required by the normal workflow.
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 55. Source vs Generated Output
 
 Authoritative source includes:
@@ -1513,6 +1699,8 @@ Generated output should not be edited as the source of routing changes.
 
 ---
 
+> 🖼️ **ASSETS & VISUALS**
+
 ## 56. Root-Relative Asset Model
 
 Because the site is now a GitHub Pages user site at:
@@ -1536,6 +1724,8 @@ resolve within the intended current portfolio.
 This was one of the principal reasons for moving the repository to the root GitHub Pages repository name.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 57. Repository Rename vs Route Migration
 
@@ -1565,9 +1755,17 @@ A future hosting change does not necessarily require a content-route change, and
 
 ---
 
+<div align="center">
+
+![HISTORY & DEPLOYMENT](https://img.shields.io/badge/HISTORY_&_DEPLOYMENT-7C3AED?style=flat-square)
+
+</div>
+
 # Migration Preservation Rules
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 58. Route Preservation
 
@@ -1583,6 +1781,8 @@ Do not move Main Product Portfolio back to `/` without an explicit routing decis
 Do not remove `/intro/` unless backward-compatibility removal is intentional.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 59. Identity / Home Preservation
 
@@ -1602,6 +1802,8 @@ as the normal Home destination while the root Hero remains canonical.
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 60. Portfolio Navigation Preservation
 
 Main Portfolio destinations should use:
@@ -1619,6 +1821,8 @@ Project-card navigation should use:
 where the intent is specifically to show the project-card section.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 61. Contact Route Preservation
 
@@ -1639,6 +1843,8 @@ links while Hero remains at `/`.
 The existing Sales Intelligence exception is historical/current source debt, not a pattern to follow.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 62. Project Slug Preservation
 
@@ -1664,6 +1870,8 @@ Changing a project slug requires coordinated updates to:
 
 ---
 
+> 🖼️ **ASSETS & VISUALS**
+
 ## 63. `/intro/` Asset Preservation
 
 Do not confuse the route alias with asset directories.
@@ -1686,6 +1894,8 @@ continue to use runtime URLs such as:
 These URLs should not be rewritten solely because the Hero moved to `/`.
 
 ---
+
+> 📄 **PDF & EXPORT**
 
 ## 64. PDF Route Preservation
 
@@ -1716,6 +1926,8 @@ Changing page routes requires checking export behavior.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 65. Astro `site` Preservation
 
 Current production configuration:
@@ -1740,6 +1952,8 @@ Doing so would reintroduce a project-site URL model that no longer matches the c
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 66. Remote Preservation
 
 Current intended origin:
@@ -1757,6 +1971,8 @@ git remote -v
 rather than assuming the local folder name represents the remote repository.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 67. Backup Repository Preservation
 
@@ -1778,9 +1994,17 @@ unless an explicit backup-management action is requested.
 
 ---
 
+<div align="center">
+
+![QA & VALIDATION](https://img.shields.io/badge/QA_&_VALIDATION-059669?style=flat-square)
+
+</div>
+
 # Validation and Maintenance
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 68. Validation Categories
 
@@ -1835,6 +2059,8 @@ These categories should not be treated as interchangeable.
 
 ---
 
+> 🛠️ **MAINTENANCE & GUARDRAILS**
+
 ## 69. Build PASS Boundary
 
 A successful:
@@ -1860,6 +2086,8 @@ It does not confirm:
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 70. Historical Live Evidence Boundary
 
 The historical migration's HTTP/hash/browser results establish that:
@@ -1880,6 +2108,8 @@ or any later uncommitted documentation state.
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 71. Browser Zoom Boundary
 
 Native Chrome zoom was not verified during the original root-hosting migration.
@@ -1893,6 +2123,8 @@ Do not infer browser-zoom compatibility from:
 
 ---
 
+> 🛠️ **MAINTENANCE & GUARDRAILS**
+
 ## 72. Pixel-Fidelity Boundary
 
 The GitHub Pages migration was a hosting/routing task.
@@ -1902,6 +2134,8 @@ It did not establish pixel-perfect visual fidelity.
 Visual-reference fidelity is documented separately in project references where relevant.
 
 ---
+
+> ♿ **ACCESSIBILITY & INTERACTION**
 
 ## 73. Accessibility Boundary
 
@@ -1914,6 +2148,8 @@ Later source-level accessibility fixes are documented in:
 Do not treat routing/deployment success as accessibility certification.
 
 ---
+
+> 🛠️ **MAINTENANCE & GUARDRAILS**
 
 ## 74. Backup Pages Boundary
 
@@ -1930,6 +2166,8 @@ This remains outside the recorded migration validation.
 Do not state otherwise without a new check.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 75. Migration Maintenance Rules
 
@@ -1958,6 +2196,8 @@ When changing routing or hosting:
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 76. Current Known Routing Exception
 
 Current intended navigation model is internally consistent except for the separately authored Sales Intelligence CTA:
@@ -1975,6 +2215,8 @@ This remains unresolved.
 It should not be silently omitted from routing documentation.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 77. Current Technical State
 
@@ -2012,6 +2254,8 @@ Current live-site HTTP/browser revalidation for all ten routes was **not** perfo
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 78. Historical Deployment State
 
 Historical root-hosting evidence:
@@ -2043,6 +2287,8 @@ HTML hash comparison
 These checks belong to that historical five-route state.
 
 ---
+
+> 🕘 **HISTORY & DEPLOYMENT**
 
 ## 79. Migration State Summary
 
@@ -2080,6 +2326,8 @@ FINAL CONTENT ROUTING
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 80. Current Routing Contract
 
 The current routing contract is:
@@ -2116,6 +2364,8 @@ Contact               → /portfolio/#connect
 ```
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 81. Related Documentation
 

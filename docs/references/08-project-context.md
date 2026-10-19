@@ -2,7 +2,25 @@
 
 Repository-wide implementation, architecture, routing, navigation, data, responsive, export, accessibility, QA, asset, deployment, and maintenance context for the professional Product Management portfolio.
 
+<div align="center">
+
+### 🏗️ Repository Architecture · Project Context
+
+![Project Context](https://img.shields.io/badge/Project_Context-0A66C2?style=for-the-badge)
+![Astro + MDX](https://img.shields.io/badge/Astro_%2B_MDX-7C3AED?style=for-the-badge)
+![10 Routes](https://img.shields.io/badge/10_Routes-2563EB?style=for-the-badge)
+![Responsive](https://img.shields.io/badge/Responsive-059669?style=for-the-badge)
+![PDF Export](https://img.shields.io/badge/PDF_Export-E76F51?style=for-the-badge)
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-181717?style=for-the-badge)
+
+</div>
+
+> **Visual guide:** 🧭 Context · 🔗 Routing · 🏗️ Architecture · 🧩 Components · 📊 Metrics · 📱 Responsive · 📄 Export · ♿ Accessibility · ✅ Validation · 🛠️ Maintenance
+
+
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 1. Purpose
 
@@ -30,6 +48,8 @@ It explains:
 Project-specific details remain in their dedicated reference documents.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 2. Current Source Baseline
 
@@ -64,6 +84,8 @@ The application source remains authoritative for implementation behavior.
 Documentation updates created after the implementation commit may remain uncommitted until manually reviewed and committed.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 3. Repository Purpose
 
@@ -102,6 +124,8 @@ It must not position the professional profile as exclusively:
 The cross-domain progression is an important part of the portfolio narrative.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 4. Professional Narrative
 
@@ -152,6 +176,8 @@ The portfolio connects this progression to capabilities such as:
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 5. Portfolio Experience Architecture
 
 The website is organized into three primary experience layers.
@@ -199,6 +225,8 @@ Four projects:
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 6. Current Route Architecture
 
 | # | Page / Experience | Route | Primary Source |
@@ -231,6 +259,8 @@ Current route hierarchy:
 ```
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 7. Route Ownership
 
@@ -274,6 +304,8 @@ The detailed product content usually lives in Astro components rather than MDX p
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 8. Root Route Migration
 
 The current architecture is:
@@ -312,6 +344,8 @@ For full migration history, see:
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 9. Technology Stack
 
 The site is built with:
@@ -341,6 +375,8 @@ Current source does not use:
 The portfolio is statically generated.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 10. Package / Runtime Context
 
@@ -384,6 +420,8 @@ The lockfile should be retained for reproducible installs.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 11. Astro Configuration
 
 Primary configuration:
@@ -411,6 +449,8 @@ https://mapant.github.io/
 rather than deployment beneath a repository-name subpath.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 12. Static Rendering Model
 
@@ -443,6 +483,8 @@ There is no client-side application router.
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 13. Shared Layout Architecture
 
 The layout hierarchy includes:
@@ -457,6 +499,8 @@ ProjectShell.astro
 Each has a different responsibility.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 14. `SiteLayout.astro`
 
@@ -482,6 +526,8 @@ Changes here have repository-wide impact.
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 15. `PortfolioLayout.astro`
 
 Primary source:
@@ -505,6 +551,8 @@ src/pages/portfolio/index.astro
 ```
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 16. `IntroShell.astro`
 
@@ -537,6 +585,8 @@ See:
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 17. `ProjectShell.astro`
 
 Primary source:
@@ -561,6 +611,8 @@ Responsibilities include:
 Changes to `ProjectShell.astro` can affect all four project case studies.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 18. Header Architecture
 
@@ -592,6 +644,8 @@ SavePdf.astro
 ```
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 19. Navigation Model — Intro Experience
 
@@ -625,6 +679,8 @@ The identity itself serves as Home.
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 20. Navigation Model — Main Product Portfolio
 
 Current Main Portfolio Header order:
@@ -655,6 +711,8 @@ The section links remain local anchors on:
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 21. Navigation Model — Project Case Studies
 
 Current project Header order:
@@ -681,6 +739,8 @@ Destinations:
 Project-specific section anchors remain owned by each project.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 22. Four-Project Navigation Loop
 
@@ -710,6 +770,8 @@ Current previous/next relationships:
 Any project-order change requires coordinated updates across project navigation.
 
 ---
+
+> 🔗 **ROUTING & NAVIGATION**
 
 ## 23. Known Navigation Exception
 
@@ -752,6 +814,8 @@ and:
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 24. Active Section Navigation
 
 The Main Product Portfolio uses:
@@ -786,6 +850,8 @@ They do **not** scale the page.
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 25. Responsive Navigation
 
 Shared compact navigation is implemented through:
@@ -814,6 +880,8 @@ tablet-desktop-fit.js
 where applicable.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 26. Known Responsive Navigation Limitation
 
@@ -846,6 +914,8 @@ DEFERRED
 Do not document this issue as resolved.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 27. Main Product Portfolio Architecture
 
@@ -888,6 +958,8 @@ See:
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 28. Main Portfolio Data Collections
 
 `src/data/portfolio.js` exports twelve named collections:
@@ -917,6 +989,8 @@ They are not fetched from:
 - a database.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 29. Main Portfolio Content Ownership
 
@@ -953,6 +1027,8 @@ Before editing a visible phrase, search for the exact string.
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 30. Main Portfolio Product Contract
 
 Each project summary in:
@@ -980,6 +1056,8 @@ contains fields including:
 The Main Portfolio card is independently authored from the corresponding detailed case study.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 31. Project Detail Content Ownership
 
@@ -1033,6 +1111,8 @@ There is no universal project-content schema.
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 32. Main Portfolio vs Detailed Project Synchronization
 
 The Main Product Portfolio and detailed project pages do **not** automatically synchronize.
@@ -1053,6 +1133,8 @@ Routes
 Do not assume changing one source updates another.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 33. Metric Ownership and Qualification
 
@@ -1087,6 +1169,8 @@ Do not invent additional values.
 Do not infer additional percentages.
 
 ---
+
+> 📊 **DATA, METRICS & OUTCOMES**
 
 ## 34. Independent Project Metrics
 
@@ -1134,6 +1218,8 @@ These values must retain their existing:
 
 ---
 
+> 📊 **DATA, METRICS & OUTCOMES**
+
 ## 35. Known Telecom Metric Distinction
 
 The Main Product Portfolio Outcomes contains:
@@ -1164,6 +1250,8 @@ Any future reconciliation requires explicit confirmation of:
 - measurement basis.
 
 ---
+
+> 🛠️ **MAINTENANCE & GUARDRAILS**
 
 ## 36. Static Product Representation Boundary
 
@@ -1200,6 +1288,8 @@ The portfolio is a static representation.
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 37. Shared Component Architecture
 
 Important shared components include:
@@ -1222,6 +1312,8 @@ Important shared components include:
 Changes to shared components require broader regression consideration.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 38. Project-Specific Component Architecture
 
@@ -1267,6 +1359,8 @@ Telecom relies primarily on native markup/SVG/CSS rather than a separate compone
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 39. Important Active vs Legacy Distinction
 
 Some repository files may resemble active implementations but are not the current route owner.
@@ -1290,6 +1384,8 @@ Other generic/legacy case-study structures may also exist.
 Do not edit a similarly named legacy file without confirming that the current route imports or executes it.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 40. Styling Architecture
 
@@ -1320,6 +1416,8 @@ Final rendering depends on the combined CSS cascade.
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 41. `portfolio.scss`
 
 Primary responsibility:
@@ -1346,6 +1444,8 @@ page-view.scss
 Do not assume an earlier declaration is the winning current rule.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 42. `page-view.scss`
 
@@ -1377,6 +1477,8 @@ rather than only the local project file.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 43. Shared DocConnect Prototype Styles
 
 The file:
@@ -1399,6 +1501,8 @@ Integrated Channels
 Despite its filename, it must be treated as a shared dependency.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 44. Generated Output Is Not Source
 
@@ -1426,6 +1530,8 @@ package-lock.json
 Generated output should be recreated through the build.
 
 ---
+
+> 🖼️ **ASSETS & VISUALS**
 
 ## 45. Production Asset Organization
 
@@ -1457,6 +1563,8 @@ not:
 
 ---
 
+> 🖼️ **ASSETS & VISUALS**
+
 ## 46. Key Production Asset Areas
 
 Important asset locations include:
@@ -1474,6 +1582,8 @@ Telecom has no project-specific photograph folder.
 Most Telecom visuals are native HTML/SVG/CSS.
 
 ---
+
+> 🖼️ **ASSETS & VISUALS**
 
 ## 47. Documentation Asset Policy
 
@@ -1504,6 +1614,8 @@ Temporary validation screenshots should remain outside the repository unless exp
 
 ---
 
+> 🖼️ **ASSETS & VISUALS**
+
 ## 48. Asset Replacement Rules
 
 Before replacing an asset:
@@ -1518,6 +1630,8 @@ Before replacing an asset:
 The presence of an image under `public/` does not guarantee that it is currently rendered.
 
 ---
+
+> 🖼️ **ASSETS & VISUALS**
 
 ## 49. Vendor Logo Licensing
 
@@ -1543,6 +1657,8 @@ Some of these assets are also reused outside DocConnect, including Main Portfoli
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 50. Responsive Architecture
 
 The portfolio uses a three-range responsive model.
@@ -1566,6 +1682,8 @@ responsive-relationships.js
 ```
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 51. Desktop Architecture
 
@@ -1594,6 +1712,8 @@ Do not infer final geometry from one source declaration.
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 52. Historical 16:10 Rules
 
 Some older/base style layers include concepts such as:
@@ -1617,6 +1737,8 @@ for active layouts.
 Do not restore older aspect-ratio behavior without confirming which rule currently owns the route.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 53. Tablet Architecture
 
@@ -1646,6 +1768,8 @@ The tablet experience therefore preserves the existing desktop composition rathe
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 54. Tablet Desktop-Fit Responsibilities
 
 The helper can:
@@ -1666,6 +1790,8 @@ Do not introduce:
 unless intentionally replacing the existing system.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 55. Mobile Architecture
 
@@ -1691,6 +1817,8 @@ Mobile is not simply the desktop canvas scaled down.
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 56. Responsive Relationships
 
 Shared helper:
@@ -1714,6 +1842,8 @@ It does not create a second content copy.
 
 ---
 
+> 📱 **RESPONSIVE EXPERIENCE**
+
 ## 57. Browser Zoom
 
 Browser-controlled native zoom remains separate from the portfolio responsive architecture.
@@ -1730,6 +1860,8 @@ Do not claim zoom support solely from:
 - CSS inspection.
 
 ---
+
+> 📱 **RESPONSIVE EXPERIENCE**
 
 ## 58. Overflow and Fit Risk
 
@@ -1762,6 +1894,8 @@ After changes to dense layouts, inspect:
 
 ---
 
+> 📄 **PDF & EXPORT**
+
 ## 59. PDF / Export Architecture
 
 PDF export is implemented through:
@@ -1781,6 +1915,8 @@ The site does not use:
 The export workflow uses browser printing.
 
 ---
+
+> 📄 **PDF & EXPORT**
 
 ## 60. Intro PDF Export
 
@@ -1816,6 +1952,8 @@ Expected Intro page count:
 
 ---
 
+> 📄 **PDF & EXPORT**
+
 ## 61. Main Portfolio / Project PDF Export
 
 Normal Portfolio/project export uses the current route:
@@ -1843,6 +1981,8 @@ This applies to:
 Navigation IDs and section IDs therefore form part of the export contract.
 
 ---
+
+> 📄 **PDF & EXPORT**
 
 ## 62. PDF Preparation Flow
 
@@ -1876,6 +2016,8 @@ Print CSS hides route interaction elements where required.
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 63. PDF Validation Boundary
 
 Source inspection can confirm:
@@ -1896,6 +2038,8 @@ It cannot by itself certify:
 PDF fidelity should be runtime-checked when export behavior changes.
 
 ---
+
+> ♿ **ACCESSIBILITY & INTERACTION**
 
 ## 64. Accessibility Architecture
 
@@ -1921,6 +2065,8 @@ They are not formal accessibility certification.
 
 ---
 
+> ♿ **ACCESSIBILITY & INTERACTION**
+
 ## 65. Integrated Channels Modal Accessibility
 
 Current source includes:
@@ -1945,6 +2091,8 @@ Adding additional modal controls requires a real multi-control focus-trap redesi
 
 ---
 
+> ♿ **ACCESSIBILITY & INTERACTION**
+
 ## 66. Sales Intelligence Dialogs
 
 Sales Intelligence uses native:
@@ -1966,6 +2114,8 @@ Project code additionally supports outside-rectangle close.
 Historical interaction tests exist, but were not rerun during documentation synchronization.
 
 ---
+
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
 
 ## 67. Connect Form Architecture
 
@@ -2005,6 +2155,8 @@ rather than a server endpoint.
 
 ---
 
+> 🛠️ **MAINTENANCE & GUARDRAILS**
+
 ## 68. Connect Form Backend Boundary
 
 Connect does not have:
@@ -2029,6 +2181,8 @@ manoj.pant.pm@outlook.com
 Changing the email destination requires changing source code.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 69. QA Status
 
@@ -2061,6 +2215,8 @@ For complete QA history, see:
 [07-repository-qa-report.md](07-repository-qa-report.md)
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 70. Visual Validation Boundaries
 
@@ -2109,6 +2265,8 @@ These historical results must not be silently upgraded.
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 71. Source-of-Truth Hierarchy
 
 For implementation behavior:
@@ -2137,6 +2295,8 @@ It does not independently verify the underlying professional claim.
 
 ---
 
+> 🏗️ **ARCHITECTURE & IMPLEMENTATION**
+
 ## 72. Documentation Architecture
 
 Current documentation structure:
@@ -2159,6 +2319,8 @@ docs/
 The documentation directory contains Markdown only.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 73. Reference Ownership
 
@@ -2212,6 +2374,8 @@ for routing/deployment migration history.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 74. Repository File Responsibilities
 
 | File | Responsibility |
@@ -2247,6 +2411,8 @@ for routing/deployment migration history.
 | `docs/references/` | Markdown documentation |
 
 ---
+
+> 🛠️ **MAINTENANCE & GUARDRAILS**
 
 ## 75. Development Commands
 
@@ -2290,6 +2456,8 @@ when installation is explicitly required.
 
 ---
 
+> 🛠️ **MAINTENANCE & GUARDRAILS**
+
 ## 76. Development Change Principles
 
 Repository changes should be:
@@ -2313,6 +2481,8 @@ Do not:
 - normalize different project metrics without confirmation.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 77. Shared-File Risk
 
@@ -2340,6 +2510,8 @@ A narrow project correction should prefer project-specific owners where possible
 
 ---
 
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
+
 ## 78. Scope Preservation
 
 When asked to modify one area:
@@ -2361,6 +2533,8 @@ Do not use a small alignment or wording request as justification for:
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 79. Content Preservation
 
 Professional facts, metrics, roles, dates, and project outcomes must remain exactly as approved unless the requested task explicitly changes them.
@@ -2377,6 +2551,8 @@ Do not silently:
 - merge independently authored claims.
 
 ---
+
+> 🛠️ **MAINTENANCE & GUARDRAILS**
 
 ## 80. Project Addition Requirements
 
@@ -2402,6 +2578,8 @@ Do not assume the current four-card arrangement automatically supports an additi
 
 ---
 
+> 🛠️ **MAINTENANCE & GUARDRAILS**
+
 ## 81. New Section Requirements
 
 If a ten-section project structure is changed, review:
@@ -2426,6 +2604,8 @@ Changing section count is therefore an architectural change.
 
 ---
 
+> 🔗 **ROUTING & NAVIGATION**
+
 ## 82. Route Change Requirements
 
 Any route change requires reviewing:
@@ -2446,6 +2626,8 @@ Route changes should not be performed as isolated text replacements.
 
 ---
 
+> 🖼️ **ASSETS & VISUALS**
+
 ## 83. Asset Change Requirements
 
 Before adding/replacing an asset:
@@ -2461,6 +2643,8 @@ Before adding/replacing an asset:
 Do not copy assets into documentation merely to explain them.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 84. Git / Repository Safety
 
@@ -2485,6 +2669,8 @@ Generated documentation should not be assumed committed merely because it exists
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 85. Build Validation
 
 A successful build confirms:
@@ -2508,6 +2694,8 @@ Build validation and visual/runtime validation must remain separate.
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 86. `git diff --check`
 
 `git diff --check` is useful for identifying:
@@ -2525,6 +2713,8 @@ A pass does not establish:
 Use it as a technical integrity check, not a complete QA test.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 87. Current Final Technical Validation
 
@@ -2557,6 +2747,8 @@ It does not automatically certify the live GitHub Pages deployment.
 
 ---
 
+> 🕘 **HISTORY & DEPLOYMENT**
+
 ## 88. GitHub Pages Architecture
 
 The repository deploys through GitHub Pages.
@@ -2587,6 +2779,8 @@ Historical deployment evidence is recorded separately in:
 
 ---
 
+> 📚 **REFERENCE DETAIL**
+
 ## 89. Workflow Backup
 
 The repository contains:
@@ -2600,6 +2794,8 @@ The `.bak` suffix means it is not an active GitHub Actions workflow.
 Do not interpret it as a second active deployment pipeline.
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 90. `.gitignore` Context
 
@@ -2618,6 +2814,8 @@ These exclusions help keep generated/local content out of source control.
 Do not remove them casually.
 
 ---
+
+> ✅ **QA & VALIDATION**
 
 ## 91. Current Repository QA State
 
@@ -2652,6 +2850,8 @@ No new full PDF-output certification was performed during documentation synchron
 
 ---
 
+> ✅ **QA & VALIDATION**
+
 ## 92. Current Validation Boundary
 
 Current source/documentation alignment confirms:
@@ -2680,6 +2880,8 @@ It does not automatically confirm:
 
 ---
 
+> 🛠️ **MAINTENANCE & GUARDRAILS**
+
 ## 93. Documentation Maintenance Rules
 
 When implementation changes materially:
@@ -2694,6 +2896,8 @@ When implementation changes materially:
 8. do not store screenshots in `docs/references/`.
 
 ---
+
+> 📚 **REFERENCE DETAIL**
 
 ## 94. Reference Documents
 
@@ -2730,6 +2934,8 @@ Routing / GitHub Pages migration:
 [09-github-pages-routing-migration.md](09-github-pages-routing-migration.md)
 
 ---
+
+> 🧭 **PRODUCT & EXPERIENCE CONTEXT**
 
 ## 95. Current Repository Context Summary
 
