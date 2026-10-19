@@ -3,7 +3,11 @@ import SavePdf from './SavePdf.astro';
 const { project = false, href = '#portfolio', ariaLabel = 'View Projects', intro = false } = Astro.props;
 ---
 <div class:list={['header-actions', project && 'header-actions-project', intro && 'header-actions-intro']}>
-  {project && <a class="project-cta header-action-back" data-header-action href="/">
+  {!intro && <a class={project ? 'project-cta' : 'header-cta'} data-header-action href="/">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-8h6v8" /></svg>
+    <span class="header-action-label">Home</span>
+  </a>}
+  {project && <a class="project-cta header-action-back" data-header-action href="/portfolio/">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4m7-7-7 7 7 7" /></svg>
     <span class="header-action-label">Back to Portfolio</span>
   </a>}
@@ -23,12 +27,14 @@ const { project = false, href = '#portfolio', ariaLabel = 'View Projects', intro
     --header-action-icon: clamp(12px, .9vw, 18px);
     --header-action-radius: 1.4cqw;
   }
-  .header-actions-project {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.25fr) 44px;
+  .header-actions:not(.header-actions-intro) {
+    grid-template-columns: minmax(0, .65fr) minmax(0, 1fr) 44px;
+  }
+  .header-actions.header-actions-project {
+    grid-template-columns: minmax(0, .65fr) minmax(0, 1.1fr) minmax(0, 1.25fr) 44px;
     --header-action-font: clamp(11px, .7vw, 14px);
     --header-action-icon: clamp(12px, .85vw, 17px);
   }
-  .project-shell:has(.docconnect-case) .header-actions { height: 5cqw; }
   .header-actions > [data-header-action] {
     box-sizing: border-box; position: static; translate: none;
     display: flex !important; grid-area: auto !important; align-items: center; justify-content: center;
@@ -94,7 +100,59 @@ const { project = false, href = '#portfolio', ariaLabel = 'View Projects', intro
       --header-action-font: 12px; --header-action-icon: 14px; --header-action-radius: 12px;
     }
     .header-actions-project { --header-action-font: 11px; }
-    .project-shell:has(.docconnect-case) .header-actions { height: 44px; }
     .header-actions > [data-header-action] { padding-inline: 4px !important; gap: 3px !important; }
+  }
+  /* Shared portfolio/project controls; intro headers retain their existing rules. */
+  .header-actions:not(.header-actions-intro) {
+    --header-control-height: clamp(44px, 3.6cqw, 64px);
+    --header-action-font: clamp(12px, .8vw, 16px);
+    --header-action-icon: clamp(14px, .9vw, 18px);
+    --header-action-radius: clamp(12px, 1cqw, 20px);
+    height: var(--header-control-height); align-self: center; align-items: center;
+    gap: clamp(6px, .45cqw, 8px);
+  }
+  .header-actions:not(.header-actions-intro) > [data-header-action] {
+    height: var(--header-control-height) !important;
+    padding-inline: clamp(8px, .6cqw, 12px) !important; gap: 5px !important;
+  }
+  .header-actions:not(.header-actions-intro) > .save-pdf.pdf-icon {
+    width: var(--header-control-height) !important; padding: 0 !important;
+    border-radius: var(--header-action-radius) !important;
+  }
+  @media (min-width: 1280px) {
+    .project-shell.project-shell.project-shell.project-shell { --header-h: clamp(72px, 6.2vw, 120px); }
+    .project-shell.project-shell.project-shell.project-shell > .project-header {
+      height: var(--header-h); min-height: var(--header-h); font-family: "Segoe UI", Arial, sans-serif;
+    }
+    .project-shell.project-shell.project-shell.project-shell .project-header-inner {
+      max-width: none; container-type: normal; padding: .35cqw 2.5cqw;
+      grid-template-columns: max-content minmax(max-content, 1fr) max-content;
+      column-gap: clamp(12px, 1cqw, 20px); align-items: center;
+    }
+    .project-shell.project-shell.project-shell.project-shell .project-brand { gap: 1.1cqw; }
+    .project-shell.project-shell.project-shell.project-shell .project-brand img {
+      width: 5.3cqw; height: 5.3cqw; border-width: .234cqw;
+    }
+    .project-shell.project-shell.project-shell.project-shell .project-brand strong {
+      font-size: 1.7cqw; font-weight: 850; line-height: 1.12; letter-spacing: -.035em;
+    }
+    .project-shell.project-shell.project-shell.project-shell .project-brand small {
+      margin-top: .39cqw; font-size: .72cqw; font-weight: 750;
+    }
+    .project-shell.project-shell.project-shell.project-shell #project-nav {
+      grid-template-columns: repeat(5, auto); grid-template-rows: repeat(2, minmax(2.25cqw, 1fr));
+      gap: .08cqw clamp(4px, .4cqw, 8px); align-items: center; justify-items: center;
+    }
+    .project-shell.project-shell.project-shell.project-shell #project-nav a {
+      min-height: 2.3cqw; padding: 0 .5cqw; border-radius: .94cqw;
+      font-size: .86cqw; font-weight: 760; line-height: 1.15;
+    }
+  }
+  @media (max-width: 767px) {
+    .header-actions:not(.header-actions-intro) {
+      --header-control-height: 44px; --header-action-font: 11px;
+      --header-action-icon: 14px; --header-action-radius: 12px; gap: 4px;
+    }
+    .header-actions:not(.header-actions-intro) > [data-header-action] { padding-inline: 4px !important; gap: 3px !important; }
   }
 </style>

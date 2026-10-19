@@ -6,7 +6,7 @@ const { active = '' } = Astro.props;
 ---
 <header class="site-header intro-header">
   <div class="header-inner intro-header-inner">
-    <a class="brand intro-brand" href="/intro/" aria-label="Manoj Pant — introduction" aria-current={active === 'hero' ? 'page' : undefined}>
+    <a class="brand intro-brand" href="/" aria-label="Manoj Pant — introduction" aria-current={active === 'hero' ? 'page' : undefined}>
       <img class="intro-brand-avatar" src="/profile/portrait.jpg" alt="Manoj Pant" width="96" height="96"/>
       <span class="intro-brand-copy"><strong>Manoj Pant</strong><small>SENIOR PRODUCT MANAGER</small></span>
     </a>
@@ -14,6 +14,6 @@ const { active = '' } = Astro.props;
     <nav class="intro-navigation" id="intro-nav" aria-label="Professional profile">
       {navigation.map(item => <a class:list={[active === item.key && 'active']} href={item.href} aria-current={active === item.key ? 'page' : undefined}>{item.title}</a>)}
     </nav>
-    <HeaderActions href="/#portfolio" intro />
+    <HeaderActions href="/portfolio/#portfolio" intro />
   </div>
 </header>

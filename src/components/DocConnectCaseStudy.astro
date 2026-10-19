@@ -158,7 +158,7 @@ const leadershipCards = [
   next={{ title: 'Ayu Sales Intelligence & Field Force Optimization', href: '/projects/ayu-sales-intelligence' }}
   navSections={navSections}
   ctaText="View Projects"
-  ctaHref="/#portfolio"
+  ctaHref="/portfolio/#portfolio"
   showProjectFooter={false}
   viewportFitPrototype={true}
   profileImage="/profile/portrait.png"
@@ -374,7 +374,7 @@ const leadershipCards = [
         </div>
         <div class="dc-leadership-cards">{leadershipCards.map(item => <article class={`tone-${item.tone}`}><span class="dc-leadership-symbol"><DocConnectIcon name={item.icon} /></span><h3>{item.title}</h3><p>{item.description}</p><ul>{item.bullets.map(bullet => <li>{bullet}</li>)}</ul></article>)}</div>
         <div class="dc-connect-banner"><DocConnectLandscape class="dc-leadership-landscape"/><span class="dc-connect-icon"><DocConnectIcon name="chat-outline"/></span><div><small>LET’S CONNECT</small><h3>Have a healthcare product idea<br/>or looking to build something similar?</h3><p>I’d be happy to discuss your requirements, explore ideas or exchange perspectives on building impactful healthcare products.</p></div><div class="dc-connect-pillars">{[['bulb','Explore ideas','Product conversations and use cases'],['people','Share perspectives','Learn from each other’s experiences'],['rocket','Create impact','Build meaningful products together']].map(([icon,title,detail])=><span><i><DocConnectIcon name={icon}/></i><b>{title}</b><small>{detail}</small></span>)}</div><small class="dc-connect-note">Turning<br/>Healthcare Ideas<br/>into Impactful<br/>Products.</small></div>
-        <nav class="dc-case-navigation" aria-label="Project navigation"><a href="/projects/integrated-channels"><small>PREVIOUS PROJECT</small><b><svg viewBox="0 0 20 12" aria-hidden="true"><path d="M19 6H1m5-5-5 5 5 5"/></svg>Integrated Channels Suite</b></a><a href="/#portfolio">Return to Product Portfolio</a><a href="/projects/ayu-sales-intelligence"><small>NEXT PROJECT</small><b>Ayu Sales Intelligence &amp; Field Force Optimization<svg viewBox="0 0 20 12" aria-hidden="true"><path d="M0 6h18m-5-5 5 5-5 5"/></svg></b></a></nav>
+        <nav class="dc-case-navigation" aria-label="Project navigation"><a href="/projects/integrated-channels"><small>PREVIOUS PROJECT</small><b><svg viewBox="0 0 20 12" aria-hidden="true"><path d="M19 6H1m5-5-5 5 5 5"/></svg>Integrated Channels Suite</b></a><a href="/portfolio/#portfolio">Return to Product Portfolio</a><a href="/projects/ayu-sales-intelligence"><small>NEXT PROJECT</small><b>Ayu Sales Intelligence &amp; Field Force Optimization<svg viewBox="0 0 20 12" aria-hidden="true"><path d="M0 6h18m-5-5 5 5-5 5"/></svg></b></a></nav>
       </div>
     </section>
   </main>

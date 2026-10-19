@@ -1,5 +1,5 @@
 const desktop = { width:1280, height:665 };
-const introRoutes = ['/intro/', '/about/', '/education/', '/experience/'];
+const introRoutes = ['/', '/about/', '/education/', '/experience/'];
 
 // Read fresh authored markup so mobile node relocation and tablet transforms
 // never enter the print document. No site scripts run in this isolated frame.

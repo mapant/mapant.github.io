@@ -23,7 +23,7 @@ const {
   next,
   navSections,
   ctaText = 'Portfolio',
-  ctaHref = '/',
+  ctaHref = '/portfolio/',
   showProjectFooter = true,
   viewportFitPrototype = false,
   profileImage = '/profile/portrait.jpg',
@@ -42,7 +42,7 @@ const ctaAriaLabel = ctaText === 'Portfolio' ? 'Return to portfolio' : ctaText;
   <div class:list={['project-shell', viewportFitPrototype && 'viewport-fit-prototype']}>
     <header class="project-header">
       <div class="project-header-inner">
-        <a class="project-brand" href="/" aria-label="Manoj Pant Product Portfolio">
+        <a class="project-brand" href="/" aria-label="Go to homepage">
           <img src={profileImage} alt="Manoj Pant" />
           <span><strong>Manoj Pant</strong><small>SENIOR PRODUCT MANAGER</small></span>
         </a>
@@ -56,7 +56,7 @@ const ctaAriaLabel = ctaText === 'Portfolio' ? 'Return to portfolio' : ctaText;
     <slot />
     {showProjectFooter && <footer class="project-site-footer">
       <a href={previous.href}><span>PREVIOUS CASE STUDY</span><strong>&larr; {previous.title}</strong></a>
-      <a class="footer-home" href="/">Return to Product Portfolio</a>
+      <a class="footer-home" href="/portfolio/">Return to Product Portfolio</a>
       <a href={next.href}><span>NEXT CASE STUDY</span><strong>{next.title} &rarr;</strong></a>
     </footer>}
   </div>

@@ -10,7 +10,7 @@ export const navigation = [
   { key: 'about', title: 'About Me', href: '/about/', icon: 'user', description: 'Professional journey, strengths and how I work.', art: 'mountain', tone: 'blue' },
   { key: 'education', title: 'Education', href: '/education/', icon: 'education', description: 'Academic background, certifications and continuous learning.', art: 'books', tone: 'teal' },
   { key: 'experience', title: 'Work Experience', href: '/experience/', icon: 'briefcase', description: 'Career progression across enterprise product, BA and analytics roles.', art: 'office', tone: 'purple' },
-  { key: 'portfolio', title: 'Product Portfolio', href: '/', icon: 'grid', description: 'Detailed case studies of products, platforms and measurable outcomes.', art: 'dashboard', tone: 'orange' },
+  { key: 'portfolio', title: 'Product Portfolio', href: '/portfolio/', icon: 'grid', description: 'Detailed case studies of products, platforms and measurable outcomes.', art: 'dashboard', tone: 'orange' },
 ];
 
 export const pillars = [

@@ -21,7 +21,7 @@ const APPS=[{"id": "audit", "name": "Audit", "category": "Governance & Control",
   next={{ title: 'Ayu DocConnect', href: '/projects/ayu-docconnect' }}
   navSections={navSections}
   ctaText="View Projects"
-  ctaHref="/#portfolio"
+  ctaHref="/portfolio/#portfolio"
   showProjectFooter={false}
   viewportFitPrototype={true}
 >
@@ -40,10 +40,21 @@ const APPS=[{"id": "audit", "name": "Audit", "category": "Governance & Control",
     const backdrop = document.getElementById('backdrop');
     const closeButton = document.getElementById('close');
     let returnHash = '#portfolio';
+    let returnFocus = null;
+    let inertBackground = [];
 
-    function showApp(id, push = true) {
+    function showApp(id, push = true, trigger = document.activeElement) {
       const app = APPS.find(item => item.id === id);
       if (!app) return;
+      if (!backdrop.classList.contains('is-open')) {
+        returnFocus = trigger;
+        for (let node = backdrop; node !== document.body; node = node.parentElement) {
+          [...node.parentElement.children].filter(sibling => sibling !== node && sibling instanceof HTMLElement).forEach(element => {
+            inertBackground.push([element, element.inert]);
+            element.inert = true;
+          });
+        }
+      }
       document.getElementById('dbadge').textContent = app.name.slice(0, 1);
       document.getElementById('dname').textContent = app.name;
       document.getElementById('dcat').textContent = `${app.category} · Integrated Channels Suite`;
@@ -62,6 +73,7 @@ const APPS=[{"id": "audit", "name": "Audit", "category": "Governance & Control",
       backdrop.classList.add('is-open');
       backdrop.setAttribute('aria-hidden','false');
       document.body.classList.add('ics-modal-open');
+      closeButton.focus({ preventScroll: true });
       if (push) {
         returnHash = location.hash && !location.hash.startsWith('#app/') ? location.hash : '#portfolio';
         history.replaceState({app:id}, '', `${location.pathname}#app/${id}`);
@@ -69,16 +81,28 @@ const APPS=[{"id": "audit", "name": "Audit", "category": "Governance & Control",
     }
 
     function closeApp(push = true) {
+      if (!backdrop.classList.contains('is-open')) return;
+      inertBackground.forEach(([element, inert]) => { element.inert = inert; });
+      inertBackground = [];
+      if (returnFocus?.isConnected) returnFocus.focus({ preventScroll: true });
+      returnFocus = null;
       backdrop.classList.remove('is-open');
       backdrop.setAttribute('aria-hidden','true');
       document.body.classList.remove('ics-modal-open');
       if (push && location.hash.startsWith('#app/')) history.replaceState({}, '', `${location.pathname}${returnHash}`);
     }
 
-    document.querySelectorAll('[data-open]').forEach(node => node.addEventListener('click', event => { event.preventDefault(); showApp(node.dataset.open); }));
+    document.querySelectorAll('[data-open]').forEach(node => node.addEventListener('click', event => { event.preventDefault(); showApp(node.dataset.open, true, node); }));
     closeButton?.addEventListener('click', () => closeApp());
     backdrop?.addEventListener('click', event => { if (event.target === backdrop) closeApp(); });
-    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeApp(); });
+    document.addEventListener('keydown', event => {
+      if (!backdrop.classList.contains('is-open')) return;
+      if (event.key === 'Escape') closeApp();
+      if (event.key === 'Tab') {
+        event.preventDefault();
+        closeButton.focus({ preventScroll: true });
+      }
+    });
     if (location.hash.startsWith('#app/')) showApp(location.hash.slice(5), false);
   </script>
 </ProjectShell>
