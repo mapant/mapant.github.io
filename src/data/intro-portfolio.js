@@ -3,7 +3,7 @@
 export const profile = {
   email: 'manoj.pant.pm@outlook.com',
   linkedin: 'https://www.linkedin.com/in/manoj-pant-35129495/',
-  portrait: '/profile/portrait.png',
+  portrait: '/profile/portrait.webp',
 };
 
 export const navigation = [

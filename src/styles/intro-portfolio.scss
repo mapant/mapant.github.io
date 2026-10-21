@@ -130,7 +130,7 @@ body:has(.intro-root) { margin: 0; }
   .intro-root .intro-brand-avatar { width: 5.3vw; height: 5.3vw; border-width: .234vw; }
   .intro-root .intro-brand-copy strong { font-size: 1.7vw; }
   .intro-root .intro-brand-copy small { font-size: .72vw; margin-top: .39vw; }
-  .intro-root .intro-navigation { width: 100%; grid-template-columns: repeat(4, max-content); grid-template-rows: minmax(2.3vw, 1fr); gap: 0 .45vw; white-space: nowrap; }
+  .intro-root .intro-navigation { width: 100%; grid-template-columns: repeat(5, max-content); grid-template-rows: minmax(2.3vw, 1fr); gap: 0 .45vw; white-space: nowrap; }
   .intro-root .intro-navigation a { height: 2.3vw; min-height: 2.3vw; padding: 0 .65vw; font-size: .9vw; font-weight: 760; border-radius: .94vw; }
   .intro-root .header-actions-intro { display: grid; width: 100%; height: 4.2vw; grid-template-columns: minmax(0, 1fr) 44px; gap: 8px; align-items: center; --header-action-radius: 1.4vw; }
   .intro-root .header-actions-intro > .header-cta { width: 100% !important; padding-inline: .75vw !important; gap: .4vw !important; }

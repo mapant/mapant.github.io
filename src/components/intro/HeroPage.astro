@@ -1,18 +1,19 @@
 ---
 import Icon from './IntroIcon.astro';
+import { introImage } from './image-delivery.js';
 import { navigation, pillars, profile } from '../../data/intro-portfolio';
 const gatewayArtwork = [
-  '/intro/hero/about-card-v1.png',
-  '/intro/hero/education-card-v1.png',
-  '/intro/hero/experience-card-v1.png',
-  '/intro/hero/portfolio-card-v1.png',
+  '/intro/hero/about-card-v1.webp',
+  '/intro/hero/education-card-v1.webp',
+  '/intro/hero/experience-card-v1.webp',
+  '/intro/hero/portfolio-card-v1.webp',
 ];
 ---
 <div class="intro-hero-page">
   <div class="intro-hero-scene" aria-hidden="true">
-    <img class="intro-hero-environment" src="/intro/hero/hero-scene-v1.png" alt="" width="2172" height="724" fetchpriority="high" />
+    <img class="intro-hero-environment" src="/intro/hero/hero-scene-v1.webp" {...introImage('/intro/hero/hero-scene-v1.webp', '100vw')} alt="" width="2172" height="724" fetchpriority="high" />
   </div>
-  <div class="intro-hero-photo"><img src={profile.portrait} alt="Manoj Pant wearing a grey suit" width="1254" height="1254" loading="lazy" /></div>
+  <div class="intro-hero-photo"><img src={profile.portrait} {...introImage(profile.portrait, '(max-width: 767px) min(360px, 100vw), 360px')} alt="Manoj Pant wearing a grey suit" width="1254" height="1254" loading="eager" fetchpriority="high" /></div>
   <section class="intro-hero-copy" aria-labelledby="intro-hero-title">
     <p class="intro-eyebrow">PRODUCT <b>|</b> DATA <b>|</b> AI <b>|</b> ENTERPRISE</p>
     <h1 id="intro-hero-title">Manoj <span>Pant</span></h1>
@@ -25,6 +26,6 @@ const gatewayArtwork = [
     {pillars.map(item => <article class={`intro-pillar intro-tone-${item.tone}`}><span class="intro-icon-disc"><Icon name={item.icon}/></span><h3>{item.title}</h3><p>{item.description}</p></article>)}
   </section>
   <nav class="intro-gateways" aria-label="Explore my professional profile">
-    {navigation.map((item, index) => <a class={`intro-gateway intro-tone-${item.tone}`} href={item.href}><img class="intro-artwork intro-gateway-art" src={gatewayArtwork[index]} alt="" width="1672" height="941" loading="eager" /><div class="intro-gateway-copy"><span class="intro-icon-tile"><Icon name={item.icon}/></span><h2>{item.title}</h2><p>{item.description}</p><span class="intro-arrow-circle"><Icon name="arrow" weight={2.2}/></span></div></a>)}
+    {navigation.map((item, index) => <a class={`intro-gateway intro-tone-${item.tone}`} href={item.href}><img class="intro-artwork intro-gateway-art" src={gatewayArtwork[index]} {...introImage(gatewayArtwork[index], '(max-width: 767px) max(100vw, 420px), 25vw')} alt="" width="1672" height="941" loading="eager" fetchpriority="low" /><div class="intro-gateway-copy"><span class="intro-icon-tile"><Icon name={item.icon}/></span><h2>{item.title}</h2><p>{item.description}</p><span class="intro-arrow-circle"><Icon name="arrow" weight={2.2}/></span></div></a>)}
   </nav>
 </div>
