@@ -1,0 +1,31 @@
+---
+import Icon from './IntegratedChannelsIcon.astro';
+interface Props { previous: { title: string; href: string }; next: { title: string; href: string }; nextLabel?: string; portfolioHref?: string; class?: string; }
+const { previous, next, nextLabel = 'NEXT PROJECT', portfolioHref = '/portfolio/', class: className = '' } = Astro.props;
+---
+<nav class:list={['case-project-navigation', className]} aria-label="Adjacent project navigation">
+  <a href={previous.href}><small>PREVIOUS PROJECT</small><b><Icon name="arrow-left" /> {previous.title}</b></a>
+  <a class:list={['case-return', className && 'ics-return']} href={portfolioHref}>Return to Product Portfolio</a>
+  <a href={next.href}><small>{nextLabel}</small><b>{next.title} <Icon name="arrow-right" /></b></a>
+</nav>
+<style is:global>
+  .case-project-navigation:not(.ics-project-navigation) { display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); align-items:center; gap:.9375cqw; }
+  .case-project-navigation:not(.ics-project-navigation) > a:not(.case-return) { display:grid; gap:.15625cqw; color:#173d6a; }
+  .case-project-navigation:not(.ics-project-navigation) > a:last-child { justify-items:end; text-align:right; }
+  .case-project-navigation:not(.ics-project-navigation) small { color:#087ff0; font-size:.78125cqw; font-weight:900; letter-spacing:.12em; }
+  .case-project-navigation:not(.ics-project-navigation) b { font-size:1.015625cqw; }
+  .case-project-navigation:not(.ics-project-navigation) b > span { display:inline-block; width:1.09375cqw; height:1.09375cqw; vertical-align:-.2em; }
+  .case-project-navigation:not(.ics-project-navigation) b > span svg { width:100%; height:100%; }
+  .case-project-navigation:not(.ics-project-navigation) .case-return { display:flex; align-items:center; justify-content:center; min-height:2.96875cqw; padding:0 1.09375cqw; color:#fff; border:0; border-radius:99px; background:linear-gradient(105deg,#00b9ed,#0787f1 48%,#a600f0); font-size:.9375cqw; font-weight:850; }
+  .case-project-navigation:not(.ics-project-navigation) a:hover { filter:brightness(1.08); }
+  .case-project-navigation:not(.ics-project-navigation) a:focus-visible { outline:2px solid #087ff0; outline-offset:4px; }
+  @media (max-width:767px) {
+    .case-project-navigation:not(.ics-project-navigation) { grid-template-columns:1fr; gap:16px; padding:16px; }
+    .case-project-navigation:not(.ics-project-navigation) a { min-height:44px; font-size:14px; white-space:normal; }
+    .case-project-navigation:not(.ics-project-navigation) small { font-size:10px; }
+    .case-project-navigation:not(.ics-project-navigation) b { font-size:14px; }
+    .case-project-navigation:not(.ics-project-navigation) b > span { width:16px; height:16px; }
+    .case-project-navigation:not(.ics-project-navigation) .case-return { min-height:44px; font-size:14px; padding:10px 16px; }
+    .case-project-navigation:not(.ics-project-navigation) > a:last-child { justify-items:start; text-align:left; }
+  }
+</style>

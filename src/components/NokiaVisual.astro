@@ -1,0 +1,45 @@
+---
+interface Props { kind: string; region?: string; }
+const {kind,region='APAC'}=Astro.props;
+const regions:Record<string,string>={
+ APAC:'M7 24 20 13 34 16 43 8 60 10 67 18 84 21 90 30 77 35 76 49 66 55 62 44 53 45 51 59 41 49 34 50 27 39 18 40Zm48 35 7 7 3 15-7-6Zm13 1 8 4 5 11-8-5Zm-7 23 12-3 16 7 7 13-8 7-16-2-10-12Z',
+ CHINA:'M9 36 18 29 16 17 34 22 42 15 53 19 59 10 74 12 77 23 91 28 81 39 85 51 72 59 70 70 58 79 49 70 38 72 30 61 14 58 18 46Z',
+ INDIA:'M29 8 42 12 48 6 56 17 53 26 66 32 87 28 84 39 67 44 61 54 50 66 45 88 36 75 31 58 20 43 12 36 17 26 31 28Z',
+ MEA:'M18 17 37 9 54 16 68 13 83 26 75 38 88 50 73 56 66 73 55 80 51 94 41 86 32 63 23 58 17 41 8 33Zm68 54 7-10-3 21-5 9Z',
+ EUR:'M51 3 59 11 55 24 47 30 48 44 61 39 70 48 85 42 90 57 79 64 68 60 65 72 54 62 46 71 30 68 27 58 18 60 10 51 22 43 25 33 35 36 38 27 44 23Zm-34 4 9-5 1 15-8 4Z',
+ LAT:'M17 7 29 11 35 23 43 24 48 33 65 32 79 43 75 56 63 68 53 78 48 95 39 88 34 72 35 58 28 49 30 36 20 28 16 17Z',
+ NAM:'M5 20 18 10 36 14 52 7 66 15 77 10 91 20 85 37 73 40 64 50 53 45 48 55 36 53 32 66 44 80 38 87 26 72 21 54 12 45Zm74-16 15 1-3 17-12 6-7-10Z'
+};
+---
+{kind==='market'&&<svg class="nk-region" viewBox="0 0 100 105" aria-hidden="true"><path d={regions[region]} fill="currentColor"/><path d="M19 30 75 51M35 15 42 70M61 22 50 60" fill="none" stroke="white" stroke-width=".65" opacity=".5"/></svg>}
+{kind==='world'&&<svg class="nk-world" viewBox="0 0 480 250" aria-hidden="true">
+  <g fill="#d6e1e9" stroke="white" stroke-width="1.2" stroke-linejoin="round">
+    <path d="M8 48 16 34 30 28 37 16 50 19 60 13 76 17 87 10 100 17 114 10 127 19 141 17 154 26 148 36 132 43 128 54 117 58 110 71 99 77 92 91 81 96 76 110 69 119 63 112 58 96 49 92 42 81 30 75 24 61 12 60Z"/>
+    <path d="m76 103 11 5 4 11 10 5 8 1 8 7 9 3-3 6-13-1-9-6-8-1-5-11-7-4-9-2Z"/>
+    <path d="m145 7 15-3 17 7-3 15-11 12-13-6-8-13Z"/>
+    <path d="m122 138 12-3 14 9 15 4 11 11-1 12-9 12-5 18-10 8-3 16-10 18-7-8-1-19-8-16-4-18-9-10 1-15Z"/>
+    <path d="m213 57 8-5 3-12 9-3 4-11 9-9 6 3-4 17-6 10 2 11 10-5 9 3 6-7 7 4 8 14-6 8-13 2-9 8-12-4-9 7-7-4-2-12-9 3-6-8-7 4-4-5Z"/>
+    <path d="m235 88 13-6 12 5 12-2 13 14 7 16-3 14-10 11-7 20-12 12-11-4-8-19-5-14-12-7-5-16 5-15Z"/>
+    <path d="m267 44 8-12 14 4 10-9 15 4 8-9 16 4 12-8 17 7 16-5 15 11 13-2 8 9 19-2 13 7 18-1 11 14-9 8-18-2-12 6-7 14 6 6-4 11-12 7-6 13-11 5-4 16-10 10-11-7-4-16-8-4-6 8-4 16-8 10-7-8-6-23-12-4-9-16-8 1-6-11-12-5-5-14-12-5-7-13Z"/>
+    <path d="m365 145 8 4 7 11 11 1 6 7-9 3-9-5-12-2-7-9Zm34 22 8-5 9 3-2 7-11 2Z"/>
+    <path d="m384 185 12-9 12 4 13-3 10 10 13 3 7 16-7 9-13-1-10 9-15-5-13-2-8-13Z"/>
+    <path d="m454 219 6-8 5 4-4 10-9 5-4-4Z"/>
+    <path d="m291 161 5-9 4 4-2 14-6 7-3-5Z"/>
+    <path d="m427 95 5-9 2-13 4-2 2 9-6 15-5 6Z"/>
+  </g>
+  <g fill="none" stroke="white" stroke-width=".9" opacity=".9"><path d="m39 60 20 9 22-1 20 5m-42-4 4 24m19-25 8-21 24-8M121 158l21 3 15-10m-15 10-7 25 19 6m-19-6-9 21m115-99 18 2 21-6m-21 6-3 20 22 9m-22-9-16 6m16-6 5 26m-5-45 3-22m42-24 4 18 19-1 13 14m-32-13 11 20m14-7 20 8 19-10m-19 10 8 15m-68-37 12-15m61 14 7-15m-14 5 14 10 20-4m-9 18 14 6m-9 7 11 10"/></g>
+  <g fill="#2796ff" opacity=".9"><path d="m225 64 10-5 8 4-3 13-10 3-7-6Z"/><path d="m121 168 11 7 4 14-7 17-6-11Z"/><path d="m391 189 13-5 14 6 1 13-14 6-12-5Z"/></g>
+</svg>}
+{kind==='report'&&<svg class="nk-report-art" viewBox="0 0 220 180" aria-hidden="true"><rect x="36" y="6" width="137" height="164" rx="13" fill="#cfefea"/><path d="M45 12h87l32 30v120H45Z" fill="white"/><path d="M132 12v30h32" fill="#e5f2fc"/><g fill="#bed2e2"><rect x="61" y="31" width="48" height="15" rx="3"/>{[63,88,113,138].map(y=><><rect x="88" y={y} width="54" height="5" rx="2"/><rect x="88" y={y+10} width="39" height="4" rx="2"/></>)}</g><g fill="#00a783">{[69,94,119,144].map(cy=><circle cx="69" cy={cy} r="9"/>)}</g><g stroke="white" stroke-width="2" fill="none">{[69,94,119,144].map(cy=><path d={`m64 ${cy} 4 4 6-7`}/>)}</g><path d="m176 90 8 1 2 7 8 4 6-2 5 9-6 5v8l6 5-5 9-6-2-8 4-2 7h-10l-2-7-8-4-6 2-5-9 6-5v-8l-6-5 5-9 6 2 8-4Z" fill="#00a783"/><circle cx="180" cy="118" r="10" fill="white"/></svg>}
+{kind==='audit'&&<svg class="nk-audit-art" viewBox="0 0 250 180" aria-hidden="true"><g fill="#8c4ce8" stroke="white" stroke-width="1.5"><path d="M12 28v47c0 20 57 20 57 0V28Z"/><ellipse cx="40.5" cy="28" rx="28.5" ry="11"/><path d="M12 44c0 17 57 17 57 0M12 60c0 17 57 17 57 0" fill="none"/><path d="M12 119v29c0 20 57 20 57 0v-29Z"/><ellipse cx="40.5" cy="119" rx="28.5" ry="11"/><path d="M12 133c0 17 57 17 57 0" fill="none"/></g><path d="M78 54h57l10 10-10 10M121 65v64q0 12-12 12H78m8-8-8 8 8 8" fill="none" stroke="#aa85ef" stroke-width="3"/><rect x="147" y="20" width="77" height="110" rx="12" fill="#eee5ff"/><rect x="154" y="27" width="63" height="94" rx="5" fill="white"/><path d="M164 43h41m-41 18h29m-29 18h29m-29 18h17" stroke="#b48aff" stroke-width="6" stroke-linecap="round"/><circle cx="210" cy="103" r="22" fill="white" stroke="#7922ed" stroke-width="7"/><path d="m226 120 20 22" stroke="#7922ed" stroke-width="9" stroke-linecap="round"/></svg>}
+{kind==='nokia-logo'&&<svg class="nk-nokia-logo" viewBox="0 0 266 58" role="img" aria-label="Nokia"><g fill="#003599"><path d="M0 55V3h12l34 37V3h12v52H46L12 18v37Z"/><path fill-rule="evenodd" d="M77 3h34q13 0 13 13v26q0 13-13 13H77q-13 0-13-13V16Q64 3 77 3Zm2 11q-3 0-3 4v22q0 4 3 4h30q3 0 3-4V18q0-4-3-4Z"/><path d="M133 3h12v23l25-23h17l-29 26 31 26h-18l-26-23v23h-12ZM196 3h12v52h-12Z"/><path fill-rule="evenodd" d="m232 3 34 52h-14l-7-12h-27l-7 12h-14l34-52Zm0 15-9 15h18Z"/></g></svg>}
+{kind==='nokia-banner'&&<svg class="nk-nokia-banner" viewBox="0 0 644 249" role="img" aria-label="Nokia building visual. Connecting people, ideas and a more open world.">
+  <defs><linearGradient id="nokia-sky" x2="1" y2="1"><stop stop-color="#c8e7ff"/><stop offset=".55" stop-color="#edf8ff"/><stop offset="1" stop-color="#d2edff"/></linearGradient><linearGradient id="nokia-facade" x2="1" y2="1"><stop stop-color="#f5fbff"/><stop offset=".45" stop-color="#c1ced8"/><stop offset=".8" stop-color="#a1b3c4"/><stop offset="1" stop-color="#36749a"/></linearGradient><linearGradient id="nokia-glass" x2="0" y2="1"><stop stop-color="#84b1cf"/><stop offset="1" stop-color="#163e5b"/></linearGradient><clipPath id="nokia-building-clip"><path d="M203 249 585 0l59 57v192Z"/></clipPath></defs>
+  <rect width="644" height="249" rx="15" fill="url(#nokia-sky)"/>
+  <g fill="white" opacity=".34"><ellipse cx="160" cy="20" rx="130" ry="21"/><ellipse cx="440" cy="44" rx="155" ry="27"/><ellipse cx="265" cy="85" rx="165" ry="15"/></g>
+  <g clip-path="url(#nokia-building-clip)"><rect x="203" width="441" height="249" fill="url(#nokia-facade)"/><path d="M203 249v-12l382-73 59 51v34Z" fill="url(#nokia-glass)"/><path d="M585 0v249m-29-230v230m-37-204v204m-36-180v180m-36-157v157m-36-132v132m-36-109v109m-36-84v84m-36-60v60m-36-37v37m358-215v249m-19-213v213" fill="none" stroke="#4a647a" stroke-width="1.1"/><path d="m203 249 382-85 59 51M203 209l382-107 59 50M203 169 585 40l59 49M203 130 585-20" fill="none" stroke="#7c8c9b" stroke-width="1.2"/><path d="M585 0v249" fill="none" stroke="#284d69" stroke-width="3"/><path d="M385 125 406 110v139h-21Zm95-64 14-9v197h-14Z" fill="white" opacity=".18"/></g>
+  <text x="61" y="96" fill="#00358c" font-family="Arial,sans-serif" font-size="47" font-weight="900" letter-spacing="-3">NOKIA</text>
+  <text x="61" y="135" fill="#587399" font-size="22"><tspan x="61">Connecting people,</tspan><tspan x="61" dy="25">ideas and a more</tspan><tspan x="61" dy="25">open world.</tspan></text><path d="M61 209h50" stroke="#0077ff" stroke-width="3"/>
+  <text x="364" y="177" fill="#52718d" font-family="Arial,sans-serif" font-size="56" font-weight="900" transform="rotate(-24 364 177)">NOKIA</text><text x="363" y="173" fill="#00386d" font-family="Arial,sans-serif" font-size="56" font-weight="900" transform="rotate(-24 363 173)">NOKIA</text>
+</svg>}
+<style>.nk-nokia-logo,.nk-nokia-banner{display:block;width:100%;height:100%;}</style>

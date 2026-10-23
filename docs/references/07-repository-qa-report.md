@@ -1,5 +1,7 @@
 # Repository QA Report
 
+> Nokia replacement (23 October 2026): current source now uses `/projects/enterprise-reporting-insights/` for **Enterprise Reporting & Insights Platform**, with `/projects/telecom-cost-optimization/` retained only as a static HTML compatibility redirect. The earlier Nokia title, route and validation evidence below are historical and do not certify the replacement. See [the current Nokia reference](06-telecom-cost-optimization-reference.md). No new deployment or browser certification is implied.
+
 Repository-wide record of the original static QA review, targeted validation, approved fixes, deferred risk, later technical validation, known source exceptions, historical evidence, and remaining verification boundaries.
 
 <div align="center">

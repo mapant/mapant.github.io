@@ -1,0 +1,13 @@
+﻿---
+import Icon from './PortfolioIcon.astro';
+import ReferenceIcon from './NokiaIcon.astro';
+interface Props { title: string; text?: string; icon?: string; tone?: string; items?: string[]; reference?: boolean; }
+const { title, text, icon = 'document', tone = 'blue', items = [], reference = false } = Astro.props;
+---
+{reference ? <article class:list={['nk-card', `nk-${tone}`]}>
+  <span class="nk-bubble"><ReferenceIcon name={icon}/></span>
+  <div><h3>{title}</h3>{text&&<p>{text}</p>}{items.length>0&&<ul>{items.map(item=><li>{item}</li>)}</ul>}<slot/></div>
+</article> : <article class:list={['nr-card', `nr-${tone}`]}>
+  <span class="nr-icon"><Icon name={icon}/></span>
+  <div><h3>{title}</h3>{text&&<p>{text}</p>}{items.length>0&&<ul>{items.map(item=><li>{item}</li>)}</ul>}<slot/></div>
+</article>}

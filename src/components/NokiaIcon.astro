@@ -1,0 +1,51 @@
+﻿---
+interface Props { name: string; }
+const { name } = Astro.props;
+const outlined: Record<string,string> = {
+ wand:'m3 20 13-13 4 4L7 24ZM3 1v5M1 3h5m14-3v5m-2-2h5M12 1v3m-2-1h4M21 15v5m-2-3h5',
+ down:'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20m0 4v12m-5-5 5 5 5-5',
+ folder:'M1 5h8l3 3h11v14H1Z',
+ building:'M4 23V2h12v21M16 9h5v14M7 6h2m3 0h1M7 11h2m3 0h1M7 16h2m3 0h1M9 23v-4h3v4',
+
+ antenna:'M12 10 5 23h14Zm0 0V4m-3 19 3-6 3 6M5 4a10 10 0 0 0 0 12m14-12a10 10 0 0 1 0 12M8 7a6 6 0 0 0 0 6m8-6a6 6 0 0 1 0 6',
+ share:'M6 12 18 5M6 12l12 7M2 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0M16 4a3 3 0 1 0 6 0 3 3 0 0 0-6 0m0 16a3 3 0 1 0 6 0 3 3 0 0 0-6 0',
+ layers:'m12 2 11 6-11 6L1 8Zm-10 11 10 6 10-6M2 18l10 5 10-5',
+ calendar:'M3 4h18v19H3Zm0 6h18M7 1v6m10-6v6M7 14h2m4 0h2m-8 5h2m4 0h2',
+ alert:'m12 1 11 21H1ZM12 8v6m0 3v1',
+ truck:'M1 5h14v13H1Zm14 5h5l3 5v3h-8M4 17a3 3 0 1 0 0 6 3 3 0 0 0 0-6m15 0a3 3 0 1 0 0 6 3 3 0 0 0 0-6',
+ rocket:'M8 16 3 11C8 3 15 1 23 1c0 8-3 15-11 20l-5-5m8-10a3 3 0 1 0 6 0 3 3 0 0 0-6 0M3 12l-2 5 5-1m6 5 5 2 1-6M6 19l-4 3 1-5',
+ checklist:'M4 2h16v21H4ZM8 7l2 2 5-5M8 15l2 2 5-5',
+ book:'M1 3c5-2 9-1 11 2 2-3 6-4 11-2v18c-5-2-9-1-11 2-2-3-6-4-11-2Zm11 2v18',
+ globe:'M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22m0 0c-6 6-6 16 0 22m0-22c6 6 6 16 0 22M2 8h20M2 16h20',
+ target:'M21 12a9 9 0 1 1-9-9M17 12a5 5 0 1 1-5-5m0 5 9-10m-4 0v5h5',
+ clock:'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20m0 4v6l5 3',
+ refresh:'M21 7A10 10 0 0 0 4 5L1 9m0-7v7h7m-5 8a10 10 0 0 0 17 2l3-4m0 7v-7h-7',
+ network:'M12 7v5M4 17v-5h16v5M12 12v5',
+ link:'m9 15 6-6m-6-3 2-2c5-5 12 2 7 7l-2 2m-2 5-2 2c-5 5-12-2-7-7l2-2',
+ pin:'M12 23S4 13 4 9a8 8 0 1 1 16 0c0 4-8 14-8 14Zm0-18a4 4 0 1 0 0 8 4 4 0 0 0 0-8',
+ monitor:'M2 3h20v14H2Zm10 14v5m-6 0h12',
+ search:'M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16m6 14 7 7',
+ map:'M2 5 8 2l8 3 6-3v17l-6 3-8-3-6 3Zm6-3v17m8-14v17',
+};
+---
+<svg class="nk-icon" viewBox="0 0 24 24" aria-hidden="true">
+  {['chart','analytics'].includes(name) ? <g fill="currentColor"><rect x="2" y="14" width="5" height="9" rx="1.6"/><rect x="9.5" y="8" width="5" height="15" rx="1.6"/><rect x="17" y="1" width="5" height="22" rx="1.6"/></g>
+  : name==='powerbi' ? <g fill="#efb000"><rect x="2" y="10" width="6" height="13" rx="1"/><rect x="9" y="5" width="6" height="18" rx="1" fill="#f4c53b"/><rect x="16" y="1" width="6" height="22" rx="1" fill="#e5a100"/></g>
+  : name==='database' ? <g fill="currentColor" stroke="var(--icon-cut,#fff)" stroke-width=".7"><path d="M2 6v12c0 7 20 7 20 0V6Z"/><ellipse cx="12" cy="6" rx="10" ry="4.5"/><path d="M2 12c0 6 20 6 20 0M2 17c0 6 20 6 20 0" fill="none"/></g>
+  : name==='document' || name==='spreadsheet' ? <><path d="M4 1h11l6 6v16H4Z" fill="currentColor"/><path d="M15 1v7h6M8 11h9M8 15h9M8 19h6" fill="none" stroke="white" stroke-width="1.3"/>{name==='spreadsheet'&&<text x="6" y="18" font-size="12" fill="white" font-weight="800">X</text>}</>
+  : name==='users' || name==='user' ? <g fill="currentColor"><circle cx="12" cy="6" r="4.5"/><path d="M5 23v-7c0-7 14-7 14 0v7Z"/>{name==='users'&&<><circle cx="3.5" cy="8.5" r="3"/><circle cx="20.5" cy="8.5" r="3"/><path d="M0 21v-6c0-4 5-5 7-2l-3 8Zm24 0v-6c0-4-5-5-7-2l3 8Z"/></>}</g>
+  : name==='gear' ? <><path d="m9 1 6 0 1 4 3 1 3-1 2 5-3 2v3l2 2-3 5-3-2-3 1-1 3H9l-1-3-3-1-3 1-2-5 3-2v-3L0 9l3-5 3 2 3-1Z" fill="currentColor"/><circle cx="12" cy="12" r="4" fill="var(--icon-cut,#fff)"/></>
+  : name==='eye' ? <><path d="M0 12C6-1 18-1 24 12c-6 13-18 13-24 0Z" fill="currentColor"/><circle cx="12" cy="12" r="5" fill="var(--icon-cut,#fff)"/><circle cx="12" cy="12" r="3" fill="currentColor"/></>
+  : name==='shield'||name==='check' ? <><path d={name==='shield'?'M12 0 23 5v8c0 6-11 11-11 11S1 19 1 13V5Z':'M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22'} fill="currentColor"/><path d="m6 12 4 4 8-9" fill="none" stroke="white" stroke-width="2.4"/></>
+  : name==='bulb' ? <><path d="M8 18C8 13 3 13 4 7 5-2 20-2 21 7c1 6-5 6-5 11Z" fill="currentColor"/><path d="M8 20h8m-6 3h4" stroke="currentColor" stroke-width="2"/></>
+  : name==='cube' ? <><path d="m12 1 11 6v11l-11 6L1 18V7Z" fill="currentColor"/><path d="m1 7 11 6 11-6M12 13v11" fill="none" stroke="white"/></>
+  : name==='flag' ? <path d="M3 23V1h2v2c6-5 11 5 18 0l-3 7 3 5c-7 5-12-5-18 0v8Z" fill="currentColor"/>
+  : name==='trophy' ? <><path d="M6 1h12v8c0 9-12 9-12 0Zm4 15h4v5h5v3H5v-3h5Z" fill="currentColor"/><path d="M6 4H1v5c0 5 5 5 7 5M18 4h5v5c0 5-5 5-7 5" fill="none" stroke="currentColor" stroke-width="2"/></>
+  : name==='network' ? <><g fill="none" stroke="currentColor" stroke-width="2.4"><path d={outlined.network}/></g><g fill="currentColor"><circle cx="12" cy="3.5" r="3.5"/><circle cx="4" cy="20" r="4"/><circle cx="12" cy="20" r="4"/><circle cx="20" cy="20" r="4"/></g></>
+  : name==='warning-solid' ? <><path d="M9.5 3c1-2 4-2 5 0l9 17c1 2 0 3-2 3h-19c-2 0-3-1-2-3Z" fill="currentColor"/><path d="M12 8v7m0 3v1" stroke="white" stroke-width="2.5" stroke-linecap="round"/></>
+  : name==='star-solid' ? <path d="m12 1 3.6 6.8 7.4 1.3-5.2 5.5.9 7.7-6.7-3.5-6.7 3.5.9-7.7L1 9.1l7.4-1.3Z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+  : name==='audit-shield' ? <><path d="M12 0 23 5v8c0 6-11 11-11 11S1 19 1 13V5Z" fill="currentColor"/><path d="M12 6v12m-5-8h5" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round"/></>
+  : name==='bulb-outline' ? <path d="M8 17C8 13 4 13 4 8a8 8 0 0 1 16 0c0 5-4 5-4 9ZM8 20h8m-6 3h4M9 8l3 4 3-4m-3 4v5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  : <path d={outlined[name]??outlined.target} fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>}
+</svg>
+<style>.nk-icon{display:inline-block;width:1em;height:1em;flex:none;vertical-align:-.13em;overflow:visible;}</style>

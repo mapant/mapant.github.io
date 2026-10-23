@@ -1,5 +1,7 @@
 # Integrated Channels Reference
 
+> Current Nokia update (23 October 2026): the canonical project is **Enterprise Reporting & Insights Platform** at `/projects/enterprise-reporting-insights/`. Its ten-section Business Analyst story replaces the old case study. The legacy URL remains a compatibility redirect. There are ten presentation routes plus this redirect; older validation records describe their original source state.
+
 Complete implementation, product scope, application model, navigation, workspace interaction, responsive behavior, export, accessibility, and maintenance reference for the Integrated Channels case study.
 
 <div align="center">
@@ -122,7 +124,7 @@ IntegratedChannelsPresentation.astro
 Project sequence:
 
 ```text
-Previous → Telecom Cost Optimization
+Previous → Enterprise Reporting & Insights Platform
 Current  → Integrated Channels
 Next     → Ayu DocConnect
 ```
@@ -1616,7 +1618,7 @@ Current case-study relationship:
 
 ```text
 Previous:
-Telecom Cost Optimization
+Enterprise Reporting & Insights Platform
 
 Current:
 Integrated Channels
@@ -1634,7 +1636,7 @@ Ayu DocConnect
         ↓
 Ayu Sales Intelligence
         ↓
-Telecom Cost Optimization
+Enterprise Reporting & Insights Platform
         ↓
 Integrated Channels
 ```

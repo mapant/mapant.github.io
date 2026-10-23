@@ -1,0 +1,37 @@
+﻿---
+interface Props { kind: string; }
+const {kind}=Astro.props;
+const months=['Jan','Feb','Mar','Apr','May'];
+const names:Record<string,string>={adherence:'Illustrative milestone adherence bars and target',cycle:'Illustrative reporting-cycle trend, down 30 percent',exception:'Illustrative exception trend, down 20 percent',completeness:'Illustrative completeness donut, 92 percent',turnaround:'Reporting turnaround reduction of 25 percent',productivity:'Program productivity improvement of 15 percent',qualitytrend:'Illustrative exception trend from January to May','exception-donut':'Illustrative exception sources: missing fields 42 percent, invalid format 28 percent, mapping error 18 percent, duplicate records 8 percent, others 4 percent'};
+---
+{['adherence','cycle','exception','qualitytrend','turnaround','productivity','dashboard-bars'].includes(kind)&&<svg class="nokia-native-chart" viewBox="0 0 230 140" role="img" aria-label={names[kind]??'Illustrative reporting dashboard bars'}>
+  <defs><linearGradient id={`chart-${kind}`} x2="0" y2="1"><stop stop-color={['exception','qualitytrend'].includes(kind)?'#ff536b':kind==='productivity'?'#ff9c62':'#297eff'}/><stop offset="1" stop-color={['exception','qualitytrend'].includes(kind)?'#ffbcc3':kind==='productivity'?'#ffe1d0':'#b4d5ff'}/></linearGradient></defs>
+  {kind!=='dashboard-bars'&&<path d="M15 12v101h202" fill="none" stroke="#92a8c1" stroke-width="1"/>}
+  {kind==='adherence'&&<><path d="M15 35h202" fill="none" stroke="#70a2ff" stroke-dasharray="5 3"/><text x="184" y="29" fill="#0065ff" font-size="13">Target</text>{[54,54,54,47,47].map((h,i)=><rect x={28+i*38} y={113-h} width="24" height={h} rx="1" fill={`url(#chart-${kind})`} opacity={1-i*.13}/>)}</>}
+  {kind==='cycle'&&<><path d="m29 77 40-22 40 25 40 9 40 7" fill="none" stroke="#ff6b17" stroke-width="1.5"/>{[[29,77],[69,55],[109,80],[149,89],[189,96]].map(([cx,cy])=><circle {cx} {cy} r="5" fill="#ff6b17" stroke="white"/>)}<path d="M139 31h62q6 0 6 6v16q0 6-6 6h-32l-7 7-3-7h-20q-6 0-6-6V37q0-6 6-6Z" fill="#ff7825"/><text x="144" y="49" fill="white" font-size="15" font-weight="700">↓ 30%</text></>}
+  {kind==='exception'&&<>{[65,53,42,31,21].map((h,i)=><rect x={28+i*38} y={113-h} width="24" height={h} rx="1" fill={`url(#chart-${kind})`} opacity={1-i*.12}/>)}<path d="M140 30h63q6 0 6 6v16q0 6-6 6h-30l-7 7-3-7h-23q-6 0-6-6V36q0-6 6-6Z" fill="#ef3058"/><text x="146" y="49" fill="white" font-size="15" font-weight="700">↓ 20%</text></>}
+  {['cycle','exception'].includes(kind)&&months.map((month,i)=><text x={29+i*40} y="130" text-anchor="middle" fill="#506681" font-size="16">{month}</text>)}
+  {kind==='qualitytrend'&&<>{[0,2,4,6,8].map((value,i)=><><path d={`M18 ${113-i*24}h197`} stroke="#e4edf8"/><text x="12" y={116-i*24} text-anchor="end" fill="#526785" font-size="16">{value}%</text></>)}{[81,61,45,35,23].map((h,i)=><rect x={32+i*34} y={113-h} width="17" height={h} fill={`url(#chart-${kind})`}/>)}{months.map((month,i)=><text x={40+i*34} y="130" text-anchor="middle" fill="#526785" font-size="16">{month}</text>)}</>}
+  {kind==='turnaround'&&<>{[70,52,40,29,19].map((h,i)=><rect x={30+i*40} y={113-h} width="25" height={h} fill={`url(#chart-${kind})`}/>)}<path d="M49 20Q125 57 177 62m-8-7 8 7-8 6" fill="none" stroke="#0074ff" stroke-width="1.5"/><rect x="140" y="6" width="72" height="29" rx="5" fill="#0067ff"/><path d="m155 35 5 6 5-6" fill="#0067ff"/><text x="150" y="26" fill="white" font-size="18" font-weight="700">↓ 25%</text><text x="29" y="133" fill="#314b74" font-size="13">Before</text><text x="170" y="133" fill="#314b74" font-size="13">After</text></>}
+  {kind==='productivity'&&<>{[22,34,48,61].map((h,i)=><rect x={29+i*45} y={113-h} width="29" height={h} fill={`url(#chart-${kind})`}/>)}<path d="M39 69Q99 62 158 27m-9-1 9 1-3 9" fill="none" stroke="#ff6508" stroke-width="1.5"/><rect x="153" y="6" width="72" height="29" rx="5" fill="#ff6508"/><path d="m165 35 5 6 5-6" fill="#ff6508"/><text x="163" y="26" fill="white" font-size="18" font-weight="700">↑ 15%</text><text x="25" y="133" fill="#314b74" font-size="13">Before</text><text x="178" y="133" fill="#314b74" font-size="13">After</text></>}
+  {kind==='dashboard-bars'&&<>{[21,33,48,66,87,105].map((h,i)=><rect x={18+i*32} y={122-h} width="22" height={h} rx="2" fill={`url(#chart-${kind})`}/>)}<path d="M10 125h214" stroke="#a5d8fc"/></>}
+</svg>}
+{['completeness','dashboard-donut','exception-donut'].includes(kind)&&<div class:list={['nokia-donut',kind==='dashboard-donut'&&'nokia-donut-decoration',kind==='exception-donut'&&'nokia-donut-exceptions']}>
+  <svg class="nokia-donut-ring" viewBox="0 0 120 120" role="img" aria-label={names[kind]??'Illustrative reporting dashboard donut'}>
+    <circle cx="60" cy="60" r="45" fill="none" stroke="#d9deec" stroke-width="16"/>
+    <g transform="rotate(-90 60 60)">{(kind==='exception-donut'?[[42,0,'#ff5a76'],[28,42,'#ff7e88'],[18,70,'#91a5ff'],[8,88,'#c3a3eb'],[4,96,'#dae0ed']]:[[92,0,'#00ac8c'],[4,92,'#f7b2c2'],[2,96,'#ef3960']]).map(([value,start,color])=><circle cx="60" cy="60" r="45" fill="none" stroke={color as string} stroke-width="16" stroke-dasharray={((value as number)*2.8274)+' 282.74'} stroke-dashoffset={-(start as number)*2.8274}/>)}</g>
+    {kind!=='dashboard-donut'&&<text x="60" y="67" text-anchor="middle" fill="#06275b" font-size="23" font-weight="700">{kind==='exception-donut'?'2.8%':'92%'}</text>}
+  </svg>
+  {kind!=='dashboard-donut'&&<ul class="nokia-donut-legend">{(kind==='exception-donut'?[['Missing Fields','#ff5a76','42%'],['Invalid Format','#ff7e88','28%'],['Mapping Error','#91a5ff','18%'],['Duplicate Records','#c3a3eb','8%'],['Others','#dae0ed','4%']]:[['Complete','#00ac8c',''],['Missing mandatory','#f7b2c2',''],['Invalid format','#ef3960',''],['Others','#d9deec','']]).map(([label,color,value])=><li><i style={'background:'+color}></i><span>{label}</span>{value&&<b>{value}</b>}</li>)}</ul>}
+</div>}
+<style>
+.nokia-native-chart{display:block;width:100%;height:100%;overflow:visible;font-family:inherit;}
+.nokia-donut{font-size:11px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:6px;width:100%;height:100%;}
+.nokia-donut-ring{display:block;width:100%;height:auto;max-height:100%;}
+.nokia-donut-legend{display:grid;gap:5px;list-style:none;margin:0;padding:0;}
+.nokia-donut-legend li{display:grid;grid-template-columns:6px minmax(0,1fr) auto;align-items:center;gap:4px;font-size:inherit;line-height:1.2;color:#36527b;letter-spacing:0;}
+.nokia-donut-legend i{width:6px;height:6px;border-radius:50%;}
+.nokia-donut-legend b{font-weight:500;}
+.nokia-donut-decoration{grid-template-columns:1fr;}
+.nokia-donut-exceptions{font-size:9px;}
+</style>

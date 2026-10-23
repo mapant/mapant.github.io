@@ -1,5 +1,7 @@
 # Project Context
 
+> Current Nokia update (23 October 2026): the canonical project is **Enterprise Reporting & Insights Platform** at `/projects/enterprise-reporting-insights/`. Its ten-section Business Analyst story replaces the old case study. The legacy URL remains a compatibility redirect. There are ten presentation routes plus this redirect; older validation records describe their original source state.
+
 Repository-wide implementation, architecture, routing, navigation, data, responsive, export, accessibility, QA, asset, deployment, and maintenance context for the professional Product Management portfolio.
 
 <div align="center">
@@ -221,7 +223,7 @@ Four projects:
 1. Integrated Channels
 2. Ayu DocConnect
 3. Ayu Sales Intelligence
-4. Telecom Cost Optimization
+4. Enterprise Reporting & Insights Platform
 
 ---
 
@@ -240,7 +242,7 @@ Four projects:
 | 7 | Integrated Channels | `/projects/integrated-channels/` | `src/pages/projects/integrated-channels.mdx` |
 | 8 | Ayu DocConnect | `/projects/ayu-docconnect/` | `src/pages/projects/ayu-docconnect.mdx` |
 | 9 | Ayu Sales Intelligence | `/projects/ayu-sales-intelligence/` | `src/pages/projects/ayu-sales-intelligence.mdx` |
-| 10 | Telecom Cost Optimization | `/projects/telecom-cost-optimization/` | `src/pages/projects/telecom-cost-optimization.mdx` |
+| 10 | Enterprise Reporting & Insights Platform | `/projects/enterprise-reporting-insights/` | `src/pages/projects/enterprise-reporting-insights.mdx` |
 
 Current route hierarchy:
 
@@ -255,7 +257,7 @@ Current route hierarchy:
 ├── /projects/integrated-channels/
 ├── /projects/ayu-docconnect/
 ├── /projects/ayu-sales-intelligence/
-└── /projects/telecom-cost-optimization/
+└── /projects/enterprise-reporting-insights/
 ```
 
 ---
@@ -753,7 +755,7 @@ Ayu DocConnect
         ↓
 Ayu Sales Intelligence
         ↓
-Telecom Cost Optimization
+Enterprise Reporting & Insights Platform
         ↓
 Integrated Channels
 ```
@@ -762,10 +764,10 @@ Current previous/next relationships:
 
 | Project | Previous | Next |
 |---|---|---|
-| Integrated Channels | Telecom Cost Optimization | Ayu DocConnect |
+| Integrated Channels | Enterprise Reporting & Insights Platform | Ayu DocConnect |
 | Ayu DocConnect | Integrated Channels | Ayu Sales Intelligence |
-| Ayu Sales Intelligence | Ayu DocConnect | Telecom Cost Optimization |
-| Telecom Cost Optimization | Ayu Sales Intelligence | Integrated Channels |
+| Ayu Sales Intelligence | Ayu DocConnect | Enterprise Reporting & Insights Platform |
+| Enterprise Reporting & Insights Platform | Ayu Sales Intelligence | Integrated Channels |
 
 Any project-order change requires coordinated updates across project navigation.
 
@@ -1099,7 +1101,7 @@ SalesIntelligenceWorkspaces.astro
 SalesIntelligenceOutcomes.astro
 ```
 
-### Telecom Cost Optimization
+### Enterprise Reporting & Insights Platform
 
 Detailed content is largely literal inside:
 
@@ -1205,7 +1207,9 @@ Two-BDM Bengaluru manual pilot:
 Detailed result:
 
 ```text
-15%–20% CapEx / OpEx savings
+25% reduction in reporting turnaround time
+15% improvement in program productivity
+7 international markets
 ```
 
 These values must retain their existing:
@@ -1220,39 +1224,15 @@ These values must retain their existing:
 
 > 📊 **DATA, METRICS & OUTCOMES**
 
-## 35. Known Telecom Metric Distinction
+## 35. Nokia Metric Scope After Replacement
 
-The Main Product Portfolio Outcomes contains:
+The canonical Nokia case study and Card 04 now use only the approved 25% reporting-turnaround reduction, 15% program-productivity improvement and seven international markets. The former case-study cost-savings range is superseded.
 
-```text
-25% telecom operating-cost reduction
-```
-
-while the detailed Telecom case study and project card use:
-
-```text
-15%–20% cost savings
-```
-
-These are currently separate authored claims.
-
-Current documentation does **not** reconcile them.
-
-Do not silently normalize one value to the other.
-
-Any future reconciliation requires explicit confirmation of:
-
-- metric definition;
-- source;
-- population;
-- time period;
-- cost category;
-- measurement basis.
+The Main Product Portfolio Outcomes section retains its independently authored operating-cost claim because this replacement authorizes Card 04 and Nokia links, not a rewrite of other portfolio sections. That claim must not be presented as a metric of the new reporting case study. Any wider reconciliation requires a separate scope decision.
 
 ---
 
 > 🛠️ **MAINTENANCE & GUARDRAILS**
-
 ## 36. Static Product Representation Boundary
 
 The portfolio contains visual references to technologies, systems, and enterprise workflows.
@@ -1976,7 +1956,7 @@ This applies to:
 - Integrated Channels;
 - Ayu DocConnect;
 - Ayu Sales Intelligence;
-- Telecom Cost Optimization.
+- Enterprise Reporting & Insights Platform.
 
 Navigation IDs and section IDs therefore form part of the export contract.
 
@@ -2738,7 +2718,7 @@ Current generated route set:
 /projects/integrated-channels/
 /projects/ayu-docconnect/
 /projects/ayu-sales-intelligence/
-/projects/telecom-cost-optimization/
+/projects/enterprise-reporting-insights/
 ```
 
 This validates the recorded source/build state.
@@ -2921,7 +2901,7 @@ Ayu Sales Intelligence:
 
 [05-ayu-sales-intelligence-reference.md](05-ayu-sales-intelligence-reference.md)
 
-Telecom Cost Optimization:
+Enterprise Reporting & Insights Platform:
 
 [06-telecom-cost-optimization-reference.md](06-telecom-cost-optimization-reference.md)
 

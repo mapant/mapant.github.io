@@ -1364,48 +1364,31 @@ Current data URL:
 /projects/ayu-sales-intelligence
 ```
 
-### 14.7 Product 04 — Telecom Analytics & Cost Optimization
+### 14.7 Product 04 — Enterprise Reporting & Insights Platform
 
-Company:
+Company: **NOKIA NETWORKS**
 
-```text
-NOKIA NETWORKS
-```
+Title: **Enterprise Reporting & Insights Platform**
 
-Title:
+Subtitle: Cross-market telecom delivery analytics & operations governance platform.
 
-```text
-Telecom Analytics & Cost Optimization
-```
+Problem: Regional delivery reporting across established market operations required a consistent and comparable management view across differing source structures, KPI interpretations and reporting contexts.
 
-Short description:
+My ownership: Business analysis across requirements, KPI standardisation, process/data mapping, stakeholder alignment, reporting validation and UAT.
 
-```text
-Enterprise network analytics & capital-efficiency platform.
-```
-
-Current statistics:
+Outcome: Delivered a standardised analytical/reporting layer supporting consistent cross-market management insight and stronger operational decision-making.
 
 | Value | Label |
 |---|---|
-| `15–20%` | Cost savings |
-| `Real-time` | Network insights |
-| `Scalable` | Reporting framework |
+| `25%` | Reporting turnaround reduction |
+| `15%` | Program productivity improvement |
+| `7` | International markets |
 
-Tags:
+Tags: Business Analysis · Reporting Analytics · Power BI · Telecom.
 
-```text
-SQL
-Power BI
-Telecom
-Cost Optimization
-```
+Current data URL: `/projects/enterprise-reporting-insights/`.
 
-Current data URL:
-
-```text
-/projects/telecom-cost-optimization
-```
+Card 04 retains its existing styling. Cards 01–03 are unchanged. The former Nokia case-study card and cost-savings claim are replaced by the above approved reporting story.
 
 ### 14.8 Independent content ownership
 
@@ -1730,13 +1713,13 @@ The Main Product Portfolio currently contains:
 
 in the Outcomes section.
 
-The Telecom project card and detailed case study separately use:
+The replacement Nokia project card and detailed case study now use:
 
 ```text
-15–20% cost savings
+25% reporting-turnaround reduction; 15% program-productivity improvement; 7 international markets
 ```
 
-These are currently distinct authored claims/scopes.
+The broader Outcomes section is unchanged by the Nokia/Card 04 replacement. Its operating-cost claim is separate from the new reporting case study and must not be attributed to it.
 
 Do **not** silently normalize one to the other.
 

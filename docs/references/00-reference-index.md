@@ -1,5 +1,7 @@
 # Portfolio Documentation Reference Index
 
+> Current Nokia update (23 October 2026): the canonical project is **Enterprise Reporting & Insights Platform** at `/projects/enterprise-reporting-insights/`. Its ten-section Business Analyst story replaces the old case study. The legacy URL remains a compatibility redirect. There are ten presentation routes plus this redirect; older validation records describe their original source state.
+
 Central navigation and governance index for the portfolio documentation, covering the current website architecture, Intro Experience, Main Product Portfolio, four project case studies, repository QA status, implementation context, and GitHub Pages routing history.
 
 <div align="center">
@@ -110,7 +112,7 @@ The portfolio currently exposes ten source routes.
 | 7 | Integrated Channels | `/projects/integrated-channels/` | `src/pages/projects/integrated-channels.mdx` |
 | 8 | Ayu DocConnect | `/projects/ayu-docconnect/` | `src/pages/projects/ayu-docconnect.mdx` |
 | 9 | Ayu Sales Intelligence | `/projects/ayu-sales-intelligence/` | `src/pages/projects/ayu-sales-intelligence.mdx` |
-| 10 | Telecom Cost Optimization | `/projects/telecom-cost-optimization/` | `src/pages/projects/telecom-cost-optimization.mdx` |
+| 10 | Enterprise Reporting & Insights Platform | `/projects/enterprise-reporting-insights/` | `src/pages/projects/enterprise-reporting-insights.mdx` |
 
 ### Route hierarchy
 
@@ -124,7 +126,7 @@ The portfolio currently exposes ten source routes.
 ├── /projects/integrated-channels/
 ├── /projects/ayu-docconnect/
 ├── /projects/ayu-sales-intelligence/
-└── /projects/telecom-cost-optimization/
+└── /projects/enterprise-reporting-insights/
 ```
 
 `/intro/` remains available as an alias of the Hero experience, but normal Home and identity navigation uses `/`.
@@ -180,7 +182,7 @@ The portfolio contains four detailed project case studies:
 1. Integrated Channels
 2. Ayu DocConnect
 3. Ayu Sales Intelligence
-4. Telecom Cost Optimization
+4. Enterprise Reporting & Insights Platform
 
 Each case study is a dedicated route with its own content, navigation, implementation details, product context, metrics, diagrams, technical representation, outcomes, and project-specific behavior.
 
@@ -197,7 +199,7 @@ Each case study is a dedicated route with its own content, navigation, implement
 | 03 | [Integrated Channels Reference](03-integrated-channels-reference.md) | Detailed M2P Integrated Channels case-study reference | Twelve applications, banking ecosystem, product scope, architecture, integrations, compliance, PM scope, metrics, workspace modal, navigation, and export |
 | 04 | [Ayu DocConnect Reference](04-ayu-docconnect-reference.md) | Detailed Doctor Business / DocConnect case-study reference | Doctor journeys, referrals, engagement, product metrics, architecture, modules, outcomes, components, assets, interaction behavior, and historical validation |
 | 05 | [Ayu Sales Intelligence Reference](05-ayu-sales-intelligence-reference.md) | Detailed Sales Intelligence and Field Force Optimization reference | Prospect intelligence, prioritisation, beat planning, location execution, territory controls, metrics, workspaces, pilot outcomes, architecture, and historical validation |
-| 06 | [Telecom Cost Optimization Reference](06-telecom-cost-optimization-reference.md) | Detailed Telecom Analytics & Cost Optimization case-study reference | Network analytics, asset identity, geography, cost context, KPI/data model, architecture, delivery, product explorer, impact, leadership, and navigation |
+| 06 | [Enterprise Reporting & Insights Platform Reference](06-telecom-cost-optimization-reference.md) | Detailed Enterprise Reporting & Insights Platform case-study reference | Business Analyst scope, reporting harmonisation, KPI definitions, requirements traceability, workspaces, functional data flow, outcomes, leadership, and navigation |
 | 07 | [Repository QA Report](07-repository-qa-report.md) | Single repository-wide QA record | Original QA scope, five findings, severity, targeted validation, implemented fixes, deferred issue, post-fix checks, remaining verification limits |
 | 08 | [Project Context](08-project-context.md) | Repository-wide implementation and maintenance context | Technology stack, routes, layouts, shared components, data organization, navigation, responsive architecture, assets, PDF/export, accessibility, and implementation constraints |
 | 09 | [GitHub Pages Routing Migration](09-github-pages-routing-migration.md) | Historical technical record | Repository/root-domain migration, interim Intro routing, final Hero/Main Portfolio routing, route updates, GitHub Pages deployment evidence, and final state |
@@ -423,7 +425,7 @@ Use these names consistently:
 - **Integrated Channels**
 - **Ayu DocConnect**
 - **Ayu Sales Intelligence**
-- **Telecom Cost Optimization**
+- **Enterprise Reporting & Insights Platform**
 - **Repository QA Report**
 - **Project Context**
 - **GitHub Pages Routing Migration**

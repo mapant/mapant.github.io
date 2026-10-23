@@ -1,5 +1,7 @@
 # Ayu Sales Intelligence Reference
 
+> Current Nokia update (23 October 2026): the canonical project is **Enterprise Reporting & Insights Platform** at `/projects/enterprise-reporting-insights/`. Its ten-section Business Analyst story replaces the old case study. The legacy URL remains a compatibility redirect. There are ten presentation routes plus this redirect; older validation records describe their original source state.
+
 Complete implementation, product scope, field-force workflow, measurement framework, workspace interaction, architecture, pilot outcomes, responsive behavior, export, historical validation, and maintenance reference for the Ayu Sales Intelligence case study.
 
 <div align="center">
@@ -129,7 +131,7 @@ Current project sequence:
 ```text
 Previous → Ayu DocConnect
 Current  → Ayu Sales Intelligence
-Next     → Telecom Cost Optimization
+Next     → Enterprise Reporting & Insights Platform
 ```
 
 ---
@@ -1943,7 +1945,7 @@ Current project relationships:
 ```text
 Previous → Ayu DocConnect
 Current  → Ayu Sales Intelligence
-Next     → Telecom Cost Optimization
+Next     → Enterprise Reporting & Insights Platform
 ```
 
 The current visible return targets:
@@ -1975,7 +1977,7 @@ Ayu DocConnect
         ↓
 Ayu Sales Intelligence
         ↓
-Telecom Cost Optimization
+Enterprise Reporting & Insights Platform
         ↓
 Integrated Channels
 ```
@@ -2898,7 +2900,7 @@ Current source confirms:
 | Ten project sections | Confirmed |
 | Project-specific anchors | Confirmed |
 | Previous → Ayu DocConnect | Confirmed |
-| Next → Telecom Cost Optimization | Confirmed |
+| Next → Enterprise Reporting & Insights Platform | Confirmed |
 | Shared project Header | Confirmed |
 | Identity/Home → `/` | Confirmed |
 | Back to Portfolio → `/portfolio/` | Confirmed |
